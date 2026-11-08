@@ -44,3 +44,14 @@ Target: `portfolio/editorial-product-positioning-2026-11-09`. This branch is not
 - Responsive browser checks and interactive regression were not rerun after the contribution-list expansion; the earlier viewport results refer to the prior repository-ready ZIP.
 - External links, live routing, and team permission for project media were not revalidated in a browser.
 - No indexing protections were removed, no production deployment was made, and no public launch was approved.
+
+
+### Independent review follow-up · 2026-11-09
+
+- Re-fetched the latest PR head after the editorial changes: 7 commits, 3 changed files, mergeable, still Draft.
+- Compiled the single inline JavaScript block with `new Function(...)`: syntax PASS. This is a syntax check only, not browser interaction or DOM regression.
+- Rechecked all 8 case records: each resolves to a case-detail record.
+- Rechecked selected upstream PR metadata: the listed merged PRs are authored by Bruce-Yii and merged; Google ADK #7455 remains open and #8005 remains tests-only Draft / unmerged.
+- Vivic wording now says “参与推动” for the team-level decision-chain and 27→14 tool consolidation, avoiding an unsupported claim of sole ownership.
+- No Vercel deployment exists for this branch in the connected Vercel account; no preview URL was available, and no deployment was created. Responsive and real-browser regression therefore remain unverified.
+- Indexing note: `robots.txt` currently says `Disallow: /`, while the pages also carry `noindex` and Vercel sends `X-Robots-Tag: noindex`. A crawler blocked by robots.txt may not fetch the page/header to observe noindex, so this combination is not the cleanest de-indexing strategy. It was left unchanged; before public hosting, choose either crawlable pages with noindex or actual access protection, depending on the intended exposure.
