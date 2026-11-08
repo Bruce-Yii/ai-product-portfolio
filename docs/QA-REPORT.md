@@ -84,6 +84,7 @@ The earlier ZIP QA results above remain historical evidence for that ZIP only; t
   - Cherry Failed filters to only the all-credentials-failed sample; All restores all five sample states.
   - dsh-market Find leaves the notice visible; Stop showing removes only the notice and explicitly preserves the plugin's unavailable state.
 - Re-fetched the branch after the selector correction and verified the final source contains no malformed triple-dollar selector.
+- Final source audit caught a duplicated `CASE_DETAILS` declaration introduced during a data-only rewrite; it was corrected, the final branch was re-fetched, and the complete inline JavaScript syntax check passed.
 
 ### Still not performed
 
