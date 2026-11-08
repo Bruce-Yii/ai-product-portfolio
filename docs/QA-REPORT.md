@@ -221,3 +221,14 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - This is a review-branch correction only.
 - The current production deployment still contains the prior eight-case candidate.
 - Do not reassign hcfind.com to this revision until the owner approves the revised candidate.
+
+
+### Revised candidate staging verification
+
+- Vercel staging deployment: dpl_7SMd3LiyJgjDmuc6JqoiD3oGDweT · READY · commit a166982d993e83b87eccd6a545d9686585540fc4.
+- Preview: https://ai-product-portfolio-lxwa40l6c-yu-ac3a.vercel.app
+- Main page: HTTP 200; seven Case records; Dify absent from Case records and featured order; Dify present in the contribution index with four independent PR identifiers; Dify-specific visual and demo absent.
+- Laya casebook route: HTTP 200.
+- Both routes retain X-Robots-Tag: noindex, nofollow, noarchive.
+- No production alias or DNS change was made for this revised candidate.
+- This remains source-level and post-deploy HTML verification; full visual browser review and responsive E2E are still outstanding.
