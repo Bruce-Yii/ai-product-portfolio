@@ -134,3 +134,12 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - Replaced generic placeholder captions with case-specific explanatory captions for Agent Evaluation, AWRP, dsh-market, Laya, and Personal Context Layer. Captions explicitly identify the visuals as illustrative models / workflows, not product screenshots.
 - Shortened the compact header and hero signature line to avoid mobile-width overflow risk.
 - Re-parsed the complete inline JavaScript after these edits: **PASS**. Re-checked 8 case records, 8 matching detail records, all 8 distinct captions, and the explicit Vivic → Laya → Cherry → Dify featured order.
+
+
+### Second iteration · homepage evidence strip
+
+- Added a compact proof strip directly between the hero and featured case studies.
+- It surfaces the Laya upstream collaboration footprint: **47 authored PRs**, **40/47 merged**, and **85 reviewed-by query matches**.
+- The note explicitly identifies the 2026-11-09 GitHub snapshot and separates reviewed-by matches from authored PR counts.
+- Added a three-column mobile layout for the metrics and a compact evidence note.
+- Re-ran source checks: inline JavaScript **PASS**; 8 case records / 8 detail records; proof-strip values and mobile CSS present; main and Laya noindex protections unchanged.
