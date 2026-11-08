@@ -34,11 +34,12 @@ A Project may contain multiple Cases; each Case may link to multiple Contributio
 
 ## Product-card presentation
 
-The four project cards use original explanatory flow diagrams, not fabricated product screenshots:
+The five project cards use original explanatory flow diagrams, not fabricated product screenshots:
 - Vivic: user intent → model decision → host check → action → receipt.
 - Agent Evaluation Lab: task → environment → evidence → verifier → result.
 - AWRP: task → run → evidence → acceptance.
 - Personal Context Layer: sources → raw facts → context → AI gateway.
+- Make Again 2.0: life change → need signals → alternatives → technical Spike → MVP gate; the diagram explicitly distinguishes research signals from validated demand.
 
 The diagrams explain the system responsibility boundaries; they do not claim to be captured production UI.
 
@@ -61,6 +62,7 @@ The diagrams explain the system responsibility boundaries; they do not claim to 
   - Cherry Studio and dsh-market: merged PRs are not represented as proof of a release in every distribution.
   - Personal Context Layer: architecture and early prototype are not described as a launched cross-platform product.
   - Laya metrics are identified as GitHub query snapshots, not product KPIs or maintainer status.
+  - Make Again 2.0 is framed as research and technical feasibility, not a shipped product or validated user outcome; the separate team version and historical repository are not conflated with 2.0.
 - Hidden the internal design inspector from the public navigation.
 - Fixed the Capability browser mapping so all six capability groups resolve to relevant Cases.
 
@@ -80,9 +82,9 @@ The diagrams explain the system responsibility boundaries; they do not claim to 
 - Vercel deployment state: READY.
 - Vercel build events: deployment completed.
 - Inline JavaScript syntax parse: PASS.
-- Seven Case records retained.
-- Four homepage Project cards resolve to existing Case IDs.
-- Five capability groups resolve to existing Case IDs.
+- Eight Case records retained.
+- Five homepage Project cards resolve to existing Case IDs.
+- Six capability groups resolve to existing Case IDs.
 - Homepage and Laya casebook routes return HTTP 200.
 - Preview runtime error/fatal log query for the latest 30 minutes: no matching logs.
 - Production domain aliases still point to the frozen V1 deployment.
