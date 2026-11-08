@@ -243,3 +243,23 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Latest staging deployment: dpl_HaFhgdtRW1TdMhnuJ1jvXZimpBB4 · READY · commit 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
 - Latest preview: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
 - Homepage and /cases/laya/ both return HTTP 200 and retain noindex.
+
+
+## Portfolio v2 — project-first preview · 2026-11-09
+
+- Development branch: portfolio/v2-information-architecture.
+- Source commit: dce2e80a89a7e6ddf11b0e3c3ee5d881cc524400.
+- Vercel Preview: dpl_6JNgwJyVS2fYzf3JrebYTQpuxezJ · READY.
+- Preview URL: https://ai-product-portfolio-i6crjqnne-yu-ac3a.vercel.app.
+- Homepage HTTP 200; Laya casebook route HTTP 200.
+- Four first-class project cards are wired to existing Cases: Vivic, Agent Evaluation Lab, AWRP / Agent Workflow, Personal Context Layer.
+- Five capability groups are mapped to existing Cases; previous empty capability mapping was replaced.
+- Laya remains a separate flagship casebook; the homepage now gives it a dedicated section and retains precise metric definitions.
+- Seven Case records and all existing contribution records remain.
+- Removed public-facing internal editorial-review labels and replaced case status copy with factual delivery boundaries.
+- Hidden the internal design inspector from public navigation.
+- Inline JavaScript syntax parse: PASS.
+- Runtime error/fatal query for the latest 30m returned no matching preview logs.
+- Preview and Laya route retain X-Robots-Tag: noindex, nofollow, noarchive.
+- Production aliases hcfind.com and www.hcfind.com still point to V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr; no DNS/nameserver changes.
+- Full visual browser review and responsive E2E remain outstanding; this is a review preview, not a production release.
