@@ -263,3 +263,19 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Preview and Laya route retain X-Robots-Tag: noindex, nofollow, noarchive.
 - Production aliases hcfind.com and www.hcfind.com still point to V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr; no DNS/nameserver changes.
 - Full visual browser review and responsive E2E remain outstanding; this is a review preview, not a production release.
+
+
+### Portfolio v2 public-evidence cleanup · 2026-11-09
+
+- Latest source commit: a40af18b52aed5f16c9dca5fd8dcd1ec55a1a645.
+- Latest Preview deployment: dpl_JCCmAEicSsv8tARBopwX5jeESkkR · READY.
+- Latest Preview URL: https://ai-product-portfolio-la3ir2b5p-yu-ac3a.vercel.app.
+- Removed private Notion and Linear URLs from public case payloads; confirmed zero Notion / Linear URLs remain in the deployed homepage source.
+- Narrative evidence renderer now only displays explicitly public GitHub records. Design-stage cases with no public repository artifact display a clear no-public-record note.
+- Rewrote case headnotes and personal contribution descriptions to remove internal editorial-review language.
+- Inline JavaScript syntax parse: PASS.
+- Homepage and /cases/laya/ both return HTTP 200; both retain X-Robots-Tag: noindex, nofollow, noarchive.
+- Seven Case records, four Project cards, and five capability groups remain.
+- Production aliases remain on frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
+- Runtime error/fatal query for latest 30m returned no matching Preview logs.
+- Full visual browser review and responsive E2E remain outstanding.
