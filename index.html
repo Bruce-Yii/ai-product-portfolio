@@ -932,6 +932,89 @@ body {background:var(--paper);color:var(--ink)}
  .proof-stat small{font-size:7px;letter-spacing:.025em}
  .proof-strip__note{grid-column:1;margin-top:-7px;font-size:7px;line-height:1.6}
 }
+
+/* Dify — mechanism-led visual, not a fabricated product interface. */
+.dify-art{height:100%;min-height:100%;background:#1c3029;color:#f1efe7}
+.dify-visual{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:18px;width:100%;height:100%;min-height:100%;overflow:hidden;padding:clamp(20px,3vw,40px);background:linear-gradient(135deg,#20372f 0%,#172922 100%);color:#f1efe7}
+.dify-visual:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(238,239,225,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(238,239,225,.045) 1px,transparent 1px);background-size:38px 38px}
+.dify-visual__top,.dify-visual__foot{position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;color:#b5c2b5;font-size:8px;letter-spacing:.075em}
+.dify-visual__body{position:relative;display:grid;grid-template-columns:minmax(170px,.82fr) minmax(0,1.18fr);gap:clamp(14px,2.2vw,28px);align-items:center;flex:1}
+.dify-visual__input{min-width:0;background:#e7e6db;color:#20352d;padding:clamp(14px,2vw,24px);box-shadow:12px 14px 0 rgba(0,0,0,.12)}
+.dify-visual__section{font-size:8px;letter-spacing:.075em;color:#914734;padding-bottom:12px;border-bottom:1px solid #c9cec2}
+.dify-visual__segment{display:grid;grid-template-columns:1fr;gap:3px;padding:12px 0;border-bottom:1px solid #d1d4c9}
+.dify-visual__segment:last-child{border-bottom:0;padding-bottom:0}
+.dify-visual__segment small{font:8px/1.4 var(--mono);letter-spacing:.06em;color:#7c867d}
+.dify-visual__segment strong{font:500 14px/1.5 var(--han);color:#20352d}
+.dify-visual__segment em{font:8px/1.4 var(--mono);font-style:normal;color:#79877b}
+.dify-visual__compare{display:grid;gap:11px;min-width:0}
+.dify-visual__result{min-width:0;padding:clamp(13px,1.8vw,21px);border:1px solid rgba(237,241,230,.2);background:rgba(255,255,255,.035)}
+.dify-visual__result>.mono{font-size:8px;letter-spacing:.065em;color:#bdc8bb}
+.dify-visual__output{margin:13px 0 8px;color:#f2eee4;font:500 clamp(18px,2vw,26px)/1.25 var(--serif)}
+.dify-visual__loss{margin-top:6px;color:#d58b77;font:8px/1.5 var(--mono);letter-spacing:.045em}
+.dify-visual__result--after{background:#e7e8dc;border-color:#e7e8dc;color:#20352d}
+.dify-visual__result--after>.mono{color:#718174}
+.dify-visual__tokens{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+.dify-visual__tokens span{display:inline-flex;align-items:center;padding:7px 9px;border:1px solid #c2cbbd;background:#dce1d5;color:#20352d;font:500 11px/1.35 var(--han)}
+.dify-visual__tokens span:nth-child(2){border-color:#a24a37}
+.dify-visual__tokens span:nth-child(3){font:italic 500 12px/1.35 var(--serif)}
+.dify-visual__preserved{color:#718174!important}
+.dify-visual__foot{padding-top:12px;border-top:1px solid rgba(237,241,230,.18)}
+.dify-visual--cover{min-height:100%;height:100%;padding:clamp(25px,4vw,55px)}
+.case-cover>.dify-visual{min-height:100%;height:100%}
+.dify-demo{padding:clamp(18px,3vw,34px);background:#e7e9e1;border:1px solid #c5cec3;color:#20362e}
+.dify-demo__toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid #c4cec3}
+.dify-demo__toolbar>.mono{font-size:9px;color:#506658;letter-spacing:.08em}
+.dify-demo__body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;margin-top:20px}
+.dify-demo__input,.dify-demo__output{min-width:0;padding:clamp(15px,2vw,23px);border:1px solid #d0d8ce;background:#f3f4ef}
+.dify-demo__input>.mono{font-size:9px;color:#8e4938;letter-spacing:.07em;padding-bottom:12px;border-bottom:1px solid #d5dbd2}
+.dify-demo__segment{display:grid;grid-template-columns:1fr;gap:3px;padding:13px 0;border-bottom:1px solid #dce1da}
+.dify-demo__segment:last-child{border-bottom:0}
+.dify-demo__segment small{font:8px var(--mono);color:#8e4938;letter-spacing:.06em}
+.dify-demo__segment strong{font:500 15px/1.45 var(--han);color:#20362e}
+.dify-demo__segment em{font:8px var(--mono);font-style:normal;color:#78877b}
+.dify-demo__output{background:#20372f;color:#f0efe6;border-color:#20372f}
+.dify-demo__output>.mono{font-size:9px;color:#c2cdbf;letter-spacing:.065em}
+.dify-output-row{display:grid;grid-template-columns:76px minmax(0,1fr) auto;align-items:center;gap:9px;padding:15px 0;border-bottom:1px solid rgba(239,242,230,.17)}
+.dify-output-row>.mono{font-size:8px;color:#aebead}
+.dify-output-row strong{min-width:0;overflow-wrap:anywhere;font:500 14px/1.4 var(--han);color:#f3f0e7}
+.dify-output-row em{font:8px var(--mono);font-style:normal;color:#b9c9b7}
+.dify-output-row.is-lost{opacity:.5}
+.dify-output-row.is-lost em{color:#d58b77}
+.dify-demo__rule{margin-top:15px;padding:12px;background:rgba(255,255,255,.07);color:#c8d1c4;font-size:11px;line-height:1.8}
+.dify-demo__context{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;margin-top:18px;padding-top:17px;border-top:1px solid #c4cec3;align-items:start}
+.dify-demo__context>.mono{padding-top:3px;color:#8e4938;font-size:9px}
+.dify-demo__context p{margin:0;color:#4f6255;font-size:12px;line-height:1.85}
+.dify-demo__foot{margin-top:17px;color:#748276;font-size:8px;letter-spacing:.055em}
+.preview-art .dify-visual{padding:13px;gap:8px}
+.preview-art .dify-visual__top span:first-child{display:none}
+.preview-art .dify-visual__body{grid-template-columns:1fr;gap:0}
+.preview-art .dify-visual__input,.preview-art .dify-visual__result--before{display:none}
+.preview-art .dify-visual__result--after{padding:13px}
+.preview-art .dify-visual__tokens{gap:4px;margin:9px 0}
+.preview-art .dify-visual__tokens span{padding:5px 6px;font-size:9px}
+.preview-art .dify-visual__foot span:nth-child(2){display:none}
+@media(max-width:720px){
+ .dify-visual{padding:18px;gap:12px}
+ .dify-visual__body{grid-template-columns:1fr;gap:10px}
+ .dify-visual__input{display:none}
+ .dify-visual__compare{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .dify-visual__result{padding:11px}
+ .dify-visual__result>.mono{font-size:7px}
+ .dify-visual__tokens{gap:4px;margin:9px 0}
+ .dify-visual__tokens span{padding:5px 6px;font-size:9px}
+ .dify-visual__foot{font-size:7px}
+ .dify-demo__body{grid-template-columns:1fr;gap:10px}
+ .dify-demo__context{grid-template-columns:1fr;gap:6px}
+}
+@media(max-width:420px){
+ .dify-visual__compare{grid-template-columns:1fr}
+ .dify-visual__result--before{display:none}
+ .dify-visual__result--after{padding:13px}
+ .dify-visual__top span:first-child{font-size:7px}
+ .dify-visual__foot span:nth-child(2){display:none}
+ .dify-output-row{grid-template-columns:62px minmax(0,1fr);gap:6px}
+ .dify-output-row em{grid-column:2}
+}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1501,8 +1584,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "number": "03",
     "name": "Dify",
     "kind": "MERGED",
-    "title": "让知识接入、内容治理与文件预览保持完整",
-    "detail": "4 MERGED · KNOWLEDGE / ANNOTATION / MODERATION / PDF PREVIEW · #42171 · #42212 · #42221 · #42956",
+    "title": "4 项合并改进，覆盖知识导入、标注数据、内容审核与 PDF 预览",
+    "detail": "4 MERGED · NOTION RICH_TEXT · KEYWORD VALIDATION · ANNOTATION CSV · PDF WORKER PATH · #42171 · #42212 · #42221 · #42956",
     "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
@@ -1580,8 +1663,8 @@ const MEDIA_SPEC = {
       "Home 精选主视觉",
       "Work 作品预览"
     ],
-    "status": "awaiting_concept_art",
-    "notes": "深色墨绿/纸张米白/氧化红；展示内容差异而非虚构官方 UI；避免伪造品牌标识、PR 截图、用户指标或虚构产品截图。画面尽量无文字，文字由网页叠加。"
+    "status": "implemented_inline_diagram",
+    "notes": "已由首页 Dify Visual 使用 HTML/CSS 图解呈现；展示 Notion rich_text 的 text、mention、equation 三类片段，以及旧提取与 plain_text-first 修复的差异。非官方 UI。"
   },
   "M03": {
     "id": "M03",
@@ -1612,8 +1695,8 @@ const MEDIA_SPEC = {
     "reuse": [
       "开源案例 Case 封面"
     ],
-    "status": "awaiting_concept_art",
-    "notes": "可以复用 M02 的统一母图裁切；不是 Dify 官方界面；如 AI 字符排版不准确，生成无字版本，由 HTML 写文字。"
+    "status": "implemented_inline_diagram",
+    "notes": "详情封面复用 M02 的 HTML/CSS 机制图解，不再显示待制作素材占位。非 Dify 官方 UI。"
   },
   "M05": {
     "id": "M05",
@@ -1660,8 +1743,8 @@ const MEDIA_SPEC = {
     "reuse": [
       "开源案例详情图组"
     ],
-    "status": "awaiting_explainer",
-    "notes": "精确的信息文字、字段和箭头应由 HTML/SVG 绘制；AI 只提供不承载事实信息的概念背景。不生成虚假的代码编辑器、测试截图或指标。"
+    "status": "replaced_by_interactive_explainer",
+    "notes": "原 M07 静态素材位已由案例正文中的交互式 Before/After 机制说明替代，精确展示 plain_text 优先与 text.content 回退，不再保留重复占位图。"
   },
   "M08": {
     "id": "M08",
@@ -1857,7 +1940,34 @@ function mediaSlot(id,variant='wide'){
  return `<div class="media-slot media-slot--${variant}${source?' has-asset':''}" data-asset-id="${id}" role="group" aria-label="${a.name}，${a.topic}">${source}<div class="media-slot__head mono"><span>IMAGE FIELD / ${id}</span><span>${a.ratio} · ${a.priority}</span></div><div class="media-slot__body"><div class="media-slot__index serif">${id}</div><div class="media-slot__title">${a.name}</div><p>${a.topic}</p></div><div class="media-slot__bottom mono"><span>${safe}</span><span>VISUAL PENDING ↗</span></div></div>`;
 }
 function productArt(){return `<div class="feature-art asset-shell">${mediaSlot('M01','feature')}</div>`}
-function sourceArt(){return `<div class="art-secondary asset-shell">${mediaSlot('M02','feature')}</div>`}
+function difyVisual(variant='hero'){
+ return `<div class="dify-visual dify-visual--${variant}" role="img" aria-label="Dify PR 42171 机制图：Notion rich_text 的 text、mention、equation 三类片段，旧逻辑只读取 text.content 会丢失后两类；修复后优先读取 plain_text，并保留 text.content 回退。">
+  <div class="dify-visual__top mono"><span>KNOWLEDGE INGESTION / CONTENT FIDELITY</span><span>DIFY PR #42171 · MERGED</span></div>
+  <div class="dify-visual__body">
+    <div class="dify-visual__input">
+      <div class="dify-visual__section mono">INPUT / NOTION RICH_TEXT[]</div>
+      <div class="dify-visual__segment"><small>01 / TEXT</small><strong>See </strong><em>plain_text + text.content</em></div>
+      <div class="dify-visual__segment"><small>02 / MENTION</small><strong>Project Alpha</strong><em>plain_text</em></div>
+      <div class="dify-visual__segment"><small>03 / EQUATION</small><strong>E = mc²</strong><em>plain_text</em></div>
+    </div>
+    <div class="dify-visual__compare">
+      <article class="dify-visual__result dify-visual__result--before">
+        <div class="mono">BEFORE / TEXT-ONLY EXTRACTION</div>
+        <div class="dify-visual__output">See </div>
+        <div class="dify-visual__loss">× MENTION / SKIPPED</div>
+        <div class="dify-visual__loss">× EQUATION / SKIPPED</div>
+      </article>
+      <article class="dify-visual__result dify-visual__result--after">
+        <div class="mono">AFTER / PLAIN_TEXT-FIRST</div>
+        <div class="dify-visual__tokens"><span>See </span><span>Project Alpha</span><span>E = mc²</span></div>
+        <div class="mono dify-visual__preserved">TEXT + MENTION + EQUATION</div>
+      </article>
+    </div>
+  </div>
+  <div class="dify-visual__foot mono"><span>PLAIN_TEXT FIRST</span><span>TEXT.CONTENT FALLBACK</span><span>2 FOCUSED REGRESSION TESTS</span></div>
+</div>`;
+}
+function sourceArt(){return `<div class="art-secondary dify-art">${difyVisual('hero')}</div>`}
 function systemArt(){return `<div class="art-secondary asset-shell">${mediaSlot('M08','feature')}</div>`}
 const artByType={product:productArt,opensource:sourceArt,systems:systemArt};
 const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -1963,13 +2073,52 @@ function renderWork(){
 function caseScroll(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 function caseCover(type){
  if(type==='product')return mediaSlot('M03','case-cover');
- if(type==='opensource')return mediaSlot('M04','case-cover');
+ if(type==='opensource')return difyVisual('cover');
  return mediaSlot('M08','case-cover');
 }
 function productExperience(){return `<div class="demo-product" aria-label="Vivic 决策与执行责任链路解释图"><div class="demo-side"><div class="mono demo-side-issue">DECISION CONTRACT / 05 RESPONSIBILITIES</div><h3>One decision.<br><i>Five contracts.</i></h3><p>不是把工具越堆越多，而是明确谁负责理解、谁负责执行，以及失败后如何恢复。</p><div class="journey-steps" role="group" aria-label="切换 Agent 决策链路责任点">${PRODUCT_STEPS.map((s,i)=>`<button class="journey-step" data-step="${i}" aria-pressed="${i===0?'true':'false'}"><span>0${i+1}</span><b>${s.label.split(' · ')[1]}</b><em>${['确定性路由','语义选择','校验执行','失败恢复','结果回执'][i]}</em></button>`).join('')}</div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> VIVIC / AGENT DECISION CHAIN</span><span id="product-step-label">01 · RULE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>ARCHITECTURE EXPLAINER · NOT A LIVE SCREEN</span><span>↗</span></div></div></div>`;}
 function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 05</span></div><h4>${s.title}</h4><div class="app-message ${n===4?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
-function sourceExperience(){return `<div class="demo-source" aria-label="开源产品改进前后体验示意"><div class="source-tool"><div class="mono">CHANGE / THE USER'S VIEW</div><div class="source-compare-controls" role="group" aria-label="查看改进前后状态"><button data-source-state="before" aria-pressed="true" >BEFORE <span>01</span></button><button data-source-state="after" aria-pressed="false" >AFTER <span>02</span></button></div></div><div class="source-canvas"><div class="source-window"><div class="source-titlebar mono"><span>KNOWLEDGE IMPORT / EXAMPLE</span><span>◌ ◌ ◌</span></div><div class="source-doc-title">导入文档预览</div><div class="source-doc-meta mono">A SIMPLE CONTENT FIDELITY EXAMPLE</div><div id="source-state-content" aria-live="polite"></div></div><div class="source-context" id="source-context"><div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>概念示意：知识导入时保留结构化内容，能减少用户手动修复。</p></div></div></div>`;}
-function showSourceState(state){const before=state==='before';$('#source-state-content').innerHTML=before?`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="loss">[missing mention]</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p><mark class="loss">[unsupported content]</mark></p></div><div class="source-inline-callout mono">INFORMATION LOST / EXAMPLE</div>`:`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="keep">@项目负责人</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p>保留公式内容：<mark class="keep">E = mc²</mark></p></div><div class="source-inline-callout kept mono">CONTENT PRESERVED / EXAMPLE</div>`;$('#source-context').innerHTML=before?`<div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>文档结构在处理中丢失，使用者需要猜测原文或重新录入。</p>`:`<div class="mono source-context-kicker">THE CHANGE</div><h3>不只是导入成功，<br>还要信息完整。</h3><p>概念示意：把用户关心的内容保真作为可感知的结果。</p>`;$$('[data-source-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceState===state)));}
+function sourceExperience(){return `<div class="dify-demo" aria-label="Notion rich_text 内容提取机制对照">
+  <div class="dify-demo__toolbar">
+    <span class="mono">NOTION API / RICH_TEXT SEGMENTS</span>
+    <div class="source-compare-controls" role="group" aria-label="查看修复前后的提取结果">
+      <button data-source-state="before" aria-pressed="true">BEFORE <span>01</span></button>
+      <button data-source-state="after" aria-pressed="false">AFTER <span>02</span></button>
+    </div>
+  </div>
+  <div class="dify-demo__body">
+    <section class="dify-demo__input">
+      <div class="mono">INPUT / SAME SOURCE</div>
+      <div class="dify-demo__segment"><small>01 · TEXT</small><strong>See </strong><em>plain_text + text.content</em></div>
+      <div class="dify-demo__segment"><small>02 · MENTION</small><strong>Project Alpha</strong><em>plain_text</em></div>
+      <div class="dify-demo__segment"><small>03 · EQUATION</small><strong>E = mc^2</strong><em>plain_text</em></div>
+    </section>
+    <section class="dify-demo__output" aria-live="polite">
+      <div class="mono" id="source-state-kicker">BEFORE / LEGACY TEXT-ONLY EXTRACTION</div>
+      <div id="source-state-content"></div>
+      <div class="dify-demo__rule" id="source-state-rule">旧逻辑只读取 text.content；没有 text 对象的 mention 与 equation 片段被跳过。</div>
+    </section>
+  </div>
+  <div class="dify-demo__context" id="source-context">
+    <span class="mono">THE PRODUCT ISSUE</span>
+    <p>Notion API 已返回这些片段的 plain_text，但提取路径没有读取它，导致内容在进入知识库前静默丢失。</p>
+  </div>
+  <div class="dify-demo__foot mono">EXPLANATORY RECONSTRUCTION · NOT OFFICIAL DIFY UI · TWO FOCUSED REGRESSION TESTS</div>
+</div>`;}
+function showSourceState(state){
+ const before=state==='before';
+ $('#source-state-kicker').textContent=before?'BEFORE / LEGACY TEXT-ONLY EXTRACTION':'AFTER / PLAIN_TEXT-FIRST EXTRACTION';
+ $('#source-state-content').innerHTML=before
+  ?`<div class="dify-output-row"><span class="mono">TEXT</span><strong>See </strong><em>RETAINED</em></div><div class="dify-output-row is-lost"><span class="mono">MENTION</span><strong>Project Alpha</strong><em>SKIPPED</em></div><div class="dify-output-row is-lost"><span class="mono">EQUATION</span><strong>E = mc^2</strong><em>SKIPPED</em></div>`
+  :`<div class="dify-output-row"><span class="mono">TEXT</span><strong>See </strong><em>PLAIN_TEXT</em></div><div class="dify-output-row"><span class="mono">MENTION</span><strong>Project Alpha</strong><em>PLAIN_TEXT</em></div><div class="dify-output-row"><span class="mono">EQUATION</span><strong>E = mc^2</strong><em>PLAIN_TEXT</em></div>`;
+ $('#source-state-rule').textContent=before
+  ?'旧逻辑：仅读取 text.content。mention / equation 没有 text 对象，因此整段被跳过。'
+  :'修复后：优先读取每段 plain_text；缺失时回退到 text.content；只跳过真正为空的片段。';
+ $('#source-context').innerHTML=before
+  ?`<span class="mono">THE PRODUCT ISSUE</span><p>导入任务可以完成，但 mention 与公式内容在提取时静默丢失。下游知识内容因此不完整。</p>`
+  :`<span class="mono">THE PRODUCT CHANGE</span><p>读取策略从“只认 text 对象”调整为“优先读取 plain_text，并保留 text.content 回退”，同时保持原有块结构、缩进和递归处理。</p>`;
+ $$('[data-source-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceState===state)));
+}
 const SYSTEM_NODES=[
  ['INTENT','输入与目标','将用户意图转换为可处理的任务上下文，不假设输入天然完整。','输入：目标 / 上下文','输出：任务意图'],
  ['RESOLVE','对象解析','将自然语言中的人、空间或业务对象映射到可确认的规范引用，不凭空猜测标识符。','输入：目标 / 系统对象','输出：规范化对象引用'],
@@ -1990,9 +2139,9 @@ function renderCase(id){
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
  $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
  $('#case-edition-type').textContent=c.visibility==='approved_public'?'PUBLIC CONTENT / EDITORIAL EXPLANATION':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':'INTERNAL CONTENT DRAFT / REQUIRES APPROVAL';
- $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':c.verified?'开源主题图为待制作的说明性素材，非官方截图':'原始素材与可公开边界仍在复核';
+ $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':c.id==='opensource'?'基于已合并 PR #42171 的机制图解，非 Dify 官方 UI':c.verified?'开源主题图为说明性素材，非官方截图':'原始素材与可公开边界仍在复核';
  $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
- $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。视觉主图将由单独素材工作补齐，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'本页仍是内部评审稿。当前数字与部署状态来自项目内部汇总，尚未独立复核原始日志；代码级个人归因仍需 commit/PR、设计记录与队友确认。2026-11-05 后端已部署，前端仍有能力待接入，48 条浏览器全场景未重跑、真机语音未验收；团队素材公开许可尚未确认。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
+ $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.id==='opensource'?'本页聚焦 Dify PR #42171：修复 Notion rich_text 提取时 mention 与 equation 片段被跳过的问题。改动优先读取 plain_text，并回退到 text.content；回归测试覆盖两个提取路径。图示为机制重建，不是 Dify 官方 UI。没有据此宣称 RAG 检索准确率、用户指标或业务转化提升。':c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。图示为独立机制说明，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'本页仍是内部评审稿。当前数字与部署状态来自项目内部汇总，尚未独立复核原始日志；代码级个人归因仍需 commit/PR、设计记录与队友确认。2026-11-05 后端已部署，前端仍有能力待接入，48 条浏览器全场景未重跑、真机语音未验收；团队素材公开许可尚未确认。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
  const sourceLinks=c.url?[{label:'GitHub · Dify PR #42171',url:c.url,supports:'上游合并记录'}]:publicEvidence;
  $('#case-source-link').hidden=!sourceLinks.length;
@@ -2001,7 +2150,7 @@ function renderCase(id){
  $('#case-experience-title').textContent=d.experienceTitle;$('#case-experience-intro').textContent=d.experienceIntro;
  $('#case-stage').innerHTML=c.presentation==='evidence'?narrativeExperience(c):c.type==='product'?productExperience():c.type==='opensource'?sourceExperience():systemExperience();
  $('#case-figure-caption').textContent=d.caption;
- const mediaCases={product:['M05','M06'],opensource:['M07'],systems:[]};
+ const mediaCases={product:['M05','M06'],opensource:[],systems:[]};
  const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
  $('#case-media-insert').hidden=!mediaIds.length;
  $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">SUPPORTING MATERIAL / ASSET BRIEF</div><h3>More than a <i>cover.</i></h3><p>${c.type==='product'?'这里保留真正的产品截图。不是 AI 想象出来的界面。':'这一位置用于机制说明图；实际 PR 仍以独立的公开源链接说明。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
