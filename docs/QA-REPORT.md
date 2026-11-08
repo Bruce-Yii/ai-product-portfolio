@@ -23,3 +23,23 @@ Tested against the repository-ready ZIP contents on 2026-11-09. This is a local 
 
 - This does not verify live external links, Vercel routing, domain configuration, or team permission for project media.
 - The older modular authoring package contains a stale `patch_mainline.py` migration script and stale smoke-test assertions; it was not used as the deployment source.
+
+
+## Editorial branch QA · 2026-11-09
+
+Target: `portfolio/editorial-product-positioning-2026-11-09`. This branch is not merged or deployed.
+
+### Structural checks
+
+- Main-site case data parses: 8 case records; all 8 resolve to their case-detail data.
+- Curated contribution index parses: 7 entries, including OpenClaw #145220, QwenPaw #7593, and FunASR #3703.
+- The three newly listed PRs were checked against GitHub: authored by Bruce-Yii and merged.
+- Laya GitHub query snapshot (2026-11-09): 47 authored PRs, 40 merged, 85 PRs returned by `reviewed-by:Bruce-Yii`.
+- Both the main page and Laya casebook now carry page-level `noindex, nofollow, noarchive` metadata. `robots.txt` remains `Disallow: /`; `vercel.json` retains the `X-Robots-Tag` noindex header.
+- No CSS or event-handling logic was changed in this editorial pass.
+
+### Not re-run / release limitations
+
+- Responsive browser checks and interactive regression were not rerun after the contribution list expansion; the earlier viewport results refer to the prior repository-ready ZIP.
+- External links, live routing, and team permission for project media were not revalidated in a browser.
+- No indexing protections were removed, no production deployment was made, and no public launch was approved.
