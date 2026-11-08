@@ -906,6 +906,8 @@ body {background:var(--paper);color:var(--ink)}
 
 
 .laya-casebook-cta{margin:22px 0 0;max-width:480px}.laya-casebook-cta[hidden]{display:none}.laya-casebook-cta a{display:flex;flex-direction:column;gap:8px;padding:18px 20px;border:1px solid var(--line,#b8c0b6);background:rgba(255,255,255,.48);transition:border-color .2s,transform .2s}.laya-casebook-cta a:hover{border-color:var(--accent,#963f2e);transform:translateY(-2px)}.laya-casebook-cta a:focus-visible{outline:2px solid var(--accent,#963f2e);outline-offset:3px}.laya-casebook-cta .mono{font-size:10px;color:var(--accent,#963f2e)}.laya-casebook-cta strong{font-size:17px}.laya-casebook-cta strong i{font-style:normal;color:var(--accent,#963f2e)}.laya-casebook-cta small{font-size:10px;letter-spacing:.06em;color:#58665d}
+
+.case-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:38px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line)}.case-metric{min-width:0;padding:21px 24px 23px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px}.case-metric+.case-metric{padding-left:24px}.case-metric:last-of-type{border-right:0}.case-metric__label{color:var(--muted);font-size:9px}.case-metric__value{font:500 clamp(21px,2.2vw,34px)/1.2 var(--sans);letter-spacing:-.055em;overflow-wrap:anywhere}.case-metric__note{font:400 11px/1.8 var(--han-sans);color:var(--muted)}.case-metrics-note{grid-column:1/-1;padding:12px 0;color:var(--muted);font-size:8px;letter-spacing:.08em}@media(max-width:720px){.case-metrics{grid-template-columns:1fr}.case-metric,.case-metric+.case-metric{padding:16px 0;border-right:0;border-bottom:1px solid var(--line)}.case-metric:last-of-type{border-bottom:0}.case-metrics-note{padding:12px 0}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1046,7 +1048,7 @@ body {background:var(--paper);color:var(--ink)}
             <div class="mono case-section-index">03 / THE OUTCOME</div>
             <h2 id="case-outcome-title">What remains.</h2>
             <div class="case-outcome-grid"><div class="case-outcome-big" id="case-outcome-statement"></div><div id="case-outcome-detail" class="case-outcome-detail"></div></div>
-            <div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">A NOTE ON THIS PROTOTYPE</span><p id="case-scope-copy">此页仅用于验证案例内容的表达方式。交互示意、占位文案和画面不代表任何具体项目的实际交付、数据或用户结果；接入真实案例后再替换。</p></div>
+            <div id="case-metrics" class="case-metrics" hidden></div><div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">A NOTE ON THIS PROTOTYPE</span><p id="case-scope-copy">此页仅用于验证案例内容的表达方式。交互示意、占位文案和画面不代表任何具体项目的实际交付、数据或用户结果；接入真实案例后再替换。</p></div>
           </section>
         </div>
       </div>
@@ -1616,16 +1618,16 @@ const MEDIA_FILES = {
 // Generated from reviewed case packs. Do not edit manually.
 const CASE_DETAILS = {
   "product": {
-    "headnote": "Vivic 团队产品案例草稿。下方交互是体验结构示意，不是产品真实截图。",
-    "contextTitle": "模型会理解，不等于产品能可靠行动。",
-    "contextLead": "一个卡片助理要做的不只是把语音变成文字，而是找到正确目标、执行多个步骤、解释歧义并确认结果。",
-    "contextCopy": "Vivic 原有卡片与多模态体验已较完整，复杂 Agent 链路却存在多个组件争夺意图决策权的问题。后续重构将规则直出、模型选工具和目标、宿主执行及回执划分清楚。内部 API 回归和后端发布记录存在，但本稿不将它们外推为真实用户使用改善。",
-    "experienceTitle": "把体验拆成可理解的三个时刻。",
-    "experienceIntro": "点击 01—03 查看概念性的输入、结构化与确认过程。真实产品素材将来自团队授权的界面，不用 AI 伪造 UI。",
-    "caption": "FIG. 01 — VIVIC / ILLUSTRATIVE JOURNEY / NOT A LIVE SCREEN",
-    "outcomeTitle": "目前能确认什么？",
-    "outcomeBig": "From capture\u003cbr\u003e\u003ci\u003eto next action.\u003c/i\u003e",
-    "outcome": "内部记录支持后端工具链与回归推进。前端接入、真实用户场景与团队素材公开许可尚未全部过 Gate；此处的流程演示仍是解释性示意。"
+    "headnote": "Vivic 团队产品案例的内部评审稿。下方为基于项目架构的解释图，不是产品真实 UI。",
+    "contextTitle": "模型选中了动作，谁来保证它真的执行正确？",
+    "contextLead": "多模态卡片助理的难点，不只是把输入变成卡片，而是让语义决策、权限校验、真实执行和最终回执各自有明确的责任人。",
+    "contextCopy": "旧稳定版尚未启用统一 Tool Calling；演进过程中工具一度按卡片类型膨胀到 27 项。更深层的问题是规则、旧规划器和宿主适配逻辑各自解释意图，宿主甚至可能按名称匹配并改写模型选中的目标。重构重点不是继续增加工具，而是让规则只处理确定性格式、模型拥有语义选择权、宿主负责校验执行，并把真实结果或结构化错误回传。最终收敛为 14 个按能力组织的工具入口（12 个核心能力 + 2 个数据能力）。",
+    "experienceTitle": "把 Agent 决策链路拆成五个可验收的责任点。",
+    "experienceIntro": "从确定性规则、模型语义选择到宿主校验、失败恢复与结果回执，逐步查看每一层的输入、输出和责任边界。下方是基于项目架构的解释图，不是实时产品 UI 或操作录像。",
+    "caption": "FIG. 01 — VIVIC / DECISION–EXECUTION CONTRACT / ARCHITECTURE EXPLAINER",
+    "outcomeTitle": "重构结果：可测的决策链路，而不只是更多工具。",
+    "outcomeBig": "53 / 60<br><i>to 58–60 / 60</i>",
+    "outcome": "项目内部记录显示，统一 60 题 API 回归在旧稳定版基线为 53/60，随后六轮为 58、59、60、60、59、60；API p50 从 3.625 秒降至 1.655–1.828 秒。后端于 2026-11-05 部署；前端仍有能力待接入，48 条浏览器全场景用例未重跑，真机语音未验收。成本数字受缓存条件影响，不作为同口径账单或真实用户效果。"
   },
   "opensource": {
     "headnote": "本人署名、上游已合并的开源贡献。交互是依据问题制作的解释性示意。",
@@ -1636,7 +1638,7 @@ const CASE_DETAILS = {
     "experienceIntro": "切换 Before / After 查看依据问题机制重建的简单例子。画面不是 Dify 官方界面截图。",
     "caption": "FIG. 02 — EXPLANATORY RECONSTRUCTION / DIFY PR #42171",
     "outcomeTitle": "已合并的实际改变。",
-    "outcomeBig": "Keep the\u003cbr\u003e\u003ci\u003emeaning.\u003c/i\u003e",
+    "outcomeBig": "Keep the<br><i>meaning.</i>",
     "outcome": "Bruce-Yii 提交的 Dify PR #42171 已于 2026 年 9 月合并。已确认的是上游接受的代码修改及相关测试；尚不宣称具体版本已发布、用户使用指标提升或业务转化效果。"
   },
   "agent-evaluation-lab": {
@@ -1714,28 +1716,44 @@ const CASE_DETAILS = {
 };
 const PRODUCT_STEPS = [
   {
-    "label": "01 · CAPTURE",
-    "badge": "ILLUSTRATIVE INPUT",
-    "title": "接收一条碎片化信息。",
-    "quote": "“周五和队友同步 Demo 进度，记得把功能反馈整理成清单。”",
-    "hint": "这里用概念示意说明如何保留时间、对象和待办，而不是模拟已完成的产品识别能力。",
-    "foot": "CONCEPT / NOT LIVE"
+    "label": "01 · RULE",
+    "badge": "DETERMINISTIC ROUTE",
+    "title": "确定性格式，直接交给规则处理。",
+    "quote": "格式完全确定 → 规则直出；不进入语义规划。",
+    "hint": "规则只处理确定性格式，不和模型争夺用户意图的解释权。",
+    "foot": "RULES OWN EXACT FORMATS"
   },
   {
-    "label": "02 · STRUCTURE",
-    "badge": "ILLUSTRATIVE SPACE CARD",
-    "title": "整理为可以回看的卡片。",
-    "quote": "\u003cul\u003e\u003cli\u003e\u003cspan\u003e01\u003c/span\u003e主题：Demo 进度同步\u003c/li\u003e\u003cli\u003e\u003cspan\u003e02\u003c/span\u003e对象：项目队友\u003c/li\u003e\u003cli\u003e\u003cspan\u003e03\u003c/span\u003e下一步：整理反馈清单\u003c/li\u003e\u003c/ul\u003e",
-    "hint": "卡片承接输入到任务的理解，但此界面是网站解释模型，不是 Vivic 当前真实 UI。",
-    "foot": "CONCEPT / NOT LIVE"
+    "label": "02 · MODEL",
+    "badge": "SEMANTIC DECISION",
+    "title": "模型选择工具，也选择目标。",
+    "quote": "模型输出：工具选择 + 目标引用 + 必要参数。",
+    "hint": "宿主可以召回候选、验证目标，但不能按名称猜测或擅自替换模型选中的对象。",
+    "foot": "MODEL OWNS SEMANTIC CHOICE"
   },
   {
-    "label": "03 · CONFIRM",
-    "badge": "ILLUSTRATIVE STATE",
-    "title": "区分建议与真实执行。",
-    "quote": "\u003cdiv class=\"result-check\"\u003e✓\u003c/div\u003e\u003cstrong\u003e建议已整理\u003c/strong\u003e\u003csmall\u003e下一步尚待确认；未模拟连接真实外部系统。\u003c/small\u003e",
-    "hint": "避免用“已完成”冒充实际执行。最终公开案例需要展示产品真实的状态读回。",
-    "foot": "CONCEPT / NOT LIVE"
+    "label": "03 · HOST",
+    "badge": "VALIDATE BEFORE SIDE EFFECT",
+    "title": "宿主校验后，才允许真实执行。",
+    "quote": "Schema ✓　权限 ✓　目标 ✓",
+    "hint": "宿主检查参数结构、权限与目标是否有效；不满足执行条件就拒绝或要求确认。",
+    "foot": "HOST OWNS VALIDATION & EXECUTION"
+  },
+  {
+    "label": "04 · RECOVER",
+    "badge": "STRUCTURED TOOL ISSUE",
+    "title": "失败不是终点，而是可处理的输入。",
+    "quote": "<strong>ToolIssue</strong><ul><li><span>01</span>code — 错误类型</li><li><span>02</span>message — 发生了什么</li><li><span>03</span>hint — 可采取的修复方向</li></ul>",
+    "hint": "结构化问题回传模型，让模型基于真实失败原因修复或重试，而不是把所有失败都变成终局澄清。",
+    "foot": "ERROR → MODEL → REPAIR / RETRY"
+  },
+  {
+    "label": "05 · RECEIPT",
+    "badge": "OBSERVE BEFORE SPEAK",
+    "title": "实际执行后，再组织最终回复。",
+    "quote": "<div class=\"result-check\">✓</div><strong>结果回执已回传</strong><small>示意：最终回复依据宿主实际返回，不提前宣称成功。</small>",
+    "hint": "区分已完成、失败与部分成功；口播只描述真实执行结果。",
+    "foot": "ACTION → OBSERVE → SPEAK"
   }
 ];
 
@@ -1847,8 +1865,8 @@ function caseCover(type){
  if(type==='opensource')return mediaSlot('M04','case-cover');
  return mediaSlot('M08','case-cover');
 }
-function productExperience(){return `<div class="demo-product" aria-label="产品概念交互示例"><div class="demo-side"><div class="mono demo-side-issue">DESIGNED JOURNEY / 03 STATES</div><h3>One intention.<br><i>Three moments.</i></h3><p>一个任务的体验不应该在“模型输出”处结束。</p><div class="journey-steps" role="group" aria-label="切换产品体验步骤"><button class="journey-step" data-step="0" aria-pressed="true" ><span>01</span><b>Capture</b><em>理解意图</em></button><button class="journey-step" data-step="1" aria-pressed="false" ><span>02</span><b>Structure</b><em>形成下一步</em></button><button class="journey-step" data-step="2" aria-pressed="false" ><span>03</span><b>Confirm</b><em>结果有回执</em></button></div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> PERSONAL SPACE / DEMO</span><span id="product-step-label">01 · CAPTURE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>INTERACTION STUDY · NOT AN ACTUAL PRODUCT</span><span>↗</span></div></div></div>`;}
-function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 03</span></div><h4>${s.title}</h4><div class="app-message ${n===2?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
+function productExperience(){return `<div class="demo-product" aria-label="Vivic 决策与执行责任链路解释图"><div class="demo-side"><div class="mono demo-side-issue">DECISION CONTRACT / 05 RESPONSIBILITIES</div><h3>One decision.<br><i>Five contracts.</i></h3><p>不是把工具越堆越多，而是明确谁负责理解、谁负责执行，以及失败后如何恢复。</p><div class="journey-steps" role="group" aria-label="切换 Agent 决策链路责任点">${PRODUCT_STEPS.map((s,i)=>`<button class="journey-step" data-step="${i}" aria-pressed="${i===0?'true':'false'}"><span>0${i+1}</span><b>${s.label.split(' · ')[1]}</b><em>${['确定性路由','语义选择','校验执行','失败恢复','结果回执'][i]}</em></button>`).join('')}</div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> VIVIC / AGENT DECISION CHAIN</span><span id="product-step-label">01 · RULE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>ARCHITECTURE EXPLAINER · NOT A LIVE SCREEN</span><span>↗</span></div></div></div>`;}
+function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 05</span></div><h4>${s.title}</h4><div class="app-message ${n===4?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
 function sourceExperience(){return `<div class="demo-source" aria-label="开源产品改进前后体验示意"><div class="source-tool"><div class="mono">CHANGE / THE USER'S VIEW</div><div class="source-compare-controls" role="group" aria-label="查看改进前后状态"><button data-source-state="before" aria-pressed="true" >BEFORE <span>01</span></button><button data-source-state="after" aria-pressed="false" >AFTER <span>02</span></button></div></div><div class="source-canvas"><div class="source-window"><div class="source-titlebar mono"><span>KNOWLEDGE IMPORT / EXAMPLE</span><span>◌ ◌ ◌</span></div><div class="source-doc-title">导入文档预览</div><div class="source-doc-meta mono">A SIMPLE CONTENT FIDELITY EXAMPLE</div><div id="source-state-content" aria-live="polite"></div></div><div class="source-context" id="source-context"><div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>概念示意：知识导入时保留结构化内容，能减少用户手动修复。</p></div></div></div>`;}
 function showSourceState(state){const before=state==='before';$('#source-state-content').innerHTML=before?`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="loss">[missing mention]</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p><mark class="loss">[unsupported content]</mark></p></div><div class="source-inline-callout mono">INFORMATION LOST / EXAMPLE</div>`:`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="keep">@项目负责人</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p>保留公式内容：<mark class="keep">E = mc²</mark></p></div><div class="source-inline-callout kept mono">CONTENT PRESERVED / EXAMPLE</div>`;$('#source-context').innerHTML=before?`<div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>文档结构在处理中丢失，使用者需要猜测原文或重新录入。</p>`:`<div class="mono source-context-kicker">THE CHANGE</div><h3>不只是导入成功，<br>还要信息完整。</h3><p>概念示意：把用户关心的内容保真作为可感知的结果。</p>`;$$('[data-source-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceState===state)));}
 const SYSTEM_NODES=[
@@ -1873,7 +1891,7 @@ function renderCase(id){
  $('#case-edition-type').textContent=c.visibility==='approved_public'?'PUBLIC CONTENT / EDITORIAL EXPLANATION':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':'INTERNAL CONTENT DRAFT / REQUIRES APPROVAL';
  $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':c.verified?'开源主题图为待制作的说明性素材，非官方截图':'原始素材与可公开边界仍在复核';
  $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
- $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。视觉主图将由单独素材工作补齐，不作为产品运行证据。交互演示为解释性复现。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
+ $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。视觉主图将由单独素材工作补齐，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'本页仍是内部评审稿。当前数字与部署状态来自项目内部汇总，尚未独立复核原始日志；代码级个人归因仍需 commit/PR、设计记录与队友确认。2026-11-05 后端已部署，前端仍有能力待接入，48 条浏览器全场景未重跑、真机语音未验收；团队素材公开许可尚未确认。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
  $('#case-source-link').hidden=!c.verified||c.presentation==='evidence';
  $('#case-source-link').innerHTML=c.verified&&c.presentation!=='evidence'?'<div class="mono">PRIMARY SOURCE / PUBLIC RECORD</div><a target="_blank" rel="noopener noreferrer" href="https://github.com/langgenius/dify/pull/42171"><span>GitHub · Dify PR #42171</span><span>OPEN SOURCE ↗</span></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/langgenius/dify/issues/42170"><span>Related Issue #42170</span><span>VIEW ISSUE ↗</span></a>':'';
  $('#case-context-title').textContent=d.contextTitle;$('#case-context-lead').textContent=d.contextLead;$('#case-context-copy').textContent=d.contextCopy;
@@ -1884,7 +1902,7 @@ function renderCase(id){
  const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
  $('#case-media-insert').hidden=!mediaIds.length;
  $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">SUPPORTING MATERIAL / ASSET BRIEF</div><h3>More than a <i>cover.</i></h3><p>${c.type==='product'?'这里保留真正的产品截图。不是 AI 想象出来的界面。':'这一位置用于机制说明图；实际 PR 仍以独立的公开源链接说明。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
- $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;
+ $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const metricRoot=document.getElementById('case-metrics');const metrics=c.id==='product'?[{label:'统一 60 题 API 回归',value:'53/60 → 58–60/60',note:'旧稳定版基线 → 后续六轮结果范围'},{label:'API 请求至最终结果 p50',value:'3.63s → 1.66–1.83s',note:'约下降 53%；项目内部测量口径'},{label:'估算单轮 Token 成本',value:'¥0.019 → ¥0.0006',note:'高缓存命中条件下估算，非同口径实付账单'}]:[];if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>`<article class="case-metric"><span class="mono case-metric__label">${esc(m.label)}</span><strong class="case-metric__value">${esc(m.value)}</strong><small class="case-metric__note">${esc(m.note)}</small></article>`).join('')+'<p class="case-metrics-note mono">98.5% CACHE HIT · 55 MODEL-CALL SAMPLE · PROJECT INTERNAL RECORDS / NOT INDEPENDENTLY AUDITED</p>':'';}
  if(c.presentation!=='evidence'){if(c.type==='product')showProductStep(0);if(c.type==='opensource')showSourceState('before');if(c.type==='systems')showSystemNode(2)}
  const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
 }
