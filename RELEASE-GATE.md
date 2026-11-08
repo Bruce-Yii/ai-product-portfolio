@@ -29,3 +29,13 @@ Do not infer approval from a case task being marked complete, a merged PR, or re
 - The root domain and existing `www.hcfind.com → hcfind.com` redirect may be reassigned to the portfolio Vercel project.
 - This approval covers domain routing and public accessibility of the current release candidate.
 - It does **not** automatically approve search indexing or waive the remaining content/evidence checks above. Keep page-level `noindex`, `robots.txt` blocking, and Vercel `X-Robots-Tag` until the exact eight main-site cases, Laya casebook, evidence, and visual permissions have been reviewed and separately approved.
+
+
+### Domain replacement completed · 2026-11-09
+
+- Production deployment: `dpl_8SPG1qJMXwvCTEuv9Czj47hApzTL` (READY).
+- `hcfind.com` now routes to `ai-product-portfolio`; `www.hcfind.com` redirects to the root domain (308).
+- Both the homepage and `/cases/laya/` return HTTP 200.
+- The former `hcfind-home` project and its deployment remain intact; only the custom-domain aliases were reassigned.
+- No DNS / nameserver changes.
+- Search indexing remains disabled until the content/evidence and visual-permission review is completed.
