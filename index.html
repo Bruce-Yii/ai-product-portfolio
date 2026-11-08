@@ -1005,7 +1005,7 @@ body {background:var(--paper);color:var(--ink)}
       </div>
       <div class="cap-grid" id="cap-grid" hidden></div>
       <section class="verified-strip" aria-label="公开可核实的其他贡献">
-        <div class="verified-head"><div class="mono eyebrow">PUBLIC CONTRIBUTIONS / SELECTED</div><h2>More <i>signal.</i></h2><p>从模型状态、知识保真到 Agent 恢复与多模态评测，展示真实产品改进如何进入上游。</p></div>
+        <div class="verified-head"><div class="mono eyebrow">UPSTREAM PRODUCT WORK / SELECTED</div><h2>More <i>signal.</i></h2><p>从模型状态、知识保真到 Agent 运行时可靠性与流式 API 契约，展示产品问题如何转化为上游改进和技术判断。</p></div>
         <div id="work-contributions" class="verified-list"></div>
       </section>
     </div>
@@ -1463,8 +1463,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "05",
     "name": "OpenClaw",
-    "title": "让诊断修复真正恢复 Gateway 运行",
-    "detail": "PR #145220 · MERGED",
+    "title": "补齐 Agent 运行时的诊断、凭据与适配器恢复边界",
+    "detail": "3 independent merged PRs · #145220 / #141569 / #160156",
     "url": "https://github.com/openclaw/openclaw/pull/145220"
   },
   {
@@ -1480,6 +1480,14 @@ const VERIFIED_CONTRIBUTIONS = [
     "title": "让语音转写的标点时间戳对齐到正确语句",
     "detail": "PR #3703 · MERGED",
     "url": "https://github.com/modelscope/FunASR/pull/3703"
+  },
+  {
+    "number": "08",
+    "name": "Google ADK",
+    "title": "围绕流式回调生命周期与响应字段归属，推动 API 契约讨论",
+    "detail": "Issue #7455 · RFC OPEN / PR #8005 · tests-only Draft",
+    "status": "RFC / OPEN",
+    "url": "https://github.com/google/adk-python/issues/7455"
   }
 ];
 
@@ -1789,7 +1797,7 @@ function narrativeExperience(c){
   return `<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>THE DECISIONS / VERIFIED WHERE POSSIBLE</span><span>${String(decisions.length).padStart(2,'0')} THREADS</span></div><div class="narrative-evidence__decisions">${decisions.map((d,i)=>`<article><span class="mono">0${i+1} / DECISION</span><p>${esc(d)}</p></article>`).join('')}</div><div class="narrative-evidence__evidence"><div class="mono">TRACEABLE EVIDENCE</div>${sources.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(src.label)}<small>${esc(src.state)}</small></span><span>↗</span></a>`).join('')}</div><div class="narrative-evidence__boundary"><b>个人责任</b><p>${esc(e.role)}</p><b>公开边界</b><p>${esc(e.boundary)}</p></div></div>`;
 }
 document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a class="index-row" href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono number">${c.number}</span><strong>${c.name}</strong><span class="category">${c.title}<br><small>${c.detail}</small></span><span class="go">↗</span></a>`).join('');
-document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono">${c.kind==='CASEBOOK'?'CASEBOOK / 01':c.number+' / MERGED'}</span><span><strong>${c.name}</strong><small>${c.title} · ${c.detail}</small></span><span>↗</span></a>`).join('');
+document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono">${c.status||(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.number+' / MERGED')}</span><span><strong>${c.name}</strong><small>${c.title} · ${c.detail}</small></span><span>↗</span></a>`).join('');
 const FEATURED = CASES.filter(c=>c.homeFeatured).map(c=>c.id);
 let featured=FEATURED[0]||CASES[0]?.id;
 const picksEl=document.getElementById('showcase-picks');
