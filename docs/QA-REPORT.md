@@ -44,6 +44,7 @@ The following changes were made after the repository-ready ZIP QA above. This ad
 - Confirmed the metrics block is rendered only for the Vivic case.
 - Ran Node syntax checking and a standalone mocked-DOM interaction smoke test for the new functions: Vivic step 05 updates the five selected states correctly; Cherry Failed shows only the all-credentials-failed sample row, and All restores all five sample rows.
 - Post-PR diff review caught a single-element selector where a multi-element query was required; it was corrected in a subsequent branch commit and the interaction smoke test was rerun.
+- Re-fetched the final branch source after the correction and confirmed the five-step handler updates all five step buttons.
 - Confirmed page-level noindex, robots.txt crawler blocking, and Vercel X-Robots-Tag remain in place.
 
 ### Not performed on this branch
