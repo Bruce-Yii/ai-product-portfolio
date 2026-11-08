@@ -33,7 +33,7 @@ Do not infer approval from a case task being marked complete, a merged PR, or re
 
 ### Domain replacement completed · 2026-11-09
 
-- Current production deployment: `dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK` (READY; contains the prior eight-case candidate).
+- Current production deployment: `dpl_DU86D71ntVNtihTr4spaUQZBXETr` (READY; seven-case candidate). Previous eight-case deployment `dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK` remains READY as a rollback point.
 - `hcfind.com` now routes to `ai-product-portfolio`; `www.hcfind.com` redirects to the root domain (308).
 - Both the homepage and `/cases/laya/` return HTTP 200.
 - The former `hcfind-home` project and its deployment remain intact; only the custom-domain aliases were reassigned.
@@ -50,7 +50,7 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Dify is a contribution group in the Open Source Contributions index, not a standalone Case in the proposed seven-case candidate.
 - Its four merged PRs address independent issues: Notion rich-text extraction (#42171), moderation keyword-row validation (#42212), annotation CSV literal-NA preservation (#42221), and PDF worker base-path resolution (#42956).
 - The four PRs remain individually identifiable evidence. Their shared repository does not establish one unified product case.
-- The current production deployment still contains the previous eight-case candidate. The seven-case correction is a review-branch change; do not update the production alias until the owner approves the revised candidate.
+- At the time of this entry, the seven-case correction was a review-branch change. It was subsequently approved for production and deployed on 2026-11-09; see the final production release record below.
 
 
 ### Seven-case candidate preview · 2026-11-09
@@ -67,3 +67,18 @@ A project or repository does not qualify for a standalone Case page merely becau
 - URL: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
 - Source commit: 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
 - Homepage and Laya casebook route return HTTP 200; Dify is contribution-only; noindex remains.
+
+
+## Seven-case candidate — production release · 2026-11-09
+
+- Owner instruction: use the revised implementation and deploy it directly; HTML fallback was acceptable if deployment was blocked.
+- Production deployment: dpl_DU86D71ntVNtihTr4spaUQZBXETr · READY.
+- Production URL: https://hcfind.com
+- Source branch: portfolio/modular-mainline-2026-11-09.
+- Source commit: 2349e1a7a6b873b45a10e56830ef09c6679edb1c.
+- Reassigned hcfind.com to the new production deployment; www.hcfind.com remains a permanent 308 redirect to the root domain.
+- Post-deploy verification: homepage HTTP 200; seven Case records; Dify absent from Case records and featured order; Dify retained in the contribution index with four independent PRs; Laya casebook route HTTP 200.
+- noindex, nofollow, noarchive remains enabled. Search indexing was not enabled.
+- Previous production deployment dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK remains READY and is retained as a rollback point.
+- Runtime error-log query for the full 1h window exceeded Hobby retention; retried for the latest 30m and received no matching error/fatal runtime logs. This is not a full monitoring/observability guarantee.
+- No DNS or nameserver changes.
