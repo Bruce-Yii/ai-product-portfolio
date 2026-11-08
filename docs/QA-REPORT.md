@@ -126,3 +126,11 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - No full browser render, cross-browser interaction regression, or new 1440 / 390 / 360px viewport pass after this optimization pass.
 - No Vercel preview, production deployment, domain change, or indexing change.
 - The existing PR remains a review branch; this pass does not authorize public launch.
+
+
+### Editorial polish added after the source-level pass
+
+- Tightened the Dify, Agent Evaluation, AWRP, and dsh-market case titles for faster scanning while retaining their original product meaning.
+- Replaced generic placeholder captions with case-specific explanatory captions for Agent Evaluation, AWRP, dsh-market, Laya, and Personal Context Layer. Captions explicitly identify the visuals as illustrative models / workflows, not product screenshots.
+- Shortened the compact header and hero signature line to avoid mobile-width overflow risk.
+- Re-parsed the complete inline JavaScript after these edits: **PASS**. Re-checked 8 case records, 8 matching detail records, all 8 distinct captions, and the explicit Vivic → Laya → Cherry → Dify featured order.
