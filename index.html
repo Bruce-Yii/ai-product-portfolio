@@ -1931,7 +1931,7 @@ const workSummary=document.getElementById('work-summary-count');
 if(workSummary)workSummary.textContent=`${CASES.length} CASES · ${CASES.filter(c=>c.visibility==='approved_public').length} PUBLIC APPROVED`;
 const selectedSummary=document.getElementById('selected-count');
 if(selectedSummary)selectedSummary.textContent=`${CASES.length} SELECTED CASES / EDITORIAL REVIEW`;
-setFeature(FEATURED.includes('opensource')?'opensource':FEATURED[0]);
+setFeature(FEATURED.includes('product')?'product':FEATURED[0]);
 $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;viewmode='work';renderWork()}));
 $$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{viewmode=b.dataset.mode;renderWork()}));
 $$('[data-typography]').forEach(b=>b.addEventListener('click',()=>{document.documentElement.dataset.typography=b.dataset.typography;$$('[data-typography]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)))}));
