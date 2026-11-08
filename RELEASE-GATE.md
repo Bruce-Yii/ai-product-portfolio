@@ -59,3 +59,11 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Preview URL: https://ai-product-portfolio-lxwa40l6c-yu-ac3a.vercel.app
 - Homepage and /cases/laya/ both return HTTP 200; noindex remains enabled.
 - This preview does not change the production alias. Production remains on the previous eight-case candidate pending owner review.
+
+
+### Latest seven-case preview supersedes prior preview
+
+- Deployment: dpl_HaFhgdtRW1TdMhnuJ1jvXZimpBB4 (READY).
+- URL: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
+- Source commit: 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
+- Homepage and Laya casebook route return HTTP 200; Dify is contribution-only; noindex remains.
