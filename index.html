@@ -1303,7 +1303,7 @@ const CASES = [
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "上游贡献 · 已合并候选",
+    "status": "PR #764 MERGED · 2026-09-29 · CASE REVIEW PENDING",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": false,
@@ -1668,7 +1668,7 @@ const MEDIA_FILES = {
 };
 
 // Generated from reviewed case packs. Do not edit manually.
-const CASE_DETAILS = {
+const CASE_DETAILS = const CASE_DETAILS = {
   "product": {
     "headnote": "Vivic 团队产品案例的内部评审稿。下方为基于项目架构的解释图，不是产品真实 UI。",
     "contextTitle": "模型选中了动作，产品如何保证它被正确执行？",
@@ -1730,7 +1730,7 @@ const CASE_DETAILS = {
     "outcome": "PR #21015 于 2026-10-23 合并。实际改变是：完成一次检测后，用户可以筛出所有已测凭据均失败的模型；筛选只读、临时，不隐藏、禁用、删除或持久修改模型配置。PR 中报告的聚焦测试尚未由本窗口重新运行，也没有真实用户效果数据。"
   },
   "dsh-notice-recovery": {
-    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "headnote": "本人署名、上游已合并的产品行为改进。交互为依据 PR #764 重建的解释性示意，不是 dsh-market 官方界面。",
     "contextTitle": "提醒应该解释故障，不应该把用户困在故障里。",
     "contextLead": "用户需要控制提示，但系统必须保留插件的真实状态。",
     "contextCopy": "插件从 profile 声明中被移除后，持久提醒仍有解释价值；但当插件也不在市场目录中，原有“查找插件”入口无法解决问题，用户又没有卸载路径，提醒便跨刷新、重启和更新持续存在。PR #764 增加独立的“停止显示”动作，让用户能结束提示，而不把它伪装成修复或重装。",
@@ -1739,7 +1739,8 @@ const CASE_DETAILS = {
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
     "outcomeTitle": "增加用户控制权，同时保持系统事实一致。",
     "outcomeBig": "Control the notice.<br><i>Keep the truth.</i>",
-    "outcome": "PR 有具体问题说明、代码与维护者反馈；不存在可以归因的用户满意度、安装成功率或留存改善数据。"
+    "outcome": "PR #764 已于 2026-09-29 合并。产品行为变化是：用户可以逐条停止显示异常提醒；插件是否存在、profile 声明和磁盘目录均保持原状。PR 报告的测试覆盖重启后不复现、并发回写、失败恢复与不误报修复；这不等于插件被修复、重装或市场整体可用性提升。",
+    "boundary": "PR #764 已于 2026-09-29 合并。真实 UI 录屏尚未收集；网页使用的是机制解释。停止显示提醒不代表插件已修复、重装或重新进入市场目录。"
   },
   "laya-decision-integrity": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
