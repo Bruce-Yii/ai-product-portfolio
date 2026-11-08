@@ -143,3 +143,11 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - The note explicitly identifies the 2026-11-09 GitHub snapshot and separates reviewed-by matches from authored PR counts.
 - Added a three-column mobile layout for the metrics and a compact evidence note.
 - Re-ran source checks: inline JavaScript **PASS**; 8 case records / 8 detail records; proof-strip values and mobile CSS present; main and Laya noindex protections unchanged.
+
+
+### Preview deployment · second iteration
+
+- Deployed branch commit `14884d23f4db1cf99de4182055e7934bf890725a` to Vercel preview.
+- Preview URL: https://ai-product-portfolio-48me6yklu-yu-ac3a.vercel.app
+- Post-deploy fetch returned HTTP 200 and confirmed the updated title, proof-strip markup and values, mobile proof-strip CSS, and `X-Robots-Tag: noindex, nofollow, noarchive`.
+- This is a separate Vercel project / preview URL. The existing `hcfind.com` domain remains attached to `hcfind-home`; no domain binding or DNS record was changed.
