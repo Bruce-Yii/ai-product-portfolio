@@ -80,3 +80,15 @@ A project or repository does not qualify for a standalone Case page merely becau
 - V1 freeze branch: freeze/portfolio-v1-2026-11-09.
 - noindex remains enabled. Do not enable search indexing until public content/evidence review and owner approval.
 - Release blockers: owner visual review, responsive E2E, per-case attribution/evidence review, and explicit production release approval.
+
+
+## Latest v2 preview — public-evidence cleanup · 2026-11-09
+
+- Source branch: portfolio/v2-information-architecture.
+- Source commit: a40af18b52aed5f16c9dca5fd8dcd1ec55a1a645.
+- Preview deployment: dpl_JCCmAEicSsv8tARBopwX5jeESkkR · READY.
+- Preview URL: https://ai-product-portfolio-la3ir2b5p-yu-ac3a.vercel.app.
+- Public case payloads no longer include private Notion or Linear URLs; narrative evidence is restricted to explicitly public GitHub records.
+- Homepage and Laya casebook return HTTP 200; noindex remains enabled.
+- Production remains V1 at dpl_DU86D71ntVNtihTr4spaUQZBXETr; hcfind.com and www.hcfind.com aliases remain unchanged.
+- This remains a preview. Do not promote to production until owner visual review, responsive E2E, per-case evidence/attribution review, and explicit release approval.
