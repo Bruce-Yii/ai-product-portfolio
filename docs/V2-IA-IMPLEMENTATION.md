@@ -51,6 +51,8 @@ The diagrams explain the system responsibility boundaries; they do not claim to 
 
 - Removed the public-facing `INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE` labels.
 - Replaced internal editorial status wording with factual project / delivery descriptions.
+- Removed private Notion and Linear URLs from the public case payload; narrative evidence now renders only explicitly public GitHub records. Design-stage cases without public repository artifacts say so instead of exposing private workspace references.
+- Rewrote role descriptions to explain personal contribution and attribution in portfolio language, removing internal window/review process wording.
 - Kept project-stage and evidence boundaries explicit:
   - Vivic: backend internal validation is not described as external user impact.
   - Agent Evaluation Lab: 9 valid baseline trials are not presented as proof of an improvement.
@@ -64,9 +66,9 @@ The diagrams explain the system responsibility boundaries; they do not claim to 
 ## Preview and release state
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Implementation commit: `dce2e80a89a7e6ddf11b0e3c3ee5d881cc524400`.
-- Vercel Preview deployment: `dpl_6JNgwJyVS2fYzf3JrebYTQpuxezJ` (READY).
-- Preview URL: https://ai-product-portfolio-i6crjqnne-yu-ac3a.vercel.app
+- Implementation commit: `a40af18b52aed5f16c9dca5fd8dcd1ec55a1a645`.
+- Vercel Preview deployment: `dpl_JCCmAEicSsv8tARBopwX5jeESkkR` (READY; latest preview after public-evidence cleanup).
+- Preview URL: https://ai-product-portfolio-la3ir2b5p-yu-ac3a.vercel.app
 - Production remains on v1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` at https://hcfind.com.
 - The V1 freeze branch remains `freeze/portfolio-v1-2026-11-09`.
 - No production alias, DNS, or nameserver changes were made.
