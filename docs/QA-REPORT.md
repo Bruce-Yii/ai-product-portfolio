@@ -92,3 +92,37 @@ The earlier ZIP QA results above remain historical evidence for that ZIP only; t
 - No new desktop/mobile viewport regression pass.
 - No Vercel preview deployment, production deployment, domain change, or search-indexing change.
 - No change to the Laya standalone casebook file; it remains the existing v2.4 casebook.
+
+
+## 2026-11-09 portfolio optimization pass
+
+Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the existing review PR; it does not merge to `main` or deploy the site.
+
+### Product and presentation changes
+
+- Replaced the generic "Making AI useful" hero with an explicit **AI Product Manager** positioning statement and a concrete product promise: user-understandable, executable, verifiable AI products.
+- Reordered featured cases to **Vivic → Laya → Cherry Studio → Dify**, keeping the strongest team-product story first and bringing the Laya casebook into the second featured position.
+- Reframed the About copy around the target role and the actual product / upstream collaboration work.
+- Removed the internal "0 public approved" count from the visible Work index summary.
+
+### Case evidence and narrative changes
+
+- Vivic now presents the fixed API test-set result as **53/60 → 59/60** and p50 request-to-result latency as **3,625ms → 1,807ms**. The third metric records tool-entry consolidation **27 → 14**. All are labelled as internal project/test-set evidence, not real-user success or production-wide metrics.
+- Laya now presents **47 authored / 40 merged / 85 reviewed-by query matches**, with the 85-query result explicitly separated from authored PR counts.
+- Case detail pages now build public source links from each case's own public GitHub evidence records. Private Notion / Linear sources are not rendered as public evidence.
+- Laya casebook metadata and its upstream-footprint snapshot date now identify the 2026-11-09 GitHub query snapshot. The page remains noindex.
+
+### Source-level validation performed after the edits
+
+- Complete inline JavaScript block parsed successfully using the JavaScript Function parser.
+- Main-site data parsed: **8 case records**, **8 matching case-detail records**; every case ID resolves to a detail record.
+- Featured order is explicitly Vivic, Laya, Cherry Studio, Dify.
+- Public source-link data is present for Dify (1), Cherry Studio (2), dsh-market (2), and Laya (4); AWRP's DeepSeek link is presented as a public reference, not as the author's contribution.
+- Confirmed the updated metric strings, Laya query labels, and the standalone Laya page's noindex metadata.
+- Confirmed `robots.txt` remains `Disallow: /` and `vercel.json` retains `X-Robots-Tag: noindex, nofollow, noarchive`.
+
+### Not performed
+
+- No full browser render, cross-browser interaction regression, or new 1440 / 390 / 360px viewport pass after this optimization pass.
+- No Vercel preview, production deployment, domain change, or indexing change.
+- The existing PR remains a review branch; this pass does not authorize public launch.
