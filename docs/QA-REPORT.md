@@ -176,3 +176,11 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - Interaction smoke test with a mocked DOM: Before shows text retained / mention and equation skipped; After shows all three segments retained and the correct `plain_text`-first / `text.content` fallback rule; ARIA pressed state switches correctly.
 - Vercel staging deployment `dpl_D5epUSEsHZ9RCSe68ijXmD1VX2d9` is **READY**. Main page fetch returned HTTP 200 and confirmed the new Dify visual, interactive explainer, no old mock UI, no M02/M07 placeholders, and retained `noindex` response header.
 - Full visual browser review and responsive E2E have not yet been run; the checks above are source-level, mocked interaction, and post-deploy HTML checks.
+
+
+### Dify correction promoted to production · 2026-11-09
+
+- Production deployment: `dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK` · READY · commit `d43c5f51c391906670653f4aa4fab5b5e080632e`.
+- Reassigned `hcfind.com` and `www.hcfind.com` to the new production deployment; `www` remains a 308 redirect to the root domain.
+- Post-deploy verification: `https://hcfind.com` HTTP 200; page source contains the Dify inline visual and interactive rich-text explainer; M02 pending placeholder and faux knowledge-import UI are absent; `X-Robots-Tag: noindex, nofollow, noarchive` remains.
+- No DNS records or nameservers changed.
