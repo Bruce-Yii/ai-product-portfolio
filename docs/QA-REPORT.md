@@ -232,3 +232,14 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Both routes retain X-Robots-Tag: noindex, nofollow, noarchive.
 - No production alias or DNS change was made for this revised candidate.
 - This remains source-level and post-deploy HTML verification; full visual browser review and responsive E2E are still outstanding.
+
+
+### Final source cleanup and staging recheck
+
+- Removed residual Dify-specific CSS and the stale hardcoded Dify source-link label; the generic source-art path is no longer Dify-branded.
+- Re-ran complete inline JavaScript parsing: PASS.
+- Reconfirmed 7 cases / 7 matching detail payloads, sequential IDs 001–007, and all three featured IDs resolve.
+- Reconfirmed Dify appears only in the contribution index and About text; no Dify case ID, visual, demo, media slot, or featured entry remains.
+- Latest staging deployment: dpl_HaFhgdtRW1TdMhnuJ1jvXZimpBB4 · READY · commit 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
+- Latest preview: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
+- Homepage and /cases/laya/ both return HTTP 200 and retain noindex.
