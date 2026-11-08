@@ -55,3 +55,7 @@ Target: `portfolio/editorial-product-positioning-2026-11-09`. This branch is not
 - Vivic wording now says “参与推动” for the team-level decision-chain and 27→14 tool consolidation, avoiding an unsupported claim of sole ownership.
 - No Vercel deployment exists for this branch in the connected Vercel account; no preview URL was available, and no deployment was created. Responsive and real-browser regression therefore remain unverified.
 - Indexing note: `robots.txt` currently says `Disallow: /`, while the pages also carry `noindex` and Vercel sends `X-Robots-Tag: noindex`. A crawler blocked by robots.txt may not fetch the page/header to observe noindex, so this combination is not the cleanest de-indexing strategy. It was left unchanged; before public hosting, choose either crawlable pages with noindex or actual access protection, depending on the intended exposure.
+
+
+- Homepage's default featured case now opens on Vivic, the strongest team-product case, rather than defaulting to the single Dify contribution; the case remains visibly labelled as internal review.
+- The contribution collection is named `SELECTED_UPSTREAM_WORK` rather than `VERIFIED_CONTRIBUTIONS`, because it intentionally includes one ongoing RFC / Draft item.
