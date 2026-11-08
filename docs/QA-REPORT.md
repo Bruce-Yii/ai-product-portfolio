@@ -279,3 +279,17 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Production aliases remain on frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
 - Runtime error/fatal query for latest 30m returned no matching Preview logs.
 - Full visual browser review and responsive E2E remain outstanding.
+
+
+### Make Again 2.0 product-discovery case · 2026-11-09
+
+- Added Make Again 2.0 as Project card 05 and Case 008.
+- Framing is explicitly Product Discovery / Research & Feasibility; product problem and MVP remain unlocked.
+- Public-facing summary distinguishes public-case synthesis, 9 longitudinal observations, and a model-free PostgreSQL/pgvector Spike from validated user demand or a shipped product.
+- No private repository, Notion, or Linear links are exposed. The historical Make Again repository is not listed as a separate achievement, and the separate team version is not conflated with 2.0.
+- Five Project cards and six capability groups resolve to eight existing Case records.
+- Latest source commit: 59a7632949c1a214aef4f9e447aea1e4713ba019.
+- Latest Preview deployment: dpl_Gthev3cbExjvqMakspqSHsAe9Pev · READY.
+- Latest Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app.
+- Homepage and Laya casebook route return HTTP 200; noindex remains enabled.
+- Full visual browser review and responsive E2E remain outstanding.
