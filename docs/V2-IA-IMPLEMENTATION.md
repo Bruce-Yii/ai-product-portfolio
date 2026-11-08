@@ -8,14 +8,15 @@ Reposition the portfolio from an open-source-contribution-heavy homepage to a pr
 
 ### Home
 1. **Hero** — concise AI Product Manager positioning and product-to-delivery proposition.
-2. **Product & System Projects** — four first-class projects:
+2. **Product & System Projects** — five first-class projects:
    - Vivic — Agent decision and execution loop.
    - Agent Evaluation Lab — evaluation validity, independent verification, and evidence provenance.
    - AWRP / Agent Workflow — long-running task identity, runs, evidence, and acceptance.
    - Personal Context Layer — user-controlled, traceable personal context infrastructure.
+   - Make Again 2.0 — product discovery and technical feasibility research; MVP is not locked and no shipped-product or user-outcome claim is made.
 3. **Laya flagship** — a dedicated open-source product collaboration section linking to the existing eight-chapter casebook. Laya's GitHub contribution metrics are moved here rather than dominating the first screen.
 4. **Upstream Product Contributions** — concise project-level index for OpenClaw, Dify, Cherry Studio, RAGFlow, QwenPaw, EvalScope, and FunASR.
-5. **Capabilities & Evidence** — five capability groups, each linked to relevant cases.
+5. **Capabilities & Evidence** — six capability groups, each linked to relevant cases.
 6. **About** — retained as a separate view.
 
 ### Work
@@ -61,14 +62,14 @@ The diagrams explain the system responsibility boundaries; they do not claim to 
   - Personal Context Layer: architecture and early prototype are not described as a launched cross-platform product.
   - Laya metrics are identified as GitHub query snapshots, not product KPIs or maintainer status.
 - Hidden the internal design inspector from the public navigation.
-- Fixed the Capability browser mapping so all five capability groups resolve to relevant Cases.
+- Fixed the Capability browser mapping so all six capability groups resolve to relevant Cases.
 
 ## Preview and release state
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Implementation commit: `a40af18b52aed5f16c9dca5fd8dcd1ec55a1a645`.
-- Vercel Preview deployment: `dpl_JCCmAEicSsv8tARBopwX5jeESkkR` (READY; latest preview after public-evidence cleanup).
-- Preview URL: https://ai-product-portfolio-la3ir2b5p-yu-ac3a.vercel.app
+- Implementation commit: `59a7632949c1a214aef4f9e447aea1e4713ba019`.
+- Vercel Preview deployment: `dpl_Gthev3cbExjvqMakspqSHsAe9Pev` (READY; latest preview after public-evidence cleanup).
+- Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app
 - Production remains on v1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` at https://hcfind.com.
 - The V1 freeze branch remains `freeze/portfolio-v1-2026-11-09`.
 - No production alias, DNS, or nameserver changes were made.
