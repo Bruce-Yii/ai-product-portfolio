@@ -973,7 +973,7 @@ body {background:var(--paper);color:var(--ink)}
       <div class="showcase-foot mono"><span id="selected-count">SELECTED WORK / EDITORIAL REVIEW</span><span>REAL MEDIA PENDING / NO FABRICATED SCREENS</span></div>
 
     </section>
-    <section class="index-section"><div class="wrap"><div class="index-head"><div><div class="mono eyebrow">02 / VERIFIED CONTRIBUTIONS</div><h2>Other <i>work.</i></h2></div><button class="text-link" data-action="navigate" data-page="work">浏览全部作品 <span class="arrow">↗</span></button></div><div id="home-index"></div></div></section>
+    <section class="index-section"><div class="wrap"><div class="index-head"><div><div class="mono eyebrow">02 / SELECTED UPSTREAM CONTRIBUTIONS</div><h2>Beyond the <i>casebook.</i></h2></div><button class="text-link" data-action="navigate" data-page="work">浏览全部作品 <span class="arrow">↗</span></button></div><div id="home-index"></div></div></section>
     <section class="explore-section wrap" aria-labelledby="explore-title">
       <div class="mono eyebrow">03 / ANOTHER WAY IN</div>
       <div class="explore-grid">
@@ -1008,7 +1008,7 @@ body {background:var(--paper);color:var(--ink)}
       </div>
       <div class="cap-grid" id="cap-grid" hidden></div>
       <section class="verified-strip" aria-label="公开可核实的其他贡献">
-        <div class="verified-head"><div class="mono eyebrow">PUBLIC CONTRIBUTIONS / SELECTED</div><h2>More <i>signal.</i></h2><p>保留有意义的小型贡献，不把每项 PR 都包装成完整产品案例。</p></div>
+        <div class="verified-head"><div class="mono eyebrow">PUBLIC CONTRIBUTIONS / SELECTED</div><h2>More <i>signal.</i></h2><p>按项目聚合可核验的上游成果；旗舰案例讲清完整问题，其余贡献保留为可追溯的项目证据。</p></div>
         <div id="work-contributions" class="verified-list"></div>
       </section>
     </div>
@@ -1444,24 +1444,59 @@ const VERIFIED_CONTRIBUTIONS = [
   },
   {
     "number": "02",
-    "name": "RAGFlow",
-    "title": "让重解析设置真正遵循用户配置",
-    "detail": "PR #20149 · MERGED",
-    "url": "https://github.com/infiniflow/ragflow/pull/20149"
+    "name": "OpenClaw",
+    "kind": "MERGED",
+    "title": "让 Agent 运行环境在凭据、诊断与启动恢复中更可靠",
+    "detail": "6 MERGED · #140531 · #141569 · #144579 · #145220 · #157697 · #160156",
+    "url": "https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "03",
-    "name": "Cherry Studio",
-    "title": "修正 Excel 富文本复制的粘贴优先级",
-    "detail": "PR #21031 · MERGED",
-    "url": "https://github.com/CherryHQ/cherry-studio/pull/21031"
+    "name": "Dify",
+    "kind": "MERGED",
+    "title": "让知识导入、内容录入与部署路径保持语义完整",
+    "detail": "4 MERGED · #42171 FEATURE CASE · #42212 · #42221 · #42956",
+    "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "04",
+    "name": "Cherry Studio",
+    "kind": "MERGED",
+    "title": "让模型状态、剪贴板与工具兼容更符合真实使用",
+    "detail": "6 MERGED · #21015 FEATURE CASE · #21031 · #21130 · #20946 · #20955 · #20970",
+    "url": "https://github.com/CherryHQ/cherry-studio/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
+  },
+  {
+    "number": "05",
+    "name": "RAGFlow",
+    "kind": "MERGED",
+    "title": "让 Agent 消息语义、知识库重解析与模型解析边界保持一致",
+    "detail": "6 MERGED · #19565 · #20149 · #20207 · #20066 · #20068 · #20072",
+    "url": "https://github.com/infiniflow/ragflow/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
+  },
+  {
+    "number": "06",
+    "name": "QwenPaw",
+    "kind": "MERGED",
+    "title": "恢复会话工作区的直接路径输入",
+    "detail": "#7593 MERGED · 保留目录选择器与既有路径校验",
+    "url": "https://github.com/agentscope-ai/QwenPaw/pull/7593"
+  },
+  {
+    "number": "07",
     "name": "EvalScope",
-    "title": "让多图评测能力拥有可用的数据集入口",
-    "detail": "PR #1729 · MERGED",
-    "url": "https://github.com/modelscope/evalscope/pull/1729"
+    "kind": "MERGED",
+    "title": "让多图评测与评测工具入口更可靠",
+    "detail": "3 MERGED · #1720 · #1729 · #1768",
+    "url": "https://github.com/modelscope/evalscope/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
+  },
+  {
+    "number": "08",
+    "name": "FunASR",
+    "kind": "MERGED",
+    "title": "修正 VAD 合并后的标点时间戳",
+    "detail": "#3703 MERGED · Fun-ASR-Nano timestamp correction",
+    "url": "https://github.com/modelscope/FunASR/pull/3703"
   }
 ];
 
