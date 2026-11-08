@@ -405,9 +405,6 @@ body{font-feature-settings:"kern" 1;font-synthesis:none}
 .verified-list a>span:nth-child(2){display:flex;align-items:baseline;flex-wrap:wrap;gap:12px}
 .verified-list strong{font:600 clamp(19px,1.8vw,28px)/1.5 var(--sans)}
 .verified-list small{font:400 12px/1.8 var(--han-sans);color:var(--muted)}
-.case-cover-dify .cover-oss-big{font-size:clamp(60px,8.2vw,127px);line-height:.87;letter-spacing:-.067em}
-.case-cover-dify .cover-oss-big i{font-weight:400}
-.case-cover-dify .cover-oss-diff{max-width:52%}
 .case-source-link{border-top:1px solid var(--line-strong);margin-top:80px;padding-top:22px}
 .case-source-link .mono{color:var(--accent);margin-bottom:18px}
 .case-source-link a{border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0;font-weight:600;font-size:14px;transition:color .15s}
@@ -419,7 +416,7 @@ body{font-feature-settings:"kern" 1;font-synthesis:none}
 .case-head-side .note{font-size:12px;line-height:1.9}
 .work-row .kind{letter-spacing:.025em}
 @media(max-width:900px){.verified-head{grid-template-columns:1fr}.verified-head .eyebrow{grid-column:auto}.verified-list a{grid-template-columns:95px 1fr 25px}}
-@media(max-width:720px){.verified-strip{padding:50px 0 80px}.verified-head h2{font-size:68px}.verified-list a{grid-template-columns:60px 1fr 20px;gap:10px;padding:23px 0}.verified-list a>span:nth-child(2){display:block}.verified-list strong,.verified-list small{display:block}.verified-list small{font-size:11px;margin-top:5px}.case-cover-dify .cover-oss-big{top:27%;font-size:clamp(52px,13vw,76px);line-height:.97}.case-cover-dify .cover-oss-diff{max-width:95%;bottom:17%;font-size:8px}.case-prose-lead{line-height:1.8}.case-editorial-copy{line-height:2}.case-source-link{margin-top:49px}.case-source-link a{font-size:12px}.case-source-link a>span:last-child{font-size:9px}.case-head-side .note{font-size:12px}}
+@media(max-width:720px){.verified-strip{padding:50px 0 80px}.verified-head h2{font-size:68px}.verified-list a{grid-template-columns:60px 1fr 20px;gap:10px;padding:23px 0}.verified-list a>span:nth-child(2){display:block}.verified-list strong,.verified-list small{display:block}.verified-list small{font-size:11px;margin-top:5px}.case-prose-lead{line-height:1.8}.case-editorial-copy{line-height:2}.case-source-link{margin-top:49px}.case-source-link a{font-size:12px}.case-source-link a>span:last-child{font-size:9px}.case-head-side .note{font-size:12px}}
 @media(max-width:375px){.case-cover-dify .cover-oss-big{font-size:12vw}.verified-head h2{font-size:59px}}
 @media(prefers-reduced-motion:reduce){.verified-list a{transition:none}}
 
@@ -1608,7 +1605,7 @@ const MEDIA_SPEC = {
 
 /**
  * Map approved assets to media IDs. Leave paths empty until artwork is delivered.
- * Add files inside /assets, e.g. M02: './assets/dify-hero.webp'.
+ * Add approved files inside /assets, using the matching media ID.
  * Do not use AI-generated art to impersonate a real product UI or a PR screenshot.
  */
 const MEDIA_FILES = {
@@ -1899,7 +1896,7 @@ function renderCase(id){
  $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
  $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。图示为独立机制说明，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'本页仍是内部评审稿。当前数字与部署状态来自项目内部汇总，尚未独立复核原始日志；代码级个人归因仍需 commit/PR、设计记录与队友确认。2026-11-05 后端已部署，前端仍有能力待接入，48 条浏览器全场景未重跑、真机语音未验收；团队素材公开许可尚未确认。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
- const sourceLinks=c.url?[{label:'GitHub · Dify PR #42171',url:c.url,supports:'上游合并记录'}]:publicEvidence;
+ const sourceLinks=c.url?[{label:'GitHub · Primary source',url:c.url,supports:'Upstream record'}]:publicEvidence;
  $('#case-source-link').hidden=!sourceLinks.length;
  $('#case-source-link').innerHTML=sourceLinks.length?'<div class="mono">PUBLIC RECORDS / REFERENCES</div>'+sourceLinks.map(e=>`<a target="_blank" rel="noopener noreferrer" href="${esc(e.url)}"><span>${esc(e.label)}</span><span>${esc(e.supports||'GITHUB RECORD')} ↗</span></a>`).join(''):'';
  $('#case-context-title').textContent=d.contextTitle;$('#case-context-lead').textContent=d.contextLead;$('#case-context-copy').textContent=d.contextCopy;
