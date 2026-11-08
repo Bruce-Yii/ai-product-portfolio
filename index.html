@@ -1,0 +1,1928 @@
+<!doctype html>
+<html lang="zh-CN" data-typography="editorial" data-accent="oxide" data-han="serif" data-glass="on">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F9F7">
+<meta name="description" content="Bruce Yii — AI 产品设计、Agent 工程与开源贡献。精选真实案例，展示问题、判断、参与及可核实证据。">
+<title>Bruce Yii — AI Product & Agent Systems</title>
+<style>
+:root {
+  --paper:#F0EEE8; --paper-shade:#E7E4DD; --paper-deep:#D5D2C7; --ink:#171B19; --ink-soft:#3B413C; --muted:#6E746D;
+  --line:#C3C4B9; --line-strong:#7D827C; --accent:#A34532; --accent-dark:#6F2B1F; --inverse:#F5F4EC;
+  --sans:'Manrope','Noto Sans SC',system-ui,-apple-system,sans-serif;
+  --serif:'Instrument Serif','Noto Serif SC',Georgia,serif;
+  --han-serif:'Noto Serif SC','Noto Serif CJK SC','Source Han Serif SC','Songti SC','SimSun',serif;
+  --han-sans:'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --han:var(--han-serif);
+  --mono:'DM Mono','SFMono-Regular',Consolas,monospace;
+  --gutter:clamp(22px,4.2vw,72px); --max:1590px;
+  --hero-font:var(--sans);
+}
+html[data-accent="blue"]{--accent:#385775;--accent-dark:#213E57}
+html[data-typography="precision"]{--hero-font:var(--sans)}
+html[data-han="sans"]{--han:var(--han-sans)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 14px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a,button{color:inherit;font:inherit}a{text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+h1,h2,h3,h4,p,figure{margin:0}
+button{border:0;background:transparent}svg{display:block}
+.wrap{max-width:var(--max);padding-inline:var(--gutter);margin:auto}
+.mono{font:500 10px/1.55 var(--mono);letter-spacing:.115em;text-transform:uppercase}
+.serif{font-family:var(--serif);font-weight:400;font-style:italic}
+.cnserif{font-family:var(--han);font-weight:500;letter-spacing:-.07em}
+.muted{color:var(--muted)}
+.rule{border-top:1px solid var(--line)}
+.accent{color:var(--accent)}
+.eyebrow{display:flex;gap:13px;align-items:center;color:var(--muted)}
+.eyebrow:before{content:'';width:27px;height:1px;background:var(--accent)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+/* Masthead */
+.masthead{height:75px;position:sticky;top:0;z-index:50;background:rgba(240,238,232,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.masthead .wrap{height:100%;display:grid;grid-template-columns:minmax(165px,1fr) auto minmax(165px,1fr);gap:20px;align-items:center}
+.brand{justify-self:start;display:flex;gap:11px;align-items:center;text-align:left;padding:0}
+.brand-symbol{font:800 27px/.9 var(--sans);letter-spacing:-.13em}.brand-symbol i{font-family:var(--serif);font-size:33px;font-weight:400;color:var(--accent)}
+.brand-description{font:500 9px/1.45 var(--mono);letter-spacing:.085em;color:var(--muted);border-left:1px solid var(--line);padding-left:11px}
+.nav{display:flex;height:100%;align-items:center;gap:38px}
+.nav button{padding:24px 0 21px;border-bottom:2px solid transparent;font-size:12px;font-weight:600;letter-spacing:.02em;transition:border-color .18s}
+.nav button[aria-current="page"]{border-color:var(--accent)}
+.nav button:hover{border-color:var(--line-strong)}
+.header-aside{justify-self:end;display:flex;align-items:center;gap:15px}
+.header-aside .signal{height:7px;width:7px;border-radius:50%;background:var(--accent)}
+.header-aside button{font-size:10px;border-bottom:1px solid var(--ink);padding:5px 0}
+/* Views */
+.view{display:none}.view.is-active{display:block}
+/* hero */
+.hero{border-bottom:1px solid var(--line);padding-top:42px;padding-bottom:39px}
+.hero-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;color:var(--muted)}
+.hero-meta span:last-child{text-align:right}
+.hero-layout{display:grid;grid-template-columns:13% 1fr;column-gap:1.5%;margin-top:92px;align-items:start}
+.hero-rail{padding-top:13px;display:flex;flex-direction:column;gap:24px;max-width:147px}
+.hero-rail .vertical-number{font:400 76px/.85 var(--serif);letter-spacing:-.07em;color:var(--accent)}
+.hero-rail .rail-rule{width:49px;height:1px;background:var(--line-strong)}
+.hero-rail .rail-text{font:500 9px/1.85 var(--mono);letter-spacing:.11em;color:var(--muted);text-transform:uppercase}
+.hero-title{min-width:0;position:relative}
+.hero-title h1{font-weight:600;font-size:clamp(80px,10.1vw,168px);line-height:.9;letter-spacing:-.097em}
+.hero-title .strong-line{display:block;white-space:nowrap}
+.hero-title .soft-line{display:block;margin-left:15%;white-space:nowrap;font:italic 400 1.03em/.9 var(--serif);letter-spacing:-.078em}
+html[data-typography="precision"] .hero-title .soft-line{font:700 .86em/.98 var(--sans);letter-spacing:-.095em;text-transform:uppercase;margin-left:2%;font-style:normal}
+.hero-title .tiny-mark{position:absolute;right:1%;top:15%;font:400 11px var(--mono);color:var(--accent);transform:rotate(90deg);transform-origin:center}
+.hero-bottom{display:grid;grid-template-columns:1.15fr .8fr;gap:45px;margin-left:14.5%;margin-top:63px;align-items:end}
+.hero-bottom .statement{max-width:620px;font:500 clamp(23px,2.35vw,35px)/1.65 var(--han);letter-spacing:-.075em}
+.hero-bottom .aside{border-top:1px solid var(--line-strong);padding-top:16px;display:flex;flex-direction:column;align-items:flex-start;gap:21px}
+.hero-bottom .aside p{max-width:305px;color:var(--muted);font-size:12px;line-height:1.9}
+.text-link{display:inline-flex;align-items:center;gap:17px;letter-spacing:.025em;font-size:12px;font-weight:700;padding:0 0 5px;border-bottom:1px solid var(--ink)}
+.text-link .arrow{font:400 25px/.8 var(--serif);transition:transform .2s}
+.text-link:hover .arrow{transform:translate(3px,-3px)}
+/* chapter and section */
+.chapter{padding-top:88px}
+.chapter-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;border-bottom:1px solid var(--line-strong);padding-bottom:25px}
+.chapter-title{font:400 clamp(50px,6.8vw,111px)/.86 var(--serif);letter-spacing:-.064em;margin-top:23px}
+.chapter-title i{font-weight:400}
+.chapter-meta{max-width:255px;color:var(--muted);font-size:12px;line-height:1.8;padding-bottom:5px}
+.chapter-head .text-link{white-space:nowrap;margin-bottom:8px}
+/* main feature */
+.feature{display:grid;grid-template-columns:1.32fr .68fr;gap:0;border-bottom:1px solid var(--line-strong);padding:30px 0}
+.feature-art{height:clamp(390px,41vw,660px);background:#1D302D;position:relative;overflow:hidden;color:#EFF3EA}
+.art-grain{position:absolute;inset:0;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 190 190' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.58' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.4'/%3E%3C/svg%3E")}
+.art-topline{position:absolute;left:28px;right:28px;top:23px;display:flex;justify-content:space-between;color:#D6DECF;font-size:9px;z-index:3}
+.art-product-word{position:absolute;left:5%;top:18%;font:italic 400 clamp(95px,12vw,198px)/.8 var(--serif);letter-spacing:-.084em;z-index:1;color:#F0EFE7}
+.art-product-sub{position:absolute;left:6%;top:47%;font:500 12px/1.5 var(--mono);letter-spacing:.12em;color:#B8C6BB}
+.prototype-window{position:absolute;bottom:-8%;right:-4%;width:65%;height:57%;transform:rotate(-8deg);background:#E5E8DC;color:#233530;padding:15px 21px;box-shadow:-17px -21px 0 #B0BFB035;border:1px solid #C9D1C2}
+.proto-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:13px;border-bottom:1px solid #A8B5A7}
+.proto-dot{height:6px;width:6px;border-radius:50%;background:var(--accent)}
+.proto-title{font:600 17px/1.2 var(--sans);letter-spacing:-.07em;padding:20px 0 15px}
+.proto-stages{display:flex;align-items:center;gap:8px}
+.proto-stage{flex:1;border:1px solid #ADBAAE;padding:12px 7px;font:500 9px/1.6 var(--mono);text-align:center;letter-spacing:.02em}
+.proto-stage.active{background:#2B473E;border-color:#2B473E;color:#F0F3E9}
+.proto-flow{height:58px;margin-top:20px;border-top:1px solid #A8B5A7;position:relative}
+.proto-flow:after{content:'';position:absolute;top:22px;left:12%;right:14%;border-top:2px solid var(--accent);transform:rotate(-8deg)}
+.feature-copy{padding:22px 12px 18px clamp(24px,4.2vw,80px);display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.feature-copy .suppress{color:var(--muted);font:500 10px/1.3 var(--mono);letter-spacing:.09em}
+.feature-copy h3{font:500 clamp(35px,3.8vw,62px)/1.45 var(--han);letter-spacing:-.09em;max-width:395px}
+.feature-copy .explain{color:var(--muted);font-size:14px;line-height:2;margin-top:25px;max-width:325px}
+.feature-copy .latin{display:block;margin-top:15px;font:italic 400 clamp(40px,4.3vw,70px)/.92 var(--serif);letter-spacing:-.055em;color:var(--accent)}
+.feature-copy .open-case{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0 4px;border-top:1px solid var(--line-strong);font:500 11px var(--mono);letter-spacing:.07em;text-align:left}
+.feature-copy .open-case .arrow{font:400 33px/.7 var(--serif);transition:transform .2s}
+.feature-copy .open-case:hover .arrow{transform:translate(5px,-5px)}
+/* secondary work */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:27px;padding:28px 0 90px}
+.work-card{display:block;width:100%;text-align:left;padding:0}
+.work-card:focus-visible{outline-offset:6px}
+.art-secondary{height:clamp(265px,27vw,410px);overflow:hidden;position:relative}
+.art-source{background:#CECCC2;color:#222622}
+.art-source .fine-grid{position:absolute;inset:0;background-image:linear-gradient(to right,#22262212 1px,transparent 1px),linear-gradient(to bottom,#22262212 1px,transparent 1px);background-size:35px 35px}
+.art-source .source-title{position:absolute;bottom:17px;left:28px;font:700 clamp(70px,8vw,139px)/.78 var(--sans);letter-spacing:-.105em}
+.art-source .source-title em{font:italic 400 1.03em var(--serif);letter-spacing:-.04em;color:var(--accent)}
+.art-source .annotation{position:absolute;right:25px;top:90px;border:1px solid #767A6E;padding:10px 12px;font:500 9px var(--mono);letter-spacing:.11em;transform:rotate(4deg)}
+.art-systems{background:#A34532;color:#F2EDE5}
+.art-systems .orbit{position:absolute;width:68%;aspect-ratio:1;right:-9%;top:-34%;border:1px solid #F7E4D47C;border-radius:50%;box-shadow:0 0 0 53px #A34532,0 0 0 54px #F7E4D45F,0 0 0 111px #A34532,0 0 0 112px #F7E4D45F}
+.art-systems .sys-word{position:absolute;left:30px;bottom:27px;font:italic 400 clamp(74px,8vw,136px)/.79 var(--serif);letter-spacing:-.075em}
+.card-bottom{border-bottom:1px solid var(--line-strong);padding:22px 0 26px;display:grid;grid-template-columns:49px 1fr auto;gap:12px;align-items:start}
+.card-bottom .index{font:400 22px/.9 var(--serif);color:var(--accent)}
+.card-bottom h3{font:500 clamp(23px,2vw,32px)/1.4 var(--han);letter-spacing:-.065em}
+.card-bottom p{color:var(--muted);font-size:12px;margin-top:8px}
+.card-bottom .go{font:400 30px/.7 var(--serif);transition:transform .2s}
+.work-card:hover .card-bottom .go{transform:translate(4px,-4px)}
+/* index */
+.index-section{background:var(--paper-shade);border-block:1px solid var(--line)}
+.index-section .wrap{padding-block:75px 88px}
+.index-head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line-strong);gap:20px;padding-bottom:25px}
+.index-head h2{font:400 clamp(46px,5.8vw,90px)/.94 var(--serif);letter-spacing:-.06em;margin-top:17px}
+.index-row{width:100%;padding:24px 1px;display:grid;grid-template-columns:63px minmax(280px,1fr) minmax(150px,.42fr) 28px;gap:14px;text-align:left;border-bottom:1px solid var(--line);align-items:center}
+.index-row .number{color:var(--accent)}
+.index-row strong{font:500 clamp(19px,2.05vw,32px)/1.4 var(--han);letter-spacing:-.06em}
+.index-row .category{color:var(--muted);font-size:11px}
+.index-row .go{font:400 29px var(--serif)}
+.index-row:hover strong{color:var(--accent)}
+/* principles */
+.principles{padding-top:83px;padding-bottom:110px}
+.principles h2{font:400 clamp(52px,7vw,118px)/.95 var(--serif);letter-spacing:-.065em;padding:22px 0 34px}
+.principles h2 span{color:var(--accent)}
+.principle-grid{border-top:1px solid var(--line-strong);display:grid;grid-template-columns:repeat(3,1fr)}
+.principle{padding:25px 30px 3px 0;border-right:1px solid var(--line);min-height:174px}
+.principle + .principle{padding-left:30px}
+.principle:last-child{border-right:0}
+.principle strong{display:block;font:500 clamp(18px,2.1vw,27px)/1.5 var(--han);letter-spacing:-.06em;margin:20px 0 9px}
+.principle p{font-size:12px;color:var(--muted);max-width:300px;line-height:1.8}
+/* work page */
+.page-head{padding:75px 0 40px;border-bottom:1px solid var(--line-strong)}
+.page-head h1{font:400 clamp(76px,10vw,164px)/.85 var(--serif);letter-spacing:-.07em;margin-top:33px}
+.page-head .head-bottom{margin-top:50px;display:flex;justify-content:space-between;gap:20px;align-items:end}
+.page-head p{max-width:540px;font-size:14px;line-height:2;color:var(--muted)}
+.work-tools{padding:24px 0 31px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.segment{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.segment .caption{margin-right:12px;color:var(--muted)}
+.segment button{padding:8px 12px;border:1px solid transparent;font-size:11px;transition:background-color .2s,border-color .2s}
+.segment button[aria-pressed="true"]{border-color:var(--line-strong);background:var(--paper-shade)}
+.segment button:hover{border-color:var(--line)}
+.work-rows{padding-bottom:115px}
+.work-row{width:100%;padding:29px 0 34px;border-top:1px solid var(--line);display:grid;grid-template-columns:75px minmax(200px,1.35fr) minmax(160px,.65fr) minmax(115px,.5fr) 28px;gap:15px;text-align:left;align-items:center}
+.work-row:last-child{border-bottom:1px solid var(--line)}
+.work-row h2{font:500 clamp(21px,2.4vw,38px)/1.4 var(--han);letter-spacing:-.07em}
+.work-row h2 span{display:block;font:italic 400 clamp(18px,1.8vw,27px)/1.1 var(--serif);letter-spacing:-.035em;margin-top:5px;color:var(--accent)}
+.work-row .desc{max-width:250px;font-size:12px;color:var(--muted);line-height:1.8}
+.work-row .kind{font:500 10px var(--mono);letter-spacing:.04em;color:var(--ink-soft)}
+.work-row .go{font:400 29px var(--serif)}
+.work-row:hover h2{color:var(--accent)}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:120px}
+.cap-group{background:var(--paper);min-height:240px;padding:31px}
+.cap-group h3{font:500 clamp(27px,3.3vw,48px)/1.35 var(--han);letter-spacing:-.065em;margin:20px 0 18px}
+.cap-group .related{border-top:1px solid var(--line);padding-top:13px}
+.cap-group button{display:flex;width:100%;justify-content:space-between;text-align:left;padding:10px 0;font-size:12px}
+.cap-group button:hover{color:var(--accent)}
+/* case page */
+.case-back{display:inline-flex;align-items:center;gap:13px;padding:21px 0;font:500 11px var(--mono);letter-spacing:.04em}
+.case-back:hover{color:var(--accent)}
+.case-head{padding:35px 0 45px;border-top:1px solid var(--line)}
+.case-head .case-kicker{display:flex;justify-content:space-between;gap:10px;color:var(--muted)}
+.case-head h1{font:500 clamp(52px,7.3vw,115px)/1.24 var(--han);letter-spacing:-.09em;max-width:1160px;margin:50px 0 18px}
+.case-head .latin{font:italic 400 clamp(44px,6vw,100px)/.95 var(--serif);letter-spacing:-.065em;color:var(--accent)}
+.case-head .case-intro{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:50px}
+.case-head .case-intro p{max-width:600px;font-size:16px;line-height:2}
+.case-head .case-intro .note{font-size:12px;color:var(--muted);max-width:310px;justify-self:end}
+.case-stage{margin-bottom:50px;min-height:430px}
+.case-stage .feature-art{height:clamp(400px,48vw,730px)}
+.case-stage .art-secondary{height:clamp(400px,48vw,730px)}
+.case-layout{border-top:1px solid var(--line-strong);display:grid;grid-template-columns:25% 1fr;gap:8%;padding-top:34px;padding-bottom:120px}
+.case-facts dl{display:grid;gap:20px;margin:0;position:sticky;top:115px}.case-facts div{border-bottom:1px solid var(--line);padding-bottom:15px}
+.case-facts dt{font:500 10px var(--mono);letter-spacing:.11em;color:var(--muted);margin-bottom:8px}.case-facts dd{margin:0;font-size:12px}
+.case-body article{padding-bottom:48px;border-bottom:1px solid var(--line);margin-bottom:48px;display:grid;grid-template-columns:110px 1fr;gap:35px}
+.case-body article .step{color:var(--accent)}
+.case-body h2{font:500 clamp(26px,3vw,43px)/1.5 var(--han);letter-spacing:-.07em;margin-bottom:17px}
+.case-body p{max-width:670px;color:var(--muted);font-size:14px;line-height:2}
+.case-next{display:flex;justify-content:space-between;align-items:center;padding:30px 0 110px;border-top:1px solid var(--line-strong);gap:20px}
+.case-next strong{display:block;font:400 clamp(37px,4.8vw,75px)/1.05 var(--serif);margin-top:12px;letter-spacing:-.06em}
+/* about */
+.about-hero{display:grid;grid-template-columns:1.3fr .7fr;gap:55px;padding:82px 0 98px;border-bottom:1px solid var(--line-strong);align-items:end}
+.about-hero h1{font:500 clamp(47px,6vw,94px)/1.38 var(--han);letter-spacing:-.087em;margin-top:52px}
+.about-hero .about-copy{padding-bottom:8px;border-top:1px solid var(--line-strong);padding-top:25px;font-size:15px;line-height:2;color:var(--muted)}
+.about-detail{display:grid;grid-template-columns:1fr 1fr;gap:10%;padding:65px 0 120px}
+.about-detail h2{font:400 50px var(--serif);margin-bottom:22px}
+.about-detail p{max-width:550px;color:var(--muted);font-size:14px;line-height:2;margin-bottom:20px}
+.about-detail a{display:inline-flex;padding-bottom:3px;border-bottom:1px solid var(--ink)}
+/* footer */
+.footer{background:#1A211F;color:#E9ECE6;padding:80px 0 23px}
+.footer-top{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-bottom:78px}
+.footer-title{font:400 clamp(96px,12vw,220px)/.82 var(--serif);letter-spacing:-.079em}
+.footer-title i{color:#D2876F}
+.footer-top p{font-size:12px;max-width:250px;line-height:1.9;color:#B9C1B8}
+.footer-bottom{border-top:1px solid #6F7B74;display:flex;align-items:center;justify-content:space-between;padding-top:20px;color:#B9C1B8;gap:18px}
+/* prototype design system inspector */
+.inspector-button{position:fixed;right:22px;bottom:20px;z-index:60;background:#1A211F;color:#F0EEE8;padding:11px 16px;display:flex;align-items:center;gap:17px;box-shadow:0 8px 25px #171B1929;letter-spacing:.04em;font:500 10px var(--mono)}
+.inspector-button .plus{font-size:18px;line-height:.5;color:#D2876F}
+.inspector-button:hover{background:#333C35}
+.inspector{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);background:#E7E4DD;color:#171B19;z-index:100;border-left:1px solid #B7BBB0;transform:translateX(102%);transition:transform .3s cubic-bezier(.2,.7,.2,1);overflow-y:auto;padding:27px 28px 38px;box-shadow:-20px 0 50px #1017111c}
+.inspector.is-open{transform:translateX(0)}
+.inspector-overlay{position:fixed;inset:0;z-index:99;background:#1B201D66;display:none}.inspector-overlay.is-open{display:block}
+.inspect-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #9DA399;padding-bottom:15px}
+.inspect-close{font-size:24px;line-height:1;padding:4px 6px}
+.inspect-header{font:400 70px/.85 var(--serif);letter-spacing:-.068em;margin:44px 0 20px}
+.inspect-description{font-size:12px;line-height:1.9;color:#61685F;margin-bottom:30px}
+.inspect-section{padding:20px 0;border-top:1px solid #9DA399}
+.inspect-section h3{font:500 11px var(--mono);letter-spacing:.09em;margin-bottom:17px}
+.inspect-options{display:flex;gap:9px;flex-wrap:wrap}
+.inspect-options button{padding:8px 12px;border:1px solid #9DA399;font-size:11px}
+.inspect-options button[aria-pressed="true"]{background:#1A211F;color:#F0EEE8;border-color:#1A211F}
+.swatches{display:flex;gap:8px;margin-top:12px}.swatch{height:38px;flex:1;min-width:0;border:1px solid #0002}
+.type-example{margin-top:15px;font:400 55px/.95 var(--serif)}.type-example-sans{font:600 29px var(--sans);letter-spacing:-.06em;margin-top:12px}.type-example-han{font:500 27px var(--han);letter-spacing:-.06em;margin-top:12px}
+.scale-table{display:grid;grid-template-columns:70px 1fr;gap:9px 14px;font-size:11px;color:#575F58}.scale-table strong{color:#171B19;font-weight:600}
+.inspect-foot{font-size:11px;line-height:1.9;color:#6D736C;margin-top:25px}
+/* responsive */
+@media(max-width:1020px){.hero-layout{grid-template-columns:10% 1fr}.hero-title h1{font-size:clamp(72px,10vw,110px)}.hero-bottom{margin-left:11.5%}.feature{grid-template-columns:1fr .83fr}.feature-copy{padding-left:30px}.feature-copy h3{font-size:36px}.work-row{grid-template-columns:45px 1.2fr .8fr 20px}.work-row .kind{display:none}}
+@media(max-width:720px){
+  :root{--gutter:21px}
+  .masthead{height:66px}.masthead .wrap{grid-template-columns:1fr auto}.brand-description{display:none}.nav{gap:17px}.nav button{font-size:11px;padding:21px 0 18px}.header-aside{display:none}
+  .hero{padding-top:24px;padding-bottom:31px}.hero-meta{font-size:8px}.hero-meta span:last-child{display:none}
+  .hero-layout{display:block;margin-top:64px}.hero-rail{display:none}
+  .hero-title h1{font-size:clamp(58px,13.4vw,95px);line-height:.9}.hero-title .soft-line{margin-left:0%;white-space:normal;line-height:.9}.hero-title .tiny-mark{display:none}
+  .hero-bottom{margin-left:0;margin-top:63px;grid-template-columns:1fr;gap:30px}.hero-bottom .statement{font-size:23px}.hero-bottom .aside{flex-direction:row;align-items:end;justify-content:space-between;gap:15px}.hero-bottom .aside p{font-size:11px;max-width:220px}.hero-bottom .text-link{white-space:nowrap;font-size:11px}
+  .chapter{padding-top:60px}.chapter-head{align-items:start;padding-bottom:22px}.chapter-title{font-size:62px;margin-top:13px}.chapter-meta{display:none}
+  .feature{grid-template-columns:1fr;padding:18px 0}.feature-art{height:440px}.art-product-word{font-size:126px}.prototype-window{width:77%;height:54%;right:-12%;bottom:-4%}.feature-copy{padding:25px 0 10px;gap:25px}.feature-copy h3{font-size:33px;max-width:unset}.feature-copy .latin{font-size:44px}.feature-copy .explain{margin-top:15px}.feature-copy .open-case{margin-top:12px}
+  .pair{grid-template-columns:1fr;gap:35px;padding:23px 0 68px}.art-secondary{height:320px}.art-source .source-title{font-size:100px}.art-systems .sys-word{font-size:100px}.card-bottom{grid-template-columns:40px 1fr auto}
+  .index-section .wrap{padding-block:60px}.index-head{align-items:end}.index-head h2{font-size:49px}.index-head .text-link{font-size:10px;white-space:nowrap}.index-row{grid-template-columns:40px 1fr 22px;gap:7px;padding:20px 0}.index-row .category{display:none}.index-row strong{font-size:21px}
+  .principles{padding-top:56px;padding-bottom:60px}.principles h2{font-size:61px;padding:18px 0 27px}.principle-grid{grid-template-columns:1fr}.principle,.principle + .principle{padding:19px 0 24px;border-right:0;border-bottom:1px solid var(--line);min-height:unset}.principle strong{margin:9px 0 6px}
+  .page-head{padding:52px 0 33px}.page-head h1{font-size:86px}.page-head .head-bottom{margin-top:28px;display:block}.page-head .head-bottom p{font-size:12px}.work-tools{padding:19px 0;align-items:flex-start}.work-tools .segment{width:100%}.segment button{padding:6px 8px;font-size:10px}.work-rows{padding-bottom:80px}.work-row{grid-template-columns:33px 1fr 22px;gap:9px;padding:20px 0}.work-row h2{font-size:22px}.work-row h2 span{font-size:19px}.work-row .desc{display:none}.cap-grid{grid-template-columns:1fr;margin-bottom:80px}.cap-group{min-height:unset}
+  .case-head h1{font-size:48px;margin-top:28px}.case-head .latin{font-size:56px}.case-head .case-intro{grid-template-columns:1fr;margin-top:34px;gap:12px}.case-head .case-intro .note{justify-self:start}.case-stage,.case-stage .feature-art,.case-stage .art-secondary{height:430px;min-height:unset}.case-layout{grid-template-columns:1fr;gap:35px;padding-bottom:75px}.case-facts dl{position:static;grid-template-columns:1fr 1fr;gap:14px}.case-body article{grid-template-columns:36px 1fr;gap:9px;padding-bottom:30px;margin-bottom:28px}.case-body h2{font-size:27px}.case-next{padding-bottom:70px}
+  .about-hero{grid-template-columns:1fr;padding:57px 0 48px;gap:33px}.about-hero h1{font-size:47px;margin-top:29px}.about-hero .about-copy{font-size:13px}.about-detail{grid-template-columns:1fr;gap:22px;padding:45px 0 80px}
+  .footer{padding:62px 0 18px}.footer-top{display:block;padding-bottom:65px}.footer-title{font-size:clamp(93px,20vw,160px)}.footer-top p{margin-top:30px}.footer-bottom{font-size:8px}.footer-bottom span:nth-child(2){display:none}
+  .inspector-button{right:11px;bottom:11px;padding:10px 11px;font-size:9px}.inspector{padding:23px}
+}
+@media(max-width:390px){.hero-title h1{font-size:14.1vw}.hero-bottom .aside{display:block}.hero-bottom .text-link{margin-top:15px}.chapter-title{font-size:53px}.index-head h2{font-size:45px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Inspector is accessible from header and footer; never floats above real work */
+.footer-design-button{font:inherit;letter-spacing:inherit;color:#B9C1B8;padding:0;border-bottom:1px solid #78837A}
+.footer-design-button:hover{color:#E9ECE6}
+@media(max-width:720px){.footer-bottom{gap:9px;flex-wrap:wrap}.footer-design-button{order:3;flex-basis:100%;margin-top:16px;text-align:left;font-size:9px}}
+/* V8 — art-directed home and contextual work browsing */
+[hidden]{display:none!important}
+.showcase{padding-top:102px;padding-bottom:105px}
+.showcase-top{display:flex;align-items:end;justify-content:space-between;gap:42px;padding-bottom:32px;border-bottom:1px solid var(--line-strong)}
+.showcase-top h2{font:400 clamp(68px,7.2vw,119px)/.88 var(--serif);letter-spacing:-.072em;margin-top:25px}
+.showcase-top h2 i{font-weight:400}
+.showcase-top>p{max-width:345px;font-size:12px;line-height:2;color:var(--muted);padding-bottom:7px}
+.showcase-editor{display:grid;grid-template-columns:minmax(0,1.43fr) minmax(280px,.57fr);border-bottom:1px solid var(--line-strong);min-height:590px}
+.showcase-canvas{min-width:0;overflow:hidden;background:#1E312D;display:flex}
+.showcase-canvas>.feature-art,.showcase-canvas>.art-secondary{width:100%;height:100%;min-height:590px}
+.showcase-canvas .art-product-word{font-size:clamp(110px,12vw,200px)}
+.showcase-info{padding:32px 0 24px clamp(25px,4vw,68px);display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.showcase-metadata{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted)}
+.showcase-copy{max-width:440px}
+.showcase-copy h3{font:500 clamp(34px,3.45vw,57px)/1.42 var(--han);letter-spacing:-.075em;margin-top:19px}
+.featured-latin{font:italic 400 clamp(40px,4.05vw,68px)/.95 var(--serif);letter-spacing:-.055em;color:var(--accent);margin-top:17px}
+.showcase-copy p{font-size:13px;line-height:2;color:var(--muted);max-width:315px;margin-top:29px}
+.featured-open{flex:none}
+.showcase-picks{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line-strong)}
+.showcase-picks button{position:relative;display:flex;align-items:baseline;gap:22px;border-right:1px solid var(--line);padding:25px 28px 27px 0;text-align:left;transition:background .18s}
+.showcase-picks button+button{padding-left:29px}
+.showcase-picks button:last-child{border-right:0}
+.showcase-picks button:before{content:'';position:absolute;left:0;right:26px;top:-2px;height:2px;background:transparent;transition:background .18s}
+.showcase-picks button[aria-pressed="true"]:before{background:var(--accent)}
+.showcase-picks button[aria-pressed="true"] .pick-name{color:var(--accent)}
+.showcase-picks .pick-no{color:var(--muted)}
+.showcase-picks .pick-name{font:500 clamp(16px,1.58vw,24px)/1.35 var(--han);letter-spacing:-.06em}
+.showcase-picks .pick-tail{margin-left:auto;color:var(--muted);font:500 9px var(--mono);letter-spacing:.03em;white-space:nowrap}
+.showcase-foot{display:flex;justify-content:space-between;gap:30px;color:var(--muted);padding-top:15px;font-size:9px}
+.explore-section{padding-block:104px 124px}
+.explore-grid{display:grid;grid-template-columns:1.07fr .93fr;gap:9%;padding-top:24px}
+.explore-grid h2{font:400 clamp(65px,7.8vw,128px)/.95 var(--serif);letter-spacing:-.065em;max-width:740px}
+.explore-grid p{font-size:13px;color:var(--muted);line-height:2;max-width:430px;margin-top:29px}
+.explore-links{border-top:1px solid var(--line-strong)}
+.explore-links button{display:grid;grid-template-columns:42px 1fr 29px;align-items:center;gap:15px;border-bottom:1px solid var(--line);padding:30px 0;width:100%;text-align:left}
+.explore-links button strong{font:500 clamp(23px,2.1vw,36px)/1.35 var(--han);letter-spacing:-.06em}
+.explore-links button .mono{color:var(--accent)}
+.explore-links button>span:last-child{font:400 30px/.7 var(--serif)}
+.explore-links button:hover strong{color:var(--accent)}
+.work-head{padding-bottom:38px}
+.work-browser{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,35%);column-gap:clamp(38px,5vw,85px);padding-bottom:116px}
+.work-list-top,.work-list-bottom{display:flex;align-items:center;justify-content:space-between;color:var(--muted);padding-block:13px;border-bottom:1px solid var(--line-strong)}
+.work-list-bottom{margin-top:5px;border-top:1px solid var(--line-strong);border-bottom:0;padding-top:14px}
+.work-browser .work-rows{padding-bottom:0}
+.work-browser .work-row{display:grid;grid-template-columns:55px 1fr 118px 25px;gap:16px;align-items:center;min-height:127px;padding:22px 0;border-top:0;border-bottom:1px solid var(--line);transition:background .18s}
+.work-browser .work-row .index-num{align-self:start;padding-top:6px;color:var(--muted)}
+.work-browser .work-row .row-main strong{display:block;font:500 clamp(21px,2.05vw,32px)/1.36 var(--han);letter-spacing:-.075em}
+.work-browser .work-row .row-main em{display:block;font:italic 400 clamp(22px,2vw,29px)/1.15 var(--serif);letter-spacing:-.035em;margin:7px 0 0;color:var(--accent)}
+.work-browser .work-row .row-main small{display:none;color:var(--muted);font-size:11px;margin-top:8px;line-height:1.8}
+.work-browser .work-row .kind{font-size:9px;color:var(--muted);justify-self:end}
+.work-browser .work-row .go{justify-self:end;transition:transform .2s}
+.work-browser .work-row:hover .go,.work-browser .work-row:focus-visible .go{transform:translate(4px,-3px)}
+.work-browser .work-row[data-preview-selected="true"] .row-main strong{color:var(--accent)}
+.work-preview{position:sticky;top:104px;align-self:start;background:var(--paper-shade);padding:17px;min-width:0}
+.preview-top{display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);padding-bottom:14px;border-bottom:1px solid var(--line)}
+.preview-art{margin-top:16px;height:clamp(310px,31vw,480px);overflow:hidden;position:relative}
+.preview-art>.feature-art,.preview-art>.art-secondary{height:100%;width:100%}
+.preview-art .art-product-word{font-size:clamp(77px,7.5vw,134px)}
+.preview-art .art-product-sub{font-size:9px}
+.preview-art .prototype-window{padding:10px;width:78%;height:52%;right:-13%}
+.preview-art .proto-title{font-size:12px;padding-block:10px}.preview-art .proto-stage{font-size:7px}
+.preview-art .art-source .source-title{font-size:clamp(77px,8vw,140px)}
+.preview-art .art-systems .sys-word{font-size:clamp(65px,7vw,120px)}
+.preview-caption{padding:21px 4px 5px}
+.preview-caption strong{display:block;font:500 clamp(20px,1.75vw,28px)/1.4 var(--han);letter-spacing:-.07em;margin-top:10px}
+.preview-caption p{font-size:11px;color:var(--muted);margin-top:10px}
+.preview-hint{color:var(--muted);border-top:1px solid var(--line);margin-top:22px;padding-top:12px;font-size:9px}
+/* V8 capabilities: editorial index rather than tiled cards */
+#cap-grid.cap-grid{display:block;background:transparent;border:0;margin:25px 0 110px;border-top:1px solid var(--line-strong)}
+#cap-grid .cap-group{background:none;min-height:0;padding:0;display:grid;grid-template-columns:155px minmax(220px,1fr) minmax(230px,1.2fr);gap:28px;align-items:start;border-bottom:1px solid var(--line);padding-block:31px 46px}
+.cap-number{color:var(--accent);padding-top:9px}
+#cap-grid .cap-group h3{margin:0;font-size:clamp(30px,3vw,46px);line-height:1.3}
+#cap-grid .cap-group .cap-heading p{font-size:12px;color:var(--muted);margin-top:11px}
+#cap-grid .cap-group .related{border-top:0;padding-top:0}
+#cap-grid .cap-group .related button{border-bottom:1px solid var(--line);padding:13px 0;gap:20px;font-size:13px}
+#cap-grid .cap-group .related button:first-child{padding-top:6px}
+/* Responsive layouts */
+@media(max-width:1120px){.showcase-editor{grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr)}.showcase-info{padding-left:28px}.showcase-picks .pick-tail{display:none}.work-browser{grid-template-columns:minmax(0,1fr) minmax(260px,33%);column-gap:30px}.work-browser .work-row{grid-template-columns:36px 1fr 25px}.work-browser .work-row .kind{display:none}#cap-grid .cap-group{grid-template-columns:110px minmax(220px,1fr) minmax(220px,1.15fr)}}
+@media(max-width:720px){
+ .showcase{padding-top:64px;padding-bottom:60px}.showcase-top{align-items:start;padding-bottom:23px}.showcase-top h2{font-size:63px;margin-top:17px}.showcase-top>p{display:none}
+ .showcase-editor{grid-template-columns:1fr;min-height:0}.showcase-canvas>.feature-art,.showcase-canvas>.art-secondary{min-height:440px;height:440px}.showcase-canvas .art-product-word{font-size:123px}.showcase-info{padding:27px 0 21px;min-height:310px;gap:30px}
+ .showcase-metadata{font-size:9px}.showcase-copy h3{font-size:31px;margin-top:12px}.featured-latin{font-size:43px;margin-top:7px}.showcase-copy p{margin-top:17px;max-width:unset}
+ .showcase-picks button,.showcase-picks button+button{display:block;padding:19px 7px 21px 7px}.showcase-picks .pick-no{display:block;margin-bottom:11px}.showcase-picks .pick-name{font-size:15px}.showcase-picks button:before{right:7px}
+ .showcase-foot{font-size:8px}.showcase-foot span:last-child{display:none}
+ .explore-section{padding-block:65px 80px}.explore-grid{grid-template-columns:1fr;gap:31px}.explore-grid h2{font-size:72px}.explore-grid p{margin-top:20px}.explore-links button{padding:23px 0}
+ .work-browser{grid-template-columns:1fr;padding-bottom:83px}.work-preview{display:none}.work-browser .work-row{min-height:122px;padding-block:20px;grid-template-columns:34px 1fr 25px}
+ .work-browser .work-row .row-main strong{font-size:22px}.work-browser .work-row .row-main em{font-size:22px}.work-browser .work-row .row-main small{display:block}.work-browser .work-row .index-num{font-size:9px}
+ .work-list-top{font-size:9px}.work-list-bottom{font-size:9px}
+ #cap-grid .cap-group{display:block;padding:25px 0 31px}#cap-grid .cap-group h3{font-size:31px;margin-top:14px}#cap-grid .cap-group .related{margin-top:18px}
+}
+@media(max-width:390px){.showcase-top h2{font-size:53px}.showcase-canvas>.feature-art,.showcase-canvas>.art-secondary{height:390px;min-height:390px}.showcase-canvas .art-product-word{font-size:108px}.showcase-picks .pick-name{font-size:13px}.explore-grid h2{font-size:62px}}
+
+/* V12 — editorial case studies; same identity as the V8 site */
+.case-path{display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--line);min-height:68px;color:var(--muted)}
+.case-path .case-back{padding:0;color:var(--ink);font-size:10px}.case-path-side{margin-left:auto}
+.v9-case-head{padding:49px 0 69px;border:0}.v9-case-head h1{margin-top:72px;margin-bottom:9px;max-width:1120px;font-size:clamp(58px,7.3vw,118px);line-height:1.35}
+.v9-case-head .latin{font-size:clamp(50px,6.5vw,105px);margin-left:17%;line-height:.96}.v9-case-head .case-intro{grid-template-columns:minmax(0,1fr) 250px;margin-top:72px;gap:80px;align-items:end}
+.v9-case-head .case-intro>p{font:500 clamp(18px,1.8vw,26px)/1.8 var(--han);letter-spacing:-.05em;max-width:670px}.case-head-side{border-top:1px solid var(--line-strong);padding-top:12px}.case-head-side>.mono{color:var(--accent)}.case-head-side .note{font-size:12px;line-height:1.9;color:var(--muted);margin-top:10px}
+.case-cover{width:100%;height:clamp(480px,50vw,690px);min-height:0;overflow:hidden;position:relative}
+.case-cover>div{position:relative;height:100%;width:100%;overflow:hidden}.cover-issue{position:absolute;left:4%;top:5%;font-size:10px;z-index:2}.cover-bottom{position:absolute;bottom:24px;left:4%;right:4%;display:flex;justify-content:space-between;gap:20px;font-size:10px;z-index:4}
+.case-cover-product{background:#1C3431;color:#EAEDE3}.case-cover-product .cover-issue{color:#CBD7CC}.cover-product-title{position:absolute;left:5%;top:20%;font:600 clamp(72px,9.1vw,160px)/.95 var(--sans);letter-spacing:-.095em;z-index:1}.cover-product-title i{font:italic 400 1.09em var(--serif);letter-spacing:-.07em}
+.cover-mini-ui{position:absolute;right:4%;bottom:-12%;width:42%;min-height:72%;background:#F0EEE8;color:#26322A;border:1px solid #87918A;padding:clamp(19px,2.8vw,49px);transform:rotate(-5deg);box-shadow:-18px -25px 0 #9CAFA81B;z-index:2}.cover-ui-top{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #B7BDB4;padding-bottom:19px}.cover-ui-head{font:500 clamp(26px,3.3vw,50px)/1.22 var(--han);letter-spacing:-.07em;max-width:320px;margin:30px 0 27px}.cover-ui-mini{display:flex;align-items:center;gap:12px;border-bottom:1px solid #C5CABF;padding:13px 0;font-size:12px}.cover-ui-mini b{margin-left:auto;font-weight:400}.cover-ui-pip{width:8px;height:8px;border-radius:50%;background:#A34532;flex-shrink:0}
+.case-cover-oss{background:#D6D1C5;color:#232521}.case-cover-oss:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#5C665618 1px,transparent 1px),linear-gradient(90deg,#5C665618 1px,transparent 1px);background-size:45px 45px}.cover-oss-big{position:absolute;left:6%;top:21%;font:700 clamp(94px,13vw,210px)/.78 var(--sans);letter-spacing:-.11em}.cover-oss-big i{font:italic 400 1.08em/.85 var(--serif);color:#A34532}.cover-oss-diff{position:absolute;right:6%;bottom:22%;display:flex;flex-direction:column;gap:9px;letter-spacing:.08em}.cover-oss-diff span{padding:11px 20px;background:#EAE6DC;border:1px solid #AEAFA4}.cover-oss-diff span:last-child{background:#213C34;color:#DDE9DC;border-color:#213C34}
+.case-cover-systems{background:#293C36;color:#EDEEE6}.case-cover-systems:before{content:'';position:absolute;width:80%;aspect-ratio:1;max-width:950px;left:38%;top:-38%;border:1px solid #C4D1C433;border-radius:50%;box-shadow:0 0 0 100px #FFFFFF08,0 0 0 200px #FFFFFF06}.cover-systems-big{position:absolute;left:5%;top:22%;font:500 clamp(64px,10vw,165px)/.95 var(--sans);letter-spacing:-.09em;z-index:2}.cover-systems-big i{font:italic 400 1.02em var(--serif);letter-spacing:-.07em;color:#E4D2BF}.cover-systems-nodes{display:flex;align-items:center;gap:13px;position:absolute;left:6%;bottom:17%;flex-wrap:wrap;z-index:3}.cover-systems-nodes span{border:1px solid #A4B6AD;padding:10px 18px;font:500 10px var(--mono)}.cover-systems-nodes b{font-weight:400;color:#D7C3B1}
+.case-edition-line{display:flex;justify-content:space-between;border-bottom:1px solid var(--line-strong);padding:17px 0 19px;gap:20px;color:var(--muted);font-size:9px}
+.case-read-layout{display:grid;grid-template-columns:minmax(180px,22%) minmax(0,1fr);gap:clamp(50px,7vw,115px);padding-top:100px}.case-aside{min-width:0}.case-sidebar-sticky{position:sticky;top:112px}.case-sidebar-label{color:var(--accent);padding-bottom:18px;border-bottom:1px solid var(--line-strong)}.case-facts dl{display:block}.case-facts div{padding:19px 0;border-bottom:1px solid var(--line)}.case-facts dt{font:500 10px/1.6 var(--mono);letter-spacing:.09em;color:var(--muted);margin-bottom:6px}.case-facts dd{font-size:12px;line-height:1.8;margin:0}
+.case-toc{margin-top:44px;display:flex;flex-direction:column;gap:12px}.case-toc>span{color:var(--muted);padding-bottom:10px}.case-toc button{text-align:left;border-bottom:1px solid transparent;align-self:start;padding:5px 0;font-size:10px;color:var(--muted)}.case-toc button:hover{color:var(--accent);border-color:var(--accent)}
+.case-main{min-width:0}.case-editorial-section{scroll-margin-top:115px;padding:0 0 114px;border-bottom:1px solid var(--line-strong);margin-bottom:110px}.case-section-index{color:var(--accent);margin-bottom:29px;font-size:11px}.case-editorial-section h2{font:400 clamp(56px,6vw,99px)/1.02 var(--serif);letter-spacing:-.065em;max-width:900px}.case-prose-lead{font:500 clamp(23px,2.4vw,35px)/1.7 var(--han);letter-spacing:-.07em;max-width:850px;margin-top:39px}.case-editorial-copy{max-width:655px;color:var(--muted);font-size:14px;line-height:2.1;margin-top:23px}.case-section-top{display:flex;justify-content:space-between;align-items:end;gap:20px}.case-section-aside{font-size:9px;color:var(--muted);padding-bottom:7px;white-space:nowrap}.case-intro-copy{color:var(--muted);font-size:13px;line-height:2;margin-top:21px;max-width:610px;margin-bottom:40px}.case-figure-caption{font-size:9px;letter-spacing:.04em;margin-top:15px;color:var(--muted)}
+.experience-frame{min-width:0;overflow:hidden;background:var(--paper-shade)}
+/* interactive product */
+.demo-product{display:grid;grid-template-columns:minmax(225px,.78fr) minmax(0,1.22fr);min-height:530px}.demo-side{background:#283D36;color:#E7E9DF;padding:clamp(25px,3vw,45px);display:flex;flex-direction:column}.demo-side-issue{color:#B9C8BC}.demo-side h3{font:600 clamp(32px,3.4vw,54px)/1.05 var(--sans);letter-spacing:-.075em;margin:55px 0 18px}.demo-side h3 i{font:italic 400 1.04em var(--serif);letter-spacing:-.05em}.demo-side>p{font-size:12px;line-height:1.9;color:#BECFC2;max-width:270px}.journey-steps{border-top:1px solid #779083;margin-top:auto}.journey-step{display:grid;grid-template-columns:23px 1fr auto;gap:10px;align-items:center;width:100%;text-align:left;padding:15px 0;color:#ADC2B4;border-bottom:1px solid #718777}.journey-step span{font:500 10px var(--mono)}.journey-step b{font-weight:600;font-size:13px}.journey-step em{font-style:normal;font-size:11px}.journey-step[aria-pressed="true"]{color:#F9F6ED}.journey-step[aria-pressed="true"] b{color:#E8B49A}
+.demo-product-app{background:#E8E9DF;color:#263129;padding:clamp(22px,2.5vw,43px);display:flex;flex-direction:column}.demo-app-head{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #B1BFB2;padding-bottom:16px;font-size:9px;color:#526056}.app-dot{width:6px;height:6px;border-radius:50%;background:#A34532;display:inline-block;margin-right:6px}.demo-app-content{padding-top:40px;flex:1;display:flex;flex-direction:column}.app-content-top{display:flex;justify-content:space-between;color:#69766C;gap:10px;font-size:9px}.demo-app-content h4{font:500 clamp(27px,3.2vw,48px)/1.38 var(--han);letter-spacing:-.07em;margin:29px 0 24px}.app-message{padding:25px;background:#F5F3EA;border:1px solid #C4CFC0;font:500 16px/1.85 var(--han);min-height:126px}.app-message ul{list-style:none;padding:0;margin:0;font:500 12px/2 var(--sans)}.app-message li{border-bottom:1px solid #D6DED1;display:flex;gap:14px;padding:5px 0}.app-message li:last-child{border:0}.app-message li span{font:400 9px var(--mono);color:#9E654E}.app-message.success{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:161px}.result-check{border:1px solid #5E8A71;border-radius:50%;width:33px;height:33px;margin-bottom:7px;font:500 18px/31px var(--sans);color:#496F57}.app-message.success strong{font:600 16px var(--sans)}.app-message.success small{font-size:10px;color:#596D60}.demo-app-content>p{color:#67786D;font-size:11px;line-height:2;margin-top:18px}.app-state{margin-top:auto;padding:14px 0 10px;color:#986048;font-size:9px}.demo-app-foot{font-size:8px;display:flex;justify-content:space-between;border-top:1px solid #B1BFB2;padding-top:14px;color:#69776B}
+/* Open source before/after */
+.demo-source{background:#C9C8BF;padding:clamp(22px,2.5vw,42px);min-height:530px}.source-tool{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #9CA499;padding-bottom:24px}.source-tool>.mono{font-size:9px}.source-compare-controls{display:flex;border:1px solid #89928B}.source-compare-controls button{font:500 11px var(--mono);padding:12px 15px;display:flex;gap:21px}.source-compare-controls button+button{border-left:1px solid #89928B}.source-compare-controls button[aria-pressed="true"]{background:#203B32;color:#EFF4E9}.source-canvas{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(180px,.88fr);gap:36px;padding-top:35px}.source-window{min-height:371px;background:#F3F1E9;border:1px solid #BCC3B7;padding:clamp(18px,2vw,35px);box-shadow:9px 9px 0 #A7ADA0}.source-titlebar{display:flex;justify-content:space-between;border-bottom:1px solid #C0C5BC;padding-bottom:12px;font-size:8px;color:#6C766D}.source-doc-title{font:500 clamp(23px,2.5vw,37px)/1.35 var(--han);letter-spacing:-.07em;margin:27px 0 5px}.source-doc-meta{font-size:8px;color:#737C70;margin-bottom:21px}.source-content-row{padding:12px 0;border-bottom:1px solid #D3D7CB}.source-content-row span{color:#7D897B;font-size:8px}.source-content-row p{font:500 13px/1.8 var(--han);margin-top:6px}.source-content-row mark{padding:3px 5px;font-size:12px}.source-content-row .loss{background:#E9C6BC;color:#8B4A3B}.source-content-row .keep{background:#C5D8C9;color:#355A40}.source-inline-callout{background:#DBB8A9;color:#754636;display:inline-block;padding:9px 10px;font-size:8px;margin-top:24px}.source-inline-callout.kept{background:#B5CCBA;color:#325C40}.source-context{padding:14px 0}.source-context-kicker{color:#87503E;font-size:9px}.source-context h3{font:500 clamp(24px,2.7vw,42px)/1.45 var(--han);letter-spacing:-.075em;margin:39px 0 19px}.source-context p{max-width:250px;color:#5E6B61;font-size:12px;line-height:2}
+/* System exploration */
+.demo-system{min-height:530px;background:#263A32;color:#E6EEE5;padding:clamp(20px,2.8vw,44px)}.system-toolbar{display:flex;justify-content:space-between;gap:18px;align-items:center;border-bottom:1px solid #749080;padding-bottom:20px;color:#B4C9BA;font-size:9px}.system-flow{margin:53px 0 42px;display:flex;align-items:stretch;gap:5px;min-width:0}.system-flow button{flex:1;min-width:0;display:flex;flex-direction:column;gap:19px;align-items:start;text-align:left;border:1px solid #71877A;padding:18px clamp(7px,1.1vw,17px);height:122px;color:#C7D7CC;transition:background .18s}.system-flow button[aria-pressed="true"]{background:#E3E7DA;color:#24372D;border-color:#E3E7DA}.system-flow button>span{font-size:9px;color:#A8BCAF}.system-flow button[aria-pressed="true"]>span{color:#78614E}.system-flow strong{font:600 clamp(9px,.95vw,13px) var(--sans);letter-spacing:.01em}.system-flow small{align-self:end;margin-top:auto;font-size:10px}.sys-join{align-self:center;font-size:12px;color:#A4BEAC}.system-detail{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:20px;border-top:1px solid #668476;padding-top:25px}.system-diagram-label{display:flex;flex-direction:column;gap:36px;color:#B1C7B8}.system-detail-no{font:italic 400 45px/.9 var(--serif);color:#E3BBA5}.system-detail h3{grid-column:2;font:500 clamp(26px,3.1vw,45px)/1.3 var(--han);letter-spacing:-.06em;margin:0 0 13px}.system-detail p{grid-column:2;font-size:12px;line-height:2;max-width:490px;color:#C1D0C4;margin-top:-18px}.system-io{grid-column:2;display:flex;flex-wrap:wrap;gap:13px;border-top:1px solid #5F776B;padding-top:16px;margin-top:3px;color:#ABC3B1;font:400 10px/1.6 var(--mono)}.system-io span+span{border-left:1px solid #728C7B;padding-left:14px}
+.case-outcome-section{border-bottom:0;padding-bottom:35px;margin-bottom:25px}.case-outcome-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:55px;padding-top:45px;align-items:end}.case-outcome-big{font:400 clamp(52px,5.4vw,87px)/.94 var(--serif);letter-spacing:-.06em}.case-outcome-big i{color:var(--accent)}.case-outcome-detail{border-top:1px solid var(--line-strong);padding-top:19px;color:var(--muted);font-size:13px;line-height:2}.case-scope-note{border-top:1px solid var(--line);display:grid;grid-template-columns:180px 1fr;gap:25px;margin-top:80px;padding-top:25px}.case-scope-note .mono{color:var(--muted)}.case-scope-note p{font-size:11px;line-height:1.9;color:var(--muted);max-width:590px}
+.case-next-v9{border-top:1px solid var(--line-strong);display:flex;justify-content:space-between;gap:30px;align-items:center;padding:44px 0 110px}.case-next-v9 .mono{color:var(--muted)}.case-next-v9 h2{font:500 clamp(26px,3.4vw,50px)/1.45 var(--han);margin-top:25px;letter-spacing:-.065em}.case-next-v9 h2 i{font:italic 400 .95em var(--serif);color:var(--accent)}.case-next-v9>button{font:400 clamp(54px,6.8vw,105px)/.8 var(--serif);border:1px solid var(--line-strong);border-radius:50%;width:clamp(88px,9vw,135px);height:clamp(88px,9vw,135px);transition:background .2s,color .2s;flex-shrink:0}.case-next-v9>button:hover{background:#283D36;color:#F0EEE8}
+@media(max-width:1000px){.case-read-layout{grid-template-columns:170px minmax(0,1fr);gap:38px}.v9-case-head .case-intro{gap:45px}.demo-product{grid-template-columns:1fr}.demo-side{min-height:360px}.demo-side h3{margin:28px 0 15px}.journey-steps{margin-top:28px}.demo-product-app{min-height:410px}.source-canvas{grid-template-columns:1fr;gap:10px}.source-context{padding:20px 0 0}.source-context h3{margin:16px 0 8px}.source-window{min-height:340px}.system-flow{overflow-x:auto;gap:5px;padding-bottom:14px}.system-flow button{min-width:99px}.cover-mini-ui{width:50%;height:auto}}
+@media(max-width:720px){.case-path{min-height:58px}.case-path-side{display:none}.v9-case-head{padding:30px 0 49px}.v9-case-head h1{font-size:clamp(42px,10vw,67px);margin:47px 0 15px;line-height:1.4}.v9-case-head .latin{font-size:clamp(48px,13vw,79px);margin-left:3%}.v9-case-head .case-intro{display:block;margin-top:41px}.v9-case-head .case-intro>p{font-size:18px}.case-head-side{margin-top:25px}.case-head-side .note{max-width:380px}.case-cover{height:460px}.cover-issue{top:25px;font-size:9px}.cover-bottom{font-size:8px;bottom:17px}.cover-bottom span{display:none}.cover-product-title{font-size:clamp(65px,16vw,97px);top:19%}.cover-mini-ui{width:73%;right:-12%;bottom:-18%;min-height:50%;padding:20px;transform:rotate(-6deg)}.cover-ui-top{font-size:7px}.cover-ui-head{font-size:24px;margin:22px 0 12px}.cover-ui-mini{font-size:9px;padding:10px 0}.cover-oss-big{font-size:clamp(85px,21vw,125px);top:25%}.cover-oss-diff{right:5%;bottom:18%;font-size:8px}.cover-systems-big{font-size:clamp(49px,12vw,84px);top:23%}.cover-systems-nodes{gap:6px;bottom:15%;left:5%;right:5%}.cover-systems-nodes span{font-size:7px;padding:7px 8px}.case-edition-line{font-size:8px}.case-edition-line span:first-child{display:none}.case-read-layout{display:block;padding-top:47px}.case-aside{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:75px;padding:15px 0}.case-sidebar-sticky{position:static}.case-sidebar-label{border:0;padding-bottom:9px}.case-facts dl{display:grid;grid-template-columns:1fr 1fr;gap:6px 15px}.case-facts div{padding:11px 0}.case-toc{flex-direction:row;flex-wrap:wrap;align-items:center;gap:11px;margin:18px 0 4px}.case-toc>span{width:100%;padding:0}.case-toc button{font-size:9px}.case-editorial-section{padding-bottom:76px;margin-bottom:73px}.case-editorial-section h2{font-size:clamp(50px,12vw,73px)}.case-prose-lead{font-size:23px;margin-top:24px}.case-editorial-copy{font-size:13px}.case-section-top{display:block}.case-section-aside{display:block;margin-top:13px}.case-intro-copy{margin:20px 0 30px}.demo-product{display:block}.demo-side{min-height:360px;padding:23px}.demo-side h3{font-size:41px;margin-top:27px}.journey-steps{margin-top:26px}.journey-step{padding:11px 0}.demo-product-app{min-height:415px;padding:23px}.demo-app-content{padding-top:32px}.demo-app-content h4{font-size:30px}.app-message{font-size:14px;padding:22px}.source-tool{flex-direction:column;align-items:stretch;gap:15px}.source-compare-controls{align-self:start}.demo-source{padding:22px}.source-window{padding:18px}.source-context{padding-top:19px}.source-context h3{font-size:28px}.demo-system{padding:20px}.system-toolbar span:last-child{display:none}.system-flow{margin:33px 0 29px}.system-flow button{min-width:105px;height:115px}.system-detail{grid-template-columns:1fr;gap:9px}.system-diagram-label{flex-direction:row;align-items:center;justify-content:space-between}.system-detail-no{font-size:26px}.system-detail h3,.system-detail p,.system-io{grid-column:1}.system-detail h3{font-size:29px;margin:13px 0 0}.system-detail p{margin-top:0}.system-io{margin-top:13px}.case-outcome-grid{grid-template-columns:1fr;gap:29px}.case-outcome-big{font-size:clamp(57px,14vw,86px)}.case-scope-note{grid-template-columns:1fr;gap:10px;margin-top:50px}.case-next-v9{padding-bottom:74px}.case-next-v9 h2{font-size:25px}.case-next-v9>button{width:70px;height:70px;font-size:53px}}
+@media(max-width:375px){.cover-oss-big{font-size:21vw}.cover-mini-ui{width:76%}.case-cover{height:430px}.v9-case-head h1{font-size:11vw}.demo-side h3{font-size:37px}}
+@media(prefers-reduced-motion:reduce){.case-next-v9>button{transition:none}}
+
+
+.case-template-tabs{display:flex;gap:20px;align-items:center;margin-left:auto}.case-template-tabs button{font:500 9px var(--mono);letter-spacing:.035em;color:var(--muted);padding:9px 0;border-bottom:1px solid transparent}.case-template-tabs button[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}.case-template-tabs button:hover{color:var(--ink)}
+@media(max-width:720px){.case-path{flex-wrap:wrap;column-gap:12px;padding:12px 0;row-gap:0}.case-template-tabs{width:100%;justify-content:space-between;gap:10px;margin:6px 0 0}.case-template-tabs button{font-size:8px;padding:9px 0}}
+
+/* V12 — Chinese typography, verified content and editorial finishing */
+:root{--cn-track:-.042em;--reading-width:640px}
+body{font-feature-settings:"kern" 1;font-synthesis:none}
+.hero-bottom .statement,.feature-copy h3,.case-editorial-section h2,.v9-case-head h1,.about-hero h1{letter-spacing:var(--cn-track);overflow-wrap:anywhere}
+.case-prose-lead,.case-editorial-copy,.case-outcome-detail,.case-intro-copy{line-break:strict;overflow-wrap:break-word}
+.case-prose-lead{max-width:var(--reading-width);line-height:1.85}
+.case-editorial-copy{max-width:var(--reading-width);line-height:2.05}
+.case-outcome-detail{font-size:14px;line-height:1.95}
+.case-edition-line{letter-spacing:.07em}
+.index-row .category small{font:400 10px/1.8 var(--mono);color:var(--muted);letter-spacing:.015em}
+.verified-strip{padding:80px 0 135px;border-top:1px solid var(--line)}
+.verified-head{display:grid;grid-template-columns:1fr minmax(260px,.3fr);align-items:end;gap:26px;padding-bottom:36px}
+.verified-head .eyebrow{grid-column:1/-1}
+.verified-head h2{font:400 clamp(52px,6.4vw,102px)/.91 var(--serif);letter-spacing:-.06em}
+.verified-head h2 i{color:var(--accent)}
+.verified-head p{font-size:12px;color:var(--muted);line-height:1.9;max-width:300px}
+.verified-list{border-top:1px solid var(--line-strong)}
+.verified-list a{display:grid;grid-template-columns:150px 1fr 30px;align-items:center;gap:20px;padding:29px 0;border-bottom:1px solid var(--line);transition:padding .2s}
+.verified-list a:hover{padding-left:10px}
+.verified-list a>span:nth-child(2){display:flex;align-items:baseline;flex-wrap:wrap;gap:12px}
+.verified-list strong{font:600 clamp(19px,1.8vw,28px)/1.5 var(--sans)}
+.verified-list small{font:400 12px/1.8 var(--han-sans);color:var(--muted)}
+.case-cover-dify .cover-oss-big{font-size:clamp(60px,8.2vw,127px);line-height:.87;letter-spacing:-.067em}
+.case-cover-dify .cover-oss-big i{font-weight:400}
+.case-cover-dify .cover-oss-diff{max-width:52%}
+.case-source-link{border-top:1px solid var(--line-strong);margin-top:80px;padding-top:22px}
+.case-source-link .mono{color:var(--accent);margin-bottom:18px}
+.case-source-link a{border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0;font-weight:600;font-size:14px;transition:color .15s}
+.case-source-link a:hover{color:var(--accent)}
+.case-source-link a>span:last-child{font:500 10px var(--mono);color:var(--muted);letter-spacing:.03em}
+.case-scope-note{margin-top:54px}
+.inspector-han-note{font-size:11px;color:var(--muted);line-height:1.8;margin:16px 0}
+.type-example-han{font-family:var(--han)!important;letter-spacing:var(--cn-track)!important}
+.case-head-side .note{font-size:12px;line-height:1.9}
+.work-row .kind{letter-spacing:.025em}
+@media(max-width:900px){.verified-head{grid-template-columns:1fr}.verified-head .eyebrow{grid-column:auto}.verified-list a{grid-template-columns:95px 1fr 25px}}
+@media(max-width:720px){.verified-strip{padding:50px 0 80px}.verified-head h2{font-size:68px}.verified-list a{grid-template-columns:60px 1fr 20px;gap:10px;padding:23px 0}.verified-list a>span:nth-child(2){display:block}.verified-list strong,.verified-list small{display:block}.verified-list small{font-size:11px;margin-top:5px}.case-cover-dify .cover-oss-big{top:27%;font-size:clamp(52px,13vw,76px);line-height:.97}.case-cover-dify .cover-oss-diff{max-width:95%;bottom:17%;font-size:8px}.case-prose-lead{line-height:1.8}.case-editorial-copy{line-height:2}.case-source-link{margin-top:49px}.case-source-link a{font-size:12px}.case-source-link a>span:last-child{font-size:9px}.case-head-side .note{font-size:12px}}
+@media(max-width:375px){.case-cover-dify .cover-oss-big{font-size:12vw}.verified-head h2{font-size:59px}}
+@media(prefers-reduced-motion:reduce){.verified-list a{transition:none}}
+
+/* V12 — Media art-direction placeholders. Clean, intentional empty regions until licensed assets arrive. */
+.asset-shell{background:var(--paper-deep)!important;color:var(--ink)!important}
+.media-slot{position:relative;width:100%;height:100%;min-height:300px;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(24px,3.5vw,48px);background:#E1DED4;color:#24322D;border:1px solid #9EA399}
+.media-slot::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(to right,rgba(26,41,35,.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(26,41,35,.08) 1px,transparent 1px);background-size:clamp(38px,5vw,84px) clamp(38px,5vw,84px);opacity:.65}
+.media-slot::after{content:'';position:absolute;inset:22px;border:1px solid rgba(25,40,32,.19);pointer-events:none}
+.media-slot__head,.media-slot__bottom{display:flex;justify-content:space-between;gap:12px;position:relative;z-index:2;color:#486158;align-items:center}
+.media-slot__head span,.media-slot__bottom span{font-size:9px;letter-spacing:.06em}
+.media-slot__body{position:relative;z-index:2;max-width:min(630px,82%);margin:auto 0;padding:15px 0 28px}
+.media-slot__index{font-size:clamp(71px,10vw,155px);line-height:1;color:#6A7C72;opacity:.3;letter-spacing:-.08em}
+.media-slot__title{font:500 clamp(23px,3.3vw,51px)/1.35 var(--han);letter-spacing:-.07em;margin-top:-10px}
+.media-slot__body p{font-size:clamp(11px,1vw,14px);line-height:1.9;max-width:480px;margin-top:12px;color:#61736A}
+.media-slot.has-asset::after,.media-slot.has-asset::before{display:none}
+.media-slot.has-asset{padding:0;background:#D1D3C9;border:0}
+.media-slot.has-asset img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media-slot.has-asset .media-slot__head,.media-slot.has-asset .media-slot__bottom,.media-slot.has-asset .media-slot__body{display:none}
+.media-slot--feature{height:100%;min-height:100%}
+.preview-art .media-slot{padding:23px}
+.preview-art .media-slot__index{font-size:90px}.preview-art .media-slot__title{font-size:clamp(23px,2vw,34px)}.preview-art .media-slot__body p{font-size:11px}
+.case-cover{height:clamp(480px,50vw,690px)}
+.case-cover>.media-slot{height:100%;min-height:100%;width:100%;padding:clamp(27px,4.1vw,66px)}
+.case-cover .media-slot__body{max-width:min(740px,82%)}
+.case-cover .media-slot__title{font-size:clamp(40px,5.7vw,85px)}
+.case-cover .media-slot__index{font-size:clamp(100px,14vw,190px)}
+.media-insert{margin:50px 0 14px;padding-top:35px;border-top:1px solid var(--line-strong)}
+.media-insert[hidden]{display:none!important}
+.media-insert__heading{display:grid;grid-template-columns:1fr auto;gap:14px 24px;align-items:end;margin-bottom:26px}
+.media-insert__heading .mono{grid-column:1/-1;color:var(--accent)}
+.media-insert__heading h3{font:400 clamp(43px,5vw,82px)/1.04 var(--serif);letter-spacing:-.06em}
+.media-insert__heading h3 i{color:var(--accent)}
+.media-insert__heading p{font-size:12px;line-height:1.9;color:var(--muted);max-width:280px}
+.media-insert__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.media-insert__grid--1{grid-template-columns:1fr}
+.media-insert__grid--2>.media-slot{height:clamp(370px,37vw,550px)}
+.media-insert__grid--1>.media-slot{height:clamp(330px,32vw,500px)}
+.media-slot--support{padding:24px}
+.media-slot--support .media-slot__index{font-size:85px}
+.media-slot--support .media-slot__title{font-size:clamp(21px,2.2vw,36px)}
+.media-slot--support .media-slot__body{max-width:92%}
+.media-slot--support .media-slot__body p{font-size:12px}
+@media(max-width:720px){.showcase-canvas .media-slot{min-height:440px}.media-slot{padding:23px}.media-slot::after{inset:13px}.media-slot__head span,.media-slot__bottom span{font-size:7px}.media-slot__body{max-width:93%}.media-slot__title{font-size:29px}.media-slot__body p{font-size:11px}.media-slot__index{font-size:85px}.case-cover{height:450px}.case-cover>.media-slot{padding:25px}.case-cover .media-slot__title{font-size:36px}.media-insert{margin-top:35px}.media-insert__heading{display:block}.media-insert__heading h3{font-size:56px;margin:15px 0}.media-insert__heading p{font-size:12px}.media-insert__grid{grid-template-columns:1fr}.media-insert__grid--2>.media-slot{height:400px}.media-insert__grid--1>.media-slot{height:310px}.preview-art .media-slot__index{font-size:70px}}
+@media(max-width:380px){.showcase-canvas .media-slot{min-height:390px}.media-slot__title{font-size:25px}.case-cover{height:405px}.case-cover .media-slot__title{font-size:31px}.media-insert__grid--2>.media-slot{height:360px}}
+
+/* V12 / Color architecture — crisp cool-white canvas, darker exhibition stages.
+   Preserve V12 type, hierarchy, navigation and media contracts. */
+:root{
+  --paper:#F8F9F7;
+  --paper-shade:#EFF1EE;
+  --paper-deep:#E6EAE6;
+  --ink:#1C2220;
+  --ink-soft:#3D4943;
+  --muted:#69746F;
+  --line:#D6DDD7;
+  --line-strong:#A1ADA5;
+  --accent:#B75C47;
+  --accent-dark:#874431;
+  --inverse:#F7F9F5;
+}
+html[data-accent="blue"]{--accent:#42627C;--accent-dark:#2B485E}
+.masthead{background:rgba(248,249,247,.94)}
+/* Alternate white and subtle cool-neutral bands, not wall-to-wall grey. */
+.index-section{background:var(--paper-shade)}
+.cap-group{background:#FFFFFF}
+/* Image wells are deliberate gallery canvases, never low-contrast filler cards. */
+.media-slot{
+  background:#F0F3EF;
+  color:#26372F;
+  border:1px solid #CED8D0;
+}
+.media-slot::before{background-image:linear-gradient(to right,rgba(36,53,45,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(36,53,45,.055) 1px,transparent 1px);opacity:.75}
+.media-slot::after{border-color:rgba(35,55,45,.16)}
+.media-slot__head,.media-slot__bottom{color:#52665B}
+.media-slot__index{color:#7F9287;opacity:.26}
+.media-slot__body p{color:#617369}
+/* Primary feature becomes a quiet deep exhibition room; the placeholder is legible within it. */
+.feature-art,.showcase-canvas,.case-cover-product,.case-cover-systems{background:#1B2825}
+.feature-art .media-slot,.showcase-canvas .media-slot,.case-cover-product>.media-slot,.case-cover-systems>.media-slot{
+  background:#22332F;color:#F2F5EF;border-color:#4D6359;
+}
+.feature-art .media-slot::before,.showcase-canvas .media-slot::before,.case-cover-product>.media-slot::before,.case-cover-systems>.media-slot::before{
+  background-image:linear-gradient(to right,rgba(246,250,244,.075) 1px,transparent 1px),linear-gradient(to bottom,rgba(246,250,244,.075) 1px,transparent 1px)
+}
+.feature-art .media-slot::after,.showcase-canvas .media-slot::after,.case-cover-product>.media-slot::after,.case-cover-systems>.media-slot::after{border-color:rgba(241,247,239,.18)}
+.feature-art .media-slot__head,.feature-art .media-slot__bottom,.showcase-canvas .media-slot__head,.showcase-canvas .media-slot__bottom,.case-cover-product .media-slot__head,.case-cover-product .media-slot__bottom,.case-cover-systems .media-slot__head,.case-cover-systems .media-slot__bottom{color:#B8C9BF}
+.feature-art .media-slot__index,.showcase-canvas .media-slot__index,.case-cover-product .media-slot__index,.case-cover-systems .media-slot__index{color:#A9C1B3;opacity:.29}
+.feature-art .media-slot__body p,.showcase-canvas .media-slot__body p,.case-cover-product .media-slot__body p,.case-cover-systems .media-slot__body p{color:#C2D1C7}
+/* Supporting works use brighter picture mats. */
+.art-secondary,.case-cover-oss{background:#E9EEEA}
+.asset-shell{background:var(--paper-deep)!important}
+.preview-art{background:var(--paper-shade)}
+.work-preview{background:#EEF1EE}
+.inspector{background:#F8F9F7;color:var(--ink);border-left-color:var(--line-strong)}
+.inspect-options button[aria-pressed="true"]{background:#1C2823;color:#F8F9F7;border-color:#1C2823}
+.footer{background:#192520;color:#F7FAF5}
+.footer-bottom{border-top-color:#63756A;color:#B5C6BC}
+.footer-design-button{color:#B5C6BC}
+/* Clear contrast in interaction modules without tinting the whole page. */
+.demo-source{background:#E8EDEA}
+.experience-frame{background:#EEF1EE}
+.source-window{background:#FFFFFF;border-color:#C1CFC5}
+.source-tool{border-bottom-color:#B9C6BD}
+.source-compare-controls{border-color:#9DAFA3}
+.source-compare-controls button+button{border-left-color:#9DAFA3}
+/* Asset-present media continue to render actual source imagery unchanged. */
+
+
+
+/* V14 / Opt-in liquid-glass material study.
+   Glass exists only where a translucent surface has a concrete job.
+   All illustration media slots and user content remain untouched. */
+.showcase-canvas,.case-cover{position:relative}
+.glass-overlay,.glass-case-label{display:none}
+html[data-glass="on"] .masthead{
+  background:rgba(248,249,247,.61);
+  border-bottom:1px solid rgba(255,255,255,.78);
+  box-shadow:0 12px 30px rgba(23,40,31,.065),inset 0 1px rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(23px) saturate(142%);
+  backdrop-filter:blur(23px) saturate(142%);
+}
+html[data-glass="on"] .glass-overlay{
+  position:absolute;display:flex;flex-direction:column;justify-content:space-between;
+  z-index:12;right:4%;bottom:5%;width:min(53%,315px);min-height:142px;
+  padding:21px 22px 17px;overflow:hidden;text-align:left;
+  border-radius:18px;border:1px solid rgba(243,252,246,.55);
+  background:linear-gradient(127deg,rgba(233,249,238,.21) 1%,rgba(229,248,237,.065) 57%,rgba(245,250,246,.12) 100%);
+  color:#f5fff7;
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.65),inset 0 -1px 0 rgba(215,233,221,.2),0 18px 52px rgba(3,17,13,.29);
+  -webkit-backdrop-filter:blur(25px) saturate(165%) brightness(1.08);
+  backdrop-filter:blur(25px) saturate(165%) brightness(1.08);
+  transition:transform .24s ease,box-shadow .24s ease;
+}
+html[data-glass="on"] .glass-overlay::before{
+ content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+ background:radial-gradient(ellipse at 14% -26%,rgba(255,255,255,.37),transparent 54%),linear-gradient(132deg,transparent 46%,rgba(255,255,255,.1) 53%,transparent 62%);
+}
+html[data-glass="on"] .glass-overlay:hover{transform:translateY(-4px);box-shadow:inset 0 1.5px 1px rgba(255,255,255,.76),0 24px 58px rgba(3,17,13,.34)}
+.glass-overlay .glass-top,.glass-overlay .glass-bottom{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.glass-overlay .glass-top{font:500 9px/1.5 var(--mono);letter-spacing:.08em;color:#e0f0e4}
+.glass-overlay .glass-top::after{content:"◉";font-size:12px;color:#f8fff6}
+.glass-overlay .glass-bottom strong{display:block;font:500 clamp(16px,1.38vw,20px)/1.4 var(--han);letter-spacing:-.045em;max-width:220px}
+.glass-overlay .glass-bottom .glass-arrow{font:400 30px/1 var(--serif)}
+html[data-glass="on"] .glass-case-label{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  position:absolute;bottom:24px;left:27px;z-index:9;width:min(280px,76%);
+  background:linear-gradient(125deg,rgba(242,250,244,.2),rgba(242,250,244,.08));
+  border:1px solid rgba(254,255,252,.51);border-radius:13px;
+  box-shadow:inset 0 1px rgba(255,255,255,.6),0 13px 35px rgba(6,20,16,.17);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);
+  padding:15px 17px;color:#f6fff7;
+}
+.glass-case-label .glass-kicker{font:500 9px/1.45 var(--mono);letter-spacing:.07em}
+.glass-case-label .glass-num{font:italic 400 36px/1 var(--serif)}
+html[data-glass="on"] .work-tools .segment{
+  padding:4px 7px;
+  border:1px solid rgba(255,255,255,.9);border-radius:999px;
+  background:linear-gradient(130deg,rgba(255,255,255,.68),rgba(231,239,234,.33));
+  box-shadow:inset 0 1px rgba(255,255,255,.93),0 5px 24px rgba(23,42,31,.05);
+  -webkit-backdrop-filter:blur(16px) saturate(130%);backdrop-filter:blur(16px) saturate(130%);
+}
+html[data-glass="on"] .work-tools .segment .caption{padding-left:10px}
+html[data-glass="on"] .work-tools .segment button{border-radius:999px}
+html[data-glass="on"] .work-tools .segment button[aria-pressed="true"]{background:rgba(255,255,255,.94);border-color:rgba(175,190,181,.55);box-shadow:0 3px 8px rgba(24,42,33,.08)}
+html[data-glass="on"] .source-compare-controls{
+  background:rgba(255,255,255,.4);border-color:rgba(187,200,192,.65);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+html[data-glass="on"] .source-compare-controls button[aria-pressed="true"]{box-shadow:inset 0 1px rgba(255,255,255,.36)}
+.glass-experiment{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:15px;border-top:1px solid var(--line);padding-top:16px}
+.glass-experiment>span{font:500 9px/1.6 var(--mono);letter-spacing:.08em;color:var(--muted)}
+.glass-experiment .glass-options{display:flex;gap:4px;align-items:center}
+.glass-experiment button{font:500 10px/1 var(--mono);letter-spacing:.03em;padding:10px 15px;border-radius:99px;border:1px solid transparent;color:var(--muted)}
+.glass-experiment button[aria-pressed="true"]{background:#22342b;color:#f8faf7;border-color:#22342b}
+.glass-experiment button:hover:not([aria-pressed="true"]){border-color:var(--line-strong)}
+@media(max-width:720px){
+  html[data-glass="on"] .masthead{-webkit-backdrop-filter:blur(16px) saturate(125%);backdrop-filter:blur(16px) saturate(125%)}
+  html[data-glass="on"] .glass-overlay{right:5%;top:61px;bottom:auto;width:145px;min-height:0;padding:12px 14px;border-radius:13px;gap:9px}
+  .glass-overlay .glass-top{font-size:7px}.glass-overlay .glass-bottom strong{display:none}.glass-overlay .glass-bottom .glass-arrow{font-size:22px}
+  .glass-experiment{align-items:flex-start}.glass-experiment>span{max-width:135px}
+  html[data-glass="on"] .work-tools .segment{border-radius:16px}
+  html[data-glass="on"] .glass-case-label{bottom:16px;left:17px;padding:10px 12px;width:min(200px,68%)}
+}
+@media(max-width:370px){html[data-glass="on"] .glass-overlay{width:132px;top:57px}}
+@media(prefers-reduced-motion:reduce){html[data-glass="on"] .glass-overlay{transition:none}html[data-glass="on"] .glass-overlay:hover{transform:none}}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  html[data-glass="on"] .masthead{background:rgba(248,249,247,.96)}
+  html[data-glass="on"] .glass-overlay,html[data-glass="on"] .glass-case-label{background:rgba(38,62,51,.95)}
+  html[data-glass="on"] .work-tools .segment{background:#f4f6f3}
+}
+
+
+/* V14 / Restrained liquid material: optics without glassmorphism everywhere. */
+html[data-glass="on"] .masthead {
+  background:rgba(250,251,249,.72);
+  border-bottom:1px solid rgba(37,61,51,.09);
+  box-shadow:0 3px 20px rgba(21,34,27,.025);
+  -webkit-backdrop-filter:blur(20px) saturate(128%);
+  backdrop-filter:blur(20px) saturate(128%);
+  transition:box-shadow .2s ease,background .2s ease;
+}
+html[data-glass="on"] .masthead[data-scrolled="true"] {
+  background:rgba(250,251,249,.79);
+  box-shadow:0 13px 32px rgba(14,29,21,.065);
+}
+html[data-glass="on"] .glass-overlay {
+  right:3.8%;bottom:5.2%;width:min(41%,266px);min-height:118px;
+  border-radius:15px;padding:17px 18px 15px;
+  background:linear-gradient(115deg,rgba(229,243,233,.25) 0%,rgba(207,229,217,.11) 55%,rgba(240,249,242,.18) 100%);
+  border:1px solid rgba(255,255,255,.52);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.58),inset 0 -1px rgba(249,255,250,.15),0 15px 30px rgba(3,18,12,.20);
+  -webkit-backdrop-filter:blur(16px) saturate(148%);
+  backdrop-filter:blur(16px) saturate(148%);
+}
+html[data-glass="on"] .glass-overlay::before {
+  background:radial-gradient(ellipse at 0% -20%,rgba(255,255,255,.29),transparent 56%),linear-gradient(133deg,transparent 56%,rgba(255,255,255,.08) 61%,transparent 68%);
+}
+html[data-glass="on"] .glass-overlay:hover {transform:translateY(-2px)}
+html[data-glass="on"] .glass-case-label {
+  border-radius:10px;left:24px;bottom:20px;padding:12px 14px;
+  border-color:rgba(255,255,255,.44);
+  box-shadow:inset 0 1px rgba(255,255,255,.42),0 8px 24px rgba(6,20,16,.1);
+}
+html[data-glass="on"] .work-tools .segment{
+  background:rgba(255,255,255,.55);border:1px solid rgba(202,211,205,.75);
+  box-shadow:inset 0 1px rgba(255,255,255,.83),0 4px 15px rgba(23,42,31,.035);
+  -webkit-backdrop-filter:blur(12px) saturate(115%);backdrop-filter:blur(12px) saturate(115%);
+}
+html[data-glass="on"] .source-compare-controls{
+  background:rgba(255,255,255,.50);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.inspector .glass-experiment {margin-top:8px;flex-wrap:wrap;align-items:start}
+.inspector .glass-experiment>span{max-width:165px}
+.inspector .glass-experiment .glass-options {margin-left:auto}
+@media(max-width:720px){
+  html[data-glass="on"] .glass-overlay {
+    right:13px;top:18px;bottom:auto;width:135px;min-height:0;
+    padding:9px 11px;border-radius:11px;flex-direction:row;align-items:center;
+    justify-content:space-between;gap:7px;
+    box-shadow:inset 0 1px rgba(255,255,255,.44),0 7px 20px rgba(3,17,13,.12);
+    -webkit-backdrop-filter:blur(12px) saturate(130%);
+    backdrop-filter:blur(12px) saturate(130%);
+  }
+  html[data-glass="on"] .glass-overlay .glass-top{font-size:7px;white-space:nowrap}
+  html[data-glass="on"] .glass-overlay .glass-top::after{display:none}
+  html[data-glass="on"] .glass-overlay .glass-bottom .glass-arrow{font-size:20px}
+  html[data-glass="on"] .glass-case-label {width:144px;bottom:13px;left:14px;padding:9px 10px}
+  .glass-case-label .glass-num{font-size:26px}
+  .inspector .glass-experiment>span{max-width:none}
+  .inspector .glass-experiment .glass-options{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce) {
+  html[data-glass="on"] .masthead,html[data-glass="on"] .glass-overlay{transition:none!important}
+}
+@media (prefers-reduced-transparency:reduce),(forced-colors:active) {
+  html[data-glass="on"] .masthead {
+    background:#F8F9F7;
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+  html[data-glass="on"] .glass-overlay,
+  html[data-glass="on"] .glass-case-label {
+    background:#243C31;
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+  html[data-glass="on"] .work-tools .segment,
+  html[data-glass="on"] .source-compare-controls {
+    background:#fff;
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+}
+
+/* Authoring-only controls: visible at ?design=1, hidden on public pages. */
+.design-control{display:none!important}
+html.design-mode .design-control{display:initial!important}
+html.design-mode .footer-design-button.design-control{display:inline-flex!important}
+
+
+/* HOME COMPOSITION STUDY — 2026-11-07. Intentional visual subtraction. */
+:root{--paper:#F7F8F6;--ink:#222724;--muted:#737B76;--line:#E0E5E0;--line-strong:#B5BDB6;--accent:#B35B44}
+body{background:var(--paper)}
+.masthead{height:74px;border-bottom:1px solid #E6E9E5;background:rgba(247,248,246,.93)}
+html[data-glass="on"] .masthead{background:rgba(247,248,246,.9);box-shadow:none;border-bottom:1px solid #E6E9E5;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.brand-symbol{font-weight:800;font-size:27px;letter-spacing:-.13em}
+.brand-description{font-size:8px;line-height:1.45;color:#737B76}
+.header-aside .mono{font-size:9px;letter-spacing:.045em}
+.nav{gap:31px}.nav button{font-size:12px;font-weight:500}
+.new-hero{border-bottom:none;padding-top:0;padding-bottom:0;}
+.new-overline{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid #E2E6E2;padding:31px 0 20px;color:#737B76;font:500 10px/1.4 var(--mono);letter-spacing:.065em}
+.new-overline i{display:inline-block;width:4px;height:4px;vertical-align:middle;background:var(--accent);border-radius:50%;margin:0 9px}
+.new-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.26fr);gap:clamp(34px,5vw,85px);min-height:460px;align-items:end;padding:68px 0 67px}
+.new-hero-main h1{font-family:var(--sans);font-size:clamp(70px,6.7vw,110px);font-weight:600;line-height:.98;letter-spacing:-.084em;white-space:nowrap}
+.new-hero-main h1 em{font-family:var(--serif);font-weight:400;line-height:.9;font-style:italic;letter-spacing:-.045em}
+.new-hero-cn{font:400 clamp(17px,1.7vw,23px)/1.7 var(--han-sans);letter-spacing:-.05em;color:#454F49;margin-top:46px}
+.new-hero-side{align-self:end;max-width:288px;border-top:1px solid #ADB5AE;padding:20px 0 3px}
+.new-hero-side-top{font:500 10px/1.7 var(--mono);letter-spacing:.06em;color:var(--accent)}
+.new-hero-side p{font:400 13px/1.95 var(--han-sans);color:#626E67;margin:30px 0 25px}
+.new-hero-jump{font-size:13px;font-weight:600;border-bottom:1px solid #343B36;display:inline-flex;align-items:center;gap:19px;padding:0 0 8px}
+.new-hero-jump span{font:400 26px/1 var(--serif)}
+.new-hero-rule{border-top:1px solid #D7DED7;display:flex;justify-content:space-between;padding:13px 0 17px;color:#858D86;font:500 9px/1.4 var(--mono);letter-spacing:.055em}
+/* Make the work frame arrive immediately, with the image as first focal point. */
+#view-home .showcase{padding-top:55px;padding-bottom:91px}
+#view-home .showcase-top{align-items:end;border:0;padding-bottom:28px;gap:30px}
+#view-home .showcase-top h2{font:400 clamp(42px,4.7vw,74px)/1 var(--serif);letter-spacing:-.048em;margin-top:10px}
+#view-home .showcase-top h2 i{font-style:normal}
+#view-home .showcase-top .eyebrow{font-size:9px}
+#view-home .showcase-top p{font-size:12px;line-height:1.8;color:var(--muted)}
+.new-dot{color:var(--accent)}
+#view-home .showcase-editor{min-height:510px;grid-template-columns:minmax(0,1.5fr) minmax(280px,.5fr);border:0;gap:0;background:#F1F3EF}
+#view-home .showcase-canvas{background:#E4E8E3;min-height:510px}
+#view-home .showcase-canvas>.feature-art,#view-home .showcase-canvas>.art-secondary{min-height:510px;height:510px}
+/* Respect a real supplied asset. Pending slots are clean blank gallery mats, not fake UI. */
+#view-home .showcase-canvas .asset-shell{background:#E1E6E0!important}
+#view-home .showcase-canvas .media-slot:not(.has-asset){background:#DEE5DF;border:0;color:#1D3930;padding:33px 39px}
+#view-home .showcase-canvas .media-slot:not(.has-asset)::before,
+#view-home .showcase-canvas .media-slot:not(.has-asset)::after{display:none}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__index{display:none}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__title{font:400 clamp(45px,6.7vw,105px)/1 var(--serif);letter-spacing:-.05em;color:#263B32;margin:0}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__body{margin:auto 0;padding:0;max-width:640px}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__body p{font:400 13px/2 var(--han-sans);max-width:400px;margin-top:24px;color:#65756A}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__head,
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__bottom{color:#5F7166}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__bottom span:last-child{display:none}
+#view-home .showcase-canvas .media-slot__head span,#view-home .showcase-canvas .media-slot__bottom span{font-size:9px;letter-spacing:.02em}
+/* No glass on the main visual, at least until real art exists. */
+#view-home .glass-overlay{display:none!important}
+#view-home .showcase-info{background:#F0F2EF;padding:32px clamp(26px,3.2vw,52px);min-height:510px;gap:28px}
+#view-home .showcase-metadata{font-size:9px}
+#view-home .showcase-copy h3{font:500 clamp(29px,2.75vw,43px)/1.45 var(--han-sans);letter-spacing:-.065em;margin-top:10px}
+#view-home .featured-latin{font:italic 400 clamp(33px,3.0vw,49px)/1.02 var(--serif);letter-spacing:-.035em;color:#9D5544;margin-top:15px}
+#view-home .showcase-copy p{font-size:12px;line-height:1.85;max-width:260px;margin-top:23px}
+#view-home .showcase-info .featured-open{border-top:1px solid #C5CEC5;padding-top:17px}
+#view-home .showcase-picks{border-bottom:1px solid #D8DED7}
+#view-home .showcase-picks button{padding:18px 20px 20px 0;gap:13px}
+#view-home .showcase-picks button+button{padding-left:20px}
+#view-home .showcase-picks button:before{height:1px;top:0}
+#view-home .showcase-picks .pick-name{font:500 clamp(14px,1.2vw,18px)/1.4 var(--han-sans)}
+#view-home .showcase-picks .pick-tail{font-size:8px}
+#view-home .showcase-picks button[aria-pressed="true"] .pick-name{color:var(--ink)}
+#view-home .showcase-picks button[aria-pressed="true"]::before{background:#424A42}
+#view-home .index-section{background:#F0F2EF}
+@media(max-width:1100px){
+ .new-hero-grid{grid-template-columns:minmax(0,1fr) 230px;gap:35px;min-height:400px;padding:55px 0 48px}
+ .new-hero-main h1{font-size:clamp(60px,6.3vw,90px)}
+ #view-home .showcase-editor{grid-template-columns:1.1fr .8fr}
+}
+@media(max-width:720px){
+ .masthead{height:65px}
+ .new-overline{padding:24px 0 13px;font-size:8px}
+ .new-overline>span:last-child{display:none}
+ .new-hero-grid{display:block;padding:51px 0 45px;min-height:0}
+ .new-hero-main h1{white-space:normal;font-size:clamp(48px,12.1vw,76px);line-height:1.07;letter-spacing:-.078em}
+ .new-hero-main h1 em{display:block;font-size:1.08em;line-height:.95;margin-top:8px}
+ .new-hero-cn{font-size:16px;margin-top:34px;max-width:350px;line-height:1.75}
+ .new-hero-side{margin-top:38px;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:15px;max-width:none;padding-top:16px}
+ .new-hero-side-top{font-size:8px}
+ .new-hero-side p{display:none}
+ .new-hero-jump{font-size:11px}
+ .new-hero-rule{padding:11px 0 14px;font-size:8px}
+ .new-hero-rule span:last-child{display:none}
+ #view-home .showcase{padding-top:34px;padding-bottom:62px}
+ #view-home .showcase-top{padding-bottom:18px}
+ #view-home .showcase-top h2{font-size:50px;margin-top:7px}
+ #view-home .showcase-top>p{display:none}
+ #view-home .showcase-editor{display:block;background:transparent;min-height:0}
+ #view-home .showcase-canvas,#view-home .showcase-canvas>.feature-art,#view-home .showcase-canvas>.art-secondary{height:355px;min-height:355px}
+ #view-home .showcase-canvas .media-slot:not(.has-asset){padding:23px 21px;min-height:355px}
+ #view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__title{font-size:57px}
+ #view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__body p{font-size:11px;margin-top:16px}
+ #view-home .showcase-info{min-height:0;padding:23px 0 19px;background:transparent;gap:22px}
+ #view-home .showcase-copy h3{font-size:26px;margin-top:7px}
+ #view-home .featured-latin{font-size:39px;margin-top:6px}
+ #view-home .showcase-copy p{font-size:11px;margin-top:11px;max-width:none}
+ #view-home .showcase-info .featured-open{padding-top:12px}
+ #view-home .showcase-picks .pick-name{font-size:12px}
+ #view-home .showcase-picks button,#view-home .showcase-picks button+button{padding:16px 6px}
+ #view-home .showcase-picks .pick-tail{display:none}
+ #view-home .showcase-picks .pick-no{margin-bottom:7px}
+}
+@media(max-width:370px){
+ .new-hero-main h1{font-size:11.9vw}
+ #view-home .showcase-canvas,#view-home .showcase-canvas>.feature-art,#view-home .showcase-canvas>.art-secondary{height:325px;min-height:325px}
+ #view-home .showcase-canvas .media-slot:not(.has-asset){min-height:325px}
+ #view-home .showcase-top h2{font-size:44px}
+}
+@media(prefers-reduced-motion:reduce){.new-hero-jump,.showcase-picks button{transition:none}}
+
+/* LEGIBILITY PASS — selective hierarchy, not global blackification. */
+:root {
+  --paper:#F9FAF8;
+  --paper-shade:#EFF3EF;
+  --ink:#18241E;
+  --ink-soft:#2C3B33;
+  --muted:#495B4F;
+  --line:#D2DAD2;
+  --line-strong:#A0AFA3;
+  --accent:#8F392A;
+  --accent-dark:#63281F;
+}
+html[data-accent="blue"]{--accent:#284D68;--accent-dark:#163B52}
+body {background:var(--paper);color:var(--ink)}
+.muted,.eyebrow{color:var(--muted)}
+.mono{font-weight:500;letter-spacing:.07em}
+.masthead,html[data-glass="on"] .masthead{background:rgba(249,250,248,.95);border-bottom-color:var(--line)}
+.brand-description{color:#495A4F;font-size:9.5px;letter-spacing:.03em}
+.header-aside .mono{color:#45584B;font-size:10px;letter-spacing:.01em}
+.nav button{color:#213129;font-weight:600}
+.nav button[aria-current="page"]{border-color:var(--accent);color:#14241A}
+.new-overline{color:#46594D;border-bottom-color:var(--line);font-size:10.5px;letter-spacing:.045em}
+.new-hero-main h1{color:#15231C;font-weight:650}
+.new-hero-main h1 em{color:#1C2921}
+.new-hero-cn{color:#293B31;font-weight:500}
+.new-hero-side{border-top-color:#879A8B}
+.new-hero-side-top{font-size:11px;font-weight:600;line-height:1.6;letter-spacing:.055em;color:var(--accent)}
+.new-hero-side p{color:#394D3F;font-size:14px;line-height:1.85}
+.new-hero-jump{color:#1D2F25;border-bottom-color:#1D2F25}
+.new-hero-rule{border-top-color:var(--line-strong);font-size:10px;color:#526456}
+.new-dot{color:var(--accent)}
+#view-home .showcase-top .eyebrow{font-size:10.5px;color:#475B4C}
+#view-home .showcase-top p{color:#425549;font-size:13px}
+#view-home .showcase-editor{background:#EBF0EA}
+#view-home .showcase-info{background:#EEF2EC}
+#view-home .showcase-metadata{font-size:10px;color:#475A4F}
+#view-home .showcase-copy h3{color:#192A20;font-weight:600}
+#view-home .featured-latin{color:var(--accent)}
+#view-home .showcase-copy p{color:#405348;font-size:13px;line-height:1.85}
+#view-home .showcase-info .featured-open{color:#19291F;border-top-color:#A7B9AB;font-weight:600}
+#view-home .showcase-picks .pick-no,#view-home .showcase-picks .pick-tail{color:#516358;font-size:10px}
+#view-home .showcase-picks button[aria-pressed="true"] .pick-name{color:#1D3025;font-weight:650}
+#view-home .showcase-picks button[aria-pressed="true"]::before{background:var(--accent);height:2px}
+#view-home .showcase-canvas .media-slot:not(.has-asset){background:#DEE7DF!important;color:#1C3124}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__title{color:#1D3327}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__body p{color:#384E3F;font-size:13px;line-height:1.85}
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__head,
+#view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__bottom{color:#415B49}
+#view-home .showcase-canvas .media-slot__head span,
+#view-home .showcase-canvas .media-slot__bottom span{font-size:10px}
+#view-home .index-section{background:#EDF1EB}
+.index-row .category,.work-row .desc,.card-bottom p,.principle p,.page-head p,.about-copy,.about-detail p,
+.explore-grid p,.case-body p,.case-head-side .note,.case-editorial-copy,.case-intro-copy,.case-scope-note p,
+.preview-caption p,.preview-hint,.media-insert__heading p{color:#45584B}
+.index-row strong,.work-row h2,.case-body h2{color:var(--ink)}
+.work-list-top,.work-list-bottom,.preview-top{color:#516257}
+.work-preview{background:#E9EEE8}
+.work-browser .work-row .kind,.work-browser .work-row .index-num{color:#536458}
+.work-browser .work-row .row-main small{color:#4A5E51;font-size:12px}
+.case-head .case-kicker,.case-facts dt,.case-section-index{color:#4C5C50}
+.case-scope-note{border-color:var(--line-strong)}
+.featured-open:hover,.new-hero-jump:hover,.nav button:hover{color:var(--accent)}
+@media(max-width:720px){
+  .new-overline{font-size:9px}
+  .new-hero-cn{font-weight:500}
+  #view-home .showcase-canvas .media-slot:not(.has-asset) .media-slot__body p{font-size:12px}
+  #view-home .showcase-copy p{font-size:12.5px}
+  #view-home .showcase-metadata{font-size:9.5px}
+  #view-home .showcase-picks .pick-tail{font-size:9px}
+}
+
+/* Data-driven evidence narrative: neutral editorial, not fabricated UI. */
+[hidden]{display:none!important}
+.editorial-art{height:100%;min-height:340px;background:#DDE5DF;color:#1B352A;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,3.1vw,46px);overflow:hidden}
+.editorial-art:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 100% 10%,rgba(143,57,42,.09),transparent 55%);pointer-events:none}
+.editorial-art__top,.editorial-art__foot{position:relative;font-size:9px;letter-spacing:.065em;display:flex;justify-content:space-between;gap:10px;color:#3C5647}
+.editorial-art__body{position:relative;max-width:720px;padding:24px 0}
+.editorial-art__body>.mono{font-size:11px;color:#8F392A;margin-bottom:18px}
+.editorial-art__body strong{font-family:var(--han-serif);font-weight:500;font-size:clamp(30px,4vw,58px);line-height:1.25;display:block;letter-spacing:-.055em}
+.editorial-art__body p{font-size:14px;line-height:1.9;max-width:550px;color:#41564A;margin-top:22px}
+.preview-art .editorial-art{min-height:300px}
+.preview-art .editorial-art__body strong{font-size:clamp(28px,2.3vw,42px)}
+.narrative-evidence{background:#EDF1ED;color:#1B352A;border:1px solid #C7D4CB;padding:clamp(18px,3vw,35px)}
+.narrative-evidence__head{display:flex;justify-content:space-between;gap:18px;font-size:10px;color:#4D6354;border-bottom:1px solid #BACABE;padding-bottom:18px}
+.narrative-evidence__decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:20px 0}
+.narrative-evidence__decisions article{background:#F9FAF8;padding:26px 22px;min-width:0}
+.narrative-evidence__decisions article>.mono{font-size:10px;color:#8F392A}
+.narrative-evidence__decisions article p{font-size:16px;font-weight:500;line-height:1.8;margin:22px 0 0;overflow-wrap:anywhere}
+.narrative-evidence__evidence{border-top:1px solid #BACABE;padding-top:24px}
+.narrative-evidence__evidence>.mono{font-size:10px;margin-bottom:12px;color:#4D6354}
+.narrative-evidence__evidence a{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid #C7D4CB;padding:12px 2px;text-decoration:none;font-size:13px;color:#24372A}
+.narrative-evidence__evidence a small{display:block;font-size:10px;color:#687C6C;margin-top:6px}
+.narrative-evidence__boundary{display:grid;grid-template-columns:110px 1fr;gap:9px 16px;margin-top:28px;font-size:13px;line-height:1.8}
+.narrative-evidence__boundary b{font-size:11px;color:#8F392A}
+.narrative-evidence__boundary p{margin:0;color:#3D5444}
+@media(max-width:720px){.editorial-art{min-height:270px;padding:22px}.editorial-art__body strong{font-size:31px}.editorial-art__body p{font-size:12px}.narrative-evidence__decisions{grid-template-columns:1fr}.narrative-evidence__head{font-size:8px}.narrative-evidence__boundary{grid-template-columns:1fr}}
+
+
+.laya-casebook-cta{margin:22px 0 0;max-width:480px}.laya-casebook-cta[hidden]{display:none}.laya-casebook-cta a{display:flex;flex-direction:column;gap:8px;padding:18px 20px;border:1px solid var(--line,#b8c0b6);background:rgba(255,255,255,.48);transition:border-color .2s,transform .2s}.laya-casebook-cta a:hover{border-color:var(--accent,#963f2e);transform:translateY(-2px)}.laya-casebook-cta a:focus-visible{outline:2px solid var(--accent,#963f2e);outline-offset:3px}.laya-casebook-cta .mono{font-size:10px;color:var(--accent,#963f2e)}.laya-casebook-cta strong{font-size:17px}.laya-casebook-cta strong i{font-style:normal;color:var(--accent,#963f2e)}.laya-casebook-cta small{font-size:10px;letter-spacing:.06em;color:#58665d}
+</style>
+<meta name="robots" content="noindex, nofollow, noarchive">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <button class="brand" data-action="navigate" data-page="home" aria-label="返回首页">
+      <span class="brand-symbol">B<i>/</i>Y</span>
+      <span class="brand-description">BRUCE YII<br>SELECTED PRACTICE</span>
+    </button>
+    <nav class="nav" aria-label="主导航">
+      <button data-nav="home" aria-current="page" data-action="navigate" data-page="home">首页</button>
+      <button data-nav="work" data-action="navigate" data-page="work">作品</button>
+      <button data-nav="about" data-action="navigate" data-page="about">关于</button>
+    </nav>
+    <div class="header-aside"><span class="signal"></span><span class="mono muted">PRODUCT / SYSTEMS / OPEN SOURCE</span><button class="design-control" data-action="open-inspector">VISUAL SYSTEM ↗</button></div>
+  </div>
+</header>
+<main id="content">
+  <section class="view is-active" id="view-home" aria-label="首页">
+    <div class="wrap hero new-hero">
+      <div class="new-overline"><span>BRUCE YII <i></i> INDEPENDENT PRACTICE</span><span>AI PRODUCTS / AGENT SYSTEMS</span></div>
+      <div class="new-hero-grid">
+        <div class="new-hero-main">
+          <h1>Making AI<br><em>useful.</em></h1>
+          <p class="new-hero-cn">从真实问题出发，让 AI 体验更可用、执行更可验证。</p>
+        </div>
+        <aside class="new-hero-side">
+          <div class="new-hero-side-top">PRODUCT THINKING<br>MEETS BUILDING</div>
+          <p>围绕产品设计、Agent 工程与开源实践。<br>在实际项目中关注用户路径、系统职责与可验证的改变。</p>
+          <button data-action="scroll-selected" class="new-hero-jump">探索作品 <span aria-hidden="true">↗</span></button>
+        </aside>
+      </div>
+      <div class="new-hero-rule"><span>SELECTED WORKS · 2026</span><span>SCROLL TO EXPLORE</span></div>
+    </div>
+    <section class="wrap showcase" id="selected" aria-labelledby="showcase-title">
+      <div class="showcase-top">
+        <div>
+          <div class="mono eyebrow">01 / THE SELECTION</div>
+          <h2 id="showcase-title">Selected <i>work.</i></h2>
+        </div>
+        <p>重要作品拥有独立的视觉主题。产品以真实界面说话，开源贡献以问题与改变说话。</p>
+      </div>
+      <div class="showcase-editor" aria-label="精选案例交互预览">
+        <div class="showcase-canvas" id="showcase-canvas" aria-live="off"></div>
+        <div class="showcase-info" aria-live="polite" aria-atomic="true">
+          <div class="showcase-metadata mono"><span id="featured-index">01 / 02</span><span id="featured-category">PRODUCT PRACTICE</span></div>
+          <div class="showcase-copy">
+            <div class="mono accent" id="featured-eyebrow">SELECTED CASE / 001</div>
+            <h3 id="featured-title">让产品不仅停留在想法</h3>
+            <div class="featured-latin" id="featured-latin">Into practice.</div>
+            <p id="featured-summary">用作品画面讲清真实改变。</p>
+          </div>
+          <button class="open-case featured-open" id="featured-open" data-action="navigate" data-page="case" data-target-id="product" aria-label="阅读当前精选案例"><span>READ THE CASE</span><span class="arrow">↗</span></button>
+        </div>
+      </div>
+      <div class="showcase-picks" id="showcase-picks" role="group" aria-label="切换精选案例">
+        <button data-feature="product" aria-pressed="true"><span class="mono pick-no">01</span><span class="pick-name">产品实践</span><span class="pick-tail">PRODUCT</span></button>
+        <button data-feature="opensource" aria-pressed="false"><span class="mono pick-no">02</span><span class="pick-name">开源协作</span><span class="pick-tail">OPEN SOURCE</span></button>
+      </div>
+      <div class="showcase-foot mono"><span id="selected-count">SELECTED WORK / EDITORIAL REVIEW</span><span>REAL MEDIA PENDING / NO FABRICATED SCREENS</span></div>
+
+    </section>
+    <section class="index-section"><div class="wrap"><div class="index-head"><div><div class="mono eyebrow">02 / VERIFIED CONTRIBUTIONS</div><h2>Other <i>work.</i></h2></div><button class="text-link" data-action="navigate" data-page="work">浏览全部作品 <span class="arrow">↗</span></button></div><div id="home-index"></div></div></section>
+    <section class="explore-section wrap" aria-labelledby="explore-title">
+      <div class="mono eyebrow">03 / ANOTHER WAY IN</div>
+      <div class="explore-grid">
+        <div><h2 id="explore-title">Follow the <i>thinking.</i></h2><p>你可以从一件作品开始，也可以从关心的能力进入。两条路径指向同一组案例。</p></div>
+        <div class="explore-links">
+          <button data-action="open-work" data-work-mode="capability"><span class="mono">01</span><strong>从能力进入</strong><span>↗</span></button>
+          <button data-action="open-work" data-work-mode="work"><span class="mono">02</span><strong>查看所有作品</strong><span>↗</span></button>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="view" id="view-work" aria-label="全部作品">
+    <div class="wrap">
+      <div class="page-head work-head"><div class="mono eyebrow">THE INDEX / CURATED PRACTICE</div><h1>Work <i>index.</i></h1>
+        <div class="head-bottom"><p>围绕真实产品问题组织案例，明确区分已合并贡献与仍在整理的团队产品实践。</p><span class="mono muted" id="work-summary-count">WORKS / REVIEW</span></div>
+      </div>
+      <div class="work-tools">
+        <div class="segment" id="modes"><span class="mono caption">BROWSE BY</span><button data-mode="work" aria-pressed="true">作品</button><button data-mode="capability" aria-pressed="false">能力</button></div>
+        <div class="segment" id="filters"><span class="mono caption">SHOW</span><button data-filter="all" aria-pressed="true">全部</button><button data-filter="product" aria-pressed="false">产品实践</button><button data-filter="opensource" aria-pressed="false">开源协作</button><button data-filter="systems" aria-pressed="false">系统设计</button></div>
+      </div>
+      <div class="work-browser" id="work-browser">
+        <div class="work-list">
+          <div class="work-list-top mono"><span id="result-count">02 / WORKS</span><span>SELECT TO VIEW ↗</span></div>
+          <div class="work-rows" id="work-rows"></div>
+          <div class="work-list-bottom mono"><span>END OF SELECTED INDEX</span><span>—</span></div>
+        </div>
+        <aside class="work-preview" aria-label="作品浏览预览">
+          <div class="preview-top mono"><span>PREVIEW / <span id="preview-counter">001</span></span><span>CASE STUDY ↗</span></div>          <div class="preview-art" id="preview-art"></div>
+          <div class="preview-caption"><div class="mono accent" id="preview-kind">PRODUCT PRACTICE</div><strong id="preview-title">让产品不仅停留在想法</strong><p id="preview-desc">产品体验、功能结构、关键改变</p></div>
+          <p class="mono preview-hint">HOVER / FOCUS TO PREVIEW · CLICK TO OPEN</p>
+        </aside>
+      </div>
+      <div class="cap-grid" id="cap-grid" hidden></div>
+      <section class="verified-strip" aria-label="公开可核实的其他贡献">
+        <div class="verified-head"><div class="mono eyebrow">PUBLIC CONTRIBUTIONS / SELECTED</div><h2>More <i>signal.</i></h2><p>保留有意义的小型贡献，不把每项 PR 都包装成完整产品案例。</p></div>
+        <div id="work-contributions" class="verified-list"></div>
+      </section>
+    </div>
+  </section>
+  <section class="view" id="view-case" aria-label="案例详情">
+    <div class="wrap">
+      <div class="case-path"><button class="case-back" data-action="navigate" data-page="work">← ALL WORK</button><span class="mono">/</span><span class="mono" id="case-path-current">CASE STUDY</span><div class="case-template-tabs" id="case-template-tabs" role="group" aria-label="切换案例展示类型"><button data-case-template="product" data-action="navigate" data-page="case" data-target-id="product">01 / PRODUCT</button><button data-case-template="opensource" data-action="navigate" data-page="case" data-target-id="opensource">02 / OPEN SOURCE</button></div></div>
+      <header class="case-head v9-case-head">
+        <div class="case-kicker mono"><span id="case-no"></span><span id="case-kind"></span></div>
+        <h1 id="case-title"></h1><div class="latin" id="case-latin"></div>
+        <div class="case-intro"><p id="case-lead"></p><div class="case-head-side"><span class="mono">WHAT YOU'LL SEE</span><p class="note" id="case-head-note">一页讲清一个具体的产品问题。</p></div></div>
+      <div class="laya-casebook-cta" id="laya-casebook-cta" hidden><a href="./cases/laya/" target="_blank" rel="noopener noreferrer"><span class="mono">SPECIAL EDITION / LAYA CASEBOOK</span><strong>打开 Laya 独立案例册 <i>↗</i></strong><small>8 PRODUCT STORIES · 40 MERGED PRs · 85 REVIEWED PRs</small></a></div>
+      </header>
+      <div class="case-cover" id="case-cover" aria-label="案例封面"></div>
+      <div class="case-edition-line mono"><span id="case-edition-type">SELECTED WORK / CASE FORMAT EXPERIMENT</span><span id="case-edition-disclaimer">预留图位，等待真实或授权说明性素材</span></div>
+      <div class="case-read-layout">
+        <aside class="case-aside" aria-label="案例快速信息及章节">
+          <div class="case-sidebar-sticky">
+            <div class="mono case-sidebar-label">AT A GLANCE / <span id="case-sidebar-number">001</span></div>
+            <div id="case-facts" class="case-facts"></div>
+            <div class="case-toc mono"><span>IN THIS CASE</span><button data-action="case-scroll" data-section="case-section-01">01 — CONTEXT</button><button data-action="case-scroll" data-section="case-section-02">02 — EXPERIENCE</button><button data-action="case-scroll" data-section="case-section-03">03 — OUTCOME</button></div>
+          </div>
+        </aside>
+        <div class="case-main">
+          <section id="case-section-01" class="case-editorial-section">
+            <div class="mono case-section-index">01 / THE CONTEXT</div>
+            <h2 id="case-context-title">Why this matters.</h2>
+            <p class="case-prose-lead" id="case-context-lead"></p>
+            <div class="case-editorial-copy" id="case-context-copy"></div>
+          </section>
+          <section id="case-section-02" class="case-editorial-section case-experience-section">
+            <div class="case-section-top"><div><div class="mono case-section-index">02 / THE EXPERIENCE</div><h2 id="case-experience-title">The work, shown.</h2></div><span class="mono case-section-aside">INTERACTIVE / DEMONSTRATION</span></div>
+            <p class="case-intro-copy" id="case-experience-intro"></p>
+            <div class="experience-frame" id="case-stage"></div>
+            <p class="mono case-figure-caption" id="case-figure-caption"></p>
+            <div class="media-insert" id="case-media-insert" aria-label="本案例待接入的素材"></div>
+          </section>
+          <section id="case-section-03" class="case-editorial-section case-outcome-section">
+            <div class="mono case-section-index">03 / THE OUTCOME</div>
+            <h2 id="case-outcome-title">What remains.</h2>
+            <div class="case-outcome-grid"><div class="case-outcome-big" id="case-outcome-statement"></div><div id="case-outcome-detail" class="case-outcome-detail"></div></div>
+            <div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">A NOTE ON THIS PROTOTYPE</span><p id="case-scope-copy">此页仅用于验证案例内容的表达方式。交互示意、占位文案和画面不代表任何具体项目的实际交付、数据或用户结果；接入真实案例后再替换。</p></div>
+          </section>
+        </div>
+      </div>
+      <div class="case-next-v9"><div><span class="mono">NEXT / SELECTED PRACTICE</span><h2 id="case-next-title">Explore another<br><i>perspective.</i></h2></div><button id="case-next-open" data-action="navigate" data-page="work" aria-label="查看下一个案例">↗</button></div>
+    </div>
+  </section>
+  <section class="view" id="view-about" aria-label="关于"><div class="wrap"><div class="about-hero"><div><div class="mono eyebrow">ABOUT / THE PERSON</div><h1>在产品与工程之间，<br>找到可执行的答案。</h1></div><p class="about-copy">我关注 AI 产品从可演示走向可用的过程：识别真实问题，明确产品取舍，连接 Agent 工程，并用可追溯的证据判断结果。</p></div><div class="about-detail"><div><h2>Background.</h2><p>2027 届电子商务本科，面向 AI 产品经理岗位。参与团队产品 Vivic 的产品与 Agent 架构工作，并在 Dify、Laya、RAGFlow 等开源项目贡献过已合并的代码。相关成果按个人参与和公开证据展示。</p></div><div><h2>Connect.</h2><p>我的工作习惯是从用户问题与使用路径出发，定义职责和验收方式，再回到实际代码、测试或外部状态验证。公开证据可以先从 GitHub 查看。</p><a href="https://github.com/Bruce-Yii" target="_blank" rel="noopener noreferrer">GitHub / Bruce-Yii ↗</a></div></div></div></section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer-top"><div class="footer-title">Let's <i>build.</i></div><p>围绕产品、系统与开源工作的精选实践。结构先于装饰，体验重于陈列。</p></div><div class="footer-bottom mono"><span>© 2026 BRUCE YII</span><button class="footer-design-button design-control" data-action="open-inspector" aria-label="打开视觉系统面板">DESIGN INSPECTOR ↗</button><span>CASE EDITION —</span></div></div></footer>
+
+<div class="inspector-overlay" id="inspector-overlay" data-action="close-inspector"></div>
+<aside class="inspector" id="inspector" aria-label="设计系统检查面板" aria-modal="true" role="dialog" aria-hidden="true">
+  <div class="inspect-top"><span class="mono">PRIVATE DESIGN NOTES / SITE</span><button class="inspect-close" aria-label="关闭视觉系统" data-action="close-inspector">×</button></div>
+  <h2 class="inspect-header">The visual<br><i>system.</i></h2>
+  <p class="inspect-description">把视觉系统当成一套产品约束：字体是身份，排版建立层级，色彩提供有限的强调，交互降低理解成本。此面板仅用于内部验证，正式版不会向招聘方显示。</p>
+  <div class="inspect-section"><h3>01 / TYPOGRAPHY</h3><div class="inspect-options"><button data-typography="editorial" aria-pressed="true">Editorial / 刊物式</button><button data-typography="precision" aria-pressed="false">Precision / 理性式</button></div><div class="type-example">Form follows purpose.</div><div class="type-example-sans">Manrope / Functional UI</div><div class="type-example-han">把复杂问题讲清楚。</div><p class="inspector-han-note">中文标题：建议保留宋体的字形骨架，正文使用黑体。可切换验证长标题和手机端可读性。</p><div class="inspect-options"><button data-han="serif" aria-pressed="true">中文宋体 / Editorial</button><button data-han="sans" aria-pressed="false">中文黑体 / Rational</button></div><p class="inspect-foot">Display: Instrument Serif / Manrope<br>中文标题: Noto Serif SC<br>正文: Manrope / Noto Sans SC<br>标签: DM Mono</p></div>
+  <div class="inspect-section"><h3>02 / COLOR CONTROL</h3><div class="inspect-options"><button data-accent="oxide" aria-pressed="true">Oxide / 氧化红</button><button data-accent="blue" aria-pressed="false">Ink blue / 墨蓝</button></div><div class="swatches"><span class="swatch" style="background:#F8F9F7"></span><span class="swatch" style="background:#EFF1EE"></span><span class="swatch" style="background:#171B19"></span><span class="swatch" id="accent-swatch" style="background:#A34532"></span><span class="swatch" style="background:#1D302D"></span></div><p class="inspect-foot">冷白主背景 + 深墨色展览区域 + 少量氧化红。深色仅用于关键作品舞台与页脚，图片优先于装饰。</p></div>
+  <div class="inspect-section"><h3>03 / CONTENT & RHYTHM</h3><div class="scale-table"><strong>12 columns</strong><span>桌面弹性网格；案例使用非对称比例。</span><strong>3 templates</strong><span>导航目录 + 可适配的案例详情。</span><strong>1 accent</strong><span>一页只有有限的高对比视觉焦点。</span><strong>3 reading levels</strong><span>扫读 → 概览 → 完整展示。</span><strong>0 vanity stats</strong><span>不使用没有依据的能力百分比或自我评分。</span></div></div>
+  <div class="inspect-section"><h3>04 / COMPONENT RULES</h3><p class="inspect-description">默认保持平面排版。V14 仅在导航、可点击的作品说明及筛选器测试轻量玻璃，正文不使用玻璃底板。交互状态必须可见，页面响应优先于动画。</p><button class="text-link" data-action="close-inspector">RETURN TO THE SITE <span class="arrow">↗</span></button></div>
+  <div class="inspect-section">
+    <h3>05 / LIQUID MATERIAL</h3>
+    <p class="inspect-description">玻璃仅用于导航、作品行动入口与少量操作控件。正文与作品媒体始终保持平面；小屏幕使用紧凑版。</p>
+    <div class="glass-experiment" aria-label="局部液态玻璃视觉对比">
+        <span>MATERIAL EXPERIMENT / V14<br>在设计面板中对比，不干扰正式展示</span>
+        <div class="glass-options" role="group" aria-label="液态玻璃效果开关">
+          <button data-glass-mode="on" aria-pressed="true" >GLASS ON</button>
+          <button data-glass-mode="off" aria-pressed="false" >GLASS OFF</button>
+        </div>
+      </div>
+  </div>
+</aside>
+<script>
+// Generated from reviewed case packs. Do not edit manually.
+const CASES = [
+  {
+    "id": "product",
+    "num": "001",
+    "type": "product",
+    "kind": "TEAM PRODUCT · INTERNAL REVIEW",
+    "category": "团队产品",
+    "name": "让 AI 不止理解指令，还能可靠执行",
+    "latin": "From intent to action.",
+    "lead": "Vivic 是团队多模态卡片产品。我参与了 Agent 决策链路的核心重构，将模型选择工具、宿主校验执行与结果回执分离；内部已有后端部署和回归记录，完整前端交互与真实用户效果仍待确认。",
+    "desc": "Vivic · 团队产品 · Agent 决策与执行责任边界",
+    "caps": [
+      "产品判断",
+      "Agent 工程"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "TEAM PRODUCT / BACKEND VERIFIED INTERNALLY",
+    "format": "CASE DRAFT / TEAM REVIEW",
+    "media": [
+      "M01",
+      "M03",
+      "M05",
+      "M06"
+    ],
+    "homeFeatured": true,
+    "featuredSummary": "Vivic · 把复杂指令拆成可校验、可执行、可回读的动作。团队真实界面仍需公开许可。"
+  },
+  {
+    "id": "opensource",
+    "num": "002",
+    "type": "opensource",
+    "kind": "OPEN SOURCE · MERGED PR",
+    "category": "开源贡献",
+    "name": "让知识导入保留完整含义",
+    "latin": "Preserving context.",
+    "lead": "Dify 在导入 Notion 富文本时，mention 与 equation 等内容可能丢失。PR #42171 调整富文本提取行为，让可读信息在知识导入链路中得到保留。",
+    "desc": "Dify · Notion 富文本保真 · PR #42171 已合并",
+    "caps": [
+      "开源协作",
+      "产品判断"
+    ],
+    "verified": true,
+    "visibility": "public_candidate",
+    "status": "MERGED / 2026.09",
+    "format": "PUBLIC UPSTREAM CONTRIBUTION",
+    "url": "https://github.com/langgenius/dify/pull/42171",
+    "media": [
+      "M02",
+      "M04",
+      "M07"
+    ],
+    "homeFeatured": true,
+    "featuredSummary": "Dify · 修复 Notion 富文本导入时 mention 与 equation 的信息丢失。PR #42171 已合并。"
+  },
+  {
+    "id": "agent-evaluation-lab",
+    "num": "003",
+    "type": "systems",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "系统设计",
+    "name": "Agent 跑通一次，怎样证明结果值得相信？",
+    "latin": "Validity before score.",
+    "lead": "我围绕企业 Agent 评测设计了有效性检查、独立状态验证和可追溯证据链。受控场景的历史基线包含 9 次 VALID PASS，但没有证明真实干预带来可靠性提升。",
+    "desc": "Agent Evaluation Lab｜评测方法与真实受控实验基线",
+    "caps": [
+      "系统架构",
+      "Agent 工程",
+      "产品判断"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "受控基线已验收 · 未完成改进闭环",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": false,
+    "editorial": {
+      "decisions": [
+        "Task/Environment/Evidence/Grader/Provenance 任一关键要素失效，不能将其直接算作 Agent FAIL。",
+        "Verifier 检查冻结系统状态和副作用，而不是相信模型自述。",
+        "没有可归因真实失败时，不编造 Harness 干预增益；先寻找有区分度的任务。"
+      ],
+      "evidence": [
+        {
+          "label": "YU-335 评测基线",
+          "url": "https://linear.app/yi383775/issue/YU-335",
+          "supports": "三个场景的基线与效果边界",
+          "state": "internal_source"
+        },
+        {
+          "label": "评测专项审计",
+          "url": "https://app.notion.com/p/4101e795caee81c197efe1b85653c1e8",
+          "supports": "实验与事实边界",
+          "state": "internal_source"
+        }
+      ],
+      "role": "本人推动问题定义、评测协议、验收约束和执行协调；私有工程中有真实代码与试验，不能归功于本人手写所有模块。历史验收结果不等于主窗口此刻独立复现。",
+      "boundary": "私有 ERP、测试数据和代码内容不进入公开图片或打包。9 个有效试验来自既有验收，主窗口未重新运行所有实验；工作分支与 main 不同。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81c197efe1b85653c1e8"
+  },
+  {
+    "id": "agent-workflow-governance",
+    "num": "004",
+    "type": "systems",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "系统设计",
+    "name": "Agent 会结束会话，但工作不能跟着消失",
+    "latin": "Beyond the session.",
+    "lead": "长期项目真正需要稳定的是任务、执行尝试、证据和验收。我从早期 AWRP 协议演进到 Linear × Notion 的真实协作工作流，并对照 DeepSeek Super-agent 原型反思自己的设计。",
+    "desc": "AWRP × Linear｜Agent 工作流架构演进与第三方对照",
+    "caps": [
+      "产品判断",
+      "系统架构",
+      "Agent 工程"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "在用工作流 + 新产品设计探索",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": false,
+    "editorial": {
+      "decisions": [
+        "Task 身份比 Run/Session 稳定，同一个工作可以由多个尝试推进。",
+        "执行结果必须由外部证据和验收准则确认，不能相信 Agent 单独自报。",
+        "授权与具体操作范围绑定；现成工具能够承担的职能不重新造中台。"
+      ],
+      "evidence": [
+        {
+          "label": "AWRP Next 产品设计",
+          "url": "https://app.notion.com/p/40f1e795caee8168a56bdbede24ca2e5",
+          "supports": "设计与真实问题",
+          "state": "internal_source"
+        },
+        {
+          "label": "DeepSeek 原型",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+          "supports": "第三方研究对照对象",
+          "state": "public_record"
+        }
+      ],
+      "role": "个人设计 AWRP 原协议并使用 Linear/Notion/Agent/GitHub 的组合工作流；新 Agent Project OS 仍为设计研究。DeepSeek 对照是第三方开源研究，不是本人贡献或共同开发。",
+      "boundary": "DeepSeek 原型属于第三方开源成果；比较维度仅用于产品取舍。私人 Linear/Notion 记录不得直接公开；没有独立的外部用户效果测量。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81ba8ac9f7bb3e330b3d"
+  },
+  {
+    "id": "cherry-model-check",
+    "num": "005",
+    "type": "opensource",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "开源贡献",
+    "name": "一次检测失败，不该自动改变用户配置",
+    "latin": "Failure ≠ deletion.",
+    "lead": "用户希望快速定位不可访问的模型，但一次失败检测并不足以证明模型应被隐藏或删除。Cherry Studio 的 #21015 将需求收敛为可逆、只读的 Failed 筛选。",
+    "desc": "Cherry Studio｜Model Check｜明确失败状态和用户控制权",
+    "caps": [
+      "产品判断",
+      "开源协作"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "已合并 PR · 主案例候选",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": true,
+    "editorial": {
+      "decisions": [
+        "只有所有已测凭据均失败的模型进入临时 Failed 列表；任何凭据可用都不能归入。",
+        "新一轮检查开始、配置变化时清理旧快照；不执行删除、禁用或持久隐藏。",
+        "先满足查找问题模型的需求，避免扩张成高风险的自动清理工作流。"
+      ],
+      "evidence": [
+        {
+          "label": "Cherry Studio #21015",
+          "url": "https://github.com/CherryHQ/cherry-studio/pull/21015",
+          "supports": "Failed 筛选的功能与测试边界",
+          "state": "public_record"
+        },
+        {
+          "label": "原始需求 #20857",
+          "url": "https://github.com/CherryHQ/cherry-studio/issues/20857",
+          "supports": "需求背景与用户场景",
+          "state": "public_record"
+        }
+      ],
+      "role": "本人提交的 Cherry Studio PR #21015 围绕模型检测结果提供只读 Failed 过滤；维护者负责合并与产品发行，聚焦测试是 PR 中报告，主窗口尚未重新本地运行。",
+      "boundary": "本文是内部候选稿；真实 UI 截图需取得可复现版本。聚焦测试数来自原 PR 自报，未在主窗口重新跑过；合并不等于 Release 已发版。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee810f9800f3d67d58d335"
+  },
+  {
+    "id": "dsh-notice-recovery",
+    "num": "006",
+    "type": "opensource",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "开源贡献",
+    "name": "用户可以关闭通知，但不能假装修好了插件",
+    "latin": "Keep the truth.",
+    "lead": "一个插件被移除后，持续显示的解释性提醒可能变成用户无法结束的循环。dsh-market #764 将“停止提示”和“插件已修复”拆成不同状态，让操作可恢复、结果不误导。",
+    "desc": "dsh-market｜插件异常通知的用户控制与状态一致性",
+    "caps": [
+      "产品判断",
+      "开源协作"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "上游贡献 · 已合并候选",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": false,
+    "editorial": {
+      "decisions": [
+        "关闭提醒只修改提醒状态，不删除目录、不恢复插件、不改变安装事实。",
+        "服务端按指定名称更新，避免并发覆盖其他异常项。",
+        "旧网络结果不能把已关闭的提示重新加入界面。"
+      ],
+      "evidence": [
+        {
+          "label": "dsh-market #764",
+          "url": "https://github.com/dsh-market/dsh-market/pull/764",
+          "supports": "指定异常提示关闭及状态边界",
+          "state": "public_record"
+        },
+        {
+          "label": "原始问题 #763",
+          "url": "https://github.com/dsh-market/dsh-market/issues/763",
+          "supports": "用户无法清除持久通知的场景",
+          "state": "public_record"
+        }
+      ],
+      "role": "本人提交 dsh-market #764，围绕告警持久性、逐条关闭、客户端与后端一致性做改进；上游维护者参与审查并决定合并；不代表本人开发整个插件市场。",
+      "boundary": "真实 UI 录屏尚未收集；网页使用的只是机制解释。维护者评论与 PR 合并应复核当前状态，不能把用户关闭提醒写成插件修复。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816a9e5cea62c48ecd08"
+  },
+  {
+    "id": "laya-decision-integrity",
+    "num": "007",
+    "type": "opensource",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "开源贡献",
+    "name": "让 AI 决策从模型输出走向可信产品能力",
+    "latin": "From output to adoption.",
+    "lead": "围绕 Laya 下游开发者的完整旅程，我参与建设四组产品系统：意图保真、决策可信、渐进采用与开发者契约；并通过正式 Review、反例验证与跨贡献者交接参与上游协作。",
+    "desc": "Laya｜决策系统产品化与上游协作｜40 merged PRs · 85 reviewed PRs",
+    "caps": [
+      "产品判断",
+      "开源协作",
+      "Agent 工程"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "上游贡献 · 旗舰候选",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": true,
+    "editorial": {
+      "decisions": [
+        "意图保真：输入、上下文、路由与集成契约必须保持用户原意。",
+        "决策可信：评测证据、训练原语与校准结果必须可检查、可复用、跨运行时一致。",
+        "渐进采用：模型提供决策证据，阈值、审核、动作与回退由应用拥有。",
+        "开发者契约：候选排序、Demo、服务、SDK、CI 与部署说明必须保持可预测。"
+      ],
+      "evidence": [
+        {
+          "label": "Laya 评测证据检查 #964",
+          "url": "https://github.com/NandhaKishorM/laya/pull/964",
+          "supports": "评测证据检查及其范围",
+          "state": "public_record"
+        },
+        {
+          "label": "Laya 共享训练入口 #965",
+          "url": "https://github.com/NandhaKishorM/laya/pull/965",
+          "supports": "训练入口的共享抽象",
+          "state": "public_record"
+        },
+        {
+          "label": "Laya 分布式训练 #1017",
+          "url": "https://github.com/NandhaKishorM/laya/pull/1017",
+          "supports": "DDP 入口的抽象边界",
+          "state": "public_record"
+        },
+        {
+          "label": "采用指南 #415",
+          "url": "https://github.com/NandhaKishorM/laya/pull/415",
+          "supports": "分阶段采用的文档贡献",
+          "state": "public_record"
+        }
+      ],
+      "role": "截至 2026-11-08，GitHub 查询显示 47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 匹配 reviewed-by:Bruce-Yii。本人承担的实现、正式 Review、方向提出、跨贡献者交接与维护者决定分别归属。",
+      "boundary": "计数来自 GitHub 搜索快照，不等于独立功能数量或业务成效；7 个本人 PR 关闭未合并；reviewed-by 查询含 61 merged、8 open、16 closed。没有官方 collaborator / maintainer 身份证据，也没有生产用户增长或准确率提升指标。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816ba0fec85308185a5c"
+  },
+  {
+    "id": "personal-context-layer",
+    "num": "008",
+    "type": "systems",
+    "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
+    "category": "系统设计",
+    "name": "输入法只是入口，真正要建的是个人上下文层",
+    "latin": "Context, owned.",
+    "lead": "我从重度 AI 用户跨设备、跨 App 的上下文断裂出发，把 Android 输入法重新定位成高频 Sensor，设计用户自有、事实可追溯、可被不同 AI 消费的 Context Layer。",
+    "desc": "Personal Context Layer｜产品架构与 Android 模拟器早期原型",
+    "caps": [
+      "产品判断",
+      "系统架构",
+      "Agent 工程"
+    ],
+    "verified": false,
+    "visibility": "internal_draft",
+    "status": "架构与模拟器原型 · 待公开许可",
+    "format": "EVIDENCE-LED CASE STUDY",
+    "presentation": "evidence",
+    "homeFeatured": false,
+    "editorial": {
+      "decisions": [
+        "Keyboard 是 Sensor，不是 Context Core；Android/Windows 可在授权范围内作为不同来源。",
+        "Raw 事实与来源独立保存；时间优先，关系与事件为可重建的派生结构，不强行归属。",
+        "AI 组织结果可延后或纠错，用户显式决定优于模型推断；Gateway 只暴露获授权范围。"
+      ],
+      "evidence": [
+        {
+          "label": "YU-120 早期原型验收",
+          "url": "https://linear.app/yi383775/issue/YU-120",
+          "supports": "模拟器输入法与 Context Core 集成",
+          "state": "internal_source"
+        },
+        {
+          "label": "YU-128 UX 原型验收",
+          "url": "https://linear.app/yi383775/issue/YU-128",
+          "supports": "原型产品化与约束",
+          "state": "internal_source"
+        },
+        {
+          "label": "Notion 专项成果",
+          "url": "https://app.notion.com/p/4101e795caee817f961cc9f2d21a8a93",
+          "supports": "三层设计及历史/现行划分",
+          "state": "internal_source"
+        }
+      ],
+      "role": "本人负责产品定位、架构和验证标准的设计与协调；部分早期原型由 Agent/执行链路实现并由协调者验收。当前没有可公开署名的全量代码证据，不写“独立开发完整跨端产品”。",
+      "boundary": "Notion 当前项目标记不允许直接作为已公开项目。不得公开私人原型、真实跨端输入和未经同意的采集资料。历史模拟器的功能不得被冒充最新架构的已上线能力。"
+    },
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee817f961cc9f2d21a8a93"
+  }
+];
+const VERIFIED_CONTRIBUTIONS = [
+  {
+    "number": "01",
+    "name": "Laya",
+    "kind": "CASEBOOK",
+    "title": "决策系统产品化与上游协作 Casebook",
+    "detail": "40 / 47 AUTHORED PRs MERGED · 85 REVIEWED PRs",
+    "url": "./cases/laya/"
+  },
+  {
+    "number": "02",
+    "name": "RAGFlow",
+    "title": "让重解析设置真正遵循用户配置",
+    "detail": "PR #20149 · MERGED",
+    "url": "https://github.com/infiniflow/ragflow/pull/20149"
+  },
+  {
+    "number": "03",
+    "name": "Cherry Studio",
+    "title": "修正 Excel 富文本复制的粘贴优先级",
+    "detail": "PR #21031 · MERGED",
+    "url": "https://github.com/CherryHQ/cherry-studio/pull/21031"
+  },
+  {
+    "number": "04",
+    "name": "EvalScope",
+    "title": "让多图评测能力拥有可用的数据集入口",
+    "detail": "PR #1729 · MERGED",
+    "url": "https://github.com/modelscope/evalscope/pull/1729"
+  }
+];
+
+// Media slots are part of the layout contract; assigning an image never changes case facts.
+const MEDIA_SPEC = {
+  "M01": {
+    "id": "M01",
+    "name": "VIVIC · 主视觉",
+    "role": "product-editorial-hero",
+    "topic": "真实产品画面：语音／信息进入 → Space 卡片形成 → 可执行下一步",
+    "kind": "真实产品截图 / 组合排版",
+    "ratio": "16:10",
+    "size": "1600×1000",
+    "priority": "P0",
+    "source": "团队授权的真实产品截图",
+    "reuse": [
+      "Home 精选主视觉",
+      "Work 作品预览"
+    ],
+    "status": "awaiting_real_capture",
+    "notes": "不使用 AI 伪造产品功能；优先用 1–3 张真实截屏经排版组成。屏幕内容和工作室标识需确认公开权限。"
+  },
+  "M02": {
+    "id": "M02",
+    "name": "Dify · 开源案例主视觉",
+    "role": "opensource-editorial-hero",
+    "topic": "Notion mention／公式等富文本从导入流程中丢失，再被保真传递：用“缺失→保留”的编辑式数据视觉表现",
+    "kind": "AI 可生成概念视觉",
+    "ratio": "16:10",
+    "size": "1600×1000",
+    "priority": "P0",
+    "source": "独立概念插画，真实信息依据 Dify PR #42171",
+    "reuse": [
+      "Home 精选主视觉",
+      "Work 作品预览"
+    ],
+    "status": "awaiting_concept_art",
+    "notes": "深色墨绿/纸张米白/氧化红；展示内容差异而非虚构官方 UI；避免伪造品牌标识、PR 截图、用户指标或虚构产品截图。画面尽量无文字，文字由网页叠加。"
+  },
+  "M03": {
+    "id": "M03",
+    "name": "VIVIC · 详情封面",
+    "role": "product-case-cover",
+    "topic": "真实产品的主体验：在真实 Space 画面中突出卡片和下一步行动，而不是用抽象科技装饰",
+    "kind": "真实产品素材的艺术指导",
+    "ratio": "21:10",
+    "size": "1680×800",
+    "priority": "P0",
+    "source": "团队授权产品截图",
+    "reuse": [
+      "产品案例 Case 封面"
+    ],
+    "status": "awaiting_real_capture",
+    "notes": "建议桌面主画面 + 小幅移动界面的真实组合；留出标题呼吸区，不能修改 UI 成不存在的功能。"
+  },
+  "M04": {
+    "id": "M04",
+    "name": "Dify · 详情封面",
+    "role": "opensource-case-cover",
+    "topic": "内容完整性作为视觉主张：两条文本流，一条丢失 mention 与 equation，一条完整保留",
+    "kind": "AI 可生成概念视觉",
+    "ratio": "21:10",
+    "size": "1680×800",
+    "priority": "P1",
+    "source": "独立解释性插画",
+    "reuse": [
+      "开源案例 Case 封面"
+    ],
+    "status": "awaiting_concept_art",
+    "notes": "可以复用 M02 的统一母图裁切；不是 Dify 官方界面；如 AI 字符排版不准确，生成无字版本，由 HTML 写文字。"
+  },
+  "M05": {
+    "id": "M05",
+    "name": "VIVIC · 功能实拍 01",
+    "role": "product-detail-ui",
+    "topic": "一张真实界面：捕捉/结构化卡片在产品中的使用状态",
+    "kind": "真实界面 / 截屏",
+    "ratio": "4:5",
+    "size": "960×1200",
+    "priority": "P1",
+    "source": "真实产品手机端或比例接近的界面",
+    "reuse": [
+      "产品案例详情图组左"
+    ],
+    "status": "awaiting_real_capture",
+    "notes": "优先实际 UI；如是团队产品需明确实际已实现的环节，避免混用概念设计图。"
+  },
+  "M06": {
+    "id": "M06",
+    "name": "VIVIC · 功能实拍 02",
+    "role": "product-detail-ui",
+    "topic": "一张真实界面：Agent 建议、任务动作或执行结果回执中的实际交互",
+    "kind": "真实界面 / 截屏",
+    "ratio": "4:5",
+    "size": "960×1200",
+    "priority": "P1",
+    "source": "真实产品手机端或比例接近的界面",
+    "reuse": [
+      "产品案例详情图组右"
+    ],
+    "status": "awaiting_real_capture",
+    "notes": "选择当前确实存在的能力；若仅有后端回执则以真实运行报告而不是伪造前端 UI 呈现。"
+  },
+  "M07": {
+    "id": "M07",
+    "name": "Dify · 解释图",
+    "role": "opensource-explainer",
+    "topic": "用清晰的视觉对照呈现 Notion rich_text 的 plain_text 读取优先级；解释 mention 和 equation 为何不应丢失",
+    "kind": "信息图 / 可选 AI 背景",
+    "ratio": "16:10",
+    "size": "1600×1000",
+    "priority": "P1",
+    "source": "基于已合并 PR 的可核实机制",
+    "reuse": [
+      "开源案例详情图组"
+    ],
+    "status": "awaiting_explainer",
+    "notes": "精确的信息文字、字段和箭头应由 HTML/SVG 绘制；AI 只提供不承载事实信息的概念背景。不生成虚假的代码编辑器、测试截图或指标。"
+  },
+  "M08": {
+    "id": "M08",
+    "name": "系统设计 · 可选视觉封面",
+    "role": "system-cover",
+    "topic": "用极简空间结构表达 意图 → 模型决策 → 宿主校验 → 工具执行 → 状态回读 的职责分工",
+    "kind": "优先矢量结构图 / 不强制生图",
+    "ratio": "16:10",
+    "size": "1600×1000",
+    "priority": "P2",
+    "source": "网站本身可绘制的流程图",
+    "reuse": [
+      "Home 精选系统案例",
+      "Work 系统预览",
+      "系统设计 Case 封面"
+    ],
+    "status": "optional",
+    "notes": "流程节点和名称必须准确；优先 HTML/SVG 交互方案，避免 AI 字形与逻辑幻觉。"
+  }
+};
+
+/**
+ * Map approved assets to media IDs. Leave paths empty until artwork is delivered.
+ * Add files inside /assets, e.g. M02: './assets/dify-hero.webp'.
+ * Do not use AI-generated art to impersonate a real product UI or a PR screenshot.
+ */
+const MEDIA_FILES = {
+  "M01": '',
+  "M02": '',
+  "M03": '',
+  "M04": '',
+  "M05": '',
+  "M06": '',
+  "M07": '',
+  "M08": '',
+};
+
+// Generated from reviewed case packs. Do not edit manually.
+const CASE_DETAILS = {
+  "product": {
+    "headnote": "Vivic 团队产品案例草稿。下方交互是体验结构示意，不是产品真实截图。",
+    "contextTitle": "模型会理解，不等于产品能可靠行动。",
+    "contextLead": "一个卡片助理要做的不只是把语音变成文字，而是找到正确目标、执行多个步骤、解释歧义并确认结果。",
+    "contextCopy": "Vivic 原有卡片与多模态体验已较完整，复杂 Agent 链路却存在多个组件争夺意图决策权的问题。后续重构将规则直出、模型选工具和目标、宿主执行及回执划分清楚。内部 API 回归和后端发布记录存在，但本稿不将它们外推为真实用户使用改善。",
+    "experienceTitle": "把体验拆成可理解的三个时刻。",
+    "experienceIntro": "点击 01—03 查看概念性的输入、结构化与确认过程。真实产品素材将来自团队授权的界面，不用 AI 伪造 UI。",
+    "caption": "FIG. 01 — VIVIC / ILLUSTRATIVE JOURNEY / NOT A LIVE SCREEN",
+    "outcomeTitle": "目前能确认什么？",
+    "outcomeBig": "From capture\u003cbr\u003e\u003ci\u003eto next action.\u003c/i\u003e",
+    "outcome": "内部记录支持后端工具链与回归推进。前端接入、真实用户场景与团队素材公开许可尚未全部过 Gate；此处的流程演示仍是解释性示意。"
+  },
+  "opensource": {
+    "headnote": "本人署名、上游已合并的开源贡献。交互是依据问题制作的解释性示意。",
+    "contextTitle": "导入成功，不等于内容完整。",
+    "contextLead": "Notion 的 mention 和 equation 是有效的富文本片段。如果内容提取链路只读取普通 text 对象，导入后就可能出现含义缺失。",
+    "contextCopy": "PR #42171 调整读取方式：优先使用 rich_text 片段的 plain_text，在需要时回退到 text.content，跳过真正的空值，同时保留既有块结构与递归行为，并增加相应回归测试。这个改动针对的是内容保真，而不是对 RAG 准确率的量化承诺。",
+    "experienceTitle": "让缺失变得可见。",
+    "experienceIntro": "切换 Before / After 查看依据问题机制重建的简单例子。画面不是 Dify 官方界面截图。",
+    "caption": "FIG. 02 — EXPLANATORY RECONSTRUCTION / DIFY PR #42171",
+    "outcomeTitle": "已合并的实际改变。",
+    "outcomeBig": "Keep the\u003cbr\u003e\u003ci\u003emeaning.\u003c/i\u003e",
+    "outcome": "Bruce-Yii 提交的 Dify PR #42171 已于 2026 年 9 月合并。已确认的是上游接受的代码修改及相关测试；尚不宣称具体版本已发布、用户使用指标提升或业务转化效果。"
+  },
+  "agent-evaluation-lab": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "“Agent 说成功”能作为事实吗？",
+    "contextLead": "先判断 Trial 是否可信，再给 Agent 打分。",
+    "contextCopy": "对采购、财务等写入型任务，回答文本不代表真实系统状态。试验世界、证据和评分器本身也可能失败，所以必须把试验有效性与任务结果分开判定。",
+    "experienceTitle": "让证据在模型之外成立。",
+    "experienceIntro": "以冻结状态为依据的独立 verifier、环境隔离和 trial 指纹，帮助判断成功、失败或不可评分；必要时保留无法归因的状态。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "工程基线可追溯，科学闭环尚未完成。",
+    "outcomeBig": "Validity before score.",
+    "outcome": "历史 Linear 验收记录显示三个受控场景各三次有效通过，另有资源 HOLD；它不能外推为生产成功率、跨域泛化或完成干预提升。"
+  },
+  "agent-workflow-governance": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "一个 Agent 说“完成了”，什么才算完成？",
+    "contextLead": "会话不能承担项目的持久身份。",
+    "contextCopy": "跨会话、多 Agent 执行时，职责、状态和证据容易脱节。早期自研协议能留下事件与交接，却也暴露与成熟项目管理平台的重复建设成本。",
+    "experienceTitle": "停止在错误层面继续造轮子。",
+    "experienceIntro": "把长期任务交给 Linear，语义与决策给 Notion，代码与外部事实交给 GitHub；Agent 是可替换执行者，验收另有责任主体。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "可用的是组合工作流，未来 Project OS 是设计方案。",
+    "outcomeBig": "Beyond the session.",
+    "outcome": "本案例展示架构演进和成熟组件复用，不声称已发布一套自己的多 Agent SaaS，也不宣称领先于 DeepSeek。"
+  },
+  "cherry-model-check": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "用户只是想找到失效模型。",
+    "contextLead": "为什么“清理失效模型”不是一个简单按钮？",
+    "contextCopy": "一个 Provider 有许多模型和凭据。部分成功、跳过、检测进行中与全部失败，含义完全不同。若把短时错误写进持久配置，会伤害用户已有设置。",
+    "experienceTitle": "只做足够准确、足够可逆的一步。",
+    "experienceIntro": "保留检测结果的事实属性，让 Failed 仅表示已完成检测中全部已测凭据失败，避免把 skipped/partial 当作不可用。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "上游已合并产品行为变更。",
+    "outcomeBig": "Failure ≠ deletion.",
+    "outcome": "PR #21015 进入上游；PR 描述提供聚焦测试与状态边界。没有独立证据证明真实大规模界面性能或用户留存改善。"
+  },
+  "dsh-notice-recovery": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "为什么一条橙色提示会无法消失？",
+    "contextLead": "用户需要控制提醒，不是掩盖故障。",
+    "contextCopy": "插件丢失后，保留解释性告警是合理的；但如果插件已无恢复入口，通知一直存在就使用户陷入无法结束的操作。",
+    "experienceTitle": "把真实故障与提示意图拆开。",
+    "experienceIntro": "前端允许逐条关闭，后端只修改提醒记录，不假装修复插件；并处理刷新、并发与旧请求回写等竞态。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "上游贡献形成更清晰的用户状态边界。",
+    "outcomeBig": "Keep the truth.",
+    "outcome": "PR 有具体问题说明、代码与维护者反馈；不存在可以归因的用户满意度、安装成功率或留存改善数据。"
+  },
+  "laya-decision-integrity": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "模型返回了答案，应用就能放心使用了吗？",
+    "contextLead": "从模型输出，到可采用的决策能力。",
+    "contextCopy": "下游开发者不仅需要一个答案，还需要确认输入语义、证据、采用权限和调用行为是否可靠。",
+    "experienceTitle": "把可信决策拆成四组产品系统。",
+    "experienceIntro": "意图保真、决策可信、渐进采用、开发者契约；八个故事分别展示这些系统的产品机会、判断和实现。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "上游贡献规模与产品影响可追溯。",
+    "outcomeBig": "40 merged · 85 reviewed.",
+    "outcome": "截至 2026-11-08，47 个本人 authored PR 中 40 个已合并，另有 85 个 PR 匹配 reviewed-by 查询。它们是上游参与记录，不是 40 项独立功能或业务 KPI。案例呈现协作者级别的工作范围，但不声称官方 collaborator 身份。"
+  },
+  "personal-context-layer": {
+    "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
+    "contextTitle": "AI 只看见当前对话，过去的事实去哪了？",
+    "contextLead": "不是加一个聊天记忆按钮。",
+    "contextCopy": "用户跨设备、跨应用留下大量碎片信息。单个 AI 对话窗口或剪贴板历史不天然保留长期来源、关系与用户控制权。这个项目探索开放的个人 Context 基础层。",
+    "experienceTitle": "从采集入口找到正确的产品抽象。",
+    "experienceIntro": "分层解释为什么数据主权、可追溯 Raw 和可重建 Derived 层，比“换一个更强模型”更重要。",
+    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "outcomeTitle": "早期模拟器原型有验收，现行架构尚未全量实现。",
+    "outcomeBig": "Context, owned.",
+    "outcome": "Linear 有 Android 原型与 v0.1 的历史验收记录；目前跨端成熟 Layer 2、通用 AI Gateway 与生产同步链路仍需工程 Spike。网页展示应明确是产品/系统设计，不是已发布的成品。"
+  }
+};
+const PRODUCT_STEPS = [
+  {
+    "label": "01 · CAPTURE",
+    "badge": "ILLUSTRATIVE INPUT",
+    "title": "接收一条碎片化信息。",
+    "quote": "“周五和队友同步 Demo 进度，记得把功能反馈整理成清单。”",
+    "hint": "这里用概念示意说明如何保留时间、对象和待办，而不是模拟已完成的产品识别能力。",
+    "foot": "CONCEPT / NOT LIVE"
+  },
+  {
+    "label": "02 · STRUCTURE",
+    "badge": "ILLUSTRATIVE SPACE CARD",
+    "title": "整理为可以回看的卡片。",
+    "quote": "\u003cul\u003e\u003cli\u003e\u003cspan\u003e01\u003c/span\u003e主题：Demo 进度同步\u003c/li\u003e\u003cli\u003e\u003cspan\u003e02\u003c/span\u003e对象：项目队友\u003c/li\u003e\u003cli\u003e\u003cspan\u003e03\u003c/span\u003e下一步：整理反馈清单\u003c/li\u003e\u003c/ul\u003e",
+    "hint": "卡片承接输入到任务的理解，但此界面是网站解释模型，不是 Vivic 当前真实 UI。",
+    "foot": "CONCEPT / NOT LIVE"
+  },
+  {
+    "label": "03 · CONFIRM",
+    "badge": "ILLUSTRATIVE STATE",
+    "title": "区分建议与真实执行。",
+    "quote": "\u003cdiv class=\"result-check\"\u003e✓\u003c/div\u003e\u003cstrong\u003e建议已整理\u003c/strong\u003e\u003csmall\u003e下一步尚待确认；未模拟连接真实外部系统。\u003c/small\u003e",
+    "hint": "避免用“已完成”冒充实际执行。最终公开案例需要展示产品真实的状态读回。",
+    "foot": "CONCEPT / NOT LIVE"
+  }
+];
+
+
+
+
+
+// The styling inspector is an authoring aid, not part of the public portfolio.
+if (new URLSearchParams(location.search).get('design') === '1') {
+  document.documentElement.classList.add('design-mode');
+}
+function mediaSlot(id,variant='wide'){
+ const a=MEDIA_SPEC[id],src=MEDIA_FILES[id];if(!a)return '';
+ const source=src?`<img src="${src}" alt="${a.topic}" loading="lazy">`:'';
+ const safe=a.kind.includes('真实')?'REAL PRODUCT MEDIA':'ART-DIRECTED EXPLAINER';
+ return `<div class="media-slot media-slot--${variant}${source?' has-asset':''}" data-asset-id="${id}" role="group" aria-label="${a.name}，${a.topic}">${source}<div class="media-slot__head mono"><span>IMAGE FIELD / ${id}</span><span>${a.ratio} · ${a.priority}</span></div><div class="media-slot__body"><div class="media-slot__index serif">${id}</div><div class="media-slot__title">${a.name}</div><p>${a.topic}</p></div><div class="media-slot__bottom mono"><span>${safe}</span><span>VISUAL PENDING ↗</span></div></div>`;
+}
+function productArt(){return `<div class="feature-art asset-shell">${mediaSlot('M01','feature')}</div>`}
+function sourceArt(){return `<div class="art-secondary asset-shell">${mediaSlot('M02','feature')}</div>`}
+function systemArt(){return `<div class="art-secondary asset-shell">${mediaSlot('M08','feature')}</div>`}
+const artByType={product:productArt,opensource:sourceArt,systems:systemArt};
+const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+function editorialCover(c){
+  return `<div class="editorial-art"><div class="mono editorial-art__top">CASE / EVIDENCE-LED NARRATIVE <span>${esc(c.num)}</span></div><div class="editorial-art__body"><div class="mono">${esc(c.category)} · ${esc(c.status)}</div><strong>${esc(c.name)}</strong><p>${esc(c.desc)}</p></div><div class="mono editorial-art__foot">DESIGNED EXPLANATION / NOT A PRODUCT SCREEN</div></div>`;
+}
+function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)();}
+function narrativeExperience(c){
+  const e=c.editorial||{},decisions=e.decisions||[],sources=e.evidence||[];
+  return `<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>THE DECISIONS / VERIFIED WHERE POSSIBLE</span><span>${String(decisions.length).padStart(2,'0')} THREADS</span></div><div class="narrative-evidence__decisions">${decisions.map((d,i)=>`<article><span class="mono">0${i+1} / DECISION</span><p>${esc(d)}</p></article>`).join('')}</div><div class="narrative-evidence__evidence"><div class="mono">TRACEABLE EVIDENCE</div>${sources.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(src.label)}<small>${esc(src.state)}</small></span><span>↗</span></a>`).join('')}</div><div class="narrative-evidence__boundary"><b>个人责任</b><p>${esc(e.role)}</p><b>公开边界</b><p>${esc(e.boundary)}</p></div></div>`;
+}
+document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a class="index-row" href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono number">${c.number}</span><strong>${c.name}</strong><span class="category">${c.title}<br><small>${c.detail}</small></span><span class="go">↗</span></a>`).join('');
+document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono">${c.kind==='CASEBOOK'?'CASEBOOK / 01':c.number+' / MERGED'}</span><span><strong>${c.name}</strong><small>${c.title} · ${c.detail}</small></span><span>↗</span></a>`).join('');
+const FEATURED = CASES.filter(c=>c.homeFeatured).map(c=>c.id);
+let featured=FEATURED[0]||CASES[0]?.id;
+const picksEl=document.getElementById('showcase-picks');
+picksEl.innerHTML=FEATURED.map((id,i)=>{const c=CASES.find(c=>c.id===id);return `<button data-feature="${esc(c.id)}" aria-pressed="false"><span class="mono pick-no">${String(i+1).padStart(2,'0')}</span><span class="pick-name">${esc(c.category)}</span><span class="pick-tail">${esc(c.type.toUpperCase())}</span></button>`;}).join('');
+function setFeature(id){
+  const c=CASES.find(x=>x.id===id);if(!c)return;
+  featured=id;
+  $('#showcase-canvas').innerHTML=artworkFor(c)+`<button class="glass-overlay" data-action="navigate" data-page="case" data-target-id="${id}" aria-label="阅读案例：${c.name}"><span class="glass-top">SELECTED / ${c.num}</span><span class="glass-bottom"><strong>查看完整案例</strong><span class="glass-arrow">↗</span></span></button>`;
+  $('#featured-index').textContent=String(FEATURED.indexOf(id)+1).padStart(2,'0')+' / '+String(FEATURED.length).padStart(2,'0');
+  $('#featured-category').textContent=c.kind;
+  $('#featured-eyebrow').textContent='SELECTED CASE / '+c.num;
+  $('#featured-title').textContent=c.name;
+  $('#featured-latin').textContent=c.latin;
+  $('#featured-summary').textContent=c.featuredSummary||c.desc;
+  $('#featured-open').dataset.action='navigate';$('#featured-open').dataset.page='case';$('#featured-open').dataset.targetId=id;
+  
+$$('[data-feature]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.feature===id)));
+}
+// One delegated event layer handles static navigation and dynamically rendered case UI.
+document.addEventListener('click',event=>{
+  const btn=event.target.closest('[data-action],[data-feature],[data-step],[data-source-state],[data-sys],[data-glass-mode]');
+  if (!btn) return;
+  if(btn.matches('[data-feature]')){setFeature(btn.dataset.feature);return}
+  if(btn.matches('[data-glass-mode]')) {setGlassMode(btn.dataset.glassMode);return}
+  if(btn.matches('[data-step]')) {showProductStep(Number(btn.dataset.step));return}
+  if(btn.matches('[data-source-state]')) {showSourceState(btn.dataset.sourceState);return}
+  if(btn.matches('[data-sys]')) {showSystemNode(Number(btn.dataset.sys));return}
+  switch(btn.dataset.action){
+    case 'navigate': navigate(btn.dataset.page||'home',btn.dataset.targetId||'');break;
+    case 'open-work':openWork(btn.dataset.workMode||'work');break;
+    case 'case-scroll':caseScroll(btn.dataset.section);break;
+    case 'open-inspector':openInspector();break;
+    case 'close-inspector':closeInspector();break;
+    case 'scroll-selected':document.getElementById('selected')?.scrollIntoView({behavior:'smooth'});break;
+  }
+});
+// Hover previews are supplementary: keyboard focus triggers the same preview.
+document.addEventListener('pointerover',event=>{
+  const row=event.target.closest('#work-rows .work-row');
+  if(row && row.dataset.case && row.dataset.case!==previewId) selectWorkPreview(row.dataset.case);
+});
+document.addEventListener('focusin',event=>{
+  const row=event.target.closest('#work-rows .work-row');
+  if(row && row.dataset.case) selectWorkPreview(row.dataset.case);
+});
+
+let filter='all',viewmode='work',previewId='product';
+function openWork(mode='work'){viewmode=mode;filter='all';navigate('work')}
+function updatePreview(id){
+  const c=CASES.find(c=>c.id===id);if(!c)return;
+  previewId=id;
+  $('#preview-counter').textContent=c.num;
+  $('#preview-art').innerHTML=artworkFor(c);
+  $('#preview-title').textContent=c.name;
+  $('#preview-kind').textContent=c.kind;
+  $('#preview-desc').textContent=c.desc;
+  $$('#work-rows .work-row').forEach(el=>el.setAttribute('data-preview-selected',String(el.dataset.case===id)));
+}
+function selectWorkPreview(id){updatePreview(id)}
+
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+function renderWork(){
+  const list=CASES.filter(c=>filter==='all'||c.type===filter);
+  $('#result-count').textContent=String(list.length).padStart(2,'0')+' / WORKS';
+  $('#work-rows').innerHTML=list.map(c=>`<button class="work-row" data-case="${c.id}" data-preview-selected="false"   data-action="navigate" data-page="case" data-target-id="${c.id}" aria-label="查看案例：${c.name}"><span class="mono index-num">${c.num}</span><span class="row-main"><strong>${c.name}</strong><em>${c.latin}</em><small>${c.desc}</small></span><span class="kind mono">${c.visibility==='approved_public'?'REVIEWED / PUBLIC':c.verified?'MERGED / PUBLIC RECORD':'EDITORIAL DRAFT'}</span><span class="go">↗</span></button>`).join('');
+  const labels=[['产品判断','从问题理解到方案选择'],['Agent 工程','模型、工具与执行的职责边界'],['开源协作','成熟产品中的真实贡献'],['系统架构','复杂系统中的结构与取舍']];
+  $('#cap-grid').innerHTML=labels.filter(([n])=>CASES.some(c=>c.caps.includes(n))).map(([n,desc],i)=>`<section class="cap-group"><div class="mono cap-number">0${i+1} / CAPABILITY</div><div class="cap-heading"><h3>${n}</h3><p>${desc}</p></div><div class="related">${CASES.filter(c=>c.caps.includes(n)).map(c=>`<button data-action="navigate" data-page="case" data-target-id="${c.id}"><span>${c.name}</span><span>↗</span></button>`).join('')}</div></section>`).join('');
+  $('#work-browser').hidden=viewmode!=='work';$('#cap-grid').hidden=viewmode!=='capability';$('#filters').hidden=viewmode==='capability';
+  $$('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
+  $$('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===viewmode)));
+  if(list.length)updatePreview(list.some(c=>c.id===previewId)?previewId:list[0].id);
+  $$('[data-filter]').forEach(b=>{if(b.dataset.filter!=='all')b.hidden=!CASES.some(c=>c.type===b.dataset.filter)});
+}
+function caseScroll(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+function caseCover(type){
+ if(type==='product')return mediaSlot('M03','case-cover');
+ if(type==='opensource')return mediaSlot('M04','case-cover');
+ return mediaSlot('M08','case-cover');
+}
+function productExperience(){return `<div class="demo-product" aria-label="产品概念交互示例"><div class="demo-side"><div class="mono demo-side-issue">DESIGNED JOURNEY / 03 STATES</div><h3>One intention.<br><i>Three moments.</i></h3><p>一个任务的体验不应该在“模型输出”处结束。</p><div class="journey-steps" role="group" aria-label="切换产品体验步骤"><button class="journey-step" data-step="0" aria-pressed="true" ><span>01</span><b>Capture</b><em>理解意图</em></button><button class="journey-step" data-step="1" aria-pressed="false" ><span>02</span><b>Structure</b><em>形成下一步</em></button><button class="journey-step" data-step="2" aria-pressed="false" ><span>03</span><b>Confirm</b><em>结果有回执</em></button></div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> PERSONAL SPACE / DEMO</span><span id="product-step-label">01 · CAPTURE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>INTERACTION STUDY · NOT AN ACTUAL PRODUCT</span><span>↗</span></div></div></div>`;}
+function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 03</span></div><h4>${s.title}</h4><div class="app-message ${n===2?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
+function sourceExperience(){return `<div class="demo-source" aria-label="开源产品改进前后体验示意"><div class="source-tool"><div class="mono">CHANGE / THE USER'S VIEW</div><div class="source-compare-controls" role="group" aria-label="查看改进前后状态"><button data-source-state="before" aria-pressed="true" >BEFORE <span>01</span></button><button data-source-state="after" aria-pressed="false" >AFTER <span>02</span></button></div></div><div class="source-canvas"><div class="source-window"><div class="source-titlebar mono"><span>KNOWLEDGE IMPORT / EXAMPLE</span><span>◌ ◌ ◌</span></div><div class="source-doc-title">导入文档预览</div><div class="source-doc-meta mono">A SIMPLE CONTENT FIDELITY EXAMPLE</div><div id="source-state-content" aria-live="polite"></div></div><div class="source-context" id="source-context"><div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>概念示意：知识导入时保留结构化内容，能减少用户手动修复。</p></div></div></div>`;}
+function showSourceState(state){const before=state==='before';$('#source-state-content').innerHTML=before?`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="loss">[missing mention]</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p><mark class="loss">[unsupported content]</mark></p></div><div class="source-inline-callout mono">INFORMATION LOST / EXAMPLE</div>`:`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="keep">@项目负责人</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p>保留公式内容：<mark class="keep">E = mc²</mark></p></div><div class="source-inline-callout kept mono">CONTENT PRESERVED / EXAMPLE</div>`;$('#source-context').innerHTML=before?`<div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>文档结构在处理中丢失，使用者需要猜测原文或重新录入。</p>`:`<div class="mono source-context-kicker">THE CHANGE</div><h3>不只是导入成功，<br>还要信息完整。</h3><p>概念示意：把用户关心的内容保真作为可感知的结果。</p>`;$$('[data-source-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceState===state)));}
+const SYSTEM_NODES=[
+ ['INTENT','输入与目标','将用户意图转换为可处理的任务上下文，不假设输入天然完整。','输入：目标 / 上下文','输出：任务意图'],
+ ['RESOLVE','对象解析','将自然语言中的人、空间或业务对象映射到可确认的规范引用，不凭空猜测标识符。','输入：目标 / 系统对象','输出：规范化对象引用'],
+ ['POLICY','宿主校验','在执行前检查权限、参数及高风险操作的确认要求。','输入：规范化引用 / 候选操作','输出：允许 / 拒绝 / 待确认'],
+ ['EXECUTE','工具调用','由确定性的接口处理已允许的动作；不把模型生成的文字当成外部操作结果。','输入：允许的操作','输出：接口响应'],
+ ['RECEIPT','结果回读','根据实际返回判断结果是否完成，并明确失败或部分成功状态。','输入：工具响应','输出：可确认的最终状态']
+];
+function systemExperience(){return `<div class="demo-system"><div class="system-toolbar mono"><span>REFERENCE ARCHITECTURE / INTERACTIVE</span><span>SELECT A RESPONSIBILITY ↘</span></div><div class="system-flow" role="group" aria-label="选择执行系统的职责节点">${SYSTEM_NODES.map((n,i)=>`<button data-sys="${i}" aria-pressed="${i===2?'true':'false'}" ><span class="mono">0${i+1}</span><strong>${n[0]}</strong><small>↗</small></button>`).join('<div class="sys-join" aria-hidden="true">→</div>')}</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / RESPONSIBILITY</span><span class="system-detail-no" id="sys-num">03 / 05</span></div><h3 id="sys-title">宿主校验</h3><p id="sys-desc">在真正执行前检查边界、权限、参数及需要人工确认的操作。</p><div class="system-io"><span id="sys-input">输入：候选行动</span><span id="sys-output">输出：允许 / 拒绝 / 待确认</span></div></div></div>`;}
+function showSystemNode(i){let n=SYSTEM_NODES[i];if(!n)return;$('#sys-num').textContent=`0${i+1} / 05`;$('#sys-title').textContent=n[1];$('#sys-desc').textContent=n[2];$('#sys-input').textContent=n[3];$('#sys-output').textContent=n[4];$$('[data-sys]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.sys===i)));}
+function renderCase(id){
+ const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[c.presentation==='evidence'?c.id:c.type];
+ const layaBook=document.getElementById('laya-casebook-cta');if(layaBook)layaBook.hidden=c.id!=='laya-decision-integrity';
+ $('#case-no').textContent=`${c.num} / CASE STUDY`;
+ $('#case-kind').textContent=c.kind;
+ $('#case-path-current').textContent=c.category.toUpperCase();
+ $('#case-title').textContent=c.name;$('#case-latin').textContent=c.latin;$('#case-lead').textContent=c.lead;
+ $('#case-head-note').textContent=d.headnote;$('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
+ $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
+ $('#case-facts').innerHTML=`<dl><div><dt>DISCIPLINE</dt><dd>${c.category}</dd></div><div><dt>FOCUS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>STATUS</dt><dd>${c.status}</dd></div><div><dt>FORMAT</dt><dd>${c.format}</dd></div></dl>`;
+ $('#case-edition-type').textContent=c.visibility==='approved_public'?'PUBLIC CONTENT / EDITORIAL EXPLANATION':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':'INTERNAL CONTENT DRAFT / REQUIRES APPROVAL';
+ $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':c.verified?'开源主题图为待制作的说明性素材，非官方截图':'原始素材与可公开边界仍在复核';
+ $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
+ $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。视觉主图将由单独素材工作补齐，不作为产品运行证据。交互演示为解释性复现。':'这是内部编辑草稿，尚未获得发布许可。模型交互与系统流程均为解释性演示，不能代替真实产品界面、团队授权、工程日志或第三方用户效果。';
+ $('#case-source-link').hidden=!c.verified||c.presentation==='evidence';
+ $('#case-source-link').innerHTML=c.verified&&c.presentation!=='evidence'?'<div class="mono">PRIMARY SOURCE / PUBLIC RECORD</div><a target="_blank" rel="noopener noreferrer" href="https://github.com/langgenius/dify/pull/42171"><span>GitHub · Dify PR #42171</span><span>OPEN SOURCE ↗</span></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/langgenius/dify/issues/42170"><span>Related Issue #42170</span><span>VIEW ISSUE ↗</span></a>':'';
+ $('#case-context-title').textContent=d.contextTitle;$('#case-context-lead').textContent=d.contextLead;$('#case-context-copy').textContent=d.contextCopy;
+ $('#case-experience-title').textContent=d.experienceTitle;$('#case-experience-intro').textContent=d.experienceIntro;
+ $('#case-stage').innerHTML=c.presentation==='evidence'?narrativeExperience(c):c.type==='product'?productExperience():c.type==='opensource'?sourceExperience():systemExperience();
+ $('#case-figure-caption').textContent=d.caption;
+ const mediaCases={product:['M05','M06'],opensource:['M07'],systems:[]};
+ const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
+ $('#case-media-insert').hidden=!mediaIds.length;
+ $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">SUPPORTING MATERIAL / ASSET BRIEF</div><h3>More than a <i>cover.</i></h3><p>${c.type==='product'?'这里保留真正的产品截图。不是 AI 想象出来的界面。':'这一位置用于机制说明图；实际 PR 仍以独立的公开源链接说明。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
+ $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;
+ if(c.presentation!=='evidence'){if(c.type==='product')showProductStep(0);if(c.type==='opensource')showSourceState('before');if(c.type==='systems')showSystemNode(2)}
+ const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
+}
+function navigate(page='home',id='',push=true){
+  if(!['home','work','about','case'].includes(page))page='home';
+  $$('.view').forEach(el=>el.classList.toggle('is-active',el.id==='view-'+page));
+  $$('[data-nav]').forEach(el=>el.setAttribute('aria-current',(el.dataset.nav===page||(page==='case'&&el.dataset.nav==='work'))?'page':'false'));
+  if(page==='work')renderWork();if(page==='case')renderCase(id);
+  if(push)history.pushState({},'',`#${page}${page==='case'?'/'+id:''}`);
+  document.title=page==='home'?'Bruce Yii — Selected Work':`${page.toUpperCase()} — Bruce Yii`;
+  window.scrollTo({top:0,behavior:'instant'});
+}
+const workSummary=document.getElementById('work-summary-count');
+if(workSummary)workSummary.textContent=`${CASES.length} CASES · ${CASES.filter(c=>c.visibility==='approved_public').length} PUBLIC APPROVED`;
+const selectedSummary=document.getElementById('selected-count');
+if(selectedSummary)selectedSummary.textContent=`${CASES.length} SELECTED CASES / EDITORIAL REVIEW`;
+setFeature(FEATURED.includes('opensource')?'opensource':FEATURED[0]);
+$$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;viewmode='work';renderWork()}));
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{viewmode=b.dataset.mode;renderWork()}));
+$$('[data-typography]').forEach(b=>b.addEventListener('click',()=>{document.documentElement.dataset.typography=b.dataset.typography;$$('[data-typography]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)))}));
+$$('[data-han]').forEach(b=>b.addEventListener('click',()=>{document.documentElement.dataset.han=b.dataset.han;$$('[data-han]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)))}));
+$$('[data-accent]').forEach(b=>b.addEventListener('click',()=>{document.documentElement.dataset.accent=b.dataset.accent;$('#accent-swatch').style.background=b.dataset.accent==='blue'?'#385775':'#A34532';$$('[data-accent]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)))}));
+function openInspector(){$('#inspector').classList.add('is-open');$('#inspector').setAttribute('aria-hidden','false');$('#inspector-overlay').classList.add('is-open');document.body.style.overflow='hidden';$('#inspector .inspect-close').focus();}
+function closeInspector(){$('#inspector').classList.remove('is-open');$('#inspector').setAttribute('aria-hidden','true');$('#inspector-overlay').classList.remove('is-open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#inspector').classList.contains('is-open'))closeInspector()});
+window.addEventListener('popstate',()=>{const [p,id]=location.hash.replace(/^#/,'').split('/');navigate(p||'home',id||'',false)});
+function syncHeaderMaterial(){
+ document.querySelector('.masthead').dataset.scrolled=String(window.scrollY>12);
+}
+window.addEventListener('scroll',syncHeaderMaterial,{passive:true});
+syncHeaderMaterial();
+function setGlassMode(mode){
+ if(mode!=='on'&&mode!=='off')return;
+ document.documentElement.dataset.glass=mode;
+ document.querySelectorAll('[data-glass-mode]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.glassMode===mode)));
+}
+const [initial,initialCase]=location.hash.replace(/^#/,'').split('/');navigate(initial||'home',initialCase||(initial?'':'product'),false);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#e9ebe5" name="theme-color"/>
+<meta content="Laya 产品能力与上游协作案例册：从意图保真、决策可信、渐进采用到开发者契约。40 个已合并贡献、85 个参与 Review 的 PR（GitHub 查询快照）。" name="description"/>
+<title>LAYA — From Output to Adoption · Casebook v2.4</title>
+<style>
+:root{--paper:#e9ebe5;--paper2:#f4f5f0;--ink:#18231e;--ink2:#334139;--muted:#58665d;--line:#b8c0b6;--line2:#d2d8cf;--red:#963f2e;--red2:#9f4938;--forest:#20372d;--forest2:#304b3d;--cream:#f4f1e8;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--serif:Georgia,"Times New Roman","Noto Serif SC",serif;--sans:Inter,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}::selection{background:#c7d1c3;color:var(--ink)}
+.mono{font:10px/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase}.muted{color:var(--muted)}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(233,235,229,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(24,35,30,.16)}.topbar-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:34px;height:34px;border:1px solid var(--ink);display:grid;place-items:center;font:16px var(--serif);letter-spacing:-.08em}.brand-name{font:10px var(--mono);letter-spacing:.13em}.nav{display:flex;gap:24px;align-items:center}.nav a{font-size:12px;color:var(--muted);transition:.2s}.nav a:hover{color:var(--red)}.nav .nav-cta{color:var(--ink);border-bottom:1px solid var(--red);padding-bottom:3px}
+.hero{min-height:670px;padding:48px 0 34px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;position:relative}.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;border-bottom:1px solid var(--line)}.hero-copy{padding:30px 0 46px}.eyebrow{color:var(--red);margin-bottom:26px}.hero h1{font:clamp(66px,8.3vw,120px)/.91 var(--serif);letter-spacing:-.065em;margin:0;max-width:780px}.hero h1 em{color:var(--red);font-weight:400}.hero-cn{font-size:clamp(19px,2vw,25px);font-weight:600;letter-spacing:-.04em;margin:36px 0 14px;max-width:590px;line-height:1.55}.hero-desc{color:var(--muted);font-size:14px;max-width:540px;margin:0}.hero-meta{display:flex;gap:26px;margin-top:44px;color:var(--muted)}.hero-art{position:relative;min-height:450px;background:var(--forest);color:var(--cream);overflow:hidden;padding:28px;display:flex;flex-direction:column;justify-content:space-between}.hero-art:before{content:"";position:absolute;width:410px;height:410px;border:1px solid rgba(244,241,232,.22);border-radius:50%;right:-100px;top:10px}.hero-art:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(244,241,232,.25);border-radius:50%;right:-35px;top:75px}.art-head,.art-foot{position:relative;z-index:2;display:flex;justify-content:space-between;gap:12px;color:#b9c7bb}.art-foot{align-items:end}.art-foot strong{font:34px var(--serif);color:var(--cream);letter-spacing:-.04em}.art-foot span{max-width:130px;text-align:right}.decision-svg{position:absolute;inset:60px 10px 70px 10px;width:calc(100% - 20px);height:calc(100% - 130px);z-index:1}.hero-caption{position:absolute;bottom:17px;left:0;color:var(--muted)}
+.section{padding:104px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:.32fr 1fr;gap:30px;margin-bottom:54px}.section-index{color:var(--red);padding-top:10px}.section-title{font:clamp(42px,5.4vw,72px)/1 var(--serif);letter-spacing:-.055em;margin:0}.section-title em{font-weight:400;color:var(--red)}.section-lead{max-width:660px;color:var(--muted);font-size:16px;margin:20px 0 0}.manifesto{background:var(--forest);color:var(--cream);padding:74px 0}.manifesto-grid{display:grid;grid-template-columns:.32fr 1fr;gap:30px}.manifesto .section-index{color:#d18a72}.manifesto h2{font:clamp(38px,5vw,66px)/1.08 var(--serif);letter-spacing:-.05em;max-width:920px;margin:0}.manifesto h2 em{color:#d58a71;font-weight:400}.manifesto-bottom{display:grid;grid-template-columns:.32fr 1fr;gap:30px;margin-top:58px}.manifesto-bottom p{margin:0;color:#c0ccc1;max-width:720px}.contract-flow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(244,241,232,.25);border-bottom:1px solid rgba(244,241,232,.25);margin-top:42px}.contract-node{padding:20px 16px 20px 0;position:relative}.contract-node:not(:last-child):after{content:"→";position:absolute;right:18px;top:25px;color:#d58a71}.contract-node small{display:block;color:#9db0a1}.contract-node strong{display:block;font:22px var(--serif);margin-top:8px}.contract-node p{color:#b9c7bb;font-size:12px;margin:8px 20px 0 0;max-width:180px}
+.track-intro{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}.track-intro p{max-width:540px;color:var(--muted);margin:0}.track-tag{font:10px var(--mono);letter-spacing:.12em;color:var(--red)}.chapter-list{border-top:1px solid var(--ink)}.chapter{display:grid;grid-template-columns:90px minmax(0,1fr) 150px;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start}.chapter-no{font:12px var(--mono);color:var(--red);padding-top:8px}.chapter-main h3{font:clamp(27px,3.3vw,43px)/1.1 var(--serif);letter-spacing:-.04em;margin:0}.chapter-main .chapter-sub{font-size:14px;color:var(--muted);margin:12px 0 0;max-width:760px}.chapter-side{display:flex;flex-direction:column;align-items:flex-end;gap:10px}.chapter-side span{font:9px var(--mono);letter-spacing:.08em;color:var(--muted);text-align:right}.chapter-toggle{border:0;background:none;border-bottom:1px solid var(--red);padding:4px 0 5px;font:10px var(--mono);letter-spacing:.1em;cursor:pointer;color:var(--ink)}.chapter-detail{grid-column:2/4;display:none;padding:20px 0 8px;border-top:1px solid var(--line2);margin-top:6px}.chapter.is-open .chapter-detail{display:grid;grid-template-columns:1fr 1fr;gap:28px}.detail-block .mono{color:var(--red)}.detail-block h4{font-size:14px;margin:9px 0 8px}.detail-block p{font-size:13px;color:var(--ink2);margin:0;max-width:560px}.evidence-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.evidence-links a{font:10px var(--mono);padding:7px 9px;border:1px solid var(--line);color:var(--ink2);transition:.2s}.evidence-links a:hover{border-color:var(--red);color:var(--red)}.boundary{font-size:11px;color:var(--muted);border-left:2px solid var(--red);padding:8px 12px;margin-top:14px;background:rgba(255,255,255,.25)}
+.chapter-visual{grid-column:1/-1;background:#e1e5dd;border:1px solid var(--line);padding:18px 20px 20px;margin-top:4px}.chapter-visual-head{display:flex;justify-content:space-between;gap:14px;color:var(--muted);margin-bottom:18px}.mini-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.mini-node{background:var(--paper2);border:1px solid var(--line);padding:13px 12px;min-height:82px;position:relative}.mini-node:not(:last-child):after{content:"→";position:absolute;right:-9px;top:26px;z-index:2;color:var(--red);font:16px var(--serif)}.mini-node small{display:block;font:9px var(--mono);color:var(--red)}.mini-node strong{display:block;font-size:13px;margin-top:7px}.mini-node em{display:block;font:10px var(--sans);color:var(--muted);font-style:normal;margin-top:4px}.stage-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.stage{padding:15px;background:var(--forest);color:var(--cream);min-height:105px;position:relative}.stage small{font:9px var(--mono);color:#d58a71}.stage strong{display:block;font:20px var(--serif);margin-top:9px}.stage p{font-size:10px;color:#c1cdc2;margin:6px 0 0}.state-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.state{padding:15px 10px;border:1px solid var(--line);background:var(--paper2);min-height:94px}.state strong{display:block;font:12px var(--mono);color:var(--red)}.state span{display:block;font-size:10px;color:var(--muted);margin-top:9px}.training-flow{display:grid;grid-template-columns:1fr 1fr 1fr 34px 1.5fr;gap:8px;align-items:center}.train-input{padding:14px 10px;text-align:center;border:1px solid var(--line);background:var(--paper2)}.train-input strong{display:block;font-size:12px}.train-input small{font:9px var(--mono);color:var(--muted)}.train-arrow{text-align:center;color:var(--red);font:24px var(--serif)}.train-core{background:var(--forest);color:var(--cream);padding:18px}.train-core strong{font:22px var(--serif)}.train-core small{display:block;font:9px var(--mono);color:#d58a71;margin-top:5px}.choice-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice-state{padding:17px;background:var(--paper2);border:1px solid var(--line)}.choice-state.after{border-color:var(--red)}.choice-state .mono{color:var(--red)}.choice-options{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}.choice-options span{padding:7px 10px;background:#e0e4dc;border:1px solid var(--line);font:11px var(--mono)}.choice-options span.selected{background:var(--forest);color:var(--cream);border-color:var(--forest)}.choice-state p{font-size:11px;color:var(--muted);margin:12px 0 0}.ci-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ci-panel{padding:16px;background:var(--paper2);border:1px solid var(--line)}.ci-panel strong{font:24px var(--serif);display:block}.ci-panel .mono{color:var(--red)}.ci-panel p{font-size:11px;color:var(--muted);margin:7px 0 0}.chapter-visual-note{font-size:10px;color:var(--muted);margin-top:13px}.feature-panel{margin-top:60px;background:var(--paper2);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;min-height:320px}.feature-visual{background:#d8ded4;position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center}.feature-visual .visual-label{position:absolute;top:20px;left:20px;color:var(--muted)}.feature-visual svg{width:85%;height:auto;max-height:260px}.feature-copy{padding:34px 38px;display:flex;flex-direction:column;justify-content:center}.feature-copy .mono{color:var(--red)}.feature-copy h3{font:clamp(28px,3.4vw,44px)/1.08 var(--serif);margin:14px 0}.feature-copy p{font-size:13px;color:var(--muted);max-width:480px;margin:0}.feature-copy .feature-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:28px;font:10px var(--mono);color:var(--ink2)}
+.collab{background:#e0e4dc}.collab .section{border-bottom:0}.collab .section-head{margin-bottom:42px}.collab-intro{display:grid;grid-template-columns:.32fr 1fr;gap:30px;margin-bottom:44px}.collab-intro p{font-size:17px;max-width:760px;margin:0}.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}.collab-card{padding:25px 26px 28px 0;min-height:300px}.collab-card+.collab-card{padding-left:26px;border-left:1px solid var(--line)}.collab-card .mono{color:var(--red)}.collab-card h3{font:31px/1.08 var(--serif);letter-spacing:-.04em;margin:20px 0 12px}.collab-card p{font-size:13px;color:var(--ink2);margin:0}.collab-card .proof{margin-top:22px;font:10px var(--mono);color:var(--muted)}.collab-flow{margin-top:50px;padding:25px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.collab-step{position:relative;padding-right:20px}.collab-step strong{font:20px var(--serif);display:block}.collab-step small{font:10px var(--mono);color:var(--red);display:block;margin-bottom:8px}.collab-step p{font-size:12px;color:var(--muted);margin:8px 0 0}
+.evidence{padding:90px 0;background:var(--forest);color:var(--cream)}.evidence .section-index{color:#d58a71}.evidence .section-title em{color:#d58a71}.evidence .section-lead{color:#b9c7bb}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:45px}.evidence-col h3{font:26px var(--serif);margin:0 0 18px}.evidence-list{border-top:1px solid rgba(244,241,232,.28)}.evidence-row{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid rgba(244,241,232,.18);font-size:12px}.evidence-row span{color:#aab9ad}.evidence-row a{color:var(--cream);font:10px var(--mono);white-space:nowrap}.evidence-row a:hover{color:#e5a48d}.evidence-note{font-size:12px;color:#b9c7bb;max-width:760px;margin-top:42px;border-left:2px solid #d58a71;padding-left:15px}
+.role-note{padding:70px 0 80px;display:grid;grid-template-columns:.32fr 1fr;gap:30px}.role-note h2{font:34px var(--serif);margin:0}.role-note p{max-width:760px;color:var(--muted);margin:0}.footer{background:var(--paper);padding:32px 0 50px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;border-top:1px solid var(--line);padding-top:20px;color:var(--muted)}.footer a{color:var(--red)}
+@media(max-width:850px){.wrap{width:min(100% - 40px,var(--max))}.hero{grid-template-columns:1fr;min-height:auto;padding:55px 0 34px}.hero-art{min-height:360px}.hero-copy{padding:10px 0 0}.hero h1{font-size:clamp(62px,13vw,100px)}.section{padding:74px 0}.section-head,.manifesto-grid,.manifesto-bottom,.collab-intro,.role-note{grid-template-columns:1fr;gap:16px}.section-head{margin-bottom:36px}.chapter{grid-template-columns:50px minmax(0,1fr);gap:14px}.chapter-side{grid-column:2;align-items:flex-start;flex-direction:row;justify-content:space-between}.chapter-detail{grid-column:2}.chapter.is-open .chapter-detail{grid-template-columns:1fr}.mini-flow,.stage-flow,.state-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mini-node:not(:last-child):after{display:none}.training-flow{grid-template-columns:1fr 1fr}.train-arrow{display:none}.train-core{grid-column:1/-1}.choice-compare,.ci-visual{grid-template-columns:1fr}.feature-panel{grid-template-columns:1fr}.feature-visual{min-height:250px}.collab-grid{grid-template-columns:1fr}.collab-card{min-height:auto;padding:24px 0}.collab-card+.collab-card{padding:24px 0;border-left:0;border-top:1px solid var(--line)}.collab-flow{grid-template-columns:1fr 1fr}.evidence-grid{grid-template-columns:1fr;gap:34px}.contract-flow{grid-template-columns:1fr 1fr}.contract-node:nth-child(2):after{display:none}}
+@media(max-width:520px){.wrap{width:calc(100% - 32px)}.topbar-inner{height:58px}.brand-name{font-size:8px}.nav{gap:13px}.nav a{font-size:10px}.nav a:first-child{display:none}.hero{gap:24px;padding-top:38px}.hero h1{font-size:64px}.hero-cn{font-size:19px;margin-top:27px}.hero-art{min-height:310px;padding:18px}.hero-meta{gap:12px;flex-wrap:wrap;font-size:8px}.section-title{font-size:43px}.manifesto{padding:55px 0}.manifesto h2{font-size:39px}.contract-flow{grid-template-columns:1fr 1fr}.contract-node{padding:14px 10px 14px 0}.contract-node strong{font-size:19px}.contract-node p{font-size:11px}.track-intro{display:block}.track-intro p{margin-top:14px}.chapter{grid-template-columns:34px minmax(0,1fr);gap:10px;padding:24px 0}.chapter-main h3{font-size:29px}.chapter-main .chapter-sub{font-size:12px}.chapter-side{grid-column:2}.chapter-detail{grid-column:2}.feature-copy{padding:25px 22px}.collab-flow{grid-template-columns:1fr 1fr}.evidence{padding:65px 0}.evidence-grid{gap:28px}.role-note{padding:55px 0}.footer-inner{align-items:flex-start;flex-direction:column}.hero-caption{position:static;margin-top:12px}}
+
+/* Interactive product labs — v2 */
+.lab-shell{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.lab-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.lab-toolbar .mono,.lab-kicker{color:var(--red)}
+.lab-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.lab-tab{border:1px solid var(--line);background:var(--paper2);padding:8px 11px;font:10px var(--mono);letter-spacing:.04em;cursor:pointer;transition:.18s}
+.lab-tab:hover,.lab-tab[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.lab-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:12px}
+.lab-card{background:var(--paper2);border:1px solid var(--line);padding:17px;min-width:0}
+.lab-card.dark{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.lab-card .mono{color:var(--muted)}
+.lab-card.dark .mono{color:#d58a71}
+.lab-card h4{font:24px/1.08 var(--serif);letter-spacing:-.035em;margin:9px 0}
+.lab-card p{font-size:12px;color:var(--muted);margin:8px 0 0}
+.lab-card.dark p{color:#c1cdc2}
+.lab-state{display:inline-flex;align-items:center;gap:8px;font:11px var(--mono);letter-spacing:.04em;padding:7px 10px;border:1px solid var(--line);background:#e5e8e1;margin-top:8px}
+.lab-state:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.lab-state[data-state="PRESENT"]{color:#315e43;border-color:#8da894;background:#e6eee5}
+.lab-state[data-state="MISSING"]{color:#8e3d2e;border-color:#c99b8f;background:#f3e8e3}
+.lab-state[data-state="INSUFFICIENT"]{color:#805b23;border-color:#c9b184;background:#f2ecdc}
+.lab-state[data-state="UNKNOWN"]{color:#66736a;border-color:#b8c0b6;background:#e9ebe5}
+.lab-state[data-state="INCOMPARABLE"]{color:#61527f;border-color:#b3a6c9;background:#eeeaf4}
+.lab-rows{display:grid;gap:7px}
+.lab-row{display:grid;grid-template-columns:112px 118px 1fr;gap:10px;align-items:center;background:var(--paper2);border:1px solid var(--line2);padding:10px 12px}
+.lab-row strong{font:11px var(--mono)}
+.lab-row small{font-size:11px;color:var(--muted)}
+.lab-row .lab-state{margin:0;justify-self:start;padding:5px 7px;font-size:9px}
+.lab-note{font-size:10px;color:var(--muted);margin:12px 0 0}
+.lab-source{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.lab-source a{font:9px var(--mono);padding:6px 8px;border:1px solid var(--line);color:var(--ink2)}
+.lab-source a:hover{border-color:var(--red);color:var(--red)}
+.choice-lab-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.choice-lab-input{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice-lab-input .lab-card{padding:14px}
+.choice-token-row{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0}
+.choice-token{min-width:31px;text-align:center;padding:6px 8px;border:1px solid var(--line);background:#e5e8e1;font:11px var(--mono)}
+.choice-token.keep{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.choice-code{margin:10px 0 0;padding:14px;background:#17271f;color:#e9eee7;overflow:auto;font:11px/1.65 var(--mono);white-space:pre-wrap;word-break:break-word;min-height:146px}
+.choice-result{display:grid;grid-template-columns:.78fr 1.22fr;gap:12px;margin-top:12px}
+.choice-result .lab-card h4{font-size:22px}
+.lab-status-line{font:10px var(--mono);letter-spacing:.06em;color:var(--red)}
+.training-lab{display:grid;grid-template-columns:1fr 1.2fr;gap:12px}
+.training-sources{display:grid;gap:7px}
+.training-source{border:1px solid var(--line);background:var(--paper2);padding:12px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.training-source strong{font-size:12px}
+.training-source small{font:9px var(--mono);color:var(--muted)}
+.training-source.is-highlight{border-color:var(--red);box-shadow:inset 3px 0 var(--red)}
+.training-core{background:var(--forest);color:var(--cream);padding:16px}
+.training-core h4{font:25px var(--serif);margin:5px 0 10px}
+.training-chip-list{display:flex;gap:6px;flex-wrap:wrap}
+.training-chip{border:1px solid rgba(244,241,232,.28);padding:7px 9px;font:10px var(--mono);color:#dce5da}
+.training-specific{margin-top:12px;border-left:2px solid var(--red);padding:8px 12px;background:rgba(255,255,255,.3)}
+.training-specific strong{font-size:12px;display:block}
+.training-specific p{font-size:11px;color:var(--muted);margin:5px 0 0}
+.calibration-lab{display:grid;gap:12px}
+.calibration-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.calibration-step{position:relative;background:var(--paper2);border:1px solid var(--line);padding:12px;min-height:105px}
+.calibration-step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:34px;color:var(--red);z-index:2}
+.calibration-step small{font:9px var(--mono);color:var(--red)}
+.calibration-step strong{display:block;font-size:12px;margin-top:8px}
+.calibration-step p{font-size:10px;color:var(--muted);margin:5px 0 0}
+.calibration-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calibration-followup{background:#f1e8e1;border-left:3px solid var(--red);padding:13px 15px}
+.calibration-followup strong{font-size:12px;display:block}
+.calibration-followup p{font-size:11px;color:var(--ink2);margin:6px 0 0}
+.calibration-proof{display:flex;gap:12px;flex-wrap:wrap;background:var(--forest);color:var(--cream);padding:14px 16px;align-items:center;justify-content:space-between}
+.calibration-proof strong{font:21px var(--serif)}
+.calibration-proof span{font:9px var(--mono);color:#c4d0c4}
+@media(max-width:850px){.lab-grid,.training-lab,.choice-result{grid-template-columns:1fr}.lab-row{grid-template-columns:95px 108px 1fr}.calibration-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.calibration-step:not(:last-child):after{display:none}}
+@media(max-width:520px){.lab-toolbar{align-items:flex-start}.lab-tabs{width:100%}.lab-tab{flex:1;min-width:0;padding:8px 6px;font-size:9px}.lab-grid,.choice-lab-input,.calibration-branch{grid-template-columns:1fr}.lab-row{grid-template-columns:1fr auto;gap:5px}.lab-row small{grid-column:1/-1}.lab-row .lab-state{grid-column:2;grid-row:1}.calibration-flow{grid-template-columns:1fr 1fr}.calibration-step{min-height:94px}.calibration-proof{align-items:flex-start;flex-direction:column}.choice-code{font-size:10px}.choice-result .lab-card h4{font-size:20px}}
+
+
+/* Additional product journey labs — v2.1 */
+.stage-lab-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:12px}
+.stage-rail{display:grid;gap:6px}
+.stage-select{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:9px;text-align:left;border:1px solid var(--line);background:var(--paper2);padding:11px 12px;cursor:pointer}
+.stage-select b{font:10px var(--mono);color:var(--red)}
+.stage-select strong{font-size:12px}
+.stage-select span{font:9px var(--mono);color:var(--muted)}
+.stage-select[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.stage-select[aria-pressed="true"] b,.stage-select[aria-pressed="true"] span{color:#d58a71}
+.stage-detail{background:var(--paper2);border:1px solid var(--line);padding:20px;min-height:220px}
+.stage-detail h4{font:28px/1.05 var(--serif);margin:9px 0}
+.stage-detail p{font-size:12px;color:var(--muted);max-width:620px}
+.stage-ownership{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.stage-ownership div{padding:10px;background:#e6e9e2;border-left:2px solid var(--red)}
+.stage-ownership strong{display:block;font:9px var(--mono);color:var(--red)}
+.stage-ownership span{display:block;font-size:11px;margin-top:5px}
+.parity-lab{display:grid;gap:12px}
+.parity-controls{display:flex;gap:6px;flex-wrap:wrap}
+.parity-case{border:1px solid var(--line);background:var(--paper2);padding:8px 10px;font:10px var(--mono);cursor:pointer}
+.parity-case[aria-pressed="true"]{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.parity-phase{display:flex;gap:6px}
+.parity-phase button{border:1px solid var(--line);background:var(--paper2);padding:8px 11px;font:10px var(--mono);cursor:pointer}
+.parity-phase button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:white}
+.parity-result{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.parity-surface{background:var(--paper2);border:1px solid var(--line);padding:17px}
+.parity-surface .mono{color:var(--muted)}
+.parity-surface strong{font:25px var(--serif);display:block;margin-top:8px}
+.parity-surface .verdict{display:inline-block;margin-top:10px;padding:6px 9px;font:10px var(--mono);border:1px solid var(--line)}
+.parity-surface .verdict.bad{background:#f3e8e3;border-color:#c99b8f;color:#8e3d2e}
+.parity-surface .verdict.good{background:#e6eee5;border-color:#8da894;color:#315e43}
+.parity-note{font-size:10px;color:var(--muted);margin:0}
+@media(max-width:850px){.stage-lab-grid{grid-template-columns:1fr}.stage-rail{grid-template-columns:1fr 1fr}.stage-select{grid-template-columns:25px 1fr}.stage-select span{grid-column:2}}
+@media(max-width:520px){.stage-rail{grid-template-columns:1fr 1fr}.stage-select{padding:9px 8px;gap:5px}.stage-select strong{font-size:10px}.stage-detail{padding:15px}.stage-detail h4{font-size:24px}.stage-ownership{grid-template-columns:1fr}.parity-result{grid-template-columns:1fr}.parity-case{flex:1 1 42%;font-size:9px}}
+
+
+/* Intent Integrity lab */
+.intent-lab{display:grid;grid-template-columns:1fr 1.25fr;gap:12px}
+.intent-case-list{display:grid;gap:6px}
+.intent-case{display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--paper2);padding:11px;cursor:pointer}
+.intent-case b{font:10px var(--mono);color:var(--red)}
+.intent-case strong{font-size:11px}
+.intent-case[aria-pressed="true"]{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.intent-case[aria-pressed="true"] b{color:#d58a71}
+.intent-detail{background:var(--paper2);border:1px solid var(--line);padding:17px;min-height:245px}
+.intent-detail h4{font:25px/1.08 var(--serif);margin:8px 0}
+.intent-detail p{font-size:11px;color:var(--muted);margin:7px 0}
+.intent-compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.intent-outcome{padding:12px;border:1px solid var(--line);background:#e7e9e2;min-width:0}
+.intent-outcome.after{border-color:#8da894;background:#e7eee6}
+.intent-outcome .mono{color:var(--red)}
+.intent-outcome pre{font:10px/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 0;color:var(--ink2)}
+.intent-foot{font-size:10px;color:var(--muted);margin-top:12px}
+@media(max-width:850px){.intent-lab{grid-template-columns:1fr}.intent-case-list{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.intent-case-list{grid-template-columns:1fr 1fr}.intent-case{padding:9px 7px;grid-template-columns:20px 1fr}.intent-case strong{font-size:10px}.intent-detail{padding:14px}.intent-compare{grid-template-columns:1fr}}
+
+
+/* Developer Confidence lab */
+.confidence-lab-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:12px}
+.confidence-detail{background:var(--paper2);border:1px solid var(--line);padding:18px;min-height:225px}
+.confidence-detail h4{font:27px/1.08 var(--serif);margin:9px 0}
+.confidence-detail p{font-size:12px;color:var(--muted);margin:8px 0}
+.confidence-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px}
+.confidence-metric{padding:12px;background:var(--forest);color:var(--cream)}
+.confidence-metric strong{font:23px var(--serif);display:block}
+.confidence-metric span{font:9px var(--mono);color:#d4dfd3;display:block;margin-top:5px}
+.confidence-comparison{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.confidence-side{padding:12px;background:#e6e9e2;border:1px solid var(--line)}
+.confidence-side.after{background:#e7eee6;border-color:#8da894}
+.confidence-side strong{font:20px var(--serif);display:block}
+.confidence-side span{font:9px var(--mono);color:var(--muted)}
+@media(max-width:850px){.confidence-lab-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.confidence-metrics{grid-template-columns:1fr 1fr}.confidence-comparison{grid-template-columns:1fr}.confidence-detail{padding:14px}.confidence-detail h4{font-size:23px}}
+
+
+/* v2.3 editorial refinement — stronger contrast, shared lab language, accessible controls */
+:root{--muted:#58665d;--red2:#9f4938}
+body{font-size:16px}
+.hero-desc{font-size:15px;line-height:1.8}
+.section-lead{font-size:17px;line-height:1.75}
+.chapter-main .chapter-sub{font-size:15px;line-height:1.7}
+.detail-block p,.collab-card p{font-size:14px;line-height:1.8}
+.collab-step p,.role-note p{font-size:13px;line-height:1.8}
+.evidence-row{font-size:13px;line-height:1.6}
+.mono{font-size:11px}
+.chapter-visual{background:#e3e7df;border-color:#aeb9ae;padding:20px 22px 22px}
+.hero-art:before,.hero-art:after{display:none}
+.chapter-visual-head{font-size:11px;line-height:1.6;color:#58665d;margin-bottom:18px}
+.lab-shell{border-top:1px solid #aeb9ae;margin-top:16px;padding-top:18px}
+.lab-toolbar .mono,.lab-kicker{font-size:11px}
+.lab-tab,.parity-case,.parity-phase button{font-size:11px;padding:9px 12px}
+.lab-card{border-color:#b3beb3;border-radius:2px;padding:19px}
+.lab-card p,.stage-detail p,.intent-detail p,.confidence-detail p{font-size:13px;line-height:1.75;color:#58665d}
+.lab-row small,.lab-note,.parity-note,.intent-foot{font-size:12px;line-height:1.7;color:#58665d}
+.lab-source a{font-size:10px;padding:7px 9px}
+.lab-state{font-size:11px}
+.lab-row .lab-state{font-size:10px}
+.stage-select strong,.intent-case strong{font-size:12px}
+.stage-select span,.stage-select b,.intent-case b{font-size:10px}
+.confidence-metric span,.confidence-side span{font-size:10px}
+.training-source small,.calibration-step small,.calibration-step p{font-size:10px}
+.contract-node p{font-size:12px;line-height:1.7}
+.contract-node:not(:last-child):after{content:"";width:5px;height:5px;border-radius:50%;background:#d58a71;right:18px;top:28px}
+#product,#collaboration,#evidence{scroll-margin-top:82px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.chapter-toggle{font-size:11px}
+@media(max-width:520px){
+  body{font-size:15px}
+  .hero-art{min-height:390px}
+  .hero-art:before,.hero-art:after{display:none}
+  .decision-svg{inset:58px 8px 116px;width:calc(100% - 16px);height:calc(100% - 174px)}
+  .art-foot strong{font-size:24px;line-height:1.05}
+  .art-foot span{font-size:8px;max-width:100px}
+  .hero-desc{font-size:14px}
+  .section-lead{font-size:15px}
+  .chapter-main .chapter-sub{font-size:13px}
+  .detail-block p,.collab-card p{font-size:13px}
+  .mono{font-size:10px}
+  .chapter-visual{padding:14px 12px 16px}
+  .chapter-visual-head{font-size:10px;gap:8px}
+  .lab-tab,.parity-case,.parity-phase button{font-size:10px;padding:8px 7px}
+  .lab-card{padding:14px}
+  .lab-card p,.stage-detail p,.intent-detail p,.confidence-detail p{font-size:12px}
+  .lab-row small,.lab-note,.parity-note,.intent-foot{font-size:11px}
+  .lab-source a{font-size:9px}
+  .contract-node p{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* v2.4: product-system architecture, outcome panels, and contribution atlas */
+.product-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:34px}
+.product-system{display:flex;flex-direction:column;min-height:212px;padding:19px 18px 17px;border:1px solid rgba(244,241,232,.25);background:rgba(244,241,232,.055);transition:background .2s,border-color .2s,transform .2s}
+.product-system:hover,.product-system:focus-visible{background:rgba(244,241,232,.11);border-color:#d58a71;transform:translateY(-2px);outline:2px solid #d58a71;outline-offset:3px}
+.product-system .system-kicker{font:9px var(--mono);letter-spacing:.12em;color:#d58a71}
+.product-system h3{font:25px/1.1 var(--serif);margin:18px 0 10px;color:var(--cream);letter-spacing:-.035em}
+.product-system p{font-size:12px;line-height:1.65;color:#c1cdc2;margin:0 0 18px;flex:1}
+.product-system .system-chapters{font:9px var(--mono);letter-spacing:.08em;color:#f0b39d;display:flex;gap:8px;flex-wrap:wrap}
+.product-rule{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border-left:2px solid #d58a71;background:rgba(244,241,232,.055)}
+.product-rule strong{font:16px var(--serif);white-space:nowrap;color:var(--cream)}
+.product-rule p{font-size:12px;color:#c1cdc2;margin:0;max-width:820px}
+.chapter-outcome{grid-column:1/-1;display:grid;grid-template-columns:180px 1fr;gap:18px;padding:17px 20px;background:#f4f5f0;border:1px solid #b8c0b6;border-left:3px solid #963f2e;margin:0 0 2px}
+.chapter-outcome .outcome-kicker{font:9px var(--mono);letter-spacing:.11em;color:#963f2e;padding-top:3px}
+.chapter-outcome strong{display:block;font:20px/1.25 var(--serif);letter-spacing:-.02em;color:#18231e}
+.chapter-outcome p{font-size:12px;line-height:1.65;color:#334139;margin:7px 0 0}
+.footprint{background:#f4f5f0;border-bottom:1px solid var(--line);padding:70px 0}
+.footprint-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:30px}
+.footprint-head h2{font:clamp(34px,4vw,54px)/1 var(--serif);letter-spacing:-.05em;margin:0}
+.footprint-head p{max-width:510px;color:var(--muted);font-size:13px;margin:0}
+.footprint-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.footprint-stat{padding:22px 22px 22px 0}
+.footprint-stat+.footprint-stat{padding-left:24px;border-left:1px solid var(--line)}
+.footprint-stat strong{font:clamp(40px,5vw,66px)/1 var(--serif);letter-spacing:-.05em;color:var(--red)}
+.footprint-stat span{display:block;font:10px var(--mono);letter-spacing:.1em;color:var(--ink2);margin-top:9px}
+.footprint-stat p{font-size:11px;color:var(--muted);margin:8px 0 0}
+.footprint-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:20px;max-width:900px}
+.footprint-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.footprint-links a{font:10px var(--mono);border-bottom:1px solid var(--red);padding-bottom:3px;color:var(--ink2)}
+.atlas{margin-top:34px;border-top:1px solid rgba(244,241,232,.28);border-bottom:1px solid rgba(244,241,232,.28)}
+.atlas summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;color:var(--cream);font:13px var(--sans);font-weight:600}
+.atlas summary::-webkit-details-marker{display:none}
+.atlas summary:after{content:'＋';font:18px var(--serif);color:#d58a71}
+.atlas[open] summary:after{content:'−'}
+.atlas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:8px 0 28px}
+.atlas-group{border-top:1px solid rgba(244,241,232,.18);padding-top:14px}
+.atlas-group h4{font:18px var(--serif);margin:0 0 12px;color:var(--cream)}
+.atlas-group p{font-size:11px;color:#b9c7bb;margin:0 0 12px}
+.atlas-links{display:flex;flex-wrap:wrap;gap:7px}
+.atlas-links a{font:9px var(--mono);padding:6px 8px;border:1px solid rgba(244,241,232,.24);color:#f4f1e8}
+.atlas-links a:hover,.atlas-links a:focus-visible{border-color:#d58a71;color:#f0b39d;outline:none}
+@media(max-width:850px){.product-map{grid-template-columns:repeat(2,minmax(0,1fr))}.chapter-outcome{grid-template-columns:1fr;gap:7px}.footprint-head{display:block}.footprint-head p{margin-top:14px}}
+@media(max-width:520px){.product-map{grid-template-columns:1fr}.product-system{min-height:0}.product-rule{display:block}.product-rule p{margin-top:7px}.footprint{padding:54px 0}.footprint-grid{grid-template-columns:1fr}.footprint-stat,.footprint-stat+.footprint-stat{padding:18px 0;border-left:0;border-top:1px solid var(--line)}.footprint-stat:first-child{border-top:0}.atlas-grid{grid-template-columns:1fr}.atlas summary{font-size:12px}}
+</style>
+<meta name="robots" content="noindex, nofollow, noarchive">
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="#top"><span class="brand-mark">L/</span><span class="brand-name">LAYA<br/>CASEBOOK / 2026</span></a><nav class="nav"><a href="#product">产品能力</a><a href="#collaboration">上游协作</a><a href="#upstream-footprint">贡献规模</a><a href="#evidence">证据索引</a><a class="nav-cta" href="https://github.com/NandhaKishorM/laya" rel="noopener" target="_blank">OPEN SOURCE ↗</a></nav></div></header>
+<main id="top">
+<section class="wrap hero">
+<div class="hero-copy">
+<div class="mono eyebrow">PRODUCT TRACK × COLLABORATOR TRACK / SYSTEM 1 DECISION ENGINE</div>
+<h1>Decisions<br/><em>you can trust.</em></h1>
+<p class="hero-cn">让每一次 AI 决策，都经得起真实使用。</p>
+<p class="hero-desc">围绕 Laya 的上游产品实践：从用户意图、上下文与路由，到模型证据、训练能力、调用契约和安全采用。Laya 提供决策与证据；应用保留策略、审核、执行和回退的最终控制权。</p>
+<div class="hero-meta mono"><span>PRODUCT DESIGN</span><span>AGENT / DECISION SYSTEMS</span><span>UPSTREAM COLLABORATION</span></div>
+</div>
+<div class="hero-art">
+<div class="art-head mono"><span>SYSTEM RESPONSIBILITY MAP</span><span>01 — 08</span></div>
+<svg aria-label="Laya 提供决策证据，应用负责策略、审核、执行与回退的责任边界图" class="decision-svg" role="img" viewbox="0 0 540 360">
+<defs>
+<lineargradient id="lineg" x1="0" x2="1"><stop stop-color="#D48A72"></stop><stop offset="1" stop-color="#DCE4D9"></stop></lineargradient>
+</defs>
+<g fill="none" stroke="rgba(239,242,232,.32)" stroke-width="1">
+<rect height="214" rx="3" width="246" x="18" y="70"></rect>
+<rect height="214" rx="3" width="246" x="276" y="70"></rect>
+<path d="M264 178H276" stroke="#D48A72" stroke-width="2"></path>
+</g>
+<g fill="#AAB9AD" font-family="monospace" font-size="10" letter-spacing="1.2">
+<text x="34" y="49">LAYA PROVIDES</text>
+<text x="292" y="49">APPLICATION OWNS</text>
+</g>
+<g>
+<rect fill="rgba(244,241,232,.07)" height="132" rx="2" stroke="rgba(244,241,232,.32)" width="96" x="34" y="104"></rect>
+<rect fill="rgba(244,241,232,.07)" height="132" rx="2" stroke="rgba(244,241,232,.32)" width="96" x="150" y="104"></rect>
+<rect fill="rgba(244,241,232,.07)" height="132" rx="2" stroke="rgba(244,241,232,.32)" width="96" x="292" y="104"></rect>
+<rect fill="rgba(244,241,232,.07)" height="132" rx="2" stroke="rgba(244,241,232,.32)" width="96" x="408" y="104"></rect>
+</g>
+<g fill="#F4F1E8" font-family="Arial,sans-serif" text-anchor="middle">
+<text font-size="13" x="82" y="147">INTENT</text>
+<text fill="#B9C7BB" font-size="10" x="82" y="169">input / state</text>
+<text font-size="13" x="198" y="147">DECISION</text>
+<text fill="#B9C7BB" font-size="10" x="198" y="169">choice / confidence</text>
+<text font-size="13" x="340" y="147">POLICY</text>
+<text fill="#B9C7BB" font-size="10" x="340" y="169">threshold / review</text>
+<text font-size="13" x="456" y="147">ACTION</text>
+<text fill="#B9C7BB" font-size="10" x="456" y="169">execute / rollback</text>
+</g>
+<g fill="none" stroke="url(#lineg)" stroke-width="2">
+<path d="M130 170H150M246 170H292M388 170H408"></path>
+</g>
+<g fill="#D48A72">
+<circle cx="140" cy="170" r="3.5"></circle><circle cx="270" cy="170" r="3.5"></circle><circle cx="398" cy="170" r="3.5"></circle>
+</g>
+<g fill="#AAB9AD" font-family="monospace" font-size="9" letter-spacing=".4" text-anchor="middle">
+<text x="82" y="260">#115 / #224 / #292</text>
+<text x="198" y="260">#964 / #890 / #891</text>
+<text x="340" y="260">#415</text>
+<text x="456" y="260">APP-OWNED</text>
+</g>
+<g fill="#D58A71" font-family="monospace" font-size="9" letter-spacing=".8">
+</g>
+</svg>
+<div class="art-foot"><strong>Decision evidence.<br/>Application authority.</strong><span class="mono">A PRODUCT CASEBOOK<br/>BUILT IN THE OPEN</span></div>
+</div>
+<div class="hero-caption mono">AN EDITORIAL INTERPRETATION OF PUBLIC UPSTREAM WORK · NOT AN OFFICIAL LAYA DIAGRAM</div>
+</section>
+<section class="manifesto"><div class="wrap">
+<div class="manifesto-grid"><div class="mono section-index">THE PRODUCT THESIS</div><h2>模型给出答案，只是起点。<br/><em>真正的产品价值，是让答案值得被使用。</em></h2></div>
+<div class="manifesto-bottom"><div class="mono">FOUR PRODUCT SYSTEMS</div><div><p>把八个上游产品故事放回同一张产品地图：先保证系统理解正确，再让决策有据可读，随后支持应用渐进采用，并在不同调用入口保持一致。它们是四组产品责任，不是一个由 Laya 独立完成的线性流水线。</p><div class="product-map"><a class="product-system" href="#chapter-01"><span class="system-kicker">01 / INTENT FIDELITY</span><h3>先理解对</h3><p>让输入、上下文、语言路由与框架集成保持语义连续。决策偏差不能从用户请求进入系统的第一步就发生。</p><div class="system-chapters"><span>CHAPTER 01</span></div></a><a class="product-system" href="#chapter-03"><span class="system-kicker">02 / DECISION CONFIDENCE</span><h3>知道凭什么信</h3><p>把评测证据、训练原语和校准策略组织成可检查、可复用、跨运行时一致的决策基础。</p><div class="system-chapters"><span>CHAPTER 03</span><span>CHAPTER 04</span><span>CHAPTER 05</span></div></a><a class="product-system" href="#chapter-02"><span class="system-kicker">03 / CONTROLLED ADOPTION</span><h3>再决定怎么用</h3><p>给应用团队一条从观察、比较到有限推广的路径；模型提供决策证据，业务策略与最终授权仍由应用掌握。</p><div class="system-chapters"><span>CHAPTER 02</span></div></a><a class="product-system" href="#chapter-06"><span class="system-kicker">04 / DEVELOPER CONTRACT</span><h3>每个入口都兑现</h3><p>让候选选择、Demo、服务、SDK、CI 与部署说明保持可预测，开发者不需要猜测同一个系统在不同入口的行为。</p><div class="system-chapters"><span>CHAPTER 06</span><span>CHAPTER 07</span><span>CHAPTER 08</span></div></a></div><div class="product-rule"><strong>贯穿四组系统的权限原则</strong><p>Laya 负责输出决策、概率、置信度与证据；应用负责阈值、审核、资格判断、动作执行与回退。模型给出建议，不自动获得业务授权。</p></div></div></div>
+</div></section>
+<section class="section" id="product"><div class="wrap">
+<div class="section-head"><div class="mono section-index">01 / PRODUCT TRACK</div><div><h2 class="section-title">Building the <em>product contract.</em></h2><p class="section-lead">不是把 PR 拆成八个 Bug，而是从下游开发者的真实任务出发，识别 Laya 需要持续兑现的八条产品能力线。八条能力线来自不同的开发者任务，不是八个零散补丁，也不是一个虚构的统一功能。每一章都说明产品机会、关键判断和本人实际承担的部分。</p></div></div>
+<div class="track-intro"><span class="track-tag">EIGHT PRODUCT OPPORTUNITIES</span><p>点击章节展开：产品机会、关键判断、本人承担的部分，以及可以追溯的上游证据。所有故事都按实际贡献边界呈现。</p></div>
+<div class="chapter-list">
+<article class="chapter is-open" id="chapter-01"><div class="chapter-no">01</div><div class="chapter-main"><h3>让系统忠于用户真正表达的意图</h3><p class="chapter-sub">Intent Integrity / 从输入、上下文到路由与框架集成，确保模型处理的始终是用户真正想表达的内容。</p></div><div class="chapter-side"><span>INPUT → CONTEXT → ROUTING</span><button aria-expanded="true" class="chapter-toggle">OPEN CHAPTER −</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>决策偏差，可能在模型开始推理前就已经发生。</h4><p>下游开发者把真实请求交给 Laya，但预处理可能吞掉请求、长对话截断可能丢掉最新一轮、空语言提示可能错误固定路由。对使用者而言，模型看似正常工作，实际处理的却不再是原始意图。</p><div class="boundary">这是一条贯穿输入语义、状态保留、语言路由与集成契约的产品能力主线，不是把四个修复硬拼成一个功能。</div></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>先保留原意，再决定如何解释。</h4><p>在 #115 采用保守句边界拆分；#224 保留 list state 的最新上下文；#292 将空语言码视为无有效提示并允许 fallback。#290 先与维护者对齐默认语义：最新用户消息为默认输入，完整对话通过 callable state_key 显式选择；随后 #328 补足该能力的可发现性与回归覆盖。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/115" rel="noopener" target="_blank">#115 AUTHORED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/224" rel="noopener" target="_blank">#224 AUTHORED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/292" rel="noopener" target="_blank">#292 AUTHORED ↗</a><a href="https://github.com/NandhaKishorM/laya/issues/290" rel="noopener" target="_blank">#290 DIRECTION ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/328" rel="noopener" target="_blank">#328 AUTHORED ↗</a></div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / INPUT CONTRACT</div><div><strong>请求语义有了明确的保真规则。</strong><p>邮件请求、最新对话轮次、语言提示与 LangChain 完整对话模式分别有清晰契约：默认不让预处理吞掉请求，不让截断丢失最新意图，也不把空语言提示当成强制路由。</p></div></div></div></article>
+<article class="chapter" id="chapter-02"><div class="chapter-no">02</div><div class="chapter-main"><h3>让模型从实验能力走向可控采用</h3><p class="chapter-sub">Staged Adoption / 为应用团队设计一条从观察、比较到有限推广的采用路径，而不是把模型置信度直接当作上线许可。</p></div><div class="chapter-side"><span>SHADOW → COMPARE → PROMOTE</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>模型表现不错，不等于业务已经准备好把决策权交出去。</h4><p>开发者需要一个渐进式采用流程：先观察模型在真实流量下的行为，再与既有策略比较，在 held-out policy 下判断是否满足应用自身的门槛，最后才有限推广。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>让应用保留自己的阈值与最终授权。</h4><p>围绕 #367 的方向讨论，维护者选择 docs-first；本人通过 #415 将 Shadow → Compare → held-out policy → bounded Promote 写成可执行的采用指南。Router hook 由维护者实际验证；阈值和不可逆动作由应用拥有，不把指南说成已上线的自动发布平台。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/issues/367" rel="noopener" target="_blank">#367 PRODUCT DIRECTION ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/415" rel="noopener" target="_blank">#415 MERGED GUIDE ↗</a></div><div class="boundary">这是产品采用机制与文档化工作流，不是自动化部署控制台或生产安全中台。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / ADOPTION PATH</div><div><strong>应用团队可以逐步采用，而不是一次性交出决策权。</strong><p>#415 将 Shadow、Compare、held-out policy 与 bounded promote 写成文档化路径；阈值、审核边界、动作与回退仍由应用定义。这是采用方法，不是自动部署平台。</p></div></div></div></article>
+<article class="chapter" id="chapter-03"><div class="chapter-no">03</div><div class="chapter-main"><h3>让模型能力有证据，而不只是一个分数</h3><p class="chapter-sub">Evidence Intelligence / 将散落的 checkpoint 与评测产物转化为可读的证据状态，帮助开发者知道“已知什么、未知什么”。</p></div><div class="chapter-side"><span>MODEL EVIDENCE / INSPECTION</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>训练完成、报告存在、证据充分，是三件不同的事。</h4><p>旧 checkpoint 可能没有元数据，某类校准样本可能为零，报告也可能不可比较。如果产品只给出 Ready / Failed 这样的二元结论，就会制造错误信任。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>只读取证据，不替应用作部署裁决。</h4><p>本人实现 #964 Evidence Inspector，区分 PRESENT、MISSING、INSUFFICIENT、UNKNOWN、INCOMPARABLE 等证据状态；复用已有校准规则，不再发明另一套阈值，不输出 READY 分数或 GO/NO-GO。维护者针对旧 checkpoint 与低样本情形独立验收。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/964" rel="noopener" target="_blank">#964 MERGED ↗</a></div><div class="boundary">观测机制不是 MLOps 平台，也不意味着本人建立了完整模型部署评估体系。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / EVIDENCE STATES</div><div><strong>未知、缺失、样本不足与不可比较不再被压成同一种状态。</strong><p>维护者用旧 checkpoint 与低样本校准场景验证 Evidence Inspector：它解释现有证据能支持什么、不支持什么；不输出模型 Ready 分数或自动部署裁决。</p></div></div></div></article>
+<article class="chapter" id="chapter-04"><div class="chapter-no">04</div><div class="chapter-main"><h3>让训练成为可复用的产品能力</h3><p class="chapter-sub">Unified Training Experience / 让不同训练环境共享核心语义，同时保留分布式场景真正需要的专属编排。</p></div><div class="chapter-side"><span>SHARED PRIMITIVES / DDP</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>同一种训练能力，不应该在每个入口重新长出一套规则。</h4><p>Apple Silicon、单进程脚本与 Kaggle DDP notebook 曾分别持有训练逻辑。维护者需要跨入口修复同一个约束，使用者也难以理解不同入口的行为是否一致。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>统一语义原语，不强行统一所有运行环境。</h4><p>本人接手 #887 中的训练入口收敛子方向：#965 收敛单机入口，#1017 继续接入 Kaggle DDP；保留 DDP 特有的分布式编排。#1014 增加训练前 optimizer-update 预算可见性，#1016 补充正控与多 seed 诊断。维护者报告三份训练逻辑已统一，并在 #1017 合并树验证 85 suites。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/965" rel="noopener" target="_blank">#965 MERGED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1017" rel="noopener" target="_blank">#1017 MERGED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1014" rel="noopener" target="_blank">#1014 MERGED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1016" rel="noopener" target="_blank">#1016 MERGED ↗</a></div><div class="boundary">#887 由其他贡献者创建；这里展示的是本人承担的明确子方向，不是独立主导整个训练系统。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / TRAINING SYSTEM</div><div><strong>训练入口复用同一套核心语义，环境差异留在正确边界。</strong><p>单进程入口与 Kaggle DDP 共享训练原语；DDP 的 rank、process group、sharding 与 batch 编排仍保留在外层。维护者明确确认三份重复训练逻辑收敛为一份，并由回归测试防止再次分叉。</p></div></div></div></article>
+<article class="chapter" id="chapter-05"><div class="chapter-no">05</div><div class="chapter-main"><h3>让校准与置信策略跨运行时正确衔接</h3><p class="chapter-sub">Calibration Across Runtimes / 将 histogram binning 接入 Agent、ONNX 推理，同时让 TypeScript SDK 可传 per-bucket abstention threshold；两者是相邻但不同的契约。</p></div><div class="chapter-side"><span>FIT → SAVE → LOAD → PREDICT</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>校准工具算出了结果，不代表应用真正用上了它。</h4><p>如果 binning map 只能由调用方自行读取和重算，官方校准结果就无法自然进入 answer_confidence、abstention gate 与 selective-classification metrics；如果服务端接受 per-bucket minConfidence，TypeScript SDK 却拒绝发送，同一产品能力就会因调用入口不同而断裂。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>把校准结果变成可持久化、可消费、跨入口一致的能力。</h4><p>本人通过 #890 将 histogram binning 接入 calibration payload，并贯通 fit → save → load → predict，覆盖 Agent 与 ONNX；通过 #891 让 TypeScript SDK 接受与 core 同语义的 per-bucket minConfidence map。维护者在 integrated branch 用真实 English / multilingual checkpoint 验证 74 个 answers，报告 zero decision flips、max probability delta 0.000000，并将两项合入 v0.3.25。 随后，AlKor13 在 #890 的 review 中发现：binning 改变了 answer_confidence 的刻度，但旧阈值仍按未分箱的置信度拟合；其后续 #920 让阈值拟合与运行时使用同一刻度。#920 由 AlKor13 实现，不计入本人 authored contribution。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/890" rel="noopener" target="_blank">#890 MERGED / RELEASED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/891" rel="noopener" target="_blank">#891 MERGED / RELEASED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/920" rel="noopener" target="_blank">#920 FOLLOW-UP BY ALKOR13 ↗</a></div><div class="boundary">这里证明的是校准行为的端到端接入与运行时一致性，不代表模型准确率提升或业务效果提升。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / CALIBRATION CONTRACT</div><div><strong>校准结果能被推理运行时与不同 SDK 真正消费。</strong><p>histogram binning 进入持久化 payload 并作用于 Agent / ONNX 置信度；TypeScript SDK 接受 per-bucket minConfidence。维护者在真实 English / multilingual checkpoint 的 74 个答案上报告 zero decision flips；后续阈值刻度修正由 AlKor13 的 #920 完成。</p></div></div></div></article>
+<article class="chapter" id="chapter-06"><div class="chapter-no">06</div><div class="chapter-main"><h3>当候选集变化，不能悄悄改写用户的选择</h3><p class="chapter-sub">Choice Integrity / 在 shortlist 或 tournament 缩减候选项后，保持排序语义与调用反馈透明。</p></div><div class="chapter-side"><span>OPTION_ORDER / SHORTLIST CONTRACT</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>系统可以缩小选择范围，但不能替用户重新解释偏好。</h4><p>调用方为六个候选项定义了合法排序。shortlist 将候选缩减为两个后，原排序已不再对应新候选集。若系统静默重映射，等于擅自改变用户偏好；若直接拒绝，也会让用户无法理解发生了什么。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>不猜测用户意图；明确说明哪些参数已不再适用。</h4><p>本人通过 #1062 复现并以 test-first 方式完成 #1063：缩减后丢弃旧排序并发出警告，不重写原输入；随后 #1091 将相同信息映射到 MCP JSON 的 option_order_dropped 与原/保留数量，让非 Python 调用方也能理解。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/issues/1062" rel="noopener" target="_blank">#1062 REPRO ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1063" rel="noopener" target="_blank">#1063 MERGED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1091" rel="noopener" target="_blank">#1091 MERGED ↗</a></div><div class="boundary">维护者对 #1063 进行 6→2 复测；#1091 合并树报告 87 suites 与 94-row decision diff unchanged。这些证明契约行为与回归，不证明整体模型准确率提升。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / CHOICE CONTRACT</div><div><strong>候选集缩小，不再意味着系统替用户重写偏好。</strong><p>6 个候选缩到 2 个时，旧排序被明确丢弃而不是静默重映射；Python 侧给出 warning，MCP 侧返回 option_order_dropped 与原/保留数量。结构性非法排序仍会被拒绝。</p></div></div></div></article>
+<article class="chapter" id="chapter-07"><div class="chapter-no">07</div><div class="chapter-main"><h3>让 Demo 与正式服务给开发者同一套预期</h3><p class="chapter-sub">Demo-to-Production Parity / 开发者在示例环境中学到的边界，必须与真正服务兑现的边界一致。</p></div><div class="chapter-side"><span>DEMO ↔ PRODUCTION CONTRACT</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>最容易上手的 Demo，不应该教会用户错误的产品行为。</h4><p>README 将 Demo Server 作为免写代码体验 Laya 的入口，但它曾接受正式服务会以 413 拒绝的超大 choice / score 请求。用户在 Demo 里得到“可以使用”的反馈，迁移到正式服务却失败，产品承诺就出现断层。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>不是简单复制限制，而是让两种请求模型共享同一套行为边界。</h4><p>本人通过 #570 将正式服务的三个 option budget 镜像到 Demo，兼容 Question instance 与 dict 两种输入形态，并让两端对 8 个边界案例给出一致 verdict：3 个拒绝、5 个接受。测试还验证回退到旧实现时，noul 计数案例会明确失败。维护者随后回复 “merged”，并确认随 v0.3.21 发布。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/570" rel="noopener" target="_blank">#570 MERGED / v0.3.21 ↗</a></div><div class="boundary">这项贡献改善的是 Demo 与正式服务的产品契约一致性，不代表 Demo 本身就是生产服务。</div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / EXPERIENCE PARITY</div><div><strong>Demo 与正式服务对同一请求兑现相同边界。</strong><p>维护者确认 8 个请求边界在 Demo / serve 两侧得到一致 verdict：3 个拒绝、5 个接受；PR 随 v0.3.21 发布。这里证明的是请求校验一致，不代表 Demo 完成了真实推理。</p></div></div></div></article>
+<article class="chapter" id="chapter-08"><div class="chapter-no">08</div><div class="chapter-main"><h3>让开发者看到系统真正执行了什么</h3><p class="chapter-sub">Developer Confidence / 让 CI 覆盖、部署默认与运行约定不再靠猜测。</p></div><div class="chapter-side"><span>TEST VISIBILITY / DEPLOYMENT</span><button aria-expanded="false" class="chapter-toggle">OPEN CHAPTER +</button></div><div class="chapter-detail"><div class="detail-block"><div class="mono">PRODUCT OPPORTUNITY</div><h4>开发者体验的底线，是系统说到做到。</h4><p>测试任务显示通过，不代表实际执行量足够；部署说明看似完整，也可能把非英语使用者带入错误默认。产品可信度同样来自这些不起眼但影响采用的契约。</p></div><div class="detail-block"><div class="mono">PRODUCT DECISIONS &amp; MY CONTRIBUTION</div><h4>让隐性默认与覆盖差异变得可见。</h4><p>#1090 根据上游 CI 日志校准 Java 测试执行下限 1168/1169，增加 161 项执行测试的可见性（不是修复 161 个 Bug）。#1097 修正 multilingual 默认行为的部署指引，维护者明确指出旧说明会误导非英语场景用户。</p><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/1090" rel="noopener" target="_blank">#1090 MERGED ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1097" rel="noopener" target="_blank">#1097 MERGED ↗</a></div></div><div class="chapter-outcome"><div class="outcome-kicker">OUTCOME / DEVELOPER TRUST</div><div><strong>测试执行范围和部署默认变得可核对。</strong><p>#1090 将 CI 测试执行下限从 1007/1008 校准到 1168/1169；#1097 让部署文档与 0.4.0 起的 multilingual 默认保持一致。161 是执行门槛提升，不是修复 Bug 数；#1097 仅改文档。</p></div></div></div></article>
+</div>
+<div class="feature-panel"><div class="feature-visual"><span class="visual-label mono">DECISION CONTRACT MAP / 16:9</span><svg aria-label="输入到决策的产品契约图" role="img" viewbox="0 0 520 260"><g fill="none" stroke="#31483c" stroke-width="1.4"><path d="M35 130H485"></path><rect height="120" rx="2" width="100" x="32" y="70"></rect><rect height="120" rx="2" width="100" x="158" y="70"></rect><rect height="120" rx="2" width="100" x="284" y="70"></rect><rect height="120" rx="2" width="80" x="410" y="70"></rect></g><g fill="#963f2e"><circle cx="82" cy="130" r="6"></circle><circle cx="208" cy="130" r="6"></circle><circle cx="334" cy="130" r="6"></circle><circle cx="450" cy="130" r="6"></circle></g><g fill="#20372d" font-family="Arial" text-anchor="middle"><text font-size="13" x="82" y="112">INTENT</text><text font-size="13" x="208" y="112">EVIDENCE</text><text font-size="13" x="334" y="112">ADOPTION</text><text font-size="13" x="450" y="112">ACTION</text><text font-size="9" x="82" y="158">#115 / #224 / #292</text><text font-size="9" x="208" y="158">#964 / #965</text><text font-size="9" x="334" y="158">#415</text><text font-size="9" x="450" y="158">#1063 / #1091</text></g></svg></div><div class="feature-copy"><div class="mono">VISUAL STORY / P0</div><h3>一条决策链，八条产品能力线。</h3><p>后续媒体窗口可据此制作一张正式的 Decision Contract 图：输入语义、证据、训练与采用、执行反馈之间的关系。当前为人工绘制的结构示意，不是 Laya 官方架构图或真实产品截图。</p><div class="feature-foot"><span>EDITORIAL SVG / CONCEPTUAL</span><span>NOT AN OFFICIAL LAYA DIAGRAM</span></div></div></div>
+</div></section>
+<section class="collab" id="collaboration"><div class="wrap section">
+<div class="section-head"><div class="mono section-index">02 / COLLABORATOR TRACK</div><div><h2 class="section-title">Beyond the <em>patch.</em></h2><p class="section-lead">开源协作不只是把自己的代码合并进去。更重要的是识别别人尚未看清的产品机会，给出可验证的方向，帮助作者完成修正，并在合适的时候把实现交给真正负责的人。</p></div></div>
+<div class="collab-intro"><div class="mono">A DIFFERENT KIND OF CONTRIBUTION</div><p>我在 Laya 的另一条工作线，是持续参与上游正式审查与跨贡献者协作：提出产品契约问题、构造反例、验证作者修正、交接实现，并尊重最终维护者的决策权。</p></div>
+<div class="collab-grid">
+<article class="collab-card"><div class="mono">01 / OPPORTUNITY → HANDOFF</div><h3>把隐藏的产品机会，变成团队能接住的方向。</h3><p>在 #538 提出选项截断后语义可能不可分的问题；aashish254 随后做真实场景测量并纠正实现边界；AlKor13 独立实现 #569。另在 #577 中指出 count comparison 不能作为 hook answered 的可靠 proxy，作者后续采纳 observer / rewritten-scan 契约。我的贡献是识别机会、明确 API 方向并主动交接，而不是认领他人的实现。</p><div class="proof">#538 ISSUE · #543 MEASUREMENT · #569 MERGED BY ALKOR13</div><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/issues/538" rel="noopener" target="_blank">ISSUE #538 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/569" rel="noopener" target="_blank">IMPLEMENTATION #569 ↗</a></div></article>
+<article class="collab-card"><div class="mono">02 / REVIEW → PRODUCT QUALITY</div><h3>让审查成为产品质量的一部分。</h3><p>在 #598 指出 threshold 超出 [0,1] 可能让 guardrail 失效；在 #592 区分“请求已发出”与“请求成功耗时”，避免失败 batch 让指标语义失真。作者根据反例修正并合并。另在 #849 / #846 的正式 Review 中发现并发重入与测试契约问题，作者补入回归，维护者完成集成验证后合并。</p><div class="proof">REVIEW EVIDENCE · AUTHOR FIXED · MERGED</div><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/598" rel="noopener" target="_blank">REVIEW #598 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/592" rel="noopener" target="_blank">REVIEW #592 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/849" rel="noopener" target="_blank">REVIEW #849 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/846" rel="noopener" target="_blank">REVIEW #846 ↗</a></div></article>
+<article class="collab-card"><div class="mono">03 / MAINTAINABILITY → SELECTION</div><h3>不是修复本身，而是让未来不再回退。</h3><p>#851 与重复修复 #885 竞争。维护者选择 #851 的关键原因是它提供跨 fitter 的行为级回归守卫，并通过 mutation test 证明旧行为会被准确捕获。维护者原话：“I took yours for the test, not the fix.”</p><div class="proof">#851 SELECTED OVER DUPLICATE #885</div><div class="evidence-links"><a href="https://github.com/NandhaKishorM/laya/pull/851" rel="noopener" target="_blank">#851 MERGED ↗</a></div></article>
+</div>
+<div class="collab-flow"><div class="collab-step"><small>01 / DISCOVER</small><strong>发现产品机会</strong><p>从真实使用信号中找到尚未被明确建模的契约缺口。</p></div><div class="collab-step"><small>02 / PROVE</small><strong>构造可证伪证据</strong><p>用反例、复现和行为测试，让问题边界足够清楚。</p></div><div class="collab-step"><small>03 / ALIGN</small><strong>与作者和维护者对齐</strong><p>明确方向、范围与 ownership，不越权替别人决定。</p></div><div class="collab-step"><small>04 / ENABLE</small><strong>推动上游完成闭环</strong><p>自己实现、协助作者修正或交接给更合适的贡献者。</p></div></div>
+</div></section><section class="footprint" id="upstream-footprint"><div class="wrap"><div class="footprint-head"><h2>The upstream footprint.</h2><p>八个案例是精选叙事，不是全部工作。把完整上游参与规模放在这里：本人实现、正式 Review 与其他贡献者的实现分别计算。</p></div><div class="footprint-grid"><div class="footprint-stat"><strong>40 / 47</strong><span>AUTHORED PRS MERGED</span><p>GitHub 查询中共 47 个本人 authored PR，40 个已合并；其余 7 个关闭但未合并。</p></div><div class="footprint-stat"><strong>85</strong><span>PRS REVIEWED</span><p>GitHub reviewed-by 查询命中 85 个 PR；其中 61 个已合并、8 个仍开放、16 个关闭未合并。</p></div><div class="footprint-stat"><strong>8</strong><span>FEATURED PRODUCT STORIES</span><p>从已合并贡献中精选八条产品能力故事；不是把 40 个 PR 强行拆成 40 个项目。</p></div></div><p class="footprint-note">计数口径：GitHub repository search snapshot，2026-11-08；author:Bruce-Yii is:pr is:merged / author:Bruce-Yii is:pr / reviewed-by:Bruce-Yii is:pr。它们反映仓库参与记录，不等于 40 项独立功能、85 次全部被采纳的建议，也不证明生产用户增长。</p><div class="footprint-links"><a href="https://github.com/NandhaKishorM/laya/pulls?q=author%3ABruce-Yii+is%3Apr" rel="noopener" target="_blank">ALL AUTHORED PRS ↗</a><a href="https://github.com/NandhaKishorM/laya/pulls?q=author%3ABruce-Yii+is%3Apr+is%3Amerged" rel="noopener" target="_blank">MERGED AUTHORED PRS ↗</a><a href="https://github.com/NandhaKishorM/laya/pulls?q=reviewed-by%3ABruce-Yii+is%3Apr" rel="noopener" target="_blank">REVIEWED PRS ↗</a></div></div></section>
+<section class="evidence" id="evidence"><div class="wrap">
+<div class="section-head"><div class="mono section-index">03 / EVIDENCE INDEX</div><div><h2 class="section-title">Work, <em>with receipts.</em></h2><p class="section-lead">用完整贡献索引证明参与广度，用精选产品故事说明判断深度。PR 是可追溯证据，不是案例标题。</p></div></div>
+<div class="evidence-grid"><div class="evidence-col"><h3>Authored &amp; merged</h3><div class="evidence-list">
+<div class="evidence-row"><span>Input / context / routing integrity</span><a href="https://github.com/NandhaKishorM/laya/pull/115" rel="noopener" target="_blank">#115 ↗</a></div>
+<div class="evidence-row"><span>Conversation state preservation</span><a href="https://github.com/NandhaKishorM/laya/pull/224" rel="noopener" target="_blank">#224 ↗</a></div>
+<div class="evidence-row"><span>Language routing semantics</span><a href="https://github.com/NandhaKishorM/laya/pull/292" rel="noopener" target="_blank">#292 ↗</a></div>
+<div class="evidence-row"><span>Integration contract discoverability</span><a href="https://github.com/NandhaKishorM/laya/pull/328" rel="noopener" target="_blank">#328 ↗</a></div>
+<div class="evidence-row"><span>Staged adoption guide</span><a href="https://github.com/NandhaKishorM/laya/pull/415" rel="noopener" target="_blank">#415 ↗</a></div>
+<div class="evidence-row"><span>Shared training primitives</span><a href="https://github.com/NandhaKishorM/laya/pull/965" rel="noopener" target="_blank">#965 ↗</a></div>
+<div class="evidence-row"><span>Training diagnostics &amp; budget</span><a href="https://github.com/NandhaKishorM/laya/pull/1014" rel="noopener" target="_blank">#1014 ↗</a></div>
+<div class="evidence-row"><span>Training controls / multi-seed</span><a href="https://github.com/NandhaKishorM/laya/pull/1016" rel="noopener" target="_blank">#1016 ↗</a></div>
+<div class="evidence-row"><span>Kaggle DDP training integration</span><a href="https://github.com/NandhaKishorM/laya/pull/1017" rel="noopener" target="_blank">#1017 ↗</a></div>
+<div class="evidence-row"><span>Evidence Inspector</span><a href="https://github.com/NandhaKishorM/laya/pull/964" rel="noopener" target="_blank">#964 ↗</a></div>
+<div class="evidence-row"><span>Calibration runtime wiring</span><a href="https://github.com/NandhaKishorM/laya/pull/890" rel="noopener" target="_blank">#890 ↗</a></div>
+<div class="evidence-row"><span>TypeScript confidence policy parity</span><a href="https://github.com/NandhaKishorM/laya/pull/891" rel="noopener" target="_blank">#891 ↗</a></div><div class="evidence-row"><span>TypeScript bucket-key validation</span><a href="https://github.com/NandhaKishorM/laya/pull/1015" rel="noopener" target="_blank">#1015 ↗</a></div>
+<div class="evidence-row"><span>Demo / production request parity</span><a href="https://github.com/NandhaKishorM/laya/pull/570" rel="noopener" target="_blank">#570 ↗</a></div>
+<div class="evidence-row"><span>Choice contract after shortlist</span><a href="https://github.com/NandhaKishorM/laya/pull/1063" rel="noopener" target="_blank">#1063 ↗</a></div>
+<div class="evidence-row"><span>MCP result transparency</span><a href="https://github.com/NandhaKishorM/laya/pull/1091" rel="noopener" target="_blank">#1091 ↗</a></div>
+<div class="evidence-row"><span>CI execution visibility</span><a href="https://github.com/NandhaKishorM/laya/pull/1090" rel="noopener" target="_blank">#1090 ↗</a></div>
+<div class="evidence-row"><span>Multilingual deployment guidance</span><a href="https://github.com/NandhaKishorM/laya/pull/1097" rel="noopener" target="_blank">#1097 ↗</a></div>
+</div></div><div class="evidence-col"><h3>Product direction &amp; review</h3><div class="evidence-list">
+<div class="evidence-row"><span>Staged adoption direction</span><a href="https://github.com/NandhaKishorM/laya/issues/367" rel="noopener" target="_blank">#367 ↗</a></div>
+<div class="evidence-row"><span>Option identity / usage signal opportunity</span><a href="https://github.com/NandhaKishorM/laya/issues/538" rel="noopener" target="_blank">#538 ↗</a></div>
+<div class="evidence-row"><span>Contributor implementation handoff</span><a href="https://github.com/NandhaKishorM/laya/pull/569" rel="noopener" target="_blank">#569 ↗</a></div>
+<div class="evidence-row"><span>Guardrail threshold boundary review</span><a href="https://github.com/NandhaKishorM/laya/pull/598" rel="noopener" target="_blank">#598 ↗</a></div>
+<div class="evidence-row"><span>Evaluation metric semantics review</span><a href="https://github.com/NandhaKishorM/laya/pull/592" rel="noopener" target="_blank">#592 ↗</a></div>
+<div class="evidence-row"><span>Cross-runtime parity review</span><a href="https://github.com/NandhaKishorM/laya/pull/455" rel="noopener" target="_blank">#455 ↗</a></div>
+<div class="evidence-row"><span>API compatibility review</span><a href="https://github.com/NandhaKishorM/laya/pull/912" rel="noopener" target="_blank">#912 ↗</a></div>
+<div class="evidence-row"><span>Context skip contract review</span><a href="https://github.com/NandhaKishorM/laya/pull/577" rel="noopener" target="_blank">#577 ↗</a></div>
+<div class="evidence-row"><span>Router lifecycle / reentrancy review</span><a href="https://github.com/NandhaKishorM/laya/pull/849" rel="noopener" target="_blank">#849 ↗</a></div>
+<div class="evidence-row"><span>Atomic calibration-save test review</span><a href="https://github.com/NandhaKishorM/laya/pull/846" rel="noopener" target="_blank">#846 ↗</a></div>
+</div><div class="evidence-note">本页仅精选可解释的证据，不声称穷尽全部 PR / Review。其他作者实现的 PR 仅作为 Issue 提出、Review 影响或协作交接的证据，不计入本人 authored contribution。</div><details class="atlas"><summary>展开完整贡献索引 · 40 authored &amp; merged PRs / 按产品系统归档</summary><div class="atlas-grid"><div class="atlas-group"><h4>01 / INTENT &amp; INTEGRATION SEMANTICS</h4><p>让输入、上下文、语言路由与集成接口保持一致。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/115" rel="noopener" target="_blank">#115 · 保留真实邮件请求</a><a href="https://github.com/NandhaKishorM/laya/pull/224" rel="noopener" target="_blank">#224 · 保留最新对话轮次</a><a href="https://github.com/NandhaKishorM/laya/pull/292" rel="noopener" target="_blank">#292 · 空语言提示回退</a><a href="https://github.com/NandhaKishorM/laya/pull/328" rel="noopener" target="_blank">#328 · 完整对话集成契约</a><a href="https://github.com/NandhaKishorM/laya/pull/514" rel="noopener" target="_blank">#514 · 失败路径的 Hook 生命周期</a><a href="https://github.com/NandhaKishorM/laya/pull/515" rel="noopener" target="_blank">#515 · 批量路由的 Hook 超时契约</a><a href="https://github.com/NandhaKishorM/laya/pull/523" rel="noopener" target="_blank">#523 · 路由语言连续性与嵌入复用</a><a href="https://github.com/NandhaKishorM/laya/pull/655" rel="noopener" target="_blank">#655 · 富内容消息语义保真</a></div></div><div class="atlas-group"><h4>02 / DECISION &amp; CONFIDENCE CONTRACTS</h4><p>让决策、置信度与策略参数可以被调用方正确理解。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/565" rel="noopener" target="_blank">#565 · 调用方错误与服务错误区分</a><a href="https://github.com/NandhaKishorM/laya/pull/679" rel="noopener" target="_blank">#679 · 弃答状态可观测</a><a href="https://github.com/NandhaKishorM/laya/pull/685" rel="noopener" target="_blank">#685 · 结构化结果暴露 answer confidence</a><a href="https://github.com/NandhaKishorM/laya/pull/746" rel="noopener" target="_blank">#746 · TypeScript 指令输入契约</a><a href="https://github.com/NandhaKishorM/laya/pull/749" rel="noopener" target="_blank">#749 · TypeScript 阈值映射契约</a><a href="https://github.com/NandhaKishorM/laya/pull/890" rel="noopener" target="_blank">#890 · 校准结果进入运行时</a><a href="https://github.com/NandhaKishorM/laya/pull/891" rel="noopener" target="_blank">#891 · TypeScript 分桶阈值支持</a><a href="https://github.com/NandhaKishorM/laya/pull/1015" rel="noopener" target="_blank">#1015 · 分桶键约束校验</a><a href="https://github.com/NandhaKishorM/laya/pull/1063" rel="noopener" target="_blank">#1063 · 候选缩减后的偏好完整性</a><a href="https://github.com/NandhaKishorM/laya/pull/1091" rel="noopener" target="_blank">#1091 · MCP 明示排序被丢弃</a></div></div><div class="atlas-group"><h4>03 / EVALUATION &amp; EVIDENCE</h4><p>让评测可解释、可比较，避免不可靠的基线产生错误结论。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/529" rel="noopener" target="_blank">#529 · Act-head 诊断指标</a><a href="https://github.com/NandhaKishorM/laya/pull/664" rel="noopener" target="_blank">#664 · 评测 Run 身份与基线可比性 Gate</a><a href="https://github.com/NandhaKishorM/laya/pull/964" rel="noopener" target="_blank">#964 · Checkpoint 证据检查器</a></div></div><div class="atlas-group"><h4>04 / TRAINING &amp; MODEL DEVELOPMENT</h4><p>让训练流程复用、诊断可读、回归可防。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/851" rel="noopener" target="_blank">#851 · 跨训练脚本的回归守卫</a><a href="https://github.com/NandhaKishorM/laya/pull/965" rel="noopener" target="_blank">#965 · 单进程训练入口共享原语</a><a href="https://github.com/NandhaKishorM/laya/pull/1012" rel="noopener" target="_blank">#1012 · 多 Seed 训练对比研究</a><a href="https://github.com/NandhaKishorM/laya/pull/1014" rel="noopener" target="_blank">#1014 · 训练前更新预算可见</a><a href="https://github.com/NandhaKishorM/laya/pull/1016" rel="noopener" target="_blank">#1016 · 正控与多 Seed 诊断</a><a href="https://github.com/NandhaKishorM/laya/pull/1017" rel="noopener" target="_blank">#1017 · Kaggle DDP 接入共享训练原语</a></div></div><div class="atlas-group"><h4>05 / DEVELOPER RUNTIME &amp; PRODUCT SURFACE</h4><p>让不同运行入口的请求、状态与反馈保持一致。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/570" rel="noopener" target="_blank">#570 · Demo / 服务请求边界一致</a><a href="https://github.com/NandhaKishorM/laya/pull/653" rel="noopener" target="_blank">#653 · 长文档窗口使用量聚合</a><a href="https://github.com/NandhaKishorM/laya/pull/659" rel="noopener" target="_blank">#659 · 设备配置与状态读取一致</a><a href="https://github.com/NandhaKishorM/laya/pull/661" rel="noopener" target="_blank">#661 · CLI 使用错误退出契约</a><a href="https://github.com/NandhaKishorM/laya/pull/662" rel="noopener" target="_blank">#662 · ONNX 输入验证一致性</a><a href="https://github.com/NandhaKishorM/laya/pull/715" rel="noopener" target="_blank">#715 · 容器部署版本可固定</a><a href="https://github.com/NandhaKishorM/laya/pull/745" rel="noopener" target="_blank">#745 · 在途评测任务不被取消</a></div></div><div class="atlas-group"><h4>06 / ADOPTION &amp; DEVELOPER ENABLEMENT</h4><p>让开发者理解如何接入、采用、配置和验证系统。</p><div class="atlas-links"><a href="https://github.com/NandhaKishorM/laya/pull/415" rel="noopener" target="_blank">#415 · 分阶段采用指南</a><a href="https://github.com/NandhaKishorM/laya/pull/430" rel="noopener" target="_blank">#430 · CLI 与 MCP 开发指南</a><a href="https://github.com/NandhaKishorM/laya/pull/525" rel="noopener" target="_blank">#525 · CI Action 依赖固定</a><a href="https://github.com/NandhaKishorM/laya/pull/1019" rel="noopener" target="_blank">#1019 · 请求容量预估参考</a><a href="https://github.com/NandhaKishorM/laya/pull/1090" rel="noopener" target="_blank">#1090 · CI 测试执行下限可核验</a><a href="https://github.com/NandhaKishorM/laya/pull/1097" rel="noopener" target="_blank">#1097 · 多语言部署默认说明</a></div></div></div></details></div></div>
+</div></section>
+<section class="wrap role-note"><div class="mono section-index">ROLE &amp; ATTRIBUTION</div><div><h2>External contributor.<br/>Collaborator-level scope.</h2><p>我以外部贡献者身份参与 Laya 的 Product Track 与 Collaborator Track。工作范围已经覆盖协作者级别的多条职责：本人实现、产品方向讨论、正式 Review、可证伪反例、跨贡献者交接与维护性判断。GitHub 快照显示 40 个本人 authored PR 已合并，另有 85 个 PR 匹配 reviewed-by 查询。这里描述的是实际承担的工作范围，不是官方 collaborator 头衔；目前没有证据证明获得 maintainer / core team 权限。每项贡献均按作者、Reviewer、Issue 提出者和维护者决策分别归因。</p></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span class="mono">LAYA / PRODUCT &amp; UPSTREAM COLLABORATION CASEBOOK · INTERNAL REVIEW V2.4</span><span class="mono">NOT AN OFFICIAL LAYA DOCUMENT</span><a class="mono" href="https://github.com/Bruce-Yii" rel="noopener" target="_blank">GITHUB / BRUCE-YII ↗</a></div></footer>
+<script>
+const chapterVisuals=[
+`<div class="chapter-visual-head mono"><span>PRODUCT EXPERIENCE MAP / INTENT INTEGRITY</span><span>ILLUSTRATIVE · NOT OFFICIAL ARCHITECTURE</span></div><div class="mini-flow"><div class="mini-node"><small>01 / INPUT</small><strong>用户请求</strong><em>真实表达</em></div><div class="mini-node"><small>02 / CLEAN</small><strong>预处理</strong><em>不吞掉意图</em></div><div class="mini-node"><small>03 / STATE</small><strong>上下文</strong><em>保留最新信息</em></div><div class="mini-node"><small>04 / ROUTE</small><strong>语言路由</strong><em>无提示则回退</em></div><div class="mini-node"><small>05 / INTEGRATE</small><strong>调用契约</strong><em>默认与扩展明确</em></div></div><p class="chapter-visual-note">媒体主题：一张从原始输入到 System 1 决策的语义保真图；突出每个产品边界，不要画成泛化神经网络。</p>`,
+`<div class="chapter-visual-head mono"><span>STAGED ADOPTION JOURNEY</span><span>APPLICATION-OWNED CONTROL</span></div><div class="stage-flow"><div class="stage"><small>01 / OBSERVE</small><strong>Shadow</strong><p>先观察，不接管业务动作。</p></div><div class="stage"><small>02 / COMPARE</small><strong>Compare</strong><p>与现有策略对照。</p></div><div class="stage"><small>03 / VALIDATE</small><strong>Held-out policy</strong><p>使用应用自己的评估策略。</p></div><div class="stage"><small>04 / ADOPT</small><strong>Bounded Promote</strong><p>有限推广，保留回退与授权。</p></div></div><p class="chapter-visual-note">媒体主题：渐进式采用旅程图。必须明确这是 #415 文档化的产品采用方法，不是 Laya 已上线的自动部署控制台。</p>`,
+`<div class="chapter-visual-head mono"><span>EVIDENCE STATES / READ-ONLY INSPECTION</span><span>EVIDENCE ≠ DEPLOYMENT VERDICT</span></div><div class="state-grid"><div class="state"><strong>PRESENT</strong><span>已有证据</span></div><div class="state"><strong>MISSING</strong><span>缺少材料</span></div><div class="state"><strong>INSUFFICIENT</strong><span>样本不足</span></div><div class="state"><strong>UNKNOWN</strong><span>无法判断</span></div><div class="state"><strong>INCOMPARABLE</strong><span>不可比较</span></div></div><p class="chapter-visual-note">媒体主题：Evidence Inspector 的状态面板。用合成样例解释状态差异，不能伪装为真实运行截图或自动 readiness 评分。</p>`,
+`<div class="chapter-visual-head mono"><span>TRAINING EXPERIENCE / SHARED CORE</span><span>KEEP ENVIRONMENT-SPECIFIC ORCHESTRATION</span></div><div class="training-flow"><div class="train-input"><strong>Apple Silicon</strong><small>SINGLE PROCESS</small></div><div class="train-input"><strong>Local Script</strong><small>SINGLE PROCESS</small></div><div class="train-input"><strong>Kaggle</strong><small>DDP ENTRY</small></div><div class="train-arrow">→</div><div class="train-core"><strong>Shared training primitives</strong><small>COMMON SEMANTICS / DDP ORCHESTRATION STAYS OUTSIDE</small></div></div><p class="chapter-visual-note">媒体主题：多入口收敛为共享训练原语的结构图，特别显示 DDP 独有编排仍保留在外层。</p>`,
+`<div class="chapter-visual-head mono"><span>CALIBRATION CONTRACT / FIT → SAVE → LOAD → PREDICT</span><span>AGENT · ONNX · TYPESCRIPT</span></div><div class="mini-flow"><div class="mini-node"><small>01 / FIT</small><strong>拟合校准</strong><em>histogram binning</em></div><div class="mini-node"><small>02 / SAVE</small><strong>持久化</strong><em>calibration payload</em></div><div class="mini-node"><small>03 / LOAD</small><strong>恢复策略</strong><em>bucket map</em></div><div class="mini-node"><small>04 / PREDICT</small><strong>应用置信度</strong><em>Agent / ONNX</em></div><div class="mini-node"><small>05 / SDK</small><strong>一致调用</strong><em>TypeScript map</em></div></div><p class="chapter-visual-note">媒体主题：校准策略从工具结果进入推理与 SDK 的端到端产品能力图；74 answers / zero decision flips 仅作为维护者当时的集成验证结果。</p>`,
+`<div class="chapter-visual-head mono"><span>CHOICE INTEGRITY / SHORTLIST 6 → 2</span><span>DO NOT REWRITE USER PREFERENCE</span></div><div class="choice-compare"><div class="choice-state"><div class="mono">BEFORE / ORIGINAL INTENT</div><strong>6 candidates</strong><div class="choice-options"><span class="selected">A</span><span>B</span><span class="selected">C</span><span>D</span><span>E</span><span>F</span></div><p>调用方对完整候选集给出排序。候选集缩减后，原排序已不再匹配新集合。</p></div><div class="choice-state after"><div class="mono">AFTER / EXPLICIT SIGNAL</div><strong>2 candidates</strong><div class="choice-options"><span class="selected">A</span><span class="selected">C</span></div><p>系统不猜测新的偏好映射；丢弃旧排序，并明确告知调用方发生了什么。</p></div></div><p class="chapter-visual-note">媒体主题：真实调用行为的 Before / After 对照。此处候选项为示意数据；实际机制由 #1063 / #1091 支撑。</p>`,
+`<div class="chapter-visual-head mono"><span>DEMO ↔ PRODUCTION / SAME REQUEST, SAME VERDICT</span><span>8 BOUNDARY CASES</span></div><div class="choice-compare"><div class="choice-state"><div class="mono">BEFORE / CONTRACT DRIFT</div><strong>Demo accepts · Server rejects</strong><div class="choice-options"><span>101 choice</span><span>33 score levels</span><span>600 total options</span></div><p>演示入口接受了正式服务会返回 413 的请求，用户在不同入口得到不同预期。</p></div><div class="choice-state after"><div class="mono">AFTER / PARITY</div><strong>3 rejected · 5 accepted</strong><div class="choice-options"><span class="selected">Choice budget</span><span class="selected">Score budget</span><span class="selected">Total budget</span></div><p>正式服务与 Demo 对同一组边界案例给出一致 verdict，回归测试可检测再次漂移。</p></div></div><p class="chapter-visual-note">媒体主题：Demo 与正式服务的边界对照；请求数据为公开 PR 中的测试场景，不展示真实用户数据。</p>`,
+`<div class="chapter-visual-head mono"><span>DEVELOPER CONFIDENCE / EXECUTION VS. REPORT</span><span>TESTS · DEFAULTS · DEPLOYMENT</span></div><div class="ci-visual"><div class="ci-panel"><div class="mono">CI VISIBILITY</div><strong>Registered ≠ Executed</strong><p>把跳过数量和实际执行下限一起呈现，避免“绿色状态”掩盖覆盖范围。</p></div><div class="ci-panel"><div class="mono">DEPLOYMENT EXPERIENCE</div><strong>Defaults must be true</strong><p>多语言默认行为与部署指引保持一致，避免非英语用户按错误文档配置。</p></div></div><p class="chapter-visual-note">媒体主题：测试状态透明度与多语言部署体验。避免把 161 的执行可见性差额误写为 161 个 Bug。</p>`
+];
+document.querySelectorAll('.chapter').forEach((chapter,i)=>{const visual=document.createElement('div');visual.className='chapter-visual';visual.innerHTML=chapterVisuals[i];chapter.querySelector('.chapter-detail').appendChild(visual);const detail=chapter.querySelector('.chapter-detail');detail.id=`chapter-detail-${i+1}`;const btn=chapter.querySelector('.chapter-toggle');btn.setAttribute('aria-controls',detail.id);btn.addEventListener('click',()=>{const open=chapter.classList.toggle('is-open');btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'CLOSE CHAPTER −':'OPEN CHAPTER +';});});
+const anchors=[...document.querySelectorAll('.nav a[href^="#"]')];const sections=anchors.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){anchors.forEach(a=>a.classList.toggle('nav-cta',a.getAttribute('href')==='#'+e.target.id));}}},{rootMargin:'-25% 0px -65% 0px'});sections.forEach(s=>io.observe(s));}
+
+// Evidence Inspector: examples are either maintainer-reproduced output or explicitly synthetic test fixtures.
+const chapters = [...document.querySelectorAll('.chapter')];
+const evidenceVisual = chapters[2]?.querySelector('.chapter-visual');
+if (evidenceVisual) {
+  evidenceVisual.innerHTML = `<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / EVIDENCE INSPECTOR</span><span>READ-ONLY · NO DEPLOYMENT VERDICT</span></div>
+  <div class="lab-shell" data-lab="evidence">
+    <div class="lab-toolbar"><span class="mono">SELECT AN EVIDENCE SCENARIO</span><div class="lab-tabs" role="group" aria-label="证据场景">
+      <button class="lab-tab" data-evidence-case="legacy" aria-pressed="true">旧 checkpoint</button>
+      <button class="lab-tab" data-evidence-case="low" aria-pressed="false">低样本校准</button>
+      <button class="lab-tab" data-evidence-case="present" aria-pressed="false">证据完整</button>
+      <button class="lab-tab" data-evidence-case="conflict" aria-pressed="false">身份冲突</button>
+    </div></div>
+    <div class="lab-grid">
+      <div class="lab-card"><div class="mono" data-evidence-label>CALIBRATION STATE</div><div class="lab-state" data-evidence-state="UNKNOWN">UNKNOWN</div><h4 data-evidence-title>旧 checkpoint 没有校准块。</h4><p data-evidence-summary>训练元数据存在，但 checkpoint 早于 #933 的证据格式。UNKNOWN 不等于 MISSING。</p></div>
+      <div class="lab-card"><div class="mono">EVIDENCE BREAKDOWN</div><div class="lab-rows" data-evidence-rows><div class="lab-row"><strong>Calibration</strong><span class="lab-state" data-state="UNKNOWN">UNKNOWN</span><small>no calibration block; checkpoint predates #933</small></div></div></div>
+    </div>
+    <p class="lab-note" data-evidence-note>此情形来自维护者对 #964 的实际验收输出；不是部署判断。</p>
+    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/964#issuecomment-6035826519" target="_blank" rel="noopener">MAINTAINER ACCEPTANCE ↗</a><a href="https://github.com/NandhaKishorM/laya/blob/main/tests/test_evidence.py" target="_blank" rel="noopener">UPSTREAM TESTS ↗</a></div>
+  </div>`;
+}
+const evidenceCases = {
+  legacy:{label:'CALIBRATION STATE',state:'UNKNOWN',title:'旧 checkpoint 没有校准块。',summary:'训练元数据存在，但 checkpoint 早于 #933 的证据格式。UNKNOWN 不等于 MISSING。',rows:[['Calibration','UNKNOWN','training metadata present, but no calibration block; checkpoint predates #933']],note:'此情形来自维护者对 #964 的实际验收输出；UNKNOWN 是对历史格式缺少证据的诚实表达。'},
+  low:{label:'CALIBRATION STATE',state:'INSUFFICIENT',title:'同一个 checkpoint，不同类型可以有不同状态。',summary:'维护者用只有 2 条 calibration items 的 fine-tune 复现：choice 样本不足，score / noul 则是零样本。',rows:[['choice','INSUFFICIENT','2 items; below the recorded minimum; temperature stays 1.0'],['score','MISSING','question type present, but zero calibration items'],['noul','MISSING','question type present, but zero calibration items']],note:'三行状态与说明来自维护者验收评论中的实际输出；这里没有重新运行模型。'},
+  present:{label:'CALIBRATION STATE',state:'PRESENT',title:'有记录且没有限制，才报告 PRESENT。',summary:'上游测试夹具：choice 有 400 items、temperature 1.1、issues 为空，inspect_calibration 返回 PRESENT。',rows:[['choice','PRESENT','400 items; temperature 1.1; no recorded issues']],note:'这是 tests/test_evidence.py 的合成测试夹具，不是真实 checkpoint，也不代表模型准确率。'},
+  conflict:{label:'REPORT RELATION',state:'INCOMPARABLE',title:'只有确定的身份冲突，才判定 INCOMPARABLE。',summary:'上游测试夹具让 checkpoint 与 report 的 dataset_sha256 不同；不是因为版本号不同，也不是因为缺少字段。',rows:[['dataset_sha256','INCOMPARABLE','checkpoint digest = a; report digest = b']],note:'这是 tests/test_evidence.py 的合成身份冲突测试；仅展示 evidence.relate 的状态边界。'}
+};
+function setEvidenceCase(key){
+  const root=document.querySelector('[data-lab="evidence"]'); if(!root)return;
+  const d=evidenceCases[key];
+  root.querySelectorAll('[data-evidence-case]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.evidenceCase===key)));
+  root.querySelector('[data-evidence-label]').textContent=d.label;
+  const state=root.querySelector('[data-evidence-state]');state.textContent=d.state;state.dataset.state=d.state;
+  root.querySelector('[data-evidence-title]').textContent=d.title;
+  root.querySelector('[data-evidence-summary]').textContent=d.summary;
+  root.querySelector('[data-evidence-rows]').innerHTML=d.rows.map(r=>`<div class="lab-row"><strong>${r[0]}</strong><span class="lab-state" data-state="${r[1]}">${r[1]}</span><small>${r[2]}</small></div>`).join('');
+  root.querySelector('[data-evidence-note]').textContent=d.note;
+}
+document.querySelectorAll('[data-evidence-case]').forEach(b=>b.addEventListener('click',()=>setEvidenceCase(b.dataset.evidenceCase)));
+setEvidenceCase('legacy');
+
+// Choice Integrity: exact MCP test fixture; core warning is described, not fabricated as a verbatim log.
+const choiceVisual = chapters[5]?.querySelector('.chapter-visual');
+if (choiceVisual) {
+  choiceVisual.innerHTML = `<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / CHOICE INTEGRITY</span><span>DO NOT REWRITE USER PREFERENCE</span></div>
+  <div class="lab-shell" data-lab="choice">
+    <div class="choice-lab-top"><div class="mono">SHORTLIST SCENARIO / 5 OPTIONS → TOP 2</div><div class="lab-tabs" role="group" aria-label="调用接口"><button class="lab-tab" data-choice-surface="core" aria-pressed="true">CORE / PYTHON</button><button class="lab-tab" data-choice-surface="mcp" aria-pressed="false">MCP / JSON</button></div></div>
+    <div class="choice-lab-input">
+      <div class="lab-card"><div class="mono">CALLER INPUT</div><h4>Original preference</h4><div class="choice-token-row"><span class="choice-token">billing</span><span class="choice-token">shipping</span><span class="choice-token">returns</span><span class="choice-token">account</span><span class="choice-token">other</span></div><p>option_order = [4, 3, 2, 1, 0]</p><p>shortlist k = 2 · valid permutation before narrowing</p></div>
+      <div class="lab-card"><div class="mono">SHORTLIST RESULT</div><h4>Kept labels</h4><div class="choice-token-row"><span class="choice-token keep">billing</span><span class="choice-token keep">shipping</span></div><p>旧排序长度仍为 5，但当前候选集只剩 2 个。</p><p>切换下面的场景，查看系统如何处理。</p></div>
+    </div>
+    <div class="choice-result"><div class="lab-card"><div class="mono">TRY ANOTHER CONDITION</div><div class="lab-tabs" role="group" aria-label="排序条件"><button class="lab-tab" data-choice-case="valid" aria-pressed="true">合法旧排序 / 候选缩减</button><button class="lab-tab" data-choice-case="invalid" aria-pressed="false">非法排序 / 重复槽位</button></div><p data-choice-explainer>合法排序在候选缩减后不再适用。系统不重映射用户偏好，而是丢弃旧排序并说明。</p></div>
+      <div class="lab-card dark"><div class="lab-status-line" data-choice-status>ANSWERED · ORDER DROPPED WITH SIGNAL</div><h4 data-choice-title>明确告知，不猜测偏好。</h4><pre class="choice-code" data-choice-output>Core behavior (conceptual):
+  option_order: dropped
+  original slots: 5
+  kept labels: 2
+
+RuntimeWarning:
+  option_order dropped for question "topic"</pre><p data-choice-caption>核心层通过 RuntimeWarning 告知调用方；以上为机制说明，不是逐字日志。</p></div></div>
+    <p class="lab-note">演示数量与候选为解释性样例；MCP JSON 内容取自上游 test_mcp.py 的 5→2 回归夹具。非法 permutation 仍在任何 forward pass 前拒绝。</p>
+    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/1063" target="_blank" rel="noopener">CORE FIX #1063 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1091" target="_blank" rel="noopener">MCP CONTRACT #1091 ↗</a><a href="https://github.com/NandhaKishorM/laya/blob/main/tests/test_mcp.py" target="_blank" rel="noopener">MCP REGRESSION TEST ↗</a></div>
+  </div>`;
+}
+let choiceSurface='core', choiceCase='valid';
+function setChoiceLab(){
+  const root=document.querySelector('[data-lab="choice"]');if(!root)return;
+  root.querySelectorAll('[data-choice-surface]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choiceSurface===choiceSurface)));
+  root.querySelectorAll('[data-choice-case]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choiceCase===choiceCase)));
+  const exp=root.querySelector('[data-choice-explainer]'),status=root.querySelector('[data-choice-status]'),title=root.querySelector('[data-choice-title]'),out=root.querySelector('[data-choice-output]'),cap=root.querySelector('[data-choice-caption]');
+  if(choiceCase==='invalid'){
+    exp.textContent='输入排序 [0,0,0,0,0] 不是合法 permutation。系统不能把结构错误当作可丢弃的旧偏好；它仍须在推理前拒绝。';
+    status.textContent='REJECTED · INVALID STRUCTURE';title.textContent='非法输入仍然拒绝。';
+    out.textContent=choiceSurface==='mcp'?'MCP tool error:\n  code: invalid_questions\n\nReason:\n  option_order is not a permutation\n\nForward pass:\n  not called':'Core behavior:\n  ValueError\n  invalid option_order\n\nForward pass:\n  not called';
+    cap.textContent=choiceSurface==='mcp'?'MCP regression test 明确断言 invalid_questions，且 router 没有被调用。':'结构非法与候选缩减是两类情况；这里展示的是拒绝边界，不是逐字异常回放。';
+  } else if(choiceSurface==='mcp'){
+    exp.textContent='MCP 客户端消费 JSON，无法读取 Python RuntimeWarning。适配层因此在返回值中按 question id 明确报告排序被丢弃。';
+    status.textContent='ANSWERED · JSON SIGNAL INCLUDED';title.textContent='结果可用，丢参可见。';
+    out.textContent=JSON.stringify({answers:{topic:{choice:'billing'}},option_order_dropped:{topic:{n:5,kept:2}}},null,2);
+    cap.textContent='JSON 字段与 billing 结果来自 tests/test_mcp.py 的真实 5→2 regression fixture；示例不代表所有调用都返回 billing。';
+  } else {
+    exp.textContent='合法排序在候选缩减后不再适用。系统不重映射用户偏好，而是丢弃旧排序并说明。';
+    status.textContent='ANSWERED · ORDER DROPPED WITH SIGNAL';title.textContent='明确告知，不猜测偏好。';
+    out.textContent='Core behavior (conceptual):\n  option_order: dropped\n  original slots: 5\n  kept labels: 2\n\nRuntimeWarning:\n  option_order dropped for question "topic"';
+    cap.textContent='核心层通过 RuntimeWarning 告知调用方；以上为机制说明，不是逐字日志。';
+  }
+}
+document.querySelectorAll('[data-choice-surface]').forEach(b=>b.addEventListener('click',()=>{choiceSurface=b.dataset.choiceSurface;setChoiceLab()}));
+document.querySelectorAll('[data-choice-case]').forEach(b=>b.addEventListener('click',()=>{choiceCase=b.dataset.choiceCase;setChoiceLab()}));
+
+// Training architecture: shared primitives are separated from environment-specific orchestration.
+const trainingVisual = chapters[3]?.querySelector('.chapter-visual');
+if (trainingVisual) {
+  trainingVisual.innerHTML = `<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / TRAINING ARCHITECTURE</span><span>SHARE SEMANTICS · KEEP ORCHESTRATION</span></div>
+  <div class="lab-shell" data-lab="training">
+    <div class="lab-toolbar"><span class="mono">CHOOSE AN EXECUTION PATH</span><div class="lab-tabs" role="group" aria-label="训练入口"><button class="lab-tab" data-training-mode="single" aria-pressed="true">SINGLE PROCESS</button><button class="lab-tab" data-training-mode="ddp" aria-pressed="false">KAGGLE DDP</button></div></div>
+    <div class="training-lab">
+      <div class="training-sources"><div class="training-source is-highlight" data-training-source="mps"><strong>Apple Silicon / MPS</strong><small>SINGLE PROCESS</small></div><div class="training-source is-highlight" data-training-source="local"><strong>Single-device script</strong><small>SINGLE PROCESS</small></div><div class="training-source" data-training-source="ddp"><strong>Kaggle 2×T4 notebook</strong><small>DISTRIBUTED / DDP</small></div></div>
+      <div><div class="training-core"><div class="mono">SHARED TRAINING PRIMITIVES</div><h4>laya.train</h4><div class="training-chip-list" data-training-shared><span class="training-chip">optimizer</span><span class="training-chip">preprocessing</span><span class="training-chip">calibration loops</span></div></div><div class="training-specific"><strong data-training-specific-title>Wrapper-specific contracts stay at the seam.</strong><p data-training-specific>Public CLI flags/defaults, device, batching, calibration split, cache and persisted metadata remain explicit. The two single-process wrappers delegate their shared loops rather than maintaining private copies.</p></div></div>
+    </div>
+    <p class="lab-note" data-training-note>根据 #965 / #1017 公开 PR diff 重建的结构示意，不是 Laya 官方架构图。#887 由其他贡献者发起；这里展示 Bruce 承接的明确子方向。</p>
+    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/965" target="_blank" rel="noopener">SINGLE-PROCESS CONVERGENCE #965 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1017" target="_blank" rel="noopener">KAGGLE DDP CONVERGENCE #1017 ↗</a></div>
+  </div>`;
+}
+function setTrainingMode(mode){
+  const root=document.querySelector('[data-lab="training"]');if(!root)return;
+  root.querySelectorAll('[data-training-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.trainingMode===mode)));
+  root.querySelectorAll('[data-training-source]').forEach(n=>n.classList.toggle('is-highlight',mode==='single'?['mps','local'].includes(n.dataset.trainingSource):n.dataset.trainingSource==='ddp'));
+  const chips=root.querySelector('[data-training-shared]'),title=root.querySelector('[data-training-specific-title]'),specific=root.querySelector('[data-training-specific]'),note=root.querySelector('[data-training-note]');
+  if(mode==='single'){
+    chips.innerHTML=['optimizer','preprocessing','calibration loops','shared artifacts'].map(x=>`<span class="training-chip">${x}</span>`).join('');
+    title.textContent='Wrapper-specific contracts stay at the seam.';
+    specific.textContent='Public CLI flags/defaults, device, batching, calibration split, cache and persisted metadata remain explicit. The two single-process wrappers delegate their shared loops rather than maintaining private copies.';
+    note.textContent='依据 #965：两条单进程入口收敛到 laya.train；保留 wrapper-specific 的设备、批处理、校准切分、缓存与持久化契约。';
+  }else{
+    chips.innerHTML=['items_from_rows','encode_item + collate_items','rlcd_loss','split_calibration','sigma_at','fit_temperature_map','save_checkpoint'].map(x=>`<span class="training-chip">${x}</span>`).join('');
+    title.textContent='DDP orchestration remains in the notebook.';
+    specific.textContent='Process-group / rank setup, DDP wrapping, equal-rank trim + sharding, effective-batch accounting, per-rank shuffle and rolling checkpoint_latest metadata remain environment-specific.';
+    note.textContent='依据 #1017：共享数据构造、编码/整理、loss、校准切分、sigma、温度拟合与 checkpoint 持久化；分布式编排仍留在 Kaggle notebook。';
+  }
+}
+document.querySelectorAll('[data-training-mode]').forEach(b=>b.addEventListener('click',()=>setTrainingMode(b.dataset.trainingMode)));
+
+// Calibration: two adjacent but distinct maps; do not visually merge them into one contract.
+const calibrationVisual = chapters[4]?.querySelector('.chapter-visual');
+if (calibrationVisual) {
+  calibrationVisual.innerHTML = `<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / CALIBRATION CONTRACTS</span><span>BINNING MAP ≠ THRESHOLD MAP</span></div>
+  <div class="lab-shell" data-lab="calibration">
+    <div class="lab-toolbar"><span class="mono">SELECT WHICH CONTRACT TO INSPECT</span><div class="lab-tabs" role="group" aria-label="校准契约"><button class="lab-tab" data-calibration-mode="binning" aria-pressed="true">CONFIDENCE BINNING / #890</button><button class="lab-tab" data-calibration-mode="threshold" aria-pressed="false">ABSTENTION THRESHOLD / #891</button></div></div>
+    <div class="calibration-lab" data-calibration-content>
+      <div class="calibration-flow"><div class="calibration-step"><small>01 / FIT</small><strong>fit_binning_map</strong><p>records + fitted temperatures</p></div><div class="calibration-step"><small>02 / SAVE</small><strong>calibration_payload</strong><p>persist binning_map</p></div><div class="calibration-step"><small>03 / LOAD</small><strong>apply payload</strong><p>validate + install map</p></div><div class="calibration-step"><small>04 / PREDICT</small><strong>Agent / ONNX</strong><p>decode answer_confidence</p></div><div class="calibration-step"><small>05 / CONSUME</small><strong>temp_bucket</strong><p>downstream gate reads calibrated confidence</p></div></div>
+      <div class="calibration-proof"><strong>74 answers · 0 decision flips</strong><span>MAX PROBABILITY DELTA 0.000000</span><span>MAINTAINER VERIFIED / REAL ENGLISH + MULTILINGUAL CHECKPOINTS / v0.3.25</span></div>
+      <div class="calibration-followup"><strong>Follow-up contract review · #920 (AlKor13)</strong><p>#890 让运行时 confidence 经过 binning；AlKor13 随后指出阈值也必须在同一刻度拟合，并在 #920 完成 follow-up。该实现属于 AlKor13，不计入 Bruce 的 authored contribution。</p></div>
+    </div>
+    <p class="lab-note" data-calibration-note>#890 的 binning_map 与 #891 的 minConfidence bucket map 是两个相邻但不同的契约，不能合并成同一种“校准参数”。</p>
+    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/890" target="_blank" rel="noopener">AUTHORED #890 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/891" target="_blank" rel="noopener">AUTHORED #891 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/920" target="_blank" rel="noopener">FOLLOW-UP #920 ↗</a></div>
+  </div>`;
+}
+function setCalibrationMode(mode){
+  const root=document.querySelector('[data-lab="calibration"]');if(!root)return;
+  root.querySelectorAll('[data-calibration-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.calibrationMode===mode)));
+  const content=root.querySelector('[data-calibration-content]'),note=root.querySelector('[data-calibration-note]');
+  if(mode==='binning'){
+    content.innerHTML=`<div class="calibration-flow"><div class="calibration-step"><small>01 / FIT</small><strong>fit_binning_map</strong><p>records + fitted temperatures</p></div><div class="calibration-step"><small>02 / SAVE</small><strong>calibration_payload</strong><p>persist binning_map</p></div><div class="calibration-step"><small>03 / LOAD</small><strong>apply payload</strong><p>validate + install map</p></div><div class="calibration-step"><small>04 / PREDICT</small><strong>Agent / ONNX</strong><p>decode answer_confidence</p></div><div class="calibration-step"><small>05 / CONSUME</small><strong>temp_bucket</strong><p>downstream gate reads calibrated confidence</p></div></div><div class="calibration-proof"><strong>74 answers · 0 decision flips</strong><span>MAX PROBABILITY DELTA 0.000000</span><span>MAINTAINER VERIFIED / REAL ENGLISH + MULTILINGUAL CHECKPOINTS / v0.3.25</span></div><div class="calibration-followup"><strong>Follow-up contract review · #920 (AlKor13)</strong><p>#890 让运行时 confidence 经过 binning；AlKor13 随后指出阈值也必须在同一刻度拟合，并在 #920 完成 follow-up。该实现属于 AlKor13，不计入 Bruce 的 authored contribution。</p></div>`;
+    note.textContent='#890 的 binning_map：持久化后由 Agent / ONNX 的 decode 路径应用到 answer_confidence，按 temp_bucket 选择；语言温度 override 有明确旁路。';
+  }else{
+    content.innerHTML=`<div class="calibration-flow"><div class="calibration-step"><small>01 / CALLER</small><strong>minConfidence</strong><p>scalar or bucket map</p></div><div class="calibration-step"><small>02 / SDK</small><strong>validate</strong><p>finite values in [0, 1]</p></div><div class="calibration-step"><small>03 / SERIALIZE</small><strong>min_confidence</strong><p>send map verbatim</p></div><div class="calibration-step"><small>04 / SERVER</small><strong>bucket gate</strong><p>threshold by temp_bucket</p></div><div class="calibration-step"><small>05 / RESULT</small><strong>abstain / answer</strong><p>caller policy remains explicit</p></div></div><div class="calibration-branch"><div class="lab-card"><div class="mono">TYPESCRIPT SDK EXAMPLE / #891</div><pre class="choice-code">{
+  "min_confidence": {
+    "choice:2": 0.9,
+    "default": 0.3
+  }
+}</pre><p>TS client accepts a scalar or per-bucket map and serializes it as min_confidence.</p></div><div class="lab-card"><div class="mono">SCOPE BOUNDARY</div><h4>Not the same as binning_map.</h4><p>#891 widened the TypeScript SDK contract. The MCP server remained scalar-only in this PR; that interface was intentionally not changed here.</p></div></div>`;
+    note.textContent='#891 的 minConfidence 是调用时的 abstention threshold map；它不是 #890 持久化的 histogram binning_map。MCP schema 在该 PR 中仍保持 scalar-only。';
+  }
+}
+document.querySelectorAll('[data-calibration-mode]').forEach(b=>b.addEventListener('click',()=>setCalibrationMode(b.dataset.calibrationMode)));
+
+
+// Staged Adoption: the guide is documentation-only; the application owns policy and action.
+const stageVisual = chapters[1]?.querySelector('.chapter-visual');
+if(stageVisual){
+ stageVisual.innerHTML=`<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / STAGED ADOPTION</span><span>APPLICATION-OWNED CONTROL</span></div>
+ <div class="lab-shell" data-lab="staged">
+  <div class="stage-lab-grid">
+   <div class="stage-rail" role="group" aria-label="采用阶段">
+    <button class="stage-select" data-stage="shadow" aria-pressed="true"><b>01</b><strong>Shadow</strong><span>OBSERVE</span></button>
+    <button class="stage-select" data-stage="compare" aria-pressed="false"><b>02</b><strong>Compare</strong><span>REVIEW</span></button>
+    <button class="stage-select" data-stage="policy" aria-pressed="false"><b>03</b><strong>Held-out policy</strong><span>CALIBRATE</span></button>
+    <button class="stage-select" data-stage="promote" aria-pressed="false"><b>04</b><strong>Bounded promote</strong><span>CANARY</span></button>
+   </div>
+   <div class="stage-detail"><div class="mono" data-stage-index>STAGE 01 / SHADOW</div><h4 data-stage-title>先观察，不执行。</h4><p data-stage-copy>在代表性真实流量上运行 Laya，但让 incumbent action 保持权威。记录请求类型、问题 schema、Laya 结果与 confidence、checkpoint、run_id、原有动作、最终审核结果、延迟与错误。</p><div class="stage-ownership"><div><strong>LAYA PROVIDES</strong><span data-stage-laya>decision、probabilities、confidence、hook events</span></div><div><strong>APPLICATION OWNS</strong><span data-stage-app>incumbent action、日志、异常捕获、敏感字段脱敏</span></div></div></div>
+  </div>
+  <p class="lab-note">#415 是 docs-first 采用指南，不是已上线的自动发布平台。高置信度不是执行许可；高成本或不可逆动作仍需独立 review boundary。</p>
+  <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/issues/367" target="_blank" rel="noopener">PRODUCT DIRECTION #367 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/415" target="_blank" rel="noopener">MERGED GUIDE #415 ↗</a><a href="https://github.com/NandhaKishorM/laya/blob/main/docs/staged-adoption.md" target="_blank" rel="noopener">CURRENT GUIDE ↗</a></div>
+ </div>`;
+}
+const stageData={
+ shadow:{index:'STAGE 01 / SHADOW',title:'先观察，不执行。',copy:'在代表性真实流量上运行 Laya，但让 incumbent action 保持权威。记录请求类型、问题 schema、Laya 结果与 confidence、checkpoint、run_id、原有动作、最终审核结果、延迟与错误。',laya:'decision、probabilities、confidence、hook events',app:'incumbent action、日志、异常捕获、敏感字段脱敏'},
+ compare:{index:'STAGE 02 / COMPARE',title:'分歧是信号，不是裁决。',copy:'对同一请求、同一问题语义比较 Laya 与 incumbent。分歧可能来自 incumbent 错误、样本歧义或需要人工判断；保留 unknown / review bucket，并按 checkpoint、语言、route、schema、动作类型和风险分类观察。',laya:'候选决策、概率与置信度、运行上下文',app:'incumbent 结果、reviewed label / ground truth、分歧归因与覆盖率'},
+ policy:{index:'STAGE 03 / HELD-OUT POLICY',title:'阈值属于应用，不属于模型。',copy:'使用代表性的 held-out 数据，根据实测准确性、错误成本和可接受 coverage 选择阈值。没有一个阈值可以跨 checkpoint、问题类型、语言和风险等级通用；高置信度也不代表决策正确。',laya:'决策分数、confidence、可复核的 run identity',app:'held-out set、calibration method、threshold、policy owner 与重评触发条件'},
+ promote:{index:'STAGE 04 / BOUNDED PROMOTE',title:'小范围、可逆、可回滚。',copy:'先定义 eligibility boundary：checkpoint / language / schema 在评估范围内；动作可逆或有人审；上下文完整且无错误；流量有上限并有明确 rollback condition。先 canary，再持续抽样、比较、监控并按约定条件回滚。',laya:'决策与可追溯的证据',app:'eligibility、执行权限、human review、fallback、traffic cap、rollback'}
+};
+function setStage(key){const root=document.querySelector('[data-lab="staged"]');if(!root)return;const d=stageData[key];root.querySelectorAll('[data-stage]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.stage===key)));root.querySelector('[data-stage-index]').textContent=d.index;root.querySelector('[data-stage-title]').textContent=d.title;root.querySelector('[data-stage-copy]').textContent=d.copy;root.querySelector('[data-stage-laya]').textContent=d.laya;root.querySelector('[data-stage-app]').textContent=d.app;}
+document.querySelectorAll('[data-stage]').forEach(b=>b.addEventListener('click',()=>setStage(b.dataset.stage)));
+
+// Demo / production parity: show validator verdicts, not inference success.
+const parityVisual=chapters[6]?.querySelector('.chapter-visual');
+if(parityVisual){
+ parityVisual.innerHTML=`<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / DEMO-TO-PRODUCTION PARITY</span><span>REQUEST CONTRACT / 413 BOUNDARIES</span></div>
+ <div class="lab-shell" data-lab="parity">
+  <div class="lab-toolbar"><span class="mono">SELECT A REQUEST BOUNDARY</span><div class="parity-phase" role="group" aria-label="版本对照"><button data-parity-phase="before" aria-pressed="true">BEFORE / DRIFT</button><button data-parity-phase="after" aria-pressed="false">AFTER / PARITY</button></div></div>
+  <div class="parity-controls" role="group" aria-label="请求场景"><button class="parity-case" data-parity-case="choice" aria-pressed="true">101 choice options</button><button class="parity-case" data-parity-case="score" aria-pressed="false">33 score levels</button><button class="parity-case" data-parity-case="total" aria-pressed="false">600 total options</button><button class="parity-case" data-parity-case="choice-cap" aria-pressed="false">100 choice / at cap</button><button class="parity-case" data-parity-case="score-cap" aria-pressed="false">32 score / at cap</button></div>
+  <div class="parity-result"><div class="parity-surface"><div class="mono">EXAMPLE DEMO SERVER</div><strong data-parity-demo-title>Validator accepts</strong><span class="verdict bad" data-parity-demo-verdict>ACCEPTS · INCORRECT</span></div><div class="parity-surface"><div class="mono">laya.serve</div><strong data-parity-serve-title>HTTP 413</strong><span class="verdict bad" data-parity-serve-verdict>REJECTS</span></div></div>
+  <p class="parity-note" data-parity-note>Before：Demo 验证层放行了正式服务会返回 413 的请求。After：两个入口共享同一组请求边界。</p>
+  <div class="calibration-followup"><strong>一个容易漏掉的边界：noul criteria 不计入 option budget。</strong><p>PR review 后补入 regression：5×100 + 12 个 choice options 正好达到 512，再附带 30 个带 true/false criteria 的 noul questions，两个入口仍应接受。它们不是 choice / score answer options。</p></div>
+  <p class="lab-note">PR 的 8 个边界案例同时验证 serve 与 Demo。测试不启动真实 Router：这里的 ACCEPTS 指通过 request-limit validation，不代表真实推理成功；测试环境中 accepted request 会返回 503。</p>
+  <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/570" target="_blank" rel="noopener">AUTHORED PR #570 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/570#issuecomment-5859145355" target="_blank" rel="noopener">MAINTAINER MERGE / v0.3.21 ↗</a></div>
+ </div>`;
+}
+const parityCases={
+ choice:{name:'101 choice options',beforeDemo:['Validator accepts','ACCEPTS · INCORRECT','bad'],beforeServe:['HTTP 413','REJECTS','bad'],afterDemo:['HTTP 413','REJECTS','bad'],afterServe:['HTTP 413','REJECTS','bad'],note:'Choice cap = 100。101 个 choice options 超出边界；修复后 Demo 与正式服务都返回 413。'},
+ score:{name:'33 score levels',beforeDemo:['Validator accepts','ACCEPTS · INCORRECT','bad'],beforeServe:['HTTP 413','REJECTS','bad'],afterDemo:['HTTP 413','REJECTS','bad'],afterServe:['HTTP 413','REJECTS','bad'],note:'Score cap = 32。33 个 score levels 超出边界；修复后两个入口的拒绝语义一致。'},
+ total:{name:'600 total options',beforeDemo:['Validator accepts','ACCEPTS · INCORRECT','bad'],beforeServe:['HTTP 413','REJECTS','bad'],afterDemo:['HTTP 413','REJECTS','bad'],afterServe:['HTTP 413','REJECTS','bad'],note:'Total option cap = 512。600 个 options 超出共享预算；修复后两个入口都拒绝。'},
+ 'choice-cap':{name:'100 choice / at cap',beforeDemo:['Validator accepts','ACCEPTS','good'],beforeServe:['Validator accepts','ACCEPTS','good'],afterDemo:['Validator accepts','ACCEPTS','good'],afterServe:['Validator accepts','ACCEPTS','good'],note:'100 个 choice options 正好达到上限；边界内请求必须继续通过，不能把修复做成过度拒绝。'},
+ 'score-cap':{name:'32 score / at cap',beforeDemo:['Validator accepts','ACCEPTS','good'],beforeServe:['Validator accepts','ACCEPTS','good'],afterDemo:['Validator accepts','ACCEPTS','good'],afterServe:['Validator accepts','ACCEPTS','good'],note:'32 个 score levels 正好达到上限；Demo 与 serve 在边界值上都应接受。'}
+};
+let parityCase='choice',parityPhase='before';
+function setParity(){const root=document.querySelector('[data-lab="parity"]');if(!root)return;const d=parityCases[parityCase];root.querySelectorAll('[data-parity-case]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.parityCase===parityCase)));root.querySelectorAll('[data-parity-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.parityPhase===parityPhase)));const demo=d[parityPhase+'Demo'],serve=d[parityPhase+'Serve'];root.querySelector('[data-parity-demo-title]').textContent=demo[0];const dv=root.querySelector('[data-parity-demo-verdict]');dv.textContent=demo[1];dv.className='verdict '+demo[2];root.querySelector('[data-parity-serve-title]').textContent=serve[0];const sv=root.querySelector('[data-parity-serve-verdict]');sv.textContent=serve[1];sv.className='verdict '+serve[2];root.querySelector('[data-parity-note]').textContent=(parityPhase==='before'?'Before：':'After：')+d.note;}
+document.querySelectorAll('[data-parity-case]').forEach(b=>b.addEventListener('click',()=>{parityCase=b.dataset.parityCase;setParity()}));
+document.querySelectorAll('[data-parity-phase]').forEach(b=>b.addEventListener('click',()=>{parityPhase=b.dataset.parityPhase;setParity()}));
+
+
+// Intent Integrity: four distinct contracts under one product ability line.
+const intentVisual=chapters[0]?.querySelector('.chapter-visual');
+if(intentVisual){
+ intentVisual.innerHTML=`<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / INTENT INTEGRITY</span><span>PRESERVE WHAT THE USER MEANT</span></div>
+ <div class="lab-shell" data-lab="intent">
+  <div class="intent-lab">
+   <div class="intent-case-list" role="group" aria-label="输入语义边界">
+    <button class="intent-case" data-intent-case="disclaimer" aria-pressed="true"><b>01</b><strong>Disclaimer / request</strong></button>
+    <button class="intent-case" data-intent-case="conversation" aria-pressed="false"><b>02</b><strong>Conversation truncation</strong></button>
+    <button class="intent-case" data-intent-case="language" aria-pressed="false"><b>03</b><strong>Blank language hint</strong></button>
+    <button class="intent-case" data-intent-case="statekey" aria-pressed="false"><b>04</b><strong>Full conversation contract</strong></button>
+   </div>
+   <div class="intent-detail"><div class="mono" data-intent-source>PR #115 / EMAIL INPUT</div><h4 data-intent-title>不能为了过滤免责声明，把用户请求一起删掉。</h4><p data-intent-copy>原始邮件里，请求句与免责声明在同一段。旧逻辑把两者当成一个 boilerplate sentence 整段丢弃，模型收到的只剩最后一句。</p><div class="intent-compare"><div class="intent-outcome"><div class="mono">BEFORE</div><pre data-intent-before>'Please unlock it.'</pre></div><div class="intent-outcome after"><div class="mono">AFTER</div><pre data-intent-after>'My account is locked Please unlock it.'</pre></div></div><p class="intent-foot" data-intent-foot>只拆开以换行开始的新句子；对大小写延续与模糊边界保持保守。原始请求必须留下。</p></div>
+  </div>
+  <p class="lab-note">四个例子来自不同的上游契约，不是一个新造的“输入清洗功能”。交互内容是对各 PR 行为的解释性重建。</p>
+  <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/115" target="_blank" rel="noopener">EMAIL REQUEST PRESERVATION #115 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/224" target="_blank" rel="noopener">NEWEST TURN PRESERVATION #224 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/292" target="_blank" rel="noopener">BLANK LANG FALLBACK #292 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/328" target="_blank" rel="noopener">LANGCHAIN STATE CONTRACT #328 ↗</a></div>
+ </div>`;
+}
+const intentData={
+ disclaimer:{source:'PR #115 / EMAIL INPUT',title:'不能为了过滤免责声明，把用户请求一起删掉。',copy:'原始邮件里，请求句与免责声明在同一段。旧逻辑把两者当成一个 boilerplate sentence 整段丢弃，模型收到的只剩最后一句。',before:'email_state(...)["body"]\n→ \'Please unlock it.\'',after:'email_state(...)["body"]\n→ \'My account is locked Please unlock it.\'',foot:'只拆开以换行开始的新句子；对大小写延续与模糊边界保持保守。原始请求必须留下。'},
+ conversation:{source:'PR #224 / CHRONOLOGICAL LIST STATE',title:'上下文超长时，优先保留最近一轮。',copy:'list-shaped state 表示按时间排列的对话，最新一轮在尾部。默认 right truncation (`st[:room]`) 会留下旧轮次、丢掉最新用户意图。',before:'[turn 01, turn 02, turn 03]\nlatest turn → DROPPED',after:'[turn 02, turn 03, latest turn]\nlatest turn → PRESERVED',foot:'只对 list-shaped conversation state 使用 truncate_left=True；string / dict state 的既有截断行为不变。'},
+ language:{source:'PR #292 / ROUTER LANGUAGE HINT',title:'空语言提示不是语言，而是“没有提示”。',copy:'显式 lang 只有在真正命名语言时才有决定性。空字符串或空白字符应放弃提示，继续 lang_guess、内置检测与默认路由。',before:'lang=""\n→ multilingual (incorrect)',after:'lang=""\n→ no usable hint\n→ lang_guess / detection / default\n→ english (example state)',foot:'示例 state：“I was charged twice for invoice 4411”。真实语言码 en / de / zh_CN 等仍按原契约路由。'},
+ statekey:{source:'PR #328 / LANGCHAIN INTEGRATION',title:'默认取最新用户消息；完整对话需要显式选择。',copy:'集成层不应默默把所有历史塞进默认输入，也不能让需要完整上下文的开发者无路可选。',before:'Default state:\nlatest user message only',after:'Callable state_key:\nfull chronological conversation\npassed to LayaRouter unchanged',foot:'#290 先与维护者对齐默认语义；#328 将 callable state_key 的完整对话选择方式写清楚，并补回归覆盖。'}
+};
+function setIntentCase(key){const root=document.querySelector('[data-lab="intent"]');if(!root)return;const d=intentData[key];root.querySelectorAll('[data-intent-case]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.intentCase===key)));root.querySelector('[data-intent-source]').textContent=d.source;root.querySelector('[data-intent-title]').textContent=d.title;root.querySelector('[data-intent-copy]').textContent=d.copy;root.querySelector('[data-intent-before]').textContent=d.before;root.querySelector('[data-intent-after]').textContent=d.after;root.querySelector('[data-intent-foot]').textContent=d.foot;}
+document.querySelectorAll('[data-intent-case]').forEach(b=>b.addEventListener('click',()=>setIntentCase(b.dataset.intentCase)));
+
+
+// Developer Confidence: CI execution visibility and deployment-default documentation.
+const confidenceVisual=chapters[7]?.querySelector('.chapter-visual');
+if(confidenceVisual){
+ confidenceVisual.innerHTML=`<div class="chapter-visual-head mono"><span>INTERACTIVE LAB / DEVELOPER CONFIDENCE</span><span>TESTS · DEFAULTS · DEPLOYMENT</span></div>
+ <div class="lab-shell" data-lab="confidence">
+  <div class="lab-toolbar"><span class="mono">CHOOSE THE DEVELOPER TRUST CONTRACT</span><div class="lab-tabs" role="group" aria-label="开发者体验案例"><button class="lab-tab" data-confidence-mode="ci" aria-pressed="true">CI EXECUTION / #1090</button><button class="lab-tab" data-confidence-mode="defaults" aria-pressed="false">DEPLOYMENT DEFAULTS / #1097</button></div></div>
+  <div class="confidence-lab-grid"><div class="lab-card"><div class="mono" data-confidence-kicker>MERGED MAIN / RELEASE 0.4.2</div><h4 data-confidence-title>绿色 CI 之外，还要知道实际执行了多少测试。</h4><p data-confidence-copy>1192 registered 不等于 1192 executed。checkpoint-backed aborted tests 不应被当成已执行，也不应直接算成失败。</p><div class="confidence-metrics" data-confidence-metrics><div class="confidence-metric"><strong>1192</strong><span>REGISTERED</span></div><div class="confidence-metric"><strong>1168</strong><span>BUILD LANE RAN</span></div><div class="confidence-metric"><strong>1169</strong><span>JDK MATRIX RAN</span></div></div></div>
+   <div class="confidence-detail"><div class="mono" data-confidence-right-label>FLOOR UPDATE / TEST VISIBILITY</div><h4 data-confidence-right-title>把可见的执行下限，变成 CI 的硬约束。</h4><p data-confidence-right-copy>旧门槛 1007 / 1008 无法识别合并树上额外 161 项测试的静默缺失；新门槛分别提高到 1168 / 1169。两条 lane 均 0 failed。</p><div class="confidence-comparison"><div class="confidence-side"><span>BEFORE</span><strong>1007 / 1008</strong></div><div class="confidence-side after"><span>AFTER</span><strong>1168 / 1169</strong></div></div><p class="lab-note" data-confidence-note>161 是执行下限提升，不是修复了 161 个 Bug；#1090 只改 workflow gate，没有改测试或业务源码。</p></div>
+  </div>
+  <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/1090" target="_blank" rel="noopener">CI FLOOR CHANGE #1090 ↗</a><a href="https://github.com/NandhaKishorM/laya/actions/runs/38041041968" target="_blank" rel="noopener">MAINTAINER-REFERENCED GREEN RUN ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/1097" target="_blank" rel="noopener">DEPLOYMENT DOCS #1097 ↗</a></div>
+ </div>`;
+}
+function setConfidenceMode(mode){const root=document.querySelector('[data-lab="confidence"]');if(!root)return;root.querySelectorAll('[data-confidence-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.confidenceMode===mode)));const k=root.querySelector('[data-confidence-kicker]'),title=root.querySelector('[data-confidence-title]'),copy=root.querySelector('[data-confidence-copy]'),metrics=root.querySelector('[data-confidence-metrics]'),rl=root.querySelector('[data-confidence-right-label]'),rt=root.querySelector('[data-confidence-right-title]'),rc=root.querySelector('[data-confidence-right-copy]'),cmp=root.querySelector('.confidence-comparison'),note=root.querySelector('[data-confidence-note]');if(mode==='ci'){k.textContent='MERGED MAIN / RELEASE 0.4.2';title.textContent='绿色 CI 之外，还要知道实际执行了多少测试。';copy.textContent='1192 registered 不等于 1192 executed。checkpoint-backed aborted tests 不应被当成已执行，也不应直接算成失败。';metrics.innerHTML='<div class="confidence-metric"><strong>1192</strong><span>REGISTERED</span></div><div class="confidence-metric"><strong>1168</strong><span>BUILD LANE RAN</span></div><div class="confidence-metric"><strong>1169</strong><span>JDK MATRIX RAN</span></div>';rl.textContent='FLOOR UPDATE / TEST VISIBILITY';rt.textContent='把可见的执行下限，变成 CI 的硬约束。';rc.textContent='旧门槛 1007 / 1008 无法识别合并树上额外 161 项测试的静默缺失；新门槛分别提高到 1168 / 1169。两条 lane 均 0 failed。';cmp.innerHTML='<div class="confidence-side"><span>BEFORE</span><strong>1007 / 1008</strong></div><div class="confidence-side after"><span>AFTER</span><strong>1168 / 1169</strong></div>';note.textContent='161 是执行下限提升，不是修复了 161 个 Bug；#1090 只改 workflow gate，没有改测试或业务源码。';}else{k.textContent='ROUTER DEFAULT / SINCE 0.4.0';title.textContent='部署默认值，必须与真实运行行为一致。';copy.textContent='Router 自 0.4.0 起在没有语言证据时默认 fallback 到 multilingual。过时文档却仍让操作者按旧规则配置 english / multilingual，可能静默选错 checkpoint。';metrics.innerHTML='<div class="confidence-metric"><strong>5</strong><span>DOC SURFACES</span></div><div class="confidence-metric"><strong>0.4.0</strong><span>DEFAULT CHANGED</span></div><div class="confidence-metric"><strong>0</strong><span>CODE / API CHANGES</span></div>';rl.textContent='DEPLOYMENT CONTRACT / DOCUMENTATION ONLY';rt.textContent='让配置说明与运行时默认保持同一方向。';rc.textContent='README、Compose、Nix 与 serve docstring 等五处文档统一：空值保留 multilingual；mostly-English 部署显式 opt in english。';cmp.innerHTML='<div class="confidence-side"><span>OLD DOCS</span><strong>English fallback</strong></div><div class="confidence-side after"><span>AFTER #1097</span><strong>Multilingual default</strong></div>';note.textContent='#1097 是文档修正，不改变运行时代码或 API；避免操作者按过时说明得到相反 checkpoint。';}}
+document.querySelectorAll('[data-confidence-mode]').forEach(b=>b.addEventListener('click',()=>setConfidenceMode(b.dataset.confidenceMode)));
+
+</script>
+</body></html>
