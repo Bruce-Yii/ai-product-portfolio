@@ -67,3 +67,16 @@ A project or repository does not qualify for a standalone Case page merely becau
 - URL: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
 - Source commit: 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
 - Homepage and Laya casebook route return HTTP 200; Dify is contribution-only; noindex remains.
+
+
+## Portfolio v2 preview — 2026-11-09 (NOT production)
+
+- Branch: portfolio/v2-information-architecture.
+- Commit: dce2e80a89a7e6ddf11b0e3c3ee5d881cc524400.
+- Preview deployment: dpl_6JNgwJyVS2fYzf3JrebYTQpuxezJ · READY.
+- Preview URL: https://ai-product-portfolio-i6crjqnne-yu-ac3a.vercel.app.
+- The preview is for owner review only. Do not assign hcfind.com or www.hcfind.com to this deployment.
+- Production remains V1: dpl_DU86D71ntVNtihTr4spaUQZBXETr.
+- V1 freeze branch: freeze/portfolio-v1-2026-11-09.
+- noindex remains enabled. Do not enable search indexing until public content/evidence review and owner approval.
+- Release blockers: owner visual review, responsive E2E, per-case attribution/evidence review, and explicit production release approval.
