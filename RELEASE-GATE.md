@@ -92,3 +92,16 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Homepage and Laya casebook return HTTP 200; noindex remains enabled.
 - Production remains V1 at dpl_DU86D71ntVNtihTr4spaUQZBXETr; hcfind.com and www.hcfind.com aliases remain unchanged.
 - This remains a preview. Do not promote to production until owner visual review, responsive E2E, per-case evidence/attribution review, and explicit release approval.
+
+
+## Make Again 2.0 discovery case added — 2026-11-09 (Preview only)
+
+- Added Project card 05 and Case 008 as Product Discovery / Research & Feasibility.
+- MVP remains unlocked; no shipped-product, validated-demand, payment, retention, or user-efficacy claim.
+- Public-case synthesis, longitudinal observations, and model-free PostgreSQL/pgvector Spike are presented as research and feasibility inputs only.
+- The historical repository is not listed as a separate achievement; the separate team version is not conflated with 2.0.
+- Latest source commit: 59a7632949c1a214aef4f9e447aea1e4713ba019.
+- Latest Preview: dpl_Gthev3cbExjvqMakspqSHsAe9Pev · READY.
+- Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app.
+- Production remains V1 at dpl_DU86D71ntVNtihTr4spaUQZBXETr. No production alias or DNS changes.
+- Owner review and responsive E2E remain release blockers.
