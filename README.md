@@ -4,7 +4,7 @@ A static, self-contained portfolio website for Bruce Yii.
 
 ## Pages
 
-- `/` — main portfolio with eight selected case studies and a contribution index.
+- `/` — main portfolio with seven selected case studies and a contribution index. Dify is retained in the contribution index as four independent merged PRs, not a standalone case.
 - `/cases/laya/` — standalone Laya casebook with eight chapters and interactive evidence explorations.
 
 ## Preview
