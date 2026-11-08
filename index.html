@@ -1430,7 +1430,7 @@ const CASES = [
     "sourceCardUrl": "https://app.notion.com/p/4101e795caee817f961cc9f2d21a8a93"
   }
 ];
-const VERIFIED_CONTRIBUTIONS = [
+const SELECTED_UPSTREAM_WORK = [
   {
     "number": "01",
     "name": "Laya",
@@ -1649,7 +1649,7 @@ const CASE_DETAILS = {
     "headnote": "Vivic 团队产品案例草稿。下方交互是体验结构示意，不是产品真实截图。",
     "contextTitle": "模型能理解，不代表产品能可靠行动。",
     "contextLead": "用户说一句话，期待的是正确目标、完整步骤、可解释的歧义处理，以及真实执行回执。",
-    "contextCopy": "Vivic 原有卡片与多模态体验已较完整，复杂 Agent 链路却存在多个组件争夺意图决策权的问题。我参与了核心决策链路重构，将规则直出、模型选择工具与目标、宿主校验执行、结构化回执分离；同时将中途 27 个按卡型组织的工具收敛为 14 个按能力组织的工具。",
+    "contextCopy": "Vivic 原有卡片与多模态体验已较完整，复杂 Agent 链路却存在多个组件争夺意图决策权的问题。我参与推动核心决策链路重构：将确定性规则、模型语义决策、宿主校验执行与结构化回执划清边界；并参与推动工具入口从中途 27 个按卡型组织的工具，收敛为 14 个按能力组织的工具。",
     "experienceTitle": "从一句话，到动作，再到可验证回执。",
     "experienceIntro": "通过三个用户任务展示意图识别、工具选择与执行反馈的关系；14 个能力工具是按任务职责收敛的执行接口，画面仍为机制示意，不冒充真实产品界面。",
     "caption": "FIG. 01 — VIVIC / ILLUSTRATIVE JOURNEY / NOT A LIVE SCREEN",
@@ -1796,8 +1796,8 @@ function narrativeExperience(c){
   const e=c.editorial||{},decisions=e.decisions||[],sources=e.evidence||[];
   return `<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>THE DECISIONS / VERIFIED WHERE POSSIBLE</span><span>${String(decisions.length).padStart(2,'0')} THREADS</span></div><div class="narrative-evidence__decisions">${decisions.map((d,i)=>`<article><span class="mono">0${i+1} / DECISION</span><p>${esc(d)}</p></article>`).join('')}</div><div class="narrative-evidence__evidence"><div class="mono">TRACEABLE EVIDENCE</div>${sources.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(src.label)}<small>${esc(src.state)}</small></span><span>↗</span></a>`).join('')}</div><div class="narrative-evidence__boundary"><b>个人责任</b><p>${esc(e.role)}</p><b>公开边界</b><p>${esc(e.boundary)}</p></div></div>`;
 }
-document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a class="index-row" href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono number">${c.number}</span><strong>${c.name}</strong><span class="category">${c.title}<br><small>${c.detail}</small></span><span class="go">↗</span></a>`).join('');
-document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono">${c.status||(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.number+' / MERGED')}</span><span><strong>${c.name}</strong><small>${c.title} · ${c.detail}</small></span><span>↗</span></a>`).join('');
+document.getElementById('home-index').innerHTML=SELECTED_UPSTREAM_WORK.map(c=>`<a class="index-row" href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono number">${c.number}</span><strong>${c.name}</strong><span class="category">${c.title}<br><small>${c.detail}</small></span><span class="go">↗</span></a>`).join('');
+document.getElementById('work-contributions').innerHTML=SELECTED_UPSTREAM_WORK.map(c=>`<a href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono">${c.status||(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.number+' / MERGED')}</span><span><strong>${c.name}</strong><small>${c.title} · ${c.detail}</small></span><span>↗</span></a>`).join('');
 const FEATURED = CASES.filter(c=>c.homeFeatured).map(c=>c.id);
 let featured=FEATURED[0]||CASES[0]?.id;
 const picksEl=document.getElementById('showcase-picks');
