@@ -184,3 +184,40 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - Reassigned `hcfind.com` and `www.hcfind.com` to the new production deployment; `www` remains a 308 redirect to the root domain.
 - Post-deploy verification: `https://hcfind.com` HTTP 200; page source contains the Dify inline visual and interactive rich-text explainer; M02 pending placeholder and faux knowledge-import UI are absent; `X-Robots-Tag: noindex, nofollow, noarchive` remains.
 - No DNS records or nameservers changed.
+
+
+## 2026-11-09 case admission correction — Dify demoted to Contribution
+
+This section supersedes the earlier Dify visual/case-page implementation notes above. Those notes documented a presentation fix to an incorrectly admitted standalone Case; they do not represent the final content decision.
+
+### Content decision
+
+- Dify is **not** a standalone Case. It is removed from the CASES collection, homepage featured cases, Work case browser, and case-detail payload.
+- Dify remains in the homepage and Work-page Open Source Contributions index as one repository-level contribution group.
+- The four merged PRs are listed as independent contributions, not as stages of one feature or one shared product problem:
+  - #42171 — Notion rich-text extraction (plain_text first, text.content fallback).
+  - #42212 — moderation keyword-row validation ignores trailing blank rows.
+  - #42221 — annotation CSV import preserves literal NA.
+  - #42956 — PDF.js worker resolves correctly under a configured base path.
+- Dify-specific media briefs, visual, Before/After demo, and case-only copy were removed. The generic open-source artwork path no longer uses Dify-specific content.
+- Remaining main-site Case records: **7**. The homepage's initial featured Case is now the first selected Case (Vivic), not Dify.
+
+### Case admission rule
+
+A repository grouping or merged-PR count is not enough to justify a standalone Case. Admission requires a coherent product problem/user journey, attributable personal decisions, primary evidence, meaningful validation, and a defensible outcome. Independent issues remain Contributions under their project/repository grouping.
+
+### Static checks
+
+- Parsed the embedded JavaScript after the change.
+- Confirmed 7 Case records with sequential numbers 001–007.
+- Confirmed all Case records resolve to a matching Case detail payload.
+- Confirmed homepage feature IDs resolve to existing Case records; Dify is absent from CASES and FEATURED_ORDER.
+- Confirmed Dify remains in VERIFIED_CONTRIBUTIONS with four distinct PR IDs.
+- Confirmed no Dify-only visual, case interaction, or M02/M04/M07 media records remain.
+- Full browser visual review, responsive E2E, and live deployment verification are pending for this revised candidate.
+
+### Release boundary
+
+- This is a review-branch correction only.
+- The current production deployment still contains the prior eight-case candidate.
+- Do not reassign hcfind.com to this revision until the owner approves the revised candidate.
