@@ -243,3 +243,18 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Latest staging deployment: dpl_HaFhgdtRW1TdMhnuJ1jvXZimpBB4 · READY · commit 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
 - Latest preview: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
 - Homepage and /cases/laya/ both return HTTP 200 and retain noindex.
+
+
+## Seven-case portfolio — production release verification · 2026-11-09
+
+- Production deployment: dpl_DU86D71ntVNtihTr4spaUQZBXETr · READY.
+- Production homepage: https://hcfind.com · HTTP 200.
+- Laya casebook: https://hcfind.com/cases/laya/ · HTTP 200.
+- www.hcfind.com returns HTTP 308 to the root domain.
+- Deployed source commit: 2349e1a7a6b873b45a10e56830ef09c6679edb1c on portfolio/modular-mainline-2026-11-09.
+- Live HTML confirms seven Case records; Dify is not a Case and is not featured; Dify remains in the contribution index with four independent PRs.
+- Both homepage and Laya route retain X-Robots-Tag: noindex, nofollow, noarchive.
+- Previous eight-case production deployment dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK remains READY for rollback.
+- Runtime error/fatal log query for latest 30m returned no matching logs. A 1h query failed because the requested window exceeded Hobby retention; no broader monitoring claim is made.
+- No DNS or nameserver changes.
+- Full visual browser review and responsive E2E have not been performed; HTTP/content verification is complete.
