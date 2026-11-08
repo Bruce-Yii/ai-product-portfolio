@@ -48,7 +48,7 @@ Target: `portfolio/editorial-product-positioning-2026-11-09`. This branch is not
 
 ### Independent review follow-up · 2026-11-09
 
-- Latest PR head after the independent-review fixes: 10 commits, 3 changed files, mergeable, still Draft.
+- The review began with a 7-commit branch; subsequent attribution, homepage-ordering, and QA corrections were added as separate commits. The branch remains isolated from `main`.
 - Compiled the single inline JavaScript block with `new Function(...)`: syntax PASS. This is a syntax check only, not browser interaction or DOM regression.
 - Rechecked all 8 case records: each resolves to a case-detail record.
 - Rechecked selected upstream PR metadata: the listed merged PRs are authored by Bruce-Yii and merged; Google ADK #7455 remains open and #8005 remains tests-only Draft / unmerged.
