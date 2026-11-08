@@ -21,3 +21,11 @@
 6. Remove noindex protections only after the owner approves the exact release candidate.
 
 Do not infer approval from a case task being marked complete, a merged PR, or repository visibility.
+
+
+## Custom-domain routing approval · 2026-11-09
+
+- Owner explicitly approved replacing the existing `hcfind.com` homepage with this portfolio.
+- The root domain and existing `www.hcfind.com → hcfind.com` redirect may be reassigned to the portfolio Vercel project.
+- This approval covers domain routing and public accessibility of the current release candidate.
+- It does **not** automatically approve search indexing or waive the remaining content/evidence checks above. Keep page-level `noindex`, `robots.txt` blocking, and Vercel `X-Robots-Tag` until the exact eight main-site cases, Laya casebook, evidence, and visual permissions have been reviewed and separately approved.
