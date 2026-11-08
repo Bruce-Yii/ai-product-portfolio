@@ -162,3 +162,17 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - No DNS records or nameservers were changed.
 - Search indexing intentionally remains blocked by page-level `noindex`, `robots.txt`, and Vercel `X-Robots-Tag` pending the remaining evidence / visual-permission review. This is not a search-indexing release.
 - Full browser / responsive E2E testing remains outstanding; this deployment check verifies HTTP routing and rendered HTML, not every interactive path.
+
+
+### Dify presentation correction · 2026-11-09
+
+- Replaced the Dify homepage / Work-preview media placeholder with an inline HTML/CSS mechanism diagram. It shows the exact PR #42171 behavior: Notion `rich_text` contains text, mention, and equation segments; the old text-only extraction skips mention/equation; the fix reads `plain_text` first and falls back to `text.content`.
+- Replaced the Dify case-cover placeholder with the same mechanism-led visual. It is explicitly an explanatory reconstruction, not a Dify product screenshot.
+- Replaced the Dify detail-page mock "knowledge import" UI with a neutral data-extraction comparison. Before/After controls now show the retained and skipped segments and the actual fallback rule.
+- Removed the redundant M07 pending-media slot from the Dify case; the interactive mechanism explanation already covers the relevant behavior.
+- Corrected the Dify contribution index summary to make clear that the four merged PRs are separate improvements: Notion rich-text extraction (#42171), keyword-row validation (#42212), annotation CSV literal-NA preservation (#42221), and PDF worker base-path resolution (#42956).
+- Updated the media registry statuses and the case's visual/evidence boundary copy. No RAG accuracy, user KPI, or business-conversion lift is claimed.
+- Source validation: complete inline JavaScript parse **PASS**; 8 case records / 8 detail records; Dify visual and case-cover functions present; old fake knowledge-import window absent; M02/M07 pending placeholders absent from Dify rendering paths.
+- Interaction smoke test with a mocked DOM: Before shows text retained / mention and equation skipped; After shows all three segments retained and the correct `plain_text`-first / `text.content` fallback rule; ARIA pressed state switches correctly.
+- Vercel staging deployment `dpl_D5epUSEsHZ9RCSe68ijXmD1VX2d9` is **READY**. Main page fetch returned HTTP 200 and confirmed the new Dify visual, interactive explainer, no old mock UI, no M02/M07 placeholders, and retained `noindex` response header.
+- Full visual browser review and responsive E2E have not yet been run; the checks above are source-level, mocked interaction, and post-deploy HTML checks.
