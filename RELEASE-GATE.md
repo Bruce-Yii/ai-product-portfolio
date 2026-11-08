@@ -51,3 +51,11 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Its four merged PRs address independent issues: Notion rich-text extraction (#42171), moderation keyword-row validation (#42212), annotation CSV literal-NA preservation (#42221), and PDF worker base-path resolution (#42956).
 - The four PRs remain individually identifiable evidence. Their shared repository does not establish one unified product case.
 - The current production deployment still contains the previous eight-case candidate. The seven-case correction is a review-branch change; do not update the production alias until the owner approves the revised candidate.
+
+
+### Seven-case candidate preview · 2026-11-09
+
+- Staging deployment: dpl_7SMd3LiyJgjDmuc6JqoiD3oGDweT (READY).
+- Preview URL: https://ai-product-portfolio-lxwa40l6c-yu-ac3a.vercel.app
+- Homepage and /cases/laya/ both return HTTP 200; noindex remains enabled.
+- This preview does not change the production alias. Production remains on the previous eight-case candidate pending owner review.
