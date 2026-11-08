@@ -912,6 +912,26 @@ body {background:var(--paper);color:var(--ink)}
 .cherry-demo{background:#D6D4CB;padding:clamp(22px,3vw,42px);margin-bottom:30px;color:#202822}.cherry-demo-head{display:flex;justify-content:space-between;gap:25px;align-items:flex-start;border-bottom:1px solid #9EA398;padding-bottom:24px}.cherry-demo-head h3{font:500 clamp(29px,4vw,52px)/1.08 var(--sans);letter-spacing:-.075em;margin-top:17px}.cherry-demo-head h3 i{font:italic 400 1.02em var(--serif);color:#8B4938}.cherry-demo-label{color:#6C746B;text-align:right;font-size:8px;line-height:1.8}.cherry-demo-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 0 15px}.cherry-demo-toolbar>.mono{font-size:8px;color:#657066}.cherry-demo-filters{display:flex;border:1px solid #90978D}.cherry-demo-filters button{padding:9px 13px;font:500 9px var(--mono);display:flex;gap:12px;align-items:center;color:#59665B}.cherry-demo-filters button+button{border-left:1px solid #90978D}.cherry-demo-filters button[aria-pressed="true"]{background:#263D33;color:#F0F0E7}.cherry-demo-filters b{font-weight:500;opacity:.7}.cherry-demo-columns,.cherry-demo-row{display:grid;grid-template-columns:minmax(90px,.8fr) minmax(160px,1.5fr) minmax(90px,.6fr);gap:15px;align-items:center}.cherry-demo-columns{padding:12px 0;color:#69746A;border-top:1px solid #A8AEA3;border-bottom:1px solid #A8AEA3;font-size:8px}.cherry-demo-row{padding:16px 0;border-bottom:1px solid #B9BEB4;font-size:11px}.cherry-demo-row strong{font:600 12px var(--sans)}.cherry-demo-row>span:nth-child(2){color:#5E6A60;font-size:10px}.cherry-status{justify-self:start;border:1px solid #A1A89E;padding:4px 7px;font:500 8px var(--mono);letter-spacing:.04em;color:#536056}.cherry-status--failed{border-color:#A35D4B;color:#8B3D2D}.cherry-status--passed{border-color:#78927B;color:#42674B}.cherry-status--checking{border-style:dashed}.cherry-demo-foot{display:flex;justify-content:space-between;gap:15px;padding:15px 0 0;color:#677267;font-size:9px}.cherry-demo-foot .mono{font-size:8px}.cherry-demo-rule{border-top:1px solid #A8AEA3;margin-top:18px;padding-top:15px;color:#667166;font-size:10px;line-height:1.9;max-width:760px}@media(max-width:720px){.cherry-demo-head{display:block}.cherry-demo-label{display:block;text-align:left;margin-top:15px}.cherry-demo-toolbar{align-items:flex-start;flex-direction:column}.cherry-demo-columns,.cherry-demo-row{grid-template-columns:minmax(65px,.65fr) minmax(110px,1.2fr) minmax(72px,.55fr);gap:8px}.cherry-demo-row{font-size:10px}.cherry-demo-row>span:nth-child(2){font-size:9px}.cherry-status{font-size:7px}.cherry-demo-foot{flex-direction:column}}
 
 .dsh-notice-demo{background:#ECEAE1;color:#26352C;padding:clamp(22px,3vw,42px);margin-bottom:30px}.dsh-demo-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#68776A;font-size:8px;padding-bottom:16px;border-bottom:1px solid #C6C9BE}.dsh-demo-notice{display:grid;grid-template-columns:36px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid #C6C9BE}.dsh-demo-notice[hidden],.dsh-demo-actions[hidden]{display:none}.dsh-demo-alert{width:30px;height:30px;display:grid;place-items:center;border:1px solid #B36B46;color:#A24E30;font:600 16px var(--mono)}.dsh-demo-notice .mono{font-size:8px;color:#8A6046}.dsh-demo-notice h3{font:500 clamp(20px,2.5vw,30px)/1.35 var(--han-sans);letter-spacing:-.04em;margin:10px 0}.dsh-demo-notice p{font-size:11px;line-height:1.8;color:#69756A;margin:0}.dsh-demo-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px 0}.dsh-demo-actions button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:15px 16px;border:1px solid #B9C0B5;background:transparent;min-height:76px}.dsh-demo-actions button:hover,.dsh-demo-actions button[aria-pressed="true"]{border-color:#8D4A34;background:#F6F3EA}.dsh-demo-actions strong{font-size:12px;font-weight:600}.dsh-demo-actions small{font-size:10px;color:#6D786E}.dsh-demo-result{background:#DDE4D9;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-height:110px}.dsh-demo-result .mono{font-size:8px;color:#8A4A34}.dsh-demo-result strong{font-size:15px;font-weight:600}.dsh-demo-result p{font-size:11px;line-height:1.85;color:#59685D;margin:0;max-width:680px}.dsh-demo-rule{margin:14px 0 0;color:#68756A;font-size:10px;line-height:1.8}@media(max-width:600px){.dsh-demo-actions{grid-template-columns:1fr}.dsh-demo-top{flex-direction:column}}
+
+/* Proof strip — make the upstream collaboration footprint visible before the case studies. */
+.proof-strip{display:grid;grid-template-columns:minmax(210px,.82fr) minmax(0,1.8fr);gap:24px 42px;align-items:center;padding-top:25px;padding-bottom:24px;border-bottom:1px solid var(--line-strong)}
+.proof-strip__intro p{margin-top:8px;max-width:290px;font:400 12px/1.8 var(--han-sans);color:var(--muted)}
+.proof-strip__metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.proof-stat{min-width:0;padding:0 22px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:5px}
+.proof-stat strong{font:500 clamp(28px,3vw,43px)/1 var(--serif);letter-spacing:-.06em;color:var(--ink)}
+.proof-stat strong span{font:500 .45em var(--mono);color:var(--muted);letter-spacing:0}
+.proof-stat small{font:500 9px/1.55 var(--mono);letter-spacing:.055em;color:var(--muted)}
+.proof-strip__note{grid-column:2;margin-top:-12px;color:var(--muted);font-size:8px;letter-spacing:.045em}
+@media(max-width:720px){
+ .proof-strip{grid-template-columns:1fr;gap:17px;padding-top:22px;padding-bottom:18px}
+ .proof-strip__intro p{font-size:11px;margin-top:5px}
+ .proof-strip__metrics{margin-inline:-4px}
+ .proof-stat{padding:0 10px}
+ .proof-stat:first-child{border-left:0}
+ .proof-stat strong{font-size:clamp(25px,7.3vw,34px)}
+ .proof-stat small{font-size:7px;letter-spacing:.025em}
+ .proof-strip__note{grid-column:1;margin-top:-7px;font-size:7px;line-height:1.6}
+}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -947,6 +967,18 @@ body {background:var(--paper);color:var(--ink)}
       </div>
       <div class="new-hero-rule"><span>PRODUCT DECISIONS · AGENT SYSTEMS · OPEN SOURCE</span><span>SCROLL TO EXPLORE</span></div>
     </div>
+    <section class="wrap proof-strip" aria-label="Laya 上游协作规模">
+      <div class="proof-strip__intro">
+        <div class="mono eyebrow">UPSTREAM COLLABORATION / VERIFIED FOOTPRINT</div>
+        <p>持续参与产品实现、正式 Review 与跨贡献者协作。</p>
+      </div>
+      <div class="proof-strip__metrics">
+        <article class="proof-stat"><strong>47</strong><small>AUTHORED PRs</small></article>
+        <article class="proof-stat"><strong>40<span>/47</span></strong><small>MERGED</small></article>
+        <article class="proof-stat"><strong>85</strong><small>REVIEWED-BY MATCHES</small></article>
+      </div>
+      <p class="proof-strip__note mono">LAYA GITHUB QUERY SNAPSHOT · 2026-11-09 · REVIEWED-BY MATCHES ARE A SEPARATE QUERY</p>
+    </section>
     <section class="wrap showcase" id="selected" aria-labelledby="showcase-title">
       <div class="showcase-top">
         <div>
