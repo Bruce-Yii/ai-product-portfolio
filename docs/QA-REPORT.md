@@ -55,3 +55,38 @@ The following changes were made after the repository-ready ZIP QA above. This ad
 - No VIVIC private screenshot reuse or team-permission assumption.
 
 The earlier ZIP QA results above remain historical evidence for that ZIP only; they must not be treated as validation of this review-branch delta.
+
+
+## 2026-11-09 product-language and interaction pass
+
+### Product narrative changes
+
+- Rewrote all eight case cards around a named product area, a concrete Product Question, product levers, delivery state, and a user-facing value proposition.
+- Reframed the case navigation as **User Problem → Product Mechanism → Change & Evidence**.
+- Rewrote the case copy to foreground user/developer journey, product decision, behavior boundary, and what can actually be proven; implementation details remain as supporting evidence.
+- Reframed the eight upstream project groups as product improvements rather than PR-title summaries. PR IDs and merge counts remain visible as evidence.
+- Updated the Laya casebook CTA to identify its four product systems and eight chapters.
+
+### Product interactions
+
+- Added a synthetic dsh-market notification interaction with two distinct user decisions: try to find the plugin, or stop showing the notice. Dismissing the notice explicitly does not repair or reinstall the plugin.
+- Corrected delegated event routing so Cherry's All / Failed controls and the dsh-market controls are reachable by clicks.
+- The dsh-market interaction is labelled as a synthetic reconstruction, not an official product UI.
+
+### Validation performed
+
+- Parsed the eight case records, their matching detail records, and the eight contribution groups.
+- Confirmed every case has a non-empty Product Question and the new product-oriented navigation labels are present.
+- Parsed the complete inline JavaScript block successfully.
+- Ran a Node mocked-DOM interaction smoke test:
+  - Vivic step 05 selects the correct responsibility state.
+  - Cherry Failed filters to only the all-credentials-failed sample; All restores all five sample states.
+  - dsh-market Find leaves the notice visible; Stop showing removes only the notice and explicitly preserves the plugin's unavailable state.
+- Re-fetched the branch after the selector correction and verified the final source contains no malformed triple-dollar selector.
+
+### Still not performed
+
+- No full browser render, cross-browser check, or E2E pass on the branch.
+- No new desktop/mobile viewport regression pass.
+- No Vercel preview deployment, production deployment, domain change, or search-indexing change.
+- No change to the Laya standalone casebook file; it remains the existing v2.4 casebook.
