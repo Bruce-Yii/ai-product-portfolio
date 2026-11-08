@@ -72,6 +72,7 @@ The earlier ZIP QA results above remain historical evidence for that ZIP only; t
 - Added a synthetic dsh-market notification interaction with two distinct user decisions: try to find the plugin, or stop showing the notice. Dismissing the notice explicitly does not repair or reinstall the plugin.
 - Corrected delegated event routing so Cherry's All / Failed controls and the dsh-market controls are reachable by clicks.
 - The dsh-market interaction is labelled as a synthetic reconstruction, not an official product UI.
+- Re-verified dsh-market #764 as merged on 2026-09-29 and updated the case's delivery status and outcome; public case approval remains pending.
 
 ### Validation performed
 
