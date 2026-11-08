@@ -935,7 +935,7 @@ body {background:var(--paper);color:var(--ink)}
       <div class="new-hero-grid">
         <div class="new-hero-main">
           <h1>Making AI<br><em>useful.</em></h1>
-          <p class="new-hero-cn">从真实问题出发，让 AI 体验更可用、执行更可验证。</p>
+          <p class="new-hero-cn">从用户问题出发，定义产品机制，再用真实交付验证 AI 是否真正可用。</p>
         </div>
         <aside class="new-hero-side">
           <div class="new-hero-side-top">PRODUCT THINKING<br>MEETS BUILDING</div>
@@ -951,7 +951,7 @@ body {background:var(--paper);color:var(--ink)}
           <div class="mono eyebrow">01 / THE SELECTION</div>
           <h2 id="showcase-title">Selected <i>work.</i></h2>
         </div>
-        <p>重要作品拥有独立的视觉主题。产品以真实界面说话，开源贡献以问题与改变说话。</p>
+        <p>精选案例围绕用户问题、产品判断和可验证改变展开；交互解释产品机制，证据说明结果边界。</p>
       </div>
       <div class="showcase-editor" aria-label="精选案例交互预览">
         <div class="showcase-canvas" id="showcase-canvas" aria-live="off"></div>
@@ -1029,26 +1029,26 @@ body {background:var(--paper);color:var(--ink)}
           <div class="case-sidebar-sticky">
             <div class="mono case-sidebar-label">AT A GLANCE / <span id="case-sidebar-number">001</span></div>
             <div id="case-facts" class="case-facts"></div>
-            <div class="case-toc mono"><span>IN THIS CASE</span><button data-action="case-scroll" data-section="case-section-01">01 — CONTEXT</button><button data-action="case-scroll" data-section="case-section-02">02 — EXPERIENCE</button><button data-action="case-scroll" data-section="case-section-03">03 — OUTCOME</button></div>
+            <div class="case-toc mono"><span>IN THIS CASE</span><button data-action="case-scroll" data-section="case-section-01">01 — USER PROBLEM</button><button data-action="case-scroll" data-section="case-section-02">02 — PRODUCT MECHANISM</button><button data-action="case-scroll" data-section="case-section-03">03 — CHANGE & EVIDENCE</button></div>
           </div>
         </aside>
         <div class="case-main">
           <section id="case-section-01" class="case-editorial-section">
-            <div class="mono case-section-index">01 / THE CONTEXT</div>
-            <h2 id="case-context-title">Why this matters.</h2>
+            <div class="mono case-section-index">01 / THE USER PROBLEM</div>
+            <h2 id="case-context-title">The product problem.</h2>
             <p class="case-prose-lead" id="case-context-lead"></p>
             <div class="case-editorial-copy" id="case-context-copy"></div>
           </section>
           <section id="case-section-02" class="case-editorial-section case-experience-section">
-            <div class="case-section-top"><div><div class="mono case-section-index">02 / THE EXPERIENCE</div><h2 id="case-experience-title">The work, shown.</h2></div><span class="mono case-section-aside">INTERACTIVE / DEMONSTRATION</span></div>
+            <div class="case-section-top"><div><div class="mono case-section-index">02 / THE PRODUCT MECHANISM</div><h2 id="case-experience-title">The product mechanism, shown.</h2></div><span class="mono case-section-aside">PRODUCT BEHAVIOR / INTERACTIVE EXPLANATION</span></div>
             <p class="case-intro-copy" id="case-experience-intro"></p>
             <div class="experience-frame" id="case-stage"></div>
             <p class="mono case-figure-caption" id="case-figure-caption"></p>
             <div class="media-insert" id="case-media-insert" aria-label="本案例待接入的素材"></div>
           </section>
           <section id="case-section-03" class="case-editorial-section case-outcome-section">
-            <div class="mono case-section-index">03 / THE OUTCOME</div>
-            <h2 id="case-outcome-title">What remains.</h2>
+            <div class="mono case-section-index">03 / THE CHANGE & EVIDENCE</div>
+            <h2 id="case-outcome-title">What changed, and what is proven.</h2>
             <div class="case-outcome-grid"><div class="case-outcome-big" id="case-outcome-statement"></div><div id="case-outcome-detail" class="case-outcome-detail"></div></div>
             <div id="case-metrics" class="case-metrics" hidden></div><div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">A NOTE ON THIS PROTOTYPE</span><p id="case-scope-copy">此页仅用于验证案例内容的表达方式。交互示意、占位文案和画面不代表任何具体项目的实际交付、数据或用户结果；接入真实案例后再替换。</p></div>
           </section>
@@ -1090,14 +1090,15 @@ const CASES = [
     "num": "001",
     "type": "product",
     "kind": "TEAM PRODUCT · INTERNAL REVIEW",
-    "category": "团队产品",
-    "name": "让 AI 不止理解指令，还能可靠执行",
-    "latin": "From intent to action.",
-    "lead": "Vivic 是团队多模态卡片产品。我参与了 Agent 决策链路的核心重构，将模型选择工具、宿主校验执行与结果回执分离；内部已有后端部署和回归记录，完整前端交互与真实用户效果仍待确认。",
-    "desc": "Vivic · 团队产品 · Agent 决策与执行责任边界",
+    "category": "Agent 产品",
+    "name": "让 Agent 从理解意图走向可靠执行",
+    "latin": "From intent to reliable action.",
+    "lead": "围绕 Vivic 多模态卡片助理的任务执行链路，我参与重构 Agent 的产品决策与执行边界：模型负责语义选择，宿主负责权限校验和真实执行，结果再以结构化回执返回。后端已部署并有内部回归记录；完整前端体验与真实用户效果仍待确认。",
+    "desc": "Vivic · Agent 产品决策链路 · 工具调用与执行闭环",
     "caps": [
-      "产品判断",
-      "Agent 工程"
+      "产品策略",
+      "Agent 架构",
+      "执行治理"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1110,21 +1111,23 @@ const CASES = [
       "M06"
     ],
     "homeFeatured": true,
-    "featuredSummary": "Vivic · 把复杂指令拆成可校验、可执行、可回读的动作。团队真实界面仍需公开许可。"
+    "featuredSummary": "Vivic · 明确模型决策、宿主执行与结果回执的产品责任边界。",
+    "productQuestion": "用户说出一个目标后，系统如何把模型决策转化为经过校验、可追踪的真实动作？"
   },
   {
     "id": "opensource",
     "num": "002",
     "type": "opensource",
     "kind": "OPEN SOURCE · MERGED PR",
-    "category": "开源贡献",
-    "name": "让知识导入保留完整含义",
-    "latin": "Preserving context.",
-    "lead": "Dify 在导入 Notion 富文本时，mention 与 equation 等内容可能丢失。PR #42171 调整富文本提取行为，让可读信息在知识导入链路中得到保留。",
-    "desc": "Dify · Notion 富文本保真 · PR #42171 已合并",
+    "category": "知识接入体验",
+    "name": "知识导入成功，还要保证内容语义完整",
+    "latin": "Content fidelity matters.",
+    "lead": "知识库导入是用户把外部知识交给 AI 的第一步。Notion mention、equation 等富文本片段可能在提取时静默丢失；我提交 Dify PR #42171，调整内容读取策略并补充回归测试，守住知识接入的内容保真。",
+    "desc": "Dify · 知识接入体验 · Notion 富文本语义保真",
     "caps": [
-      "开源协作",
-      "产品判断"
+      "知识接入",
+      "内容保真",
+      "开发者体验"
     ],
     "verified": true,
     "visibility": "public_candidate",
@@ -1137,22 +1140,23 @@ const CASES = [
       "M07"
     ],
     "homeFeatured": true,
-    "featuredSummary": "Dify · 修复 Notion 富文本导入时 mention 与 equation 的信息丢失。PR #42171 已合并。"
+    "featuredSummary": "Dify · 让 Notion 内容进入知识库时保留 mention 与 equation 的可读含义。",
+    "productQuestion": "用户导入一份知识后，如何确认系统保留了原文的关键信息，而不只是显示导入成功？"
   },
   {
     "id": "agent-evaluation-lab",
     "num": "003",
     "type": "systems",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "系统设计",
-    "name": "Agent 跑通一次，怎样证明结果值得相信？",
+    "category": "Agent 质量体系",
+    "name": "Agent 任务完成，必须由外部证据确认",
     "latin": "Validity before score.",
-    "lead": "我围绕企业 Agent 评测设计了有效性检查、独立状态验证和可追溯证据链。受控场景的历史基线包含 9 次 VALID PASS，但没有证明真实干预带来可靠性提升。",
-    "desc": "Agent Evaluation Lab｜评测方法与真实受控实验基线",
+    "lead": "面向采购、财务等写入型业务任务，我设计了评测有效性检查、独立状态验证与证据追溯机制，避免把 Agent 自述或失效试验误算为成功/失败。现有受控基线为 9 次 VALID PASS；尚未证明评测干预带来可靠性提升。",
+    "desc": "Agent Evaluation Lab · 任务验收与质量评测机制",
     "caps": [
-      "系统架构",
-      "Agent 工程",
-      "产品判断"
+      "质量评测",
+      "证据治理",
+      "Agent 可靠性"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1183,22 +1187,23 @@ const CASES = [
       "role": "本人推动问题定义、评测协议、验收约束和执行协调；私有工程中有真实代码与试验，不能归功于本人手写所有模块。历史验收结果不等于主窗口此刻独立复现。",
       "boundary": "私有 ERP、测试数据和代码内容不进入公开图片或打包。9 个有效试验来自既有验收，主窗口未重新运行所有实验；工作分支与 main 不同。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81c197efe1b85653c1e8"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81c197efe1b85653c1e8",
+    "productQuestion": "当 Agent 声称完成任务时，产品如何独立确认业务系统状态真的发生了预期变化？"
   },
   {
     "id": "agent-workflow-governance",
     "num": "004",
     "type": "systems",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "系统设计",
-    "name": "Agent 会结束会话，但工作不能跟着消失",
+    "category": "Agent 工作流治理",
+    "name": "让长期 Agent 工作有状态、有证据、可验收",
     "latin": "Beyond the session.",
-    "lead": "长期项目真正需要稳定的是任务、执行尝试、证据和验收。我从早期 AWRP 协议演进到 Linear × Notion 的真实协作工作流，并对照 DeepSeek Super-agent 原型反思自己的设计。",
-    "desc": "AWRP × Linear｜Agent 工作流架构演进与第三方对照",
+    "lead": "围绕跨会话、多 Agent 项目的持续执行，我从早期 AWRP 协议演进到 Linear × Notion 的实际工作流，明确 Task、Run、Evidence、Acceptance 的职责边界，并通过成熟工具复用减少重复建设。新 Project OS 仍处于设计阶段。",
+    "desc": "AWRP × Linear · 长任务治理与跨工具执行工作流",
     "caps": [
-      "产品判断",
-      "系统架构",
-      "Agent 工程"
+      "产品治理",
+      "长任务执行",
+      "跨工具协作"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1229,21 +1234,23 @@ const CASES = [
       "role": "个人设计 AWRP 原协议并使用 Linear/Notion/Agent/GitHub 的组合工作流；新 Agent Project OS 仍为设计研究。DeepSeek 对照是第三方开源研究，不是本人贡献或共同开发。",
       "boundary": "DeepSeek 原型属于第三方开源成果；比较维度仅用于产品取舍。私人 Linear/Notion 记录不得直接公开；没有独立的外部用户效果测量。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81ba8ac9f7bb3e330b3d"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee81ba8ac9f7bb3e330b3d",
+    "productQuestion": "当任务跨越多个会话和执行者时，产品如何持续保留责任、状态、证据与验收标准？"
   },
   {
     "id": "cherry-model-check",
     "num": "005",
     "type": "opensource",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "开源贡献",
+    "category": "模型工作台",
     "name": "一次检测失败，不该自动改变用户配置",
     "latin": "Failure ≠ deletion.",
-    "lead": "用户希望快速定位不可访问的模型，但一次失败检测并不足以证明模型应被隐藏或删除。Cherry Studio 的 #21015 将需求收敛为可逆、只读的 Failed 筛选。",
-    "desc": "Cherry Studio｜Model Check｜明确失败状态和用户控制权",
+    "lead": "当用户连接上百个模型时，Model Check 能识别状态，却缺少直接定位全部不可用项的入口。需求中还出现自动删除等高风险方案。我将其收敛为完成检测后的只读 Failed 筛选，只帮助用户定位问题，不替用户修改配置。",
+    "desc": "Cherry Studio · 模型可用性诊断 · 只读 Failed 筛选",
     "caps": [
-      "产品判断",
-      "开源协作"
+      "模型可用性",
+      "用户控制权",
+      "状态管理"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1274,21 +1281,23 @@ const CASES = [
       "role": "本人提交的 Cherry Studio PR #21015 围绕模型检测结果提供只读 Failed 过滤；维护者负责合并与产品发行，聚焦测试是 PR 中报告，主窗口尚未重新本地运行。",
       "boundary": "本文是内部候选稿；真实 UI 截图需取得可复现版本。聚焦测试数来自原 PR 自报，未在主窗口重新跑过；合并不等于 Release 已发版。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee810f9800f3d67d58d335"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee810f9800f3d67d58d335",
+    "productQuestion": "如何帮助用户快速找到真正不可用的模型，同时避免把一次检测失败误写成永久配置决策？"
   },
   {
     "id": "dsh-notice-recovery",
     "num": "006",
     "type": "opensource",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "开源贡献",
-    "name": "用户可以关闭通知，但不能假装修好了插件",
-    "latin": "Keep the truth.",
-    "lead": "一个插件被移除后，持续显示的解释性提醒可能变成用户无法结束的循环。dsh-market #764 将“停止提示”和“插件已修复”拆成不同状态，让操作可恢复、结果不误导。",
-    "desc": "dsh-market｜插件异常通知的用户控制与状态一致性",
+    "category": "插件市场体验",
+    "name": "插件故障通知：让用户停止提醒，但保留真实状态",
+    "latin": "Control the notice. Keep the truth.",
+    "lead": "当插件从市场目录移除，系统仍需解释已安装页为何出现异常；但如果用户无法找回或卸载该插件，持久提醒会变成无法结束的操作。我通过 dsh-market PR #764，为单条提醒增加独立的“停止显示”动作，并确保它不会被误解为插件修复或重装。",
+    "desc": "dsh-market · 异常通知体验 · 用户控制与状态一致性",
     "caps": [
-      "产品判断",
-      "开源协作"
+      "通知体验",
+      "异常恢复",
+      "状态一致性"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1319,21 +1328,22 @@ const CASES = [
       "role": "本人提交 dsh-market #764，围绕告警持久性、逐条关闭、客户端与后端一致性做改进；上游维护者参与审查并决定合并；不代表本人开发整个插件市场。",
       "boundary": "真实 UI 录屏尚未收集；网页使用的只是机制解释。维护者评论与 PR 合并应复核当前状态，不能把用户关闭提醒写成插件修复。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816a9e5cea62c48ecd08"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816a9e5cea62c48ecd08",
+    "productQuestion": "当问题无法立即修复时，如何让用户控制提醒，而不掩盖系统的真实故障状态？"
   },
   {
     "id": "laya-decision-integrity",
     "num": "007",
     "type": "opensource",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "开源贡献",
+    "category": "AI 决策产品",
     "name": "让 AI 决策从模型输出走向可信产品能力",
     "latin": "From output to adoption.",
-    "lead": "围绕 Laya 下游开发者的完整旅程，我参与建设四组产品系统：意图保真、决策可信、渐进采用与开发者契约；并通过正式 Review、反例验证与跨贡献者交接参与上游协作。",
-    "desc": "Laya｜决策系统产品化与上游协作｜40 merged PRs · 85 reviewed PRs",
+    "lead": "围绕 Laya 下游开发者从输入、评测、采用到集成的完整旅程，我参与建设四组产品系统：意图保真、决策可信、受控采用与开发者契约；并通过正式 Review、反例验证与跨贡献者交接推动上游改进。",
+    "desc": "Laya · 决策产品系统与上游协作 · 40/47 authored PRs merged · 85 reviewed PRs",
     "caps": [
-      "产品判断",
-      "开源协作",
+      "产品系统设计",
+      "上游协作",
       "Agent 工程"
     ],
     "verified": false,
@@ -1378,22 +1388,24 @@ const CASES = [
       "role": "截至 2026-11-08，GitHub 查询显示 47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 匹配 reviewed-by:Bruce-Yii。本人承担的实现、正式 Review、方向提出、跨贡献者交接与维护者决定分别归属。",
       "boundary": "计数来自 GitHub 搜索快照，不等于独立功能数量或业务成效；7 个本人 PR 关闭未合并；reviewed-by 查询含 61 merged、8 open、16 closed。没有官方 collaborator / maintainer 身份证据，也没有生产用户增长或准确率提升指标。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816ba0fec85308185a5c"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee816ba0fec85308185a5c",
+    "productQuestion": "模型给出决策后，下游开发者还需要哪些产品能力，才能安全、稳定地把它用进真实应用？",
+    "featuredSummary": "Laya · 从意图保真、决策可信到受控采用，构建可验证的开发者产品契约。"
   },
   {
     "id": "personal-context-layer",
     "num": "008",
     "type": "systems",
     "kind": "INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE",
-    "category": "系统设计",
+    "category": "个人上下文产品",
     "name": "输入法只是入口，真正要建的是个人上下文层",
     "latin": "Context, owned.",
-    "lead": "我从重度 AI 用户跨设备、跨 App 的上下文断裂出发，把 Android 输入法重新定位成高频 Sensor，设计用户自有、事实可追溯、可被不同 AI 消费的 Context Layer。",
-    "desc": "Personal Context Layer｜产品架构与 Android 模拟器早期原型",
+    "lead": "针对跨设备、跨应用使用 AI 时上下文不断丢失的问题，我将 Android 输入法重新定位为高频信息入口，而不是产品核心；真正的产品核心是由用户掌控、事实可追溯、可被不同 AI 消费的个人 Context Layer。当前为产品/架构设计与早期模拟器原型，不是已发布跨端产品。",
+    "desc": "Personal Context Layer · 个人上下文产品定位与早期原型",
     "caps": [
-      "产品判断",
-      "系统架构",
-      "Agent 工程"
+      "用户上下文",
+      "数据主权",
+      "跨端产品架构"
     ],
     "verified": false,
     "visibility": "internal_draft",
@@ -1430,7 +1442,8 @@ const CASES = [
       "role": "本人负责产品定位、架构和验证标准的设计与协调；部分早期原型由 Agent/执行链路实现并由协调者验收。当前没有可公开署名的全量代码证据，不写“独立开发完整跨端产品”。",
       "boundary": "Notion 当前项目标记不允许直接作为已公开项目。不得公开私人原型、真实跨端输入和未经同意的采集资料。历史模拟器的功能不得被冒充最新架构的已上线能力。"
     },
-    "sourceCardUrl": "https://app.notion.com/p/4101e795caee817f961cc9f2d21a8a93"
+    "sourceCardUrl": "https://app.notion.com/p/4101e795caee817f961cc9f2d21a8a93",
+    "productQuestion": "用户的事实、偏好与任务上下文，如何跨设备和 AI 工具持续保留，同时由用户掌控？"
   }
 ];
 const VERIFIED_CONTRIBUTIONS = [
@@ -1438,7 +1451,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "number": "01",
     "name": "Laya",
     "kind": "CASEBOOK",
-    "title": "决策系统产品化与上游协作 Casebook",
+    "title": "把决策引擎转化为可验证、可控、可维护的开发者产品能力",
     "detail": "40 / 47 AUTHORED PRs MERGED · 85 REVIEWED PRs",
     "url": "./cases/laya/"
   },
@@ -1446,56 +1459,56 @@ const VERIFIED_CONTRIBUTIONS = [
     "number": "02",
     "name": "OpenClaw",
     "kind": "MERGED",
-    "title": "让 Agent 运行环境在凭据、诊断与启动恢复中更可靠",
-    "detail": "6 MERGED · #140531 · #141569 · #144579 · #145220 · #157697 · #160156",
+    "title": "让 Agent 的配置、诊断与故障恢复更可预期",
+    "detail": "6 MERGED · SETUP / INFERENCE / CLI / DIAGNOSTICS / RECOVERY · #140531 · #141569 · #144579 · #145220 · #157697 · #160156",
     "url": "https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "03",
     "name": "Dify",
     "kind": "MERGED",
-    "title": "让知识导入、内容录入与部署路径保持语义完整",
-    "detail": "4 MERGED · #42171 FEATURE CASE · #42212 · #42221 · #42956",
+    "title": "让知识接入、内容治理与文件预览保持完整",
+    "detail": "4 MERGED · KNOWLEDGE / ANNOTATION / MODERATION / PDF PREVIEW · #42171 · #42212 · #42221 · #42956",
     "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "04",
     "name": "Cherry Studio",
     "kind": "MERGED",
-    "title": "让模型状态、剪贴板与工具兼容更符合真实使用",
-    "detail": "6 MERGED · #21015 FEATURE CASE · #21031 · #21130 · #20946 · #20955 · #20970",
+    "title": "让模型工作台的状态、输入与工具执行更符合用户预期",
+    "detail": "6 MERGED · MODEL HEALTH / CLIPBOARD / TOOL COMPATIBILITY / RUNTIME · #21015 · #21031 · #21130 · #20946 · #20955 · #20970",
     "url": "https://github.com/CherryHQ/cherry-studio/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "05",
     "name": "RAGFlow",
     "kind": "MERGED",
-    "title": "让 Agent 消息语义、知识库重解析与模型解析边界保持一致",
-    "detail": "6 MERGED · #19565 · #20149 · #20207 · #20066 · #20068 · #20072",
+    "title": "让 Agent 消息、知识解析与模型配置遵循一致的运行语义",
+    "detail": "6 MERGED · AGENT CONTENT / KB REPARSE / MODEL RESOLUTION / REGRESSION TESTS · #19565 · #20149 · #20207 · #20066 · #20068 · #20072",
     "url": "https://github.com/infiniflow/ragflow/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "06",
     "name": "QwenPaw",
     "kind": "MERGED",
-    "title": "恢复会话工作区的直接路径输入",
-    "detail": "#7593 MERGED · 保留目录选择器与既有路径校验",
+    "title": "让会话工作区兼顾快速路径输入与多目录管理",
+    "detail": "#7593 MERGED · DIRECT PATH + PICKER · PRESERVE MULTI-DIRECTORY STATE",
     "url": "https://github.com/agentscope-ai/QwenPaw/pull/7593"
   },
   {
     "number": "07",
     "name": "EvalScope",
     "kind": "MERGED",
-    "title": "让多图评测与评测工具入口更可靠",
-    "detail": "3 MERGED · #1720 · #1729 · #1768",
+    "title": "让多模态压测从底层支持走向可发现、可复用的评测路径",
+    "detail": "3 MERGED · MULTI-IMAGE DATASET / QWEN-IMAGE GUIDE / IMPORT DIAGNOSTICS · #1720 · #1729 · #1768",
     "url": "https://github.com/modelscope/evalscope/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged"
   },
   {
     "number": "08",
     "name": "FunASR",
     "kind": "MERGED",
-    "title": "修正 VAD 合并后的标点时间戳",
-    "detail": "#3703 MERGED · Fun-ASR-Nano timestamp correction",
+    "title": "让语音时间轴准确反映标点与语句边界",
+    "detail": "#3703 MERGED · VAD TIMESTAMP ALIGNMENT / PUNCTUATION BOUNDARY",
     "url": "https://github.com/modelscope/FunASR/pull/3703"
   }
 ];
@@ -1656,97 +1669,97 @@ const MEDIA_FILES = {
 const CASE_DETAILS = {
   "product": {
     "headnote": "Vivic 团队产品案例的内部评审稿。下方为基于项目架构的解释图，不是产品真实 UI。",
-    "contextTitle": "模型选中了动作，谁来保证它真的执行正确？",
-    "contextLead": "多模态卡片助理的难点，不只是把输入变成卡片，而是让语义决策、权限校验、真实执行和最终回执各自有明确的责任人。",
+    "contextTitle": "模型选中了动作，产品如何保证它被正确执行？",
+    "contextLead": "用户期待的是任务完成，而不是模型给出一个看似合理的工具调用。",
     "contextCopy": "旧稳定版尚未启用统一 Tool Calling；演进过程中工具一度按卡片类型膨胀到 27 项。更深层的问题是规则、旧规划器和宿主适配逻辑各自解释意图，宿主甚至可能按名称匹配并改写模型选中的目标。重构重点不是继续增加工具，而是让规则只处理确定性格式、模型拥有语义选择权、宿主负责校验执行，并把真实结果或结构化错误回传。最终收敛为 14 个按能力组织的工具入口（12 个核心能力 + 2 个数据能力）。",
-    "experienceTitle": "把 Agent 决策链路拆成五个可验收的责任点。",
-    "experienceIntro": "从确定性规则、模型语义选择到宿主校验、失败恢复与结果回执，逐步查看每一层的输入、输出和责任边界。下方是基于项目架构的解释图，不是实时产品 UI 或操作录像。",
+    "experienceTitle": "把 Agent 执行体验拆成五个可验收的产品机制。",
+    "experienceIntro": "从确定性规则、模型语义选择到宿主校验、失败恢复与结果回执，逐步查看每一层如何降低误执行、状态不明和结果误报。下方为架构解释图，不是实时产品 UI 或操作录像。",
     "caption": "FIG. 01 — VIVIC / DECISION–EXECUTION CONTRACT / ARCHITECTURE EXPLAINER",
-    "outcomeTitle": "重构结果：可测的决策链路，而不只是更多工具。",
+    "outcomeTitle": "从工具堆叠转向可治理的执行闭环。",
     "outcomeBig": "53 / 60<br><i>to 58–60 / 60</i>",
     "outcome": "项目内部记录显示，统一 60 题 API 回归在旧稳定版基线为 53/60，随后六轮为 58、59、60、60、59、60；API p50 从 3.625 秒降至 1.655–1.828 秒。后端于 2026-11-05 部署；前端仍有能力待接入，48 条浏览器全场景用例未重跑，真机语音未验收。成本数字受缓存条件影响，不作为同口径账单或真实用户效果。"
   },
   "opensource": {
     "headnote": "本人署名、上游已合并的开源贡献。交互是依据问题制作的解释性示意。",
-    "contextTitle": "导入成功，不等于内容完整。",
-    "contextLead": "Notion 的 mention 和 equation 是有效的富文本片段。如果内容提取链路只读取普通 text 对象，导入后就可能出现含义缺失。",
-    "contextCopy": "PR #42171 调整读取方式：优先使用 rich_text 片段的 plain_text，在需要时回退到 text.content，跳过真正的空值，同时保留既有块结构与递归行为，并增加相应回归测试。这个改动针对的是内容保真，而不是对 RAG 准确率的量化承诺。",
-    "experienceTitle": "让缺失变得可见。",
-    "experienceIntro": "切换 Before / After 查看依据问题机制重建的简单例子。画面不是 Dify 官方界面截图。",
+    "contextTitle": "导入完成，不代表知识被完整接收。",
+    "contextLead": "对用户而言，导入质量不只看任务是否成功，更要看原文里的关键信息有没有丢失。",
+    "contextCopy": "Notion API 的 rich_text 不只有普通 text，还包含 mention、equation 等片段。旧提取路径只读取 text 对象，会让这些片段在知识接入时静默消失。PR #42171 优先读取 plain_text，并保留 text.content 回退；同时保持原有块结构、缩进、递归、表格与数据库属性处理。产品取舍是修复内容保真，而不是扩大解析器或承诺 RAG 准确率提升。",
+    "experienceTitle": "用导入前后的内容对照，检查知识保真。",
+    "experienceIntro": "切换 Before / After，观察 mention 与 equation 如何从丢失变成可读。画面是根据 PR 机制重建的示意，不是 Dify 官方界面。",
     "caption": "FIG. 02 — EXPLANATORY RECONSTRUCTION / DIFY PR #42171",
-    "outcomeTitle": "已合并的实际改变。",
+    "outcomeTitle": "让知识接入遵循用户可见的语义，而不只是底层对象类型。",
     "outcomeBig": "Keep the<br><i>meaning.</i>",
     "outcome": "Bruce-Yii 提交的 Dify PR #42171 已于 2026 年 9 月合并。已确认的是上游接受的代码修改及相关测试；尚不宣称具体版本已发布、用户使用指标提升或业务转化效果。"
   },
   "agent-evaluation-lab": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "“Agent 说成功”能作为事实吗？",
-    "contextLead": "先判断 Trial 是否可信，再给 Agent 打分。",
-    "contextCopy": "对采购、财务等写入型任务，回答文本不代表真实系统状态。试验世界、证据和评分器本身也可能失败，所以必须把试验有效性与任务结果分开判定。",
-    "experienceTitle": "让证据在模型之外成立。",
-    "experienceIntro": "以冻结状态为依据的独立 verifier、环境隔离和 trial 指纹，帮助判断成功、失败或不可评分；必要时保留无法归因的状态。",
+    "contextTitle": "Agent 说“已完成”，业务系统真的发生了变化吗？",
+    "contextLead": "对采购、财务等写入型任务，回答正确不等于任务完成。",
+    "contextCopy": "如果评分器只读 Agent 自述，就可能把“说自己完成了”当成业务成功；如果试验环境、证据采集或评分器本身失效，又可能把无效试验误算成 Agent 失败。产品需要先判断一次 Trial 是否有效，再判断任务结果，并允许证据不足时返回不可评分。",
+    "experienceTitle": "先验证试验有效性，再评价任务表现。",
+    "experienceIntro": "以冻结状态为依据的独立 verifier、环境隔离和 trial 指纹，分别回答“试验是否可信”“外部状态是否改变”“结果能否归因”。",
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
-    "outcomeTitle": "工程基线可追溯，科学闭环尚未完成。",
+    "outcomeTitle": "先建立可信基线，再谈效果提升。",
     "outcomeBig": "Validity before score.",
     "outcome": "历史 Linear 验收记录显示三个受控场景各三次有效通过，另有资源 HOLD；它不能外推为生产成功率、跨域泛化或完成干预提升。"
   },
   "agent-workflow-governance": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "一个 Agent 说“完成了”，什么才算完成？",
-    "contextLead": "会话不能承担项目的持久身份。",
-    "contextCopy": "跨会话、多 Agent 执行时，职责、状态和证据容易脱节。早期自研协议能留下事件与交接，却也暴露与成熟项目管理平台的重复建设成本。",
-    "experienceTitle": "停止在错误层面继续造轮子。",
-    "experienceIntro": "把长期任务交给 Linear，语义与决策给 Notion，代码与外部事实交给 GitHub；Agent 是可替换执行者，验收另有责任主体。",
+    "contextTitle": "会话结束后，任务、责任和证据如何继续？",
+    "contextLead": "Agent 可以被替换，项目状态不能依赖某一个会话。",
+    "contextCopy": "跨会话、多 Agent 执行时，任务身份、执行尝试、证据和验收标准容易脱节。早期 AWRP 原型帮助我们理解事件与交接，但也暴露了重复建设成熟项目管理能力的成本。产品边界因此重新收敛：长期任务状态交给 Linear，语义、约束与决策沉淀在 Notion，代码和外部事实由 GitHub 承载。",
+    "experienceTitle": "把长期任务交给稳定的外部工作系统。",
+    "experienceIntro": "交互展示的是职责分层：Task 保持长期身份，Run 记录一次执行，Evidence 支撑验收；Linear、Notion、GitHub 分别承担最适合的职责。新 Project OS 仍是设计研究，不是已发布产品。",
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
-    "outcomeTitle": "可用的是组合工作流，未来 Project OS 是设计方案。",
+    "outcomeTitle": "把项目状态从对话里迁移到可持续的工作系统。",
     "outcomeBig": "Beyond the session.",
     "outcome": "本案例展示架构演进和成熟组件复用，不声称已发布一套自己的多 Agent SaaS，也不宣称领先于 DeepSeek。"
   },
   "cherry-model-check": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "用户只是想找到失效模型。",
-    "contextLead": "为什么“清理失效模型”不是一个简单按钮？",
-    "contextCopy": "一个 Provider 有许多模型和凭据。部分成功、跳过、检测进行中与全部失败，含义完全不同。若把短时错误写进持久配置，会伤害用户已有设置。",
-    "experienceTitle": "把不可用状态做成可逆筛选，而不是清理按钮。",
-    "experienceIntro": "切换 All / Failed，观察哪些模型会进入 Failed 列表。示例使用合成状态说明 PR #21015 的筛选规则，不是 Cherry Studio 官方界面或真实检测数据。",
+    "contextTitle": "用户需要定位故障，不是让系统替他清理模型。",
+    "contextLead": "一次探测失败可能是暂时的；产品不能把检测结论升级为永久配置决策。",
+    "contextCopy": "当 Provider 暴露上百个模型时，Model Check 能报告 passed、partial、failed、skipped，却缺少直接定位全部不可用项的入口。需求中出现过自动删除和持久隐藏等方案，但一次探测不足以证明模型永久失效。PR #21015 将范围收敛为已完成检测快照上的只读 Failed 筛选：只有所有已测凭据均失败才进入列表；跳过、部分成功和检测中状态不误判为失败。",
+    "experienceTitle": "用一个可逆筛选，完成失效模型分流。",
+    "experienceIntro": "切换 All / Failed，观察哪些模型进入故障定位列表。示例使用合成状态说明筛选规则，不是 Cherry Studio 官方界面或真实检测数据。",
     "caption": "FIG. 05 — CHERRY STUDIO #21015 / SYNTHETIC STATE RECONSTRUCTION",
-    "outcomeTitle": "把模糊的“不可用”收敛成严格、可逆的产品状态。",
+    "outcomeTitle": "让诊断结果可操作，但不越权修改用户配置。",
     "outcomeBig": "Failure ≠ deletion.",
     "outcome": "PR #21015 于 2026-10-23 合并。实际改变是：完成一次检测后，用户可以筛出所有已测凭据均失败的模型；筛选只读、临时，不隐藏、禁用、删除或持久修改模型配置。PR 中报告的聚焦测试尚未由本窗口重新运行，也没有真实用户效果数据。"
   },
   "dsh-notice-recovery": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "为什么一条橙色提示会无法消失？",
-    "contextLead": "用户需要控制提醒，不是掩盖故障。",
-    "contextCopy": "插件丢失后，保留解释性告警是合理的；但如果插件已无恢复入口，通知一直存在就使用户陷入无法结束的操作。",
-    "experienceTitle": "把真实故障与提示意图拆开。",
-    "experienceIntro": "前端允许逐条关闭，后端只修改提醒记录，不假装修复插件；并处理刷新、并发与旧请求回写等竞态。",
+    "contextTitle": "提醒应该解释故障，不应该把用户困在故障里。",
+    "contextLead": "用户需要控制提示，但系统必须保留插件的真实状态。",
+    "contextCopy": "插件从 profile 声明中被移除后，持久提醒仍有解释价值；但当插件也不在市场目录中，原有“查找插件”入口无法解决问题，用户又没有卸载路径，提醒便跨刷新、重启和更新持续存在。PR #764 增加独立的“停止显示”动作，让用户能结束提示，而不把它伪装成修复或重装。",
+    "experienceTitle": "把“找回插件”和“停止提醒”设计成两个独立动作。",
+    "experienceIntro": "前者尝试恢复插件，后者只改变用户是否继续看到这条提醒。后端仅更新指定提醒记录，并处理并发写入和旧请求回写；插件目录、安装状态和磁盘内容保持不变。",
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
-    "outcomeTitle": "上游贡献形成更清晰的用户状态边界。",
-    "outcomeBig": "Keep the truth.",
+    "outcomeTitle": "增加用户控制权，同时保持系统事实一致。",
+    "outcomeBig": "Control the notice.<br><i>Keep the truth.</i>",
     "outcome": "PR 有具体问题说明、代码与维护者反馈；不存在可以归因的用户满意度、安装成功率或留存改善数据。"
   },
   "laya-decision-integrity": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "模型返回了答案，应用就能放心使用了吗？",
-    "contextLead": "从模型输出，到可采用的决策能力。",
-    "contextCopy": "下游开发者不仅需要一个答案，还需要确认输入语义、证据、采用权限和调用行为是否可靠。",
-    "experienceTitle": "把可信决策拆成四组产品系统。",
-    "experienceIntro": "意图保真、决策可信、渐进采用、开发者契约；八个故事分别展示这些系统的产品机会、判断和实现。",
+    "contextTitle": "模型返回了答案，下游应用就能放心使用了吗？",
+    "contextLead": "开发者需要的不只是一个决策结果，还需要意图、证据、采用权限和调用行为都保持可信。",
+    "contextCopy": "Laya 的下游开发者旅程横跨输入、训练、评测、模型采用、SDK 与服务集成。单点修复无法独立解决这些问题，因此案例册将本人参与的工作归入四组相互支撑的产品系统：意图保真、决策可信、受控采用与开发者契约。它们是产品责任域，不是由本人独立完成的一条线性产品流水线。",
+    "experienceTitle": "把可信决策拆成四组可落地的产品系统。",
+    "experienceIntro": "进入独立 Laya Casebook，查看八个产品故事、四组产品系统、本人贡献与 Review 的归因，以及每条主张对应的上游证据。",
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
-    "outcomeTitle": "上游贡献规模与产品影响可追溯。",
+    "outcomeTitle": "从单点贡献到可验证的开发者产品契约。",
     "outcomeBig": "40 merged · 85 reviewed.",
     "outcome": "截至 2026-11-08，47 个本人 authored PR 中 40 个已合并，另有 85 个 PR 匹配 reviewed-by 查询。它们是上游参与记录，不是 40 项独立功能或业务 KPI。案例呈现协作者级别的工作范围，但不声称官方 collaborator 身份。"
   },
   "personal-context-layer": {
     "headnote": "仅供内部 Review 的案例草稿；尚未获得公开批准。",
-    "contextTitle": "AI 只看见当前对话，过去的事实去哪了？",
-    "contextLead": "不是加一个聊天记忆按钮。",
-    "contextCopy": "用户跨设备、跨应用留下大量碎片信息。单个 AI 对话窗口或剪贴板历史不天然保留长期来源、关系与用户控制权。这个项目探索开放的个人 Context 基础层。",
-    "experienceTitle": "从采集入口找到正确的产品抽象。",
-    "experienceIntro": "分层解释为什么数据主权、可追溯 Raw 和可重建 Derived 层，比“换一个更强模型”更重要。",
+    "contextTitle": "用户的上下文，不应该被困在某一个 AI 对话里。",
+    "contextLead": "真正要解决的不是再加一个聊天记忆按钮，而是让用户持续拥有自己的上下文资产。",
+    "contextCopy": "用户跨设备、跨应用留下大量碎片信息。单个 AI 对话窗口或剪贴板历史，不天然保留长期来源、事实关系与用户控制权。产品因此将输入法定位为高频 Sensor，而不是 Context Core；底层先保存可追溯 Raw，Derived 关系可重建、可纠错，再通过授权边界向不同 AI 提供上下文。",
+    "experienceTitle": "从输入入口重新定义个人上下文产品。",
+    "experienceIntro": "分层解释为什么数据主权、可追溯 Raw 和可重建 Derived 层，比简单增加一个“聊天记忆”按钮更重要。当前展示的是产品与系统设计，不代表完整跨端产品已发布。",
     "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
-    "outcomeTitle": "早期模拟器原型有验收，现行架构尚未全量实现。",
+    "outcomeTitle": "把入口做轻，把上下文资产留给用户。",
     "outcomeBig": "Context, owned.",
     "outcome": "Linear 有 Android 原型与 v0.1 的历史验收记录；目前跨端成熟 Layer 2、通用 AI Gateway 与生产同步链路仍需工程 Spike。网页展示应明确是产品/系统设计，不是已发布的成品。"
   }
@@ -1819,10 +1832,10 @@ function editorialCover(c){
 function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)();}
 const CHERRY_SAMPLE_ROWS=[{model:'Model A',detail:'2 / 2 credentials passed',status:'passed',label:'PASSED'},{model:'Model B',detail:'1 passed · 1 failed',status:'partial',label:'PARTIAL'},{model:'Model C',detail:'2 / 2 credentials failed',status:'failed',label:'FAILED'},{model:'Model D',detail:'Not checked for this capability',status:'skipped',label:'SKIPPED'},{model:'Model E',detail:'Check still in progress',status:'checking',label:'CHECKING'}];
 function cherryExperience(){return `<div class="cherry-demo"><div class="cherry-demo-head"><div><div class="mono">MODEL CHECK / COMPLETED SNAPSHOT</div><h3>Find failed models.<br><i>Don't delete them.</i></h3></div><span class="mono cherry-demo-label">SYNTHETIC EXAMPLE<br>NOT OFFICIAL UI</span></div><div class="cherry-demo-toolbar"><span class="mono">MODEL STATUS / SAMPLE DATA</span><div class="cherry-demo-filters" role="group" aria-label="筛选模型检测结果"><button data-cherry-filter="all" aria-pressed="true">ALL <b>05</b></button><button data-cherry-filter="failed" aria-pressed="false">FAILED <b>01</b></button></div></div><div class="cherry-demo-columns mono"><span>MODEL</span><span>CHECK RESULT</span><span>STATUS</span></div><div id="cherry-demo-rows" aria-live="polite"></div><div class="cherry-demo-foot"><span id="cherry-demo-count" class="mono">05 MODELS</span><span id="cherry-demo-result">All sample states remain visible.</span></div><p class="cherry-demo-rule">Failed = every checked credential failed. Partial, skipped and in-flight checks stay out of this filter. The filter is temporary and read-only; saved model configuration is untouched.</p></div>`;}
-function showCherryFilter(state='all'){const rows=state==='failed'?CHERRY_SAMPLE_ROWS.filter(r=>r.status==='failed'):CHERRY_SAMPLE_ROWS;const root=document.getElementById('cherry-demo-rows');if(!root)return;root.innerHTML=rows.map(r=>`<div class="cherry-demo-row"><strong>${esc(r.model)}</strong><span>${esc(r.detail)}</span><span class="cherry-status cherry-status--${r.status}">${esc(r.label)}</span></div>`).join('');$('#cherry-demo-count').textContent=String(rows.length).padStart(2,'0')+' MODELS';$('#cherry-demo-result').textContent=state==='failed'?'Only models with every checked credential failed.':'Passed, partial, failed, skipped and checking states.';$('[data-cherry-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cherryFilter===state)));}
+function showCherryFilter(state='all'){const rows=state==='failed'?CHERRY_SAMPLE_ROWS.filter(r=>r.status==='failed'):CHERRY_SAMPLE_ROWS;const root=document.getElementById('cherry-demo-rows');if(!root)return;root.innerHTML=rows.map(r=>`<div class="cherry-demo-row"><strong>${esc(r.model)}</strong><span>${esc(r.detail)}</span><span class="cherry-status cherry-status--${r.status}">${esc(r.label)}</span></div>`).join('');$('#cherry-demo-count').textContent=String(rows.length).padStart(2,'0')+' MODELS';$('#cherry-demo-result').textContent=state==='failed'?'Only models with every checked credential failed.':'Passed, partial, failed, skipped and checking states.';$$('[data-cherry-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cherryFilter===state)));}
 function narrativeExperience(c){
   const e=c.editorial||{},decisions=e.decisions||[],sources=e.evidence||[];
-  const evidenceMarkup=`<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>THE DECISIONS / VERIFIED WHERE POSSIBLE</span><span>${String(decisions.length).padStart(2,'0')} THREADS</span></div><div class="narrative-evidence__decisions">${decisions.map((d,i)=>`<article><span class="mono">0${i+1} / DECISION</span><p>${esc(d)}</p></article>`).join('')}</div><div class="narrative-evidence__evidence"><div class="mono">TRACEABLE EVIDENCE</div>${sources.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(src.label)}<small>${esc(src.state)}</small></span><span>↗</span></a>`).join('')}</div><div class="narrative-evidence__boundary"><b>个人责任</b><p>${esc(e.role)}</p><b>公开边界</b><p>${esc(e.boundary)}</p></div></div>`;
+  const evidenceMarkup=`<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>PRODUCT DECISIONS / EVIDENCE-LED</span><span>${String(decisions.length).padStart(2,'0')} THREADS</span></div><div class="narrative-evidence__decisions">${decisions.map((d,i)=>`<article><span class="mono">0${i+1} / DECISION</span><p>${esc(d)}</p></article>`).join('')}</div><div class="narrative-evidence__evidence"><div class="mono">PROOF / PRIMARY RECORDS</div>${sources.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(src.label)}<small>${esc(src.state)}</small></span><span>↗</span></a>`).join('')}</div><div class="narrative-evidence__boundary"><b>我的产品责任</b><p>${esc(e.role)}</p><b>交付与公开边界</b><p>${esc(e.boundary)}</p></div></div>`;
   return c.id==='cherry-model-check'?cherryExperience()+evidenceMarkup:evidenceMarkup;
 }
 document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>`<a class="index-row" href="${c.url}" target="_blank" rel="noopener noreferrer"><span class="mono number">${c.number}</span><strong>${c.name}</strong><span class="category">${c.title}<br><small>${c.detail}</small></span><span class="go">↗</span></a>`).join('');
@@ -1908,7 +1921,7 @@ function caseCover(type){
  return mediaSlot('M08','case-cover');
 }
 function productExperience(){return `<div class="demo-product" aria-label="Vivic 决策与执行责任链路解释图"><div class="demo-side"><div class="mono demo-side-issue">DECISION CONTRACT / 05 RESPONSIBILITIES</div><h3>One decision.<br><i>Five contracts.</i></h3><p>不是把工具越堆越多，而是明确谁负责理解、谁负责执行，以及失败后如何恢复。</p><div class="journey-steps" role="group" aria-label="切换 Agent 决策链路责任点">${PRODUCT_STEPS.map((s,i)=>`<button class="journey-step" data-step="${i}" aria-pressed="${i===0?'true':'false'}"><span>0${i+1}</span><b>${s.label.split(' · ')[1]}</b><em>${['确定性路由','语义选择','校验执行','失败恢复','结果回执'][i]}</em></button>`).join('')}</div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> VIVIC / AGENT DECISION CHAIN</span><span id="product-step-label">01 · RULE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>ARCHITECTURE EXPLAINER · NOT A LIVE SCREEN</span><span>↗</span></div></div></div>`;}
-function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 05</span></div><h4>${s.title}</h4><div class="app-message ${n===4?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
+function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 05</span></div><h4>${s.title}</h4><div class="app-message ${n===4?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
 function sourceExperience(){return `<div class="demo-source" aria-label="开源产品改进前后体验示意"><div class="source-tool"><div class="mono">CHANGE / THE USER'S VIEW</div><div class="source-compare-controls" role="group" aria-label="查看改进前后状态"><button data-source-state="before" aria-pressed="true" >BEFORE <span>01</span></button><button data-source-state="after" aria-pressed="false" >AFTER <span>02</span></button></div></div><div class="source-canvas"><div class="source-window"><div class="source-titlebar mono"><span>KNOWLEDGE IMPORT / EXAMPLE</span><span>◌ ◌ ◌</span></div><div class="source-doc-title">导入文档预览</div><div class="source-doc-meta mono">A SIMPLE CONTENT FIDELITY EXAMPLE</div><div id="source-state-content" aria-live="polite"></div></div><div class="source-context" id="source-context"><div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>概念示意：知识导入时保留结构化内容，能减少用户手动修复。</p></div></div></div>`;}
 function showSourceState(state){const before=state==='before';$('#source-state-content').innerHTML=before?`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="loss">[missing mention]</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p><mark class="loss">[unsupported content]</mark></p></div><div class="source-inline-callout mono">INFORMATION LOST / EXAMPLE</div>`:`<div class="source-content-row"><span class="mono">PARAGRAPH</span><p>请联系 <mark class="keep">@项目负责人</mark> 处理该问题。</p></div><div class="source-content-row"><span class="mono">EQUATION</span><p>保留公式内容：<mark class="keep">E = mc²</mark></p></div><div class="source-inline-callout kept mono">CONTENT PRESERVED / EXAMPLE</div>`;$('#source-context').innerHTML=before?`<div class="mono source-context-kicker">THE ISSUE</div><h3>内容被接收，<br>不代表含义被保留。</h3><p>文档结构在处理中丢失，使用者需要猜测原文或重新录入。</p>`:`<div class="mono source-context-kicker">THE CHANGE</div><h3>不只是导入成功，<br>还要信息完整。</h3><p>概念示意：把用户关心的内容保真作为可感知的结果。</p>`;$$('[data-source-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceState===state)));}
 const SYSTEM_NODES=[
@@ -1929,7 +1942,7 @@ function renderCase(id){
  $('#case-title').textContent=c.name;$('#case-latin').textContent=c.latin;$('#case-lead').textContent=c.lead;
  $('#case-head-note').textContent=d.headnote;$('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
- $('#case-facts').innerHTML=`<dl><div><dt>DISCIPLINE</dt><dd>${c.category}</dd></div><div><dt>FOCUS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>STATUS</dt><dd>${c.status}</dd></div><div><dt>FORMAT</dt><dd>${c.format}</dd></div></dl>`;
+ $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
  $('#case-edition-type').textContent=c.visibility==='approved_public'?'PUBLIC CONTENT / EDITORIAL EXPLANATION':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':'INTERNAL CONTENT DRAFT / REQUIRES APPROVAL';
  $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':c.verified?'开源主题图为待制作的说明性素材，非官方截图':'原始素材与可公开边界仍在复核';
  $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
