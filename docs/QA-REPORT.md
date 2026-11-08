@@ -29,17 +29,18 @@ Tested against the repository-ready ZIP contents on 2026-11-09. This is a local 
 
 Target: `portfolio/editorial-product-positioning-2026-11-09`. This branch is not merged or deployed.
 
-### Structural checks
+### Structural and evidence checks
 
 - Main-site case data parses: 8 case records; all 8 resolve to their case-detail data.
-- Curated contribution index parses: 7 entries, including OpenClaw #145220, QwenPaw #7593, and FunASR #3703.
-- The three newly listed PRs were checked against GitHub: authored by Bruce-Yii and merged.
+- Curated upstream-work index parses: 8 entries. The OpenClaw row groups three independent merged PRs (#145220 / #141569 / #160156); QwenPaw #7593 and FunASR #3703 are separately linked.
+- Google ADK is explicitly labelled `RFC / OPEN`: Issue #7455 remains open; PR #8005 remains a tests-only Draft and unmerged. Neither is presented as shipped or adopted.
+- Newly grouped / added GitHub contributions were checked against live metadata: authored by Bruce-Yii and merged where labelled MERGED.
 - Laya GitHub query snapshot (2026-11-09): 47 authored PRs, 40 merged, 85 PRs returned by `reviewed-by:Bruce-Yii`.
-- Both the main page and Laya casebook now carry page-level `noindex, nofollow, noarchive` metadata. `robots.txt` remains `Disallow: /`; `vercel.json` retains the `X-Robots-Tag` noindex header.
-- No CSS or event-handling logic was changed in this editorial pass.
+- Both the main page and Laya casebook carry page-level `noindex, nofollow, noarchive` metadata. `robots.txt` remains `Disallow: /`; `vercel.json` retains the `X-Robots-Tag` noindex header.
+- No CSS or interaction/event-handling logic changed. The contribution-list renderer now respects explicit status labels such as `RFC / OPEN`.
 
 ### Not re-run / release limitations
 
-- Responsive browser checks and interactive regression were not rerun after the contribution list expansion; the earlier viewport results refer to the prior repository-ready ZIP.
+- Responsive browser checks and interactive regression were not rerun after the contribution-list expansion; the earlier viewport results refer to the prior repository-ready ZIP.
 - External links, live routing, and team permission for project media were not revalidated in a browser.
 - No indexing protections were removed, no production deployment was made, and no public launch was approved.
