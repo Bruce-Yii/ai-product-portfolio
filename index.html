@@ -1073,7 +1073,7 @@ body {background:var(--paper);color:var(--ink)}
         <p>从产品问题出发，展示产品定义、Agent 机制、系统架构与验证方式。每个项目都对应一个具体问题，而不是一张技术名词清单。</p>
       </div>
       <div class="project-grid" id="home-projects"></div>
-      <div class="section-foot mono"><span>SELECTED PROJECTS / 04</span><button data-action="navigate" data-page="work">浏览全部项目与案例 ↗</button></div>
+      <div class="section-foot mono"><span>SELECTED PROJECTS / 05</span><button data-action="navigate" data-page="work">浏览全部项目与案例 ↗</button></div>
     </section>
     <section class="wrap laya-feature-section" aria-labelledby="laya-feature-title">
       <div class="laya-feature">
@@ -1511,6 +1511,38 @@ const CASES = [
       "boundary": "当前为产品定位、架构设计与早期模拟器原型，不代表已发布跨端产品。输入法是信息入口，个人上下文层才是产品核心；页面不展示未经授权的真实采集数据。"
     },
     "productQuestion": "用户的事实、偏好与任务上下文，如何跨设备和 AI 工具持续保留，同时由用户掌控？"
+  },
+  {
+    "id": "make-again-discovery",
+    "num": "008",
+    "type": "product",
+    "kind": "PRODUCT DISCOVERY · RESEARCH & FEASIBILITY",
+    "category": "产品发现与研究",
+    "name": "先理解失去之后的生活变化，再定义 AI 应该做什么",
+    "latin": "Research before product.",
+    "lead": "围绕成年人经历重大失去后的生活支持，我以公开案例综合、替代方案研究与技术可行性 Spike，探索可被产品化的问题边界。当前仍处于研究阶段，MVP 尚未锁定。",
+    "desc": "Make Again 2.0 · 问题研究 · 替代方案分析 · PostgreSQL/pgvector 技术 Spike",
+    "caps": [
+      "用户研究",
+      "产品发现",
+      "技术可行性"
+    ],
+    "verified": false,
+    "visibility": "research_in_progress",
+    "status": "公开案例综合与无模型 PostgreSQL/pgvector Spike · MVP 未锁定",
+    "format": "PRODUCT DISCOVERY / FEASIBILITY CASE",
+    "presentation": "evidence",
+    "homeFeatured": false,
+    "editorial": {
+      "decisions": [
+        "先研究重大失去可能带来的生活影响与支持需求，不把聊天记忆或陪伴对话预设为产品核心。",
+        "区分不同失去情境与人群的需求差异，避免把研究线索过早合并为单一用户旅程。",
+        "在产品问题与 MVP 未锁定前，先用无模型 PostgreSQL/pgvector Spike 检查数据结构与技术可行性，不把技术 Spike 写成产品交付。"
+      ],
+      "evidence": [],
+      "role": "本人作为产品发起人与研究协调者，负责公开案例综合、问题研究、替代方案梳理与技术方向协调；工程 Spike 的个人作者归因仍需核实。",
+      "boundary": "当前成果属于产品发现与技术可行性研究。现有公开案例综合与纵向观察不能替代目标用户访谈，也不能证明付费意愿、留存、产品效果或统一用户旅程。MVP 尚未锁定，项目未作为已上线产品呈现；不公开个人私密经历或未经授权的案例细节。"
+    }
   }
 ];
 const VERIFIED_CONTRIBUTIONS = [
@@ -1766,6 +1798,18 @@ const CASE_DETAILS = {
     "outcomeTitle": "把入口做轻，把上下文资产留给用户。",
     "outcomeBig": "Context, owned.",
     "outcome": "Linear 有 Android 原型与 v0.1 的历史验收记录；目前跨端成熟 Layer 2、通用 AI Gateway 与生产同步链路仍需工程 Spike。网页展示应明确是产品/系统设计，不是已发布的成品。"
+  },
+  "make-again-discovery": {
+    "headnote": "Make Again 2.0 的产品发现与技术可行性研究。当前聚焦问题研究、替代方案分析与无模型技术 Spike；MVP 尚未锁定。",
+    "contextTitle": "重大失去之后，哪些生活支持问题真正值得被产品化？",
+    "contextLead": "先理解生活中断与支持需求，再定义 AI 应承担的责任。",
+    "contextCopy": "研究聚焦成年人经历重大失去后的生活支持。公开案例综合与纵向观察提示，失去可能影响日常节奏、角色、关系与未来规划；但这些线索不能证明所有人共享同一条旅程，也不能替代目标用户访谈。",
+    "experienceTitle": "先验证问题结构与技术边界，不急于承诺 MVP。",
+    "experienceIntro": "把研究过程拆成需求线索、替代方案、产品假设与技术 Spike；当前尚未接入真实大模型，也没有真实用户使用结果。",
+    "caption": "FIG. 09 — MAKE AGAIN 2.0 / DISCOVERY → ALTERNATIVES → SPIKE / RESEARCH MAP",
+    "outcomeTitle": "从概念走向可检验的问题与技术边界。",
+    "outcomeBig": "Research before MVP.",
+    "outcome": "已完成公开案例综合、9 条纵向观察整理与无模型 PostgreSQL/pgvector 技术 Spike。当前产品问题和 MVP 尚未锁定；没有真实用户需求验证、付费、留存或效果数据。"
   }
 };
 const PRODUCT_STEPS = [
@@ -1858,10 +1902,12 @@ const HOME_PROJECTS = [
   {caseId:"product",name:"Vivic",label:"AGENT PRODUCT / TEAM PROJECT",summary:"围绕多模态输入、Agent 决策与工具执行，厘清模型选择、宿主校验、真实执行和结果回执的责任边界。",phase:"团队产品 · 后端已有内部验证"},
   {caseId:"agent-evaluation-lab",name:"Agent Evaluation Lab",label:"AGENT QUALITY / EVALUATION",summary:"把 Agent 的一次成功运行拆成可验证的任务、环境、证据、评分与来源链，避免模型自报代替业务验收。",phase:"受控基线 · 9 次 VALID PASS"},
   {caseId:"agent-workflow-governance",name:"AWRP / Agent Workflow",label:"LONG-RUNNING AGENT WORK",summary:"让任务跨越 Session、Agent 和工具时，仍保留稳定身份、执行记录、证据与验收责任。",phase:"现有工作流在用 · 新 Project OS 设计中"},
-  {caseId:"personal-context-layer",name:"Personal Context Layer",label:"PERSONAL CONTEXT / ARCHITECTURE",summary:"把输入法定位为高频信息入口，将核心放在用户可控、来源可追溯、可被不同 AI 消费的个人上下文层。",phase:"产品定位与架构设计 · 早期原型"}
-];
+  {caseId:"personal-context-layer",name:"Personal Context Layer",label:"PERSONAL CONTEXT / ARCHITECTURE",summary:"把输入法定位为高频信息入口，将核心放在用户可控、来源可追溯、可被不同 AI 消费的个人上下文层。",phase:"产品定位与架构设计 · 早期原型"},
+  {caseId:"make-again-discovery",name:"Make Again 2.0",label:"PRODUCT DISCOVERY / RESEARCH",summary:"围绕重大失去后的生活支持，梳理问题线索与替代方案，并以无模型 PostgreSQL/pgvector Spike 探索技术边界。",phase:"问题研究与技术 Spike · MVP 未锁定"}
+]
 const CAPABILITY_GROUPS = [
   {name:"产品定义与体验",title:"PRODUCT STRATEGY & EXPERIENCE",description:"从用户问题、使用路径与真实约束出发，确定产品边界、关键流程和体验取舍。",caseIds:["product","cherry-model-check","dsh-notice-recovery"]},
+  {name:"用户研究与产品发现",title:"USER RESEARCH & DISCOVERY",description:"在定义 MVP 前梳理问题线索、替代方案与证据边界，区分研究假设、技术可行性和已验证需求。",caseIds:["make-again-discovery"]},
   {name:"Agent 产品与执行架构",title:"AGENT PRODUCT & EXECUTION",description:"拆分模型决策、工具调用、宿主校验、执行恢复与结果回执，让 Agent 从演示走向可控执行。",caseIds:["product","agent-workflow-governance"]},
   {name:"质量评测与可靠性",title:"EVALUATION & RELIABILITY",description:"建立有效性门槛、独立验证与证据追溯，区分任务失败、环境失效与评测无效。",caseIds:["agent-evaluation-lab","cherry-model-check"]},
   {name:"上下文与数据架构",title:"CONTEXT & DATA ARCHITECTURE",description:"围绕事实来源、派生关系、用户控制权与跨端消费，设计可持续的个人上下文基础设施。",caseIds:["personal-context-layer","agent-workflow-governance"]},
@@ -1872,7 +1918,8 @@ function projectVisual(id){
     "product":{label:"VIVIC / AGENT ACTION LOOP",steps:["USER INTENT","MODEL DECISION","HOST CHECK","ACTION","RECEIPT"],foot:"MODEL SELECTS · HOST VALIDATES · SYSTEM EXECUTES"},
     "agent-evaluation-lab":{label:"EVALUATION / VALIDITY CONTRACT",steps:["TASK","ENVIRONMENT","EVIDENCE","VERIFIER","RESULT"],foot:"VALIDITY BEFORE SCORE · STATE BEFORE SELF-REPORT"},
     "agent-workflow-governance":{label:"AWRP / CONTINUOUS WORK",steps:["TASK","RUN","EVIDENCE","ACCEPTANCE"],foot:"SESSION ENDS · TASK IDENTITY REMAINS"},
-    "personal-context-layer":{label:"PERSONAL CONTEXT / DATA FLOW",steps:["SOURCES","RAW FACTS","CONTEXT","AI GATEWAY"],foot:"USER CONTROL · TRACEABLE ORIGIN · REUSABLE CONTEXT"}
+    "personal-context-layer":{label:"PERSONAL CONTEXT / DATA FLOW",steps:["SOURCES","RAW FACTS","CONTEXT","AI GATEWAY"],foot:"USER CONTROL · TRACEABLE ORIGIN · REUSABLE CONTEXT"},
+    "make-again-discovery":{label:"MAKE AGAIN / DISCOVERY TO FEASIBILITY",steps:["LIFE CHANGE","NEED SIGNALS","ALTERNATIVES","TECH SPIKE","MVP GATE"],foot:"RESEARCH SIGNALS ≠ VALIDATED DEMAND"}
   };
   const d=data[id]||data["product"];
   return '<div class="project-visual"><div class="project-visual__top mono"><span>'+d.label+'</span><span>PRODUCT MAP</span></div><div class="project-visual__flow">'+d.steps.map((s,i)=>'<span class="project-visual__node '+(i===Math.floor(d.steps.length/2)?'is-key':'')+'">'+s+'</span>'+(i<d.steps.length-1?'<span class="project-visual__arrow">→</span>':'')).join('')+'</div><div class="project-visual__foot mono">'+d.foot+'</div></div>';
