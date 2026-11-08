@@ -1668,7 +1668,7 @@ const CASE_DETAILS = {
     "contextCopy": "对采购、财务等写入型任务，回答文本不代表真实系统状态。我把评测拆成两道判断：这次 Trial 是否有效，以及 Agent 是否完成任务。只有 Task、Environment、Evidence、Grader、Provenance 全部通过有效性检查，才允许独立 Verifier 根据冻结系统状态给出结果。",
     "experienceTitle": "先验证试验可信，再评估 Agent 能力。",
     "experienceIntro": "通过受控 ERP 任务展示环境隔离、Trial 指纹、证据包与独立状态验证；有效性失败进入 INVALID / UNSCORED，而不是误判为 Agent FAIL。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 03 — AGENT EVALUATION / VALIDITY → EVIDENCE → VERIFICATION / ILLUSTRATIVE MODEL",
     "outcomeTitle": "工程基线可追溯，科学闭环尚未完成。",
     "outcomeBig": "Validity before score.",
     "outcome": "历史验收记录中，S05 / S16 / S14 各有 3 次 VALID PASS；另有 1 次资源 HOLD，不计入成败分母。由于没有可归因的真实 Agent failure，当前尚未证明 Harness 干预带来可靠性提升。"
@@ -1680,7 +1680,7 @@ const CASE_DETAILS = {
     "contextCopy": "跨会话、多 Agent 执行时，任务身份、执行尝试、验收证据和外部事实容易脱节。我先设计 AWRP，将 Task 与 Run 分离，用持久事件、ACK / HANDOFF 和 Reviewer 保留责任链；真实使用后又发现，Linear、Notion、GitHub 已能分别承担执行治理、长期知识与代码事实。",
     "experienceTitle": "从自研协议，走向最小可用的工具组合。",
     "experienceIntro": "把 AWRP 历史协议、Linear × Notion × GitHub 的现行工作流，与 DeepSeek Super-agent 原型对照，拆解哪些能力值得自建、哪些应直接复用。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 04 — AWRP / TASK → RUN → HANDOFF → REVIEW / ILLUSTRATIVE WORKFLOW",
     "outcomeTitle": "真实工作流已经在用，下一代 Project OS 仍是设计方案。",
     "outcomeBig": "Beyond the session.",
     "outcome": "AWRP 有历史代码与协议实现；Linear × Notion × GitHub 的组合工作流正在真实项目中使用；Agent Project OS / AWRP Next 尚未开发或上线。案例展示的是工作流产品设计与架构演进，不是已发布的自主执行平台。"
@@ -1692,7 +1692,7 @@ const CASE_DETAILS = {
     "contextCopy": "我将需求收敛为最近一次已完成检查的只读 Failed 筛选：所有已测凭据均失败才进入列表；新检测开始或配置变化时清空旧快照；不删除、不禁用，也不持久隐藏模型。",
     "experienceTitle": "把诊断需求做成可逆的产品动作。",
     "experienceIntro": "通过状态对照展示 Failed 的进入与退出条件；系统只提供可解释的筛选，不替用户执行清理。画面是行为机制示意，不是产品 UI 截图。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 05 — CHERRY STUDIO / MODEL HEALTH → FAILED FILTER / ILLUSTRATIVE STATE MODEL",
     "outcomeTitle": "将不可逆清理收敛为安全的诊断筛选。",
     "outcomeBig": "Failure ≠ deletion.",
     "outcome": "PR #21015 已合并。可核验的是状态判定、只读筛选与聚焦回归测试；没有独立证据证明真实用户留存或模型可用率提升。"
@@ -1704,7 +1704,7 @@ const CASE_DETAILS = {
     "contextCopy": "我把插件真实状态、服务端提醒记录和前端可见状态拆开：逐条关闭只改变提醒记录，不删除插件目录、不恢复安装声明，也不伪装为修复成功。",
     "experienceTitle": "让提醒状态与故障状态各自负责。",
     "experienceIntro": "展示逐条关闭、服务端按名称更新、并发保护与旧请求回写处理；多轮维护者 Review 的反例推动行为契约收敛。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 06 — DSH MARKET / PLUGIN STATE ≠ NOTICE STATE / ILLUSTRATIVE CONTROL MODEL",
     "outcomeTitle": "让用户退出无效提醒循环，同时保留故障真相。",
     "outcomeBig": "Keep the truth.",
     "outcome": "PR #764 经多轮维护者 Review 后合并。可证明的是可关闭通知与一致性处理进入上游，不宣称插件恢复率、用户满意度或留存提升。"
@@ -1716,7 +1716,7 @@ const CASE_DETAILS = {
     "contextCopy": "我围绕下游开发者旅程，将零散 PR 与正式 Review 归纳为四组产品系统：意图保真、决策可信、渐进采用、开发者契约；通过反例验证、方向提出与跨贡献者交接参与上游建设。",
     "experienceTitle": "把决策能力拆成四组可交付的产品系统。",
     "experienceIntro": "八个故事覆盖输入与路由、证据检查、训练抽象、校准、候选选择、Demo / Production 一致性与开发者可观测性；每章标明本人参与与上游证据。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 07 — LAYA / INTENT → DECISION → ADOPTION / ILLUSTRATIVE PRODUCT SYSTEM",
     "outcomeTitle": "上游贡献规模与产品影响可追溯。",
     "outcomeBig": "40 merged · 85 reviewed.",
     "outcome": "截至 2026-11-08，47 个本人 authored PR 中 40 个已合并，另有 85 个 PR 匹配 reviewed-by 查询。它们是上游参与记录，不是 40 项独立功能或业务 KPI。案例呈现协作者级别的工作范围，但不声称官方 collaborator 身份。"
@@ -1728,7 +1728,7 @@ const CASE_DETAILS = {
     "contextCopy": "我把输入法从产品本体重新定义为高频 Sensor，并将系统拆成三层：用户授权下的 Raw Facts、以时间为主轴且可纠正的 Context Organization，以及由用户授权的 AI Gateway。核心不是让模型接管记忆，而是让事实可追溯、派生可重建、用户始终拥有控制权。",
     "experienceTitle": "先把事实留下，再让 AI 理解它。",
     "experienceIntro": "通过 Sensor → Raw → Temporal Spine → Relation / Event → User Confirmation → AI Gateway 展示当前产品架构；历史 Android 模拟器原型与现行设计分开展示。",
-    "caption": "FIG. / EDITORIAL EXPLANATION / NOT A PRODUCT SCREEN",
+    "caption": "FIG. 08 — PERSONAL CONTEXT / SENSOR → RAW → CONTEXT → AI GATEWAY / ARCHITECTURE MAP",
     "outcomeTitle": "早期 Android 原型已验证入口，完整 Context Layer 仍待工程 Spike。",
     "outcomeBig": "Context, owned.",
     "outcome": "历史 Android 模拟器原型曾通过项目协调者的受限验收（PASS WITH CONSTRAINTS），覆盖中文输入、Context capture、Inbox 与桌面接收；当前三层架构与规格已收敛，Android、Windows、Store / Sync 定向 Spike 仍待推进。不能将早期原型描述为完整跨端产品。"
