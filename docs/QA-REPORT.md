@@ -151,3 +151,14 @@ Target: `portfolio/modular-mainline-2026-11-09`. This update is part of the exis
 - Preview URL: https://ai-product-portfolio-48me6yklu-yu-ac3a.vercel.app
 - Post-deploy fetch returned HTTP 200 and confirmed the updated title, proof-strip markup and values, mobile proof-strip CSS, and `X-Robots-Tag: noindex, nofollow, noarchive`.
 - This is a separate Vercel project / preview URL. The existing `hcfind.com` domain remains attached to `hcfind-home`; no domain binding or DNS record was changed.
+
+
+### Production domain replacement · 2026-11-09
+
+- Created Vercel **production** deployment `dpl_8SPG1qJMXwvCTEuv9Czj47hApzTL` from branch commit `89220a0ec51bc2309c24570fde882425caf58886`; deployment state **READY**.
+- Reassigned `hcfind.com` from `hcfind-home` to `ai-product-portfolio`. Existing `www.hcfind.com` alias now redirects to `hcfind.com` with HTTP **308**.
+- Verified `https://hcfind.com` returns HTTP **200** and the portfolio title; `https://hcfind.com/cases/laya/` also returns HTTP **200**.
+- Verified the old `hcfind-home` project no longer owns either custom-domain alias. Its Vercel project and prior deployment were left intact; only the aliases were reassigned.
+- No DNS records or nameservers were changed.
+- Search indexing intentionally remains blocked by page-level `noindex`, `robots.txt`, and Vercel `X-Robots-Tag` pending the remaining evidence / visual-permission review. This is not a search-indexing release.
+- Full browser / responsive E2E testing remains outstanding; this deployment check verifies HTTP routing and rendered HTML, not every interactive path.
