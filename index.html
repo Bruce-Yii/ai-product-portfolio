@@ -351,6 +351,7 @@ html[data-typography="precision"] .hero-title .soft-line{font:700 .86em/.98 var(
 /* V12 — editorial case studies; same identity as the V8 site */
 .case-path{display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--line);min-height:68px;color:var(--muted)}
 .case-path .case-back{padding:0;color:var(--ink);font-size:10px}.case-path-side{margin-left:auto}
+.index-project{display:flex;flex-direction:column;gap:4px;min-width:0}.repo-intro{display:block;color:var(--muted);font-size:11px;line-height:1.6}.repo-stars{display:block;color:var(--accent);font:9px var(--mono);letter-spacing:.03em;margin-top:5px}
 .case-team-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.case-team-links[hidden]{display:none}.case-team-links a{font:10px var(--mono);color:var(--accent);border-bottom:1px solid currentColor;padding:3px 0}
 .v9-case-head{padding:49px 0 69px;border:0}.v9-case-head h1{margin-top:72px;margin-bottom:9px;max-width:1120px;font-size:clamp(58px,7.3vw,118px);line-height:1.35}
 .v9-case-head .latin{font-size:clamp(50px,6.5vw,105px);margin-left:17%;line-height:.96}.v9-case-head .case-intro{grid-template-columns:minmax(0,1fr) 250px;margin-top:72px;gap:80px;align-items:end}
@@ -1461,6 +1462,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "01",
     "name": "Laya",
+    "repoIntro": "非自回归 System 1 决策引擎，为文本提供分类、评分、选择与路由能力。",
+    "stars": 35287,
     "kind": "CASEBOOK",
     "title": "让决策模型从一次输出走向可验证、可控、可采用",
     "detail": "独立案例册 · 47 authored · 40 merged · 85 reviewed-by matches",
@@ -1472,6 +1475,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "02",
     "name": "OpenClaw",
+    "repoIntro": "跨平台个人 AI 助手，可连接工具并执行日常任务。",
+    "stars": 394252,
     "kind": "MERGED",
     "title": "让用户更顺利地接入 Agent，并在异常时继续完成任务",
     "detail": "6 selected merged PRs · setup / credentials / CLI / recovery / diagnostics · #140531 · #141569 · #144579 · #145220 · #157697 · #160156",
@@ -1484,6 +1489,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "03",
     "name": "Dify",
+    "repoIntro": "用于构建 Agent 工作流与 RAG 应用的协作式开发平台。",
+    "stars": 160774,
     "kind": "MERGED",
     "title": "让不同来源的知识可靠进入 AI 工作流",
     "detail": "4 selected merged PRs · Notion rich text / CSV literal NA / keyword validation / PDF base path · #42171 · #42212 · #42221 · #42956",
@@ -1496,6 +1503,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "04",
     "name": "RAGFlow",
+    "repoIntro": "面向复杂文档理解与检索增强生成的开源引擎。",
+    "stars": 93887,
     "kind": "MERGED",
     "title": "让 Agent 真正按照用户设置和流程预期工作",
     "detail": "6 selected merged PRs · 3 behavior fixes + 3 regression-test additions · #19565 · #20149 · #20207 · #20066 · #20068 · #20072",
@@ -1508,6 +1517,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "05",
     "name": "Cherry Studio",
+    "repoIntro": "聚合模型、Agent 与效率工具的桌面 AI 工作台。",
+    "stars": 53380,
     "kind": "MERGED",
     "title": "让用户看清模型可用状态，并保持桌面 AI 工作流连贯",
     "detail": "6 selected merged PRs · clipboard / model diagnosis / tool runtime / schema compatibility · #21015 · #21031 · #21130 · #20946 · #20955 · #20970",
@@ -1520,6 +1531,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "06",
     "name": "QwenPaw",
+    "repoIntro": "可部署在本地或云端、支持多聊天入口的个人 AI 助手。",
+    "stars": 37543,
     "kind": "MERGED",
     "title": "多项目切换不打断工作，保留熟练用户的快捷路径",
     "detail": "1 merged PR · direct path input + multi-directory state · #7593",
@@ -1532,6 +1545,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "07",
     "name": "FunASR",
+    "repoIntro": "覆盖语音识别、流式 ASR、VAD、标点与说话人分离的工具链。",
+    "stars": 20977,
     "kind": "MERGED",
     "title": "让转写文字与时间位置对应，结果更适合直接编辑",
     "detail": "1 merged PR · punctuation timestamp alignment · #3703",
@@ -1544,6 +1559,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "08",
     "name": "dsh-market",
+    "repoIntro": "DeepSeek Harness 生态中的可视化插件市场。",
+    "stars": 11675,
     "kind": "MERGED",
     "title": "插件异常后，把选择权交还给用户",
     "detail": "1 merged PR · dismiss persistent notice without plugin-state mutation · #764",
@@ -1839,8 +1856,8 @@ function renderWorkCapabilities(){
     return '<section class="cap-group"><div class="mono cap-number">0'+(i+1)+' / '+esc(g.title)+'</div><div class="cap-heading"><h3>'+esc(g.name)+'</h3><p>'+esc(g.description)+'</p></div><div class="related">'+links.map(c=>'<button data-action="navigate" data-page="case" data-target-id="'+esc(c.id)+'"><span>'+esc(c.name)+'</span><span>↗</span></button>').join('')+'</div></section>';
   }).join('');
 }
-document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="index-row" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(c.name)+'：'+esc(c.contributionSummary)+'"><span class="mono number">'+esc(c.number)+'</span><strong>'+esc(c.name)+'</strong><span class="category"><span class="contribution-summary">'+esc(c.contributionSummary)+'</span></span><span class="go">↗</span></a>').join('');
-document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer"><span class="mono">'+(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':c.number+' / MERGED')+'</span><span class="contribution-copy"><small class="contribution-area mono">'+esc(c.experience||'PRODUCT PRACTICE')+'</small><strong>'+esc(c.title)+'</strong><small class="contribution-story">'+esc(c.story)+'</small><small class="contribution-decision"><span class="mono">PRODUCT DECISION</span>'+esc(c.decision||'')+'</small><small class="contribution-evidence">'+esc(c.name)+' · '+esc(c.detail)+'</small></span><span>↗</span></a>').join('');
+document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="index-row" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(c.name)+'：'+esc(c.repoIntro||c.contributionSummary)+'"><span class="mono number">'+esc(c.number)+'</span><span class="index-project"><strong>'+esc(c.name)+'</strong><small class="repo-intro">'+esc(c.repoIntro||'')+'</small></span><span class="category"><span class="contribution-summary">'+esc(c.contributionSummary)+'</span><small class="repo-stars">★ '+Number(c.stars||0).toLocaleString('en-US')+' stars · GitHub snapshot 2026-11-10</small></span><span class="go">↗</span></a>').join('');
+document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer"><span class="mono">'+(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':c.number+' / MERGED')+'</span><span class="contribution-copy"><small class="contribution-area mono">'+esc(c.experience||'PRODUCT PRACTICE')+'</small><strong>'+esc(c.title)+'</strong><small class="repo-intro">'+esc(c.repoIntro||'')+'</small><small class="repo-stars">★ '+Number(c.stars||0).toLocaleString('en-US')+' stars · GitHub snapshot 2026-11-10</small><small class="contribution-story">'+esc(c.story)+'</small><small class="contribution-decision"><span class="mono">PRODUCT DECISION</span>'+esc(c.decision||'')+'</small><small class="contribution-evidence">'+esc(c.name)+' · '+esc(c.detail)+'</small></span><span>↗</span></a>').join('');
 // One delegated event layer handles static navigation and dynamically rendered case UI.
 document.addEventListener('click',event=>{
   const btn=event.target.closest('[data-action], [data-feature], [data-step], [data-sys], [data-glass-mode], [data-workflow-step], [data-context-step]');
