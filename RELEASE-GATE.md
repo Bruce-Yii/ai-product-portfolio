@@ -94,3 +94,11 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr`.
 - This candidate has not been promoted to production.
 - Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain pending.
+
+## 2026-11-09 · Homepage project identity presentation correction
+
+- Keep recognized open-source project names prominent on the homepage.
+- Add one concise product-language sentence beside each project name describing the project's user-facing capability.
+- Add at most one short line describing the user's product practice; detailed PR/module evidence belongs in the deeper contribution view.
+- Do not replace the compact project index with long narrative cards or hide repository names.
+
