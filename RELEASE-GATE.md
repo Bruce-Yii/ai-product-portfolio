@@ -102,3 +102,9 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Add at most one short line describing the user's product practice; detailed PR/module evidence belongs in the deeper contribution view.
 - Do not replace the compact project index with long narrative cards or hide repository names.
 
+## Homepage contribution-summary semantics
+
+- The short line beside each public project name must summarize the user's own product improvement/contribution on that project.
+- Do not write a generic introduction of what the public project does.
+- Keep project names prominent; detailed evidence stays in the deeper view.
+
