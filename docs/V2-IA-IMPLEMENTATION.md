@@ -1,98 +1,132 @@
-# Portfolio v2 — Information Architecture & Implementation
+# Portfolio v2 — Product-led Content Strategy & Implementation
 
-## Goal
+## Decision baseline
 
-Reposition the portfolio from an open-source-contribution-heavy homepage to a product-led presentation of product judgment, Agent systems, architecture, delivery, and upstream collaboration.
+This revision follows the user's confirmed portfolio scope from 2026-11-05 onward. Do not add projects merely because research material exists.
+
+### Selected product work
+
+- **VIVIC** — multimodal Agent product; focus on the user intent → model decision → host validation → tool execution → result receipt chain.
+- **AWRP × Linear** — one Agent workflow product-design case, grounded in the historical AWRP protocol and the current Linear × Notion workflow. DeepSeek Super-agent is a third-party architecture comparison object, not a personal project or contribution.
+- **Personal Context Keyboard** — product architecture case; the keyboard is a high-frequency Sensor, while the user-controlled Context Layer is the product core.
+- **Laya** — separate flagship open-source casebook. Keep the existing dedicated visual treatment and route at `/cases/laya/`.
+
+### Unified open-source contribution index
+
+Show these as repository-level contribution groups, not eight independent flagship projects:
+
+1. OpenClaw
+2. Dify
+3. RAGFlow
+4. Cherry Studio
+5. QwenPaw
+6. FunASR
+7. dsh-market
+8. Google ADK — explicitly marked RFC / tests-only Draft / **not merged**.
+
+Laya remains its own flagship casebook and is also linked from the contribution index.
+
+### Explicit exclusions and classification
+
+- Remove **Make Again 2.0** and **Agent Evaluation Lab** from the public portfolio.
+- Do not add **EvalScope** as an extra project.
+- Cherry Studio and dsh-market are contribution groups, not standalone main-site Case pages.
+- Do not present a repository, a PR count, or a technical Spike as a standalone product merely to increase project count.
 
 ## Information architecture
 
 ### Home
-1. **Hero** — concise AI Product Manager positioning and product-to-delivery proposition.
-2. **Product & System Projects** — five first-class projects:
-   - Vivic — Agent decision and execution loop.
-   - Agent Evaluation Lab — evaluation validity, independent verification, and evidence provenance.
-   - AWRP / Agent Workflow — long-running task identity, runs, evidence, and acceptance.
-   - Personal Context Layer — user-controlled, traceable personal context infrastructure.
-   - Make Again 2.0 — product discovery and technical feasibility research; MVP is not locked and no shipped-product or user-outcome claim is made.
-3. **Laya flagship** — a dedicated open-source product collaboration section linking to the existing eight-chapter casebook. Laya's GitHub contribution metrics are moved here rather than dominating the first screen.
-4. **Upstream Product Contributions** — concise project-level index for OpenClaw, Dify, Cherry Studio, RAGFlow, QwenPaw, EvalScope, and FunASR.
-5. **Capabilities & Evidence** — six capability groups, each linked to relevant cases.
-6. **About** — retained as a separate view.
+
+1. Hero — AI Product Manager positioning and product-to-delivery proposition.
+2. Selected product work — three cards: VIVIC, AWRP × Linear, Personal Context Keyboard.
+3. Laya flagship — existing dedicated casebook treatment retained.
+4. Selected open-source contributions — eight explicitly selected ecosystems; merged work and unmerged research are visibly distinguished.
+5. Capabilities & evidence — four evidence-linked dimensions.
+6. About.
 
 ### Work
-- Long-running Project directory first.
-- Independent Case studies second, with Work / Capability browsing.
-- Project-level upstream Contribution index retained as a separate evidence layer.
 
-### Content model
-- **Project:** a sustained body of work or product initiative.
-- **Case:** a coherent product problem and decision story.
-- **Contribution:** a traceable action or upstream outcome (Issue, PR, review, design discussion, implementation, handoff).
-- **Evidence:** the source record supporting a claim.
+- Three selected Project cards.
+- Four main Case records: Laya, VIVIC, AWRP × Linear, Personal Context Keyboard.
+- Unified contribution index for the eight open-source ecosystems.
+- Case is the primary storytelling unit; a Project may contain multiple Cases. A repository is not automatically a Project or Case.
 
-A Project may contain multiple Cases; each Case may link to multiple Contributions and Evidence. A repository or PR count alone does not qualify as a standalone Case.
+## Product-language standard
 
-## Product-card presentation
+Every major case should answer, in this order:
 
-The five project cards use original explanatory flow diagrams, not fabricated product screenshots:
-- Vivic: user intent → model decision → host check → action → receipt.
-- Agent Evaluation Lab: task → environment → evidence → verifier → result.
-- AWRP: task → run → evidence → acceptance.
-- Personal Context Layer: sources → raw facts → context → AI gateway.
-- Make Again 2.0: life change → need signals → alternatives → technical Spike → MVP gate; the diagram explicitly distinguishes research signals from validated demand.
+1. **User and job** — who is trying to do what?
+2. **Product problem** — where does the existing experience fail?
+3. **Product question** — what must the system guarantee?
+4. **Decision and trade-off** — what was chosen, what was rejected, and why?
+5. **Mechanism** — how the product behavior works, in plain language.
+6. **Outcome and evidence** — what actually changed and what can be verified?
+7. **Personal role and boundary** — what Bruce did, what teammates/upstream owners did, and what is not yet proven.
 
-The diagrams explain the system responsibility boundaries; they do not claim to be captured production UI.
+Do not lead with technology names, PR counts, or internal workflow vocabulary. Technical detail supports the product story; it does not replace it.
 
-## Laya presentation
+## Case presentation
 
-- Kept the existing dedicated route at `/cases/laya/`.
-- Homepage gives Laya a flagship feature area with its four product systems: intent fidelity, decision trust, controlled adoption, and developer contract.
-- Metrics retain their original definitions: 47 authored PRs, 40/47 merged, and 85 reviewed-by matches. The reviewed-by query is explicitly distinguished from authored PR counts.
+### VIVIC
 
-## Public-facing content corrections
+- Story: make a user's multimodal intent turn into a correctly authorized, executed, and acknowledged action.
+- Core decision: model owns semantic selection; host owns permission/parameter validation and real execution; the system returns a truthful receipt or explicit failure.
+- Evidence: fixed 60-item API regression and backend deployment records; 53/60 → 59/60 and p50 3,625ms → 1,807ms are internal test-set results, not real-user success metrics.
+- Boundary: full front-end experience, 48 browser scenarios, and real-device voice remain unverified.
 
-- Removed the public-facing `INTERNAL EDITORIAL REVIEW / NOT FOR PUBLIC RELEASE` labels.
-- Replaced internal editorial status wording with factual project / delivery descriptions.
-- Removed private Notion and Linear URLs from the public case payload; narrative evidence now renders only explicitly public GitHub records. Design-stage cases without public repository artifacts say so instead of exposing private workspace references.
-- Rewrote role descriptions to explain personal contribution and attribution in portfolio language, removing internal window/review process wording.
-- Kept project-stage and evidence boundaries explicit:
-  - Vivic: backend internal validation is not described as external user impact.
-  - Agent Evaluation Lab: 9 valid baseline trials are not presented as proof of an improvement.
-  - AWRP / Project OS: current workflow use is distinguished from the new OS design stage.
-  - Cherry Studio and dsh-market: merged PRs are not represented as proof of a release in every distribution.
-  - Personal Context Layer: architecture and early prototype are not described as a launched cross-platform product.
-  - Laya metrics are identified as GitHub query snapshots, not product KPIs or maintainer status.
-  - Make Again 2.0 is framed as research and technical feasibility, not a shipped product or validated user outcome; the separate team version and historical repository are not conflated with 2.0.
-- Hidden the internal design inspector from the public navigation.
-- Fixed the Capability browser mapping so all six capability groups resolve to relevant Cases.
+### AWRP × Linear
 
-## Preview and release state
+- Story: long-running work must survive changing Agents and Sessions.
+- Core abstraction: Task identity ≠ Run/Session; Agent self-report ≠ acceptance; evidence comes from GitHub, CI, artifacts, and external systems.
+- Current workflow: Linear manages execution state; Notion holds durable project semantics and decisions; GitHub is code/upstream truth.
+- DeepSeek Super-agent: public third-party comparison reference only; no superiority ranking.
+- Boundary: historical AWRP has protocol/code/test practice; the current workflow uses mature third-party tools; no standalone Agent Project OS has shipped.
+
+### Personal Context Keyboard
+
+- Story: personal facts, preferences, and task context should not be trapped inside one app or AI conversation.
+- Product definition: keyboard is a Sensor, not the Context Core.
+- Architecture: authorized capture → traceable Raw Facts → rebuildable Derived Context → user confirmation/control → scoped AI Gateway.
+- Boundary: product definition, architecture, and early simulator prototype; not a released cross-platform product.
+
+### Laya
+
+- Keep the standalone Laya casebook visual system and eight-chapter editorial treatment.
+- Keep the distinctions between authored PRs, merged PRs, and reviewed-by query matches.
+- Do not claim official maintainer/collaborator status or turn GitHub activity into product KPIs.
+
+## Open-source contribution language
+
+Contributions are grouped by the product problem they improve, with the source PRs remaining individually traceable:
+
+- OpenClaw — predictable setup, credentials, diagnostics, and recovery.
+- Dify — preserve source semantics during knowledge import and data handling.
+- RAGFlow — consistent semantics across Agent handoff, knowledge parsing, and model configuration.
+- Cherry Studio — make model diagnosis and content input follow user intent.
+- QwenPaw — preserve fast path input while supporting multi-directory workspaces.
+- FunASR — align speech timestamps with utterance and punctuation boundaries.
+- dsh-market — let users dismiss an exception notice without pretending the plugin is repaired.
+- Google ADK — investigate partial/final event semantics; RFC and tests-only Draft are not merged.
+
+## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Implementation commit: `59a7632949c1a214aef4f9e447aea1e4713ba019`.
-- Vercel Preview deployment: `dpl_Gthev3cbExjvqMakspqSHsAe9Pev` (READY; latest preview after public-evidence cleanup).
-- Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app
-- Production remains on v1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` at https://hcfind.com.
-- The V1 freeze branch remains `freeze/portfolio-v1-2026-11-09`.
-- No production alias, DNS, or nameserver changes were made.
-- `noindex, nofollow, noarchive` remains enabled on the preview and Laya casebook.
+- Main-site content revision: `67b780176e6eb113dca62bdb6cffc54520281324` (workflow/context visual revision; subsequent commits may update docs).
+- V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
+- Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
+- No DNS or nameserver changes.
+- Keep noindex enabled on review previews and the casebook until a separate release decision.
+- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review must use a verified share link or a local HTML deliverable.
+- Do not promote this candidate to the production domain until the owner has reviewed the actual page and responsive behavior.
 
 ## Verification
 
-- Vercel deployment state: READY.
-- Vercel build events: deployment completed.
+- Four main Case records map to four Case detail payloads.
+- Three homepage Project cards map to VIVIC, AWRP × Linear, and Personal Context Keyboard.
+- Laya remains a separate flagship casebook.
+- Eight open-source contribution groups are present; Google ADK is explicitly not merged.
+- Make Again 2.0, Agent Evaluation Lab, EvalScope, and standalone Cherry/dsh case pages are absent from public source.
+- AWRP has a dedicated four-object workflow visual and a non-ranking AWRP / Linear × Notion / DeepSeek comparison.
+- Personal Context Keyboard has a dedicated five-layer architecture visual.
 - Inline JavaScript syntax parse: PASS.
-- Eight Case records retained.
-- Five homepage Project cards resolve to existing Case IDs.
-- Six capability groups resolve to existing Case IDs.
-- Homepage and Laya casebook routes return HTTP 200.
-- Preview runtime error/fatal log query for the latest 30 minutes: no matching logs.
-- Production domain aliases still point to the frozen V1 deployment.
-- Full visual browser review and responsive E2E remain outstanding; the owner should inspect the preview before any production release.
-
-## Next
-
-1. Review the preview's visual hierarchy and copy.
-2. Adjust card density, mobile layout, and project ordering from actual browser review.
-3. Review each Case page for public evidence, attribution, and status accuracy.
-4. Only after review, run responsive E2E and request explicit production release approval.
+- Full browser visual review and responsive E2E remain outstanding.
