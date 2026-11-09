@@ -108,3 +108,13 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Do not write a generic introduction of what the public project does.
 - Keep project names prominent; detailed evidence stays in the deeper view.
 
+## 2026-11-09 · Latest product narrative review candidate
+
+- Source branch: `portfolio/v2-information-architecture`.
+- Source commit: `10683b1cbc5a4420820184a86003f476f30ed428`.
+- Vercel deployment: `dpl_HSsD8fVGr6y5o2E13EScJh4kRpx2` · READY.
+- Owner-facing review domain: https://portfolio.hcfind.com/ (no login required).
+- Homepage and `/cases/laya/` return HTTP 200 and retain noindex headers.
+- Existing `hcfind.com` root domain remains separate; no DNS changes or root-domain alias changes in this pass.
+- Content review candidate only; search indexing remains disabled.
+- Full browser visual review and responsive E2E at 1440px / 390px / 360px remain pending.

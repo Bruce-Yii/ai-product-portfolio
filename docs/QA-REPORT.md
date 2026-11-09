@@ -498,3 +498,25 @@ A pure documentation-only change may skip website deployment only when the websi
 - Kept public repository/project names prominent and paired each with one concise product-language summary of the user's work.
 - Detailed titles, context, decisions and PR evidence remain in the deeper contribution view.
 
+## 2026-11-09 · Portfolio-wide product narrative audit
+
+- Reframed the hero around AI PM identity and product opportunity.
+- Reframed VIVIC around the user journey from expressing a need to confirming task completion.
+- Reframed AWRP around project continuity across Agents, sessions, handoffs, and waiting periods; retained the non-shipped SaaS boundary.
+- Reframed Personal Context around user ownership and reuse across AI tools.
+- Reframed Laya around developer adoption and confidence, preserving contribution attribution.
+- Rewrote eight contribution summaries around user-facing outcomes; project names remain visible.
+- Updated Laya casebook titles and README domain statement.
+- Inline JavaScript syntax validation: PASS. Live deployment and visual QA required before completion.
+
+## 2026-11-09 · Product narrative pass — deployed review candidate
+
+- Source commit: `10683b1cbc5a4420820184a86003f476f30ed428`.
+- Vercel deployment: `dpl_HSsD8fVGr6y5o2E13EScJh4kRpx2` · READY.
+- Public review URL: https://portfolio.hcfind.com/.
+- Homepage and Laya casebook return HTTP 200; both retain `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Root domain `hcfind.com` remains a separate deployment and was not changed in this pass.
+- Source inline JavaScript parsed successfully before deployment.
+- This pass moved VIVIC, AWRP, Personal Context, Laya and open-source contribution narratives toward user tasks, product opportunity, user outcome and evidence; implementation details remain in the deeper explanation layer.
+- Noindex remains in place pending owner review.
+- Full browser visual QA and responsive E2E remain outstanding; HTTP 200 and source parsing are not a substitute for visual review.

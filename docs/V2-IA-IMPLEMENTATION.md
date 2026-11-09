@@ -176,3 +176,14 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 - Deployment must be followed by real HTTP/page checks and desktop/mobile review. The actual working link and verification result belong in the completion report.
 - Domain/DNS/Nameserver changes or cross-project production alias changes are separate routing operations; use a Vercel Preview instead unless the exact production change is explicitly authorized.
 - Read [Portfolio Operating Contract](./PORTFOLIO-OPERATING-CONTRACT.md) for the binding cross-window workflow and acceptance criteria.
+
+
+## 2026-11-09 · Product narrative audit and correction
+
+The previous pass changed technical vocabulary but retained an implementation-first narrative. New order: user task → friction/adoption barrier → product opportunity → judgment/trade-off → user outcome → evidence and maturity boundary.
+
+- VIVIC: user journey from expressing a need to confirming task completion.
+- AWRP × Linear: project continuity across windows, Agents, handoffs, and waiting periods; not a shipped SaaS.
+- Personal Context: reuse personal context across AI tools while retaining user ownership, correction, deletion, and authorization.
+- Laya: developer adoption journey—understand model behavior, judge evidence, control rollout, and receive consistent behavior across interfaces.
+- Open-source index: public project name + Bruce's own product contribution; never a generic project description.

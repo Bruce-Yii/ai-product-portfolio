@@ -19,7 +19,7 @@ Then open `http://localhost:8000`.
 
 ## Publication state
 
-This repository is public by the owner's explicit choice. The owner has approved replacing the `hcfind.com` homepage with this portfolio. The site is accessible on the custom domain, but search indexing stays disabled: both pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing remains gated on the content/evidence and visual-permission review in [RELEASE-GATE.md](./RELEASE-GATE.md).
+This repository is public by the owner's explicit choice. The owner approved a dedicated portfolio subdomain; this does not replace the existing `hcfind.com` homepage. The portfolio review site is available at `https://portfolio.hcfind.com/`. The existing root domain `hcfind.com` and `www.hcfind.com` remain separate from this portfolio subdomain. Search indexing stays disabled: both portfolio pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing remains gated on the content/evidence and visual-permission review in [RELEASE-GATE.md](./RELEASE-GATE.md).
 
 The HTML files are intentionally self-contained. Do not split, regenerate, or replace them with an older modular source package unless a concrete maintenance requirement justifies that change and visual parity is verified.
 
