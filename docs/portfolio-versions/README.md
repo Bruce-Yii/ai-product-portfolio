@@ -28,3 +28,4 @@
 
 - Final source commit: `f2217ed74d8833c74ddc458bd568b14505a5eb2c`.
 - This commit includes the Laya repository star snapshot in the homepage flagship card.
+- Final Vercel deployment for this v2.2 iteration: `dpl_Fhw2j3wtDrFVBUaZvEjzXYRGvgj8` (READY; alias `portfolio.hcfind.com`).
