@@ -22,3 +22,9 @@
 - Laya casebook: https://portfolio.hcfind.com/cases/laya/.
 - Homepage and Laya endpoint returned HTTP 200.
 - Note: route behavior is implemented in the client-side hash router; no browser automation was available in this verification pass, so interaction E2E remains pending.
+
+
+### v2.2 final source checkpoint
+
+- Final source commit: `f2217ed74d8833c74ddc458bd568b14505a5eb2c`.
+- This commit includes the Laya repository star snapshot in the homepage flagship card.
