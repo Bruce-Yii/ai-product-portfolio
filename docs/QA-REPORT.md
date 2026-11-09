@@ -7,7 +7,7 @@ Snapshot: 2026-11-09 (Asia/Shanghai). This report distinguishes source checks, d
 - Repository: `Bruce-Yii/ai-product-portfolio`.
 - Active branch: `portfolio/v2-information-architecture`.
 - Website source commit deployed to Preview: `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
-- Latest branch head: `799afffbfa172d5a5571d271699fc805136ba5e7` (documentation-only after the deployed website source; no HTML changes after Preview).
+- The branch contains subsequent documentation-only commits; no website source changes were made after the deployed Preview commit.
 - V1 frozen baseline: `freeze/portfolio-v1-2026-11-09` at `2349e1a7a6b873b45a10e56830ef09c6679edb1c`.
 - V2 preview deployment: `dpl_6vjtXdz4UeurPGxFgMxEwRL7wauJ` · READY.
 - Preview URL: https://ai-product-portfolio-rn06syrk1-yu-ac3a.vercel.app
