@@ -403,3 +403,37 @@ A pure documentation-only change may skip website deployment only when the websi
 ### Remaining verification
 
 - Full browser visual review and responsive E2E at 1440px / 390px / 360px remain outstanding because no browser-rendering session was available in this pass.
+
+
+## 2026-11-09 · VIVIC case interview-closure pass
+
+### Content and evidence
+
+- Reframed the VIVIC lead from a generic “participated in refactor” statement to taking over an existing product and driving the Agent decision-chain refactor.
+- Added an explicit personal-role panel: problem framing, product/architecture judgment, task decomposition and acceptance; implementation is described as collaboration with Agents/team rather than claiming every line as personally authored.
+- Added the key product trade-off: remove experimental 4B routing, slot planner, local classifier, directOperations and duplicate business-decision paths rather than add another Agent.
+- Updated the evaluation range to 53/60 baseline → 58–60/60 across six same-set rounds; preserved the 11-05 deployment snapshot of 59/60 and final round 60/60.
+- Retained p50 3,625ms → 1,807ms; added the estimated ~97% token-cost reduction only with its high-cache-hit caveat; retained 27 → 14 tool-entry consolidation.
+- Explicitly separated personal contribution from team/Agent implementation and marked public-display permission, browser E2E, real-device voice and real-user outcomes as unresolved.
+
+### Source checks
+
+- Read the 2026-11-05 VIVIC deployment report and frontend handoff directly from the private repository branch `codex/live-backend-20261103`.
+- Deployment report records backend batch 2/3 at `069b2dc`, 59/60 for that deployment snapshot, p50 1,807ms, frontend release `sections-20261103-final`, and outstanding frontend/browser/voice validation.
+- Parsed the updated inline JavaScript successfully.
+- Confirmed the role panel is rendered only for VIVIC; other Case records retain their existing evidence-led role/boundary sections.
+- Confirmed VIVIC remains labelled as a team-product draft with publication permission pending.
+
+### Deployment
+
+- Source commit: `ab8164006917b5414c4a455a551e1b93a049ba7d`.
+- Deployment: `dpl_GHTydoCyYeMk6iWt8dJ8M9APquCN` · READY.
+- Preview base URL: https://ai-product-portfolio-eo95g4txp-yu-ac3a.vercel.app.
+- No-login share link verified in the owner conversation; token is not stored here.
+- Homepage, hash-addressed case entry and Laya casebook return HTTP 200.
+- All checked pages retain `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Production aliases and DNS were not changed.
+
+### Remaining visual QA
+
+- Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain outstanding; source-level and live HTTP checks do not replace those tests.

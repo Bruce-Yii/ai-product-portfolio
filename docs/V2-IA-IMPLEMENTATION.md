@@ -82,11 +82,12 @@ Do not lead with technology names, PR counts, or internal workflow vocabulary. T
 
 ### VIVIC
 
-- Story: make a user's multimodal intent turn into a correctly authorized, executed, and acknowledged action.
-- Core decision: model owns semantic selection; host owns permission/parameter validation and real execution; the system returns a truthful receipt or explicit failure.
-- Evidence: fixed 60-item API regression and backend deployment records; 53/60 → 59/60 and p50 3,625ms → 1,807ms are internal test-set results, not real-user success metrics.
-- Boundary: full front-end experience, 48 browser scenarios, and real-device voice remain unverified.
-
+- Story: after taking over an existing multimodal card assistant, drive the Agent decision-chain refactor from a multi-owner planning path into one verifiable product execution loop.
+- Personal role: core project collaborator responsible for problem framing, product/architecture judgment, task decomposition and acceptance; coordinate Agent/team implementation and delivery. Do not claim all team/Agent code as individually authored.
+- Core decision: deterministic rules handle exact formats; the model owns semantic/tool/target selection; the host owns permission, Schema and target validation plus real execution; structured ToolIssue returns repairable failures; final speech follows the actual execution receipt.
+- Key trade-off: remove experimental 4B routing, slot planner, local classifier, directOperations and duplicate business-decision paths instead of adding another Agent or more tools.
+- Evidence: the 60-item API regression baseline was 53/60; the 2026-11-05 deployment report snapshot was 59/60, and six subsequent same-set rounds recorded 58/60, 59/60, 60/60, 60/60, 59/60 and 60/60. API request-to-final-result p50 moved from 3,625ms to 1,807ms; estimated per-turn token cost fell about 97% under high-cache-hit conditions (not an actual billing comparison); tool entry points were consolidated from 27 to 14. These are internal team records, not real-user or commercial outcomes.
+- Boundary: backend deployment and API regression are recorded; frontend remained on the 11-03 release, 48 browser scenarios were not rerun, real-device voice and end-to-end user experience remain unverified. Public-display permission and commit-level personal authorship still require separate confirmation.
 ### AWRP × Linear
 
 - Story: long-running work must survive changing Agents and Sessions.
@@ -146,8 +147,8 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 
 ## Latest review deployment
 
-- Deployment: `dpl_PKEZsYkHwAnRSBpBDtwEJDH4kJXZ` · READY.
-- Preview base URL: `https://ai-product-portfolio-hdglyt4h0-yu-ac3a.vercel.app`.
+- Deployment: `dpl_GHTydoCyYeMk6iWt8dJ8M9APquCN` · READY.
+- Preview base URL: `https://ai-product-portfolio-eo95g4txp-yu-ac3a.vercel.app`.
 - A no-login share link was generated and verified on 2026-11-09; its token is intentionally not stored in this public repository.
 - Homepage and `/cases/laya/` both return HTTP 200 and retain `noindex, nofollow, noarchive`.
 - Production aliases remain on frozen V1; no DNS, nameserver, or production alias changes were made.
