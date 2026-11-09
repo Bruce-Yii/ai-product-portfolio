@@ -473,3 +473,21 @@ A pure documentation-only change may skip website deployment only when the websi
 ### Remaining visual QA
 
 - Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain outstanding. Source parsing and live HTTP checks do not replace rendered-browser verification.
+
+## 2026-11-09 · Homepage project-list direction correction
+
+### User clarification
+
+- Keep recognizable open-source project names visible; popular project names are an asset and improve recruiter recognition.
+- The problem was engineering-heavy descriptions, not the presence of project names.
+- Homepage row hierarchy: **project name + concise product-language description of what the project does + a brief summary of the user's product practice**.
+- Keep detailed PR/module evidence in the deeper contribution view; do not replace the homepage index with long narrative cards.
+
+### Implementation
+
+- Added concise, user-facing product descriptions for OpenClaw, Dify, RAGFlow, Cherry Studio, QwenPaw, FunASR, dsh-market and Google ADK.
+- Restored the compact project-index row pattern with project names prominent and product descriptions adjacent.
+- Preserved the separate Laya casebook feature and deeper Work-page contribution evidence.
+- This correction supersedes the previous homepage narrative-card treatment; it does not remove project names or rename repositories.
+- Inline JavaScript syntax parsed successfully before commit.
+
