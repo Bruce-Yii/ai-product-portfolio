@@ -22,11 +22,17 @@
 - No DNS or nameserver changes were made in the current v2 content revision.
 - The owner previously authorized a future direct replacement of the portfolio homepage, but this v2 candidate has **not** been promoted to production.
 
-## Deployment protection and review access
+## Mandatory iteration deployment and review access
 
-- Vercel project SSO protection is enabled for non-custom deployment URLs.
-- A no-login share link may be used for review; a local HTML deliverable should also be supplied when requested.
-- Share links grant access to anyone who holds the link; do not publish the token in public documentation.
+- Every website iteration that changes content, visual design, layout, routing, or interaction must be deployed before it is reported as delivered.
+- Default: deploy the current Git commit to Vercel Preview and create a no-login share link that the owner can open directly. A safely configured existing domain is an acceptable alternative when it does not require unapproved routing changes.
+- A login-protected Vercel Preview URL alone is not a valid owner-facing deliverable.
+- After deployment, verify the exact deployment commit, HTTP response, homepage, changed route(s), key assets/interactions, and desktop/mobile rendering. A READY build alone is insufficient.
+- Deliver the actual working URL in the completion report. Never invent a URL or report an unverified link as working.
+- Share links grant access to anyone who holds them; do not put their tokens in public repository files.
+- Preview deployment is the normal review path; it does not automatically mean production promotion or search indexing.
+- If the custom domain is already safely attached to the intended project, it may be used as the viewing URL. If using it requires changing DNS, Nameservers, domain ownership, cross-project aliases, or other production routing, use a Vercel Preview share link instead unless the owner explicitly approves that exact change.
+- Pure documentation/governance changes that do not change the website artifact do not require a website deployment; state that clearly in the report.
 - Keep preview noindex enabled.
 
 ## Search indexing
@@ -43,6 +49,11 @@
 5. Replace placeholders with authorized assets or clearly labelled explanatory visuals.
 6. Obtain explicit approval for the exact release candidate before assigning production aliases.
 7. Obtain a separate decision before enabling search indexing.
+8. For every subsequent website iteration, complete the mandatory deploy-and-verify cycle in [Portfolio Operating Contract](./docs/PORTFOLIO-OPERATING-CONTRACT.md); do not treat local changes as delivered.
+
+## Cross-window operating rule
+
+All windows and agents must read [Portfolio Operating Contract](./docs/PORTFOLIO-OPERATING-CONTRACT.md) before editing. It is the source of truth for product-manager packaging, interview-ready case narratives, recruiter-first information architecture, and mandatory deployment after each website iteration.
 
 ## Case admission rule
 

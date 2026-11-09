@@ -51,6 +51,19 @@ Laya remains its own flagship casebook and is also linked from the contribution 
 - Unified contribution index for the eight open-source ecosystems.
 - Case is the primary storytelling unit; a Project may contain multiple Cases. A repository is not automatically a Project or Case.
 
+## Product-manager positioning and interview narrative
+
+This portfolio is a job-search and interview artifact for AI Product Manager roles. Do not merely paraphrase technical activity in more polished engineering language. Reframe real work as product judgment and product delivery.
+
+Strong Chinese résumé-style positioning and editorial packaging are explicitly allowed and expected: improve case names, select a stronger product framing, combine related Issues / PRs / Reviews / research / integration into a coherent case, and foreground user value, workflow change, reliability, cost, delivery efficiency, or product mechanisms. Do not leave a contribution looking like a bug-fix diary when a defensible product problem and product decision can be explained.
+
+Every flagship case must support an interview narrative:
+**user/scenario → problem and impact → product judgment → options and trade-offs → product mechanism and experience → execution and collaboration → validation/evidence → outcome, limits, and next iteration.**
+
+The story should make clear what the owner personally decided, designed, drove, implemented, reviewed, or validated, and what was delivered by teammates or upstream maintainers. Use confident product language, not inflated facts. Do not fabricate roles, customers, adoption, revenue, release status, test results, or individual ownership. Distinguish internal test-set outcomes from real-user outcomes and merged contributions from shipped product behavior.
+
+For short contributions, compress this into a product-problem headline, a one-paragraph mechanism/value explanation, and direct evidence links. Do not force every contribution into a long case study.
+
 ## Product-language standard
 
 Every major case should answer, in this order:
@@ -139,3 +152,15 @@ Contributions are grouped by the product problem they improve, with the source P
 - Personal Context Keyboard has a dedicated five-layer architecture visual.
 - Inline JavaScript syntax parse: PASS.
 - Full browser visual review and responsive E2E remain outstanding.
+
+
+## Recruiter-first presentation and delivery contract
+
+- The homepage is an entry point for hiring managers: establish role/value quickly, surface the strongest product cases, organize open-source work by product problem, connect capabilities to evidence, and provide a concise About/contact path.
+- Use layered reading: roughly 10 seconds for a case card, 1 minute for a case summary, and 3–5 minutes for a deep case. The detail view should explain problem, judgment, trade-offs, mechanism, execution, evidence, role boundary, and learning.
+- Preserve the Project / Case / Contribution / Evidence / Capability model. A repository or PR count is not automatically a product or a Case.
+- Do not invent a new hero headline, brand slogan, project scope, or visual direction without an explicit owner decision. Existing approved positioning and current source implementation take precedence over unrelated conversations.
+- Every website content, visual, layout, route, or interaction iteration must be deployed to a no-login Vercel Preview or a safely configured existing domain, then independently checked. A protected URL that requires the owner to log in is not sufficient.
+- Deployment must be followed by real HTTP/page checks and desktop/mobile review. The actual working link and verification result belong in the completion report.
+- Domain/DNS/Nameserver changes or cross-project production alias changes are separate routing operations; use a Vercel Preview instead unless the exact production change is explicitly authorized.
+- Read [Portfolio Operating Contract](./PORTFOLIO-OPERATING-CONTRACT.md) for the binding cross-window workflow and acceptance criteria.

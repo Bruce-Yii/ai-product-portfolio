@@ -353,3 +353,17 @@ This correction supersedes the earlier five-project / eight-case / Make Again ca
 - Latest 30-minute Preview error/fatal runtime log query returned no matching logs.
 - Live Vercel alias read-back confirms hcfind.com and www.hcfind.com still point to frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
 - Browser visual review and responsive E2E remain outstanding.
+
+
+## Mandatory acceptance checks for future website iterations
+
+A future website iteration is not complete merely because its source was edited or a build passed. Before reporting delivery:
+
+1. Confirm the deployed deployment ID and source commit match the intended Git revision.
+2. Open the owner-facing URL without requiring Vercel/GitHub login.
+3. Check the homepage and every changed route, including direct route entry and refresh.
+4. Check key assets, navigation, interactions, console/runtime errors, and 1440px / 390px / 360px layouts.
+5. Confirm current noindex / access-protection requirements remain intact.
+6. Include the actual accessible URL and checks performed in the completion report.
+
+A pure documentation-only change may skip website deployment only when the website artifact is unchanged; say so explicitly. See [Portfolio Operating Contract](./PORTFOLIO-OPERATING-CONTRACT.md).
