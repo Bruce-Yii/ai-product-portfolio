@@ -81,3 +81,16 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Build event confirms the expected GitHub repository, branch and commit; build completed and deployment reached READY.
 - Production aliases hcfind.com and www.hcfind.com remain on frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
 - This candidate has not been promoted to production.
+
+## Latest owner review candidate · 2026-11-09 · Product-decision narrative pass
+
+- Source commit: `4f1b48402566dc274669c46c2787eb1197c85580`.
+- QA documentation commit: `809d665c8ef64a8592b060b8d8501588d65c9b33`.
+- Preview deployment: `dpl_GFwuMZADGSD9YxTzF4sAPf3SEVZg` · READY.
+- Preview base URL: https://ai-product-portfolio-2tyh5wss7-yu-ac3a.vercel.app.
+- Homepage and Laya casebook return HTTP 200 and retain `X-Robots-Tag: noindex, nofollow, noarchive`.
+- The contribution section now leads with user scenarios and product decisions; repository/PR details remain traceable evidence. Google ADK remains marked as an unmerged proposal.
+- The stable branch preview alias resolves to this deployment. An existing time-limited share link is reused; its token is not stored in this repository.
+- Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr`.
+- This candidate has not been promoted to production.
+- Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain pending.
