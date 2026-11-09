@@ -1,107 +1,60 @@
 # Publication Gate
 
+## Current portfolio candidate
+
+- Candidate branch: `portfolio/v2-information-architecture`.
+- Candidate scope is limited to the user-confirmed portfolio subjects: VIVIC, AWRP × Linear, Personal Context Keyboard, Laya flagship casebook, and the unified open-source contribution index.
+- Main-site Cases: four — Laya, VIVIC, AWRP × Linear, Personal Context Keyboard.
+- Selected Project cards: three — VIVIC, AWRP × Linear, Personal Context Keyboard.
+- Open-source contribution groups: OpenClaw, Dify, RAGFlow, Cherry Studio, QwenPaw, FunASR, dsh-market, Google ADK.
+- Google ADK is an unmerged RFC / tests-only Draft and must not be labelled merged.
+- Make Again 2.0, Agent Evaluation Lab, and EvalScope are excluded. Cherry Studio and dsh-market are contribution groups, not standalone Case pages.
+
 ## Repository visibility
 
 - Repository visibility: **Public**, explicitly accepted by the owner on 2026-11-09.
-- This decision concerns GitHub repository visibility only. It does not, by itself, approve public website launch or search indexing.
+- Repository visibility does not itself approve production website release or search indexing.
 
-## Website state
+## Production domain state — last live verification
 
-- Current build: editorial review.
-- Search indexing: blocked by page-level `noindex`, `robots.txt`, and Vercel `X-Robots-Tag`.
-- Public production deployment / custom-domain launch: not yet approved.
+- `hcfind.com` points to frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr`.
+- `www.hcfind.com` redirects to `hcfind.com` (308) on the same frozen V1 deployment.
+- No DNS or nameserver changes were made in the current v2 content revision.
+- The owner previously authorized a future direct replacement of the portfolio homepage, but this v2 candidate has **not** been promoted to production.
 
-## Before public launch
+## Deployment protection and review access
 
-1. Owner reviews and approves the exact seven main-site cases and the Laya casebook.
-2. Re-check every role boundary, PR/Review status, metric date, and evidence link against live sources.
-3. Confirm permission to reuse VIVIC team visuals and any screenshots from the private project repository.
-4. Replace remaining visual placeholders with authorized assets or clearly labelled explanatory visuals.
-5. Add the approved resume and public contact method, if desired.
-6. Remove noindex protections only after the owner approves the exact release candidate.
+- Vercel project SSO protection is enabled for non-custom deployment URLs.
+- A no-login share link may be used for review; a local HTML deliverable should also be supplied when requested.
+- Share links grant access to anyone who holds the link; do not publish the token in public documentation.
+- Keep preview noindex enabled.
 
-Do not infer approval from a case task being marked complete, a merged PR, or repository visibility.
+## Search indexing
 
+- Keep page-level `noindex`, `robots.txt` blocking, and Vercel `X-Robots-Tag` until the exact release candidate is approved.
+- Do not remove indexing protections based on a completed task or a READY deployment.
 
-## Custom-domain routing approval · 2026-11-09
+## Release blockers
 
-- Owner explicitly approved replacing the existing `hcfind.com` homepage with this portfolio.
-- The root domain and existing `www.hcfind.com → hcfind.com` redirect may be reassigned to the portfolio Vercel project.
-- This approval covers domain routing and public accessibility of the current release candidate.
-- It does **not** automatically approve search indexing or waive the remaining content/evidence checks above. Keep page-level `noindex`, `robots.txt` blocking, and Vercel `X-Robots-Tag` until the exact seven main-site cases, Laya casebook, evidence, and visual permissions have been reviewed and separately approved.
+1. Owner reviews the actual homepage, VIVIC case, AWRP × Linear case, Personal Context Keyboard case, and Laya casebook.
+2. Check the mobile layout and responsive navigation.
+3. Re-check role boundaries, evidence links, dates, and all contribution statuses against live sources.
+4. Confirm permission to reuse VIVIC team visuals and any screenshots from private project repositories.
+5. Replace placeholders with authorized assets or clearly labelled explanatory visuals.
+6. Obtain explicit approval for the exact release candidate before assigning production aliases.
+7. Obtain a separate decision before enabling search indexing.
 
+## Case admission rule
 
-### Domain replacement completed · 2026-11-09
+A project or repository does not qualify for a standalone Case page merely because it has multiple merged PRs or a polished visual. A Case must have a coherent product problem or user journey, attributable personal decisions, primary evidence, meaningful validation, and a defensible outcome. Independent contributions remain traceable under the unified repository-level contribution index.
 
-- Current production deployment: `dpl_5uFv25CXDq8DkmD64NZMU7FHDvcK` (READY; contains the prior eight-case candidate).
-- `hcfind.com` now routes to `ai-product-portfolio`; `www.hcfind.com` redirects to the root domain (308).
-- Both the homepage and `/cases/laya/` return HTTP 200.
-- The former `hcfind-home` project and its deployment remain intact; only the custom-domain aliases were reassigned.
-- No DNS / nameserver changes.
-- Search indexing remains disabled until the content/evidence and visual-permission review is completed.
+## Current source-level checks
 
-
-## Case admission rule · 2026-11-09
-
-A project or repository does not qualify for a standalone Case page merely because it has multiple merged PRs or a polished visual. A Case must have one coherent product problem or user journey, attributable personal product/engineering decisions, primary evidence for the change, meaningful validation, and a defensible outcome. Independent fixes across unrelated product surfaces remain separate Contributions under the project/repository grouping; they must not be forced into one product narrative.
-
-### Dify classification · 2026-11-09
-
-- Dify is a contribution group in the Open Source Contributions index, not a standalone Case in the proposed seven-case candidate.
-- Its four merged PRs address independent issues: Notion rich-text extraction (#42171), moderation keyword-row validation (#42212), annotation CSV literal-NA preservation (#42221), and PDF worker base-path resolution (#42956).
-- The four PRs remain individually identifiable evidence. Their shared repository does not establish one unified product case.
-- The current production deployment still contains the previous eight-case candidate. The seven-case correction is a review-branch change; do not update the production alias until the owner approves the revised candidate.
-
-
-### Seven-case candidate preview · 2026-11-09
-
-- Staging deployment: dpl_7SMd3LiyJgjDmuc6JqoiD3oGDweT (READY).
-- Preview URL: https://ai-product-portfolio-lxwa40l6c-yu-ac3a.vercel.app
-- Homepage and /cases/laya/ both return HTTP 200; noindex remains enabled.
-- This preview does not change the production alias. Production remains on the previous eight-case candidate pending owner review.
-
-
-### Latest seven-case preview supersedes prior preview
-
-- Deployment: dpl_HaFhgdtRW1TdMhnuJ1jvXZimpBB4 (READY).
-- URL: https://ai-product-portfolio-5lrrbku69-yu-ac3a.vercel.app
-- Source commit: 4b9000ba59b904fdd6afb0569f49a086c6fa5d68.
-- Homepage and Laya casebook route return HTTP 200; Dify is contribution-only; noindex remains.
-
-
-## Portfolio v2 preview — 2026-11-09 (NOT production)
-
-- Branch: portfolio/v2-information-architecture.
-- Commit: dce2e80a89a7e6ddf11b0e3c3ee5d881cc524400.
-- Preview deployment: dpl_6JNgwJyVS2fYzf3JrebYTQpuxezJ · READY.
-- Preview URL: https://ai-product-portfolio-i6crjqnne-yu-ac3a.vercel.app.
-- The preview is for owner review only. Do not assign hcfind.com or www.hcfind.com to this deployment.
-- Production remains V1: dpl_DU86D71ntVNtihTr4spaUQZBXETr.
-- V1 freeze branch: freeze/portfolio-v1-2026-11-09.
-- noindex remains enabled. Do not enable search indexing until public content/evidence review and owner approval.
-- Release blockers: owner visual review, responsive E2E, per-case attribution/evidence review, and explicit production release approval.
-
-
-## Latest v2 preview — public-evidence cleanup · 2026-11-09
-
-- Source branch: portfolio/v2-information-architecture.
-- Source commit: a40af18b52aed5f16c9dca5fd8dcd1ec55a1a645.
-- Preview deployment: dpl_JCCmAEicSsv8tARBopwX5jeESkkR · READY.
-- Preview URL: https://ai-product-portfolio-la3ir2b5p-yu-ac3a.vercel.app.
-- Public case payloads no longer include private Notion or Linear URLs; narrative evidence is restricted to explicitly public GitHub records.
-- Homepage and Laya casebook return HTTP 200; noindex remains enabled.
-- Production remains V1 at dpl_DU86D71ntVNtihTr4spaUQZBXETr; hcfind.com and www.hcfind.com aliases remain unchanged.
-- This remains a preview. Do not promote to production until owner visual review, responsive E2E, per-case evidence/attribution review, and explicit release approval.
-
-
-## Make Again 2.0 discovery case added — 2026-11-09 (Preview only)
-
-- Added Project card 05 and Case 008 as Product Discovery / Research & Feasibility.
-- MVP remains unlocked; no shipped-product, validated-demand, payment, retention, or user-efficacy claim.
-- Public-case synthesis, longitudinal observations, and model-free PostgreSQL/pgvector Spike are presented as research and feasibility inputs only.
-- The historical repository is not listed as a separate achievement; the separate team version is not conflated with 2.0.
-- Latest source commit: 59a7632949c1a214aef4f9e447aea1e4713ba019.
-- Latest Preview: dpl_Gthev3cbExjvqMakspqSHsAe9Pev · READY.
-- Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app.
-- Production remains V1 at dpl_DU86D71ntVNtihTr4spaUQZBXETr. No production alias or DNS changes.
-- Owner review and responsive E2E remain release blockers.
+- Four Case records and four detail payloads.
+- Three selected Project cards.
+- Eight open-source contribution groups, plus Laya casebook entry.
+- AWRP × Linear has a dedicated Task / Run / Evidence / Acceptance visual and a non-ranking DeepSeek comparison.
+- Personal Context Keyboard has a dedicated Sensor / Raw / Derived / User Control / AI Gateway visual.
+- Excluded standalone projects are absent from public source.
+- Inline JavaScript syntax parse: PASS.
+- Full browser visual review and responsive E2E remain pending.
