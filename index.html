@@ -1032,6 +1032,8 @@ body {background:var(--paper);color:var(--ink)}
 }
 
 .narrative-no-evidence{font-size:12px;line-height:1.8;color:var(--muted);padding:12px 0}
+
+.workflow-compare{margin-top:26px;border-top:1px solid #668476;padding-top:22px}.workflow-compare__heading{color:#B1C7B8;font-size:9px;letter-spacing:.08em;margin-bottom:14px}.workflow-compare__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.workflow-compare__grid article{border:1px solid #668476;padding:15px 14px;min-width:0}.workflow-compare__grid article>span{display:block;color:#B1C7B8;font-size:8px;letter-spacing:.08em}.workflow-compare__grid article strong{display:block;color:#E6EEE5;font:500 17px/1.5 var(--han);margin:10px 0}.workflow-compare__grid article p{color:#C1D0C4;font-size:11px;line-height:1.9;margin:0}@media(max-width:720px){.workflow-compare__grid{grid-template-columns:1fr}.workflow-compare__grid article{padding:13px}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1743,6 +1745,8 @@ document.addEventListener('click',event=>{
   if(btn.matches('[data-glass-mode]')) {setGlassMode(btn.dataset.glassMode);return}
   if(btn.matches('[data-step]')) {showProductStep(Number(btn.dataset.step));return}
   if(btn.matches('[data-sys]')) {showSystemNode(Number(btn.dataset.sys));return}
+  if(btn.matches('[data-workflow-step]')) {showWorkflowStep(Number(btn.dataset.workflowStep));return}
+  if(btn.matches('[data-context-step]')) {showContextStep(Number(btn.dataset.contextStep));return}
   switch(btn.dataset.action){
     case 'navigate': navigate(btn.dataset.page||'home',btn.dataset.targetId||'');break;
     case 'open-work':openWork(btn.dataset.workMode||'work');break;
@@ -1806,6 +1810,44 @@ const SYSTEM_NODES=[
 ];
 function systemExperience(){return `<div class="demo-system"><div class="system-toolbar mono"><span>REFERENCE ARCHITECTURE / INTERACTIVE</span><span>SELECT A RESPONSIBILITY ↘</span></div><div class="system-flow" role="group" aria-label="选择执行系统的职责节点">${SYSTEM_NODES.map((n,i)=>`<button data-sys="${i}" aria-pressed="${i===2?'true':'false'}" ><span class="mono">0${i+1}</span><strong>${n[0]}</strong><small>↗</small></button>`).join('<div class="sys-join" aria-hidden="true">→</div>')}</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / RESPONSIBILITY</span><span class="system-detail-no" id="sys-num">03 / 05</span></div><h3 id="sys-title">宿主校验</h3><p id="sys-desc">在真正执行前检查边界、权限、参数及需要人工确认的操作。</p><div class="system-io"><span id="sys-input">输入：候选行动</span><span id="sys-output">输出：允许 / 拒绝 / 待确认</span></div></div></div>`;}
 function showSystemNode(i){let n=SYSTEM_NODES[i];if(!n)return;$('#sys-num').textContent=`0${i+1} / 05`;$('#sys-title').textContent=n[1];$('#sys-desc').textContent=n[2];$('#sys-input').textContent=n[3];$('#sys-output').textContent=n[4];$$('[data-sys]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.sys===i)));}
+const WORKFLOW_STEPS=[
+ ["TASK","长期任务身份","任务是跨越多个 Agent、Session 和等待周期持续存在的工作对象。","输入：目标 / Scope / 验收标准","输出：稳定的 Task 身份"],
+ ["RUN","单次执行尝试","Agent 或 Session 可以更换；每次执行都留下独立记录，避免把任务与某次运行混为一谈。","输入：Task / 执行者 / 当前上下文","输出：Run / Session / 事件记录"],
+ ["EVIDENCE","外部事实与产物","代码、测试、PR、文件和外部系统状态才是完成依据，不能只读取 Agent 自己的 Done。","输入：Commit / CI / Artifact / 外部状态","输出：可追溯 Evidence"],
+ ["ACCEPTANCE","独立验收","协调者按任务目标和证据检查 Scope、结果与副作用，再决定接受、退回或继续。","输入：验收标准 + Evidence","输出：Accept / Rework / Block"]
+];
+function workflowExperience(){
+ return '<div class="demo-system"><div class="system-toolbar mono"><span>AWRP × LINEAR / LONG-RUNNING WORKFLOW</span><span>SELECT A PRODUCT OBJECT ↘</span></div><div class="system-flow" role="group" aria-label="选择长期 Agent 工作流中的产品对象">'+WORKFLOW_STEPS.map((n,i)=>'<button data-workflow-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / PRODUCT OBJECT</span><span class="system-detail-no" id="workflow-num">01 / 04</span></div><h3 id="workflow-title">长期任务身份</h3><p id="workflow-desc">'+WORKFLOW_STEPS[0][2]+'</p><div class="system-io"><span id="workflow-input">'+WORKFLOW_STEPS[0][3]+'</span><span id="workflow-output">'+WORKFLOW_STEPS[0][4]+'</span></div></div><div class="workflow-compare"><div class="mono workflow-compare__heading">ARCHITECTURE COMPARISON / DIFFERENT ROLES, NO RANKING</div><div class="workflow-compare__grid"><article><span class="mono">AWRP</span><strong>接力协议原型</strong><p>探索 Task、Run、Event、ACK / HANDOFF 与 Review 的责任边界。历史代码与测试实践，不是生产级平台。</p></article><article><span class="mono">LINEAR × NOTION</span><strong>现行真实工作流</strong><p>Linear 管理 Project / Issue / 状态；Notion 保存长期语义与决策；GitHub 保留代码和上游事实。</p></article><article><span class="mono">DEEPSEEK SUPER-AGENT</span><strong>第三方架构参照</strong><p>对照其事件驱动执行、授权、Ticket 与恢复机制；只作为公开开源研究对象，不属于个人成果。</p></article></div></div></div>';
+}
+function showWorkflowStep(i){
+ const n=WORKFLOW_STEPS[i];if(!n)return;
+ document.getElementById('workflow-num').textContent='0'+(i+1)+' / 04';
+ document.getElementById('workflow-title').textContent=n[1];
+ document.getElementById('workflow-desc').textContent=n[2];
+ document.getElementById('workflow-input').textContent=n[3];
+ document.getElementById('workflow-output').textContent=n[4];
+ document.querySelectorAll('[data-workflow-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.workflowStep)===i)));
+}
+const CONTEXT_STEPS=[
+ ["SENSOR","高频信息入口","Android 输入法与 Windows Sensor 在授权范围内捕获用户主动输入或选择的信息；入口本身不是 Context Core。","输入：用户主动输入 / 选择","输出：带来源与时间的原始事件"],
+ ["RAW","原始事实","保留原始内容、来源、时间与必要的上下文，不让模型推断覆盖用户事实。","输入：原始事件 / 来源 / 时间","输出：可追溯 Raw Fact"],
+ ["DERIVED","可重建的上下文","关系、事件、主题与线程是派生层；可以更新、纠错和重建，不反向污染原始事实。","输入：Raw Facts / 时间线","输出：关系 / Events / Threads"],
+ ["USER CONTROL","用户确认与控制","AI 整理结果需要用户确认；用户可以纠错、撤回、删除，并决定哪些信息可被记住或使用。","输入：AI 整理建议","输出：确认 / 修改 / 忽略 / 删除"],
+ ["AI GATEWAY","按授权提供给 AI","不同 AI 只拿到当前任务被授权的上下文范围，并保留来源和使用边界。","输入：已确认上下文 + 授权范围","输出：可迁移的 Context Pack"]
+];
+function contextExperience(){
+ return '<div class="demo-system"><div class="system-toolbar mono"><span>PERSONAL CONTEXT KEYBOARD / PRODUCT ARCHITECTURE</span><span>SELECT A PRODUCT LAYER ↘</span></div><div class="system-flow" role="group" aria-label="选择个人上下文产品架构层">'+CONTEXT_STEPS.map((n,i)=>'<button data-context-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / CONTEXT LAYER</span><span class="system-detail-no" id="context-num">01 / 05</span></div><h3 id="context-title">高频信息入口</h3><p id="context-desc">'+CONTEXT_STEPS[0][2]+'</p><div class="system-io"><span id="context-input">'+CONTEXT_STEPS[0][3]+'</span><span id="context-output">'+CONTEXT_STEPS[0][4]+'</span></div></div></div>';
+}
+function showContextStep(i){
+ const n=CONTEXT_STEPS[i];if(!n)return;
+ document.getElementById('context-num').textContent='0'+(i+1)+' / 05';
+ document.getElementById('context-title').textContent=n[1];
+ document.getElementById('context-desc').textContent=n[2];
+ document.getElementById('context-input').textContent=n[3];
+ document.getElementById('context-output').textContent=n[4];
+ document.querySelectorAll('[data-context-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.contextStep)===i)));
+}
+
 function renderCase(id){
  const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[c.presentation==='evidence'?c.id:c.type];
  const layaBook=document.getElementById('laya-casebook-cta');if(layaBook)layaBook.hidden=c.id!=='laya-decision-integrity';
@@ -1816,8 +1858,8 @@ function renderCase(id){
  $('#case-head-note').textContent=d.headnote;$('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
  $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
- $('#case-edition-type').textContent=c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
- $('#case-edition-disclaimer').textContent=c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':'架构与交互图为说明性呈现；实现状态与验证范围见案例正文';
+ $('#case-edition-type').textContent=c.id==='agent-workflow-governance'?'PRODUCT SYSTEM DESIGN / REAL WORKFLOW':c.id==='personal-context-layer'?'PRODUCT ARCHITECTURE / EARLY PROTOTYPE':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
+ $('#case-edition-disclaimer').textContent=c.id==='agent-workflow-governance'?'AWRP 历史原型 + 现行工具组合 + 第三方架构对照；非已上线独立平台':c.id==='personal-context-layer'?'产品与架构示意；非已发布跨端产品':c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':'架构与交互图为说明性呈现；实现状态与验证范围见案例正文';
  $('#case-scope-label').textContent=c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
  $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。图示为独立机制说明，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'当前展示的是团队产品中的 Agent 决策与执行链路设计。后端已有内部部署和回归记录；完整前端体验、真机语音和真实用户效果尚未完成验证。本页不把内部验证写成外部用户成效。':'本页中的机制图用于解释产品设计，不代表真实产品截图或生产运行数据。实现状态、个人职责与外部证据分别说明；尚未取得的用户效果不作推断。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
@@ -1826,14 +1868,14 @@ function renderCase(id){
  $('#case-source-link').innerHTML=sourceLinks.length?'<div class="mono">PUBLIC RECORDS / REFERENCES</div>'+sourceLinks.map(e=>`<a target="_blank" rel="noopener noreferrer" href="${esc(e.url)}"><span>${esc(e.label)}</span><span>${esc(e.supports||'GITHUB RECORD')} ↗</span></a>`).join(''):'';
  $('#case-context-title').textContent=d.contextTitle;$('#case-context-lead').textContent=d.contextLead;$('#case-context-copy').textContent=d.contextCopy;
  $('#case-experience-title').textContent=d.experienceTitle;$('#case-experience-intro').textContent=d.experienceIntro;
- $('#case-stage').innerHTML=c.presentation==='evidence'?narrativeExperience(c):c.type==='product'?productExperience():systemExperience();
+ $('#case-stage').innerHTML=c.id==='agent-workflow-governance'?workflowExperience():c.id==='personal-context-layer'?contextExperience():c.presentation==='evidence'?narrativeExperience(c):c.type==='product'?productExperience():systemExperience();
  $('#case-figure-caption').textContent=d.caption;
  const mediaCases={product:['M05','M06'],opensource:[],systems:[]};
  const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
  $('#case-media-insert').hidden=!mediaIds.length;
  $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">SUPPORTING MATERIAL / ASSET BRIEF</div><h3>More than a <i>cover.</i></h3><p>${c.type==='product'?'这里保留真正的产品截图。不是 AI 想象出来的界面。':'这一位置用于机制说明图；实际 PR 仍以独立的公开源链接说明。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
  $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const metricRoot=document.getElementById('case-metrics');const metrics=c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 59/60',note:'旧稳定版基线 → 11 月 5 日线上部署记录'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'约下降 50%；同一测量口径'},{label:'能力工具入口',value:'27 → 14',note:'从按卡片类型组织，收敛为按能力组织'}]:c.id==='laya-decision-integrity'?[{label:'本人 Authored PR',value:'47',note:'GitHub 作者查询快照 · 2026-11-09'},{label:'已合并 PR',value:'40 / 47',note:'本人 authored PR 中的已合并数量'},{label:'reviewed-by 查询',value:'85 PRs',note:'reviewed-by:Bruce-Yii 命中；与 authored 统计分开'}]:[];const metricNote=c.id==='product'?'FIXED 60-ITEM API TEST SET · INTERNAL PROJECT RECORDS · NOT A REAL-USER SUCCESS RATE':c.id==='laya-decision-integrity'?'GITHUB QUERY SNAPSHOT · REVIEWED-BY MATCHES ARE A SEPARATE QUERY · NOT A PRODUCT KPI':'';if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>`<article class="case-metric"><span class="mono case-metric__label">${esc(m.label)}</span><strong class="case-metric__value">${esc(m.value)}</strong><small class="case-metric__note">${esc(m.note)}</small></article>`).join('')+`<p class="case-metrics-note mono">${esc(metricNote)}</p>`:'';}
- if(c.presentation!=='evidence'){if(c.type==='product')showProductStep(0);if(c.type==='systems')showSystemNode(2)}
+ if(c.id==='product')showProductStep(0);if(c.id==='agent-workflow-governance')showWorkflowStep(0);if(c.id==='personal-context-layer')showContextStep(0);if(c.presentation!=='evidence'&&c.type==='systems')showSystemNode(2)
  const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
 }
 function navigate(page='home',id='',push=true){
