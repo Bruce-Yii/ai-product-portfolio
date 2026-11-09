@@ -374,8 +374,8 @@ A pure documentation-only change may skip website deployment only when the websi
 ### Source and deployment
 
 - Branch: `portfolio/v2-information-architecture`.
-- Deployed source commit: `ec5eaed4c1a727f1f6be68a237ab712a41f66bdd`.
-- Deployment: `dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs` · READY.
+- Deployed source commit: `a54baf3aad04510d7be14b2784a4d0b238b9b310`.
+- Deployment: `dpl_PKEZsYkHwAnRSBpBDtwEJDH4kJXZ` · READY.
 - Owner-facing no-login Preview share link verified separately; token is not recorded here.
 - Homepage and `/cases/laya/` return HTTP 200.
 - Both responses retain `X-Robots-Tag: noindex, nofollow, noarchive`.

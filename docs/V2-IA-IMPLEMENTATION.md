@@ -135,7 +135,7 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 ## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Current website source and aligned documentation commit: `ec5eaed4c1a727f1f6be68a237ab712a41f66bdd`.
+- Current website source and aligned documentation commit: `a54baf3aad04510d7be14b2784a4d0b238b9b310`.
 - Current website source includes three selected Project cards, four Case records, one standalone Laya casebook, and eight grouped open-source contribution entries (including one explicitly unmerged Google ADK proposal).
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
 - Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
@@ -146,8 +146,8 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 
 ## Latest review deployment
 
-- Deployment: `dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs` · READY.
-- Preview base URL: `https://ai-product-portfolio-ehwc67d8s-yu-ac3a.vercel.app`.
+- Deployment: `dpl_PKEZsYkHwAnRSBpBDtwEJDH4kJXZ` · READY.
+- Preview base URL: `https://ai-product-portfolio-hdglyt4h0-yu-ac3a.vercel.app`.
 - A no-login share link was generated and verified on 2026-11-09; its token is intentionally not stored in this public repository.
 - Homepage and `/cases/laya/` both return HTTP 200 and retain `noindex, nofollow, noarchive`.
 - Production aliases remain on frozen V1; no DNS, nameserver, or production alias changes were made.

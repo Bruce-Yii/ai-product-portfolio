@@ -73,9 +73,9 @@ A project or repository does not qualify for a standalone Case page merely becau
 
 ## Latest owner review candidate · 2026-11-09
 
-- Source commit: ec5eaed4c1a727f1f6be68a237ab712a41f66bdd.
-- Deployment: dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs · READY.
-- Preview base URL: https://ai-product-portfolio-ehwc67d8s-yu-ac3a.vercel.app.
+- Source commit: a54baf3aad04510d7be14b2784a4d0b238b9b310.
+- Deployment: dpl_PKEZsYkHwAnRSBpBDtwEJDH4kJXZ · READY.
+- Preview base URL: https://ai-product-portfolio-hdglyt4h0-yu-ac3a.vercel.app.
 - A no-login share link was generated and verified; its token is shared only in the owner conversation and is not stored in this public repository.
 - Homepage and Laya casebook both return HTTP 200 and retain X-Robots-Tag: noindex, nofollow, noarchive.
 - Build event confirms the expected GitHub repository, branch and commit; build completed and deployment reached READY.
