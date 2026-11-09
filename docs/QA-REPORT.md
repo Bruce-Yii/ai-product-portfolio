@@ -491,3 +491,10 @@ A pure documentation-only change may skip website deployment only when the websi
 - This correction supersedes the previous homepage narrative-card treatment; it does not remove project names or rename repositories.
 - Inline JavaScript syntax parsed successfully before commit.
 
+## 2026-11-09 · Corrected contribution-summary semantics
+
+- Correct interpretation: homepage descriptions summarize **the user's own contribution on each public project**, not generic descriptions of what the open-source projects do.
+- Removed generic project introductions from homepage rows.
+- Kept public repository/project names prominent and paired each with one concise product-language summary of the user's work.
+- Detailed titles, context, decisions and PR evidence remain in the deeper contribution view.
+
