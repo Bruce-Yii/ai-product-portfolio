@@ -437,3 +437,39 @@ A pure documentation-only change may skip website deployment only when the websi
 ### Remaining visual QA
 
 - Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain outstanding; source-level and live HTTP checks do not replace those tests.
+
+## 2026-11-09 · Product-decision narrative pass
+
+### Root cause
+
+- The homepage contribution renderer showed repository names, contribution titles, PR counts and technical scope, but did not render the existing `story` field.
+- Product problem, product judgment and user-facing change were therefore hidden from the first-read experience; the section visually read as a repository/patch list.
+- The Work page exposed the story, but repository identity and contribution metadata still had stronger hierarchy than the product narrative.
+
+### Changes
+
+- Reframed the section as **Product decisions, in practice.**
+- Rewrote the eight non-casebook entries around user scenarios and product behavior: Agent onboarding/recovery, knowledge workflow, Agent configuration, desktop AI workflow, multi-directory workspace, speech timeline, user control and streaming contracts.
+- Added an explicit **Product decision** layer to each entry; repository, PR count, technical scope and merge state are now supporting evidence.
+- Applied the same hierarchy to the full Work-page contribution index.
+- Google ADK remains explicitly marked as an open RFC plus tests-only Draft; no production behavior change is claimed.
+
+### Source checks
+
+- Source commit: `4f1b48402566dc274669c46c2787eb1197c85580`.
+- Parsed all inline JavaScript successfully.
+- Confirmed 9 contribution records remain present; homepage shows 8 non-casebook entries, while Laya remains in its dedicated casebook.
+- Confirmed the new homepage renderer exposes scenario, product decision and upstream evidence.
+- No project cards, Case records, route structure, production aliases or DNS records were changed.
+
+### Deployment
+
+- Preview deployment: `dpl_GFwuMZADGSD9YxTzF4sAPf3SEVZg` · READY.
+- Preview URL: https://ai-product-portfolio-2tyh5wss7-yu-ac3a.vercel.app.
+- Homepage and Laya casebook both return HTTP 200.
+- Both checked pages retain `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Production aliases remain on the frozen V1 deployment; this candidate has not been promoted.
+
+### Remaining visual QA
+
+- Full browser visual inspection and responsive E2E at 1440px / 390px / 360px remain outstanding. Source parsing and live HTTP checks do not replace rendered-browser verification.
