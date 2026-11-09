@@ -14,7 +14,8 @@ The site is intentionally product-led: each Case explains the user/job, product 
 
 - Active v2 development: `portfolio/v2-information-architecture`.
 - V1 rollback baseline: `freeze/portfolio-v1-2026-11-09`.
-- The repository default `main` is an older snapshot and is not the active content or deployment source.
+- The repository default `main` is an older snapshot (46 commits behind the V1 freeze at the 2026-11-09 audit); it is not the active content or deployment source.
+- Do not modify the frozen branch during v2 work.
 
 ## Local preview
 
@@ -26,11 +27,15 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Vercel deployment workflow
+
+The Vercel project `ai-product-portfolio` can build directly from an exact GitHub branch and commit. Automatic push-to-deploy is not verified, so do not assume a GitHub push has updated Vercel. For review, explicitly deploy the intended branch/commit to Preview and verify the resulting deployment.
+
 ## Publication state
 
 The repository is public by the owner's explicit choice. The v2 branch is a review candidate and has not been promoted to the public custom domain.
 
-The live `hcfind.com` domain still serves the v1 portfolio content. Its custom-domain aliases are currently attached to a separate Vercel project (`hcfind-home`); the `ai-product-portfolio` project hosts the v2 preview and a separate Vercel production alias. Do not reassign the custom domain or change DNS without approval of the exact release candidate.
+The live `hcfind.com` domain still serves the v1 portfolio content. Its custom-domain aliases are currently attached to a separate Vercel project (`hcfind-home`); the `ai-product-portfolio` project hosts the v2 preview and a separate Vercel production alias. The two production endpoints currently serve identical v1 HTML, but the custom-domain ownership is not attached to the portfolio project. Do not reassign the custom domain or change DNS without approval of the exact release candidate.
 
 Search indexing remains disabled: both pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing requires a separate release decision.
 
