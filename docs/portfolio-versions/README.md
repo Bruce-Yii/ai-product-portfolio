@@ -14,3 +14,11 @@
 - Main changes: Personal Context Keyboard moved to first; VIVIC moved second with team/hackathon context; AWRP × Linear moved third with chronology and productization boundary; Laya collaboration positioning revised; explicit return navigation and project-card click handler repaired; open-source descriptions and star snapshots added; Laya four-system explanatory SVG redesigned.
 - Status: source checks pass; live deploy and browser-level interaction QA still pending.
 - The source checkpoint is immutable and can be restored or inspected directly by its Git commit SHA. Do not overwrite historical version notes.
+
+### v2.2 deployment
+
+- Deployed: `dpl_4Z4tDXHwN7VockWnKEHKcqfc2qT4` (READY).
+- Public review URL: https://portfolio.hcfind.com/.
+- Laya casebook: https://portfolio.hcfind.com/cases/laya/.
+- Homepage and Laya endpoint returned HTTP 200.
+- Note: route behavior is implemented in the client-side hash router; no browser automation was available in this verification pass, so interaction E2E remains pending.
