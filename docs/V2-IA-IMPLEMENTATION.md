@@ -2,14 +2,13 @@
 
 ## Decision baseline
 
+This revision follows the user's confirmed portfolio scope from 2026-11-05 onward. Do not add projects merely because research material exists.
+
 ## Visual direction
 
 - The homepage hero uses the owner-requested headline: **“我是最强 AI 产品经理。”**
 - The main-site base palette has moved away from the former beige/cream background to a clean cool-white and blue-gray neutral palette; the oxide-red accent is retained.
 - Preserve the current information architecture and card layout. The Laya casebook is a separate visual system and remains unchanged.
-
-
-This revision follows the user's confirmed portfolio scope from 2026-11-05 onward. Do not add projects merely because research material exists.
 
 ### Selected product work
 
@@ -118,7 +117,9 @@ Contributions are grouped by the product problem they improve, with the source P
 ## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Current candidate commit: `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
+- Current website source commit (Preview): `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
+- Latest branch head: `799afffbfa172d5a5571d271699fc805136ba5e7` (documentation-only changes after the website source commit; no HTML changes after the Preview).
+- The v2 branch is 24 commits ahead of the V1 freeze and 0 commits behind.
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09` at `2349e1a7a6b873b45a10e56830ef09c6679edb1c`.
 - V1 remains the rollback baseline; the default `main` branch is an older snapshot and must not be used as the current release source.
 - V2 is deployed only as a protected Preview; no production alias, custom domain, DNS, or search-indexing change has been made.

@@ -6,7 +6,9 @@ Last verified: 2026-11-09 (Asia/Shanghai).
 
 - Repository: `Bruce-Yii/ai-product-portfolio` (public).
 - Active candidate branch: `portfolio/v2-information-architecture`.
-- Current candidate commit: `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
+- Current website source commit (Preview): `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
+- Latest branch head: `799afffbfa172d5a5571d271699fc805136ba5e7` (documentation-only changes after the website source commit; no HTML changes after the Preview).
+- The v2 branch is 24 commits ahead of the V1 freeze and 0 commits behind.
 - V1 rollback baseline: `freeze/portfolio-v1-2026-11-09` at `2349e1a7a6b873b45a10e56830ef09c6679edb1c`.
 - The default `main` branch is 46 commits behind the V1 freeze and is not a current source of truth.
 - V2 is a Preview candidate only. No production promotion, custom-domain reassignment, DNS change, or indexing change has been made.
