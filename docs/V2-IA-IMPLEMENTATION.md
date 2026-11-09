@@ -121,23 +121,34 @@ Contributions are grouped by the product problem they improve, with the source P
 - dsh-market — let users dismiss an exception notice without pretending the plugin is repaired.
 - Google ADK — investigate partial/final event semantics; RFC and tests-only Draft are not merged.
 
+## Contribution mini-case presentation
+
+The unified open-source contribution index is not a PR leaderboard and must not become a set of unrelated standalone project pages. Each selected upstream group is a compact product mini-case with four parts:
+
+1. **Product problem** — the user/developer task or workflow that failed.
+2. **Product judgment** — the rule, state, boundary, or experience decision that addresses the root problem.
+3. **Actual change** — what the merged PRs or current proposal really changed; distinguish behavior fixes from test-only additions.
+4. **Evidence and status** — direct upstream links, selected PR count, merged/open/draft state, and explicit non-shipping boundaries.
+
+The homepage keeps the contribution index compact. The Work page adds the fuller problem → decision → change narrative so a recruiter can understand the product value without opening a separate page for every repository. Dify and other upstream repositories remain grouped contribution entries, not standalone Case pages.
+
 ## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Main-site content revision: `67b780176e6eb113dca62bdb6cffc54520281324` (workflow/context visual revision).
-- Preview source commit including aligned documentation: `c2cd00a2798c483b59d779e881f7b508a2e45bc4`.
+- Current website source and aligned documentation commit: `ec5eaed4c1a727f1f6be68a237ab712a41f66bdd`.
+- Current website source includes three selected Project cards, four Case records, one standalone Laya casebook, and eight grouped open-source contribution entries (including one explicitly unmerged Google ADK proposal).
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
 - Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
 - No DNS or nameserver changes.
 - Keep noindex enabled on review previews and the casebook until a separate release decision.
-- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review uses the verified no-login share link delivered in chat.
+- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review uses a verified no-login share link delivered in chat.
 - Do not promote this candidate to the production domain until the owner has reviewed the actual page and responsive behavior.
 
 ## Latest review deployment
 
-- Deployment: `dpl_FW2yCXELaXPh74oUNW9p4Y2osbHC` · READY.
-- Preview base URL: `https://ai-product-portfolio-59nq0wc6g-yu-ac3a.vercel.app`.
-- A no-login share link was generated and verified; it expires 2028-11-08. The token is intentionally not stored in this public repository.
+- Deployment: `dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs` · READY.
+- Preview base URL: `https://ai-product-portfolio-ehwc67d8s-yu-ac3a.vercel.app`.
+- A no-login share link was generated and verified on 2026-11-09; its token is intentionally not stored in this public repository.
 - Homepage and `/cases/laya/` both return HTTP 200 and retain `noindex, nofollow, noarchive`.
 - Production aliases remain on frozen V1; no DNS, nameserver, or production alias changes were made.
 

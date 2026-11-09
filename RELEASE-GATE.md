@@ -73,11 +73,11 @@ A project or repository does not qualify for a standalone Case page merely becau
 
 ## Latest owner review candidate · 2026-11-09
 
-- Source commit: c2cd00a2798c483b59d779e881f7b508a2e45bc4.
-- Deployment: dpl_FW2yCXELaXPh74oUNW9p4Y2osbHC · READY.
-- Preview base URL: https://ai-product-portfolio-59nq0wc6g-yu-ac3a.vercel.app.
+- Source commit: ec5eaed4c1a727f1f6be68a237ab712a41f66bdd.
+- Deployment: dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs · READY.
+- Preview base URL: https://ai-product-portfolio-ehwc67d8s-yu-ac3a.vercel.app.
 - A no-login share link was generated and verified; its token is shared only in the owner conversation and is not stored in this public repository.
-- Homepage and Laya casebook both return HTTP 200 and retain noindex.
-- Latest runtime error/fatal query returned no matching Preview logs.
+- Homepage and Laya casebook both return HTTP 200 and retain X-Robots-Tag: noindex, nofollow, noarchive.
+- Build event confirms the expected GitHub repository, branch and commit; build completed and deployment reached READY.
 - Production aliases hcfind.com and www.hcfind.com remain on frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
 - This candidate has not been promoted to production.

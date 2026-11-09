@@ -367,3 +367,39 @@ A future website iteration is not complete merely because its source was edited 
 6. Include the actual accessible URL and checks performed in the completion report.
 
 A pure documentation-only change may skip website deployment only when the website artifact is unchanged; say so explicitly. See [Portfolio Operating Contract](./PORTFOLIO-OPERATING-CONTRACT.md).
+
+
+## 2026-11-09 · Restored preview and productized contribution narratives
+
+### Source and deployment
+
+- Branch: `portfolio/v2-information-architecture`.
+- Deployed source commit: `ec5eaed4c1a727f1f6be68a237ab712a41f66bdd`.
+- Deployment: `dpl_9sNeCwBHPkgeZnqz8MD1Ubwrv7cs` · READY.
+- Owner-facing no-login Preview share link verified separately; token is not recorded here.
+- Homepage and `/cases/laya/` return HTTP 200.
+- Both responses retain `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Build event confirms expected repository, branch and commit; deployment completed.
+- Production aliases and DNS were not changed.
+
+### Content change
+
+- The Work page's unified contribution index now gives each selected group a compact product narrative: product problem, product judgment, actual change, and evidence/status.
+- Homepage contribution rows remain compact; fuller explanations appear on the Work page.
+- Dify remains a grouped contribution entry, not a standalone Case page.
+- OpenClaw, Dify, RAGFlow, Cherry Studio, QwenPaw, FunASR, dsh-market and Google ADK remain grouped; Google ADK is explicitly labelled as an open RFC plus tests-only Draft, not merged.
+- PR counts are labelled as selected contributions rather than implied totals.
+
+### Static verification
+
+- Parsed the embedded JavaScript successfully.
+- Parsed all 9 contribution records; all 9 have a non-empty product narrative.
+- Confirmed 4 Case records and 4 matching detail payloads remain unchanged.
+- Confirmed 3 homepage Project cards remain unchanged.
+- Confirmed homepage contribution index remains compact and Work page renders the new narrative field.
+- Confirmed Make Again 2.0, Agent Evaluation Lab and EvalScope remain absent from the public source.
+- No case routes, project scope, homepage headline, or visual palette were changed.
+
+### Remaining verification
+
+- Full browser visual review and responsive E2E at 1440px / 390px / 360px remain outstanding because no browser-rendering session was available in this pass.
