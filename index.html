@@ -1213,11 +1213,11 @@ body {background:var(--paper);color:var(--ink)}
   </section>
   <section class="view" id="view-case" aria-label="案例详情">
     <div class="wrap">
-      <div class="case-path"><button class="case-back" data-action="navigate" data-page="work">← ALL WORK</button><span class="mono">/</span><span class="mono" id="case-path-current">CASE STUDY</span><div class="case-template-tabs" id="case-template-tabs" role="group" aria-label="切换案例展示类型"><button data-case-template="product" data-action="navigate" data-page="case" data-target-id="product">01 / PRODUCT</button><button data-case-template="opensource" data-action="navigate" data-page="case" data-target-id="opensource">02 / OPEN SOURCE</button></div></div>
+      <div class="case-path"><button class="case-back" data-action="navigate" data-page="work" aria-label="返回全部作品">← 返回全部作品 / ALL WORK</button><span class="mono">/</span><span class="mono" id="case-path-current">CASE STUDY</span><div class="case-template-tabs" id="case-template-tabs" role="group" aria-label="切换案例展示类型"><button data-case-template="product" data-action="navigate" data-page="case" data-target-id="product">01 / PRODUCT</button><button data-case-template="opensource" data-action="navigate" data-page="case" data-target-id="opensource">02 / OPEN SOURCE</button></div></div>
       <header class="case-head v9-case-head">
         <div class="case-kicker mono"><span id="case-no"></span><span id="case-kind"></span></div>
         <h1 id="case-title"></h1><div class="latin" id="case-latin"></div>
-        <div class="case-intro"><p id="case-lead"></p><div class="case-head-side"><span class="mono">WHAT YOU'LL SEE</span><p class="note" id="case-head-note">一页讲清一个具体的产品问题。</p></div></div>
+        <div class="case-intro"><p id="case-lead"></p><div class="case-head-side"><span class="mono">WHAT YOU'LL SEE</span><p class="note" id="case-head-note">一页讲清一个具体的产品问题。</p><div id="case-team-links" class="case-team-links" hidden></div></div></div>
       <div class="laya-casebook-cta" id="laya-casebook-cta" hidden><a href="./cases/laya/" target="_blank" rel="noopener noreferrer"><span class="mono">SPECIAL EDITION / LAYA CASEBOOK</span><strong>打开 Laya 独立案例册 <i>↗</i></strong><small>4 PRODUCT SYSTEMS · 8 CHAPTERS · 47 AUTHORED · 40 MERGED · 85 REVIEWED-BY MATCHES</small></a></div>
       </header>
       <div class="case-cover" id="case-cover" aria-label="案例封面"></div>
@@ -1299,7 +1299,7 @@ const CASES = [
     "category": "AI 决策产品",
     "name": "让 AI 决策从模型输出走向可信产品能力",
     "latin": "From output to adoption.",
-    "lead": "围绕 Laya 下游开发者从输入、评测、采用到集成的完整旅程，我参与建设四组产品系统：意图保真、决策可信、受控采用与开发者契约；并通过正式 Review、反例验证与跨贡献者交接推动上游改进。",
+    "lead": "围绕 Laya 产品从模型能力到开发者真实采用的完整过程，持续参与产品方向讨论、方案评审、实现协作与上游演进，推动意图保真、决策可信、受控采用与开发者契约四组相互支撑的产品系统。",
     "desc": "Laya · 四组产品系统与上游协作 · 47 authored / 40 merged · 85 reviewed-by matches",
     "caps": [
       "产品系统设计",
@@ -1357,10 +1357,10 @@ const CASES = [
     "type": "product",
     "kind": "TEAM PRODUCT · PRODUCT DECISION & EXECUTION",
     "category": "多模态 Agent 产品",
-    "name": "让用户表达的需求，真正转化为完成的任务",
-    "latin": "From intent to reliable action.",
-    "lead": "VIVIC 是一个多模态卡片助理。用户通过语音或文本表达需求，期待系统理解任务、采取正确行动，并清楚反馈结果。接手后，我发现关键问题不是工具不够多，而是产品还不能稳定兑现从“表达需求”到“任务完成”的承诺：同一意图可能被多层逻辑重复解释，执行目标可能被改写，失败后也缺少可继续处理的反馈。我推动团队围绕这段用户旅程重新定义产品主路径，并收敛各环节的责任。",
-    "desc": "VIVIC · 多模态任务体验 · 决策—执行闭环",
+    "name": "VIVIC：多模态卡片助理",
+    "latin": "A multimodal assistant for everyday work.",
+    "lead": "VIVIC 是团队打造的多模态卡片助理，支持语音与文本交互。项目在苏客松 Hackathon 生活办公赛道获得第四名。我在比赛中与团队认识，赛后受邀加入；加入后接手既有产品，持续推进体验优化与 Agent 决策链路调整。我的工作从理解现有产品和团队目标开始，再围绕用户需求如何被理解、执行与反馈，推动产品主路径和系统分工收敛。",
+    "desc": "团队项目 · 苏客松生活办公赛道第四名 · 赛后加入并持续参与产品优化",
     "caps": [
       "产品定义",
       "Agent 体验",
@@ -1386,10 +1386,10 @@ const CASES = [
     "type": "systems",
     "kind": "AGENT WORKFLOW · PRODUCT SYSTEM DESIGN",
     "category": "Agent 工作流设计",
-    "name": "让长期项目跨越多个 Agent 和会话持续推进",
-    "latin": "Beyond the session.",
-    "lead": "多项目工作从来不只发生在一次对话里：同一个目标可能跨越多个窗口、Agent、代码提交、外部回复和等待周期。每次更换执行者都要重新解释背景、寻找最新状态、确认责任人，用户就成了整个系统的人工调度中心。我从自己的真实协作流程中抽象出这个问题，先实践 AWRP 任务接力协议，再结合 Linear × Notion × GitHub 的成熟能力，重新划分长期项目、单次执行、知识记录与完成验收的职责。重点是让工作可以接力，而不是再造一个项目管理工具。",
-    "desc": "AWRP × Linear · 长期任务工作流 · DeepSeek Super-agent 架构对照",
+    "name": "AWRP × Linear：Agent 执行工作流",
+    "latin": "From handoff protocol to product exploration.",
+    "lead": "在 DeepSeek Super-agent 公开展示相关架构之前，我们已经围绕多 Agent 长任务协作提出并实践了其中一些相近思路，并通过 AWRP 做过任务接力协议原型。随后，我们没有继续重复造项目管理和状态系统，而是把这套思路迁移到 Linear，结合 Notion 与 GitHub 形成真实可用的协作工作流。现在，正在基于 AWRP 的早期实践、Linear 改造经验和 DeepSeek Super-agent 等公开架构研究，判断是否值得进一步产品化。DeepSeek 是第三方参照，不是本人项目或贡献。",
+    "desc": "AWRP 早期原型 · Linear 工作流改造 · 统一 Agent 执行系统产品化探索",
     "caps": [
       "工作流产品设计",
       "系统边界",
@@ -1427,10 +1427,10 @@ const CASES = [
     "type": "systems",
     "kind": "PERSONAL CONTEXT · PRODUCT ARCHITECTURE",
     "category": "个人上下文产品",
-    "name": "让个人上下文跨 AI 持续可用，并始终由用户掌控",
-    "latin": "Context, owned.",
-    "lead": "用户每换一个 AI 应用，就要重新交代自己的背景、偏好和正在推进的事情；重要信息散落在聊天、输入、剪贴板和不同工具里，既难复用，也难确认 AI 记住了什么。我把输入法重新定位为高频信息入口，而不是产品本体；真正要建立的是一个由用户拥有、来源可追溯、允许纠错，并能按授权提供给不同 AI 的个人上下文层。目前已完成产品定义、核心架构和早期模拟器原型，尚未成为已发布的跨端产品。",
-    "desc": "Personal Context Keyboard · 本地优先的个人上下文产品架构",
+    "name": "Personal Context Keyboard",
+    "latin": "A personal context input layer for AI.",
+    "lead": "一个面向 Android 与 Windows 的个人上下文输入法项目。它不只是替用户输入文字，而是探索如何在用户主动输入时捕捉有价值的信息，识别可能需要保留的上下文，再把这些信息整理成可追溯、可纠错、可授权调用的个人 Context，供不同 AI 工具使用。项目以 Android 输入法为优先入口，Windows 侧采用独立 Sensor/Client 思路；目前完成产品定位、核心架构与早期原型，尚未形成完整发布产品。",
+    "desc": "个人项目 · Android + Windows · 个人上下文输入与跨 AI 复用",
     "caps": [
       "产品定位",
       "个人数据主权",
@@ -1668,10 +1668,11 @@ const MEDIA_FILES = {
 // Generated from reviewed case packs. Do not edit manually.
 const CASE_DETAILS = {
   "product": {
-    "headnote": "VIVIC 团队产品实践。案例聚焦接手既有产品后，如何收敛 Agent 决策权、执行边界与验收闭环；下方为架构解释图，不是产品真实 UI。",
-    "role": "作为 VIVIC 项目核心协作者，接手后推动 Agent 决策链路核心重构；负责问题拆解、产品与架构判断、任务拆解及验收推进，并协调 Agent/团队完成具体实现与交付。重点是把规则、模型和宿主的职责收敛成一条可验证的产品主链路。",
+    "headnote": "苏客松 Hackathon 生活办公赛道第四名团队项目。赛后受邀加入团队，接手既有产品并持续参与体验与 Agent 决策链路优化。团队官网与项目官网见下方链接。",
+    "teamLinks": [{"label":"团队官网","url":"https://edsionc.top/"},{"label":"VIVIC 项目官网","url":"https://edsionc.top/vivic/"}],
+    "role": "比赛中与 VIVIC 团队建立联系，赛后受邀加入。加入后接手既有产品，参与产品体验梳理、核心问题拆解、Agent 决策与执行边界调整、任务推进和验收；与团队成员及 Agent 协作完成具体实现。团队成果与个人具体代码归属分别核验，不将团队全部产出计为个人独立完成。",
     "tradeoff": "没有继续叠加 4B 路由、槽位规划器、本地分类器、directOperations 或第二套业务决策 Agent；删除试验性分叉，保留规则处理确定性格式、模型负责语义决策、宿主负责权限/Schema/目标校验与真实执行的单一主链路。",
-    "ownershipNote": "个人贡献以问题定义、架构取舍、工具能力收敛、评测验收与交付协调为主；具体代码由本人、Agent 与团队协作完成，逐项作者归属以 Commit/PR 和团队记录核验，不把团队全部实现算作个人亲写。",
+    "ownershipNote": "个人参与范围包括接手后的产品问题梳理、关键方案判断、Agent 决策链路优化、任务拆解与交付验收；具体实现由团队协作完成，逐项代码作者归属以 Commit/PR 和团队记录核验。",
     "contextTitle": "用户说出一个需求，产品怎样真正帮他把事情办成？",
     "contextLead": "用户关心的不是 Agent 调用了哪个工具，而是自己交代的事情有没有被正确理解、执行并完成。",
     "contextCopy": "VIVIC 已有多模态输入和卡片化体验，但早期使用链路里，同一需求可能被不同层重复解释，系统可能选择或改写错误目标，执行失败后也难以让用户知道下一步该做什么。产品问题因此不是“再增加几个工具”，而是能否让用户从表达、确认、执行到收到结果的全过程保持清楚、可控、可恢复。我推动团队把这段用户旅程作为产品主路径，并据此收敛各环节的职责。",
@@ -1692,10 +1693,10 @@ const CASE_DETAILS = {
     "caption": "FIG. 03 — AWRP × LINEAR / TASK → RUN → EVIDENCE → ACCEPTANCE",
     "outcomeTitle": "项目状态与责任可以跨会话延续，不再依赖人工记忆和口头交接。",
     "outcomeBig": "Task survives the session.",
-    "outcome": "历史 AWRP 有协议代码与测试实践；Linear × Notion 工作流已在本人多项目协作中使用；DeepSeek Super-agent 是第三方开源对照。后续独立软件化方案仍未开发。本案例展示的是问题抽象、成熟组件复用和系统边界判断，不是已上线的多 Agent SaaS。"
+    "outcome": "演进脉络分为三个阶段：第一，AWRP 已将多 Agent 长任务接力、任务身份与执行交接等思路做成早期协议原型；第二，基于真实协作经验，将长期背景、任务执行与代码事实分别交给 Notion、Linear、GitHub 等成熟工具，形成正在使用的工作流；第三，结合 DeepSeek Super-agent 等公开架构进一步研究统一 Agent 执行系统的产品化机会。DeepSeek 是第三方参考。当前产品化仍处于方案探索阶段，不是已上线的独立 SaaS，也不声称拥有 DeepSeek 的实现。"
   },
   "laya-decision-integrity": {
-    "headnote": "Laya 开源决策模型的产品系统协作案例。展示四组产品系统、本人贡献与 Review 的归因，以及对应的上游证据。",
+    "headnote": "持续参与 Laya 决策模型的产品方向讨论、方案评审、实现协作与上游演进，围绕模型理解、评测证据、渐进采用和开发者集成，推动四组相互支撑的产品系统。",
     "contextTitle": "模型效果不错，应用团队就敢把它交给真实用户了吗？",
     "contextLead": "从实验结果到真实采用，中间还需要一整套让开发者看得懂、控得住、用得稳的产品保障。",
     "contextCopy": "Laya 的下游开发者需要经历理解模型、判断证据、决定采用范围、接入应用和持续维护。模型输出本身无法回答所有问题：哪些结果可信，哪些情况应该拒绝，何时可以扩大使用范围，不同调用入口是否兑现同样的行为？我参与推动的工作覆盖输入语义、评测证据、渐进采用、训练与校准能力，以及 Demo、服务和 SDK 的一致性。这些是围绕开发者采用旅程形成的产品责任域，不是本人独立完成的一条线性产品流水线。",
@@ -1792,9 +1793,9 @@ function narrativeExperience(c){
   return evidenceMarkup;
 }
 const HOME_PROJECTS = [
-  {caseId:"product",name:"VIVIC",label:"TEAM PRODUCT / AGENT EXECUTION",summary:"从用户表达需求到任务真正完成，重新梳理助理的理解、行动、确认与结果反馈体验。",phase:"核心决策链路重构 · 后端部署与 API 回归有记录 · 前端验收待完成"},
-  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / SYSTEM DESIGN",summary:"让一个项目跨越多个窗口和 Agent 持续推进，减少反复补充背景、人工交接与结果核对。",phase:"历史协议实践 + 现行工作流使用 · 独立软件化方案未开发"},
-  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PRODUCT ARCHITECTURE / CONTEXT LAYER",summary:"让用户的背景、偏好和任务信息跨 AI 工具复用，同时保留查看、纠错、删除与授权的控制权。",phase:"产品定位与架构设计 · 早期模拟器原型"}
+  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT / ANDROID + WINDOWS",summary:"面向 Android 与 Windows 的个人上下文输入法探索：从用户主动输入中整理可追溯的信息，并在授权后提供给不同 AI 使用。",phase:"个人项目 · 产品定义与架构设计 · 早期原型"},
+  {caseId:"product",name:"VIVIC",label:"TEAM PROJECT / SUKESONG HACKATHON · LIFE & OFFICE · 4TH PLACE",summary:"团队打造的多模态卡片助理，支持语音与文本交互，将用户需求转化为可执行任务。赛后受邀加入团队，并接手推进产品体验与 Agent 决策链路优化。",phase:"团队项目 · 赛后加入并持续参与产品优化"},
+  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / PRODUCTIZATION EXPLORATION",summary:"从早期 AWRP 多 Agent 任务接力原型，到基于 Linear 的真实协作工作流；结合 DeepSeek Super-agent 等公开架构研究，探索统一 Agent 执行系统的产品化方向。",phase:"AWRP 有原型实践 · Linear 工作流在用 · 独立产品尚未开发"}
 ]
 const CAPABILITY_GROUPS = [
   {name:"产品定义与用户体验",title:"PRODUCT STRATEGY & EXPERIENCE",description:"从真实场景识别用户要完成的任务，判断什么值得做、先解决什么，以及怎样让体验更自然。",caseIds:["product","personal-context-layer"]},
@@ -1841,7 +1842,7 @@ document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=
 document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer"><span class="mono">'+(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':c.number+' / MERGED')+'</span><span class="contribution-copy"><small class="contribution-area mono">'+esc(c.experience||'PRODUCT PRACTICE')+'</small><strong>'+esc(c.title)+'</strong><small class="contribution-story">'+esc(c.story)+'</small><small class="contribution-decision"><span class="mono">PRODUCT DECISION</span>'+esc(c.decision||'')+'</small><small class="contribution-evidence">'+esc(c.name)+' · '+esc(c.detail)+'</small></span><span>↗</span></a>').join('');
 // One delegated event layer handles static navigation and dynamically rendered case UI.
 document.addEventListener('click',event=>{
-  const btn=event.target.closest('[data-action],[data-feature],[data-step],[data-sys],[data-glass-mode],');
+  const btn=event.target.closest('[data-action], [data-feature], [data-step], [data-sys], [data-glass-mode], [data-workflow-step], [data-context-step]');
   if (!btn) return;
   if(btn.matches('[data-glass-mode]')) {setGlassMode(btn.dataset.glassMode);return}
   if(btn.matches('[data-step]')) {showProductStep(Number(btn.dataset.step));return}
@@ -1956,7 +1957,10 @@ function renderCase(id){
  $('#case-kind').textContent=c.kind;
  $('#case-path-current').textContent=c.category.toUpperCase();
  $('#case-title').textContent=c.name;$('#case-latin').textContent=c.latin;$('#case-lead').textContent=c.lead;
- $('#case-head-note').textContent=d.headnote;$('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
+ $('#case-head-note').textContent=d.headnote;
+  const teamLinks=document.getElementById('case-team-links');
+  if(teamLinks){const links=d.teamLinks||[];teamLinks.hidden=!links.length;teamLinks.innerHTML=links.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.label)+' ↗</a>').join('');}
+  $('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
  $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
  $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'PRODUCT SYSTEM DESIGN / REAL WORKFLOW':c.id==='personal-context-layer'?'PRODUCT ARCHITECTURE / EARLY PROTOTYPE':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
