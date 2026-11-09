@@ -1074,6 +1074,23 @@ body {background:var(--paper);color:var(--ink)}
  .verified-list .contribution-story{font-size:11px}
 }
 
+
+/* Homepage project index: recognizable project names first, concise product context beside them. */
+.home-contribution-list .index-row{grid-template-columns:38px minmax(145px,.62fr) minmax(220px,1fr) 22px;gap:16px;padding:21px 1px}
+.home-contribution-list .index-row strong{font-size:clamp(19px,1.75vw,27px)}
+.home-contribution-list .index-row .category{display:flex;flex-direction:column;gap:6px;line-height:1.7}
+.home-contribution-list .project-description{color:var(--ink-soft);font-size:12px;line-height:1.8}
+.home-contribution-list .contribution-summary{color:var(--muted);font-size:10px;line-height:1.7}
+@media(max-width:900px){.home-contribution-list .index-row{grid-template-columns:34px minmax(120px,.55fr) minmax(190px,1fr) 20px;gap:12px}}
+@media(max-width:720px){
+ .home-contribution-list .index-row{grid-template-columns:28px minmax(0,1fr) 18px;gap:9px;padding:18px 0;align-items:start}
+ .home-contribution-list .index-row strong{font-size:22px}
+ .home-contribution-list .index-row .category{grid-column:2;grid-row:2;margin-top:-4px}
+ .home-contribution-list .index-row .go{grid-column:3;grid-row:1}
+ .home-contribution-list .project-description{font-size:12px}
+ .home-contribution-list .contribution-summary{font-size:10px}
+}
+
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1144,11 +1161,11 @@ body {background:var(--paper);color:var(--ink)}
     </section>
     <section class="wrap contribution-section" aria-labelledby="contribution-title">
       <div class="section-heading section-heading--compact">
-        <div><div class="mono eyebrow">03 / PRODUCT THINKING & UPSTREAM DELIVERY</div><h2 id="contribution-title">Product decisions, <i>in practice.</i></h2></div>
-        <p>围绕用户任务组织实践：先呈现产品场景、关键判断和体验变化，再给出仓库与 PR 证据。代码改动是交付方式，不是案例本身。</p>
+        <div><div class="mono eyebrow">03 / OPEN-SOURCE PROJECTS</div><h2 id="contribution-title">Open-source work, <i>in context.</i></h2></div>
+        <p>保留项目本身的辨识度，用一句话说明它为用户提供什么能力；再简要呈现我参与的产品体验改进。</p>
       </div>
       <div id="home-index" class="home-contribution-list"></div>
-      <div class="section-foot mono"><span>USER PROBLEMS / PRODUCT DECISIONS / UPSTREAM EVIDENCE</span><button data-action="navigate" data-page="work">查看完整贡献索引 ↗</button></div>
+      <div class="section-foot mono"><span>PROJECT IDENTITY / PRODUCT CAPABILITY / MY PRACTICE</span><button data-action="navigate" data-page="work">查看完整贡献索引 ↗</button></div>
     </section>
     <section class="wrap capability-section" aria-labelledby="capability-title">
       <div class="section-heading section-heading--compact">
@@ -1461,7 +1478,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "用户接入 Agent 时，要连续完成凭证配置、运行调用与故障恢复。状态不透明，用户就无法判断该重试、重新配置，还是执行修复。",
     "url": "https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "AGENT ONBOARDING & RECOVERY",
-    "decision": "把凭证校验、运行时解析、CLI 反馈、修复后状态核验与安全诊断纳入同一条可恢复体验，让每一步都有明确状态与下一步。"
+    "decision": "把凭证校验、运行时解析、CLI 反馈、修复后状态核验与安全诊断纳入同一条可恢复体验，让每一步都有明确状态与下一步。",
+    "projectDescription": "可连接消息渠道、应用与工具，并替用户执行真实任务的个人 AI 助手。"
   },
   {
     "number": "03",
@@ -1472,7 +1490,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "用户把外部知识与标注数据带入工作流时，内容、字段与预览必须保持一致；格式转换不应悄悄改变原始数据。",
     "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "KNOWLEDGE WORKFLOW",
-    "decision": "以来源数据语义为准，分别处理 Notion 富文本结构、CSV 字面值、关键词有效行数与 PDF worker 子路径，贯通导入、校验和预览。"
+    "decision": "以来源数据语义为准，分别处理 Notion 富文本结构、CSV 字面值、关键词有效行数与 PDF worker 子路径，贯通导入、校验和预览。",
+    "projectDescription": "通过可视化工作流构建、运行和管理 AI 应用与 Agent 的开发平台。"
   },
   {
     "number": "04",
@@ -1483,7 +1502,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "用户设置消息分支、知识库解析规则或停用模型后，Agent 的实际行为必须遵循这些设置；配置不能只停留在界面或数据层。",
     "url": "https://github.com/infiniflow/ragflow/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "AGENT CONFIGURATION & EXECUTION",
-    "decision": "保持消息分支消费语义，显式应用数据集解析配置，并让停用模型明确拒绝调用；用边界测试覆盖词频、模型类型与文件识别。"
+    "decision": "保持消息分支消费语义，显式应用数据集解析配置，并让停用模型明确拒绝调用；用边界测试覆盖词频、模型类型与文件识别。",
+    "projectDescription": "将复杂文档转化为可检索、可引用上下文的知识引擎，支撑企业知识问答与 Agent 应用。"
   },
   {
     "number": "05",
@@ -1494,7 +1514,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "用户从复制内容、选择模型到调用工具，完成的是一条连续工作流；输入语义或系统状态一旦失真，后续操作就会失去依据。",
     "url": "https://github.com/CherryHQ/cherry-studio/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "DESKTOP AI WORKFLOW",
-    "decision": "保留 Excel 表格复制的文本语义，区分凭证完全失败与模型可用状态，并统一工具 Schema、代理环境、模型组排序和安装状态回读。"
+    "decision": "保留 Excel 表格复制的文本语义，区分凭证完全失败与模型可用状态，并统一工具 Schema、代理环境、模型组排序和安装状态回读。",
+    "projectDescription": "整合多种大模型、Agent 与效率工具的桌面 AI 工作台。"
   },
   {
     "number": "06",
@@ -1505,7 +1526,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "多目录管理提升项目组织能力，但熟练用户仍需要直接粘贴路径、回车切换工作目录；新能力不能以牺牲原有高频操作为代价。",
     "url": "https://github.com/agentscope-ai/QwenPaw/pull/7593",
     "experience": "MULTI-DIRECTORY WORKSPACE",
-    "decision": "恢复路径直输入口，并与目录选择器共用待提交状态和后端提交路径；新目录可设为主目录，已绑定目录可提升而不重复。"
+    "decision": "恢复路径直输入口，并与目录选择器共用待提交状态和后端提交路径；新目录可设为主目录，已绑定目录可提升而不重复。",
+    "projectDescription": "可部署在本地或云端、连接多种聊天应用的个人 AI 助手。"
   },
   {
     "number": "07",
@@ -1516,7 +1538,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "语音结果不仅是一段文本，还包含词句与时间轴；如果句末标点被放到下一句起点，文本与时间信息就无法准确对应。",
     "url": "https://github.com/modelscope/FunASR/pull/3703",
     "experience": "SPEECH TIMELINE & ALIGNMENT",
-    "decision": "修正 forced alignment 中标点 token 的时间映射，并覆盖共享对齐路径，让标点时间戳与语句边界保持一致。"
+    "decision": "修正 forced alignment 中标点 token 的时间映射，并覆盖共享对齐路径，让标点时间戳与语句边界保持一致。",
+    "projectDescription": "把语音转成可用文本，并支持实时识别、说话人区分等语音处理能力。"
   },
   {
     "number": "08",
@@ -1527,7 +1550,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "插件从市场目录消失后，通知里的“查找”可能已经无法完成任务；但用户仍应能决定是否继续看到这条异常提醒。",
     "url": "https://github.com/dsh-market/dsh-market/pull/764",
     "experience": "USER CONTROL & ERROR RECOVERY",
-    "decision": "把“重新找回插件”和“停止显示通知”拆成两个独立用户意图；关闭提醒只改变通知状态，不修改插件目录或磁盘文件。"
+    "decision": "把“重新找回插件”和“停止显示通知”拆成两个独立用户意图；关闭提醒只改变通知状态，不修改插件目录或磁盘文件。",
+    "projectDescription": "为 DeepSeek Harness 提供插件发现、安装与管理的一站式扩展市场。"
   },
   {
     "number": "09",
@@ -1538,7 +1562,8 @@ const VERIFIED_CONTRIBUTIONS = [
     "story": "开发者处理流式回调时，需要区分字段未提供、显式清空，以及 partial 与 final function-call；否则中间状态可能被误判为最终动作。",
     "url": "https://github.com/google/adk-python/pull/8005",
     "experience": "STREAMING TOOL CONTRACT · PROPOSAL",
-    "decision": "先通过 RFC 与 tests-only Draft 验证字段继承和工具调用生命周期契约，不直接改变生产行为。"
+    "decision": "先通过 RFC 与 tests-only Draft 验证字段继承和工具调用生命周期契约，不直接改变生产行为。",
+    "projectDescription": "帮助开发者构建、评估和部署 AI Agent 的开发工具包。"
   }
 ];
 
@@ -1813,7 +1838,7 @@ function renderWorkCapabilities(){
     return '<section class="cap-group"><div class="mono cap-number">0'+(i+1)+' / '+esc(g.title)+'</div><div class="cap-heading"><h3>'+esc(g.name)+'</h3><p>'+esc(g.description)+'</p></div><div class="related">'+links.map(c=>'<button data-action="navigate" data-page="case" data-target-id="'+esc(c.id)+'"><span>'+esc(c.name)+'</span><span>↗</span></button>').join('')+'</div></section>';
   }).join('');
 }
-document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="product-contribution" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="查看上游实践：'+esc(c.title)+'"><div class="product-contribution__meta"><span class="mono">'+esc(c.number)+' / '+esc(c.experience||'PRODUCT PRACTICE')+'</span><span class="mono">'+esc(c.name)+' · '+(c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':'UPSTREAM / MERGED')+'</span></div><h3>'+esc(c.title)+'</h3><p class="product-contribution__story">'+esc(c.story)+'</p><div class="product-contribution__decision"><span class="mono">PRODUCT DECISION</span><p>'+esc(c.decision||'')+'</p></div><div class="product-contribution__evidence"><span class="mono">UPSTREAM EVIDENCE</span><span>'+esc(c.detail)+'</span><span class="go">↗</span></div></a>').join('');
+document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="index-row" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(c.name)+'：'+esc(c.projectDescription)+'"><span class="mono number">'+esc(c.number)+'</span><strong>'+esc(c.name)+'</strong><span class="category"><span class="project-description">'+esc(c.projectDescription)+'</span><small class="contribution-summary">产品实践：'+esc(c.title)+(c.kind==='DRAFT'?' · 提案进行中':'')+'</small></span><span class="go">↗</span></a>').join('');
 document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer"><span class="mono">'+(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':c.number+' / MERGED')+'</span><span class="contribution-copy"><small class="contribution-area mono">'+esc(c.experience||'PRODUCT PRACTICE')+'</small><strong>'+esc(c.title)+'</strong><small class="contribution-story">'+esc(c.story)+'</small><small class="contribution-decision"><span class="mono">PRODUCT DECISION</span>'+esc(c.decision||'')+'</small><small class="contribution-evidence">'+esc(c.name)+' · '+esc(c.detail)+'</small></span><span>↗</span></a>').join('');
 // One delegated event layer handles static navigation and dynamically rendered case UI.
 document.addEventListener('click',event=>{
