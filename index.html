@@ -1075,20 +1075,19 @@ body {background:var(--paper);color:var(--ink)}
 }
 
 
-/* Homepage project index: recognizable project names first, concise product context beside them. */
+
+/* Homepage contribution index: describe Bruce's work on each public project, never the project's generic purpose. */
 .home-contribution-list .index-row{grid-template-columns:38px minmax(145px,.62fr) minmax(220px,1fr) 22px;gap:16px;padding:21px 1px}
 .home-contribution-list .index-row strong{font-size:clamp(19px,1.75vw,27px)}
 .home-contribution-list .index-row .category{display:flex;flex-direction:column;gap:6px;line-height:1.7}
-.home-contribution-list .project-description{color:var(--ink-soft);font-size:12px;line-height:1.8}
-.home-contribution-list .contribution-summary{color:var(--muted);font-size:10px;line-height:1.7}
+.home-contribution-list .contribution-summary{color:var(--ink-soft);font-size:12px;line-height:1.8}
 @media(max-width:900px){.home-contribution-list .index-row{grid-template-columns:34px minmax(120px,.55fr) minmax(190px,1fr) 20px;gap:12px}}
 @media(max-width:720px){
  .home-contribution-list .index-row{grid-template-columns:28px minmax(0,1fr) 18px;gap:9px;padding:18px 0;align-items:start}
  .home-contribution-list .index-row strong{font-size:22px}
  .home-contribution-list .index-row .category{grid-column:2;grid-row:2;margin-top:-4px}
  .home-contribution-list .index-row .go{grid-column:3;grid-row:1}
- .home-contribution-list .project-description{font-size:12px}
- .home-contribution-list .contribution-summary{font-size:10px}
+ .home-contribution-list .contribution-summary{font-size:12px}
 }
 
 </style>
@@ -1479,7 +1478,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "AGENT ONBOARDING & RECOVERY",
     "decision": "把凭证校验、运行时解析、CLI 反馈、修复后状态核验与安全诊断纳入同一条可恢复体验，让每一步都有明确状态与下一步。",
-    "projectDescription": "可连接消息渠道、应用与工具，并替用户执行真实任务的个人 AI 助手。"
+    "contributionSummary": "优化 Agent 接入、凭证配置与故障恢复体验"
   },
   {
     "number": "03",
@@ -1491,7 +1490,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "KNOWLEDGE WORKFLOW",
     "decision": "以来源数据语义为准，分别处理 Notion 富文本结构、CSV 字面值、关键词有效行数与 PDF worker 子路径，贯通导入、校验和预览。",
-    "projectDescription": "通过可视化工作流构建、运行和管理 AI 应用与 Agent 的开发平台。"
+    "contributionSummary": "提升知识导入与工作流配置中的数据一致性"
   },
   {
     "number": "04",
@@ -1503,7 +1502,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/infiniflow/ragflow/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "AGENT CONFIGURATION & EXECUTION",
     "decision": "保持消息分支消费语义，显式应用数据集解析配置，并让停用模型明确拒绝调用；用边界测试覆盖词频、模型类型与文件识别。",
-    "projectDescription": "将复杂文档转化为可检索、可引用上下文的知识引擎，支撑企业知识问答与 Agent 应用。"
+    "contributionSummary": "完善 Agent 配置到实际执行的行为一致性"
   },
   {
     "number": "05",
@@ -1515,7 +1514,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/CherryHQ/cherry-studio/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "DESKTOP AI WORKFLOW",
     "decision": "保留 Excel 表格复制的文本语义，区分凭证完全失败与模型可用状态，并统一工具 Schema、代理环境、模型组排序和安装状态回读。",
-    "projectDescription": "整合多种大模型、Agent 与效率工具的桌面 AI 工作台。"
+    "contributionSummary": "打通桌面 AI 输入、模型诊断与工具调用体验"
   },
   {
     "number": "06",
@@ -1527,7 +1526,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/agentscope-ai/QwenPaw/pull/7593",
     "experience": "MULTI-DIRECTORY WORKSPACE",
     "decision": "恢复路径直输入口，并与目录选择器共用待提交状态和后端提交路径；新目录可设为主目录，已绑定目录可提升而不重复。",
-    "projectDescription": "可部署在本地或云端、连接多种聊天应用的个人 AI 助手。"
+    "contributionSummary": "优化多工作区管理中的路径输入与切换体验"
   },
   {
     "number": "07",
@@ -1539,7 +1538,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/modelscope/FunASR/pull/3703",
     "experience": "SPEECH TIMELINE & ALIGNMENT",
     "decision": "修正 forced alignment 中标点 token 的时间映射，并覆盖共享对齐路径，让标点时间戳与语句边界保持一致。",
-    "projectDescription": "把语音转成可用文本，并支持实时识别、说话人区分等语音处理能力。"
+    "contributionSummary": "提升语音识别文本与时间轴的对齐准确性"
   },
   {
     "number": "08",
@@ -1551,7 +1550,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/dsh-market/dsh-market/pull/764",
     "experience": "USER CONTROL & ERROR RECOVERY",
     "decision": "把“重新找回插件”和“停止显示通知”拆成两个独立用户意图；关闭提醒只改变通知状态，不修改插件目录或磁盘文件。",
-    "projectDescription": "为 DeepSeek Harness 提供插件发现、安装与管理的一站式扩展市场。"
+    "contributionSummary": "完善插件异常通知中的用户控制与恢复体验"
   },
   {
     "number": "09",
@@ -1563,7 +1562,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "url": "https://github.com/google/adk-python/pull/8005",
     "experience": "STREAMING TOOL CONTRACT · PROPOSAL",
     "decision": "先通过 RFC 与 tests-only Draft 验证字段继承和工具调用生命周期契约，不直接改变生产行为。",
-    "projectDescription": "帮助开发者构建、评估和部署 AI Agent 的开发工具包。"
+    "contributionSummary": "参与明确流式工具调用的生命周期契约（提案与测试阶段）"
   }
 ];
 
@@ -1838,7 +1837,7 @@ function renderWorkCapabilities(){
     return '<section class="cap-group"><div class="mono cap-number">0'+(i+1)+' / '+esc(g.title)+'</div><div class="cap-heading"><h3>'+esc(g.name)+'</h3><p>'+esc(g.description)+'</p></div><div class="related">'+links.map(c=>'<button data-action="navigate" data-page="case" data-target-id="'+esc(c.id)+'"><span>'+esc(c.name)+'</span><span>↗</span></button>').join('')+'</div></section>';
   }).join('');
 }
-document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="index-row" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(c.name)+'：'+esc(c.projectDescription)+'"><span class="mono number">'+esc(c.number)+'</span><strong>'+esc(c.name)+'</strong><span class="category"><span class="project-description">'+esc(c.projectDescription)+'</span><small class="contribution-summary">产品实践：'+esc(c.title)+(c.kind==='DRAFT'?' · 提案进行中':'')+'</small></span><span class="go">↗</span></a>').join('');
+document.getElementById('home-index').innerHTML=VERIFIED_CONTRIBUTIONS.filter(c=>c.kind!=='CASEBOOK').map(c=>'<a class="index-row" href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(c.name)+'：'+esc(c.contributionSummary)+'"><span class="mono number">'+esc(c.number)+'</span><strong>'+esc(c.name)+'</strong><span class="category"><span class="contribution-summary">'+esc(c.contributionSummary)+'</span></span><span class="go">↗</span></a>').join('');
 document.getElementById('work-contributions').innerHTML=VERIFIED_CONTRIBUTIONS.map(c=>'<a href="'+esc(c.url)+'" target="_blank" rel="noopener noreferrer"><span class="mono">'+(c.kind==='CASEBOOK'?'CASEBOOK / 01':c.kind==='DRAFT'?'PROPOSAL / NOT MERGED':c.number+' / MERGED')+'</span><span class="contribution-copy"><small class="contribution-area mono">'+esc(c.experience||'PRODUCT PRACTICE')+'</small><strong>'+esc(c.title)+'</strong><small class="contribution-story">'+esc(c.story)+'</small><small class="contribution-decision"><span class="mono">PRODUCT DECISION</span>'+esc(c.decision||'')+'</small><small class="contribution-evidence">'+esc(c.name)+' · '+esc(c.detail)+'</small></span><span>↗</span></a>').join('');
 // One delegated event layer handles static navigation and dynamically rendered case UI.
 document.addEventListener('click',event=>{
