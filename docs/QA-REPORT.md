@@ -535,3 +535,13 @@ A pure documentation-only change may skip website deployment only when the websi
 - Inline JavaScript syntax parse: PASS.
 - Source-level route/data review: PASS for all three featured IDs. Full browser interaction, responsive visual QA and route refresh/back-forward E2E remain to be completed.
 - Noindex remains enabled. Vercel deployment and public-page verification pending this checkpoint.
+
+### Deployment verification · 2026-11-10
+
+- Vercel deployment: `dpl_4Z4tDXHwN7VockWnKEHKcqfc2qT4` · READY.
+- Public alias: https://portfolio.hcfind.com/ · reassigned to this deployment.
+- Homepage and standalone Laya casebook return HTTP 200.
+- The three project hash URLs return the same application shell (expected for the single-page case router); server-side fetch does not execute client-side JavaScript, so route interaction is not claimed as browser-E2E verified.
+- Source review confirms all three featured IDs exist in `CASES` and `CASE_DETAILS`; the delegated click selector is syntactically valid and includes workflow/context controls.
+- VIVIC team/project URLs are embedded in the case detail; Laya page includes a visible return-to-portfolio link.
+- Visual runtime review at desktop/mobile and click-through/back-forward browser E2E remain pending.
