@@ -293,3 +293,48 @@ A repository grouping or merged-PR count is not enough to justify a standalone C
 - Latest Preview URL: https://ai-product-portfolio-jfthd4hd2-yu-ac3a.vercel.app.
 - Homepage and Laya casebook route return HTTP 200; noindex remains enabled.
 - Full visual browser review and responsive E2E remain outstanding.
+
+
+## Portfolio scope and product-language correction · 2026-11-09
+
+This correction supersedes the earlier five-project / eight-case / Make Again candidate notes above.
+
+### User-confirmed scope
+
+- Three selected project cards: VIVIC, AWRP × Linear, Personal Context Keyboard.
+- Laya remains the separate flagship casebook; its visual system was not changed.
+- Four main-site Case records: Laya, VIVIC, AWRP × Linear, Personal Context Keyboard.
+- Eight repository-level contribution groups: OpenClaw, Dify, RAGFlow, Cherry Studio, QwenPaw, FunASR, dsh-market, Google ADK.
+- Google ADK is RFC / tests-only Draft / not merged.
+- Make Again 2.0, Agent Evaluation Lab, and EvalScope are excluded.
+- Cherry Studio and dsh-market are contribution groups, not standalone main-site Case pages.
+
+### Product narrative and interaction changes
+
+- Rewrote VIVIC around the user's job: turn multimodal intent into an authorized action with a truthful receipt.
+- Rewrote AWRP × Linear around long-running task continuity, evidence-based acceptance, mature-tool reuse, and an explicitly third-party DeepSeek comparison.
+- Rewrote Personal Context Keyboard around the product definition: keyboard as Sensor, Context Layer as the user-owned product core.
+- Added a four-object AWRP interaction: Task → Run → Evidence → Acceptance, plus a non-ranking comparison of AWRP, Linear × Notion, and DeepSeek Super-agent.
+- Added a five-layer Personal Context interaction: Sensor → Raw Facts → Derived Context → User Control → AI Gateway.
+- Reframed open-source entries around user tasks and product behavior rather than presenting repository names and PR counts as standalone products.
+- Preserved the separate Laya casebook visual system and route.
+
+### Static checks
+
+- Latest main-site source commit before documentation updates: 67b780176e6eb113dca62bdb6cffc54520281324.
+- Four Case records: PASS.
+- Three selected homepage Project cards: PASS.
+- Nine contribution entries including Laya casebook + eight ecosystems: PASS.
+- Four capability groups: PASS.
+- Google ADK visibly marked DRAFT / NOT MERGED: PASS.
+- Excluded terms and standalone case IDs absent from public source: PASS.
+- Inline JavaScript syntax parse: PASS.
+- No private Notion / Linear URLs found in the current public case payload.
+- Laya casebook source was not modified in this revision.
+
+### Deployment boundary
+
+- Production aliases were read back and still point to frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
+- No DNS, nameserver, or production alias change was made.
+- New v2 Preview deployment and no-login share link are still to be created and verified.
+- Browser visual review, responsive E2E, and owner review remain outstanding.
