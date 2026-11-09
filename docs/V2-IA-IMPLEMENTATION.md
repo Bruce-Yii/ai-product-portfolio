@@ -111,13 +111,22 @@ Contributions are grouped by the product problem they improve, with the source P
 ## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Main-site content revision: `67b780176e6eb113dca62bdb6cffc54520281324` (workflow/context visual revision; subsequent commits may update docs).
+- Main-site content revision: `67b780176e6eb113dca62bdb6cffc54520281324` (workflow/context visual revision).
+- Preview source commit including aligned documentation: `c2cd00a2798c483b59d779e881f7b508a2e45bc4`.
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
 - Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
 - No DNS or nameserver changes.
 - Keep noindex enabled on review previews and the casebook until a separate release decision.
-- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review must use a verified share link or a local HTML deliverable.
+- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review uses the verified no-login share link delivered in chat.
 - Do not promote this candidate to the production domain until the owner has reviewed the actual page and responsive behavior.
+
+## Latest review deployment
+
+- Deployment: `dpl_FW2yCXELaXPh74oUNW9p4Y2osbHC` · READY.
+- Preview base URL: `https://ai-product-portfolio-59nq0wc6g-yu-ac3a.vercel.app`.
+- A no-login share link was generated and verified; it expires 2028-11-08. The token is intentionally not stored in this public repository.
+- Homepage and `/cases/laya/` both return HTTP 200 and retain `noindex, nofollow, noarchive`.
+- Production aliases remain on frozen V1; no DNS, nameserver, or production alias changes were made.
 
 ## Verification
 
