@@ -520,3 +520,18 @@ A pure documentation-only change may skip website deployment only when the websi
 - This pass moved VIVIC, AWRP, Personal Context, Laya and open-source contribution narratives toward user tasks, product opportunity, user outcome and evidence; implementation details remain in the deeper explanation layer.
 - Noindex remains in place pending owner review.
 - Full browser visual QA and responsive E2E remain outstanding; HTTP 200 and source parsing are not a substitute for visual review.
+
+## 2026-11-10 · Portfolio v2.2 — featured projects and navigation
+
+- Source checkpoint: `a67d304fa6d7ad55eb8724bf9d105807bcd45c47`.
+- Homepage featured order is Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Project-introduction copy now states what each project is, its ownership context and maturity instead of using abstract benefit-only subtitles.
+- VIVIC identifies the SuKeSong Hackathon Life & Office track fourth-place team context, the post-competition invitation to join, and the subsequent product work; team and project links are present.
+- AWRP narrative distinguishes early protocol prototype, current Linear × Notion workflow, DeepSeek Super-agent as third-party reference, and unbuilt productization exploration.
+- Project-card delegated click handler selector was invalid due to a trailing comma; corrected. Case pages now expose a visible return-to-work control.
+- Laya cover and casebook role framing now emphasize sustained product direction, review, implementation collaboration and upstream evolution; "External contributor" headline removed.
+- Laya explanatory SVG redesigned around four product systems. It is explicitly illustrative, not official UI or an official architecture diagram.
+- Open-source project entries now include short repository introductions and GitHub star snapshots from repository API, dated 2026-11-10.
+- Inline JavaScript syntax parse: PASS.
+- Source-level route/data review: PASS for all three featured IDs. Full browser interaction, responsive visual QA and route refresh/back-forward E2E remain to be completed.
+- Noindex remains enabled. Vercel deployment and public-page verification pending this checkpoint.
