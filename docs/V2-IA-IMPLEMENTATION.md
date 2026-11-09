@@ -118,8 +118,7 @@ Contributions are grouped by the product problem they improve, with the source P
 
 - Development branch: `portfolio/v2-information-architecture`.
 - Current website source commit (Preview): `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
-- Latest branch head: `799afffbfa172d5a5571d271699fc805136ba5e7` (documentation-only changes after the website source commit; no HTML changes after the Preview).
-- The v2 branch is 24 commits ahead of the V1 freeze and 0 commits behind.
+- The branch contains subsequent documentation-only commits; no website source changes were made after the deployed Preview commit.
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09` at `2349e1a7a6b873b45a10e56830ef09c6679edb1c`.
 - V1 remains the rollback baseline; the default `main` branch is an older snapshot and must not be used as the current release source.
 - V2 is deployed only as a protected Preview; no production alias, custom domain, DNS, or search-indexing change has been made.
