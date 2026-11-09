@@ -4,12 +4,6 @@
 
 This revision follows the user's confirmed portfolio scope from 2026-11-05 onward. Do not add projects merely because research material exists.
 
-## Visual direction
-
-- The homepage hero uses the owner-requested headline: **“我是最强 AI 产品经理。”**
-- The main-site base palette has moved away from the former beige/cream background to a clean cool-white and blue-gray neutral palette; the oxide-red accent is retained.
-- Preserve the current information architecture and card layout. The Laya casebook is a separate visual system and remains unchanged.
-
 ### Selected product work
 
 - **VIVIC** — multimodal Agent product; focus on the user intent → model decision → host validation → tool execution → result receipt chain.
@@ -117,26 +111,22 @@ Contributions are grouped by the product problem they improve, with the source P
 ## Current source and release boundary
 
 - Development branch: `portfolio/v2-information-architecture`.
-- Current website source commit (Preview): `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
-- The branch contains subsequent documentation-only commits; no website source changes were made after the deployed Preview commit.
-- V1 freeze branch: `freeze/portfolio-v1-2026-11-09` at `2349e1a7a6b873b45a10e56830ef09c6679edb1c`.
-- V1 remains the rollback baseline; the default `main` branch is an older snapshot and must not be used as the current release source.
-- V2 is deployed only as a protected Preview; no production alias, custom domain, DNS, or search-indexing change has been made.
-- Vercel automatic push-to-deploy is not verified. The current Preview was explicitly created from the exact GitHub branch and commit.
-- Current public custom-domain mapping: `hcfind.com` and `www.hcfind.com` are attached to Vercel project `hcfind-home`, deployment `dpl_4CAprhY16boHWmPnKgQwqyToDHzx`. The separate `ai-product-portfolio` project has production deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` on its own Vercel aliases, not the custom domain.
-- The live custom domain and the V1 project alias returned byte-identical HTML at the 2026-11-09 audit; both serve the old seven-Case V1 content. The domain/project ownership mismatch must be resolved deliberately at release, not during preview work.
+- Main-site content revision: `67b780176e6eb113dca62bdb6cffc54520281324` (workflow/context visual revision).
+- Preview source commit including aligned documentation: `c2cd00a2798c483b59d779e881f7b508a2e45bc4`.
+- V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
+- Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
+- No DNS or nameserver changes.
 - Keep noindex enabled on review previews and the casebook until a separate release decision.
+- Vercel Preview SSO protection is enabled for non-custom deployment URLs; owner-facing review uses the verified no-login share link delivered in chat.
+- Do not promote this candidate to the production domain until the owner has reviewed the actual page and responsive behavior.
 
 ## Latest review deployment
 
-- Deployment: `dpl_6vjtXdz4UeurPGxFgMxEwRL7wauJ` · READY · Preview.
-- Source commit: `34c7bca6f389be2fc32a443ca1b96552386aa50c`.
-- Preview URL: `https://ai-product-portfolio-rn06syrk1-yu-ac3a.vercel.app`.
-- Build log confirms the intended GitHub branch and commit were cloned and the static deployment completed.
+- Deployment: `dpl_FW2yCXELaXPh74oUNW9p4Y2osbHC` · READY.
+- Preview base URL: `https://ai-product-portfolio-59nq0wc6g-yu-ac3a.vercel.app`.
+- A no-login share link was generated and verified; it expires 2028-11-08. The token is intentionally not stored in this public repository.
 - Homepage and `/cases/laya/` both return HTTP 200 and retain `noindex, nofollow, noarchive`.
-- `robots.txt` returns HTTP 200 with crawler access blocked.
-- A temporary no-login share link was generated for owner review; its token is not stored in the repository.
-- Production aliases and DNS were not changed.
+- Production aliases remain on frozen V1; no DNS, nameserver, or production alias changes were made.
 
 ## Verification
 
@@ -148,5 +138,4 @@ Contributions are grouped by the product problem they improve, with the source P
 - AWRP has a dedicated four-object workflow visual and a non-ranking AWRP / Linear × Notion / DeepSeek comparison.
 - Personal Context Keyboard has a dedicated five-layer architecture visual.
 - Inline JavaScript syntax parse: PASS.
-- Hero headline and cool-white neutral palette match the current owner direction.
 - Full browser visual review and responsive E2E remain outstanding.
