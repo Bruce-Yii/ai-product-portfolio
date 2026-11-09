@@ -545,3 +545,6 @@ A pure documentation-only change may skip website deployment only when the websi
 - Source review confirms all three featured IDs exist in `CASES` and `CASE_DETAILS`; the delegated click selector is syntactically valid and includes workflow/context controls.
 - VIVIC team/project URLs are embedded in the case detail; Laya page includes a visible return-to-portfolio link.
 - Visual runtime review at desktop/mobile and click-through/back-forward browser E2E remain pending.
+
+
+- Final source checkpoint after Laya star metadata: `f2217ed74d8833c74ddc458bd568b14505a5eb2c`.
