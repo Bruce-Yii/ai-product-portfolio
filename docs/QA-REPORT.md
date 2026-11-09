@@ -336,5 +336,20 @@ This correction supersedes the earlier five-project / eight-case / Make Again ca
 
 - Production aliases were read back and still point to frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
 - No DNS, nameserver, or production alias change was made.
-- New v2 Preview deployment and no-login share link are still to be created and verified.
+- New v2 Preview deployment and no-login share link have been created and verified.
 - Browser visual review, responsive E2E, and owner review remain outstanding.
+
+
+### Owner-accessible preview verification · 2026-11-09
+
+- Final review deployment: dpl_FW2yCXELaXPh74oUNW9p4Y2osbHC · READY.
+- Source commit: c2cd00a2798c483b59d779e881f7b508a2e45bc4.
+- Preview base URL: https://ai-product-portfolio-59nq0wc6g-yu-ac3a.vercel.app.
+- Generated a no-login Vercel share link with expiry 2028-11-08; the token is provided directly in the owner conversation and intentionally omitted from public repository docs.
+- Verified share-link homepage HTTP 200, title present, and all selected project / contribution labels present.
+- Verified Make Again, Agent Evaluation Lab, EvalScope, and the excluded standalone case IDs are absent from the deployed homepage source.
+- Verified Laya casebook route HTTP 200; its source and visual system were not modified in this revision.
+- Both routes retain X-Robots-Tag: noindex, nofollow, noarchive.
+- Latest 30-minute Preview error/fatal runtime log query returned no matching logs.
+- Live Vercel alias read-back confirms hcfind.com and www.hcfind.com still point to frozen V1 deployment dpl_DU86D71ntVNtihTr4spaUQZBXETr.
+- Browser visual review and responsive E2E remain outstanding.
