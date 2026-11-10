@@ -576,3 +576,15 @@ A pure documentation-only change may skip website deployment only when the websi
 
 - The corrected source is on the isolated review branch only. Production aliases, DNS, and search-indexing settings remain untouched.
 - Do not treat this correction as approval for public launch or search indexing; owner review and the remaining Release Gate still apply.
+
+
+### Live preview verification · navigation regression fix
+
+- Deployment: `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA` · **READY**.
+- Deployed source: branch `portfolio/phase3-content-review-2026-11-10`, commit `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`.
+- Preview base URL: https://ai-product-portfolio-aqu466asw-yu-ac3a.vercel.app.
+- Live homepage fetch: HTTP **200**; live Laya route `/cases/laya/`: HTTP **200**.
+- Live homepage application inline script compiled successfully when checked from the fetched deployment HTML; the additional empty Vercel feedback script is external and excluded from application-script parsing.
+- Live HTML contains the expected three Project IDs in the approved order and the `home-projects` mount / navigation function. `X-Robots-Tag: noindex, nofollow, noarchive` remains present on both routes.
+- A no-login Vercel share link was created for owner review. Its token is shared only in the owner conversation and is not stored in this repository.
+- This live check verifies the deployed HTML, app-script syntax, route responses, and headers. The browser click-through evidence above was run against the exact same application source locally, not against a hosted browser session; hosted full E2E and 360px remain outstanding.
