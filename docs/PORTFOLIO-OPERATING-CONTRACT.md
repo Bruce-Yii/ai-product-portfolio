@@ -285,3 +285,14 @@ Research record: [2026-11-10 Portfolio Benchmark & Senior AI PM Capability Resea
 ### 8.3 Multi-window work
 
 Helper windows may perform independent read-only research or evidence audits. W0 / ChatGPT owns scope, task boundaries, dependency ordering, synthesis, decisions and final review. Do not allow helper windows to concurrently edit the same website files, alter DNS / deployment / indexing, or publish public claims. Each task must specify Goal, Scope, Non-scope, sources, evidence format and acceptance criteria.
+
+## 8. 2026-11-10 — Display Scope Freeze & User Approval Gate
+
+The user explicitly confirmed that the current set of projects on the portfolio website is sufficient. This is a binding scope constraint.
+
+1. The existing public project / case / contribution set is frozen by default. Internal asset audits do not authorize public additions.
+2. W3's broad inventory is for evidence, ownership, maturity and risk auditing only. It is not a request to publish every discovered project.
+3. No new public Project, Case, Contribution, homepage card, navigation item or showcase section may be added without the user's explicit approval. Do not delete, replace, rename, reorder or promote an existing item without approval either.
+4. If W0 finds a candidate with material incremental value, submit one separate proposal containing: candidate name, unique capability signal, original evidence, overlap with current cases, display cost, and the consequence of not including it. Wait for explicit user approval before implementation.
+5. Do not add projects merely to fill space, cover a capability matrix, increase project count, or make the portfolio look more complete.
+6. Personal Context Keyboard is an existing flagship case and the user explicitly confirmed on 2026-11-10 that it is near completion. Its stale Notion stage must not be used to classify it as research-only or pre-implementation. Separate implementation maturity from formal product acceptance and external release gates; disclose outstanding gates without erasing completed implementation.
