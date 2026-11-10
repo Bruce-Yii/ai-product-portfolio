@@ -1092,6 +1092,14 @@ body {background:var(--paper);color:var(--ink)}
  .home-contribution-list .contribution-summary{font-size:12px}
 }
 
+
+/* v2.3 / sourced historical VIVIC screenshots, not invented product UI */
+.media-slot.has-asset{background:#e9edeb;border:1px solid #d2dbd7;margin:0;box-shadow:0 12px 32px rgba(21,36,31,.07)}
+.media-slot.has-asset img{object-fit:contain;object-position:center;background:#e3eaf0}
+.media-slot.has-asset::after{display:flex;align-items:center;justify-content:flex-start;content:"VIVIC · REAL PRODUCT INTERFACE · 2026-11-01";position:absolute;inset:auto 0 0 0;height:31px;padding:0 14px;background:rgba(245,248,246,.92);border:0;color:#40584e;font:9px/1 var(--mono);letter-spacing:.045em;z-index:2}
+.media-insert__grid--2>.media-slot.has-asset{height:clamp(275px,26vw,400px)}
+.workflow-compare__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:720px){.media-insert__grid--2>.media-slot.has-asset{height:clamp(230px,62vw,330px)}.workflow-compare__grid{grid-template-columns:1fr}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1390,8 +1398,8 @@ const CASES = [
     "category": "Agent 工作流设计",
     "name": "AWRP × Linear：Agent 执行工作流",
     "latin": "From handoff protocol to product exploration.",
-    "lead": "在 DeepSeek Super-agent 公开展示相关架构之前，我们已经围绕多 Agent 长任务协作提出并实践了其中一些相近思路，并通过 AWRP 做过任务接力协议原型。随后，我们没有继续重复造项目管理和状态系统，而是把这套思路迁移到 Linear，结合 Notion 与 GitHub 形成真实可用的协作工作流。现在，正在基于 AWRP 的早期实践、Linear 改造经验和 DeepSeek Super-agent 等公开架构研究，判断是否值得进一步产品化。DeepSeek 是第三方参照，不是本人项目或贡献。",
-    "desc": "AWRP 早期原型 · Linear 工作流改造 · 统一 Agent 执行系统产品化探索",
+    "lead": "从 AWRP 多 Agent 任务接力原型，到 Linear × Notion 的日常协作实践，我持续研究长期项目如何跨会话可靠推进。结合这些真实问题和 DeepSeek Super-agent 等公开实现，我已对独立 Agent Project OS 作出设计阶段 GO 判断。目前新产品仍在开发前准备：main 为 v0.3 文档基线，Draft PR #1 的 G0–G2 已完成，G3–G5 待推进，产品代码尚未实施。",
+    "desc": "AWRP 历史协议 · Linear 工作流实践 · Agent Project OS 设计 GO",
     "caps": [
       "工作流产品设计",
       "系统边界",
@@ -1399,27 +1407,39 @@ const CASES = [
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "AWRP 历史协议有代码与测试 · Linear/Notion 工作流在用 · 独立软件化方案未开发",
+    "status": "AWRP 历史原型 · Linear/Notion 工作流在用 · Agent Project OS 设计 GO、代码未开发",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": true,
     "editorial": {
       "decisions": [
-        "把长期任务身份与单次执行尝试分开：Task 持续存在，Run/Session 可以更换。",
-        "把执行者自报与完成验收分开：只有代码、测试、产物或外部系统状态等证据，才能支撑 Done。",
-        "把知识、执行状态和外部事实分开管理：Notion 保存项目语义，Linear 管理执行，GitHub 记录代码与上游事实。",
-        "优先复用成熟工具；只有在真实工作流出现缺口时，才考虑自研新的产品能力。"
+        "把长期 Project / Task 与单次 Run / Session 分开：Agent 可以更换，项目目标、责任与验收标准不能随会话丢失。",
+        "从真实工作流中识别重复基础设施：让 Linear 管理任务状态、Notion 管理长期语义、GitHub 管理外部事实；再判断统一产品真正需要自建的部分。",
+        "逐个对照竞品的对应功能子集，研究 DeepSeek 等第三方实现；成熟模块优先直接复用，而不是自行重写所有运行时和工作流能力。",
+        "Agent Project OS 已完成设计阶段 GO 判断，G0–G2 在 Draft PR 中形成开发前准备成果；技术冻结与 G3–G5 验收尚未完成。"
       ],
       "evidence": [
         {
-          "label": "DeepSeek Super-agent Prototype",
+          "label": "Agent Project OS · 设计仓库",
+          "url": "https://github.com/Bruce-Yii/agent-project-os",
+          "supports": "本人新产品的产品与工程文档，代码尚未开始",
+          "state": "public_record"
+        },
+        {
+          "label": "Agent Project OS · Draft PR #1",
+          "url": "https://github.com/Bruce-Yii/agent-project-os/pull/1",
+          "supports": "G0–G2 开发前准备，仍为 Draft、未合并",
+          "state": "public_record"
+        },
+        {
+          "label": "DeepSeek Super-agent · 第三方原型",
           "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
-          "supports": "第三方开源架构对照对象，不属于个人成果",
+          "supports": "独立的开源对照对象，并非本人贡献",
           "state": "public_record"
         }
       ],
-      "role": "本人提出并实现早期 AWRP 接力协议原型，并在真实多项目协作中设计、使用 Linear × Notion 的研究—执行分离工作流；负责问题抽象、系统边界判断与流程设计。DeepSeek Super-agent 仅作为第三方对照，不属于本人贡献。",
-      "boundary": "现行工作流由 Linear、Notion、GitHub 与 Agent 等成熟工具组合支撑，不是自研 SaaS 上线；历史 AWRP 原型不代表生产级通用 Agent 平台；后续独立软件化方案仍未开发。DeepSeek 是第三方开源参照，不作优劣排名。没有公开用户增长或效率提升指标。"
+      "role": "我主导早期 AWRP 接力协议原型、Linear × Notion 的真实工作流改造，以及 Agent Project OS 的产品定位和关键架构取舍。G0–G2 属开发前的设计、研究与工程准备，不等于已交付运行中的统一 Agent 平台。",
+      "boundary": "AWRP 不是生产级平台；Linear × Notion 是现有工具协作，不是自主研发 SaaS。Agent Project OS 已作设计阶段 GO 判断，但产品代码、G3–G5 和真实用户效果均未交付。DeepSeek 是第三方对照，不作个人成果归因。"
     },
     "productQuestion": "当 Agent 和会话不断变化时，产品如何让长期任务保持连续，并由证据而非自报确认完成？"
   },
@@ -1589,68 +1609,68 @@ const VERIFIED_CONTRIBUTIONS = [
 const MEDIA_SPEC = {
   "M01": {
     "id": "M01",
-    "name": "VIVIC · 主视觉",
+    "name": "VIVIC · Control 工作台",
     "role": "product-editorial-hero",
-    "topic": "真实产品画面：语音／信息进入 → Space 卡片形成 → 可执行下一步",
-    "kind": "真实产品截图 / 组合排版",
+    "topic": "2026-11-01 的真实 Control 工作台截图，展示当时的卡片使用界面",
+    "kind": "真实产品截图 / 历史界面",
     "ratio": "16:10",
-    "size": "1600×1000",
+    "size": "960×600",
     "priority": "P0",
-    "source": "团队授权的真实产品截图",
+    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
     "reuse": [
       "Home 精选主视觉",
       "Work 作品预览"
     ],
-    "status": "awaiting_real_capture",
-    "notes": "不使用 AI 伪造产品功能；优先用 1–3 张真实截屏经排版组成。屏幕内容和工作室标识需确认公开权限。"
+    "status": "sourced_historical_capture",
+    "notes": "只展示历史产品形态，不冒充 11-05 版本前端，也不作为同环境前后对比。"
   },
   "M03": {
     "id": "M03",
-    "name": "VIVIC · 详情封面",
+    "name": "VIVIC · Space 分区卡片",
     "role": "product-case-cover",
-    "topic": "真实产品的主体验：在真实 Space 画面中突出卡片和下一步行动，而不是用抽象科技装饰",
-    "kind": "真实产品素材的艺术指导",
-    "ratio": "21:10",
-    "size": "1680×800",
+    "topic": "2026-11-01 的真实 Space 卡片界面，体现信息组织方式",
+    "kind": "真实产品截图 / 历史界面",
+    "ratio": "16:10",
+    "size": "960×600",
     "priority": "P0",
-    "source": "团队授权产品截图",
+    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
     "reuse": [
       "产品案例 Case 封面"
     ],
-    "status": "awaiting_real_capture",
-    "notes": "建议桌面主画面 + 小幅移动界面的真实组合；留出标题呼吸区，不能修改 UI 成不存在的功能。"
+    "status": "sourced_historical_capture",
+    "notes": "真实 UI 仅用来展示当时产品形态；Agent 决策链路使用独立机制图解释。"
   },
   "M05": {
     "id": "M05",
-    "name": "VIVIC · 功能实拍 01",
+    "name": "VIVIC · 待办卡界面",
     "role": "product-detail-ui",
-    "topic": "一张真实界面：捕捉/结构化卡片在产品中的使用状态",
-    "kind": "真实界面 / 截屏",
-    "ratio": "4:5",
-    "size": "960×1200",
+    "topic": "2026-11-01 的真实待办卡画面，展示任务卡片的视觉表现",
+    "kind": "真实产品截图 / 历史界面",
+    "ratio": "16:10",
+    "size": "960×600",
     "priority": "P1",
-    "source": "真实产品手机端或比例接近的界面",
+    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
     "reuse": [
       "产品案例详情图组左"
     ],
-    "status": "awaiting_real_capture",
-    "notes": "优先实际 UI；如是团队产品需明确实际已实现的环节，避免混用概念设计图。"
+    "status": "sourced_historical_capture",
+    "notes": "真实截图经 WebP 压缩，非 11-05 后端重构完成效果录像。"
   },
   "M06": {
     "id": "M06",
-    "name": "VIVIC · 功能实拍 02",
+    "name": "VIVIC · 周报卡展示",
     "role": "product-detail-ui",
-    "topic": "一张真实界面：Agent 建议、任务动作或执行结果回执中的实际交互",
-    "kind": "真实界面 / 截屏",
-    "ratio": "4:5",
-    "size": "960×1200",
+    "topic": "2026-11-01 的真实周报卡界面，展示信息分区与内容组织",
+    "kind": "真实产品截图 / 历史界面",
+    "ratio": "16:10",
+    "size": "600×375",
     "priority": "P1",
-    "source": "真实产品手机端或比例接近的界面",
+    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
     "reuse": [
       "产品案例详情图组右"
     ],
-    "status": "awaiting_real_capture",
-    "notes": "选择当前确实存在的能力；若仅有后端回执则以真实运行报告而不是伪造前端 UI 呈现。"
+    "status": "sourced_historical_capture",
+    "notes": "真实截图经 WebP 压缩，非同环境前后对比。"
   },
   "M08": {
     "id": "M08",
@@ -1678,10 +1698,10 @@ const MEDIA_SPEC = {
  * Do not use AI-generated art to impersonate a real product UI or a PR screenshot.
  */
 const MEDIA_FILES = {
-  "M01": '',
-  "M03": '',
-  "M05": '',
-  "M06": '',
+  "M01": 'assets/vivic/after-ui-8790-home.webp',
+  "M03": 'assets/vivic/after-ui-8790-sectioncard.webp',
+  "M05": 'assets/vivic/card-todo.webp',
+  "M06": 'assets/vivic/card-weekly-report.webp',
   "M08": '',
 };
 
@@ -1689,7 +1709,16 @@ const MEDIA_FILES = {
 const CASE_DETAILS = {
   "product": {
     "headnote": "苏客松 Hackathon 生活办公赛道第四名团队项目。赛后受邀加入团队，接手既有产品并持续参与体验与 Agent 决策链路优化。团队官网与项目官网见下方链接。",
-    "teamLinks": [{"label":"团队官网","url":"https://edsionc.top/"},{"label":"VIVIC 项目官网","url":"https://edsionc.top/vivic/"}],
+    "teamLinks": [
+      {
+        "label": "团队官网",
+        "url": "https://edsionc.top/"
+      },
+      {
+        "label": "VIVIC 项目官网",
+        "url": "https://edsionc.top/vivic/"
+      }
+    ],
     "role": "比赛中与 VIVIC 团队建立联系，赛后受邀加入。加入后接手既有产品，参与产品体验梳理、核心问题拆解、Agent 决策与执行边界调整、任务推进和验收；与团队成员及 Agent 协作完成具体实现。团队成果与个人具体代码归属分别核验，不将团队全部产出计为个人独立完成。",
     "tradeoff": "没有继续叠加 4B 路由、槽位规划器、本地分类器、directOperations 或第二套业务决策 Agent；删除试验性分叉，保留规则处理确定性格式、模型负责语义决策、宿主负责权限/Schema/目标校验与真实执行的单一主链路。",
     "ownershipNote": "个人参与范围包括接手后的产品问题梳理、关键方案判断、Agent 决策链路优化、任务拆解与交付验收；具体实现由团队协作完成，逐项代码作者归属以 Commit/PR 和团队记录核验。",
@@ -1704,16 +1733,19 @@ const CASE_DETAILS = {
     "outcome": "同一套固定 60 题 API 回归：旧稳定版基线为 53/60；2026-11-05 部署报告的批次 2/3 快照为 59/60，后续六轮同题集记录为 58、59、60、60、59、60/60，末轮达到 60/60。API 请求至最终结果 p50 从 3,625ms 降至 1,807ms，约下降 50%；高缓存命中条件下估算单轮 Token 成本约下降 97%，不是实付账单。项目报告还记录能力工具入口从 27 项收敛为 14 项。这些均为项目内部记录，不代表真实用户成功率或商业成效；完整前端体验、48 条浏览器全场景用例和真机语音仍未完成验收。"
   },
   "agent-workflow-governance": {
-    "headnote": "AWRP × Linear：从长任务接力协议到真实工作流的产品设计与架构演进。DeepSeek Super-agent 仅作为第三方对照对象。",
+    "headnote": "AWRP → Linear → Agent Project OS：从长期多 Agent 协作痛点出发，完成设计阶段产品立项。DeepSeek Super-agent 是第三方架构参照。",
     "contextTitle": "换了窗口、Agent 或执行者，为什么项目就得重新开始？",
     "contextLead": "用户真正要持续推进的是一个项目目标，而不是某一次聊天或某一个 Agent。",
-    "contextCopy": "一个长期项目可能跨多个工作窗口、Agent、代码提交、维护者回复和等待周期。每次换执行者都要重新补背景、找最新状态、确认谁负责，用户就承担了大量人工交接；Agent 说“完成了”，用户还得自己去核对是否有真实产物。早期 AWRP 尝试把任务接力和过程记录做成协议。真实使用后，我进一步判断：项目状态、权限和协作入口已有成熟工具，不值得重复造轮子。于是把产品边界收敛为：项目目标长期保留，单次执行可以更换，Linear 管理推进状态，Notion 保存项目背景与决策，GitHub 提供代码和外部事实，最终由证据决定是否验收。",
+    "contextCopy": "长期项目可能跨越多个窗口、Agent、PR 和审查周期。只依赖聊天记录，人就要反复找状态、传背景、验证 Agent 是否真的完成。AWRP 协议原型先解决 Task / Run / HANDOFF 责任边界；实际使用后，项目状态回到 Linear，长期背景与决策放在 Notion，代码与上游事实由 GitHub 负责。基于这段实践，我进一步提出统一的 Project-first Agent OS，按功能子集逐一研究竞品和 DeepSeek 等成熟实现，最终作出设计阶段 GO 判断。新产品尚未开发上线。",
     "experienceTitle": "让项目保持连续，让执行者可以更换。",
-    "experienceIntro": "用户维护的是持续存在的项目目标；不同 Agent 可以在不同会话里接力，执行结果留下证据，再由独立验收决定是否完成。这里分别展示 AWRP 历史协议与 Linear × Notion 当前工作流。",
+    "experienceIntro": "通过四个阶段理解真实演进：AWRP 历史原型、Linear × Notion 工作流、DeepSeek 第三方研究，以及已立项但仍在开发前准备的 Agent Project OS。",
     "caption": "FIG. 03 — AWRP × LINEAR / TASK → RUN → EVIDENCE → ACCEPTANCE",
-    "outcomeTitle": "项目状态与责任可以跨会话延续，不再依赖人工记忆和口头交接。",
-    "outcomeBig": "Task survives the session.",
-    "outcome": "演进脉络分为三个阶段：第一，AWRP 已将多 Agent 长任务接力、任务身份与执行交接等思路做成早期协议原型；第二，基于真实协作经验，将长期背景、任务执行与代码事实分别交给 Notion、Linear、GitHub 等成熟工具，形成正在使用的工作流；第三，结合 DeepSeek Super-agent 等公开架构进一步研究统一 Agent 执行系统的产品化机会。DeepSeek 是第三方参考。当前产品化仍处于方案探索阶段，不是已上线的独立 SaaS，也不声称拥有 DeepSeek 的实现。"
+    "outcomeTitle": "把协议与工具实践转化为值得开发的统一 Agent 产品方向。",
+    "outcomeBig": "Project first. Sessions replaceable.",
+    "outcome": "2026-11-10 的设计阶段立项判断为 GO。Agent Project OS main 仍为 v0.3 文档基线；Draft PR #1 的开发前 G0–G2 已完成，G3–G5 待执行。真实软件、生产指标和用户规模均未形成。这项成果是问题定义、系统抽象、成熟模块复用研究与工程拆解，而不是已发布平台。",
+    "role": "个人项目：主导早期 AWRP 协议、现行 Linear × Notion 工作流和独立 Agent Project OS 的需求定义、产品定位与架构研究；不同阶段成果明确区分。",
+    "tradeoff": "没有继续叠加自造 Relay、任务系统和 Agent Runtime；先复用真实工作流中成熟的 Project、知识、执行与审查基础设施，再为统一体验识别必要的自研对象。",
+    "ownershipNote": "DeepSeek Super-agent 仅是第三方参考；新产品 G0–G2 文档成果不等于代码实现、运行验证或生产发布。"
   },
   "laya-decision-integrity": {
     "headnote": "持续参与 Laya 决策模型的产品方向讨论、方案评审、实现协作与上游演进，围绕模型理解、评测证据、渐进采用和开发者集成，推动四组相互支撑的产品系统。",
@@ -1737,7 +1769,10 @@ const CASE_DETAILS = {
     "caption": "FIG. 04 — PERSONAL CONTEXT / SENSOR → RAW → DERIVED → USER CONTROL → AI GATEWAY",
     "outcomeTitle": "让个人上下文成为用户可携带、可控制的长期资产。",
     "outcomeBig": "Context, owned.",
-    "outcome": "产品定位与主要架构边界已形成；历史记录中有 Android 模拟器原型与早期验收材料。真实 Android/Windows 采集、长期存储、跨端同步、删除与授权消费的完整链路尚未完成验证，因此不将其描述为已上线产品。"
+    "outcome": "产品定位与主要架构边界已形成；历史记录中有 Android 模拟器原型与早期验收材料。真实 Android/Windows 采集、长期存储、跨端同步、删除与授权消费的完整链路尚未完成验证，因此不将其描述为已上线产品。",
+    "role": "个人项目：提出 Personal Context Layer 定位，主导分层设计、可追溯 Raw/Derived 语义与验证任务；历史 Android 模拟器原型有协调验收记录。",
+    "tradeoff": "输入法只是高频 Sensor；不让采集拖慢输入体验，也不让模型派生结论改写原始事实。时间主轴优先，高级关系和跨端完整功能分阶段实现。",
+    "ownershipNote": "历史模拟器原型不等于当前完整 Android × Windows 产品；跨端同步、开放 AI Gateway 和长期语义层尚未完成实际运行验收。"
   }
 };
 const PRODUCT_STEPS = [
@@ -1815,7 +1850,7 @@ function narrativeExperience(c){
 const HOME_PROJECTS = [
   {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT / ANDROID + WINDOWS",summary:"面向 Android 与 Windows 的个人上下文输入法探索：从用户主动输入中整理可追溯的信息，并在授权后提供给不同 AI 使用。",phase:"个人项目 · 产品定义与架构设计 · 早期原型"},
   {caseId:"product",name:"VIVIC",label:"TEAM PROJECT / SUKESONG HACKATHON · LIFE & OFFICE · 4TH PLACE",summary:"团队打造的多模态卡片助理，支持语音与文本交互，将用户需求转化为可执行任务。赛后受邀加入团队，并接手推进产品体验与 Agent 决策链路优化。",phase:"团队项目 · 赛后加入并持续参与产品优化"},
-  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / PRODUCTIZATION EXPLORATION",summary:"从早期 AWRP 多 Agent 任务接力原型，到基于 Linear 的真实协作工作流；结合 DeepSeek Super-agent 等公开架构研究，探索统一 Agent 执行系统的产品化方向。",phase:"AWRP 有原型实践 · Linear 工作流在用 · 独立产品尚未开发"}
+  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / PRODUCTIZATION EXPLORATION",summary:"从 AWRP 接力协议与 Linear 实践出发，对照 DeepSeek 等开源架构，形成 Agent Project OS 设计阶段 GO 判断。统一的目标是 Project，而不是 Agent 聊天。",phase:"AWRP 原型 / Linear 在用 · Agent Project OS G0–G2 Draft 已完成 · 代码未实施"}
 ]
 const CAPABILITY_GROUPS = [
   {name:"产品定义与用户体验",title:"PRODUCT STRATEGY & EXPERIENCE",description:"从真实场景识别用户要完成的任务，判断什么值得做、先解决什么，以及怎样让体验更自然。",caseIds:["product","personal-context-layer"]},
@@ -1939,7 +1974,7 @@ const WORKFLOW_STEPS=[
  ["ACCEPT","独立验收","按最初目标核对结果和副作用，再决定完成、返工或继续。","目标 / 证据","完成 / 返工 / 阻塞"]
 ];
 function workflowExperience(){
- return '<div class="demo-system"><div class="system-toolbar mono"><span>AWRP × LINEAR / LONG-RUNNING WORKFLOW</span><span>SELECT A PRODUCT OBJECT ↘</span></div><div class="system-flow" role="group" aria-label="选择长期 Agent 工作流中的产品对象">'+WORKFLOW_STEPS.map((n,i)=>'<button data-workflow-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / PRODUCT OBJECT</span><span class="system-detail-no" id="workflow-num">01 / 04</span></div><h3 id="workflow-title">长期任务身份</h3><p id="workflow-desc">'+WORKFLOW_STEPS[0][2]+'</p><div class="system-io"><span id="workflow-input">'+WORKFLOW_STEPS[0][3]+'</span><span id="workflow-output">'+WORKFLOW_STEPS[0][4]+'</span></div></div><div class="workflow-compare"><div class="mono workflow-compare__heading">ARCHITECTURE COMPARISON / DIFFERENT ROLES, NO RANKING</div><div class="workflow-compare__grid"><article><span class="mono">AWRP</span><strong>接力协议原型</strong><p>探索 Task、Run、Event、ACK / HANDOFF 与 Review 的责任边界。历史代码与测试实践，不是生产级平台。</p></article><article><span class="mono">LINEAR × NOTION</span><strong>现行真实工作流</strong><p>Linear 管理 Project / Issue / 状态；Notion 保存长期语义与决策；GitHub 保留代码和上游事实。</p></article><article><span class="mono">DEEPSEEK SUPER-AGENT</span><strong>第三方架构参照</strong><p>对照其事件驱动执行、授权、Ticket 与恢复机制；只作为公开开源研究对象，不属于个人成果。</p></article></div></div></div>';
+ return '<div class="demo-system"><div class="system-toolbar mono"><span>AWRP × LINEAR / LONG-RUNNING WORKFLOW</span><span>SELECT A PRODUCT OBJECT ↘</span></div><div class="system-flow" role="group" aria-label="选择长期 Agent 工作流中的产品对象">'+WORKFLOW_STEPS.map((n,i)=>'<button data-workflow-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / PRODUCT OBJECT</span><span class="system-detail-no" id="workflow-num">01 / 04</span></div><h3 id="workflow-title">长期任务身份</h3><p id="workflow-desc">'+WORKFLOW_STEPS[0][2]+'</p><div class="system-io"><span id="workflow-input">'+WORKFLOW_STEPS[0][3]+'</span><span id="workflow-output">'+WORKFLOW_STEPS[0][4]+'</span></div></div><div class="workflow-compare"><div class="mono workflow-compare__heading">ARCHITECTURE COMPARISON / DIFFERENT ROLES, NO RANKING</div><div class="workflow-compare__grid"><article><span class="mono">AWRP</span><strong>接力协议原型</strong><p>探索 Task、Run、Event、ACK / HANDOFF 与 Review 的责任边界。历史代码与测试实践，不是生产级平台。</p></article><article><span class="mono">LINEAR × NOTION</span><strong>现行真实工作流</strong><p>Linear 管理 Project / Issue / 状态；Notion 保存长期语义与决策；GitHub 保留代码和上游事实。</p></article><article><span class="mono">DEEPSEEK SUPER-AGENT</span><strong>第三方架构参照</strong><p>研究 Trigger、Mandate、Ticket、Outbox 与失败恢复机制；不把第三方设计当作本人已实现能力。</p></article><article><span class="mono">AGENT PROJECT OS</span><strong>设计阶段 GO · G0–G2 Draft</strong><p>基于历史实践判断值得开发；已完成开发前设计与复用研究，G3–G5 和产品代码均未完成。</p></article></div></div></div>';
 }
 function showWorkflowStep(i){
  const n=WORKFLOW_STEPS[i];if(!n)return;
@@ -1998,8 +2033,8 @@ function renderCase(id){
  const mediaCases={product:['M05','M06'],opensource:[],systems:[]};
  const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
  $('#case-media-insert').hidden=!mediaIds.length;
- $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">SUPPORTING MATERIAL / ASSET BRIEF</div><h3>More than a <i>cover.</i></h3><p>${c.type==='product'?'这里保留真正的产品截图。不是 AI 想象出来的界面。':'这一位置用于机制说明图；实际 PR 仍以独立的公开源链接说明。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
- $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const rolePanel=document.getElementById('case-role-panel');if(rolePanel){rolePanel.hidden=c.id!=='product';if(c.id==='product'){document.getElementById('case-role').textContent=d.role;document.getElementById('case-tradeoff').textContent=d.tradeoff;document.getElementById('case-role-note').textContent=d.ownershipNote;}}const metricRoot=document.getElementById('case-metrics');const metrics=c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 58–60/60',note:'6 轮结果；11-05 部署快照 59/60，末轮 60/60'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'同一测量口径，约下降 50%'},{label:'能力工具入口',value:'27 → 14',note:'从按卡片类型分散，收敛为按能力组织'}]:c.id==='laya-decision-integrity'?[{label:'本人 Authored PR',value:'47',note:'GitHub 作者查询快照 · 2026-11-09'},{label:'已合并 PR',value:'40 / 47',note:'本人 authored PR 中的已合并数量'},{label:'reviewed-by 查询',value:'85 PRs',note:'reviewed-by:Bruce-Yii 命中；与 authored 统计分开'}]:[];const metricNote=c.id==='product'?'FIXED 60-ITEM API REGRESSION · INTERNAL TEAM RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS':c.id==='laya-decision-integrity'?'GITHUB QUERY SNAPSHOT · REVIEWED-BY MATCHES ARE A SEPARATE QUERY · NOT A PRODUCT KPI':'';if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>`<article class="case-metric"><span class="mono case-metric__label">${esc(m.label)}</span><strong class="case-metric__value">${esc(m.value)}</strong><small class="case-metric__note">${esc(m.note)}</small></article>`).join('')+`<p class="case-metrics-note mono">${esc(metricNote)}</p>`:'';}
+ $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">REAL INTERFACE / HISTORICAL CAPTURE</div><h3>Product <i>in use.</i></h3><p>${c.type==='product'?'真实产品界面 · 截于 2026-11-01，仅展示当时的卡片与画布形态；与 11-05 后端重构指标不构成同环境前后对照。':'图为说明性机制可视化，并非产品运行截图。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
+ $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const rolePanel=document.getElementById('case-role-panel');if(rolePanel){const showRole=['product','agent-workflow-governance','personal-context-layer'].includes(c.id);rolePanel.hidden=!showRole;if(showRole){document.getElementById('case-role').textContent=d.role||c.editorial?.role||'';document.getElementById('case-tradeoff').textContent=d.tradeoff||'';document.getElementById('case-role-note').textContent=d.ownershipNote||c.editorial?.boundary||'';}}const metricRoot=document.getElementById('case-metrics');const metrics=c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 58–60/60',note:'6 轮结果；11-05 部署快照 59/60，末轮 60/60'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'同一测量口径，约下降 50%'},{label:'能力工具入口',value:'27 → 14',note:'从按卡片类型分散，收敛为按能力组织'}]:c.id==='laya-decision-integrity'?[{label:'本人 Authored PR',value:'47',note:'GitHub 作者查询快照 · 2026-11-09'},{label:'已合并 PR',value:'40 / 47',note:'本人 authored PR 中的已合并数量'},{label:'reviewed-by 查询',value:'85 PRs',note:'reviewed-by:Bruce-Yii 命中；与 authored 统计分开'}]:[];const metricNote=c.id==='product'?'FIXED 60-ITEM API REGRESSION · INTERNAL TEAM RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS':c.id==='laya-decision-integrity'?'GITHUB QUERY SNAPSHOT · REVIEWED-BY MATCHES ARE A SEPARATE QUERY · NOT A PRODUCT KPI':'';if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>`<article class="case-metric"><span class="mono case-metric__label">${esc(m.label)}</span><strong class="case-metric__value">${esc(m.value)}</strong><small class="case-metric__note">${esc(m.note)}</small></article>`).join('')+`<p class="case-metrics-note mono">${esc(metricNote)}</p>`:'';}
  if(c.id==='product')showProductStep(0);if(c.id==='agent-workflow-governance')showWorkflowStep(0);if(c.id==='personal-context-layer')showContextStep(0);if(c.presentation!=='evidence'&&c.type==='systems')showSystemNode(2)
  const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
 }
