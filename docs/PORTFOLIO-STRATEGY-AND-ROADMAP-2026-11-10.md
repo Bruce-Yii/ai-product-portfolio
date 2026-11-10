@@ -386,3 +386,66 @@
 先完成 **Phase 1（招聘定位研究）与 Phase 2（案例证据盘点）**，再综合决定最终职业定位和案例组合。内容和阅读路径完成后，才进入视觉任务单与页面改版。
 
 本文件是策略和路线基线，不等于任何尚未完成的 Phase 已验收。
+
+
+## 7. 2026-11-10 USER-CONFIRMED STRATEGY UPGRADE
+
+<badge>USER-CONFIRMED · 2026-11-10</badge>
+
+The user explicitly confirmed the seven optimization directions and strongly endorsed the six foundational AI PM capabilities. This is a binding strategy decision, not a tentative assistant proposal. Full decision record: [2026-11-10 User-Confirmed Strategy](./portfolio-decisions/2026-11-10-user-confirmed-strategy.md).
+
+### 7.1 Seven directions are confirmed
+
+- **P0:** career positioning and differentiation; case narrative and productized expression; information architecture and continuous reading path.
+- **P1:** visual expression and information visualization; evidence and credibility; interaction and user experience.
+- **P2:** engineering quality and long-term maintenance.
+
+These priorities remain unchanged. They are not seven parallel workstreams: P0 establishes the content and reading logic; P1 expresses and supports it; P2 protects delivery quality.
+
+### 7.2 The six foundational capabilities are confirmed
+
+The user explicitly endorsed the six capabilities extracted from early-career AI PM hiring research:
+1. Scenario insight.
+2. Product abstraction.
+3. Agent design.
+4. Technical judgment.
+5. Evaluation and quality measurement.
+6. End-to-end product delivery.
+
+They must be reflected in case selection, case narratives and evidence. Do not turn them into a homepage keyword wall.
+
+### 7.3 Add a senior-capability reference layer
+
+The user explicitly requests that senior-role capabilities also be absorbed as an upward reference ("求其上者得其中"). Do not limit the portfolio's thinking depth to graduate hiring requirements.
+
+Use a dual-level model:
+- **Foundational competitiveness:** the six capabilities repeatedly required by 2027 graduate / 0–3 year AI PM roles.
+- **Advanced reference standard:** product strategy and portfolio management; business value / ROI; platformization and ecosystem; enterprise reliability and governance; cross-organizational leadership and scale delivery; commercialization and go-to-market.
+
+Advanced capabilities should improve the depth of product questions and case reasoning: opportunity cost, roadmap, reusable platform boundaries, build/buy/retire, scale/stop decisions, ROI hypotheses, adoption, governance, enterprise integration and stakeholder operating models.
+
+This is an aspirational design bar, not permission to fabricate senior experience. Distinguish executed, validated, research/design and planned evidence. If there is no actual ROI or production-scale result, present a value hypothesis, metric design or validation plan accurately.
+
+The detailed senior-role sample and capability mapping are in [Portfolio Benchmark & Senior AI PM Capability Research](./portfolio-reviews/2026-11-10-portfolio-benchmark-and-senior-capability-research.md).
+
+### 7.4 Add real portfolio UX benchmark research
+
+The user requests real, strong portfolio examples and their actual presentation patterns, with a freshness window of roughly one to two years. Do not rely only on generic portfolio design articles.
+
+The first benchmark round includes:
+- PM / AI PM sites: Serhii Kibitkin, Matthew Stublefield, Kireeti Varma, David Jones, Priank Ravichandar, Elena Calvillo, Gerald Yuan, and Chinese AI PM portfolio examples;
+- visual / interaction references: Simon Pan, Marco Cornacchia, Conor O'Hollaren, Mike Matas and Raffi Chilingaryan;
+- curated sample and case-structure research: AllthingsPM 2026 and Figma's 2026 portfolio examples.
+
+Use the observed patterns selectively: outcome-first positioning, problem-led case titles, explicit role/accountability, visible decisions and trade-offs, real working proof, lessons/failures, and a clear next action. Borrow visual or interaction patterns only when they support the candidate's identity and the recruiter's reading task. Do not copy gimmicks or turn the homepage into a multi-filter project catalogue.
+
+Research limitations are explicit: AllthingsPM is commercially affiliated with PM training; Figma examples are primarily designer portfolios; UX portfolio recruiter samples do not directly equal AI PM hiring. Treat these as directional evidence, not universal laws.
+
+### 7.5 Execution update
+
+- Phase 1 must map both the six foundational and six advanced capabilities to actual target roles, then identify which are supported by the candidate's evidence.
+- Phase 2 must map every candidate project / contribution to capability, personal ownership, evidence maturity, public boundary and interview defensibility.
+- Phase 4 must include a real-site UX benchmark and turn the best patterns into a recruiter reading journey and low-fidelity layout.
+- Phase 5 must inventory actual product screenshots / official assets first; missing visuals receive a written AI image brief before handoff to a separate image-generation window.
+- Multiple local windows may perform independent read-only research / audit tasks. W0 / ChatGPT remains the sole coordinator and reviewer. No concurrent website-code edits or deployment by helper windows without explicit assignment and gate.
+- The website remains v2.3 preview. This strategy upgrade is documentation-only; it does not mean a new website version has been implemented.
