@@ -141,3 +141,15 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Chromium local-source smoke test: desktop 1440px and mobile 390px; three selected Project cards render and route to PCK / VIVIC / AWRP × Linear; Work view lists four Cases; Laya standalone casebook renders at 390px; no JS errors or horizontal overflow observed at tested widths.
 - 360px, cross-browser, and full-page visual checks remain outstanding.
 - Preview deployment for this exact commit will be recorded after build and live-route verification. Production aliases and DNS must remain unchanged. Search indexing remains blocked.
+
+
+### Corrected owner preview · 2026-11-10 · navigation and homepage restored
+
+- Vercel deployment: `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA` · **READY**.
+- Deployed branch: `portfolio/phase3-content-review-2026-11-10`.
+- Deployed source commit: `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`.
+- Preview base URL: https://ai-product-portfolio-aqu466asw-yu-ac3a.vercel.app.
+- No-login share link generated and verified for owner review; token is intentionally not stored in the public repository.
+- Live homepage and `/cases/laya/` both return HTTP 200; application inline script parses; expected three homepage Project IDs are present; `X-Robots-Tag: noindex, nofollow, noarchive` remains on both routes.
+- Local Chromium click-through against the exact application source passed at 1440px and 390px: three Project cards render and open their cases; Work view lists four Cases; Laya standalone page renders; no JS errors or horizontal overflow observed. 360px and hosted browser E2E remain outstanding.
+- This deployment supersedes the broken review preview `dpl_7Hq7rhGJrshKPfkruJvWmcLBpHaZ` for owner review. It does not promote production, change domains / DNS, or enable indexing.
