@@ -9,7 +9,7 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Recovery reference baseline — `4f558b5`
 
-This is the exact owner-supplied preview from the previous review conversation. It is the reference point for recovering the approved visual/content direction; it is **not** a production-release approval.
+This is the exact owner-supplied preview from the previous review conversation. It is the reference point for recovering the previous review artifact and comparing later changes; it is not a blanket content approval or production-release approval.
 
 - Commit: `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`
 - Current Git branch pointer at audit time: `portfolio/owner-feedback-rewrite-2026-11-11`
@@ -55,6 +55,7 @@ Portfolio Vercel project:
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
 - Current latest deployment: `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`
+- Deployment inventory at audit time: 32 records returned.
 - Attached custom domain: `portfolio.hcfind.com` (verified)
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
