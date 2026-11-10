@@ -51,3 +51,12 @@
 - Research snapshot: 2027 graduate / early-career AI PM job descriptions and 2025–2026 AI product / portfolio review sources, with sample limitations recorded in the strategy document.
 - Next execution: Phase 1 role / positioning research + Phase 2 personal case and evidence audit; no large-scale website visual changes before those dependencies complete.
 - This was a documentation-only strategy update. The v2.3 website artifact and preview deployment remain unchanged.
+
+
+## 2026-11-10 · User-confirmed strategy upgrade (documentation-only)
+
+- Explicit user-confirmed decision: [dated strategy record](../portfolio-decisions/2026-11-10-user-confirmed-strategy.md).
+- Advanced capability and real-site portfolio UX research: [benchmark report](../portfolio-reviews/2026-11-10-portfolio-benchmark-and-senior-capability-research.md).
+- The user confirmed all seven directions and six foundational capabilities, and requested advanced AI PM capabilities as an upward reference standard.
+- Portfolio UX research now includes recent live PM / AI PM sites and design interaction examples, with explicit source and sample-bias limitations.
+- The website artifact and v2.3 preview deployment were not modified.
