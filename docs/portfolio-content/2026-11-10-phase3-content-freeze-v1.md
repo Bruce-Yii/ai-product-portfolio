@@ -28,7 +28,7 @@
 
 Personal Context Keyboard 已接近完成。旧的 Notion / Linear 状态停留在 10 月初，不能覆盖 11 月 10 日 GitHub CURRENT-STATE 与用户最新确认。
 
-已执行实现覆盖 Android IME、中文输入、语音 / ASR 文件链路、Context Store / Recovery、Today / Smartbar、剪贴板、个人词典、备份恢复、打包和回归等。正式产品验收仍为 0；真实设备、真实麦克风、arm64、Windows TSF、生产签名 / 发布等 Gate 仍需完成。
+已执行实现覆盖 Android IME、中文拼音引擎、语音 / ASR 文件喂入与两段式识别、VAD 端点、Context Store / Recovery、Today / Smartbar、剪贴板、个人词典、备份恢复、APK/AAB 打包与 TEST-ONLY 签名演练等。当前可核对的子集包括中文输入 JVM 70/70、模拟器设备测试 12/12，语音入口文件喂入与 IME composing/commit 链路回归 20/20；这些不是完整产品验收。整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。arm64 原生库已随包，但 arm64 运行时未测；Windows TSF 资格检查为 BLOCKED；真实设备、真实麦克风整链、生产签名 / 商店发布等 Gate 仍未完成。
 
 **正确表达：接近完成的个人产品实现，仍有明确的真实设备与正式发布验收 Gate。** 不得降格为“只有研究设计 / 早期原型”，也不得写成“已正式发布 / 已完成全部真机验收”。
 
@@ -189,9 +189,9 @@ VIVIC 是团队打造的多模态卡片助理，支持语音与文本交互。�
 4. 用户能够确认、纠错、撤回；模型推断不能自动升级为用户事实。
 5. AI Gateway 只向外部模型提供用户明确授权的上下文范围。
 
-**实现：** 主体工程已接近完成，已有 Android IME、中文输入、语音 / ASR 文件链路、Context Store / Recovery、Today / Smartbar、剪贴板、个人词典、备份恢复、打包与自动化回归等实现记录。
+**实现：** 主体工程已接近完成。仓库记录了 Android IME、中文拼音引擎、语音 / ASR 文件喂入与两段式识别、VAD 端点、Context Store / Recovery、Today / Smartbar、剪贴板、个人词典、备份恢复、APK/AAB 打包和 TEST-ONLY 签名演练。可引用的局部回归包括中文输入 JVM 70/70、模拟器设备测试 12/12，以及语音入口相关回归 20/20；整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。
 
-**当前阶段：** 接近完成的个人产品实现。正式产品验收尚未通过；真实设备、真实麦克风、arm64、Windows TSF、生产签名与发布仍需逐项完成。
+**当前阶段：** 接近完成的个人产品实现，但尚未完成正式产品验收。arm64 原生库已打包、arm64 运行时未测；Windows TSF 资格检查 BLOCKED；真实设备、真实麦克风整链、生产签名与商店发布仍需逐项完成。不能将 x86_64 模拟器子集测试写成真机或整包验收。
 
 #### 3–5 分钟深读结构
 
