@@ -311,3 +311,8 @@ The portfolio is a recruiter-facing product narrative, not a project acceptance 
 - AWRP × Linear must explain the original ChatGPT mobile/web ↔ local Agent workflow, research/execution separation, Project normalization, Channel / Lane / Claim isolation, Task / Subtask / Run execution rounds, Event / Artifact persistence, ACK / HANDOFF / REVIEW / RECONCILE, the actual Linear × Notion × GitHub division, and the DeepSeek Super-agent architecture comparison. Distinguish AWRP, current tools, third-party research and Agent Project OS.
 - VIVIC visuals should use official product-site showcase images where available, rather than low-resolution private screenshots. Official source assets are listed in assets/vivic/README.md.
 - Laya public headline uses 40 merged PRs. Do not expose 47 authored PRs or 85 reviewed-by query matches as headline metrics. The separate 10,394 added-line statistic is summed across the full authored PR diff set, so clearly distinguish it from the 40 merged PR count without showing the authored PR total.
+
+
+## 9. Explicit Exclusion — Temporary Domain Deployment Test
+
+The phrase “我是最强 AI 产品经理” was used temporarily on the owner's separate domain website only as placeholder text to verify whether a free deployment worked. It was not a portfolio design discussion, approved homepage headline, positioning statement, or enduring preference. It must not be copied into the portfolio, its previews, screenshots, metadata, or future redesigns. Only reconsider it if the owner explicitly requests it as a portfolio element in a future conversation.
