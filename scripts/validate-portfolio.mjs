@@ -7,7 +7,7 @@ const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
 
 assert.equal(scripts.length, 1, "Expected one inline application script.");
 for (const [index, match] of scripts.entries()) {
-  new Script(match[1], { filename: \`index.html:inline-script-\${index + 1}\` });
+  new Script(match[1], { filename: "index.html:inline-script-" + (index + 1) });
 }
 
 const expectedProjectIds = [
@@ -30,6 +30,6 @@ assert.ok(existsSync("cases/laya/index.html"), "Standalone Laya casebook page is
 assert.ok(html.includes('href="./cases/laya/"'), "Homepage Laya casebook link is missing.");
 
 console.log("Portfolio static validation: PASS");
-console.log(\`Inline scripts parsed: \${scripts.length}\`);
-console.log(\`Homepage projects: \${actualProjectIds.join(" → ")}\`);
+console.log("Inline scripts parsed: " + scripts.length);
+console.log("Homepage projects: " + actualProjectIds.join(" → "));
 console.log("Laya standalone route: present");
