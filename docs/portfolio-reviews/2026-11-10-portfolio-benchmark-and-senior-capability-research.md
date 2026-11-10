@@ -67,7 +67,7 @@
 
 - [Pfizer — AI Product Sr. Manager（Shanghai）](https://www.pfizer.com/about/careers/job/4966401?langcode=zh)
 - [Shell — AI Platform Product Manager（R211341）](https://shell.wd3.myworkdayjobs.com/zh-CN/shellcareers/job/China-World-Trade-Centre/AI-Platform-Product-Manager_R211341)
-- [AstraZeneca — IT Product Owner, Beijing AI Center（TP25289）](https://job-search.astrazeneca.cn/%E5%B7%A5%E4%BD%9C/%E4%B8%8A%E6%B5%B7/%E5%8C%97%E4%BA%AC-ai-center/12977/102600996640)
+- [AstraZeneca — IT Product Owner, Beijing AI Center（TP25289）](https://job-search.astrazeneca.cn/%E5%B7%A5%E4%BD%9C/%E4%B8%8A%E6%B5%B7/it-product-owner-baic/12977/102600996640)
 - [Google Careers — Senior Product Manager, AI Data and Systems Platform](https://www.google.com/about/careers/applications/jobs/results/91444191166374598-senior-product-manager-ai-data-and-systems-platform)
 - [JPMorgan Chase — Senior AI Product Manager（Job 210800890）](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210800890)
 
@@ -87,16 +87,15 @@ AllthingsPM 在 2026-09-26 对其目录中的 455 个 PM 级作品集做过快�
 
 | 网站 / 人物 | 值得研究的呈现形式 | 对本项目的启发 | 不应照搬的部分 |
 |---|---|---|---|
-| [Serhii Kibitkin](https://kibitkin.com/) | 首页用明确业务结果建立第一印象；单一旗舰案例采用 Situation / Action / Result；显示本人角色、技术取舍、发布节奏和团队协作 | 让招聘方先看到价值，再进入一个完整案例；团队结果与个人职责分开表述 | 17x 收入和 3,200+ 客户属于其真实资历，不可用类似数字替代自己的证据 |
+| [Serhii Kibitkin](https://kibitkin.com/) | 首页用明确业务结果建立第一印象；单一旗舰案例采用 Situation / Action / Result；显示本人角色、技术取舍、发布节奏和团队协作 | 让招聘方先看到价值，再进入一个完整案例；团队结果与个人职责分开表述 | 其页面中的业务增长指标属于其真实资历，不可用类似数字替代自己的证据 |
 | [Matthew Stublefield](https://mstublefield.com/) / [21 个案例](https://mstublefield.com/case-studies) | 案例标题以问题为中心；按业务领域归组；展示真实上下文、失败经验和学习 | 重点案例要写出问题和关键取舍，包含没有奏效的方案；从技术细节回到产品后果 | 21 个案例来自 20+ 年职业经历；我们应精选少量旗舰案例，不追求数量 |
 | [Kireeti Varma](https://kireetivarma.me/) | 首屏明确用户规模、产品数量和目标岗位；按职业阶段组织经历；项目中呈现团队、合作角色、发现—研究—策略—设计—交付—运营 | 可学习“职业轨迹 + 项目证据”的组织方式；明确候选人希望承担什么岗位 | 大规模用户与团队管理数据是高级履历，不应作为本人的表达模板 |
 | [David Jones](https://davidjonesai.com/) | “Executive who builds”；从个人工具到团队生产力、组织能力的递进；展示可运行工具、仓库、测试、商业案例和观点文章 | 适合学习如何把 AI 构建能力变成可验证作品，以及如何展示从单点工具到系统能力的思考 | 页面内容密度很高，43 个项目和大量指标不适合直接照搬；只借鉴“精选作品 + 可验证产物 + 能力演进” |
 | [Priank Ravichandar](https://www.priankr.com/) | AI-native PM 定位；独立的 How I Build 区域；Spec-driven、Eval-driven、Agent-optimized、End-to-end ownership；项目和文章相互支撑 | 很适合参考 AI PM 的专业表达：不仅说做过什么，也说明自己如何构建、验证和迭代 AI 产品 | 其 8 年经验与全栈交付背景不应映射成应届候选人的既有资历 |
 | [Elena Calvillo](https://elenacalvillo.com/) | 用 RAG Agent 让访客询问个人经历；可查看检索来源；用职业路线图展示能力演进；案例按问题而不是雇主组织 | 作品集本身可以成为产品能力演示；交互必须服务于事实检索和可信度 | Agent 作为入口可能分散主线；“100% precision”一类绝对化表述需要严格验证，不应照搬 |
 | [Gerald Yuan（中文）](https://www.geraldyuan.com/zh/) | 面向早期 AI PM；中英文；精选项目、项目筛选、写作、简历、AI Agent 入口 | 适合做同阶段候选人的内容与定位对照；公开写作能持续证明产品判断 | 多个入口和多维筛选可能产生选择成本；我们应先建立一条主线，筛选作为次级探索 |
-| [周嘉立 AI PM 作品集](https://aipmportfolio.vercel.app/) | 真实业务案例与 Vibe Coding 原型分层；展示工作流、技术方案、指标与产品方法 | 可参考真实生产项目和快速原型分开表达，避免把原型误写成生产成果 | 页面上的指标必须逐项核实；提示词图库等内容若与求职定位关系弱，不应占用核心阅读路径 |
+| [周嘉立 / Diudiu AI PM 作品集](https://aipmportfolio.vercel.app/) · [对应 GitHub 仓库](https://github.com/Diudiu-AI-product/AI-pm-portfolio) | 在线站点按真实业务案例与 Vibe Coding 原型分层，展示工作流、技术方案、指标与产品方法；仓库也明确区分 Production Case 与原型 | 可参考项目成熟度分层和工作流叙事，避免把原型误写成生产成果 | 仓库账号与站点姓名的对应关系来自公开链接；页面指标仍需逐项核实，提示词图库等弱相关内容不应占用核心阅读路径 |
 | [尹承修 AI 产品经理作品集仓库](https://github.com/ChengxiuCDP/ai-product-portfolio) | 将网站定位为“简历的证据层”；案例采用问题 → 角色边界 → 判断取舍 → 方案 → 证据 → 验证 / 结果；内容规则单独维护 | 很适合借鉴内容治理：事实基线、角色边界、证据与叙事分离，减少页面文案漂移 | 这是仓库说明和内容模型参考，不应据此推断其网站视觉一定优秀 |
-| [Diudiu AI PM Portfolio 仓库](https://github.com/Diudiu-AI-product/AI-pm-portfolio) / [在线站点](https://aipmportfolio.vercel.app/) | Production Case 与 Vibe Coding Project 分层，突出业务工作流、评测和原型 | 可借鉴项目成熟度分层和工作流叙事 | 不把“Production”字样当成事实证明，需核查每个案例的上线状态和指标口径 |
 
 ### 3.3 从样本中提炼出的 PM 呈现模式
 
