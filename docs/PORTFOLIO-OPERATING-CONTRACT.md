@@ -198,3 +198,65 @@ Project 不等于 Case；仓库不自动成为独立产品；关键结论应尽�
 5. 当前 Git 分支、Commit、实际线上部署：确认 Live Truth
 
 如文档与实际仓库/线上状态冲突，以 GitHub 当前分支和 Vercel 实际状态为准，并立即修正文档；不得凭旧对话或旧部署记录猜测。
+
+
+## 7. 2026-11-10 Strategy Addendum — recruiter conversion, differentiation and guided reading
+
+The detailed market research, strategy, case gates, visual rules and phased plan are maintained in [PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md](./PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md). This addendum is binding for future portfolio work.
+
+### 7.1 Primary objective
+
+The portfolio's primary outcome is to improve the likelihood that target employers invite the candidate to interview. Visual polish, project count, technical sophistication and site architecture are means, not ends.
+
+### 7.2 Priority order
+
+- **P0 — Career positioning and differentiation:** research current 2027 graduate / early-career AI PM roles and map their requirements to the candidate's actual evidence before freezing homepage positioning.
+- **P0 — Case narrative and productized expression:** concise but substantive, strong product language, defensible résumé-style framing, visible personal judgment and contribution.
+- **P0 — Information architecture and reading journey:** one clear default narrative path from positioning to selected work, deep cases, evidence and contact. Do not create a maze of equally weighted entrances.
+- **P1 — Visual expression and information visualization:** real product assets first; AI-generated explanatory visuals only after a written brief and separate image handoff.
+- **P1 — Evidence and credibility:** links to PRs, Issues, repositories, official project/team sites should be small, relevant and easy to verify, not a dominant evidence wall.
+- **P1 — Interaction and user experience:** preserve orientation, clear back/next paths, optional anchor navigation, mobile usability and browser conventions.
+- **P2 — Engineering quality and maintenance:** reliability, performance, accessibility, versioning, deployment and rollback remain mandatory delivery constraints, but do not displace P0 content work.
+
+### 7.3 Career positioning must be market- and evidence-based
+
+Do not define the candidate using generic self-praise or an AI tool/technology keyword list. Compare current early-career AI PM / Agent PM / AI platform roles separately from senior commercial roles. Derive positioning from the overlap of:
+1. current employer demand;
+2. actual personal case evidence;
+3. differentiated product judgment and engineering understanding;
+4. interview-defensible claims.
+
+The current working hypothesis is **AI Product Manager, focused on Agent workflows and AI application productization**. It is not final homepage copy until Phase 1 and Phase 2 of the strategy plan are completed.
+
+### 7.4 Case evaluation and packaging
+
+A case must demonstrate role-relevant value, differentiated judgment, clear personal ownership, evidence-backed outcomes/stage, and incremental value to the portfolio. Use flagship / supporting / contribution / hold tiers. Do not force every project into a long case study.
+
+Strong product framing and résumé-style polishing are encouraged. Do not understate real product work as a bare bug-fix log. Combine related issues, PRs, reviews, research and implementation when they form one coherent product story. Never invent ownership, release state, user/business impact or metrics.
+
+### 7.5 One primary reading path
+
+Design a default path: career positioning → selected projects → deep cases → supporting contributions/evidence → personal summary/contact. Use one primary story, not a project maze. Case pages may retain optional anchor navigation and direct links for deep readers, but must preserve current location, next/previous context, and a clear return path. Evidence links are secondary branches, not the main narrative.
+
+### 7.6 Visual asset policy
+
+Use real project/product screenshots, official website assets, public repo documentation, videos and existing diagrams first. Record source and capture date. Do not present historical screenshots as current UI or false before/after evidence.
+
+For missing visuals, write an image brief before handing work to a separate image-generation window. The brief must specify the single message, theme, composition, hierarchy, style, palette, aspect ratio and forbidden elements. AI-generated visuals are explanatory/editorial assets, never fake UI, source evidence or fabricated metrics. Precise architecture and process relationships must be fact-checked after generation or reconstructed from an approved draft.
+
+### 7.7 Evidence presentation
+
+Place small, relevant links near the corresponding claim or at the end of a case: original PR / Issue / Review / repository / official project or team website. Do not flood the homepage with IDs or large evidence panels. The link must support the claim it accompanies.
+
+### 7.8 Implementation sequence
+
+Do not make large visual changes before the following dependencies are complete:
+1. current hiring-market research and early-career role matrix;
+2. personal project / case / evidence audit;
+3. positioning and case-tier decisions;
+4. concise multi-depth case copy;
+5. primary reading journey and low-fidelity layout;
+6. real asset inventory and separate AI image briefs;
+7. site implementation, browser QA, preview deployment and freeze.
+
+The strategy document is the detailed execution baseline. The current v2.3 site remains the implementation baseline until a later version passes its own review gate.
