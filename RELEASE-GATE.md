@@ -130,3 +130,14 @@ A project or repository does not qualify for a standalone Case page merely becau
 - HTTP 200 page and `noindex, nofollow, noarchive` retained. `hcfind.com` and `www.hcfind.com` root-domain production remain untouched.
 - Previous preview deployment `dpl_Fhw2j3wtDrFVBUaZvEjzXYRGvgj8` is the known rollback target.
 - **Gate verdict:** ready for owner review as noindex preview; NOT approved for indexed/production publication. Complete content/ownership/publicity checks still govern future formal release.
+
+
+## 2026-11-10 · Owner review candidate after navigation regression fix
+
+- Source branch: `portfolio/phase3-content-review-2026-11-10`.
+- Source commit: `e61cba0df5ea0479ff03cbeab807ac5757884845`.
+- This candidate corrects two malformed inline JavaScript string literals that had prevented the homepage Project cards and SPA case navigation from initializing. The standalone Laya link was unaffected because it is static HTML.
+- Added dependency-free source validator: `node scripts/validate-portfolio.mjs` — PASS.
+- Chromium local-source smoke test: desktop 1440px and mobile 390px; three selected Project cards render and route to PCK / VIVIC / AWRP × Linear; Work view lists four Cases; Laya standalone casebook renders at 390px; no JS errors or horizontal overflow observed at tested widths.
+- 360px, cross-browser, and full-page visual checks remain outstanding.
+- Preview deployment for this exact commit will be recorded after build and live-route verification. Production aliases and DNS must remain unchanged. Search indexing remains blocked.
