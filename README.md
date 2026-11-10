@@ -49,3 +49,7 @@ All future windows and agents must read [Portfolio Operating Contract](./docs/PO
 3. Deploy every website iteration to a directly viewable Vercel Preview or an already-safe domain, then independently verify the live pages.
 
 The contract explicitly permits strong résumé-style framing and product-value positioning while requiring evidence-backed claims and accurate role boundaries. A documentation-only change does not require a website deployment when the website artifact is unchanged.
+
+
+- **2026-11-10 user-confirmed strategy decision:** [dated decision record](./docs/portfolio-decisions/2026-11-10-user-confirmed-strategy.md).
+- **Advanced AI PM capability + real portfolio UX benchmark:** [research report](./docs/portfolio-reviews/2026-11-10-portfolio-benchmark-and-senior-capability-research.md).
