@@ -25,6 +25,14 @@ The HTML application code/styles are intentionally self-contained; sourced VIVIC
 
 ## Current v2.3 review
 
+- **Strategy and phased roadmap:** [Portfolio Strategy & Roadmap (2026-11-10)](./docs/PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md).
+- **Binding execution contract:** [Portfolio Operating Contract](./docs/PORTFOLIO-OPERATING-CONTRACT.md).
+- Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
+- Login-free review URL: https://portfolio.hcfind.com/ (`*.vercel.app` deployment URL may require Vercel SSO).
+- Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
+- [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
+- Search-indexed/production publication remains gated; root `hcfind.com` untouched.
+
 - Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
 - Login-free review URL: https://portfolio.hcfind.com/ (`*.vercel.app` deployment URL may require Vercel SSO).
 - Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
