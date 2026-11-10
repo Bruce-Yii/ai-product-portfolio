@@ -53,3 +53,4 @@ The contract explicitly permits strong résumé-style framing and product-value 
 
 - **2026-11-10 user-confirmed strategy decision:** [dated decision record](./docs/portfolio-decisions/2026-11-10-user-confirmed-strategy.md).
 - **Advanced AI PM capability + real portfolio UX benchmark:** [research report](./docs/portfolio-reviews/2026-11-10-portfolio-benchmark-and-senior-capability-research.md).
+- **Parallel Phase 1–2 task pack:** [W1 hiring capability matrix · W2 portfolio UX benchmark · W3 personal evidence audit](./docs/PORTFOLIO-WINDOW-DISPATCH-2026-11-10.md).
