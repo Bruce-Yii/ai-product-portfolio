@@ -118,3 +118,15 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Existing `hcfind.com` root domain remains separate; no DNS changes or root-domain alias changes in this pass.
 - Content review candidate only; search indexing remains disabled.
 - Full browser visual review and responsive E2E at 1440px / 390px / 360px remain pending.
+
+
+## 2026-11-10 · v2.3 preview — sourced VIVIC media + Agent Project OS (NO-GO for public launch)
+
+- Branch: `portfolio/v2.3-real-assets-2026-11-10`; source commit: `a030ebab95afd4b23b0643bd832b1ad3fe7e42f3`. Old v2.2 version and main branch are unchanged.
+- Real image provenance: 2026-11-01 UI screenshots from existing private VIVIC portfolio-materials library, resized to WebP, no generated UI or same-environment before/after claim. Media sources and restrictions: `assets/vivic/README.md`.
+- The existing Agent Project OS case now reflects design-stage GO, Draft PR #1 G0–G2 done, G3–G5 not begun; no actual software/product release claim.
+- Preview deployment: `dpl_E171vBEVcuq4pGTL5vfSXvKirt5A` (READY, preview). `portfolio.hcfind.com` is assigned to it and was read back through Vercel. Auto-generated `*.vercel.app` URL is SSO-protected; the subdomain is the login-free reviewer URL.
+- Independent Chromium QA on both source and live preview: project card order, direct case routes, correct evidence links/role panels, three historical VIVIC detail images confirmed loaded HTTP 200 when scrolled into view, no horizontal overflow at 1440/390/360px, no observed JS/console errors. See `docs/portfolio-reviews/2026-11-10-v2.3.md`.
+- HTTP 200 page and `noindex, nofollow, noarchive` retained. `hcfind.com` and `www.hcfind.com` root-domain production remain untouched.
+- Previous preview deployment `dpl_Fhw2j3wtDrFVBUaZvEjzXYRGvgj8` is the known rollback target.
+- **Gate verdict:** ready for owner review as noindex preview; NOT approved for indexed/production publication. Complete content/ownership/publicity checks still govern future formal release.
