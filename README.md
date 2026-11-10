@@ -1,5 +1,7 @@
 # AI Product Portfolio
 
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). As of 2026-11-11, the owner-supplied recovery reference is commit `4f558b5`; the current `portfolio.hcfind.com` response serves the unapproved `1294634` candidate. Do not infer the current version from the historical V2.3 notes below.
+
 A static, self-contained portfolio website for Bruce Yii.
 
 ## Pages
@@ -19,11 +21,11 @@ Then open `http://localhost:8000`.
 
 ## Publication state
 
-This repository is public by the owner's explicit choice. The owner approved a dedicated portfolio subdomain; this does not replace the existing `hcfind.com` homepage. The portfolio review site is available at `https://portfolio.hcfind.com/`. The existing root domain `hcfind.com` and `www.hcfind.com` remain separate from this portfolio subdomain. Search indexing stays disabled: both portfolio pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing remains gated on the content/evidence and visual-permission review in [RELEASE-GATE.md](./RELEASE-GATE.md).
+This repository is public by the owner's explicit choice. The owner approved a dedicated portfolio subdomain; this does not replace the existing `hcfind.com` homepage. The portfolio subdomain is attached to this Vercel project; its current deployment mapping and approval state are maintained in [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The existing root domain `hcfind.com` and `www.hcfind.com` remain separate from this portfolio subdomain. Search indexing stays disabled: both portfolio pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing remains gated on the content/evidence and visual-permission review in [RELEASE-GATE.md](./RELEASE-GATE.md).
 
 The HTML application code/styles are intentionally self-contained; sourced VIVIC images live in `assets/vivic/` with an audit trail. Do not split, regenerate, or replace the page with an older modular source package unless a concrete maintenance requirement justifies that change and visual parity is verified.
 
-## Current v2.3 review
+## Historical v2.3 review (superseded as the current version by the version registry)
 
 - **Strategy and phased roadmap:** [Portfolio Strategy & Roadmap (2026-11-10)](./docs/PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md).
 - **Binding execution contract:** [Portfolio Operating Contract](./docs/PORTFOLIO-OPERATING-CONTRACT.md).

@@ -576,3 +576,10 @@ A pure documentation-only change may skip website deployment only when the websi
 
 - The corrected source is on the isolated review branch only. Production aliases, DNS, and search-indexing settings remain untouched.
 - Do not treat this correction as approval for public launch or search indexing; owner review and the remaining Release Gate still apply.
+
+## 2026-11-11 — Version-specific QA boundary
+
+- The hosted Chromium E2E recorded above applies to the exact owner-supplied reference deployment `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA` at commit `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`.
+- It does **not** validate the later rewrite commit `1294634512a87c383e5ed3aedf8b85b460103801` or deployment `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`.
+- The later owner-feedback rewrite record leaves its post-commit route, viewport, image and interaction checks pending. Do not transfer the earlier E2E pass to the later deployment.
+- Current deployment identity and approval state: [VERSION-REGISTRY.md](./VERSION-REGISTRY.md).

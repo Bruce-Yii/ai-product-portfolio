@@ -296,3 +296,29 @@ The user explicitly confirmed that the current set of projects on the portfolio 
 4. If W0 finds a candidate with material incremental value, submit one separate proposal containing: candidate name, unique capability signal, original evidence, overlap with current cases, display cost, and the consequence of not including it. Wait for explicit user approval before implementation.
 5. Do not add projects merely to fill space, cover a capability matrix, increase project count, or make the portfolio look more complete.
 6. Personal Context Keyboard is an existing flagship case and the user explicitly confirmed on 2026-11-10 that it is near completion. Its stale Notion stage must not be used to classify it as research-only or pre-implementation. Separate implementation maturity from formal product acceptance and external release gates; disclose outstanding gates without erasing completed implementation.
+
+## 9. 2026-11-11 — Version identity, release governance and owner corrections
+
+### 9.1 Single version authority
+
+- `docs/VERSION-REGISTRY.md` is the sole operational ledger for current branch, commit, deployment, domain and approval state.
+- A Git branch is a mutable pointer; a commit SHA is immutable. A Vercel deployment is an immutable build of a specific commit. A domain alias is mutable and must be verified independently.
+- Never identify a version by branch name or URL alone. Record the full commit SHA and Deployment ID together.
+- The owner-supplied reference baseline is `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`. The later `1294634` rewrite is not owner-approved and must not silently replace the baseline.
+- Use `portfolio/owner-feedback-rewrite-2026-11-11` as the sole active work branch. Do not run concurrent website edits on other branches. Do not push to `main` until an owner-approved release candidate and Vercel production-branch behavior are verified.
+- One iteration means one scoped change set, one commit, one review deployment and one owner-facing URL. Keep historical deployments as records; do not create parallel previews for the same iteration.
+- A Vercel `READY` state or HTTP 200 response is not browser QA and is not owner approval.
+- No domain alias reassignment, production promotion, DNS change or search-indexing change without explicit owner approval. Keep noindex enabled.
+
+### 9.2 Owner correction — portfolio is a product narrative
+
+The portfolio must communicate product judgment, system focus, key mechanisms, architecture thesis and contribution scope. It is not a maturity dashboard or a repeated list of delivery disclaimers.
+
+- Do not append repetitive not-completed / not-launched / not-tested caveats to every card or case. State a maturity boundary only where it changes the reader's interpretation.
+- Case-page typography must remain readable: desktop H1 generally 38–68px, section H2 31–50px, lead copy 18–23px; mobile headings must not dominate the viewport.
+- Personal Context Keyboard must explain the Local-first Personal Context Layer: authorized Sensors; Raw Fact Store; Temporal Spine and Evidence Slices; multi-path retrieval; Event / Thread / RELATED_ONLY / UNORGANIZED semantic assessment; bounded evidence Agent; durable orchestration; Validator and incremental publishing; user control; Unified AI Gateway; separate Device Sync. Raw Facts remain authoritative and Derived Context remains recomputable.
+- VIVIC must distinguish rules, model decisions, host validation, executor actions and real receipts; team results and personal responsibility must remain separate. Use official product-site showcase assets where available, with provenance.
+- AWRP × Linear must explain the original ChatGPT mobile/web ↔ local Agent workflow, research/execution separation, Project normalization, Channel / Lane / Claim isolation, Task / Subtask / Run execution rounds, Event / Artifact persistence, ACK / HANDOFF / REVIEW / RECONCILE, the actual Linear × Notion × GitHub division, and the DeepSeek Super-agent architecture comparison. Distinguish AWRP, current tools, third-party research and Agent Project OS design; do not present the latter as a shipped product.
+- Laya public headline uses 40 merged PRs. The 10,394 added-line statistic is summed across the full authored PR diff set and must be explained separately. Do not use the 47 authored / 85 reviewed-by query matches as headline metrics.
+- The temporary domain-deployment-test headline is not an approved portfolio headline and must not be copied into portfolio pages, previews, screenshots or metadata.
+- The current public project set and homepage order remain frozen: Personal Context Keyboard → VIVIC → AWRP × Linear, followed by the separate Laya flagship casebook and existing contribution index. No additions, deletions, replacements, renames or reorderings without explicit user approval.

@@ -1,3 +1,5 @@
+> **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
+
 # Portfolio version history
 
 ## v2.2 — 2026-11-10 · Owner review captured
@@ -61,3 +63,12 @@
 - Portfolio UX research now includes recent live PM / AI PM sites and design interaction examples, with explicit source and sample-bias limitations.
 - The website artifact and v2.3 preview deployment were not modified.
 - Read-only multi-window execution package: [W1 role research · W2 portfolio UX benchmark · W3 personal evidence audit](../PORTFOLIO-WINDOW-DISPATCH-2026-11-10.md). W0 retains sole synthesis, decision and acceptance authority.
+
+
+## 2026-11-11 — Version governance reset (documentation-only)
+
+- Recovery reference baseline: `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`, deployment `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA`.
+- Unapproved rewrite candidate: `1294634512a87c383e5ed3aedf8b85b460103801`, deployment `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`.
+- The two URLs resolve to different deployment IDs. `portfolio.hcfind.com` currently serves the latter.
+- No website HTML, CSS, JavaScript, asset, route, DNS or Vercel alias was changed by this governance record.
+- Full mapping and operating rules: [VERSION-REGISTRY.md](../VERSION-REGISTRY.md).

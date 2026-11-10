@@ -1,6 +1,12 @@
 # Publication Gate
 
-## Current portfolio candidate
+## Authoritative current state — 2026-11-11
+
+See [VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md) for the only current branch / commit / deployment mapping. The owner-supplied recovery reference is `4f558b5` / `dpl_2UJ7...`; `1294634` / `dpl_DfeCK...` is an unapproved rewrite candidate. `portfolio.hcfind.com` currently serves `dpl_DfeCK...`, not the V2.3 deployment recorded in older sections. `READY` is not owner approval. No domain alias, production target or indexing change is authorized by this record.
+
+> Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
+
+## Historical portfolio candidate — superseded by the 2026-11-11 version registry
 
 - Candidate branch: `portfolio/v2-information-architecture`.
 - Candidate scope is limited to the user-confirmed portfolio subjects: VIVIC, AWRP × Linear, Personal Context Keyboard, Laya flagship casebook, and the unified open-source contribution index.

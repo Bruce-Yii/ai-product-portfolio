@@ -86,3 +86,9 @@ A Project may contain multiple Cases; each Case may link to multiple Contributio
 `portfolio/v2-information-architecture`
 
 All v2 design and implementation work starts here. The frozen branch is the rollback/source-of-truth baseline for v1.
+
+## 2026-11-11 — Historical domain-mapping clarification
+
+This document preserves the V1 freeze snapshot as it was recorded on 2026-11-09. It is not a live domain registry.
+
+The current Vercel domain ownership records now assign `hcfind.com` and `www.hcfind.com` to the separate `hcfind-home` project (`prj_U2JAgXYqMugXUdJZCKZyX8fhTQsF`), not to `ai-product-portfolio`. The historical deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` still exists, but this file must not be used to infer current root-domain routing. See [VERSION-REGISTRY.md](./VERSION-REGISTRY.md).
