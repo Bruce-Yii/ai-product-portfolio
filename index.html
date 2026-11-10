@@ -1121,15 +1121,15 @@ body {background:var(--paper);color:var(--ink)}
 <main id="content">
   <section class="view is-active" id="view-home" aria-label="首页">
     <div class="wrap hero new-hero">
-      <div class="new-overline"><span>BRUCE YII <i></i> AI PRODUCT MANAGER</span><span>PRODUCT STRATEGY / AGENT SYSTEMS / OPEN SOURCE</span></div>
+      <div class="new-overline"><span>BRUCE YII <i></i> AI PRODUCT MANAGER</span><span>AGENT WORKFLOWS / AI APPLICATIONS</span></div>
       <div class="new-hero-grid">
         <div class="new-hero-main">
           <h1>AI Product<br><em>Manager.</em></h1>
-          <p class="new-hero-cn">从用户问题出发，找到值得做的 AI 产品机会，并把它推进到真正可用。</p>
+          <p class="new-hero-cn">把 AI 能力变成真正可用的产品流程。</p>
         </div>
         <aside class="new-hero-side">
           <div class="new-hero-side-top">PRODUCT DECISIONS<br>TO REAL DELIVERY</div>
-          <p>从用户场景和业务目标出发，判断机会、定义体验与产品机制，协调团队落地，再用可核对的结果检验方案。</p>
+          <p>从真实任务出发，判断 AI 应该解决什么问题；再把模型、上下文、工具和人工协作组织成可执行的产品流程，并通过实现与评测验证它是否真正可用。</p>
           <button data-action="scroll-selected" class="new-hero-jump">探索作品 <span aria-hidden="true">↗</span></button>
         </aside>
       </div>
@@ -1138,7 +1138,7 @@ body {background:var(--paper);color:var(--ink)}
     <section class="wrap projects-section" id="selected" aria-labelledby="projects-title">
       <div class="section-heading">
         <div><div class="mono eyebrow">01 / SELECTED PRODUCT WORK</div><h2 id="projects-title">Selected <i>work.</i></h2></div>
-        <p>用三个项目展示我如何发现产品机会、设计关键体验，并推动 AI 能力融入真实工作流程。</p>
+        <p>从个人上下文产品、多模态 Agent 到长期 Agent 工作流，展示我如何把真实任务抽象为可执行的产品机制，并推动实现与验证。</p>
       </div>
       <div class="project-grid" id="home-projects"></div>
       <div class="section-foot mono"><span>SELECTED PROJECTS / 03</span><button data-action="navigate" data-page="work">浏览全部项目与案例 ↗</button></div>
@@ -1155,7 +1155,7 @@ body {background:var(--paper);color:var(--ink)}
             <div><strong>40<span>/47</span></strong><span>MERGED</span></div>
             <div><strong>85</strong><span>REVIEWED-BY MATCHES</span></div>
           </div>
-          <div class="laya-feature__note mono">35,287 GITHUB STARS · SNAPSHOT 2026-11-10 · PR / REVIEW COUNTS ARE SEPARATE QUERIES</div>
+          <div class="laya-feature__note mono">35,287 GITHUB STARS · SNAPSHOT 2026-11-10 · PR / REVIEW COUNTS: 2026-11-08 (SEPARATE QUERIES)</div>
           <a class="laya-feature__link" href="./cases/laya/">打开 Laya 独立案例册 <span>↗</span></a>
         </div>
         <div class="laya-feature__systems">
@@ -1451,7 +1451,7 @@ const CASES = [
     "category": "个人上下文产品",
     "name": "Personal Context Keyboard",
     "latin": "A personal context input layer for AI.",
-    "lead": "一个面向 Android 与 Windows 的个人上下文输入法项目。它不只是替用户输入文字，而是探索如何在用户主动输入时捕捉有价值的信息，识别可能需要保留的上下文，再把这些信息整理成可追溯、可纠错、可授权调用的个人 Context，供不同 AI 工具使用。项目以 Android 输入法为优先入口，Windows 侧采用独立 Sensor/Client 思路；目前完成产品定位、核心架构与早期原型，尚未形成完整发布产品。",
+    "lead": "一个面向 Android 与 Windows 的个人上下文输入法项目。产品核心不是键盘皮肤，而是用户拥有的 Personal Context Layer：以输入作为高频入口，围绕可获授权的输入内容、来源与时间，组织可追溯、可修订、可授权使用的个人 Context，供不同 AI 工具复用。Android 侧已实现中文拼音输入、语音 / ASR 文件链路、Context Store / Recovery、Today / Smartbar、备份恢复与打包等主体模块；Windows TSF 与完整产品验收仍有明确 Gate。",
     "desc": "个人项目 · Android + Windows · 个人上下文输入与跨 AI 复用",
     "caps": [
       "产品定位",
@@ -1460,7 +1460,7 @@ const CASES = [
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "产品定位与架构设计 · 早期模拟器原型",
+    "status": "Android 主体实现接近完成 · 产品验收 0 · Windows TSF / 真实设备 / 正式发布 Gate 待完成",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": false,
@@ -1472,8 +1472,8 @@ const CASES = [
         "AI Gateway 只向外部模型提供用户明确授权的上下文范围，并保留来源可追溯性。"
       ],
       "evidence": [],
-      "role": "本人负责产品定位、用户价值定义、跨端架构与验证标准；部分早期模拟器原型由 Agent 执行链路协助实现并经项目验收。当前成果以产品/架构设计和早期原型为主。",
-      "boundary": "当前不是已发布的跨端产品。尚未完成 Android/Windows 真实采集、长期存储、同步、删除、授权消费的完整端到端验证；不展示未经授权的真实输入或个人上下文数据。"
+      "role": "本人负责产品定位、用户价值定义、跨端架构、关键产品决策、工程推进和验收协调；部分原型与工程执行由 Agent 协助完成，具体代码归属以仓库 Commit / 文件记录为准。",
+      "boundary": "主体 Android 实现已接近完成，但不等于正式产品验收。可核对的局部回归包括中文输入 JVM 70/70、模拟器设备测试 12/12、语音入口文件喂入与 IME composing/commit 链路 20/20；整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。arm64 原生库已随包但运行时未测；Windows TSF 资格检查 BLOCKED；真实设备、真实麦克风整链、生产签名与商店发布仍未完成。
     },
     "productQuestion": "用户的事实、偏好与任务上下文，如何跨设备和 AI 工具持续保留，同时由用户掌控？"
   }
@@ -1730,7 +1730,7 @@ const CASE_DETAILS = {
     "caption": "FIG. 01 — VIVIC / USER INTENT → DECISION → ACTION → RECEIPT",
     "outcomeTitle": "从“AI 给出一个答案”推进到“用户的事确实办成”。",
     "outcomeBig": "53/60 → 58–60/60",
-    "outcome": "同一套固定 60 题 API 回归：旧稳定版基线为 53/60；2026-11-05 部署报告的批次 2/3 快照为 59/60，后续六轮同题集记录为 58、59、60、60、59、60/60，末轮达到 60/60。API 请求至最终结果 p50 从 3,625ms 降至 1,807ms，约下降 50%；高缓存命中条件下估算单轮 Token 成本约下降 97%，不是实付账单。项目报告还记录能力工具入口从 27 项收敛为 14 项。这些均为项目内部记录，不代表真实用户成功率或商业成效；完整前端体验、48 条浏览器全场景用例和真机语音仍未完成验收。"
+    "outcome": "同一套固定 60 题 API 回归：旧稳定版基线为 53/60；2026-11-05 部署报告的批次 2/3 快照为 59/60，后续六轮同题集记录为 58、59、60、60、59、60/60，末轮达到 60/60。API 请求至最终结果 p50 从 3,625ms 降至 1,807ms，约下降 50%；高缓存命中条件下估算单轮 Token 成本约下降 97%，不是实付账单。项目报告还记录能力工具入口从 27 项收敛为 14 项，并记录 8 条历史单测失败；部署 SHA lineage 尚未完全核验。这些均为项目内部记录，不代表真实用户成功率或商业成效；完整前端体验、48 条浏览器全场景用例和真机语音仍未完成验收。""
   },
   "agent-workflow-governance": {
     "headnote": "AWRP → Linear → Agent Project OS：从长期多 Agent 协作痛点出发，完成设计阶段产品立项。DeepSeek Super-agent 是第三方架构参照。",
@@ -1757,22 +1757,22 @@ const CASE_DETAILS = {
     "caption": "FIG. 07 — LAYA / INTENT → DECISION → ADOPTION / ILLUSTRATIVE PRODUCT SYSTEM",
     "outcomeTitle": "让模型能力更容易被理解、评估、控制和集成。",
     "outcomeBig": "47 authored · 40 merged.",
-    "outcome": "截至 2026-11-09 的 GitHub 查询快照：47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 命中 reviewed-by:Bruce-Yii 查询。Review 命中与 authored PR 是两套口径，不能相加，也不代表 85 次建议全部被采纳。这些记录呈现持续参与产品方向、实现协作与上游演进的工作规模，不等于 40 项独立功能或业务 KPI。具体作者、Review、Issue 提出与维护者决策分别归因。"
+    "outcome": "截至 2026-11-08 的 GitHub 查询快照：47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 命中 reviewed-by:Bruce-Yii 查询。Review 命中与 authored PR 是两套口径，不能相加，也不代表 85 次建议全部被采纳。这些记录呈现持续参与产品方向、实现协作与上游演进的工作规模，不等于 40 项独立功能或业务 KPI。具体作者、Review、Issue 提出与维护者决策分别归因。"
   },
   "personal-context-layer": {
-    "headnote": "Personal Context Keyboard 的产品定位与架构设计。输入法是高频信息入口，个人上下文层才是产品核心；当前处于设计与早期原型阶段。",
+    "headnote": "Personal Context Keyboard 的 Android 主体实现已接近完成。产品验收与部分平台 Gate 仍未通过；本案例区分已实现模块、局部回归和未完成的正式验收。",
     "contextTitle": "为什么每换一个 AI，用户都要重新介绍自己？",
     "contextLead": "用户长期积累的信息不应该被锁在某一个聊天产品或输入工具里。",
     "contextCopy": "用户在不同 AI 应用间切换时，常常要重复说明自己的背景、偏好和当前任务；有价值的信息散落在聊天记录、输入框、剪贴板和笔记中。单一 AI 产品的记忆无法覆盖这些来源，也难以让用户检查信息从哪里来、是否准确、是否仍然有效。我因此把输入法定位为高频信息入口，真正的产品核心是一个本地优先、来源可追溯、允许用户确认和纠错，并能按授权向不同 AI 提供上下文的个人信息层。",
-    "experienceTitle": "让信息可以积累、整理、纠错，并由用户决定何时交给 AI。",
-    "experienceIntro": "从用户主动提供信息，到保留来源、整理背景、确认内容，再到按任务授权给 AI 使用，逐步查看产品如何把个人上下文变成可携带、可控制的长期资产。当前展示的是产品架构设计，不代表完整跨端产品已发布。",
+    "experienceTitle": "让输入信息可以积累、整理、纠错，并由用户决定何时交给 AI。",
+    "experienceIntro": "从用户实际输入的文本及可还原编辑状态出发，保留来源与时间，再经过组织、用户确认和按任务授权，查看个人上下文如何变成可携带、可控制的长期资产。下方为产品机制示意，不是实时产品 UI；Android 主体实现接近完成，但真实设备、真实麦克风整链、Windows TSF 与正式发布仍有独立验收 Gate。",
     "caption": "FIG. 04 — PERSONAL CONTEXT / SENSOR → RAW → DERIVED → USER CONTROL → AI GATEWAY",
-    "outcomeTitle": "让个人上下文成为用户可携带、可控制的长期资产。",
-    "outcomeBig": "Context, owned.",
-    "outcome": "产品定位与主要架构边界已形成；历史记录中有 Android 模拟器原型与早期验收材料。真实 Android/Windows 采集、长期存储、跨端同步、删除与授权消费的完整链路尚未完成验证，因此不将其描述为已上线产品。",
-    "role": "个人项目：提出 Personal Context Layer 定位，主导分层设计、可追溯 Raw/Derived 语义与验证任务；历史 Android 模拟器原型有协调验收记录。",
-    "tradeoff": "输入法只是高频 Sensor；不让采集拖慢输入体验，也不让模型派生结论改写原始事实。时间主轴优先，高级关系和跨端完整功能分阶段实现。",
-    "ownershipNote": "历史模拟器原型不等于当前完整 Android × Windows 产品；跨端同步、开放 AI Gateway 和长期语义层尚未完成实际运行验收。"
+    "outcomeTitle": "从输入工具走向用户可控制的个人上下文层。",
+    "outcomeBig": "Android / near-complete",
+    "outcome": "主体实现已接近完成。可核对的局部回归包括：中文输入 JVM 70/70、模拟器设备测试 12/12、语音入口文件喂入与 IME composing/commit 链路 20/20。上述为不同范围的局部测试，不是整包验收；整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。arm64 原生库已随包但运行时未测；Windows TSF 资格检查 BLOCKED；真实设备、真实麦克风整链、生产签名和商店发布仍待完成。",
+    "role": "个人项目：负责产品定位、用户价值定义、跨端架构、关键产品决策、工程推进和验收协调；部分原型与工程执行由 Agent 协助完成，具体代码归属以仓库 Commit / 文件记录为准。",
+    "tradeoff": "输入法只是高频 Sensor；不让采集拖慢输入体验，也不让模型派生结论改写原始事实。Android 优先完成主体实现；Windows 采用独立 Sensor/Client 路径，未通过的资格检查不包装成生产支持。时间主轴优先，高级关系和跨端完整功能分阶段实现。",
+    "ownershipNote": "Android 主体实现接近完成不等于产品验收通过；arm64 原生库已打包但运行时未测，Windows TSF 资格检查 BLOCKED，真实设备、真实麦克风整链、生产签名与商店发布仍未完成。"
   }
 };
 const PRODUCT_STEPS = [
@@ -1848,7 +1848,7 @@ function narrativeExperience(c){
   return evidenceMarkup;
 }
 const HOME_PROJECTS = [
-  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT / ANDROID + WINDOWS",summary:"面向 Android 与 Windows 的个人上下文输入法探索：从用户主动输入中整理可追溯的信息，并在授权后提供给不同 AI 使用。",phase:"个人项目 · 产品定义与架构设计 · 早期原型"},
+  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT / ANDROID IME · WINDOWS SENSOR/CLIENT",summary:"面向 Android 与 Windows 的个人上下文输入法项目。以输入为高频入口，把长期信息整理为可追溯、可修订、可授权使用的个人 Context，供不同 AI 在用户控制下复用。",phase:"个人项目 · Android 主体实现接近完成 · 正式验收与部分平台 Gate 待完成"},
   {caseId:"product",name:"VIVIC",label:"TEAM PROJECT / SUKESONG HACKATHON · LIFE & OFFICE · 4TH PLACE",summary:"团队打造的多模态卡片助理，支持语音与文本交互，将用户需求转化为可执行任务。赛后受邀加入团队，并接手推进产品体验与 Agent 决策链路优化。",phase:"团队项目 · 赛后加入并持续参与产品优化"},
   {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / PRODUCTIZATION EXPLORATION",summary:"从 AWRP 接力协议与 Linear 实践出发，对照 DeepSeek 等开源架构，形成 Agent Project OS 设计阶段 GO 判断。统一的目标是 Project，而不是 Agent 聊天。",phase:"AWRP 原型 / Linear 在用 · Agent Project OS G0–G2 Draft 已完成 · 代码未实施"}
 ]
@@ -1986,7 +1986,7 @@ function showWorkflowStep(i){
  document.querySelectorAll('[data-workflow-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.workflowStep)===i)));
 }
 const CONTEXT_STEPS=[
- ["CAPTURE","记录用户主动提供的信息","在用户授权范围内，从输入或选择动作中记录信息来源和时间；入口不是产品本体。","用户主动输入 / 选择","带来源与时间的记录"],
+ ["CAPTURE","从用户实际输入中保留上下文","设计目标：在用户授权范围内，保留可取得的输入正文或可还原编辑状态，并记录应用来源与时间；输入法只是高频入口。","用户实际输入 / 可还原编辑状态 / 来源 / 时间","可追溯的原始输入记录"],
  ["KEEP","保留原始信息与出处","保留原始内容、来源和时间，不让模型推断覆盖用户事实。","原始内容 / 来源 / 时间","可追溯的信息记录"],
  ["ORGANIZE","整理成可复用的个人背景","把分散信息整理为关系、事件和主题；整理结果可更新、纠错和重建。","已记录信息","关系 / 事件 / 主题"],
  ["CONTROL","由用户决定记住什么","AI 整理结果先交给用户确认；用户可以修改、忽略、撤回或删除。","AI 整理建议","确认 / 修改 / 忽略 / 删除"],
@@ -2018,8 +2018,8 @@ function renderCase(id){
   $('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
  $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
- $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'PRODUCT SYSTEM DESIGN / REAL WORKFLOW':c.id==='personal-context-layer'?'PRODUCT ARCHITECTURE / EARLY PROTOTYPE':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
- $('#case-edition-disclaimer').textContent=c.id==='product'?'团队产品实践 · 后端部署有记录；前端完整验收与公开展示授权待确认':c.id==='agent-workflow-governance'?'AWRP 历史原型 + 现行工具组合 + 第三方架构对照；非已上线独立平台':c.id==='personal-context-layer'?'产品与架构示意；非已发布跨端产品':c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':'架构与交互图为说明性呈现；实现状态与验证范围见案例正文';
+ $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'PRODUCT SYSTEM DESIGN / REAL WORKFLOW':c.id==='personal-context-layer'?'ANDROID IMPLEMENTATION / PRODUCT GATES':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
+ $('#case-edition-disclaimer').textContent=c.id==='product'?'团队产品实践 · 后端部署有记录；前端完整验收与公开展示授权待确认':c.id==='agent-workflow-governance'?'AWRP 历史原型 + 现行工具组合 + 第三方架构对照；非已上线独立平台':c.id==='personal-context-layer'?'Android 主体实现接近完成；真实设备、Windows TSF 与正式发布 Gate 未完成':c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':'架构与交互图为说明性呈现；实现状态与验证范围见案例正文';
  $('#case-scope-label').textContent=c.id==='product'?'DELIVERY / VALIDATION BOUNDARY':c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
  $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。图示为独立机制说明，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'2026-11-05 后端部署报告记录 069b2dc、14 项能力工具及固定题集 API 回归；这些是团队内部交付记录，不等于完整产品上线或真实用户成效。前端仍为 11-03 release，48 条浏览器全场景未重跑，真机语音尚未验收；VIVIC 对外展示授权仍需单独确认。':'本页中的机制图用于解释产品设计，不代表真实产品截图或生产运行数据。实现状态、个人职责与外部证据分别说明；尚未取得的用户效果不作推断。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
