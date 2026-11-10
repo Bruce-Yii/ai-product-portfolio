@@ -42,3 +42,12 @@
 - **Improvements:** 5 authentic VIVIC screenshots added and 4 M01/M03/M05/M06 positions wired; historical 2026-11-01 screenshot provenance explicitly retained. AWRP/Linear case now includes Agent Project OS design GO and G0–G2 Draft PR findings, with software delivery correctly marked unimplemented.
 - **Live browser verification:** 1440/390/360 widths with no horizontal overflow, main routes working, 3 VIVIC detail images confirmed HTTP 200 after lazy-load scroll, script/console smoke checks passed. Full report: [v2.3 QA and source record](../portfolio-reviews/2026-11-10-v2.3.md).
 - **Publication boundary:** noindex remains; no root-domain deployment, no indexed/public-production launch approved. Auto-generated `*.vercel.app` address is login-protected, so use the custom review alias.
+
+## 2026-11-10 · Strategy baseline (documentation-only; website unchanged)
+
+- Strategy source: [Portfolio Strategy & Roadmap](../PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md).
+- Binding operating rules: [Portfolio Operating Contract](../PORTFOLIO-OPERATING-CONTRACT.md), Section 7.
+- User requirements captured: seven optimization directions; P0 positioning, case narrative and continuous reading path; P1 visual, evidence and interaction; P2 engineering.
+- Research snapshot: 2027 graduate / early-career AI PM job descriptions and 2025–2026 AI product / portfolio review sources, with sample limitations recorded in the strategy document.
+- Next execution: Phase 1 role / positioning research + Phase 2 personal case and evidence audit; no large-scale website visual changes before those dependencies complete.
+- This was a documentation-only strategy update. The v2.3 website artifact and preview deployment remain unchanged.
