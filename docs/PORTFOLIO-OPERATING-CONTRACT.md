@@ -260,3 +260,28 @@ Do not make large visual changes before the following dependencies are complete:
 7. site implementation, browser QA, preview deployment and freeze.
 
 The strategy document is the detailed execution baseline. The current v2.3 site remains the implementation baseline until a later version passes its own review gate.
+
+
+## 8. 2026-11-10 User-Confirmed Strategy Upgrade
+
+The user explicitly confirmed the seven portfolio optimization directions and the six foundational AI PM capability directions, and requested senior-role capabilities as an additional upward reference. The dated decision is recorded in [2026-11-10 User-Confirmed Strategy](./portfolio-decisions/2026-11-10-user-confirmed-strategy.md).
+
+### 8.1 Dual-level capability model
+
+Always use both:
+- **Foundational role standard:** scenario insight, product abstraction, Agent design, technical judgment, evaluation, end-to-end delivery.
+- **Advanced reference standard:** product strategy / portfolio management; business value and ROI; platformization and ecosystem; enterprise reliability and governance; cross-organizational leadership and scale delivery; commercialization and GTM.
+
+Do not make the advanced layer a false seniority claim. Map each capability to evidence maturity (executed / validated / research-design / planned), personal ownership, source and interview defensibility. Use value hypotheses and metric plans when actual business results do not exist.
+
+### 8.2 Real portfolio UX benchmarking
+
+Use recent real PM / AI PM portfolio websites and visual references, not only generic articles. The user allows approximately one-to-two-year freshness for portfolio UX examples. Study first-screen positioning, case ordering, case title, role/accountability, narrative, evidence, live demos, progressive disclosure, navigation and next action.
+
+Borrow only patterns that improve this site's recruiter journey. The default path remains one coherent narrative; optional deep links must preserve orientation and return path. Do not reproduce unrelated novelty interactions or create a multi-entry maze.
+
+Research record: [2026-11-10 Portfolio Benchmark & Senior AI PM Capability Research](./portfolio-reviews/2026-11-10-portfolio-benchmark-and-senior-capability-research.md).
+
+### 8.3 Multi-window work
+
+Helper windows may perform independent read-only research or evidence audits. W0 / ChatGPT owns scope, task boundaries, dependency ordering, synthesis, decisions and final review. Do not allow helper windows to concurrently edit the same website files, alter DNS / deployment / indexing, or publish public claims. Each task must specify Goal, Scope, Non-scope, sources, evidence format and acceptance criteria.
