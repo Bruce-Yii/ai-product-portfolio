@@ -4,7 +4,7 @@ A static, self-contained portfolio website for Bruce Yii.
 
 ## Pages
 
-- `/` — main portfolio with three selected Project cards (VIVIC, AWRP × Linear, Personal Context Keyboard), four main Case records, a separate Laya flagship casebook, and a unified index of eight selected open-source contribution groups. Dify remains a grouped contribution entry, not a standalone Case page.
+- `/` — main portfolio with three selected Project cards (Personal Context Keyboard, VIVIC, AWRP × Linear), four main Case records, a separate Laya flagship casebook, and a unified index of eight selected open-source contribution groups. Dify remains a grouped contribution entry, not a standalone Case page.
 - `/cases/laya/` — standalone Laya casebook with eight chapters and interactive evidence explorations.
 
 ## Preview
@@ -21,7 +21,15 @@ Then open `http://localhost:8000`.
 
 This repository is public by the owner's explicit choice. The owner approved a dedicated portfolio subdomain; this does not replace the existing `hcfind.com` homepage. The portfolio review site is available at `https://portfolio.hcfind.com/`. The existing root domain `hcfind.com` and `www.hcfind.com` remain separate from this portfolio subdomain. Search indexing stays disabled: both portfolio pages carry `noindex` metadata, `robots.txt` blocks crawlers, and Vercel adds an `X-Robots-Tag` header. Search indexing remains gated on the content/evidence and visual-permission review in [RELEASE-GATE.md](./RELEASE-GATE.md).
 
-The HTML files are intentionally self-contained. Do not split, regenerate, or replace them with an older modular source package unless a concrete maintenance requirement justifies that change and visual parity is verified.
+The HTML application code/styles are intentionally self-contained; sourced VIVIC images live in `assets/vivic/` with an audit trail. Do not split, regenerate, or replace the page with an older modular source package unless a concrete maintenance requirement justifies that change and visual parity is verified.
+
+## Current v2.3 review
+
+- Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
+- Login-free review URL: https://portfolio.hcfind.com/ (`*.vercel.app` deployment URL may require Vercel SSO).
+- Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
+- [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
+- Search-indexed/production publication remains gated; root `hcfind.com` untouched.
 
 
 ## Portfolio operating contract
