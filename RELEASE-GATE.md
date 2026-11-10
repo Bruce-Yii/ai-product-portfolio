@@ -139,7 +139,7 @@ A project or repository does not qualify for a standalone Case page merely becau
 - This candidate corrects two malformed inline JavaScript string literals that had prevented the homepage Project cards and SPA case navigation from initializing. The standalone Laya link was unaffected because it is static HTML.
 - Added dependency-free source validator: `node scripts/validate-portfolio.mjs` — PASS.
 - Chromium local-source smoke test: desktop 1440px and mobile 390px; three selected Project cards render and route to PCK / VIVIC / AWRP × Linear; Work view lists four Cases; Laya standalone casebook renders at 390px; no JS errors or horizontal overflow observed at tested widths.
-- 360px, cross-browser, and full-page visual checks remain outstanding.
+- Hosted Chromium E2E at 1440px, 390px, and 360px passed on the exact deployment: three homepage Project cards rendered and navigated correctly; Work view listed four Cases; no JS errors, failed requests, or horizontal overflow; Laya standalone route rendered at 390px. Cross-browser testing and full-page visual review remain outstanding.
 - Preview deployment for this exact commit will be recorded after build and live-route verification. Production aliases and DNS must remain unchanged. Search indexing remains blocked.
 
 
@@ -151,5 +151,14 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Preview base URL: https://ai-product-portfolio-aqu466asw-yu-ac3a.vercel.app.
 - No-login share link generated and verified for owner review; token is intentionally not stored in the public repository.
 - Live homepage and `/cases/laya/` both return HTTP 200; application inline script parses; expected three homepage Project IDs are present; `X-Robots-Tag: noindex, nofollow, noarchive` remains on both routes.
-- Local Chromium click-through against the exact application source passed at 1440px and 390px: three Project cards render and open their cases; Work view lists four Cases; Laya standalone page renders; no JS errors or horizontal overflow observed. 360px and hosted browser E2E remain outstanding.
+- Local Chromium click-through against the exact application source passed at 1440px and 390px: three Project cards render and open their cases; Work view lists four Cases; Laya standalone page renders; no JS errors or horizontal overflow observed. 360px and hosted browser E2E have since passed; cross-browser and full-page visual review remain outstanding.
 - This deployment supersedes the broken review preview `dpl_7Hq7rhGJrshKPfkruJvWmcLBpHaZ` for owner review. It does not promote production, change domains / DNS, or enable indexing.
+
+
+### Hosted browser verification · 2026-11-10
+
+- Exact live deployment `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA` was tested in Chromium using the no-login share link.
+- At 1440px, 390px, and 360px: Personal Context Keyboard, VIVIC, and AWRP × Linear cards all rendered in order and each opened its matching case. Work view opened and listed four Cases.
+- All three viewports had zero horizontal overflow, zero JavaScript page errors, and zero failed network requests in the tested flows.
+- Laya standalone route `/cases/laya/` opened at 390px and rendered without horizontal overflow or JavaScript errors.
+- Cross-browser testing and full-page visual review remain open gates. Production and indexing gates remain unchanged.
