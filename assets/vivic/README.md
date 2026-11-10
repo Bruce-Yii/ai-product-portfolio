@@ -1,15 +1,19 @@
-# VIVIC screenshot sources — portfolio preview (2026-11-10)
+# VIVIC official website media
 
-These are optimized real interface screenshots copied from the owner's existing private `Bruce-Yii/vivic-portfolio-materials` case-study asset library. They were captured **2026-11-01** in local/online preview sessions. They are **not** screenshots of the 2026-11-05 back-end release and **must not** be used as a same-environment before/after visual comparison.
+The portfolio references the official VIVIC showcase images instead of the earlier low-resolution private captures.
 
-| Web asset | Original screenshot | What it represents |
-| --- | --- | --- |
-| `after-ui-8790-home.webp` | `assets/after-ui-8790-home.png` | VIVIC Control page with card |
-| `after-ui-8790-sectioncard.webp` | `assets/after-ui-8790-sectioncard.png` | VIVIC section card |
-| `card-todo.webp` | `assets/card-todo.png` | Todo-card presentation |
-| `card-meeting-minutes-display.webp` | `assets/card-meeting-minutes-display.png` | Meeting-minutes display |
-| `card-weekly-report.webp` | `assets/card-weekly-report.png` | Weekly-report card |
+- Official product website: https://edsionc.top/vivic/
+- Official source repository: https://github.com/ECdison6227/vivic-canvas
+- Source image directory: https://github.com/ECdison6227/vivic-canvas/tree/main/docs/images
+- Source README: https://github.com/ECdison6227/vivic-canvas/blob/main/docs/images/README.md
+- The source README records a 2026-10-17 capture from the official website at a 1600px desktop viewport.
 
-Optimization: resized to 960 px (600 px for weekly report) and converted to WebP; no fake UI elements or generated images. The original private repository has source references, accompanying captions, and related test summaries. These images do not by themselves prove later release functionality or production adoption.
+| Portfolio image | Official source file | Case use |
+|---|---|---|
+| Homepage hero | docs/images/hero.jpg | VIVIC case cover and homepage project card |
+| Scene cards | docs/images/scene-cards.jpg | Product scenarios |
+| Two windows | docs/images/two-windows.jpg | Dual-window workflow |
+| Editable cards | docs/images/editable-cards.jpg | Editable task and goal cards |
+| Time and reminders | docs/images/time-and-reminders.jpg | Time-based tasks and reminders |
 
-**Public-release gate stays closed.** The portfolio branch remains a noindex preview until the site owner explicitly approves publication; do not unconditionally make the branch the main/production site.
+The live portfolio references the official raw image URLs so the original high-resolution files are displayed directly. The images are presentation material from the official site; demo dates, numbers and cards inside them are not presented as live business metrics.

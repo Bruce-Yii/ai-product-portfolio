@@ -296,3 +296,18 @@ The user explicitly confirmed that the current set of projects on the portfolio 
 4. If W0 finds a candidate with material incremental value, submit one separate proposal containing: candidate name, unique capability signal, original evidence, overlap with current cases, display cost, and the consequence of not including it. Wait for explicit user approval before implementation.
 5. Do not add projects merely to fill space, cover a capability matrix, increase project count, or make the portfolio look more complete.
 6. Personal Context Keyboard is an existing flagship case and the user explicitly confirmed on 2026-11-10 that it is near completion. Its stale Notion stage must not be used to classify it as research-only or pre-implementation. Separate implementation maturity from formal product acceptance and external release gates; disclose outstanding gates without erasing completed implementation.
+
+
+## 8. 2026-11-11 Owner Correction — Portfolio Is a Product Narrative
+
+The portfolio is a recruiter-facing product narrative, not a project acceptance report or maturity dashboard.
+
+- Lead with the user problem, target user, product insight, product language, architecture, orchestration, key mechanisms, trade-offs, personal decisions and evidence.
+- Completion, launch status, business outcomes and user metrics are supporting evidence when they materially help explain a case. They are not the default headline or the sole source of value.
+- Do not append repetitive caveats such as “not completed”, “not launched”, “not tested”, “no user metrics” to every project card or case ending. A maturity boundary belongs only where it changes the reader's interpretation; keep it concise and neutral.
+- Replace delivery-status framing with a meaningful product concept: system focus, key mechanism, product principle, architecture thesis or contribution scope.
+- Case-page typography must remain readable. Desktop case H1 should generally stay around 38–68px, section H2 around 31–50px, and lead copy around 18–23px; mobile headings must not dominate the viewport.
+- Personal Context Keyboard must explain the Local-first Personal Context Layer: authorized Sensors; Raw Fact Store; Temporal Spine and Evidence Slices; multi-path retrieval; Event / Thread / RELATED_ONLY / UNORGANIZED semantic assessment; bounded evidence Agent; durable orchestration; Validator and incremental publishing; user control; Unified AI Gateway; separate Device Sync. Raw Facts remain authoritative and Derived Context remains recomputable.
+- AWRP × Linear must explain the original ChatGPT mobile/web ↔ local Agent workflow, research/execution separation, Project normalization, Channel / Lane / Claim isolation, Task / Subtask / Run execution rounds, Event / Artifact persistence, ACK / HANDOFF / REVIEW / RECONCILE, the actual Linear × Notion × GitHub division, and the DeepSeek Super-agent architecture comparison. Distinguish AWRP, current tools, third-party research and Agent Project OS.
+- VIVIC visuals should use official product-site showcase images where available, rather than low-resolution private screenshots. Official source assets are listed in assets/vivic/README.md.
+- Laya public headline uses 40 merged PRs. Do not expose 47 authored PRs or 85 reviewed-by query matches as headline metrics. The separate 10,394 added-line statistic is summed across the full authored PR diff set, so clearly distinguish it from the 40 merged PR count without showing the authored PR total.
