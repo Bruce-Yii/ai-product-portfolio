@@ -570,7 +570,7 @@ A pure documentation-only change may skip website deployment only when the websi
 - Chromium local-source interaction smoke test at 1440px and 390px: all three homepage cards rendered; each card opened its matching case; Work navigation opened and listed four cases; no JavaScript page errors observed.
 - Responsive width check at 1440px and 390px: document scroll width matched viewport width; no horizontal overflow observed.
 - Laya standalone casebook opened at 390px; page title and main heading rendered; no JavaScript page errors observed.
-- The 360px viewport, cross-browser behavior, and full long-page visual inspection have **not** been verified in this correction pass.
+- At the time of the initial correction note, 360px and hosted E2E had not yet been verified; both were subsequently covered by the hosted Chromium run recorded below. Cross-browser behavior and full long-page visual inspection remain outstanding.
 
 ### Deployment status
 
@@ -587,4 +587,18 @@ A pure documentation-only change may skip website deployment only when the websi
 - Live homepage application inline script compiled successfully when checked from the fetched deployment HTML; the additional empty Vercel feedback script is external and excluded from application-script parsing.
 - Live HTML contains the expected three Project IDs in the approved order and the `home-projects` mount / navigation function. `X-Robots-Tag: noindex, nofollow, noarchive` remains present on both routes.
 - A no-login Vercel share link was created for owner review. Its token is shared only in the owner conversation and is not stored in this repository.
-- This live check verifies the deployed HTML, app-script syntax, route responses, and headers. The browser click-through evidence above was run against the exact same application source locally, not against a hosted browser session; hosted full E2E and 360px remain outstanding.
+- The subsequent hosted Chromium E2E below supersedes the earlier local-only interaction note.
+
+
+### Hosted Chromium E2E · 2026-11-10
+
+Tested the exact live owner-preview deployment `dpl_2UJ7aErkfXtSRsJyHnjcK9BWYrRA` using a browser session with the no-login share link.
+
+- Viewports: **1440×1000**, **390×844**, **360×800**.
+- At all three widths, homepage rendered exactly three Project cards in the approved order: Personal Context Keyboard → VIVIC → AWRP × Linear.
+- At all three widths, clicking each Project card opened the correct case route and title; all three case views became active.
+- At all three widths, the Work navigation opened and listed four Cases.
+- No horizontal overflow: document scroll width equalled viewport width at all three widths.
+- No JavaScript page errors and no failed network requests were observed during the tested home / case / Work flows.
+- Laya homepage link opened the standalone `/cases/laya/` page at 390×844; title and H1 rendered, no horizontal overflow, no JavaScript page errors.
+- Cross-browser testing beyond Chromium and full long-page visual / content inspection remain outstanding.
