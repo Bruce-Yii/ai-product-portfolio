@@ -60,3 +60,4 @@
 - The user confirmed all seven directions and six foundational capabilities, and requested advanced AI PM capabilities as an upward reference standard.
 - Portfolio UX research now includes recent live PM / AI PM sites and design interaction examples, with explicit source and sample-bias limitations.
 - The website artifact and v2.3 preview deployment were not modified.
+- Read-only multi-window execution package: [W1 role research · W2 portfolio UX benchmark · W3 personal evidence audit](../PORTFOLIO-WINDOW-DISPATCH-2026-11-10.md). W0 retains sole synthesis, decision and acceptance authority.
