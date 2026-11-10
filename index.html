@@ -2141,7 +2141,7 @@ function showContextStep(i){
 }
 
 function renderCase(id){
- const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[c.presentation==='evidence'?c.id:c.type];
+ const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[(c.presentation==='evidence'||c.id==='personal-context-layer'||c.id==='agent-workflow-governance')?c.id:c.type];
  const layaBook=document.getElementById('laya-casebook-cta');if(layaBook)layaBook.hidden=c.id!=='laya-decision-integrity';
  $('#case-no').textContent=`${c.num} / CASE STUDY`;
  $('#case-kind').textContent=c.kind;
