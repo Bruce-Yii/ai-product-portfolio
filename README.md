@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `f63fd225409d124aeb2f2e468a5b24b487d76f50`; current Vercel Hobby Preview: https://ai-product-portfolio-iqifybh25-yu-ac3a.vercel.app/ (public, no login). Homepage and Laya routes return HTTP 200; noindex and robots blocking remain enabled. Public copy showcase pass is deployed; browser visual/click E2E and responsive/image QA remain in progress. Historical branches are frozen snapshots, not active workstreams.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `2d071eaf04f666d5f65acb5cf83def12d7e2faa0`; current Vercel Hobby Preview: https://ai-product-portfolio-1z4adt3b2-yu-ac3a.vercel.app/ (`dpl_77idafnMnTNEFumvPeLZuKPeq8aY`, READY, public, no login). Homepage and Laya routes return HTTP 200; the Laya return control is same-origin. Page-level noindex and robots blocking remain enabled. Browser visual/click E2E and responsive/image QA remain in progress. Historical branches are frozen snapshots, not active workstreams.
 
 A static, self-contained portfolio website for Bruce Yii.
 
