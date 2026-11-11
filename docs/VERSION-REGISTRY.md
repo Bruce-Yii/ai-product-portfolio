@@ -128,7 +128,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 | Branch | Snapshot commit | Operational status |
 |---|---:|---|
-| `main` | `04c49f9` (docs-only HEAD; website source `4298428`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
+| `main` | `HEAD` (docs-only governance commits may advance; website source `4298428`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
 | `portfolio/owner-feedback-rewrite-2026-11-11` | `4298428` | Frozen duplicate pointer retained for history; do not continue work here. |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Historical pre-consolidation main snapshot; retained so the former default-branch history remains reachable. |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze. |
