@@ -65,63 +65,55 @@ The following details support internal fact-checking, engineering review, and re
 
 ## Laya public introduction
 
-**Homepage copy (2026-11-12 · expanded global-impact pass):**
+**Public-facing homepage copy (2026-11-12 · owner-approved concise version):**
 
-> Laya 是 Convai Innovations 开源的多语言非自回归 System 1 决策引擎，支持 100+ 种语言，可在单次前向传播中对文本或结构化状态完成选择、评分与是/否判断，并返回结构化结果与概率。GitHub 仓库创建于 2026 年 9 月 18 日。
->
-> 9 月下旬，Laya 在多个独立开源增长榜单中迅速冲到前列：Trendshift 全球与 Python 趋势榜连续四天第 1，GitTrend 第 39 周全球周增长榜第 1（单周新增约 2.23 万 Stars），OpenGithubs 9 月 Star 增长月榜第 3（+24,592）。Hacker News 主讨论截至 11 月 12 日达到 1,363 Points / 319 Comments。
->
-> 关注随后延伸到 AI 模型平台与开发者基础设施：Startup Fortune 于 10 月 2 日报道 Laya 登上 Hugging Face Trending Models 榜首；Vercel AI Gateway 于 10 月 1 日正式提供 Laya 调用。独立社区目录收录 115 条生态记录（71 个 GitHub 项目记录、40 条 X 动态）。截至 11 月 12 日，GitHub 约 35.4K Stars / 3.17K Forks，Hugging Face 模型页约 65.9K Downloads / 5,948 Likes。
+> 2026 年 9 月开源后，Laya 曾连续 4 天登上 Trendshift 全球趋势榜第 1，并位列 GitTrend 全球周增长榜第 1，单周新增约 2.23 万 Stars，迅速成为当时备受关注的 AI 开源项目。它是一个支持 100+ 种语言的非自回归 System 1 开源决策模型，可通过单次前向推理完成选择、评分与判断。
 
-**Casebook impact module:**
+**Presentation boundary:** This is the only public Laya popularity introduction. Link Trendshift and GitTrend inline. Do not place the detailed research below into the homepage card or standalone casebook. No Global Momentum section, ranking wall, metrics dashboard, ecosystem inventory or benchmark disclosure belongs in the portfolio presentation.
+
+**Internal research only — not public copy:**
 - GitTrend Week 39 (2026-09-21 to 09-27): #1 weekly star growth, approximately +22.3K Stars.
 - Trendshift: overall and Python tracked trending lists #1 for four consecutive days, 2026-09-20 to 09-23; 2026-09-22 daily peak +6,379 Stars.
 - OpenGithubs September star-growth monthly list: #3, +24,592 Stars.
 - GitTrend September star-growth monthly list: #8, approximately +29K Stars. Different third-party dataset and counting window; do not merge values.
 - GitNova 2026-09-21 daily tracker: #1, +4,318 Stars, proprietary breakout magnitude 9.9 (not a model score).
-- CyberQ 2026-09-25 weekly report: first-week snapshot 23,092 Stars / 1,985 Forks; describes Laya as the week's strongest-growing repository. This is a dated media report, not a current counter.
+- CyberQ 2026-09-25 weekly report: first-week snapshot 23,092 Stars / 1,985 Forks; a dated media observation, not a current counter.
 - Hacker News launch thread: 1,363 points / 319 comments in the 2026-11-12 current read; separate 2026-09-27 archive snapshot was 1,349 / 316.
-- Hugging Face Trending Models #1 on 2026-10-02 is reported by Startup Fortune; label it as a media report, not a preserved official HF historical leaderboard snapshot.
-- Vercel AI Gateway: official Vercel changelog dated 2026-10-01; Laya available free for one month through 2026-10-31 via Boundless. This is a model-catalog / inference distribution listing, not a commercial partnership or endorsement.
-- Independent community catalog Made with Laya: 115 curated records, consisting of 71 GitHub entries, 40 X posts, 2 sites, 1 skill and 1 resource. It explicitly says it is not affiliated with ConvAI Innovations and numbers are author-reported. Treat these as catalog records, not 115 products, installs or customers.
-- Current snapshots on 2026-11-12: GitHub 35,408 Stars / 3,174 Forks; Hugging Face `convaiinnovations/laya` 65.9K downloads / 5,948 likes.
-- A ModelScope studio listing for `laya-demo` appeared on 2026-09-20; the listing showed 5.3K / 123, but the current search result does not make the metric labels sufficiently clear. Do not use the numbers publicly.
+- Hugging Face Trending Models #1 on 2026-10-02 is reported by Startup Fortune; no preserved official HF historical snapshot was located.
+- Vercel AI Gateway: official model-catalog / inference distribution listing, not a commercial partnership or endorsement.
+- Made with Laya: 115 curated records (71 GitHub, 40 X, 2 sites, 1 skill, 1 resource); not 115 products, installs or customers.
+- 2026-11-12 snapshots: GitHub 35,408 Stars / 3,174 Forks; Hugging Face `convaiinnovations/laya` 65.9K downloads / 5,948 likes.
+- ModelScope studio listing for `laya-demo` appeared on 2026-09-20; the 5.3K / 123 labels are unclear. Do not use.
+- No single official, industry-wide decision-model leaderboard was found. S1MB broad results: `laya-typed-decisions` 19/23; base `laya` 20/23; `laya-multilingual` 21/23.
+- JevBench third-party tracker: 2026-09-29 v1.4.2.2 snapshot lists Laya at #43 / 30.3 after a sealed re-score.
+- A separate 2,000-decision typed-decisions suite lists the task-fine-tuned checkpoint at #2 (0.714 → 0.762); this is task-specific, not a universal zero-shot ranking.
 
-**Decision-model benchmark research — internal interpretation:**
-- No single official, industry-wide decision-model leaderboard was found. Distinguish repository growth rankings, model-hub trending lists, social discussion and model-quality benchmarks.
-- S1MB community benchmark snapshot published 2026-09-30: 23 models completed 137 benchmarks, 14,009 cases and 26,269 judgments. Ranks: `laya-typed-decisions` 19/23; base `laya` 20/23; `laya-multilingual` 21/23. This is a community benchmark, not a standardized industry certification.
-- JevBench third-party tracker: its 2026-09-29 v1.4.2.2 snapshot lists Laya at rank #43 with score 30.3 after a sealed re-score. The tracker records earlier version changes; this is a version-specific third-party benchmark, not an official universal ranking.
-- A separate 2,000-decision typed-decisions suite lists the task-fine-tuned Laya checkpoint at #2 (0.714 → 0.762 after held-out calibration); base Laya is lower. The fine-tuned checkpoint was trained on that suite, so this is task-specific, not a universal zero-shot ranking.
-- Public casebook includes a collapsed benchmark-context disclosure so a deep reader can distinguish popularity from model accuracy. Do not describe Laya as the world's best decision model or as #1 in model quality.
-- The correct portfolio story is a global open-source / developer-community breakout and an emerging System One ecosystem, not a blanket claim of technical performance leadership.
-
-**Source register:**
-- Official upstream repository and current GitHub counters: https://github.com/NandhaKishorM/laya
-- Trendshift daily ranking and historical snapshots: https://trendshift.io/repositories/244591
+**Internal source register:**
+- Official upstream repository: https://github.com/NandhaKishorM/laya
+- Trendshift: https://trendshift.io/repositories/244591
 - GitTrend weekly W39: https://gittrend.io/weekly/2026-W39
 - GitTrend September monthly list: https://gittrend.io/monthly/2026-09
-- OpenGithubs September monthly star-growth list: https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md
-- GitNova 2026-09-21 daily ranking: https://gitnova.dev/en/day/2026-09-21
-- CyberQ 2026-09-25 weekly report: https://cyberq.tw/2026/09/25/github-trends-weekly-report-vol-34/
-- JevBench third-party versioned tracker: https://tomrochette.com/agents/hybrid-execution/laya/
-- Hacker News original launch thread: https://news.ycombinator.com/item?id=49765348
-- Startup Fortune report about the Hugging Face Trending position: https://startupfortune.com/open-source-is-pulling-away-from-jev-laya-mukkunnoth/
-- Official Vercel AI Gateway announcement: https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31
-- Independent community build directory and its non-affiliation / author-reported-data note: https://www.madewithlaya.com/
-- Current Hugging Face model page: https://huggingface.co/convaiinnovations/laya
-- S1MB 2026-09-30 benchmark snapshot: https://huggingface.co/blog/hotchpotch/system-one-mosaic-benchmark
-- Typed-decisions 2,000-decision benchmark: https://metatext.ai/system-one/typed-decisions-benchmark
-- ConvAI's own Laya demo Space and its 2026-09-24 historical likes snapshot: https://systemonemodels.org/examples/tools/laya-demo/
+- OpenGithubs September monthly list: https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md
+- GitNova 2026-09-21: https://gitnova.dev/en/day/2026-09-21
+- CyberQ 2026-09-25: https://cyberq.tw/2026/09/25/github-trends-weekly-report-vol-34/
+- JevBench: https://tomrochette.com/agents/hybrid-execution/laya/
+- Hacker News: https://news.ycombinator.com/item?id=49765348
+- Startup Fortune: https://startupfortune.com/open-source-is-pulling-away-from-jev-laya-mukkunnoth/
+- Vercel AI Gateway: https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31
+- Made with Laya: https://www.madewithlaya.com/
+- Hugging Face model: https://huggingface.co/convaiinnovations/laya
+- S1MB: https://huggingface.co/blog/hotchpotch/system-one-mosaic-benchmark
+- Typed-decisions: https://metatext.ai/system-one/typed-decisions-benchmark
 
-**Claim boundaries / do not publish:**
-- Trendshift, GitTrend, OpenGithubs and GitNova are independent third-party trackers; never call their rankings official GitHub Trending rankings.
-- Different star-growth platforms use different windows and algorithms; do not add their counts together or treat the ranks as directly comparable.
-- Hugging Face Trending #1 is a contemporaneous media report; no preserved official dated HF leaderboard screenshot was located.
-- Vercel AI Gateway listing is not evidence of partnership, endorsement or customer adoption.
-- Made with Laya's 115 records are catalog entries, not unique products, downloads, active users or customers.
-- A prior 1,008-vote Reddit claim was not verified. The located r/LocalLLaMA post showed 54 votes; do not publish 1,008.
-- A DeAI article's "87 X posts in six hours" claim relied on a Grok sweep and was not independently reproducible; do not use.
-- A third-party X post showing a Laya Tetris demo was listed at 112.2K views / 627 likes / 61 reposts on laya.tools; X itself returned 403 in this research pass. Keep this out of headline copy unless the original post metrics can be rechecked.
+**Claim boundaries:**
+- Trendshift, GitTrend, OpenGithubs and GitNova are independent third-party trackers, not official GitHub Trending rankings.
+- Different star-growth platforms use different windows and algorithms.
+- Hugging Face Trending #1 is a contemporaneous media report, not a preserved official dated leaderboard.
+- Vercel listing is not evidence of partnership or endorsement.
+- Made with Laya entries are curated records, not users or customers.
+- The prior 1,008-vote Reddit claim was not verified; the located post showed 54 votes.
+- A DeAI article's "87 X posts in six hours" claim was not independently reproducible.
+- A third-party X Tetris post's 112.2K views / 627 likes / 61 reposts could not be rechecked on X; do not use.
 - GitHub repository creation date is 2026-09-18; do not conflate it with a definitively verified public-release date.
 
 ## Laya metrics
