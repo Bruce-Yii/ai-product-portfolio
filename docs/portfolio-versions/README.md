@@ -131,3 +131,15 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Commit `84f8773f3eabe6e79806d4c884c15707cb07b783` produced deployment `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE` on `portfolio/phase3-content-review-2026-11-10`.
 - The hosted homepage contained owner-prohibited copy. This deployment is withdrawn; preserve only as immutable audit history.
 - The later branch head `1294634` removed the wording, but that does not retroactively validate the earlier deployment.
+
+
+## 2026-11-11 — Single mainline and public Vercel Preview
+
+- The repository default branch `main` is now the only active development line.
+- Website source commit: `4298428bebd9db575d399968c0ad09617ff82185`.
+- Vercel Hobby Preview: `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/.
+- Project SSO, password and trusted-IP protection are disabled. Homepage and Laya routes return HTTP 200; noindex remains enabled.
+- All existing non-main branches are frozen historical snapshots. Only `main` receives future website changes.
+- Future website iterations use one commit on `main`, one exact-SHA Vercel Preview and one current public URL. Documentation-only commits do not trigger a website deployment.
+- The previous internal preview `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` and duplicate branch preview `dpl_G1auBCQmXiN4gphb2n9CirZhpL55` are superseded by the mainline deployment.

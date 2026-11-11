@@ -2,7 +2,7 @@
 
 ## Authoritative current state — 2026-11-11
 
-See [VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md) for the only current branch / commit / deployment mapping. The owner-supplied visual reference remains `4f558b5` / `dpl_2UJ7...`. The corrected internal QA candidate is source commit `62a551a` / deployment `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (READY, preview only). Homepage and Laya routes, noindex, robots blocking, source parity and static invariants pass. Browser visual/click E2E, rendered breakpoints and image rendering remain pending; no owner share link has been generated. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq7...` previews are withdrawn. `portfolio.hcfind.com` is not an approved review link. `READY` is not owner approval. No domain alias, production target or indexing change is authorized by this record.
+The only active source line is GitHub `main`. Current website source commit: `4298428bebd9db575d399968c0ad09617ff82185`. Current public Vercel Hobby Preview: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/ (`dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`, READY, Preview only, no login). Homepage and Laya routes return HTTP 200; deployment identity matches; noindex and robots blocking remain enabled. Browser visual/click E2E, responsive breakpoints and image rendering remain pending. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq7...` previews are withdrawn. `portfolio.hcfind.com` is not the review URL. No domain alias, production target or indexing change is authorized.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 
@@ -131,7 +131,7 @@ A project or repository does not qualify for a standalone Case page merely becau
 - Branch: `portfolio/v2.3-real-assets-2026-11-10`; source commit: `a030ebab95afd4b23b0643bd832b1ad3fe7e42f3`. Old v2.2 version and main branch are unchanged.
 - Real image provenance: 2026-11-01 UI screenshots from existing private VIVIC portfolio-materials library, resized to WebP, no generated UI or same-environment before/after claim. Media sources and restrictions: `assets/vivic/README.md`.
 - The existing Agent Project OS case now reflects design-stage GO, Draft PR #1 G0–G2 done, G3–G5 not begun; no actual software/product release claim.
-- Preview deployment: `dpl_E171vBEVcuq4pGTL5vfSXvKirt5A` (READY, preview). `portfolio.hcfind.com` is assigned to it and was read back through Vercel. Auto-generated `*.vercel.app` URL is SSO-protected; the subdomain is the login-free reviewer URL.
+- Historical record from the previous configuration: the auto-generated `*.vercel.app` URL was SSO-protected at that time. This has since been changed; the current Vercel Hobby Preview is public and requires no login. See `VERSION-REGISTRY.md`.
 - Independent Chromium QA on both source and live preview: project card order, direct case routes, correct evidence links/role panels, three historical VIVIC detail images confirmed loaded HTTP 200 when scrolled into view, no horizontal overflow at 1440/390/360px, no observed JS/console errors. See `docs/portfolio-reviews/2026-11-10-v2.3.md`.
 - HTTP 200 page and `noindex, nofollow, noarchive` retained. `hcfind.com` and `www.hcfind.com` root-domain production remain untouched.
 - Previous preview deployment `dpl_Fhw2j3wtDrFVBUaZvEjzXYRGvgj8` is the known rollback target.

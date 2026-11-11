@@ -665,7 +665,7 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 ### Exact artifact
 - Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
 - Vercel deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (`READY`, target `null`, preview only).
-- Preview host: `ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app` (SSO-protected; no owner share link generated).
+- At the time of this historical internal QA record, the preview host was SSO-protected. This is no longer the current access configuration; see the later public mainline Preview record.
 
 ### Source and hosted checks
 - Inline application script count: 1; V8 parse: PASS.
@@ -690,3 +690,26 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Vercel deployment: `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE`.
 - Direct hosted verification: HTTP 200; HTML deployment ID matched; the homepage contained owner-prohibited copy; `X-Robots-Tag: noindex, nofollow, noarchive` remained enabled.
 - Status: **WITHDRAWN**. Do not share or reuse this deployment. The later `1294634` commit removed the wording, but the historical deployment remains immutable and invalid for review.
+
+
+## 2026-11-11 — Single-mainline public Preview verification
+
+### Canonical source and deployment
+- Repository default branch: `main`.
+- Website source commit: `4298428bebd9db575d399968c0ad09617ff82185`.
+- Vercel Hobby Preview deployment: `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx` (`READY`, target `null`).
+- Public no-login URL: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/.
+- Deployment Git metadata confirms branch `main` and the exact source SHA above.
+
+### Hosted checks
+- Homepage `/`: HTTP 200; embedded deployment ID matches `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`; neutral hero present; prohibited wording absent.
+- `/cases/laya/`: HTTP 200.
+- `/robots.txt`: HTTP 200; `User-agent: * / Disallow: /`.
+- Homepage and Laya routes carry `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Project SSO protection is disabled; direct unauthenticated HTTP access to the preview returned 200 without a login page.
+- Project password protection and trusted-IP restrictions are disabled.
+
+### Remaining QA
+- Browser visual/click E2E, 1440px / 390px / 360px rendered checks and independent image rendering remain pending.
+- This is a public, no-login Preview for review, not a production deployment or search-indexing approval.
+- No custom-domain alias, DNS, production target or indexing change occurred.

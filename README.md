@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). Current internal QA source: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`; preview deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`. HTTP routes, noindex, source parity and static invariants pass; browser visual/click E2E remains pending. This SSO-protected URL is not an owner review link; do not distribute it yet. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq...` previews are withdrawn. The only active work branch is `portfolio/owner-feedback-rewrite-2026-11-11`; GitHub default branch `main` remains quarantined and is not the work baseline.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `4298428bebd9db575d399968c0ad09617ff82185`; current Vercel Hobby Preview: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/ (public, no login). Homepage and Laya routes return HTTP 200; noindex and robots blocking remain enabled. Browser visual/click E2E and responsive/image QA remain in progress. Historical branches are frozen snapshots, not active workstreams.
 
 A static, self-contained portfolio website for Bruce Yii.
 

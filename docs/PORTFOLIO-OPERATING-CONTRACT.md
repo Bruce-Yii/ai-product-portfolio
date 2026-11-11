@@ -173,7 +173,7 @@ Project 不等于 Case；仓库不自动成为独立产品；关键结论应尽�
 2. **确定目标**：判断本轮解决产品表达、内容架构、视觉体验还是工程问题；避免顺手改无关部分。
 3. **实施**：按已确认方向修改；不擅自创造主标题、品牌定位、项目范围或视觉体系。
 4. **自检**：检查事实、个人贡献归属、证据链接、路由、响应式和交互。
-5. **部署**：网站改动直接部署到可免登录查看的 Vercel Preview，或安全可用的现有域名。
+5. **部署**：只从 `main` 的本轮准确 Commit 创建 Vercel Hobby Preview，必须免登录；不创建其他分支，不使用生产部署或自定义域名。
 6. **线上 Review**：独立打开实际部署版本，核对页面、路由和本轮变更。
 7. **回报**：汇报真实完成项、部署链接、实际验证结果、未完成项和下一步。不要让用户自行阅读 Agent 日志或判断部署是否正确。
 
@@ -305,8 +305,11 @@ The user explicitly confirmed that the current set of projects on the portfolio 
 - A Git branch is a mutable pointer; a commit SHA is immutable. A Vercel deployment is an immutable build of a specific commit. A domain alias is mutable and must be verified independently.
 - Never identify a version by branch name or URL alone. Record the full commit SHA and Deployment ID together.
 - The owner-supplied reference baseline is `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`. The later `1294634` rewrite is not owner-approved and must not silently replace the baseline.
-- Use `portfolio/owner-feedback-rewrite-2026-11-11` as the sole active work branch. Do not run concurrent website edits on other branches. Do not push to `main` until an owner-approved release candidate and Vercel production-branch behavior are verified.
-- One iteration means one scoped change set, one commit, one review deployment and one owner-facing URL. Keep historical deployments as records; do not create parallel previews for the same iteration.
+- Use `main` as the only active development branch and the repository default. All future website changes are committed sequentially to this one line. Do not create feature, review, draft, version or parallel branches for ordinary iterations.
+- Existing non-main branches are frozen historical snapshots. Do not continue work on them; their commits remain available for audit and rollback.
+- Each website-changing iteration means one scoped change set, one commit on `main`, one Vercel Hobby Preview deployment from that exact SHA, and one public `vercel.app` URL. Do not create multiple previews for the same iteration.
+- Project SSO, password and trusted-IP protection remain disabled so the Preview URL opens without Vercel login. Keep the URL in the owner conversation, not as a secret-bearing repository token.
+- Vercel deployment target must remain Preview (omit `target`; never use `production`). No custom-domain alias or production deployment is part of normal iteration.
 - A Vercel `READY` state or HTTP 200 response is not browser QA and is not owner approval.
 - No domain alias reassignment, production promotion, DNS change or search-indexing change without explicit owner approval. Keep noindex enabled.
 

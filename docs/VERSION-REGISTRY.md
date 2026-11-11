@@ -17,19 +17,18 @@ Do not infer the current version from a branch name, a deployment display URL, o
 - This historical deployment is **WITHDRAWN** and must never be shared. The branch later advanced to `1294634`, which removed that copy; do not confuse the later branch head with this immutable deployment.
 
 
-### Current corrected internal QA preview — not owner-review-ready
+### Current public Vercel Preview — canonical mainline
 
-- Sole active work branch: `portfolio/owner-feedback-rewrite-2026-11-11`.
-- Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
-- Vercel deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (`READY`, target `null`, preview only).
-- Internal QA URL: https://ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app/ (SSO-protected; no owner share link generated).
-- Verified: homepage and `/cases/laya/` return HTTP 200; both carry `X-Robots-Tag: noindex, nofollow, noarchive`; `robots.txt` returns `Disallow: /`; homepage deployment ID matches this deployment.
-- Source parity: deployed homepage HTML matches the exact GitHub `index.html` at `62a551a` after removing Vercel's injected feedback script. Neutral baseline hero is present; prohibited wording is absent.
-- Static checks: one inline application script; JavaScript parse passes; homepage Project IDs/order, renderer, mount point, navigation handler and Laya route invariants pass; validator includes the permanent content guard.
-- Still pending: browser visual/click E2E, rendered checks at 1440px / 390px / 360px, and independent image-render verification. Do not mark the candidate owner-review-ready or distribute a share link until these checks pass.
-- The `ee6f8bd` / `dpl_6kq...` preview remains withdrawn and must never be shared.
-- No domain alias, production promotion, DNS or indexing change is authorized.
-
+- Canonical GitHub branch: `main` (the repository default branch and only active development line).
+- Website source commit: `4298428bebd9db575d399968c0ad09617ff82185`.
+- Vercel deployment: `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx` (`READY`, target `null`, Preview only).
+- Public no-login URL: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/.
+- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated HTTP access was verified.
+- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`; hero remains neutral; prohibited copy is absent.
+- Indexing protection: both page routes carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`.
+- Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification. The preview is available to open but is not yet a final acceptance claim.
+- Previous same-source preview `dpl_G1auBCQmXiN4gphb2n9CirZhpL55` was created from the former branch ref and is superseded by this `main` deployment. Earlier `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` is also superseded.
+- No custom-domain alias, production promotion, DNS or indexing change is authorized.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
@@ -125,37 +124,35 @@ Separate root-domain project:
 
 ## 3. GitHub branch snapshot
 
-Nine branches were returned at the audit. All returned `protected: false`.
+Nine GitHub branches were observed before consolidation. The repository now uses exactly one active development line: `main`. All other existing refs are frozen historical snapshots and must not receive new work.
 
-| Branch | Website source commit at review | Operational status |
+| Branch | Snapshot commit | Operational status |
 |---|---:|---|
-| `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
-| `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
-| `portfolio/owner-feedback-rewrite-2026-11-11` | `62a551a` | Sole active work branch; corrected source is deployed as internal QA preview `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; visual/click QA still pending |
-| `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite line; later HEAD removed the prohibited copy, but historical commit `84f8773` / deployment `dpl_6Jf7...` is withdrawn |
-| `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line |
-| `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line |
-| `portfolio/modular-mainline-2026-11-09` | `063744c` | Historical modular line |
-| `portfolio/editorial-product-positioning-2026-11-09` | `0024f93` | Historical positioning exploration |
-| `portfolio/phase3-content-draft-2026-11-10` | `2b23fb2` | Draft-content line |
+| `main` | `4298428` | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
+| `portfolio/owner-feedback-rewrite-2026-11-11` | `4298428` | Frozen duplicate pointer retained for history; do not continue work here. |
+| `portfolio/phase3-content-review-2026-11-10` | `1294634` | Historical pre-consolidation main snapshot; retained so the former default-branch history remains reachable. |
+| `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze. |
+| `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line. |
+| `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line. |
+| `portfolio/modular-mainline-2026-11-09` | `063744c` | Historical modular line. |
+| `portfolio/editorial-product-positioning-2026-11-09` | `0024f93` | Historical positioning exploration. |
+| `portfolio/phase3-content-draft-2026-11-10` | `2b23fb2` | Historical draft-content line. |
 
-The branch name stored in a Vercel deployment is the branch name at deployment time. It does not prove the branch still points to that deployment's commit. Always compare the full commit SHA.
+Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-The active branch may advance through documentation-only governance commits after a deployment. The current website artifact remains source commit `62a551a3e375e77a9a22c7ddf78df74a973fbc94` / deployment `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; a documentation-only branch HEAD is not a new website version.
+The website source commit is `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. Documentation-only commits may advance `main` without changing the website artifact.
+## 4. Operating rules
 
-## 4. Operating rules from this audit
-
-1. **One active work branch:** use `portfolio/owner-feedback-rewrite-2026-11-11` for subsequent approved work. Do not edit multiple website branches concurrently.
-2. **One immutable recovery reference:** preserve full commit `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae` as the comparison baseline. The branch may advance; the commit SHA must remain recorded.
-3. **`main` is not the work branch:** do not push to or deploy `main` until an owner-approved release candidate is selected and the Vercel production-branch behavior is verified.
-4. **One review candidate per iteration:** one scoped change set, one exact commit, one Vercel deployment, one owner-facing review URL. Do not distribute several indistinguishable preview links.
-5. **READY is not approval:** Vercel build readiness, a successful HTTP response, and owner approval are three different states.
-6. **No alias or production changes without explicit owner approval:** do not reassign `portfolio.hcfind.com`, alter root-domain DNS, or promote a deployment as a side effect of ordinary review.
-7. **Noindex stays enabled** until the separate content, evidence, permission and publication gates are explicitly approved.
-8. **Record every candidate** with parent baseline, branch, full commit SHA, deployment ID, target, URL, QA evidence, approval status and superseded links.
-9. **Do not store Vercel share tokens in GitHub.** Deliver the exact owner-accessible URL in the owner conversation and verify its deployment ID.
-10. **Historical branches and deployments are records, not active candidates.** Do not delete or force-update them as a shortcut to reduce visible clutter.
-
+1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.
+2. **One website artifact per code change:** identify it by exact `main` commit SHA plus Vercel deployment ID. Documentation-only commits do not create a new website artifact.
+3. **Vercel Hobby Preview only:** deploy the exact `main` commit as a Preview deployment (omit `target`, never set `production`). Use the generated `vercel.app` URL; it must open without Vercel login. Project SSO/password/IP protection stays disabled for this public portfolio preview.
+4. **One current preview:** each website-changing iteration gets one deployment and one URL. The prior URL is superseded when a newer verified deployment is recorded.
+5. **No custom-domain or production changes:** do not reassign `portfolio.hcfind.com`, alter DNS, promote to production or change aliases without explicit owner approval.
+6. **Noindex stays enabled** until the separate content, evidence, permission and publication gates are explicitly approved.
+7. **READY is not acceptance:** deployment state, HTTP checks, browser QA and owner approval are separate states.
+8. **Record each website deployment** with exact source commit, deployment ID, URL, HTTP/route checks, noindex status and remaining QA.
+9. **Historical refs are snapshots:** do not resume work on old branches. Keep their history; only `main` advances.
+10. **No duplicate review links:** provide only the latest verified public no-login Preview URL.
 ## 5. Pending verification
 
 - Continue using explicit commit-pinned preview deployments; do not rely on automatic deployments until the Vercel Git integration and production-branch configuration are independently verified.
