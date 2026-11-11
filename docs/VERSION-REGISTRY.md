@@ -7,13 +7,18 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ## 1. Current authoritative decision
 
-### Current state — governance correction underway
+### Current corrected internal QA preview — not owner-review-ready
 
-- Active work branch: `portfolio/owner-feedback-rewrite-2026-11-11`.
-- Last branch HEAD before correction: `c718f7e465b94c2b06aa11fcae9b61396485491f` (documentation-only registry update).
-- The last deployed candidate `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` is **withdrawn** because its homepage contained owner-prohibited copy. It must not be shared or treated as a review candidate.
-- No current owner-facing preview is authorized until corrected source passes the content validator, is deployed from the exact recorded commit, and receives independent route / responsive / interaction QA.
-- No domain alias, production promotion, DNS or indexing change is authorized by this correction.
+- Sole active work branch: `portfolio/owner-feedback-rewrite-2026-11-11`.
+- Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
+- Vercel deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (`READY`, target `null`, preview only).
+- Internal QA URL: https://ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app/ (SSO-protected; no owner share link generated).
+- Verified: homepage and `/cases/laya/` return HTTP 200; both carry `X-Robots-Tag: noindex, nofollow, noarchive`; `robots.txt` returns `Disallow: /`; homepage deployment ID matches this deployment.
+- Source parity: deployed homepage HTML matches the exact GitHub `index.html` at `62a551a` after removing Vercel's injected feedback script. Neutral baseline hero is present; prohibited wording is absent.
+- Static checks: one inline application script; JavaScript parse passes; homepage Project IDs/order, renderer, mount point, navigation handler and Laya route invariants pass; validator includes the permanent content guard.
+- Still pending: browser visual/click E2E, rendered checks at 1440px / 390px / 360px, and independent image-render verification. Do not mark the candidate owner-review-ready or distribute a share link until these checks pass.
+- The `ee6f8bd` / `dpl_6kq...` preview remains withdrawn and must never be shared.
+- No domain alias, production promotion, DNS or indexing change is authorized.
 
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
@@ -95,7 +100,7 @@ Portfolio Vercel project:
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
 - Last deployment candidate (withdrawn): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
-- Attached custom domain: `portfolio.hcfind.com` (verified; still points to the older unapproved `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4` candidate)
+- Attached custom domain: `portfolio.hcfind.com`. Last recorded HTTP observation mapped it to unapproved `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`; this mapping was not independently reverified in the current pass because the domain-detail endpoint returned 403. Do not use it as a review URL or change the alias.
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
 
@@ -116,7 +121,7 @@ Nine branches were returned at the audit. All returned `protected: false`.
 |---|---:|---|
 | `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
-| `portfolio/owner-feedback-rewrite-2026-11-11` | `c718f7e` | Sole active work branch; last website source `ee6f8bd` is withdrawn; corrective source and validator update are in progress |
+| `portfolio/owner-feedback-rewrite-2026-11-11` | `62a551a` | Sole active work branch; corrected source is deployed as internal QA preview `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; visual/click QA still pending |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite candidate |
 | `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line |
 | `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line |
@@ -149,3 +154,8 @@ The branch name stored in a Vercel deployment is the branch name at deployment t
 ## 5. Permanent owner content prohibition
 
 The historical self-praise / test slogan is permanently prohibited in this portfolio. It must not appear in any current page, preview, screenshot, metadata, source comment, release note or derived asset. Historical commits remain immutable audit records only; they do not authorize reuse. The static source validator enforces the ban. The `ee6f8bd` / `dpl_6kq7...` candidate is withdrawn and must never be shared again.
+
+
+### Version-recording rule
+
+A deployment is always tied to the exact website source commit recorded in its Git metadata. Documentation-only commits may advance the active branch after deployment; they must never be mistaken for a new website artifact or a new deployment. Keep one active work branch, one current website source commit, and one current preview candidate. All other branches and deployments are historical, quarantined or explicitly superseded.

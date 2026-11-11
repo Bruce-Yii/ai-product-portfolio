@@ -36,3 +36,13 @@ The extra brace is removed in this follow-up. Source-level inline-script parsing
 ## Owner correction — 2026-11-11
 
 The later `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` deployment is withdrawn. Its homepage hero violated a permanent owner content prohibition. The earlier record calling it the corrected review deployment is superseded by this correction. Preserve the commit/deployment only as immutable audit history; do not share it. The neutral heading from the recovery reference is restored, and the static validator now blocks the prohibited wording from public HTML. No owner review is requested until a new exact preview passes independent QA.
+
+
+## Corrected internal QA deployment — 2026-11-11
+
+- Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
+- Vercel deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (`READY`, preview target).
+- Internal preview host: `https://ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app/` (SSO-protected; no owner share link generated).
+- Source syntax, homepage project order, route invariants, hosted HTTP responses, deployment identity, noindex / robots and exact homepage source parity pass.
+- Browser visual/click E2E, responsive viewport rendering and image rendering remain pending. This is not yet an owner-facing review candidate.
+- The previous `ee6f8bd` deployment remains withdrawn and must not be shared.

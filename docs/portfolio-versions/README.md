@@ -114,3 +114,13 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - The active branch remains `portfolio/owner-feedback-rewrite-2026-11-11`; one source correction and a static content gate are being applied there.
 - The neutral homepage heading from the owner-supplied recovery reference remains the baseline. No new headline or slogan is authorized.
 - A new preview may be recorded only after source validation, exact deployment identity verification and independent hosted QA. No production alias or indexing changes are part of this correction.
+
+
+## 2026-11-11 — Corrected internal QA preview
+
+- Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
+- Vercel preview: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` · READY · target `null`.
+- Internal host: `https://ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app/` (SSO-protected; not an owner review link).
+- Homepage and Laya route HTTP checks, noindex / robots, deployment identity, source parity and static invariants pass.
+- Browser visual/click E2E and rendered viewport/image checks remain pending. Do not distribute a share link or call this owner-review-ready.
+- The prior `ee6f8bd` / `dpl_6kq...` candidate is withdrawn; preserve it only as immutable audit history.

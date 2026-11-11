@@ -658,3 +658,26 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - This is a source-content governance failure, not a runtime failure. Preserve the immutable commit and deployment as audit history; do not rewrite Git history.
 - The corrected source adds a static public-HTML content gate. Any matching prohibited token fails validation before deployment or sharing.
 - Earlier route/header/noindex observations remain factual observations about `ee6f8bd`; they do not establish owner acceptance or make the deployment usable.
+
+
+## 2026-11-11 — Corrected owner-prohibition candidate: internal QA
+
+### Exact artifact
+- Website source commit: `62a551a3e375e77a9a22c7ddf78df74a973fbc94`.
+- Vercel deployment: `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` (`READY`, target `null`, preview only).
+- Preview host: `ai-product-portfolio-ehxlktct8-yu-ac3a.vercel.app` (SSO-protected; no owner share link generated).
+
+### Source and hosted checks
+- Inline application script count: 1; V8 parse: PASS.
+- Homepage Project IDs/order: Personal Context Keyboard → VIVIC → AWRP × Linear; renderer, mount point, navigation handler and standalone Laya route invariants: PASS.
+- Updated static validator includes the permanent prohibited-copy guard.
+- Homepage `/`: HTTP 200; deployment ID in HTML matches `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; neutral hero baseline present; prohibited wording absent.
+- `/cases/laya/`: HTTP 200.
+- Both HTML routes carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`.
+- Deployed homepage HTML matches the exact GitHub source after removing Vercel's injected feedback script.
+
+### Remaining QA
+- Browser visual/click E2E not yet performed.
+- Rendered 1440px / 390px / 360px layout and image naturalWidth checks not yet performed.
+- This is an internal QA candidate, not owner-review-ready. Do not distribute a share link or claim full acceptance until remaining checks pass.
+- No production promotion, alias reassignment, DNS change or indexing change occurred.
