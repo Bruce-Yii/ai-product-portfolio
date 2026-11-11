@@ -1,7 +1,21 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
-## 2026-11-12 · Laya media coverage and benchmark evidence expansion
+## 2026-11-12 · Laya copy simplification (current)
+
+- Website source: `9b4b9b8f89f36d86022dcdbd45cc392b465aa5d0`.
+- Preview: `dpl_BrHWx1PddQDNwVFpeaGFpX6oVbvr` · READY · https://ai-product-portfolio-aqr3oe3gi-yu-ac3a.vercel.app/
+- Homepage Laya introduction reduced to exactly one paragraph, leading with global open-source momentum and briefly explaining the System 1 decision model.
+- Removed the two extra homepage paragraphs and their CSS.
+- Restored the Laya casebook to the pre-expansion v2.4 source; removed Global Momentum, ranking cards, ecosystem signals and benchmark disclosure.
+- Detailed research remains internal only.
+- Static source checks passed; browser visual / click E2E and responsive screenshot checks are not claimed.
+- Full record: [2026-11-12 Laya copy simplification](./2026-11-12-laya-copy-simplification.md).
+
+
+## 2026-11-12 · Laya media coverage and benchmark evidence expansion — WITHDRAWN
+
+> This overbuilt intermediate public presentation was withdrawn after owner review. Its detailed research remains internal; use the later concise-copy correction as current.
 
 - Website artifact: `96a2c02ad396a4c95f22030d54259f59a8001d75`.
 - Preview: `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` · READY · https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/
@@ -12,7 +26,9 @@
 - Full record: [2026-11-12 Laya impact evidence expansion](./2026-11-12-laya-impact-evidence-expansion.md).
 
 
-## 2026-11-12 · Laya global momentum and benchmark context
+## 2026-11-12 · Laya global momentum and benchmark context — WITHDRAWN
+
+> This overbuilt intermediate public presentation was withdrawn after owner review. The Global Momentum section was removed and the casebook restored to v2.4.
 
 - Website artifact: `edaf0c593486ff782899e3b171b26e163ea16a6d`.
 - Preview: `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` · READY · https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/
