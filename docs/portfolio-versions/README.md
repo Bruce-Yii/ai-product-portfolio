@@ -1,7 +1,19 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
-## 2026-11-12 · Laya copy simplification (current)
+## 2026-11-12 · Laya copy refinement (current)
+
+- Website source: `01e2f81635cf5dbc6f74813a3bb610e25bfde455`.
+- Preview: `dpl_97ogePFHpoGMyc6FHyhoD9SkEshf` · READY · https://ai-product-portfolio-g00fxq89p-yu-ac3a.vercel.app/
+- Replaced “连续 4 天” with “连续多日”.
+- Reframed the model description around Laya's distinction from generative AI: non-autoregressive structured decisions in one forward pass, with classification, scoring, yes/no judgments, structured outputs and probabilities.
+- Kept the homepage introduction to one paragraph; no new homepage or casebook sections.
+- Casebook remains v2.4; detailed popularity / benchmark research remains internal-only.
+- Static source checks passed; browser visual / click E2E and responsive screenshot checks are not claimed.
+- Full record: [2026-11-12 Laya copy refinement](./2026-11-12-laya-copy-refinement.md).
+
+
+## 2026-11-12 · Laya copy simplification — superseded by copy refinement
 
 - Website source: `9b4b9b8f89f36d86022dcdbd45cc392b465aa5d0`.
 - Preview: `dpl_BrHWx1PddQDNwVFpeaGFpX6oVbvr` · READY · https://ai-product-portfolio-aqr3oe3gi-yu-ac3a.vercel.app/
