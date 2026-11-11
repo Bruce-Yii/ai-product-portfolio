@@ -63,6 +63,25 @@ The following details support internal fact-checking, engineering review, and re
 - **Experience framing:** Project retains goals/decisions; Task defines owner, scope, dependencies and acceptance; Run records one Agent attempt; Event / Artifact retain execution changes and verifiable outputs.
 - **Outcome framing:** projects continue across windows; tasks have explicit responsibility and acceptance; execution is traceable; results return to one project history. Linear × Notion × GitHub remain the real current workflow, while Agent Project OS is a separate next-step design.
 
+## Laya public introduction
+
+**Homepage copy (2026-11-12):**
+
+> Laya 是 Convai Innovations 开源的多语言非自回归 System 1 决策引擎，支持 100+ 种语言，可在单次前向传播中对文本或结构化状态完成选择、评分与 yes/no 判断，并返回结构化结果与概率。它于 2026 年 9 月 18 日开源后迅速登上多个开源趋势榜：Trendshift 总榜连续四天排名第 1，GitTrend 9 月 21–27 日周榜排名第 1、单周新增约 2.23 万 Stars；截至 11 月 10 日，仓库已有 35,341 Stars、3,170 Forks。
+
+**Compact popularity note:** 9 月 Star 增长月榜第 3；Hacker News 讨论在 2026-09-27 的历史快照为 1,349 points / 316 comments。
+
+**Source register and interpretation:**
+- Official repository description and model scope: https://github.com/NandhaKishorM/laya
+- Repository creation date, exact 2026-11-10 snapshot (35,341 Stars / 3,170 Forks): https://rising.dev/gh/NandhaKishorM/laya/ (snapshot at 2026-11-10 15:13 UTC)
+- Trendshift daily ranking: https://trendshift.io/repositories/244591 (overall rank #1 on 2026-09-20 through 2026-09-23; this is Trendshift's tracked ranking, not an official GitHub ranking)
+- GitTrend weekly ranking: https://gittrend.io/weekly/2026-W39 (rank #1 among its tracked weekly repositories; approximately 22.3K Stars gained during 2026-09-21 to 2026-09-27)
+- OpenGithubs September monthly star-growth ranking: https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md (rank #3; +24,592 Stars)
+- Hacker News discussion: https://news.ycombinator.com/item?id=49765348; historical count snapshot: https://www.hunteralphahub.com/laya/threads (1,349 points / 316 comments as of the 2026-09-27 snapshot)
+- Vercel AI Gateway announcement: https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31 (2026-10-01)
+
+**Claim boundaries:** Trendshift, GitTrend and OpenGithubs are separate third-party ranking datasets; do not describe their ranks as an official GitHub Trending placement. The Hacker News and Stars/Forks figures are dated snapshots, not live counters.
+
 ## Laya metrics
 - Public headline: 40 personally authored PRs merged upstream, organized into four product systems and eight selected product stories.
 - Keep 10,394 additions as a secondary deep-case metric only; it is summed across the full authored PR diff set, including implementation, tests, evaluation tooling and docs, and is not the net additions of the 40 merged PRs.
