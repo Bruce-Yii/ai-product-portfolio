@@ -7,26 +7,35 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ## 1. Current authoritative decision
 
-### Current owner review candidate — `f9cb2ce` (preview only)
+### Current owner review candidate — `ee6f8bd` (preview only)
+
+- Code commit: `ee6f8bdd5239b80cf8ea72f563ece351105906af`
+- Active work branch at deployment: `portfolio/owner-feedback-rewrite-2026-11-11`
+- Vercel deployment: `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
+- Preview URL: https://ai-product-portfolio-lyrhy78kp-yu-ac3a.vercel.app/
+- Deployment state: `READY`; target `null` (preview, not production).
+- Verified: `/` HTTP 200; deployment ID in the live response matches `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`; `/cases/laya/` HTTP 200; `robots.txt` returns `Disallow: /`; both page responses carry `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Source verification: one application script parses; homepage order is Personal Context Keyboard → VIVIC → AWRP × Linear; four Case records have four detail payloads; nine contribution groups are present (Laya casebook plus eight selected upstream groups); homepage renderer, navigation handler and Laya route are present.
+- Content corrections: owner-requested large hero headline restored; PCK and AWRP public repository evidence links added; noisy Laya 47-authored / 85-reviewed query counts removed from the visible contribution line; VIVIC's eight unit-test failures are explicitly identified as pre-existing baseline failures.
+- Deployed homepage HTML exactly matches the GitHub source after removing Vercel's injected feedback script. The deployed Laya page exactly matches its GitHub source.
+- All five referenced VIVIC image paths exist at pinned upstream commit `9b8665a0b62a17e0eef94c403f2c2c583d484330`; actual browser image rendering has not been independently verified.
+- A shareable preview URL was verified with HTTP 200; the reused access link expires `2026-11-12 07:04:18` (Vercel-reported time). Its bearer token is not stored in GitHub.
+- Browser visual / click E2E and 1440px / 390px / 360px rendered-layout verification remain pending. Do not claim them as passed.
+- Owner review: pending. Public release: not approved.
+
+### Superseded review preview — `f9cb2ce`
 
 - Code commit: `f9cb2ce741258edebec73d136030c53c20f21517`
-- Active work branch at deployment: `portfolio/owner-feedback-rewrite-2026-11-11`
 - Vercel deployment: `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e`
 - Preview URL: https://ai-product-portfolio-ojkrc4arr-yu-ac3a.vercel.app/
-- Deployment state: `READY`; target `null` (preview, not production).
-- Verified: `/` HTTP 200; `/cases/laya/` HTTP 200; `robots.txt` returns `Disallow: /`; both page responses carry `X-Robots-Tag: noindex, nofollow, noarchive`.
-- Source verification: one inline application script parses; project order, mount point, renderer, navigation handler and Laya route invariants pass. Deployed HTML matches the exact GitHub source after removing Vercel's injected feedback script.
-- All five referenced VIVIC image files exist at pinned upstream commit `9b8665a0b62a17e0eef94c403f2c2c583d484330`; actual browser image rendering has not been independently verified.
-- Browser visual / click E2E and 360px viewport verification remain pending. Do not claim them as passed.
-- A temporary Vercel protection-bypass link was generated with a 7-day TTL and delivered in the owner conversation. Its token is deliberately not stored in GitHub.
-- Owner review: pending. Public release: not approved.
+- This preview had valid JavaScript and passed hosted HTTP / noindex checks, but is superseded by `ee6f8bd` after the owner-directed headline, evidence-link and attribution corrections. Do not distribute it as the current review link.
 
 ### Superseded broken preview — `0c5ef28`
 
 - Code commit: `0c5ef28b8aed30f606b6e2e1d44139ce1dee5802`
 - Deployment: `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA`
 - It returned HTTP 200 but its inline application script did not parse because an extra closing brace remained in `systemArt()`, inherited from `1294634`.
-- It is superseded by `f9cb2ce`; do not share or review it.
+- It is superseded by the later corrected preview chain; do not share or review it.
 
 
 ### Recovery reference baseline — `4f558b5`
@@ -76,7 +85,7 @@ Portfolio Vercel project:
 
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
-- Current latest deployment (review preview): `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e`
+- Current latest deployment (review preview): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
 - Attached custom domain: `portfolio.hcfind.com` (verified; still points to the older unapproved `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4` candidate)
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
@@ -98,7 +107,7 @@ Nine branches were returned at the audit. All returned `protected: false`.
 |---|---:|---|
 | `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
-| `portfolio/owner-feedback-rewrite-2026-11-11` | `f9cb2ce` | Sole active work branch; corrected review code deployed as `dpl_DkZZ...`; a registry-only follow-up may advance the branch pointer without changing this deployment |
+| `portfolio/owner-feedback-rewrite-2026-11-11` | `ee6f8bd` | Sole active work branch; content-corrected review code deployed as `dpl_6kq...`; documentation-only follow-ups may advance branch HEAD without changing this deployment |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite candidate |
 | `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line |
 | `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line |
@@ -125,5 +134,5 @@ The branch name stored in a Vercel deployment is the branch name at deployment t
 
 - Continue using explicit commit-pinned preview deployments; do not rely on automatic deployments until the Vercel Git integration and production-branch configuration are independently verified.
 - Add GitHub branch protection for the default branch through an explicitly reviewed administrative change; it is not currently enabled.
-- Do not claim `1294634` or the current `f9cb2ce` candidate has passed browser visual / click E2E until the exact deployment is independently tested.
+- Do not claim `1294634`, `f9cb2ce` or the current `ee6f8bd` candidate has passed browser visual / click E2E until the exact deployment is independently tested.
 - Do not treat the Phase 3 content package or Phase 4 IA draft as owner-frozen; their Notion status remains Draft / Provisional.

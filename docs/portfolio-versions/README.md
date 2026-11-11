@@ -79,7 +79,7 @@
 - Restores project maturity and validation boundaries; restores VIVIC metrics; retains Laya metric correction.
 - Pins VIVIC official image sources to an immutable upstream commit and preserves historical screenshot provenance.
 - Full scope: [selective recovery version note](./2026-11-11-selective-recovery.md).
-- Deployment ID and hosted QA will be added to the Version Registry after preview verification.
+- The content-corrected preview deployment and hosted response checks are recorded in [VERSION-REGISTRY.md](../VERSION-REGISTRY.md) and the latest [QA report](../QA-REPORT.md).
 
 
 ### Validation correction
@@ -94,3 +94,14 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Source JavaScript syntax and static portfolio invariants pass. Browser visual / click E2E remains pending.
 - Preview access link is temporary (7-day bypass); token is not stored in GitHub.
 - The earlier `0c5ef28` / `dpl_2XGv...` deployment is invalid and superseded.
+
+## 2026-11-11 — Content-corrected owner review preview
+
+- Immutable comparison baseline: `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`.
+- Code commit: `ee6f8bdd5239b80cf8ea72f563ece351105906af`.
+- Vercel deployment: `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` (`READY`, preview only).
+- Preview URL: https://ai-product-portfolio-lyrhy78kp-yu-ac3a.vercel.app/
+- Corrections: restore the owner-requested hero headline; remove noisy Laya query counts; add PCK / AWRP repository evidence links; clarify VIVIC's pre-existing unit-test failures.
+- Homepage and Laya route return HTTP 200, source-to-deployment HTML matches, and noindex remains active.
+- Browser visual / click E2E and owner review remain pending. No production, custom-domain or indexing changes.
+- The `f9cb2ce` preview is superseded for review; `0c5ef28` remains invalid due the JavaScript syntax error recorded above.

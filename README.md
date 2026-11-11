@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The current owner-review preview is code commit `f9cb2ce` / deployment `dpl_DkZZ...` (temporary access link is delivered in the owner conversation). The custom domain `portfolio.hcfind.com` still serves the older unapproved `1294634` candidate; do not use it for the current review.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The current owner-review preview is code commit `ee6f8bd` / deployment `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`. Use the exact owner-accessible preview link delivered in the owner conversation. `portfolio.hcfind.com` still serves the older unapproved `1294634` candidate; do not use it for the current review.
 
 A static, self-contained portfolio website for Bruce Yii.
 
@@ -30,13 +30,13 @@ The HTML application code/styles are intentionally self-contained; sourced VIVIC
 - **Strategy and phased roadmap:** [Portfolio Strategy & Roadmap (2026-11-10)](./docs/PORTFOLIO-STRATEGY-AND-ROADMAP-2026-11-10.md).
 - **Binding execution contract:** [Portfolio Operating Contract](./docs/PORTFOLIO-OPERATING-CONTRACT.md).
 - Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
-- Login-free review URL: https://portfolio.hcfind.com/ (`*.vercel.app` deployment URL may require Vercel SSO).
+- Historical review URL at the time: https://portfolio.hcfind.com/ (this domain now serves the older unapproved `1294634` candidate; do not use it for the current review).
 - Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
 - [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
 - Search-indexed/production publication remains gated; root `hcfind.com` untouched.
 
 - Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
-- Login-free review URL: https://portfolio.hcfind.com/ (`*.vercel.app` deployment URL may require Vercel SSO).
+- Historical review URL at the time: https://portfolio.hcfind.com/ (this domain now serves the older unapproved `1294634` candidate; do not use it for the current review).
 - Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
 - [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
 - Search-indexed/production publication remains gated; root `hcfind.com` untouched.

@@ -615,3 +615,36 @@ The prior 2026-11-10 local-source interaction smoke test is not transferred to t
 ### Superseded failed preview
 - `0c5ef28` / `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 200 but failed inline JavaScript parsing due to an extra closing brace in `systemArt()`.
 - The brace was removed in `f9cb2ce`; the corrected preview above is the only current owner-review candidate.
+
+## 2026-11-11 — Selective recovery content-correction preview
+
+### Exact artifact
+- Code commit: `ee6f8bdd5239b80cf8ea72f563ece351105906af`.
+- Vercel deployment: `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` (`READY`, preview target only).
+- Preview URL: https://ai-product-portfolio-lyrhy78kp-yu-ac3a.vercel.app/
+- Owner-accessible share URL was verified with HTTP 200; Vercel reports expiry at `2026-11-12 07:04:18`. The token is not stored in the repository.
+
+### Source-level verification
+- One inline application script in GitHub source; V8 syntax parse: **PASS**.
+- Three homepage Project cards and order: Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Four Case records and four matching detail payloads: **PASS**.
+- Nine contribution groups (Laya casebook plus eight selected upstream groups): **PASS**.
+- Homepage mount, renderer, navigation handler and standalone Laya route: **present**.
+- PCK and AWRP public repository evidence links are present in their case records.
+- The visible Laya contribution line no longer exposes the 47-authored / 85-reviewed-by query counts; it reports 40 personally authored merged PRs.
+- VIVIC unit-test note now distinguishes the eight pre-existing baseline failures from newly introduced failures.
+- Deployed homepage HTML exactly matches the GitHub source after removing Vercel's injected feedback script. The deployed Laya page exactly matches its GitHub source.
+
+### Hosted response checks
+- Homepage `/`: HTTP 200; embedded deployment ID matches `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`.
+- `/cases/laya/`: HTTP 200.
+- `robots.txt`: HTTP 200; `User-agent: * / Disallow: /`.
+- Homepage and Laya page responses: `X-Robots-Tag: noindex, nofollow, noarchive`.
+
+### Not verified
+- Real-browser visual / click E2E on this exact deployment.
+- Rendered layout, horizontal overflow and navigation at 1440px / 390px / 360px.
+- Actual VIVIC image `naturalWidth` / rendered state, and team showcase permission.
+- Owner review and public release approval.
+
+No production promotion, custom-domain reassignment, DNS change or search-indexing change was performed. The earlier 2026-11-09 / 2026-11-10 E2E results are not transferred to this exact deployment.
