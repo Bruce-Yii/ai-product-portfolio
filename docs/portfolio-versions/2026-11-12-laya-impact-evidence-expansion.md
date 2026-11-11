@@ -1,3 +1,7 @@
+**WITHDRAWN — NOT THE CURRENT PUBLIC PRESENTATION.** The additional CyberQ and JevBench material was useful as internal research, but adding it to the homepage and casebook overfilled the portfolio. Public-facing Laya copy is now one short paragraph; the casebook is restored to v2.4. Keep detailed evidence internal only. See [2026-11-12 Laya copy simplification](./2026-11-12-laya-copy-simplification.md).
+
+---
+
 # Portfolio iteration · 2026-11-12 · Laya impact evidence expansion
 
 ## Source and deployment
