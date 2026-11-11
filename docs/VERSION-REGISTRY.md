@@ -7,6 +7,16 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ## 1. Current authoritative decision
 
+### Additional withdrawn preview — `84f8773` (do not share)
+
+- Code commit: `84f8773f3eabe6e79806d4c884c15707cb07b783`.
+- Branch at deployment: `portfolio/phase3-content-review-2026-11-10`.
+- Vercel deployment: `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE`.
+- Preview host: https://ai-product-portfolio-nf50lz2tc-yu-ac3a.vercel.app/.
+- Direct hosted verification: HTTP 200; deployment ID matches; the homepage contained owner-prohibited copy; noindex headers remained enabled.
+- This historical deployment is **WITHDRAWN** and must never be shared. The branch later advanced to `1294634`, which removed that copy; do not confuse the later branch head with this immutable deployment.
+
+
 ### Current corrected internal QA preview — not owner-review-ready
 
 - Sole active work branch: `portfolio/owner-feedback-rewrite-2026-11-11`.
@@ -122,7 +132,7 @@ Nine branches were returned at the audit. All returned `protected: false`.
 | `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
 | `portfolio/owner-feedback-rewrite-2026-11-11` | `62a551a` | Sole active work branch; corrected source is deployed as internal QA preview `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; visual/click QA still pending |
-| `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite candidate |
+| `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite line; later HEAD removed the prohibited copy, but historical commit `84f8773` / deployment `dpl_6Jf7...` is withdrawn |
 | `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line |
 | `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line |
 | `portfolio/modular-mainline-2026-11-09` | `063744c` | Historical modular line |
@@ -155,7 +165,7 @@ The active branch may advance through documentation-only governance commits afte
 
 ## 5. Permanent owner content prohibition
 
-The historical self-praise / test slogan is permanently prohibited in this portfolio. It must not appear in any current page, preview, screenshot, metadata, source comment, release note or derived asset. Historical commits remain immutable audit records only; they do not authorize reuse. The static source validator enforces the ban. The `ee6f8bd` / `dpl_6kq7...` candidate is withdrawn and must never be shared again.
+The historical self-praise / test slogan is permanently prohibited in this portfolio. It must not appear in any current page, preview, screenshot, metadata, source comment, release note or derived asset. Historical commits remain immutable audit records only; they do not authorize reuse. The static source validator enforces the ban. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq7...` candidates are both withdrawn and must never be shared again.
 
 
 ### Version-recording rule

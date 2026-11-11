@@ -124,3 +124,10 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Homepage and Laya route HTTP checks, noindex / robots, deployment identity, source parity and static invariants pass.
 - Browser visual/click E2E and rendered viewport/image checks remain pending. Do not distribute a share link or call this owner-review-ready.
 - The prior `ee6f8bd` / `dpl_6kq...` candidate is withdrawn; preserve it only as immutable audit history.
+
+
+### Additional withdrawn historical preview — 2026-11-11
+
+- Commit `84f8773f3eabe6e79806d4c884c15707cb07b783` produced deployment `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE` on `portfolio/phase3-content-review-2026-11-10`.
+- The hosted homepage contained owner-prohibited copy. This deployment is withdrawn; preserve only as immutable audit history.
+- The later branch head `1294634` removed the wording, but that does not retroactively validate the earlier deployment.

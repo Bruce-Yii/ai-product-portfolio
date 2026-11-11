@@ -46,3 +46,8 @@ The later `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` deployment is withdrawn
 - Source syntax, homepage project order, route invariants, hosted HTTP responses, deployment identity, noindex / robots and exact homepage source parity pass.
 - Browser visual/click E2E, responsive viewport rendering and image rendering remain pending. This is not yet an owner-facing review candidate.
 - The previous `ee6f8bd` deployment remains withdrawn and must not be shared.
+
+
+## Additional historical deployment withdrawal
+
+The earlier commit `84f8773f3eabe6e79806d4c884c15707cb07b783` produced Vercel deployment `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE` on `portfolio/phase3-content-review-2026-11-10`. Its hosted homepage contained owner-prohibited copy. Mark it WITHDRAWN and never share it. The later `1294634` source removed the wording; the immutable earlier deployment remains invalid for review.

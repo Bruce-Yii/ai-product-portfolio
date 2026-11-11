@@ -681,3 +681,12 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Rendered 1440px / 390px / 360px layout and image naturalWidth checks not yet performed.
 - This is an internal QA candidate, not owner-review-ready. Do not distribute a share link or claim full acceptance until remaining checks pass.
 - No production promotion, alias reassignment, DNS change or indexing change occurred.
+
+
+## 2026-11-11 — Earlier prohibited-copy deployment withdrawal
+
+- Source commit: `84f8773f3eabe6e79806d4c884c15707cb07b783`.
+- Branch at deployment: `portfolio/phase3-content-review-2026-11-10`.
+- Vercel deployment: `dpl_6Jf7WMaV8rETHXAchZUKXtky7HQE`.
+- Direct hosted verification: HTTP 200; HTML deployment ID matched; the homepage contained owner-prohibited copy; `X-Robots-Tag: noindex, nofollow, noarchive` remained enabled.
+- Status: **WITHDRAWN**. Do not share or reuse this deployment. The later `1294634` commit removed the wording, but the historical deployment remains immutable and invalid for review.
