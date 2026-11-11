@@ -972,6 +972,8 @@ body {background:var(--paper);color:var(--ink)}
 .laya-mark{width:38px;height:38px;border:1px solid rgba(255,255,255,.42);border-radius:50%;display:grid;place-items:center;font:italic 24px var(--serif);color:#F0EEE8}
 .laya-feature__main h2{font-size:clamp(30px,3.5vw,48px);line-height:1.22;letter-spacing:-.045em;font-weight:500;max-width:680px}
 .laya-feature__main>p{font-size:13px;line-height:1.95;color:#C4C9C0;max-width:660px;margin-top:18px}
+.laya-feature__main>.laya-feature__project-intro{margin-top:0}
+.laya-feature__project-intro a{color:#E8B4A3;text-decoration:underline;text-underline-offset:2px}
 .laya-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;margin-top:34px;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);padding:18px 0}
 .laya-metrics>div{display:flex;flex-direction:column;gap:5px;padding:0 14px;border-left:1px solid rgba(255,255,255,.18)}
 .laya-metrics>div:first-child{padding-left:0;border-left:0}
@@ -1155,7 +1157,8 @@ body {background:var(--paper);color:var(--ink)}
       <div class="laya-feature">
         <div class="laya-feature__main">
           <div class="mono eyebrow">02 / OPEN-SOURCE FLAGSHIP</div>
-          <div class="laya-feature__identity"><span class="laya-mark">L</span><span class="mono">LAYA / DECISION SYSTEMS</span></div>
+          <div class="laya-feature__identity"><span class="laya-mark">L</span><span class="mono">LAYA / NON-AUTOREGRESSIVE DECISION ENGINE</span></div>
+          <p class="laya-feature__project-intro">Laya 是 Convai Innovations 开源的多语言非自回归 System 1 决策引擎，支持 100+ 种语言，可在单次前向传播中对文本或结构化状态完成选择、评分与是/否判断，并返回结构化结果与概率。它于 2026 年 9 月 18 日开源后迅速走红：<a href="https://trendshift.io/repositories/244591" target="_blank" rel="noopener noreferrer">Trendshift 总榜连续四天第 1</a>，<a href="https://gittrend.io/weekly/2026-W39" target="_blank" rel="noopener noreferrer">GitTrend 周榜第 1、单周新增约 2.23 万 Stars</a>，<a href="https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md" target="_blank" rel="noopener noreferrer">OpenGithubs 9 月 Star 增长月榜第 3</a>；截至 11 月 10 日，<a href="https://rising.dev/gh/NandhaKishorM/laya/" target="_blank" rel="noopener noreferrer">已有 35,341 Stars、3,170 Forks</a>，<a href="https://www.hunteralphahub.com/laya/threads" target="_blank" rel="noopener noreferrer">Hacker News 讨论在 9 月 27 日快照中达到 1,349 points / 316 comments</a>。</p>
           <h2 id="laya-feature-title">让开发者敢于把决策模型用进真实产品。</h2>
           <p>持续参与 Laya 的产品方向讨论、方案评审与实现协作，围绕模型理解、评测证据、渐进采用和开发者集成，推动产品能力持续演进。</p>
           <div class="laya-metrics">
@@ -1503,8 +1506,8 @@ const VERIFIED_CONTRIBUTIONS = [
   {
     "number": "01",
     "name": "Laya",
-    "repoIntro": "非自回归 System 1 决策引擎，为文本提供分类、评分、选择与路由能力。",
-    "stars": 35287,
+    "repoIntro": "多语言非自回归 System 1 决策引擎，支持 100+ 种语言的结构化选择、评分与是/否判断。",
+    "stars": 35341,
     "kind": "CASEBOOK",
     "title": "让决策模型从一次输出走向可验证、可控、可采用",
     "detail": "独立案例册 · 40 个本人提交的 PR 已合并",
