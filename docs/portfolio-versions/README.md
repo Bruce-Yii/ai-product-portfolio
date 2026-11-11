@@ -1,6 +1,17 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
+## 2026-11-12 · Laya media coverage and benchmark evidence expansion
+
+- Website artifact: `96a2c02ad396a4c95f22030d54259f59a8001d75`.
+- Preview: `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` · READY · https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/
+- Added CyberQ's dated first-week growth snapshot (23,092 Stars / 1,985 Forks) to the homepage and Laya casebook.
+- Added JevBench v1.4.2.2 rank #43 / score 30.3 (2026-09-29) to the collapsed benchmark context; the S1MB and task-fine-tuned typed-decisions results remain separately scoped.
+- Bumped the standalone Laya casebook to v2.6; preserved homepage project order, all existing project routes and noindex.
+- Source-level checks passed. Direct hosted page extraction and rendered visual/click QA remain pending.
+- Full record: [2026-11-12 Laya impact evidence expansion](./2026-11-12-laya-impact-evidence-expansion.md).
+
+
 ## 2026-11-12 · Laya global momentum and benchmark context
 
 - Website artifact: `edaf0c593486ff782899e3b171b26e163ea16a6d`.
