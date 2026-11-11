@@ -119,11 +119,11 @@ Contributions are grouped by the product problem they improve, with the source P
 - QwenPaw — preserve fast path input while supporting multi-directory workspaces.
 - FunASR — align speech timestamps with utterance and punctuation boundaries.
 - dsh-market — let users dismiss an exception notice without pretending the plugin is repaired.
-- Google ADK — investigate partial/final event semantics; RFC and tests-only Draft are not merged.
+
 
 ## Contribution mini-case presentation
 
-The unified open-source contribution index is not a PR leaderboard and must not become a set of unrelated standalone project pages. Each selected upstream group is a compact product mini-case with four parts:
+Google ADK's unmerged RFC / tests-only Draft remains internal research and is excluded from the current public showcase. The unified open-source contribution index is not a PR leaderboard and must not become a set of unrelated standalone project pages. Each selected upstream group is a compact product mini-case with four parts:
 
 1. **Product problem** — the user/developer task or workflow that failed.
 2. **Product judgment** — the rule, state, boundary, or experience decision that addresses the root problem.
@@ -136,7 +136,7 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 
 - Development branch: `portfolio/v2-information-architecture`.
 - Current website source and aligned documentation commit: `a54baf3aad04510d7be14b2784a4d0b238b9b310`.
-- Current website source includes three selected Project cards, four Case records, one standalone Laya casebook, and eight grouped open-source contribution entries (including one explicitly unmerged Google ADK proposal).
+- Current website source includes three selected Project cards, four Case records, one standalone Laya casebook, and seven selected public open-source contribution groups. Google ADK's unmerged proposal is excluded from the public showcase.
 - V1 freeze branch: `freeze/portfolio-v1-2026-11-09`.
 - Production aliases `hcfind.com` and `www.hcfind.com` remain on frozen V1 deployment `dpl_DU86D71ntVNtihTr4spaUQZBXETr` as last verified.
 - No DNS or nameserver changes.
@@ -155,9 +155,9 @@ The homepage keeps the contribution index compact. The Work page adds the fuller
 ## Verification
 
 - Four main Case records map to four Case detail payloads.
-- Three homepage Project cards map to VIVIC, AWRP × Linear, and Personal Context Keyboard.
+- Three homepage Project cards map to Personal Context Keyboard, VIVIC, and AWRP × Linear.
 - Laya remains a separate flagship casebook.
-- Eight open-source contribution groups are present; Google ADK is explicitly not merged.
+- Seven selected public open-source contribution groups are present; Google ADK's unmerged research is excluded from the public showcase.
 - Make Again 2.0, Agent Evaluation Lab, EvalScope, and standalone Cherry/dsh case pages are absent from public source.
 - AWRP has a dedicated four-object workflow visual and a non-ranking AWRP / Linear × Notion / DeepSeek comparison.
 - Personal Context Keyboard has a dedicated five-layer architecture visual.
