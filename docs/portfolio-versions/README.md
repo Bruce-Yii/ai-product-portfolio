@@ -1,7 +1,19 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
-## 2026-11-12 · Laya explicit decision-model positioning (current)
+## 2026-11-12 · Laya definition-first copy (current)
+
+- Website source: `5f4a179922f5296699cd64fcbea0d5adaaf080a5`.
+- Preview: `dpl_F8Gy5ZpsGNuePwVd5bbgWSzEuynW` · READY · https://ai-product-portfolio-npu1vah0z-yu-ac3a.vercel.app/
+- First sentence immediately defines Laya as an open-source System 1 decision model.
+- Second sentence explains the non-autoregressive distinction and decision outputs.
+- Final sentence communicates global open-source popularity.
+- Homepage remains one paragraph; casebook remains v2.4 with no new research section.
+- Static source checks passed; browser visual / click E2E and responsive screenshot checks are not claimed.
+- Full record: [2026-11-12 Laya definition-first](./2026-11-12-laya-definition-first.md).
+
+
+## 2026-11-12 · Laya explicit decision-model positioning — superseded by definition-first order
 
 - Website source: `94055a361162ca59512090060ac296f09332c4c0`.
 - Preview: `dpl_5DutEtCKxs6guVWjRqMd5ARa7ozv` · READY · https://ai-product-portfolio-n1o8l66fy-yu-ac3a.vercel.app/
