@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `4298428bebd9db575d399968c0ad09617ff82185`; current Vercel Hobby Preview: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/ (public, no login). Homepage and Laya routes return HTTP 200; noindex and robots blocking remain enabled. Browser visual/click E2E and responsive/image QA remain in progress. Historical branches are frozen snapshots, not active workstreams.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `faf9a528477557f4fded4c94020af31473973201`; current Vercel Hobby Preview: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/ (public, no login). Homepage and Laya routes return HTTP 200; noindex and robots blocking remain enabled. Content clarity pass is deployed; browser visual/click E2E and responsive/image QA remain in progress. Historical branches are frozen snapshots, not active workstreams.
 
 A static, self-contained portfolio website for Bruce Yii.
 
@@ -34,13 +34,6 @@ The HTML application code/styles are intentionally self-contained; sourced VIVIC
 - Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
 - [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
 - Search-indexed/production publication remains gated; root `hcfind.com` untouched.
-
-- Source work branch: `portfolio/v2.3-real-assets-2026-11-10` (v2.2 freeze preserved).
-- Historical review URL at the time: https://portfolio.hcfind.com/ (this domain now serves the older unapproved `1294634` candidate; do not use it for the current review).
-- Media: five real historical screenshots, dated 2026-11-01, with provenance in [assets/vivic/README.md](./assets/vivic/README.md); never present them as screenshots of the 2026-11-05 backend release.
-- [v2.3 QA and evidence review](./docs/portfolio-reviews/2026-11-10-v2.3.md) and [version history](./docs/portfolio-versions/README.md).
-- Search-indexed/production publication remains gated; root `hcfind.com` untouched.
-
 
 ## Portfolio operating contract
 

@@ -20,14 +20,15 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Website source commit: `4298428bebd9db575d399968c0ad09617ff82185`.
-- Vercel deployment: `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx` (`READY`, target `null`, Preview only).
-- Public no-login URL: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/.
+- Website source commit: `faf9a528477557f4fded4c94020af31473973201`.
+- Vercel deployment: `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp` (`READY`, target `null`, Preview only).
+- Public no-login URL: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/.
 - Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated HTTP access was verified.
-- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`; hero remains neutral; prohibited copy is absent.
+- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp`; neutral hero and permanent copy prohibition both verified.
+- Content verification: PCK is explicitly Android-first / Windows target; AWRP separates executed prototype, current workflow and G0–G2 product/design docs; Laya homepage emphasizes 40 merged PRs, four product systems and eight selected stories. The 10,394 additions metric remains in the deep casebook with its count definition.
 - Indexing protection: both page routes carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`.
 - Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification. The preview is available to open but is not yet a final acceptance claim.
-- Previous same-source preview `dpl_G1auBCQmXiN4gphb2n9CirZhpL55` was created from the former branch ref and is superseded by this `main` deployment. Earlier `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` is also superseded.
+- Previous preview `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx` is superseded by this deployment; earlier preview IDs remain historical/superseded.
 - No custom-domain alias, production promotion, DNS or indexing change is authorized.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
@@ -128,7 +129,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 | Branch | Snapshot commit | Operational status |
 |---|---:|---|
-| `main` | `HEAD` (docs-only governance commits may advance; website source `4298428`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
+| `main` | `HEAD` (docs-only commits may advance; website source `faf9a52`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
 | `portfolio/owner-feedback-rewrite-2026-11-11` | `4298428` | Frozen duplicate pointer retained for history; do not continue work here. |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Historical pre-consolidation main snapshot; retained so the former default-branch history remains reachable. |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze. |
@@ -140,7 +141,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. No website redeployment is needed for docs-only changes.
+`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `faf9a528477557f4fded4c94020af31473973201`; the current Vercel Preview is `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp`. No website redeployment is needed for docs-only changes.
 ## 4. Operating rules
 
 1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.
@@ -153,14 +154,15 @@ Historical branch refs are intentionally preserved as snapshots; they are not co
 8. **Record each website deployment** with exact source commit, deployment ID, URL, HTTP/route checks, noindex status and remaining QA.
 9. **Historical refs are snapshots:** do not resume work on old branches. Keep their history; only `main` advances.
 10. **No duplicate review links:** provide only the latest verified public no-login Preview URL.
-## 5. Pending verification
+## 5. Current operating state
 
-- Continue using explicit commit-pinned preview deployments; do not rely on automatic deployments until the Vercel Git integration and production-branch configuration are independently verified.
-- Add GitHub branch protection for the default branch through an explicitly reviewed administrative change; it is not currently enabled.
-- Do not claim `1294634`, `f9cb2ce` or the current `ee6f8bd` candidate has passed browser visual / click E2E until the exact deployment is independently tested.
-- Do not treat the Phase 3 content package or Phase 4 IA draft as owner-frozen; their Notion status remains Draft / Provisional.
+- The Vercel team is on the Hobby plan. Project SSO, password and trusted-IP protection are disabled; the current Preview URL is publicly accessible without login.
+- A Vercel Ignored Build Step allows Git deployments from `main` only; pushes from other branches are skipped. Website iterations are explicitly deployed from an exact `main` Commit as Preview, never Production.
+- GitHub branch protection is not configured. Do not assume it exists or introduce parallel branch workflows.
+- Browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification remain the next QA work for the current preview.
+- Phase 3 / Phase 4 drafts remain reference inputs, not a reason to restart research or require repeated owner review. Continue with concrete incremental website improvements.
 
-## 5. Permanent owner content prohibition
+## 6. Permanent owner content prohibition
 
 The historical self-praise / test slogan is permanently prohibited in this portfolio. It must not appear in any current page, preview, screenshot, metadata, source comment, release note or derived asset. Historical commits remain immutable audit records only; they do not authorize reuse. The static source validator enforces the ban. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq7...` candidates are both withdrawn and must never be shared again.
 

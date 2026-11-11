@@ -2,7 +2,7 @@
 
 ## Authoritative current state — 2026-11-11
 
-The only active source line is GitHub `main`. Current website source commit: `4298428bebd9db575d399968c0ad09617ff82185`. Current public Vercel Hobby Preview: https://ai-product-portfolio-a8fr6p2u4-yu-ac3a.vercel.app/ (`dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`, READY, Preview only, no login). Homepage and Laya routes return HTTP 200; deployment identity matches; noindex and robots blocking remain enabled. Browser visual/click E2E, responsive breakpoints and image rendering remain pending. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq7...` previews are withdrawn. `portfolio.hcfind.com` is not the review URL. No domain alias, production target or indexing change is authorized.
+The only active source line is GitHub `main`. Current website source commit: `faf9a528477557f4fded4c94020af31473973201`. Current public Vercel Hobby Preview: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/ (`dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp`, READY, Preview only, no login). Homepage and Laya routes return HTTP 200; deployment identity matches; noindex and robots blocking remain enabled. Content clarity pass is deployed. Browser visual/click E2E, responsive breakpoints and image rendering remain pending. The `84f8773` / `dpl_6Jf7...` and `ee6f8bd` / `dpl_6kq...` previews are withdrawn. `portfolio.hcfind.com` is not the review URL. No domain alias, production target or indexing change is authorized.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

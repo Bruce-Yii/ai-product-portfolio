@@ -147,8 +147,12 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 
 ## 2026-11-11 — Content clarity pass
 
-- Website source commit: pending exact mainline commit read-back.
+- Website source commit: `faf9a528477557f4fded4c94020af31473973201`.
 - Scope: sharpened homepage project descriptions and maturity labels; clarified PCK as Android-first / Windows target; presented AWRP G0–G2 as completed product/design documentation without implying product code exists; shortened delivery-boundary copy so it explains what the evidence proves rather than listing every outstanding gate.
 - Laya homepage proof now leads with 40 personally authored merged PRs, four product systems and eight selected product stories. The 10,394 additions metric remains in the deep casebook with its independent-count explanation; it is no longer a homepage headline.
 - Hero proof cue now distinguishes personal product work, team Agent delivery and upstream collaboration.
 - No new project, page, route, navigation item, custom-domain change, Production promotion or indexing change.
+- Vercel Hobby Preview: `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/.
+- Hosted checks: homepage and Laya casebook HTTP 200; deployment ID matches the homepage response; project SSO/password/trusted-IP protection disabled; both routes noindex; `robots.txt` blocks crawling.
+- Static source checks: one inline script parses; selected project order remains PCK → VIVIC → AWRP × Linear; prohibited copy absent; PCK platform scope and Laya metric hierarchy verified.

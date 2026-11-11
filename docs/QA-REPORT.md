@@ -723,3 +723,30 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Laya homepage emphasizes merged collaboration and product systems; the 10,394 additions count remains a secondary deep-case metric with explicit scope.
 - Updated static validator to guard PCK platform wording and Laya metric hierarchy.
 - Browser visual/click and responsive QA remain separate checks after deployment.
+
+
+## 2026-11-11 — Content clarity pass deployment verification
+
+### Source and deployment
+- Website source commit: `faf9a528477557f4fded4c94020af31473973201` on GitHub `main`.
+- Vercel Hobby Preview: `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/.
+- Deployment Git metadata confirms the exact source SHA and `main` ref.
+
+### Hosted checks
+- Homepage: HTTP 200; embedded deployment ID matches; neutral `AI Product Manager.` hero; prohibited copy absent.
+- Laya casebook `/cases/laya/`: HTTP 200; 10,394 additions metric and its separate-count explanation remain in the deep casebook.
+- Homepage and Laya responses carry `X-Robots-Tag: noindex, nofollow, noarchive`.
+- `/robots.txt`: HTTP 200; `User-agent: * / Disallow: /`.
+- Project SSO, password and trusted-IP protections are disabled; direct unauthenticated access returned HTTP 200 without a login page.
+
+### Static source checks
+- Exactly one inline application script; syntax compilation passed.
+- Homepage project order remains Personal Context Keyboard → VIVIC → AWRP × Linear.
+- PCK is labelled Android-first / Windows target.
+- Laya homepage presents 40 merged PRs, four product systems and eight selected stories; no 10K+ code-volume headline remains on the main homepage.
+- Permanent prohibited wording absent.
+
+### Remaining QA
+- Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and independent image-render verification remain pending.
+- No custom-domain alias, production target, DNS or indexing change occurred.
