@@ -79,6 +79,7 @@ The following details support internal fact-checking, engineering review, and re
 - OpenGithubs September star-growth monthly list: #3, +24,592 Stars.
 - GitTrend September star-growth monthly list: #8, approximately +29K Stars. Different third-party dataset and counting window; do not merge values.
 - GitNova 2026-09-21 daily tracker: #1, +4,318 Stars, proprietary breakout magnitude 9.9 (not a model score).
+- CyberQ 2026-09-25 weekly report: first-week snapshot 23,092 Stars / 1,985 Forks; describes Laya as the week's strongest-growing repository. This is a dated media report, not a current counter.
 - Hacker News launch thread: 1,363 points / 319 comments in the 2026-11-12 current read; separate 2026-09-27 archive snapshot was 1,349 / 316.
 - Hugging Face Trending Models #1 on 2026-10-02 is reported by Startup Fortune; label it as a media report, not a preserved official HF historical leaderboard snapshot.
 - Vercel AI Gateway: official Vercel changelog dated 2026-10-01; Laya available free for one month through 2026-10-31 via Boundless. This is a model-catalog / inference distribution listing, not a commercial partnership or endorsement.
@@ -89,6 +90,7 @@ The following details support internal fact-checking, engineering review, and re
 **Decision-model benchmark research — internal interpretation:**
 - No single official, industry-wide decision-model leaderboard was found. Distinguish repository growth rankings, model-hub trending lists, social discussion and model-quality benchmarks.
 - S1MB community benchmark snapshot published 2026-09-30: 23 models completed 137 benchmarks, 14,009 cases and 26,269 judgments. Ranks: `laya-typed-decisions` 19/23; base `laya` 20/23; `laya-multilingual` 21/23. This is a community benchmark, not a standardized industry certification.
+- JevBench third-party tracker: its 2026-09-29 v1.4.2.2 snapshot lists Laya at rank #43 with score 30.3 after a sealed re-score. The tracker records earlier version changes; this is a version-specific third-party benchmark, not an official universal ranking.
 - A separate 2,000-decision typed-decisions suite lists the task-fine-tuned Laya checkpoint at #2 (0.714 → 0.762 after held-out calibration); base Laya is lower. The fine-tuned checkpoint was trained on that suite, so this is task-specific, not a universal zero-shot ranking.
 - Public casebook includes a collapsed benchmark-context disclosure so a deep reader can distinguish popularity from model accuracy. Do not describe Laya as the world's best decision model or as #1 in model quality.
 - The correct portfolio story is a global open-source / developer-community breakout and an emerging System One ecosystem, not a blanket claim of technical performance leadership.
@@ -100,6 +102,8 @@ The following details support internal fact-checking, engineering review, and re
 - GitTrend September monthly list: https://gittrend.io/monthly/2026-09
 - OpenGithubs September monthly star-growth list: https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md
 - GitNova 2026-09-21 daily ranking: https://gitnova.dev/en/day/2026-09-21
+- CyberQ 2026-09-25 weekly report: https://cyberq.tw/2026/09/25/github-trends-weekly-report-vol-34/
+- JevBench third-party versioned tracker: https://tomrochette.com/agents/hybrid-execution/laya/
 - Hacker News original launch thread: https://news.ycombinator.com/item?id=49765348
 - Startup Fortune report about the Hugging Face Trending position: https://startupfortune.com/open-source-is-pulling-away-from-jev-laya-mukkunnoth/
 - Official Vercel AI Gateway announcement: https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31
