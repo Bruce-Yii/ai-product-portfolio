@@ -883,3 +883,17 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Vercel reports READY and confirms the exact Git commit.
 - Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
 - No production promotion, custom-domain change, DNS change or indexing change.
+
+
+## 2026-11-12 — Owner-selected Laya homepage copy
+
+- Website source commit: `00a5aff8cd322f86e20a70e16a2881d91abb4866` on GitHub `main`.
+- Vercel Preview: `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-132c98vcv-yu-ac3a.vercel.app/
+- Applied the exact Laya paragraph selected by the owner.
+- The paragraph opens with the explicit “开源 System 1 决策模型” category, contrasts non-autoregressive decision inference with token generation, then communicates global open-source popularity.
+- Trendshift and GitTrend references remain inline links.
+- Homepage remains one paragraph; Laya casebook remains v2.4; no additional research modules added.
+- Vercel reports READY and confirms the exact Git commit.
+- Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
+- No production promotion, custom-domain change, DNS change or indexing change.
