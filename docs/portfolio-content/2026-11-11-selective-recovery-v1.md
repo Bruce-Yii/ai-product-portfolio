@@ -65,11 +65,11 @@ The following details support internal fact-checking, engineering review, and re
 
 ## Laya public introduction
 
-**Public-facing homepage copy (2026-11-12 · current owner-approved version):**
+**Owner-selected homepage copy (2026-11-12):**
 
-> Laya 是一款支持 100+ 种语言的开源 System 1 决策模型。不同于逐 Token 生成文本的生成式模型，它采用非自回归方式，在一次前向推理中直接完成分类、评分和是/否判断，并输出结构化决策结果及对应概率。2026 年 9 月开源后，Laya 曾在 Trendshift 全球趋势榜连续多日位居第 1，并登上 GitTrend 全球周增长榜第 1，单周新增约 2.23 万 Stars。
+> Laya 是一款支持 100+ 种语言的开源 System 1 决策模型：不逐 Token 生成文本，而是通过一次非自回归推理直接完成分类、评分和判断。2026 年 9 月开源后，它迅速成为全球热门 AI 开源项目，曾连续多日登上 Trendshift 全球趋势榜首，并以单周约 2.23 万 Stars 的增长位列 GitTrend 全球周增长榜第一。
 
-The Trendshift and GitTrend references are linked inline. Keep this as one paragraph on the homepage. The first sentence must identify Laya as a **决策模型**; the paragraph order is product definition → technical distinction → global popularity.
+The Trendshift and GitTrend names are linked inline. This is the only public Laya popularity introduction. Keep it as one paragraph on the homepage; do not repeat the detailed research in the casebook.
 
 **Presentation boundary:** No Global Momentum section, ranking wall, metrics dashboard, ecosystem inventory or benchmark disclosure belongs in the portfolio presentation. Detailed rankings, source links, technical benchmark findings and caveats remain internal research only.
 
