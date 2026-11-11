@@ -1,15 +1,36 @@
-# VIVIC screenshot sources — portfolio preview (2026-11-10)
+# VIVIC media provenance
 
-These are optimized real interface screenshots copied from the owner's existing private `Bruce-Yii/vivic-portfolio-materials` case-study asset library. They were captured **2026-11-01** in local/online preview sessions. They are **not** screenshots of the 2026-11-05 back-end release and **must not** be used as a same-environment before/after visual comparison.
+The current portfolio preview uses official VIVIC website showcase images for product context. The source is pinned to an immutable Git commit.
 
-| Web asset | Original screenshot | What it represents |
-| --- | --- | --- |
-| `after-ui-8790-home.webp` | `assets/after-ui-8790-home.png` | VIVIC Control page with card |
-| `after-ui-8790-sectioncard.webp` | `assets/after-ui-8790-sectioncard.png` | VIVIC section card |
-| `card-todo.webp` | `assets/card-todo.png` | Todo-card presentation |
-| `card-meeting-minutes-display.webp` | `assets/card-meeting-minutes-display.png` | Meeting-minutes display |
-| `card-weekly-report.webp` | `assets/card-weekly-report.png` | Weekly-report card |
+- Official product website: https://edsionc.top/vivic/
+- Source repository: https://github.com/ECdison6227/vivic-canvas
+- Image directory: https://github.com/ECdison6227/vivic-canvas/tree/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images
+- Source README: https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md
+- Source commit: `9b8665a0b62a17e0eef94c403f2c2c583d484330`
+- Capture date recorded by source README: **2026-10-17**, desktop viewport 1600px.
 
-Optimization: resized to 960 px (600 px for weekly report) and converted to WebP; no fake UI elements or generated images. The original private repository has source references, accompanying captions, and related test summaries. These images do not by themselves prove later release functionality or production adoption.
+| Media ID | Source file | Use |
+|---|---|---|
+| M01 | `docs/images/hero.jpg` | Homepage card and case cover |
+| M03 | `docs/images/scene-cards.jpg` | Product scenarios |
+| M05 | `docs/images/two-windows.jpg` | Dual-window workflow |
+| M06 | `docs/images/editable-cards.jpg` | Editable task and goal cards |
+| M09 | `docs/images/time-and-reminders.jpg` | Time-based tasks and reminders |
 
-**Public-release gate stays closed.** The portfolio branch remains a noindex preview until the site owner explicitly approves publication; do not unconditionally make the branch the main/production site.
+These are official-site presentation captures, not live business metrics or evidence of the 2026-11-05 backend release.
+
+## Historical interface captures retained
+
+The following optimized WebP files were copied from the owner's existing private VIVIC portfolio-materials library and captured **2026-11-01** in local/online preview sessions:
+
+- `after-ui-8790-home.webp`
+- `after-ui-8790-sectioncard.webp`
+- `card-todo.webp`
+- `card-meeting-minutes-display.webp`
+- `card-weekly-report.webp`
+
+They are not screenshots of the 2026-11-05 backend release and must not be used as a same-environment before/after comparison. They remain retained as source material but are not the current showcase image set.
+
+## Publication boundary
+
+The portfolio remains a **noindex review preview**. Public release of VIVIC materials remains gated on explicit team showcase permission and privacy review, plus accurate personal/team contribution attribution.

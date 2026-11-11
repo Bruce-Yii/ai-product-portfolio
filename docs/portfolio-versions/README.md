@@ -72,3 +72,11 @@
 - The two URLs resolve to different deployment IDs. `portfolio.hcfind.com` currently serves the latter.
 - No website HTML, CSS, JavaScript, asset, route, DNS or Vercel alias was changed by this governance record.
 - Full mapping and operating rules: [VERSION-REGISTRY.md](../VERSION-REGISTRY.md).
+
+## 2026-11-11 — Selective recovery candidate
+
+- Based on owner-supplied `4f558b5`, selectively reusing reviewed improvements from `1294634`.
+- Restores project maturity and validation boundaries; restores VIVIC metrics; retains Laya metric correction.
+- Pins VIVIC official image sources to an immutable upstream commit and preserves historical screenshot provenance.
+- Full scope: [selective recovery version note](./2026-11-11-selective-recovery.md).
+- Deployment ID and hosted QA will be added to the Version Registry after preview verification.

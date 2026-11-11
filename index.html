@@ -1100,6 +1100,14 @@ body {background:var(--paper);color:var(--ink)}
 .media-insert__grid--2>.media-slot.has-asset{height:clamp(275px,26vw,400px)}
 .workflow-compare__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:720px){.media-insert__grid--2>.media-slot.has-asset{height:clamp(230px,62vw,330px)}.workflow-compare__grid{grid-template-columns:1fr}}
+/* 2026-11-11 owner review: restrained case typography and product architecture diagrams */
+.v9-case-head h1{font-size:clamp(38px,4.2vw,68px)!important;line-height:1.14!important;letter-spacing:-.05em!important;max-width:920px!important;margin-top:38px!important}.v9-case-head .latin{font-size:clamp(32px,3.8vw,60px)!important;line-height:1.06!important;margin-left:10%!important}.v9-case-head .case-intro{margin-top:42px!important;gap:44px!important}.v9-case-head .case-intro>p{font-size:clamp(18px,1.55vw,23px)!important;line-height:1.72!important}
+.case-editorial-section h2{font-size:clamp(31px,3.25vw,50px)!important;line-height:1.18!important;letter-spacing:-.045em!important;max-width:790px!important}.case-prose-lead{font-size:clamp(18px,1.55vw,23px)!important;line-height:1.72!important;letter-spacing:-.035em!important;max-width:760px!important;margin-top:25px!important}.case-editorial-copy{font-size:14px!important;line-height:1.95!important;max-width:700px!important}.case-intro-copy{font-size:14px!important;line-height:1.9!important}.case-outcome-big{font-size:clamp(34px,3.8vw,58px)!important;line-height:1.08!important}.case-next-v9 h2{font-size:clamp(24px,2.7vw,38px)!important;line-height:1.3!important}
+.demo-system--context .system-flow,.demo-system--workflow .system-flow{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin:30px 0 24px!important}.demo-system--context .system-flow button,.demo-system--workflow .system-flow button{height:auto!important;min-height:94px!important;padding:13px!important;gap:10px!important}.demo-system--context .system-flow strong,.demo-system--workflow .system-flow strong{font-size:10px!important;line-height:1.45!important;overflow-wrap:anywhere}.demo-system--context .system-flow button>span,.demo-system--workflow .system-flow button>span{font-size:9px!important}.demo-system--context .system-detail,.demo-system--workflow .system-detail{grid-template-columns:minmax(0,.45fr) minmax(0,1.55fr)!important;gap:18px!important}.demo-system--context .system-detail h3,.demo-system--workflow .system-detail h3{font-size:clamp(22px,2.2vw,31px)!important;line-height:1.28!important}.demo-system--context .system-detail p,.demo-system--workflow .system-detail p{font-size:12px!important;line-height:1.9!important}
+.context-pipeline{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr) 18px minmax(0,1fr) 18px minmax(0,1fr);align-items:center;gap:7px;border-top:1px solid #668476;margin-top:25px;padding-top:18px}.context-pipeline>div{min-width:0;padding:11px;background:rgba(230,238,229,.08);border:1px solid rgba(230,238,229,.2)}.context-pipeline strong,.context-pipeline small{display:block}.context-pipeline strong{font:600 9px var(--mono);color:#e6eee5}.context-pipeline small{font:10px var(--sans);line-height:1.5;color:#b4c9ba;margin-top:6px}.context-pipeline>i{text-align:center;color:#d5b79c;font-style:normal}.context-principle{margin-top:15px;color:#d5b79c;font-size:9px;letter-spacing:.06em;line-height:1.7}
+.workflow-operating-path{display:grid;grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr);gap:7px;align-items:stretch;margin-top:25px;padding-top:20px;border-top:1px solid #668476}.workflow-operating-path article{min-width:0;padding:12px;background:rgba(230,238,229,.08);border:1px solid rgba(230,238,229,.2)}.workflow-operating-path article span,.workflow-operating-path article strong,.workflow-operating-path article small{display:block}.workflow-operating-path article span{font-size:8px;color:#d5b79c}.workflow-operating-path article strong{font:600 12px var(--sans);color:#e6eee5;margin-top:8px}.workflow-operating-path article small{font-size:10px;line-height:1.5;color:#b4c9ba;margin-top:6px}.workflow-operating-path>i{text-align:center;align-self:center;color:#d5b79c;font-style:normal}.workflow-state-strip{margin-top:12px;padding:12px;background:rgba(230,238,229,.06);border:1px solid rgba(230,238,229,.18);display:grid;gap:7px}.workflow-state-strip>span{color:#d5b79c}.workflow-state-strip strong{font:600 9px/1.7 var(--mono);color:#e6eee5}.workflow-state-strip small{font-size:10px;line-height:1.6;color:#b4c9ba}.workflow-compare__grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.workflow-product-thesis{margin-top:14px;padding:13px 14px;border-left:2px solid #d5b79c;background:rgba(230,238,229,.06)}.workflow-product-thesis b{font:600 9px var(--mono);color:#d5b79c}.workflow-product-thesis p{font-size:11px;line-height:1.8;color:#e6eee5;margin:7px 0 0}
+.art-systems{background:#263a32;color:#e6eee5;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:30px!important;min-height:100%}.art-systems .annotation{position:relative;z-index:1;color:#b4c9ba}.system-art-flow{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:auto 0;padding:30px 0}.system-art-flow span{border:1px solid rgba(230,238,229,.42);padding:13px 14px;font:600 10px var(--mono);letter-spacing:.04em;color:#e6eee5}.system-art-flow i{font-style:normal;color:#d5b79c}.system-art-foot{position:relative;z-index:1;color:#d5b79c;font-size:9px;letter-spacing:.05em}.project-visual--image{padding:0!important;isolation:isolate}.project-visual--image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.project-visual--image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,25,22,.48),transparent 38%,transparent 58%,rgba(13,25,22,.55));pointer-events:none}.project-visual--image .project-visual__top,.project-visual--image .project-visual__foot{z-index:2;padding:14px 16px;color:#fff}
+@media(max-width:720px){.v9-case-head h1{font-size:clamp(32px,8vw,46px)!important;line-height:1.2!important;margin-top:27px!important}.v9-case-head .latin{font-size:clamp(29px,7.5vw,42px)!important;margin-left:0!important}.v9-case-head .case-intro{grid-template-columns:1fr!important;margin-top:28px!important;gap:16px!important}.v9-case-head .case-intro>p{font-size:18px!important;line-height:1.7!important}.case-editorial-section h2{font-size:clamp(27px,6.8vw,36px)!important;line-height:1.23!important}.case-prose-lead{font-size:18px!important;line-height:1.7!important}.case-editorial-section{padding-bottom:65px!important;margin-bottom:65px!important}.case-outcome-big{font-size:clamp(31px,8vw,44px)!important}.demo-system--context .system-flow,.demo-system--workflow .system-flow{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;margin:22px 0!important}.demo-system--context .system-flow button,.demo-system--workflow .system-flow button{min-height:82px!important;padding:11px!important}.demo-system--context .system-detail,.demo-system--workflow .system-detail{grid-template-columns:1fr!important;gap:12px!important}.demo-system--context .system-detail h3,.demo-system--workflow .system-detail h3,.demo-system--context .system-detail p,.demo-system--workflow .system-detail p,.demo-system--context .system-io,.demo-system--workflow .system-io{grid-column:1!important}.demo-system--context .system-detail-no,.demo-system--workflow .system-detail-no{font-size:27px!important}.context-pipeline{grid-template-columns:1fr 14px 1fr;gap:6px}.context-pipeline>i:nth-of-type(2){display:none}.workflow-operating-path{grid-template-columns:1fr 12px 1fr;gap:6px}.workflow-operating-path>i:nth-of-type(2){display:none}.workflow-compare__grid{grid-template-columns:1fr!important}.workflow-state-strip strong{font-size:8px!important}.case-role-grid{grid-template-columns:1fr!important;gap:10px!important}.case-scope-note{grid-template-columns:1fr!important;gap:10px!important}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1151,11 +1159,11 @@ body {background:var(--paper);color:var(--ink)}
           <h2 id="laya-feature-title">让开发者敢于把决策模型用进真实产品。</h2>
           <p>持续参与 Laya 的产品方向讨论、方案评审与实现协作，围绕模型理解、评测证据、渐进采用和开发者集成，推动产品能力持续演进。</p>
           <div class="laya-metrics">
-            <div><strong>47</strong><span>AUTHORED PRs</span></div>
-            <div><strong>40<span>/47</span></strong><span>MERGED</span></div>
-            <div><strong>85</strong><span>REVIEWED-BY MATCHES</span></div>
+            <div><strong>40</strong><span>MERGED PRS</span></div>
+            <div><strong>10K+</strong><span>LINES ADDED</span></div>
+            <div><strong>4</strong><span>PRODUCT SYSTEMS</span></div>
           </div>
-          <div class="laya-feature__note mono">35,287 GITHUB STARS · SNAPSHOT 2026-11-10 · PR / REVIEW COUNTS: 2026-11-08 (SEPARATE QUERIES)</div>
+          <div class="laya-feature__note mono">10,394 ADDED LINES ACROSS PR DIFFS · 40 MERGED PRS</div>
           <a class="laya-feature__link" href="./cases/laya/">打开 Laya 独立案例册 <span>↗</span></a>
         </div>
         <div class="laya-feature__systems">
@@ -1228,7 +1236,7 @@ body {background:var(--paper);color:var(--ink)}
         <div class="case-kicker mono"><span id="case-no"></span><span id="case-kind"></span></div>
         <h1 id="case-title"></h1><div class="latin" id="case-latin"></div>
         <div class="case-intro"><p id="case-lead"></p><div class="case-head-side"><span class="mono">WHAT YOU'LL SEE</span><p class="note" id="case-head-note">一页讲清一个具体的产品问题。</p><div id="case-team-links" class="case-team-links" hidden></div></div></div>
-      <div class="laya-casebook-cta" id="laya-casebook-cta" hidden><a href="./cases/laya/" target="_blank" rel="noopener noreferrer"><span class="mono">SPECIAL EDITION / LAYA CASEBOOK</span><strong>打开 Laya 独立案例册 <i>↗</i></strong><small>4 PRODUCT SYSTEMS · 8 CHAPTERS · 47 AUTHORED · 40 MERGED · 85 REVIEWED-BY MATCHES</small></a></div>
+      <div class="laya-casebook-cta" id="laya-casebook-cta" hidden><a href="./cases/laya/" target="_blank" rel="noopener noreferrer"><span class="mono">SPECIAL EDITION / LAYA CASEBOOK</span><strong>打开 Laya 独立案例册 <i>↗</i></strong><small>4 PRODUCT SYSTEMS · 8 CHAPTERS · 40 MERGED PRS · 10K+ LINES ADDED</small></a></div>
       </header>
       <div class="case-cover" id="case-cover" aria-label="案例封面"></div>
       <div class="case-edition-line mono"><span id="case-edition-type">SELECTED WORK / CASE FORMAT EXPERIMENT</span><span id="case-edition-disclaimer">预留图位，等待真实或授权说明性素材</span></div>
@@ -1255,7 +1263,7 @@ body {background:var(--paper);color:var(--ink)}
             <div class="media-insert" id="case-media-insert" aria-label="本案例待接入的素材"></div>
           </section>
           <section id="case-section-03" class="case-editorial-section case-outcome-section">
-            <div class="mono case-section-index">03 / THE CHANGE & EVIDENCE</div>
+            <div class="mono case-section-index">03 / PRODUCT VALUE & EVIDENCE</div>
             <h2 id="case-outcome-title">What changed, and what is proven.</h2>
             <div class="case-outcome-grid"><div class="case-outcome-big" id="case-outcome-statement"></div><div id="case-outcome-detail" class="case-outcome-detail"></div></div>
             <div id="case-role-panel" class="case-role-panel" hidden>
@@ -1266,7 +1274,7 @@ body {background:var(--paper);color:var(--ink)}
               </div>
               <p id="case-role-note" class="case-role-note"></p>
             </div>
-            <div id="case-metrics" class="case-metrics" hidden></div><div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">A NOTE ON THIS PROTOTYPE</span><p id="case-scope-copy">此页仅用于验证案例内容的表达方式。交互示意、占位文案和画面不代表任何具体项目的实际交付、数据或用户结果；接入真实案例后再替换。</p></div>
+            <div id="case-metrics" class="case-metrics" hidden></div><div class="case-source-link" id="case-source-link" hidden></div><div class="case-scope-note"><span class="mono" id="case-scope-label">DELIVERY / VALIDATION BOUNDARY</span><p id="case-scope-copy">各案例的交付阶段、验证范围和未完成 Gate 以当前页面标注为准；指标只证明明确列出的测试范围。</p></div>
           </section>
         </div>
       </div>
@@ -1299,18 +1307,18 @@ body {background:var(--paper);color:var(--ink)}
   </div>
 </aside>
 <script>
-// Generated from reviewed case packs. Do not edit manually.
+// Content source: docs/portfolio-content/2026-11-11-selective-recovery-v1.md. Keep embedded data aligned with that source; this static site has no content generator.
 const CASES = [
   {
     "id": "laya-decision-integrity",
     "num": "001",
     "type": "opensource",
-    "kind": "OPEN-SOURCE CASEBOOK · DEVELOPER PRODUCT SYSTEMS",
+    "kind": "OPEN-SOURCE CONTRIBUTION · PRODUCT SYSTEMS",
     "category": "AI 决策产品",
-    "name": "让 AI 决策从模型输出走向可信产品能力",
+    "name": "Laya：把模型能力转化为可采用的产品系统",
     "latin": "From output to adoption.",
-    "lead": "围绕 Laya 产品从模型能力到开发者真实采用的完整过程，持续参与产品方向讨论、方案评审、实现协作与上游演进，推动意图保真、决策可信、受控采用与开发者契约四组相互支撑的产品系统。",
-    "desc": "Laya · 四组产品系统与上游协作 · 47 authored / 40 merged · 85 reviewed-by matches",
+    "lead": "围绕 Laya 从模型能力到开发者采用的关键环节，持续参与产品方向讨论、方案评审、实现协作与上游演进，将分散的贡献组织为意图保真、决策可信、受控采用与开发者契约四组产品系统。",
+    "desc": "Laya · 四组产品系统 · 40 PRs merged · 10K+ lines added",
     "caps": [
       "产品系统设计",
       "上游协作",
@@ -1318,7 +1326,7 @@ const CASES = [
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "47 authored PRs · 40 merged · 85 reviewed-by matches",
+    "status": "40 PRs merged · 10K+ lines added",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": true,
@@ -1355,8 +1363,8 @@ const CASES = [
           "state": "public_record"
         }
       ],
-      "role": "截至 2026-11-08，GitHub 查询显示 47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 命中 reviewed-by:Bruce-Yii 查询。本人工作包括实现贡献、正式 Review、方向讨论与跨贡献者交接；维护者决定与本人贡献分开归属。",
-      "boundary": "GitHub 计数来自指定查询快照，不等于独立功能数量或业务成效；reviewed-by 查询与 authored PR 查询口径不同。没有据此声称官方 maintainer 身份或生产业务指标。"
+      "role": "持续参与 Laya 产品方向讨论、方案评审、实现提交、回归测试、正式 Review、文档和跨模块协作；本人提交的 40 个 PR 已被上游合并。",
+      "boundary": "四组产品系统分别解决输入语义保真、模型决策可信、渐进采用可控和开发者契约一致性；40 个合并 PR 与新增行数是独立贡献统计。"
     },
     "productQuestion": "应用团队需要哪些产品保障，才敢把决策模型从实验带进真实用户流程？",
     "featuredSummary": "Laya · 从意图保真、决策可信到受控采用，构建可验证的开发者产品契约。"
@@ -1365,58 +1373,62 @@ const CASES = [
     "id": "product",
     "num": "002",
     "type": "product",
-    "kind": "TEAM PRODUCT · PRODUCT DECISION & EXECUTION",
+    "kind": "TEAM PRODUCT · MULTIMODAL AGENT EXPERIENCE",
     "category": "多模态 Agent 产品",
-    "name": "VIVIC：多模态卡片助理",
-    "latin": "A multimodal assistant for everyday work.",
-    "lead": "VIVIC 是团队打造的多模态卡片助理，支持语音与文本交互。项目在苏客松 Hackathon 生活办公赛道获得第四名。我在比赛中与团队认识，赛后受邀加入；加入后接手既有产品，持续推进体验优化与 Agent 决策链路调整。我的工作从理解现有产品和团队目标开始，再围绕用户需求如何被理解、执行与反馈，推动产品主路径和系统分工收敛。",
-    "desc": "团队项目 · 苏客松生活办公赛道第四名 · 赛后加入并持续参与产品优化",
+    "name": "VIVIC：让自然语言意图变成可执行任务",
+    "latin": "From intent to trusted action.",
+    "lead": "VIVIC 是面向生活与办公场景的多模态 Agent 产品，支持语音与文本输入，并以卡片承载可执行任务。我在苏客松与团队相识，赛后受邀加入并接手产品优化，围绕意图理解、工具选择、执行授权与真实回执重构 Agent 主链。",
+    "desc": "团队产品 · 苏客松生活办公赛道第四名 · Agent 决策与执行体验",
     "caps": [
       "产品定义",
-      "Agent 体验",
+      "Agent 决策",
       "执行闭环"
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "后端部署与固定题集回归有记录 · 完整前端体验与真实用户效果待验证",
+    "status": "后端已部署 · 2026-11-05 线上固定 60 题 API 回归 59/60 · 前端完整体验仍有验证边界",
     "format": "CASE DRAFT / TEAM REVIEW",
     "media": [
       "M01",
       "M03",
       "M05",
-      "M06"
+      "M06",
+      "M09"
     ],
     "homeFeatured": true,
-    "featuredSummary": "让用户意图经过校验再执行，每个动作都有真实回执。",
-    "productQuestion": "当用户用自然语言表达目标时，系统如何理解意图、确认权限、执行动作并给出可信回执？"
+    "featuredSummary": "让用户表达的目标经过理解、校验与执行，最终回到真实结果。",
+    "productQuestion": "当用户用自然语言表达目标时，系统如何理解意图、选择正确对象、确认权限、执行动作并给出可信回执？"
   },
   {
     "id": "agent-workflow-governance",
     "num": "003",
     "type": "systems",
-    "kind": "AGENT WORKFLOW · PRODUCT SYSTEM DESIGN",
+    "kind": "AGENT WORKFLOW · PROJECT-FIRST SYSTEM DESIGN",
     "category": "Agent 工作流设计",
-    "name": "AWRP × Linear：Agent 执行工作流",
-    "latin": "From handoff protocol to product exploration.",
-    "lead": "从 AWRP 多 Agent 任务接力原型，到 Linear × Notion 的日常协作实践，我持续研究长期项目如何跨会话可靠推进。结合这些真实问题和 DeepSeek Super-agent 等公开实现，我已对独立 Agent Project OS 作出设计阶段 GO 判断。目前新产品仍在开发前准备：main 为 v0.3 文档基线，Draft PR #1 的 G0–G2 已完成，G3–G5 待推进，产品代码尚未实施。",
-    "desc": "AWRP 历史协议 · Linear 工作流实践 · Agent Project OS 设计 GO",
+    "name": "AWRP × Linear：让长期项目跨 Agent 连续执行",
+    "latin": "Project continuity across agents.",
+    "lead": "从手机/网页 ChatGPT 与本地 Agent 的协同问题出发，先验证 AWRP 接力原型，再将项目执行、长期知识和代码事实分别落到 Linear、Notion 与 GitHub，进一步形成 Project-first Agent OS 设计。",
+    "desc": "AWRP Relay · Linear × Notion · DeepSeek 架构研究 · Project-first Agent OS",
     "caps": [
-      "工作流产品设计",
-      "系统边界",
+      "任务系统设计",
+      "多 Agent 协同",
       "执行治理"
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "AWRP 历史原型 · Linear/Notion 工作流在用 · Agent Project OS 设计 GO、代码未开发",
+    "status": "AWRP 原型已执行 · Linear × Notion × GitHub 工作流在用 · Agent Project OS 设计阶段 GO，代码未开始",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": true,
     "editorial": {
       "decisions": [
-        "把长期 Project / Task 与单次 Run / Session 分开：Agent 可以更换，项目目标、责任与验收标准不能随会话丢失。",
-        "从真实工作流中识别重复基础设施：让 Linear 管理任务状态、Notion 管理长期语义、GitHub 管理外部事实；再判断统一产品真正需要自建的部分。",
-        "逐个对照竞品的对应功能子集，研究 DeepSeek 等第三方实现；成熟模块优先直接复用，而不是自行重写所有运行时和工作流能力。",
-        "Agent Project OS 已完成设计阶段 GO 判断，G0–G2 在 Draft PR 中形成开发前准备成果；技术冻结与 G3–G5 验收尚未完成。"
+        "Project 是长期身份，使用 canonical Project ID 与 aliases 归一化同一项目；背景、目标、决策和产物持续沉淀，不依赖某个聊天窗口。",
+        "研究与执行分离：ChatGPT 负责问题定义、研究、方案决策、派发和 Review；本地 Agent 负责实际执行；交接通过明确的 Task / Run 契约完成。",
+        "Project 拥有隔离的 Channel；Lane 允许同一工作端点内受控并行；Claim 以单写者与 generation 管理权威修改权，避免多个 Agent 争写同一状态。",
+        "Task 是跨执行轮次持续存在的目标，可拆成 Subtasks，携带 Goal、Scope、Non-scope、依赖、验收标准和进行态；Run 是一次执行尝试，Session 只是可替换的本地执行环境。",
+        "Event 以追加方式记录 DISPATCH、ACK、HANDOFF、REVIEW、RECONCILE；Artifact 指向 Commit、测试、文档和交付物，形成自动沉淀的项目历史。",
+        "对照 DeepSeek Super-agent 的 Source / Trigger / Eval、Mandate、Ticket / Assignment、Outbox / Effects 与 Recovery，吸收事件触发、授权、分配、副作用管理和失败恢复的设计价值。",
+        "产品化不重复建设成熟的任务、知识和 Agent Runtime：Linear 管理执行状态，Notion 保存长期语义，GitHub 保留代码事实；自研聚焦统一 Project identity、Agent 接入、注意力收件箱与证据化 Review。"
       ],
       "evidence": [
         {
@@ -1438,44 +1450,46 @@ const CASES = [
           "state": "public_record"
         }
       ],
-      "role": "我主导早期 AWRP 接力协议原型、Linear × Notion 的真实工作流改造，以及 Agent Project OS 的产品定位和关键架构取舍。G0–G2 属开发前的设计、研究与工程准备，不等于已交付运行中的统一 Agent 平台。",
-      "boundary": "AWRP 不是生产级平台；Linear × Notion 是现有工具协作，不是自主研发 SaaS。Agent Project OS 已作设计阶段 GO 判断，但产品代码、G3–G5 和真实用户效果均未交付。DeepSeek 是第三方对照，不作个人成果归因。"
+      "role": "主导 AWRP 原始接力协议的产品问题定义、对象模型与工作流设计，并推进 CLI / Schema / 事件链 / 执行轮次与并发治理；随后把真实使用反馈带入 Linear × Notion 项目治理，并主导 Agent Project OS 的产品定位和架构取舍。",
+      "boundary": "AWRP 是历史接力协议；Linear × Notion × GitHub 是现行真实协作分工；DeepSeek Super-agent 是第三方架构参照；Agent Project OS 是基于这些实践形成的统一产品设计。"
     },
-    "productQuestion": "当 Agent 和会话不断变化时，产品如何让长期任务保持连续，并由证据而非自报确认完成？"
+    "productQuestion": "如何让研究、执行、多个 Agent 与长期项目保持同一套目标、状态、责任和证据？"
   },
   {
     "id": "personal-context-layer",
     "num": "004",
     "type": "systems",
-    "kind": "PERSONAL CONTEXT · PRODUCT ARCHITECTURE",
+    "kind": "PERSONAL CONTEXT LAYER · LOCAL-FIRST PRODUCT SYSTEM",
     "category": "个人上下文产品",
-    "name": "Personal Context Keyboard",
-    "latin": "A personal context input layer for AI.",
-    "lead": "一个面向 Android 与 Windows 的个人上下文输入法项目。产品核心不是键盘皮肤，而是用户拥有的 Personal Context Layer：以输入作为高频入口，围绕可获授权的输入内容、来源与时间，组织可追溯、可修订、可授权使用的个人 Context，供不同 AI 工具复用。Android 侧已实现中文拼音输入、语音 / ASR 文件链路、Context Store / Recovery、Today / Smartbar、备份恢复与打包等主体模块；Windows TSF 与完整产品验收仍有明确 Gate。",
-    "desc": "个人项目 · Android + Windows · 个人上下文输入与跨 AI 复用",
+    "name": "Personal Context Keyboard：从输入入口到个人上下文层",
+    "latin": "A user-owned context layer for AI.",
+    "lead": "把输入从一次性文本变成用户拥有的长期上下文：原始事实可追溯，派生信息可纠错，授权范围由用户控制。",
+    "desc": "个人项目 · Local-first Personal Context Layer · 跨 AI / 跨设备",
     "caps": [
       "产品定位",
-      "个人数据主权",
-      "跨端上下文架构"
+      "本地上下文架构",
+      "AI Gateway"
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "Android 主体实现接近完成 · 产品验收 0 · Windows TSF / 真实设备 / 正式发布 Gate 待完成",
+    "status": "Android 主体实现接近完成 · 正式产品验收与部分平台 Gate 待完成",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": false,
     "editorial": {
       "decisions": [
-        "把输入法定位为 Sensor，而不是 Context Core；Android 与 Windows 都只是经授权的信息入口。",
-        "先保存带来源与时间的 Raw Facts；关系、事件和主题是可重建的派生结构，不覆盖原始事实。",
-        "模型整理结果必须允许用户确认、纠错与撤回；推断不能自动升级为用户事实。",
-        "AI Gateway 只向外部模型提供用户明确授权的上下文范围，并保留来源可追溯性。"
+        "键盘是高频 Sensor，不是 Context Core；Android、Windows、剪贴板与授权的应用上下文都是可替换入口。",
+        "Raw Facts 是权威事实源，保留正文、编辑变化、时间顺序、应用/文档来源和设备信息；派生摘要不能覆盖原始记录。",
+        "Local Context Core 先建立 Temporal Spine 与 Evidence Slices，再进行关键词、语义和时间召回；模型只处理当前任务授权的最小证据包。",
+        "语义层把事实组织为 Event、Thread、RELATED_ONLY 或 UNORGANIZED，并区分计划/完成、本人意图/引用内容、否定和后续修订。",
+        "有限补证 Agent 与 Durable Orchestrator 负责受控补证、增量触发、幂等、预算、checkpoint、重试和恢复；Validator 校验来源、时间、冲突、依赖与版本后发布 Derived Context。",
+        "用户确认、纠错、合并、拆分、忽略和撤回拥有最高权威；Unified AI Gateway 按任务授权输出 Context Pack，Device Sync 独立处理跨设备同步。"
       ],
       "evidence": [],
-      "role": "本人负责产品定位、用户价值定义、跨端架构、关键产品决策、工程推进和验收协调；部分原型与工程执行由 Agent 协助完成，具体代码归属以仓库 Commit / 文件记录为准。",
-      "boundary": "主体 Android 实现已接近完成，但不等于正式产品验收。可核对的局部回归包括中文输入 JVM 70/70、模拟器设备测试 12/12、语音入口文件喂入与 IME composing/commit 链路 20/20；整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。arm64 原生库已随包但运行时未测；Windows TSF 资格检查 BLOCKED；真实设备、真实麦克风整链、生产签名与商店发布仍未完成。"
+      "role": "主导产品定位、目标用户与需求定义、跨端 Sensor 架构、Raw / Derived 数据模型、本地 Context Core、持久编排、用户控制和统一 AI Gateway 设计，并推进 Android 端 IME、Context Store、Recovery、Today / Smartbar、语音和搜索等核心模块。",
+      "boundary": "Raw Facts 是权威事实源；Derived Context 是带证据、依赖和版本的可重建视图；用户的确认、纠错和撤回拥有最高权威；模型与 Provider 只消费授权上下文。"
     },
-    "productQuestion": "用户的事实、偏好与任务上下文，如何跨设备和 AI 工具持续保留，同时由用户掌控？"
+    "productQuestion": "如何把用户实际输入沉淀为由用户拥有、可追溯、可修订并可跨 AI 使用的个人上下文？"
   }
 ];
 const VERIFIED_CONTRIBUTIONS = [
@@ -1609,68 +1623,68 @@ const VERIFIED_CONTRIBUTIONS = [
 const MEDIA_SPEC = {
   "M01": {
     "id": "M01",
-    "name": "VIVIC · Control 工作台",
+    "name": "VIVIC · 官网首页",
     "role": "product-editorial-hero",
-    "topic": "2026-11-01 的真实 Control 工作台截图，展示当时的卡片使用界面",
-    "kind": "真实产品截图 / 历史界面",
-    "ratio": "16:10",
-    "size": "960×600",
+    "topic": "VIVIC 官方网站首页展示的产品主张、产品形态与品牌视觉",
+    "kind": "官网公开展示素材 / 产品界面",
+    "ratio": "AUTO",
+    "size": "1600px desktop capture",
     "priority": "P0",
-    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
+    "source": "https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md · docs/images/hero.jpg",
     "reuse": [
-      "Home 精选主视觉",
-      "Work 作品预览"
+      "Home 项目卡片",
+      "VIVIC 案例封面"
     ],
-    "status": "sourced_historical_capture",
-    "notes": "只展示历史产品形态，不冒充 11-05 版本前端，也不作为同环境前后对比。"
+    "status": "official_site_capture",
+    "notes": "官方仓库 README 记录该图来自 VIVIC 官网首页 #top。"
   },
   "M03": {
     "id": "M03",
-    "name": "VIVIC · Space 分区卡片",
+    "name": "VIVIC · 场景卡片",
     "role": "product-case-cover",
-    "topic": "2026-11-01 的真实 Space 卡片界面，体现信息组织方式",
-    "kind": "真实产品截图 / 历史界面",
-    "ratio": "16:10",
-    "size": "960×600",
+    "topic": "官网展示的多类型信息卡片，体现自然语言到卡片化结果的产品表达",
+    "kind": "官网公开展示素材 / 产品界面",
+    "ratio": "AUTO",
+    "size": "1600px desktop capture",
     "priority": "P0",
-    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
+    "source": "https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md · docs/images/scene-cards.jpg",
     "reuse": [
-      "产品案例 Case 封面"
+      "VIVIC 案例详情图组"
     ],
-    "status": "sourced_historical_capture",
-    "notes": "真实 UI 仅用来展示当时产品形态；Agent 决策链路使用独立机制图解释。"
+    "status": "official_site_capture",
+    "notes": "官方仓库 README 记录该图来自官网 #scenes。"
   },
   "M05": {
     "id": "M05",
-    "name": "VIVIC · 待办卡界面",
+    "name": "VIVIC · 双窗口协同",
     "role": "product-detail-ui",
-    "topic": "2026-11-01 的真实待办卡画面，展示任务卡片的视觉表现",
-    "kind": "真实产品截图 / 历史界面",
-    "ratio": "16:10",
-    "size": "960×600",
+    "topic": "用户窗口与展示窗口协同，突出表达、呈现和拖动操作的产品体验",
+    "kind": "官网公开展示素材 / 产品界面",
+    "ratio": "AUTO",
+    "size": "1600px desktop capture",
     "priority": "P1",
-    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
+    "source": "https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md · docs/images/two-windows.jpg",
     "reuse": [
-      "产品案例详情图组左"
+      "VIVIC 案例详情图组"
     ],
-    "status": "sourced_historical_capture",
-    "notes": "真实截图经 WebP 压缩，非 11-05 后端重构完成效果录像。"
+    "status": "official_site_capture",
+    "notes": "官方仓库 README 记录该图来自官网 #how。"
   },
   "M06": {
     "id": "M06",
-    "name": "VIVIC · 周报卡展示",
+    "name": "VIVIC · 可编辑卡片",
     "role": "product-detail-ui",
-    "topic": "2026-11-01 的真实周报卡界面，展示信息分区与内容组织",
-    "kind": "真实产品截图 / 历史界面",
-    "ratio": "16:10",
-    "size": "600×375",
+    "topic": "待办与目标卡片的编辑、拖动和进度调整体验",
+    "kind": "官网公开展示素材 / 产品界面",
+    "ratio": "AUTO",
+    "size": "1600px desktop capture",
     "priority": "P1",
-    "source": "VIVIC 作品集素材库 · 2026-11-01 历史界面截图",
+    "source": "https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md · docs/images/editable-cards.jpg",
     "reuse": [
-      "产品案例详情图组右"
+      "VIVIC 案例详情图组"
     ],
-    "status": "sourced_historical_capture",
-    "notes": "真实截图经 WebP 压缩，非同环境前后对比。"
+    "status": "official_site_capture",
+    "notes": "官方仓库 README 记录该图来自官网 #hands。"
   },
   "M08": {
     "id": "M08",
@@ -1689,6 +1703,22 @@ const MEDIA_SPEC = {
     ],
     "status": "optional",
     "notes": "流程节点和名称必须准确；优先 HTML/SVG 交互方案，避免 AI 字形与逻辑幻觉。"
+  },
+  "M09": {
+    "id": "M09",
+    "name": "VIVIC · 时间与提醒",
+    "role": "product-detail-ui",
+    "topic": "倒计时、待办和提醒等时间型任务的产品呈现",
+    "kind": "官网公开展示素材 / 产品界面",
+    "ratio": "AUTO",
+    "size": "1600px desktop capture",
+    "priority": "P1",
+    "source": "https://github.com/ECdison6227/vivic-canvas/blob/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/README.md · docs/images/time-and-reminders.jpg",
+    "reuse": [
+      "VIVIC 案例详情图组"
+    ],
+    "status": "official_site_capture",
+    "notes": "官方仓库 README 记录该图来自官网 #time。"
   }
 };
 
@@ -1698,17 +1728,18 @@ const MEDIA_SPEC = {
  * Do not use AI-generated art to impersonate a real product UI or a PR screenshot.
  */
 const MEDIA_FILES = {
-  "M01": 'assets/vivic/after-ui-8790-home.webp',
-  "M03": 'assets/vivic/after-ui-8790-sectioncard.webp',
-  "M05": 'assets/vivic/card-todo.webp',
-  "M06": 'assets/vivic/card-weekly-report.webp',
-  "M08": '',
+ "M01":"https://raw.githubusercontent.com/ECdison6227/vivic-canvas/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/hero.jpg",
+ "M03":"https://raw.githubusercontent.com/ECdison6227/vivic-canvas/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/scene-cards.jpg",
+ "M05":"https://raw.githubusercontent.com/ECdison6227/vivic-canvas/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/two-windows.jpg",
+ "M06":"https://raw.githubusercontent.com/ECdison6227/vivic-canvas/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/editable-cards.jpg",
+ "M08":"",
+ "M09":"https://raw.githubusercontent.com/ECdison6227/vivic-canvas/9b8665a0b62a17e0eef94c403f2c2c583d484330/docs/images/time-and-reminders.jpg"
 };
 
-// Generated from reviewed case packs. Do not edit manually.
+// Content source: docs/portfolio-content/2026-11-11-selective-recovery-v1.md. Keep embedded data aligned with that source; this static site has no content generator.
 const CASE_DETAILS = {
   "product": {
-    "headnote": "苏客松 Hackathon 生活办公赛道第四名团队项目。赛后受邀加入团队，接手既有产品并持续参与体验与 Agent 决策链路优化。团队官网与项目官网见下方链接。",
+    "headnote": "苏客松生活办公赛道第四名的团队产品。我在比赛中与团队相识，赛后受邀加入并接手产品优化，重点推进 Agent 决策与执行链路、产品体验和系统职责的收敛。",
     "teamLinks": [
       {
         "label": "团队官网",
@@ -1719,60 +1750,63 @@ const CASE_DETAILS = {
         "url": "https://edsionc.top/vivic/"
       }
     ],
-    "role": "比赛中与 VIVIC 团队建立联系，赛后受邀加入。加入后接手既有产品，参与产品体验梳理、核心问题拆解、Agent 决策与执行边界调整、任务推进和验收；与团队成员及 Agent 协作完成具体实现。团队成果与个人具体代码归属分别核验，不将团队全部产出计为个人独立完成。",
-    "tradeoff": "没有继续叠加 4B 路由、槽位规划器、本地分类器、directOperations 或第二套业务决策 Agent；删除试验性分叉，保留规则处理确定性格式、模型负责语义决策、宿主负责权限/Schema/目标校验与真实执行的单一主链路。",
-    "ownershipNote": "个人参与范围包括接手后的产品问题梳理、关键方案判断、Agent 决策链路优化、任务拆解与交付验收；具体实现由团队协作完成，逐项代码作者归属以 Commit/PR 和团队记录核验。",
-    "contextTitle": "用户说出一个需求，产品怎样真正帮他把事情办成？",
-    "contextLead": "用户关心的不是 Agent 调用了哪个工具，而是自己交代的事情有没有被正确理解、执行并完成。",
-    "contextCopy": "VIVIC 已有多模态输入和卡片化体验，但早期使用链路里，同一需求可能被不同层重复解释，系统可能选择或改写错误目标，执行失败后也难以让用户知道下一步该做什么。产品问题因此不是“再增加几个工具”，而是能否让用户从表达、确认、执行到收到结果的全过程保持清楚、可控、可恢复。我推动团队把这段用户旅程作为产品主路径，并据此收敛各环节的职责。",
-    "experienceTitle": "让用户从提出需求到确认结果，始终知道系统做到了哪一步。",
-    "experienceIntro": "沿着理解需求、选择行动、执行前确认、失败恢复和结果反馈五个环节，查看产品如何把一句自然语言变成可核对的任务结果。下方是机制解释图，不是实时产品 UI 或操作录像。",
-    "caption": "FIG. 01 — VIVIC / USER INTENT → DECISION → ACTION → RECEIPT",
-    "outcomeTitle": "从“AI 给出一个答案”推进到“用户的事确实办成”。",
-    "outcomeBig": "53/60 → 58–60/60",
-    "outcome": "同一套固定 60 题 API 回归：旧稳定版基线为 53/60；2026-11-05 部署报告的批次 2/3 快照为 59/60，后续六轮同题集记录为 58、59、60、60、59、60/60，末轮达到 60/60。API 请求至最终结果 p50 从 3,625ms 降至 1,807ms，约下降 50%；高缓存命中条件下估算单轮 Token 成本约下降 97%，不是实付账单。项目报告还记录能力工具入口从 27 项收敛为 14 项，并记录 8 条历史单测失败；部署 SHA lineage 尚未完全核验。这些均为项目内部记录，不代表真实用户成功率或商业成效；完整前端体验、48 条浏览器全场景用例和真机语音仍未完成验收。"
+    "role": "赛后受邀加入团队后，我接手既有产品，负责理解用户场景与现有系统、重构核心问题、梳理 Agent 产品职责、做方案取舍，并推动后端机制与前端体验的协同迭代。",
+    "tradeoff": "不把每个问题都变成新的 Agent 或模型路由。确定性格式交给规则；语义选择交给模型；对象、权限、Schema、执行和回执由宿主负责。明确职责边界，比叠加更多智能组件更可控。",
+    "ownershipNote": "VIVIC 是团队产品，苏客松生活办公赛道第四名是团队成绩。我在比赛中认识团队，赛后受邀加入并接手产品优化，重点参与 Agent 决策与执行链路、产品体验和后端架构的推进。",
+    "contextTitle": "用户表达了一个目标，系统怎样把它变成可靠动作？",
+    "contextLead": "VIVIC 的关键问题不是让模型多调用工具，而是让用户意图经过理解、选择、授权、执行与回执，成为可控的产品行为。",
+    "contextCopy": "用户说的是目标，不是工具名和参数。系统需要理解真实意图、识别目标对象、选择合适能力，并在执行前检查对象、Schema、权限和确认要求；动作发生后还要读取宿主返回的真实结果。若把这些职责全部交给模型，语义误读、对象错配、越权执行和假成功就会混在一起，用户无法判断系统究竟做到了哪一步。",
+    "experienceTitle": "把 Agent 的理解权、决策权和执行权拆开。",
+    "experienceIntro": "规则层处理确定性格式和输入归一；模型负责语义理解与工具选择；宿主负责目标对象解析、Schema / 权限校验和确认策略；执行器完成动作；回执再反馈给模型与用户。失败以结构化 ToolIssue 表达原因、可恢复性和所需补充信息，驱动修复或重试。",
+    "caption": "FIG. 02 — VIVIC / INTENT → DECISION → VALIDATION → ACTION → RECEIPT",
+    "outcomeTitle": "让每个 Agent 动作都能解释、确认与回读。",
+    "outcomeBig": "INTENT → RECEIPT",
+    "outcome": "产品主链把自然语言转成受控任务：意图理解不等于执行授权，工具选择不等于对象已确认，调用成功不等于业务动作成功。模型做语义判断，宿主做权限与结构校验，执行器负责动作，回执提供真实结果。团队在 2026-11-05 完成后端部署，并以固定题集 API 回归和性能指标验证核心链路；数据口径见下方。它们证明特定条件下的工程改进，不代表真实用户成功率或商业 ROI。"
   },
   "agent-workflow-governance": {
-    "headnote": "AWRP → Linear → Agent Project OS：从长期多 Agent 协作痛点出发，完成设计阶段产品立项。DeepSeek Super-agent 是第三方架构参照。",
-    "contextTitle": "换了窗口、Agent 或执行者，为什么项目就得重新开始？",
-    "contextLead": "用户真正要持续推进的是一个项目目标，而不是某一次聊天或某一个 Agent。",
-    "contextCopy": "长期项目可能跨越多个窗口、Agent、PR 和审查周期。只依赖聊天记录，人就要反复找状态、传背景、验证 Agent 是否真的完成。AWRP 协议原型先解决 Task / Run / HANDOFF 责任边界；实际使用后，项目状态回到 Linear，长期背景与决策放在 Notion，代码与上游事实由 GitHub 负责。基于这段实践，我进一步提出统一的 Project-first Agent OS，按功能子集逐一研究竞品和 DeepSeek 等成熟实现，最终作出设计阶段 GO 判断。新产品尚未开发上线。",
-    "experienceTitle": "让项目保持连续，让执行者可以更换。",
-    "experienceIntro": "通过四个阶段理解真实演进：AWRP 历史原型、Linear × Notion 工作流、DeepSeek 第三方研究，以及已立项但仍在开发前准备的 Agent Project OS。",
-    "caption": "FIG. 03 — AWRP × LINEAR / TASK → RUN → EVIDENCE → ACCEPTANCE",
-    "outcomeTitle": "把协议与工具实践转化为值得开发的统一 Agent 产品方向。",
-    "outcomeBig": "Project first. Sessions replaceable.",
-    "outcome": "2026-11-10 的设计阶段立项判断为 GO。Agent Project OS main 仍为 v0.3 文档基线；Draft PR #1 的开发前 G0–G2 已完成，G3–G5 待执行。真实软件、生产指标和用户规模均未形成。这项成果是问题定义、系统抽象、成熟模块复用研究与工程拆解，而不是已发布平台。",
-    "role": "个人项目：主导早期 AWRP 协议、现行 Linear × Notion 工作流和独立 Agent Project OS 的需求定义、产品定位与架构研究；不同阶段成果明确区分。",
-    "tradeoff": "没有继续叠加自造 Relay、任务系统和 Agent Runtime；先复用真实工作流中成熟的 Project、知识、执行与审查基础设施，再为统一体验识别必要的自研对象。",
-    "ownershipNote": "DeepSeek Super-agent 仅是第三方参考；新产品 G0–G2 文档成果不等于代码实现、运行验证或生产发布。"
+    "headnote": "从 ChatGPT 手机/网页端与电脑本地 Agent 的协同问题出发，先设计 AWRP 接力协议，再结合 Linear × Notion 的真实工作流和 DeepSeek Super-agent 对照，形成 Project-first Agent OS 产品架构。",
+    "contextTitle": "研究发生在聊天窗口，执行发生在本地 Agent：如何让它们始终围绕同一个项目？",
+    "contextLead": "长期项目才是稳定主体；Agent、会话、机器和执行轮次都是可替换资源。",
+    "contextCopy": "我在手机端或网页端使用 ChatGPT 研究问题、梳理方案和制定任务，再把明确的工作交给电脑本地多个 Coding Agent 执行。只靠聊天记录与人工复制粘贴，项目背景容易散落，研究与执行脱节，多个窗口可能重复工作或争用同一任务，执行轮次、进行态、产物和验收结果难以归一。AWRP 把这条链路抽象为 Project / Channel / Lane / Claim / Task / Run / Event / Artifact，并用 ACK、HANDOFF、REVIEW 和 RECONCILE 建立可追踪的交接。",
+    "experienceTitle": "从对象模型到并发控制：把任务接力做成可恢复协议。",
+    "experienceIntro": "选择下方对象，查看它们如何共同解决项目身份、工作隔离、子任务、执行轮次、自动沉淀和独立 Review。AWRP 的设计重点不是转发聊天，而是让长期目标跨多个 Agent 和执行环境持续存在。",
+    "caption": "FIG. 03 — AWRP / PROJECT → CHANNEL → TASK → RUN → EVENT → ARTIFACT",
+    "outcomeTitle": "把研究、执行与验收分开，让项目可以跨窗口持续推进。",
+    "outcomeBig": "PROJECT > TASK > RUN",
+    "outcome": "AWRP 的核心是长期工作身份与一次执行尝试的分离。Project 固定项目身份并归一化别名；Channel 隔离 Coordinator 与 Worker；Lane 支持同一端点内的受控并行；Claim 管理单写者与 generation；Task 保存目标、子任务、依赖、范围和验收；Run 记录一次执行尝试，Session 只代表可替换的本地会话；Event 追加记录状态事实，Artifact 指向 Commit、测试、文档和交付物。Worker 对同一 Run ACK 后执行并 HANDOFF；Coordinator / Reviewer 对照目标与外部证据检查后，再接受、RECONCILE 或发起新 Run。当前真实工作流由 Linear × Notion × GitHub 分别承载执行状态、长期语义和代码事实。Agent Project OS 已作出立项 GO 判断；G0–G2 文档已提交至 Draft PR #1（未合并），G3–G5 未开始，产品代码尚未开始。",
+    "role": "主导 AWRP v0.1 协议的问题定义、对象模型、状态流转、并发隔离与工作流设计，并推进 CLI / Schema / 测试等工程实现；随后将真实使用反馈带入 Linear × Notion 项目治理和 Agent Project OS 产品设计。",
+    "tradeoff": "在真实工作流中发现 Project / Issue / 状态管理已有成熟工具，因此不把 AWRP 无限扩成任务管理 SaaS。Linear 承担执行状态与 Issue，Notion 保存长期语义与决策，GitHub 保留代码和外部事实；自研聚焦统一 Project identity、Agent 接入、执行编排、注意力收件箱与证据化 Review。",
+    "ownershipNote": "AWRP 是显式接力与执行治理的原始设计；Linear × Notion × GitHub 是真实工具分工；DeepSeek Super-agent 提供事件触发、授权、分配和恢复机制的第三方参照；Agent Project OS 是基于这些实践形成的统一产品设计。"
   },
   "laya-decision-integrity": {
-    "headnote": "持续参与 Laya 决策模型的产品方向讨论、方案评审、实现协作与上游演进，围绕模型理解、评测证据、渐进采用和开发者集成，推动四组相互支撑的产品系统。",
+    "headnote": "围绕 Laya 从模型能力到开发者采用的关键环节，持续参与产品方向讨论、方案评审、实现协作与上游演进。",
     "contextTitle": "模型效果不错，应用团队就敢把它交给真实用户了吗？",
     "contextLead": "从实验结果到真实采用，中间还需要一整套让开发者看得懂、控得住、用得稳的产品保障。",
     "contextCopy": "Laya 的下游开发者需要经历理解模型、判断证据、决定采用范围、接入应用和持续维护。模型输出本身无法回答所有问题：哪些结果可信，哪些情况应该拒绝，何时可以扩大使用范围，不同调用入口是否兑现同样的行为？我参与推动的工作覆盖输入语义、评测证据、渐进采用、训练与校准能力，以及 Demo、服务和 SDK 的一致性。这些是围绕开发者采用旅程形成的产品责任域，不是本人独立完成的一条线性产品流水线。",
     "experienceTitle": "把开发者从“能跑通 Demo”带到“知道何时可以放心采用”。",
     "experienceIntro": "进入独立 Laya Casebook，查看八个产品机会、四组开发者采用保障、本人贡献与 Review 的归因，以及每条主张对应的上游证据。",
     "caption": "FIG. 07 — LAYA / INTENT → DECISION → ADOPTION / ILLUSTRATIVE PRODUCT SYSTEM",
-    "outcomeTitle": "让模型能力更容易被理解、评估、控制和集成。",
-    "outcomeBig": "47 authored · 40 merged.",
-    "outcome": "截至 2026-11-08 的 GitHub 查询快照：47 个本人 authored PR，其中 40 个已合并；另有 85 个 PR 命中 reviewed-by:Bruce-Yii 查询。Review 命中与 authored PR 是两套口径，不能相加，也不代表 85 次建议全部被采纳。这些记录呈现持续参与产品方向、实现协作与上游演进的工作规模，不等于 40 项独立功能或业务 KPI。具体作者、Review、Issue 提出与维护者决策分别归因。"
+    "outcomeTitle": "把分散的上游贡献组织成四组产品系统。",
+    "outcomeBig": "40 PRs merged",
+    "outcome": "本人提交的 40 个 PR 已合并。本人向 Laya 提交的 PR diff 累计新增 10,394 行，覆盖实现、测试、评测工具与文档。四组产品系统分别解决输入语义保真、模型决策可信、渐进采用可控和开发者契约一致性。重点不是堆叠 PR 编号，而是把多个贡献组织成可理解的产品机制：用户输入不丢语义，决策证据可检查，动作有明确边界，开发者集成可预测。",
+    "role": "本人贡献覆盖产品问题定义、方案评审、实现提交、回归测试、正式 Review、文档和上游协作；40 个本人提交的 PR 已合并。",
+    "tradeoff": "从单个 Issue / PR 的具体摩擦出发，识别背后的用户任务、系统契约和产品行为；再把相关实现、测试、Review 与文档组织成四组相互支撑的产品系统。",
+    "ownershipNote": "40 个合并 PR 与 10,394 行新增变更是两项独立统计；新增行数按本人全部 PR diff 汇总，覆盖实现、测试、评测工具与文档。"
   },
   "personal-context-layer": {
-    "headnote": "Personal Context Keyboard 的 Android 主体实现已接近完成。产品验收与部分平台 Gate 仍未通过；本案例区分已实现模块、局部回归和未完成的正式验收。",
-    "contextTitle": "为什么每换一个 AI，用户都要重新介绍自己？",
-    "contextLead": "用户长期积累的信息不应该被锁在某一个聊天产品或输入工具里。",
-    "contextCopy": "用户在不同 AI 应用间切换时，常常要重复说明自己的背景、偏好和当前任务；有价值的信息散落在聊天记录、输入框、剪贴板和笔记中。单一 AI 产品的记忆无法覆盖这些来源，也难以让用户检查信息从哪里来、是否准确、是否仍然有效。我因此把输入法定位为高频信息入口，真正的产品核心是一个本地优先、来源可追溯、允许用户确认和纠错，并能按授权向不同 AI 提供上下文的个人信息层。",
-    "experienceTitle": "让输入信息可以积累、整理、纠错，并由用户决定何时交给 AI。",
-    "experienceIntro": "从用户实际输入的文本及可还原编辑状态出发，保留来源与时间，再经过组织、用户确认和按任务授权，查看个人上下文如何变成可携带、可控制的长期资产。下方为产品机制示意，不是实时产品 UI；Android 主体实现接近完成，但真实设备、真实麦克风整链、Windows TSF 与正式发布仍有独立验收 Gate。",
-    "caption": "FIG. 04 — PERSONAL CONTEXT / SENSOR → RAW → DERIVED → USER CONTROL → AI GATEWAY",
-    "outcomeTitle": "从输入工具走向用户可控制的个人上下文层。",
-    "outcomeBig": "Android / near-complete",
-    "outcome": "主体实现已接近完成。可核对的局部回归包括：中文输入 JVM 70/70、模拟器设备测试 12/12、语音入口文件喂入与 IME composing/commit 链路 20/20。上述为不同范围的局部测试，不是整包验收；整包 47 项回归本轮 NOT_RUN，产品验收 0、GQ NOT_RUN。arm64 原生库已随包但运行时未测；Windows TSF 资格检查 BLOCKED；真实设备、真实麦克风整链、生产签名和商店发布仍待完成。",
-    "role": "个人项目：负责产品定位、用户价值定义、跨端架构、关键产品决策、工程推进和验收协调；部分原型与工程执行由 Agent 协助完成，具体代码归属以仓库 Commit / 文件记录为准。",
-    "tradeoff": "输入法只是高频 Sensor；不让采集拖慢输入体验，也不让模型派生结论改写原始事实。Android 优先完成主体实现；Windows 采用独立 Sensor/Client 路径，未通过的资格检查不包装成生产支持。时间主轴优先，高级关系和跨端完整功能分阶段实现。",
-    "ownershipNote": "Android 主体实现接近完成不等于产品验收通过；arm64 原生库已打包但运行时未测，Windows TSF 资格检查 BLOCKED，真实设备、真实麦克风整链、生产签名与商店发布仍未完成。"
+    "headnote": "Personal Context Keyboard 以键盘为高频入口，目标是建立用户拥有的 Local-first Personal Context Layer。核心不是增加一个 AI 键盘，而是把真实输入组织为可追溯、可修订、可授权的长期上下文。",
+    "contextTitle": "为什么用户每换一个 AI，都要重新解释自己的背景和当前目标？",
+    "contextLead": "跨应用、多模型和长期任务用户，需要一份属于自己的、持续更新的上下文，而不是再建一个绑定单一模型的聊天记忆。",
+    "contextCopy": "用户的事实、偏好、计划、承诺和任务线索分散在输入框、聊天、剪贴板、文档与不同应用中。每换一个 AI，用户就要重复输入背景；各应用独立保存记忆，来源不可见、纠错困难，也无法稳定迁移。产品因此把键盘定位为高频 Context Sensor，而不是产品边界：多端入口在用户授权下采集真实输入与编辑变化，本地 Core 保存原始事实并建立时间、来源和关系，再把它们组织为 Event、Thread、目标和可复用 Context；不同 AI 通过统一 Gateway 按当前任务读取用户授权的内容。",
+    "experienceTitle": "最难的不是采集文本，而是在本地把原始事实转成可验证的派生上下文。",
+    "experienceIntro": "目标链路从 Sensor 采集开始，经过 Raw Fact Store、证据切片与时间主轴、多路候选召回、语义判断、有限补证、持久编排和 Validator，最终生成可追溯的 Derived Context。该图解释产品目标架构；实际实现成熟度以当前 Android 代码、回归和未完成 Gate 为准。",
+    "caption": "FIG. 04 — LOCAL CONTEXT CORE / RAW FACTS → EVIDENCE → ASSESSMENT → DERIVATION → VALIDATION → CONTEXT VIEW",
+    "outcomeTitle": "让个人事实成为可持续积累、可修订、可迁移的上下文资产。",
+    "outcomeBig": "RAW → DERIVED",
+    "outcome": "产品目标架构将原始输入、编辑状态、时间、来源和设备保留在 Raw 层，再经证据切片、时间主轴、候选召回与语义判断，形成 Event / Thread / RELATED_ONLY / UNORGANIZED 等派生对象。Derived 层记录证据引用、依赖、版本和有效状态，支持局部重算；用户确认、纠错、合并、拆分和撤回拥有最高权威。当前 Android 主线已实现 IME、中文输入、语音 / ASR 文件链路、Context Store / Recovery、Today / Smartbar、剪贴板、个人词典、备份恢复与打包等核心模块；最近一次 Android Emulator baseline 为 80 tests / 0 fail / 0 error / 1 skip。该结果是模拟器回归，不等于正式产品验收或真实设备验收。",
+    "role": "我主导产品定位、目标用户与核心需求、跨端 Sensor 架构、Raw / Derived 数据模型、本地 Context Core、持久编排、用户控制和统一 AI Gateway 设计，并推进 Android IME、Context Store、Recovery、Today / Smartbar、语音和搜索等核心模块。",
+    "tradeoff": "不把整库交给模型做一次摘要，也不让派生结论覆盖原始事实。键盘只负责高频采集；本地 Core 负责事实、证据、关系和派生对象；有限 Agent 只在授权范围内补证；Validator 控制派生结果发布；Gateway 只输出当前任务需要的 Context Pack。",
+    "ownershipNote": "Raw Facts 是权威事实源，Derived Context 是带来源、证据、依赖和版本的可重建视图；用户确认、纠错、合并、拆分和撤回拥有最高权威；模型与 Provider 可替换，不能取得个人事实的最终所有权。"
   }
 };
 const PRODUCT_STEPS = [
@@ -1828,44 +1862,43 @@ if (new URLSearchParams(location.search).get('design') === '1') {
 }
 function mediaSlot(id,variant='wide'){
  const a=MEDIA_SPEC[id],src=MEDIA_FILES[id];if(!a)return '';
- const source=src?`<img src="${src}" alt="${a.topic}" loading="lazy">`:'';
- const safe=a.kind.includes('真实')?'REAL PRODUCT MEDIA':'ART-DIRECTED EXPLAINER';
- return `<div class="media-slot media-slot--${variant}${source?' has-asset':''}" data-asset-id="${id}" role="group" aria-label="${a.name}，${a.topic}">${source}<div class="media-slot__head mono"><span>IMAGE FIELD / ${id}</span><span>${a.ratio} · ${a.priority}</span></div><div class="media-slot__body"><div class="media-slot__index serif">${id}</div><div class="media-slot__title">${a.name}</div><p>${a.topic}</p></div><div class="media-slot__bottom mono"><span>${safe}</span><span>VISUAL PENDING ↗</span></div></div>`;
+ const source=src?'<img src="'+src+'" alt="'+a.topic+'" loading="lazy" decoding="async">':'';
+ const safe=a.status==='official_site_capture'?'OFFICIAL VIVIC WEBSITE':'PRODUCT SYSTEM VISUAL';
+ const bottom=a.status==='official_site_capture'?'OFFICIAL SHOWCASE':'DESIGN EXPLANATION';
+ return '<div class="media-slot media-slot--'+variant+(source?' has-asset':'')+'" data-asset-id="'+id+'" role="group" aria-label="'+a.name+'，'+a.topic+'">'+source+'<div class="media-slot__head mono"><span>IMAGE FIELD / '+id+'</span><span>'+a.ratio+' · '+a.priority+'</span></div><div class="media-slot__body"><div class="media-slot__index serif">'+id+'</div><div class="media-slot__title">'+a.name+'</div><p>'+a.topic+'</p></div><div class="media-slot__bottom mono"><span>'+safe+'</span><span>'+bottom+'</span></div></div>';
 }
 function productArt(){return `<div class="feature-art asset-shell">${mediaSlot('M01','feature')}</div>`}
 function sourceArt(){return `<div class="art-secondary art-source"><div class="fine-grid"></div><div class="annotation mono">OPEN SOURCE / UPSTREAM CONTRIBUTIONS</div><div class="source-title">Open <em>Source.</em></div></div>`}
-function systemArt(){return `<div class="art-secondary asset-shell">${mediaSlot('M08','feature')}</div>`}
+function systemArt(c){
+ const isContext=c&&c.id==='personal-context-layer';
+ const nodes=isContext?['RAW FACTS','EVIDENCE','DERIVED CONTEXT','AI GATEWAY']:['PROJECT','TASK','RUN','REVIEW'];
+ const kicker=isContext?'PERSONAL CONTEXT / LOCAL-FIRST':'AGENT WORKFLOW / PROJECT-FIRST';
+ const foot=isContext?'USER-OWNED · TRACEABLE · RECOMPUTABLE':'COORDINATE · EXECUTE · REVIEW · RECOVER';
+ return '<div class="art-secondary art-systems"><div class="fine-grid"></div><div class="annotation mono">'+kicker+'</div><div class="system-art-flow">'+nodes.map((n,i)=>'<span>'+n+'</span>'+(i<nodes.length-1?'<i>→</i>':'')).join('')+'</div><div class="system-art-foot mono">'+foot+'</div></div>';
+}}
 const artByType={product:productArt,opensource:sourceArt,systems:systemArt};
 const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function editorialCover(c){
   return `<div class="editorial-art"><div class="mono editorial-art__top">CASE / EVIDENCE-LED NARRATIVE <span>${esc(c.num)}</span></div><div class="editorial-art__body"><div class="mono">${esc(c.category)} · ${esc(c.status)}</div><strong>${esc(c.name)}</strong><p>${esc(c.desc)}</p></div><div class="mono editorial-art__foot">DESIGNED EXPLANATION / NOT A PRODUCT SCREEN</div></div>`;
 }
-function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)();}
+function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)(c);}
 function narrativeExperience(c){
   const e=c.editorial||{},decisions=e.decisions||[],sources=(e.evidence||[]).filter(src=>src.state==='public_record'&&/^https:\/\/github\.com\//.test(src.url||''));
   const sourceContent=sources.length?sources.map(src=>'<a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer"><span>'+esc(src.label)+'<small>PUBLIC GITHUB RECORD</small></span><span>↗</span></a>').join(''):'<p class="narrative-no-evidence">本案例以产品与系统设计为主，暂未附公开代码仓库记录。</p>';
-  const evidenceMarkup='<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>PRODUCT DECISIONS / EVIDENCE-LED</span><span>'+String(decisions.length).padStart(2,'0')+' THREADS</span></div><div class="narrative-evidence__decisions">'+decisions.map((d,i)=>'<article><span class="mono">0'+(i+1)+' / DECISION</span><p>'+esc(d)+'</p></article>').join('')+'</div><div class="narrative-evidence__evidence"><div class="mono">PROOF / PUBLIC RECORDS</div>'+sourceContent+'</div><div class="narrative-evidence__boundary"><b>我的产品责任</b><p>'+esc(e.role||'')+'</p><b>交付与验证边界</b><p>'+esc(e.boundary||'')+'</p></div></div>';
+  const evidenceMarkup='<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>PRODUCT DECISIONS / EVIDENCE-LED</span><span>'+String(decisions.length).padStart(2,'0')+' THREADS</span></div><div class="narrative-evidence__decisions">'+decisions.map((d,i)=>'<article><span class="mono">0'+(i+1)+' / DECISION</span><p>'+esc(d)+'</p></article>').join('')+'</div><div class="narrative-evidence__evidence"><div class="mono">PROOF / PUBLIC RECORDS</div>'+sourceContent+'</div><div class="narrative-evidence__boundary"><b>我的产品责任</b><p>'+esc(e.role||'')+'</p><b>关键产品原则</b><p>'+esc(e.boundary||'')+'</p></div></div>';
   return evidenceMarkup;
 }
+// Homepage project copy and stages are governed by docs/portfolio-content/2026-11-11-selective-recovery-v1.md.
 const HOME_PROJECTS = [
-  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT / ANDROID IME · WINDOWS SENSOR/CLIENT",summary:"面向 Android 与 Windows 的个人上下文输入法项目。以输入为高频入口，把长期信息整理为可追溯、可修订、可授权使用的个人 Context，供不同 AI 在用户控制下复用。",phase:"个人项目 · Android 主体实现接近完成 · 正式验收与部分平台 Gate 待完成"},
-  {caseId:"product",name:"VIVIC",label:"TEAM PROJECT / SUKESONG HACKATHON · LIFE & OFFICE · 4TH PLACE",summary:"团队打造的多模态卡片助理，支持语音与文本交互，将用户需求转化为可执行任务。赛后受邀加入团队，并接手推进产品体验与 Agent 决策链路优化。",phase:"团队项目 · 赛后加入并持续参与产品优化"},
-  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW / PRODUCTIZATION EXPLORATION",summary:"从 AWRP 接力协议与 Linear 实践出发，对照 DeepSeek 等开源架构，形成 Agent Project OS 设计阶段 GO 判断。统一的目标是 Project，而不是 Agent 聊天。",phase:"AWRP 原型 / Linear 在用 · Agent Project OS G0–G2 Draft 已完成 · 代码未实施"}
-]
-const CAPABILITY_GROUPS = [
-  {name:"产品定义与用户体验",title:"PRODUCT STRATEGY & EXPERIENCE",description:"从真实场景识别用户要完成的任务，判断什么值得做、先解决什么，以及怎样让体验更自然。",caseIds:["product","personal-context-layer"]},
-  {name:"Agent 决策与执行",title:"AGENT PRODUCT & EXECUTION",description:"把自然语言需求转化为可确认、可执行、可追踪的结果，处理好授权、异常与反馈。",caseIds:["product"]},
-  {name:"长任务与协作系统",title:"LONG-RUNNING WORKFLOWS",description:"让项目跨越窗口、Agent 与等待周期持续推进，减少人工交接，让完成情况有据可查。",caseIds:["agent-workflow-governance"]},
-  {name:"开源产品协作",title:"OPEN-SOURCE PRODUCT COLLABORATION",description:"从开发者和使用者的真实摩擦出发，推动模型能力更容易理解、评估、采用与集成。",caseIds:["laya-decision-integrity"]}
+ {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT · ANDROID / WINDOWS",summary:"以输入作为高频信息入口，将原始事实、事件与长期上下文组织为用户可追溯、可修订、可授权使用的个人 Context，让不同 AI 工具能够在用户控制下复用这些信息。",phase:"个人项目 · Android 主体实现接近完成 · 正式产品验收与部分平台 Gate 待完成"},
+ {caseId:"product",name:"VIVIC",label:"TEAM PRODUCT · MULTIMODAL AGENT",summary:"团队打造的多模态卡片助理，支持语音与文本交互。我在比赛中与团队相识，赛后受邀加入，并接手既有产品的体验与 Agent 决策链路优化。",phase:"团队项目 · 赛后加入并持续优化 · 后端部署与专项回归已有记录"},
+ {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW · PRODUCT DESIGN",summary:"从 ChatGPT 手机/网页端与本地 Agent 的协同问题出发，先做 AWRP 接力原型，再把真实工作流落到 Linear × Notion × GitHub，并据此设计 Project-first Agent OS。",phase:"AWRP 原型已执行 · Linear × Notion 工作流在用 · Agent Project OS 设计阶段 GO，代码未开始"}
 ];
 function projectVisual(id){
-  const data={
-    "product":{label:"VIVIC / USER INTENT TO ACTION",steps:["USER INTENT","MODEL DECISION","HOST CHECK","ACTION","RECEIPT"],foot:"MODEL SELECTS · HOST VALIDATES · SYSTEM EXECUTES"},
-    "agent-workflow-governance":{label:"AWRP × LINEAR / LONG-RUNNING WORK",steps:["TASK","RUN","EVIDENCE","ACCEPTANCE"],foot:"TASK IDENTITY REMAINS · EXECUTION CAN CHANGE"},
-    "personal-context-layer":{label:"PERSONAL CONTEXT / USER-OWNED DATA",steps:["SENSOR","RAW FACTS","DERIVED CONTEXT","USER CONTROL","AI GATEWAY"],foot:"SOURCE TRACEABLE · USER CONTROLLED · PORTABLE"}
-  };
-  const d=data[id]||data["product"];
-  return '<div class="project-visual"><div class="project-visual__top mono"><span>'+d.label+'</span><span>PRODUCT MAP</span></div><div class="project-visual__flow">'+d.steps.map((s,i)=>'<span class="project-visual__node '+(i===Math.floor(d.steps.length/2)?'is-key':'')+'">'+s+'</span>'+(i<d.steps.length-1?'<span class="project-visual__arrow">→</span>':'')).join('')+'</div><div class="project-visual__foot mono">'+d.foot+'</div></div>';
+ if(id==="product")return '<div class="project-visual project-visual--image"><img src="'+MEDIA_FILES["M01"]+'" alt="VIVIC official website product showcase" loading="lazy" decoding="async"><div class="project-visual__top mono"><span>VIVIC / OFFICIAL PRODUCT SHOWCASE</span><span>TEAM PRODUCT</span></div><div class="project-visual__foot mono">INTENT → DECISION → ACTION → RECEIPT</div></div>';
+ const data={"agent-workflow-governance":{label:"AWRP PROTOTYPE / PROJECT-FIRST WORK",steps:["PROJECT","CHANNEL","TASK","RUN","REVIEW"],foot:"PROJECT IDENTITY PERSISTS · EXECUTION IS REPLACEABLE"},"personal-context-layer":{label:"PERSONAL CONTEXT / LOCAL-FIRST CORE",steps:["RAW FACTS","EVIDENCE","DERIVED","USER CONTROL","AI GATEWAY"],foot:"SOURCE TRACEABLE · USER CONTROLLED · RECOMPUTABLE"}};
+ const d=data[id]||data["personal-context-layer"];
+ return '<div class="project-visual"><div class="project-visual__top mono"><span>'+d.label+'</span><span>PRODUCT MAP</span></div><div class="project-visual__flow">'+d.steps.map((s,i)=>'<span class="project-visual__node '+(i===Math.floor(d.steps.length/2)?'is-key':'')+'">'+s+'</span>'+(i<d.steps.length-1?'<span class="project-visual__arrow">→</span>':'')).join('')+'</div><div class="project-visual__foot mono">'+d.foot+'</div></div>';
 }
 function projectCardMarkup(p,i){
   const c=CASES.find(x=>x.id===p.caseId);if(!c)return '';
@@ -1951,10 +1984,10 @@ function renderWork(){
   $$('[data-filter]').forEach(b=>{if(b.dataset.filter!=='all')b.hidden=!CASES.some(c=>c.type===b.dataset.filter)});
 }
 function caseScroll(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
-function caseCover(type){
- if(type==='product')return mediaSlot('M03','case-cover');
- if(type==='opensource')return sourceArt();
- return mediaSlot('M08','case-cover');
+function caseCover(c){
+ if(c.type==='product')return mediaSlot('M01','case-cover');
+ if(c.type==='opensource')return sourceArt();
+ return systemArt(c);
 }
 function productExperience(){return `<div class="demo-product" aria-label="Vivic 决策与执行责任链路解释图"><div class="demo-side"><div class="mono demo-side-issue">DECISION CONTRACT / 05 RESPONSIBILITIES</div><h3>One decision.<br><i>Five contracts.</i></h3><p>不是把工具越堆越多，而是明确谁负责理解、谁负责执行，以及失败后如何恢复。</p><div class="journey-steps" role="group" aria-label="切换 Agent 决策链路责任点">${PRODUCT_STEPS.map((s,i)=>`<button class="journey-step" data-step="${i}" aria-pressed="${i===0?'true':'false'}"><span>0${i+1}</span><b>${s.label.split(' · ')[1]}</b><em>${['确定性路由','语义选择','校验执行','失败恢复','结果回执'][i]}</em></button>`).join('')}</div></div><div class="demo-product-app"><div class="demo-app-head mono"><span><i class="app-dot"></i> VIVIC / AGENT DECISION CHAIN</span><span id="product-step-label">01 · RULE</span></div><div class="demo-app-content" id="product-step-content" aria-live="polite"></div><div class="demo-app-foot mono"><span>ARCHITECTURE EXPLAINER · NOT A LIVE SCREEN</span><span>↗</span></div></div></div>`;}
 function showProductStep(n){let s=PRODUCT_STEPS[n];if(!s)return;$('#product-step-label').textContent=s.label;$('#product-step-content').innerHTML=`<div class="mono app-content-top">${s.badge} <span>${String(n+1).padStart(2,'0')} / 05</span></div><h4>${s.title}</h4><div class="app-message ${n===4?'success':''}">${s.quote}</div><p>${s.hint}</p><div class="app-state mono">${s.foot}</div>`;$$('.journey-step').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));}
@@ -1968,17 +2001,69 @@ const SYSTEM_NODES=[
 function systemExperience(){return `<div class="demo-system"><div class="system-toolbar mono"><span>REFERENCE ARCHITECTURE / INTERACTIVE</span><span>SELECT A RESPONSIBILITY ↘</span></div><div class="system-flow" role="group" aria-label="选择执行系统的职责节点">${SYSTEM_NODES.map((n,i)=>`<button data-sys="${i}" aria-pressed="${i===2?'true':'false'}" ><span class="mono">0${i+1}</span><strong>${n[0]}</strong><small>↗</small></button>`).join('<div class="sys-join" aria-hidden="true">→</div>')}</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / RESPONSIBILITY</span><span class="system-detail-no" id="sys-num">03 / 05</span></div><h3 id="sys-title">宿主校验</h3><p id="sys-desc">在真正执行前检查边界、权限、参数及需要人工确认的操作。</p><div class="system-io"><span id="sys-input">输入：候选行动</span><span id="sys-output">输出：允许 / 拒绝 / 待确认</span></div></div></div>`;}
 function showSystemNode(i){let n=SYSTEM_NODES[i];if(!n)return;$('#sys-num').textContent=`0${i+1} / 05`;$('#sys-title').textContent=n[1];$('#sys-desc').textContent=n[2];$('#sys-input').textContent=n[3];$('#sys-output').textContent=n[4];$$('[data-sys]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.sys===i)));}
 const WORKFLOW_STEPS=[
- ["PROJECT","长期项目目标","项目目标、背景和验收要求持续保留，不因更换窗口或执行者而重置。","用户目标 / 当前状态","持续项目记录"],
- ["SESSION","当前执行","不同 Agent 可以在各自会话中接力完成工作；每次执行都留下可追溯的进展。","项目记录 / 当前任务","执行回传 / 变更记录"],
- ["PROOF","可核对的结果","代码、测试、文档、产物或外部系统状态，说明实际发生了什么。","PR / CI / 产物 / 外部状态","可追溯结果"],
- ["ACCEPT","独立验收","按最初目标核对结果和副作用，再决定完成、返工或继续。","目标 / 证据","完成 / 返工 / 阻塞"]
+  [
+    "PROJECT",
+    "稳定身份与项目归一化",
+    "Project 是长期工作的 canonical identity。通过 Project ID 与 aliases 将同一项目归一，持续保存 Goal、背景、决策、关联任务和产物；更换窗口、Agent 或设备不改变项目身份。",
+    "Project ID / Aliases / Goal / Context",
+    "Stable Project Identity"
+  ],
+  [
+    "CHANNEL",
+    "Coordinator / Worker 隔离边界",
+    "Channel 是项目内持久的工作端点边界；协调者、执行者和不同职责使用隔离 Channel，避免不同工作流的上下文与回执混在一起。",
+    "Project / Worker Endpoint / Role",
+    "Isolated Work Channel"
+  ],
+  [
+    "LANE",
+    "端点内的受控并行",
+    "Lane 是同一 Channel 内的并行工作身份，用于把可独立执行的子任务分开推进；并行不意味着共享写入权。",
+    "Channel / Parallel Subtasks",
+    "Independent Execution Lanes"
+  ],
+  [
+    "CLAIM",
+    "单写者与修改权治理",
+    "Claim 以 owner、lease / generation 等信息管理某个任务或资源的权威修改权；旧执行者的过期回执不能覆盖新一轮状态。",
+    "Task / Writer / Generation",
+    "Single-writer Authority"
+  ],
+  [
+    "TASK & SUBTASK",
+    "跨执行轮次持续存在的目标",
+    "Task 保存 Goal、Scope、Non-scope、依赖、Acceptance 与进行态；可拆分 Subtasks 并汇总状态。目标持续存在，不因某次 Agent Session 结束而消失。",
+    "Goal / Scope / Dependencies / AC",
+    "Durable Task Tree"
+  ],
+  [
+    "RUN & SESSION",
+    "一次执行尝试与本地会话分离",
+    "Run 是一次有唯一 run_id 的执行轮次；重试或修订创建新 Run。Session 只是本地 Agent / CLI / Worktree 的执行环境，可替换、可恢复，不成为项目身份。",
+    "Task / run_id / Local Session",
+    "Traceable Execution Round"
+  ],
+  [
+    "EVENT",
+    "自动沉淀交接与状态事实",
+    "Event 以 append-only 方式记录 DISPATCH、ACK、HANDOFF、REVIEW、RECONCILE 和状态变化；项目时间线由事件推导，支持断点恢复与责任追踪。",
+    "State Transition / Handoff / Review",
+    "Durable Event History"
+  ],
+  [
+    "ARTIFACT",
+    "把过程连接到真实交付证据",
+    "Artifact 指向 Commit、PR、测试报告、文档、部署和外部系统状态；Review 对照目标与 Live Truth 判断是否接受，而不是只看 Agent 自报。",
+    "Commit / Tests / Docs / Live Truth",
+    "Evidence-linked Deliverables"
+  ]
 ];
 function workflowExperience(){
- return '<div class="demo-system"><div class="system-toolbar mono"><span>AWRP × LINEAR / LONG-RUNNING WORKFLOW</span><span>SELECT A PRODUCT OBJECT ↘</span></div><div class="system-flow" role="group" aria-label="选择长期 Agent 工作流中的产品对象">'+WORKFLOW_STEPS.map((n,i)=>'<button data-workflow-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / PRODUCT OBJECT</span><span class="system-detail-no" id="workflow-num">01 / 04</span></div><h3 id="workflow-title">长期任务身份</h3><p id="workflow-desc">'+WORKFLOW_STEPS[0][2]+'</p><div class="system-io"><span id="workflow-input">'+WORKFLOW_STEPS[0][3]+'</span><span id="workflow-output">'+WORKFLOW_STEPS[0][4]+'</span></div></div><div class="workflow-compare"><div class="mono workflow-compare__heading">ARCHITECTURE COMPARISON / DIFFERENT ROLES, NO RANKING</div><div class="workflow-compare__grid"><article><span class="mono">AWRP</span><strong>接力协议原型</strong><p>探索 Task、Run、Event、ACK / HANDOFF 与 Review 的责任边界。历史代码与测试实践，不是生产级平台。</p></article><article><span class="mono">LINEAR × NOTION</span><strong>现行真实工作流</strong><p>Linear 管理 Project / Issue / 状态；Notion 保存长期语义与决策；GitHub 保留代码和上游事实。</p></article><article><span class="mono">DEEPSEEK SUPER-AGENT</span><strong>第三方架构参照</strong><p>研究 Trigger、Mandate、Ticket、Outbox 与失败恢复机制；不把第三方设计当作本人已实现能力。</p></article><article><span class="mono">AGENT PROJECT OS</span><strong>设计阶段 GO · G0–G2 Draft</strong><p>基于历史实践判断值得开发；已完成开发前设计与复用研究，G3–G5 和产品代码均未完成。</p></article></div></div></div>';
+ return '<div class="demo-system demo-system--workflow"><div class="system-toolbar mono"><span>AWRP PROTOTYPE → CURRENT PROJECT WORKFLOW</span><span>SELECT A PRODUCT OBJECT ↘</span></div><div class="system-flow" role="group" aria-label="选择 AWRP 工作流中的产品对象">'+WORKFLOW_STEPS.map((n,i)=>'<button data-workflow-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">'+String(i+1).padStart(2,'0')+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / PRODUCT OBJECT</span><span class="system-detail-no" id="workflow-num">01 / '+String(WORKFLOW_STEPS.length).padStart(2,'0')+'</span></div><h3 id="workflow-title">'+WORKFLOW_STEPS[0][1]+'</h3><p id="workflow-desc">'+WORKFLOW_STEPS[0][2]+'</p><div class="system-io"><span id="workflow-input">'+WORKFLOW_STEPS[0][3]+'</span><span id="workflow-output">'+WORKFLOW_STEPS[0][4]+'</span></div></div><div class="workflow-operating-path"><article><span class="mono">01 / RESEARCH & DECISION</span><strong>ChatGPT Mobile / Web</strong><small>问题定义 · 研究 · 方案 · 派发包</small></article><i>→</i><article><span class="mono">02 / PROJECT & TASK</span><strong>Linear × Notion</strong><small>Linear 管执行 · Notion 存长期语义</small></article><i>→</i><article><span class="mono">03 / EXECUTION</span><strong>Local Agents</strong><small>Channel 隔离 · Lane 并行 · Run 轮次</small></article><i>→</i><article><span class="mono">04 / REVIEW</span><strong>ChatGPT + GitHub</strong><small>HANDOFF · Commit · 测试 · 外部事实</small></article></div><div class="workflow-state-strip"><span class="mono">DESIGN MODEL / TASK STATE</span><strong>SUBMITTED → WORKING → INPUT_REQUIRED → COMPLETED / FAILED / CANCELED / REJECTED</strong><small>每个 Run 使用唯一 run_id；重试或修订创建新 Run。Session 可替换，Project 与 Task 保持连续。</small></div><div class="workflow-compare"><div class="mono workflow-compare__heading">PRODUCT EVOLUTION / DISTINCT SYSTEMS, ONE PRODUCT THESIS</div><div class="workflow-compare__grid"><article><span class="mono">AWRP</span><strong>显式任务接力协议</strong><p>Project / Channel / Lane / Claim / Task / Run / Event / Artifact；ACK、HANDOFF、REVIEW 与 RECONCILE，解决项目身份、隔离、执行轮次和证据沉淀。</p></article><article><span class="mono">LINEAR × NOTION × GITHUB</span><strong>真实工作流与成熟能力复用</strong><p>Notion = Know，保存长期语义与决策；Linear = Do，管理 Project、Issue、依赖和当前状态；GitHub = Live Truth，保留代码、PR、测试和外部事实。</p></article><article><span class="mono">DEEPSEEK SUPER-AGENT</span><strong>事件驱动执行的架构参照</strong><p>Source / Trigger / Eval、Mandate、Ticket / Assignment、Outbox / Effects、Recovery，补充触发、授权、分配、副作用管理和失败恢复的思考。</p></article><article><span class="mono">AGENT PROJECT OS</span><strong>Project-first 统一执行系统</strong><p>把项目、任务、Agent、Session、Run、Knowledge、Plugin、Attention 与 Review 统一在同一控制面；接入成熟 Runtime、连接器和可替换的本地 / 云端执行环境。</p></article></div><div class="workflow-product-thesis"><b>PRODUCT THESIS</b><p>长期项目是稳定主体；Agent、会话、机器与执行轮次是可替换资源。竞品按功能子集逐项比较，成熟能力优先复用，自研聚焦统一体验中真正缺失的协调与治理层。</p></div></div></div>';
 }
 function showWorkflowStep(i){
  const n=WORKFLOW_STEPS[i];if(!n)return;
- document.getElementById('workflow-num').textContent='0'+(i+1)+' / 04';
+ document.getElementById('workflow-num').textContent=String(i+1).padStart(2,'0')+' / '+String(WORKFLOW_STEPS.length).padStart(2,'0');
  document.getElementById('workflow-title').textContent=n[1];
  document.getElementById('workflow-desc').textContent=n[2];
  document.getElementById('workflow-input').textContent=n[3];
@@ -1986,18 +2071,69 @@ function showWorkflowStep(i){
  document.querySelectorAll('[data-workflow-step]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.workflowStep)===i)));
 }
 const CONTEXT_STEPS=[
- ["CAPTURE","从用户实际输入中保留上下文","设计目标：在用户授权范围内，保留可取得的输入正文或可还原编辑状态，并记录应用来源与时间；输入法只是高频入口。","用户实际输入 / 可还原编辑状态 / 来源 / 时间","可追溯的原始输入记录"],
- ["KEEP","保留原始信息与出处","保留原始内容、来源和时间，不让模型推断覆盖用户事实。","原始内容 / 来源 / 时间","可追溯的信息记录"],
- ["ORGANIZE","整理成可复用的个人背景","把分散信息整理为关系、事件和主题；整理结果可更新、纠错和重建。","已记录信息","关系 / 事件 / 主题"],
- ["CONTROL","由用户决定记住什么","AI 整理结果先交给用户确认；用户可以修改、忽略、撤回或删除。","AI 整理建议","确认 / 修改 / 忽略 / 删除"],
- ["SHARE","按当前任务授权给 AI","只把当前任务需要、且用户明确授权的信息提供给目标 AI。","已确认上下文 / 授权范围","当前任务可用的 Context"]
+  [
+    "SENSOR",
+    "从真实输入中采集事实",
+    "Android IME、Windows Client、剪贴板与授权的应用上下文，记录正文、插入/删除/修改、时间顺序、来源应用/文档和设备。键盘是第一类高频 Sensor，不是 Context Core。",
+    "输入正文 / 编辑变化 / 时间 / 来源 / 设备",
+    "带 provenance 的 Raw Observations"
+  ],
+  [
+    "RAW FACT STORE",
+    "保留权威原始事实",
+    "以稳定 ID 保存原始内容、编辑状态、时间、来源、应用/文档和设备信息。派生摘要不能覆盖原始记录；用户纠正、删除和撤回通过独立控制事件表达。",
+    "Raw Observation / Source Metadata",
+    "可追溯 Raw Facts"
+  ],
+  [
+    "EVIDENCE & TIME",
+    "切片与召回，建立证据包",
+    "按时间窗口、来源和文本片段建立 Evidence Slices 与 Temporal Spine；结合关键词、语义和时间召回候选，再排序、去重与证据闭合。模型只处理授权证据包，不读取整库。",
+    "Raw Facts / Time Scope / Query",
+    "Evidence Pack / Candidate Set"
+  ],
+  [
+    "SEMANTIC ASSESSMENT",
+    "判断 Event、Thread 与关系",
+    "语义层判断事实属于同一 Event、持续 Thread、仅相关 RELATED_ONLY，还是暂不组织 UNORGANIZED；同时区分计划/完成、本人意图/引用内容、否定和后续修订。",
+    "Evidence Pack / Temporal Spine / Entity Candidates",
+    "Event / Thread / Relation Candidates"
+  ],
+  [
+    "BOUNDED AGENT",
+    "只在缺证时受控补证",
+    "只有证据不足且任务获授权时，有限 Agent 才读取允许来源；它不自由漫游，也不直接写入权威事实。补证范围、预算和停止条件由任务策略约束。",
+    "Candidate Gaps / User Policy",
+    "Bounded Evidence Jobs"
+  ],
+  [
+    "DURABLE ORCHESTRATION",
+    "让派生任务可增量、可恢复",
+    "持久编排管理触发、幂等、预算、checkpoint、重试和恢复。新事实或用户纠正只触发受影响对象的局部重算，不需要每次重建整份个人记忆。",
+    "Events / Job State / Dependencies",
+    "Incremental Derivation Runs"
+  ],
+  [
+    "VALIDATOR & DERIVED STORE",
+    "校验后发布可重建视图",
+    "Validator 检查来源引用、时间顺序、冲突、依赖、有效状态和版本，再发布 Event / Thread / Goal / Preference 等 Derived Context。派生对象可重算、合并、拆分或撤回。",
+    "Derived Candidate / Evidence Links / Versions",
+    "Versioned Derived Context"
+  ],
+  [
+    "USER CONTROL & AI GATEWAY",
+    "用户控制事实，网关控制出站",
+    "用户确认、纠错、忽略、合并、拆分和撤回拥有最高权威；Unified AI Gateway 按任务、目标应用和授权范围组装 Context Pack，通过 Provider / MCP Adapter 输出。Device Sync 独立负责跨设备同步。",
+    "Confirmed Context / Task Scope / User Policy",
+    "Authorized Context Pack / Cross-device State"
+  ]
 ];
 function contextExperience(){
- return '<div class="demo-system"><div class="system-toolbar mono"><span>PERSONAL CONTEXT KEYBOARD / PRODUCT ARCHITECTURE</span><span>SELECT A PRODUCT LAYER ↘</span></div><div class="system-flow" role="group" aria-label="选择个人上下文产品架构层">'+CONTEXT_STEPS.map((n,i)=>'<button data-context-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">0'+(i+1)+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('<div class="sys-join" aria-hidden="true">→</div>')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / CONTEXT LAYER</span><span class="system-detail-no" id="context-num">01 / 05</span></div><h3 id="context-title">高频信息入口</h3><p id="context-desc">'+CONTEXT_STEPS[0][2]+'</p><div class="system-io"><span id="context-input">'+CONTEXT_STEPS[0][3]+'</span><span id="context-output">'+CONTEXT_STEPS[0][4]+'</span></div></div></div>';
+ return '<div class="demo-system demo-system--context"><div class="system-toolbar mono"><span>PERSONAL CONTEXT / LOCAL-FIRST CORE</span><span>SELECT A LAYER ↘</span></div><div class="system-flow" role="group" aria-label="选择个人上下文系统架构层">'+CONTEXT_STEPS.map((n,i)=>'<button data-context-step="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="mono">'+String(i+1).padStart(2,'0')+'</span><strong>'+n[0]+'</strong><small>↗</small></button>').join('')+'</div><div class="system-detail"><div class="system-diagram-label"><span class="mono">SELECTED / CONTEXT LAYER</span><span class="system-detail-no" id="context-num">01 / '+String(CONTEXT_STEPS.length).padStart(2,'0')+'</span></div><h3 id="context-title">'+CONTEXT_STEPS[0][1]+'</h3><p id="context-desc">'+CONTEXT_STEPS[0][2]+'</p><div class="system-io"><span id="context-input">'+CONTEXT_STEPS[0][3]+'</span><span id="context-output">'+CONTEXT_STEPS[0][4]+'</span></div></div><div class="context-pipeline"><div><strong>RAW FACTS</strong><small>source · time · edit state</small></div><i>→</i><div><strong>EVIDENCE</strong><small>slice · retrieve · rank</small></div><i>→</i><div><strong>ASSESS</strong><small>event · thread · relation</small></div><i>→</i><div><strong>VALIDATE</strong><small>version · publish · revise</small></div></div><div class="context-principle mono">RAW IS AUTHORITATIVE · DERIVED IS RECOMPUTABLE · USER CONTROLS RELEASE</div></div>';
 }
 function showContextStep(i){
  const n=CONTEXT_STEPS[i];if(!n)return;
- document.getElementById('context-num').textContent='0'+(i+1)+' / 05';
+ document.getElementById('context-num').textContent=String(i+1).padStart(2,'0')+' / '+String(CONTEXT_STEPS.length).padStart(2,'0');
  document.getElementById('context-title').textContent=n[1];
  document.getElementById('context-desc').textContent=n[2];
  document.getElementById('context-input').textContent=n[3];
@@ -2006,7 +2142,7 @@ function showContextStep(i){
 }
 
 function renderCase(id){
- const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[c.presentation==='evidence'?c.id:c.type];
+ const c=CASES.find(x=>x.id===id)||CASES[0];if(!c)return;const d=CASE_DETAILS[(c.presentation==='evidence'||c.id==='personal-context-layer'||c.id==='agent-workflow-governance')?c.id:c.type];
  const layaBook=document.getElementById('laya-casebook-cta');if(layaBook)layaBook.hidden=c.id!=='laya-decision-integrity';
  $('#case-no').textContent=`${c.num} / CASE STUDY`;
  $('#case-kind').textContent=c.kind;
@@ -2015,13 +2151,13 @@ function renderCase(id){
  $('#case-head-note').textContent=d.headnote;
   const teamLinks=document.getElementById('case-team-links');
   if(teamLinks){const links=d.teamLinks||[];teamLinks.hidden=!links.length;teamLinks.innerHTML=links.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.label)+' ↗</a>').join('');}
-  $('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c.type)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
+  $('#case-cover').innerHTML=(c.presentation==='evidence'?editorialCover(c):caseCover(c)+(`<div class="glass-case-label" aria-hidden="true"><span class="glass-kicker">CURATED WORK<br>${c.category}</span><span class="glass-num">${c.num}</span></div>`));
  $('#case-sidebar-number').textContent=c.num;$('#case-template-tabs').innerHTML=CASES.slice(0,4).map((x,i)=>`<button data-action="navigate" data-page="case" data-target-id="${esc(x.id)}" aria-pressed="${x.id===c.id}">${String(i+1).padStart(2,'0')} / ${esc(x.category)}</button>`).join('');
  $('#case-facts').innerHTML=`<dl><div><dt>PRODUCT AREA</dt><dd>${c.category}</dd></div><div><dt>PRODUCT QUESTION</dt><dd>${c.productQuestion}</dd></div><div><dt>PRODUCT LEVERS</dt><dd>${c.caps.join(' / ')}</dd></div><div><dt>DELIVERY STATE</dt><dd>${c.status}</dd></div></dl>`;
- $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'PRODUCT SYSTEM DESIGN / REAL WORKFLOW':c.id==='personal-context-layer'?'ANDROID IMPLEMENTATION / PRODUCT GATES':c.verified?'VERIFIED UPSTREAM CONTRIBUTION / VISUAL EXPLANATION':c.type==='opensource'?'OPEN-SOURCE CASE / PRODUCT EXPLANATION':'PRODUCT & SYSTEM CASE / DESIGN EXPLANATION';
- $('#case-edition-disclaimer').textContent=c.id==='product'?'团队产品实践 · 后端部署有记录；前端完整验收与公开展示授权待确认':c.id==='agent-workflow-governance'?'AWRP 历史原型 + 现行工具组合 + 第三方架构对照；非已上线独立平台':c.id==='personal-context-layer'?'Android 主体实现接近完成；真实设备、Windows TSF 与正式发布 Gate 未完成':c.presentation==='evidence'?'以证据驱动的编辑式说明，不冒充产品截图':'架构与交互图为说明性呈现；实现状态与验证范围见案例正文';
- $('#case-scope-label').textContent=c.id==='product'?'DELIVERY / VALIDATION BOUNDARY':c.verified?'FACTS / VISUAL BOUNDARY':'EVIDENCE / PUBLICATION BOUNDARY';
- $('#case-scope-copy').textContent=c.presentation==='evidence'?c.editorial.boundary:c.verified?'PR 作者、合并状态和变更范围来自公开上游记录。图示为独立机制说明，不作为产品运行证据。交互演示为解释性复现。':c.id==='product'?'2026-11-05 后端部署报告记录 069b2dc、14 项能力工具及固定题集 API 回归；这些是团队内部交付记录，不等于完整产品上线或真实用户成效。前端仍为 11-03 release，48 条浏览器全场景未重跑，真机语音尚未验收；VIVIC 对外展示授权仍需单独确认。':'本页中的机制图用于解释产品设计，不代表真实产品截图或生产运行数据。实现状态、个人职责与外部证据分别说明；尚未取得的用户效果不作推断。';
+ $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'AGENT WORKFLOW / PROTOTYPE + PRODUCT DESIGN':c.id==='personal-context-layer'?'PERSONAL PROJECT / ANDROID IMPLEMENTATION':c.id==='laya-decision-integrity'?'UPSTREAM COLLABORATION / PRODUCT SYSTEMS':'PRODUCT & SYSTEM CASE';
+ $('#case-edition-disclaimer').textContent=c.id==='product'?'团队产品 · 后端部署与固定题集回归已有记录；前端完整体验与真实用户效果未验证':c.id==='agent-workflow-governance'?'AWRP 原型已执行；Agent Project OS 设计阶段 GO，G0–G2 Draft PR #1 未合并，产品代码未开始':c.id==='personal-context-layer'?'Android 主体实现接近完成；80 项模拟器回归 0 fail / 1 skip；正式验收与部分平台 Gate 待完成':c.id==='laya-decision-integrity'?'40 MERGED PRS · 10,394 ADDED LINES ACROSS AUTHORED PR DIFFS':'PRODUCT PROBLEM / ARCHITECTURE / EVIDENCE';
+ $('#case-scope-label').textContent=c.id==='laya-decision-integrity'?'CONTRIBUTION / EVIDENCE BOUNDARY':'DELIVERY / VALIDATION BOUNDARY';
+ $('#case-scope-copy').textContent=c.id==='product'?'2026-11-05 后端部署报告记录固定 60 题 API 回归 59/60、p50 1,807ms；本地同题集多轮结果与线上记录分开，不合并成线上 60/60。新版本 2,859 项单测中 2,848 通过、8 失败、3 跳过；48 条浏览器全场景未重跑。没有真实用户成功率或商业 ROI 证据。':c.id==='agent-workflow-governance'?'AWRP 是历史接力协议原型；Linear × Notion × GitHub 是当前真实工作流。Agent Project OS 已作出立项 GO 判断；G0–G2 文档已提交至 Draft PR #1（未合并），G3–G5 未开始，产品代码尚未开始。DeepSeek Super-agent 是第三方参考，不是个人实现。':c.id==='personal-context-layer'?'Android Emulator 全量基线为 80 tests / 0 fail / 0 error / 1 skip（唯一 skip 是 VoiceStoreInstrumentedTest 整类 @Ignore）；键盘整包 47 项回归本轮 NOT_RUN。正式产品验收 0、GQ NOT_RUN；真实设备、真实麦克风整链、arm64 运行时、Windows TSF 与生产签名 / 商店发布仍未完成。':c.id==='laya-decision-integrity'?'40 个本人提交的 PR 已合并；10,394 行新增量按本人全部 PR diff 汇总（包含实现、测试、评测工具与文档），不是 40 个合并 PR 的净新增行数。Review 和团队贡献分别归属，不称官方维护者。':'围绕用户问题、产品机制、系统架构与关键取舍展开。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
  const sourceLinks=c.url?[{label:'GitHub · Primary source',url:c.url,supports:'Upstream record'}]:publicEvidence;
  $('#case-source-link').hidden=!sourceLinks.length;
@@ -2030,11 +2166,14 @@ function renderCase(id){
  $('#case-experience-title').textContent=d.experienceTitle;$('#case-experience-intro').textContent=d.experienceIntro;
  $('#case-stage').innerHTML=c.id==='agent-workflow-governance'?workflowExperience():c.id==='personal-context-layer'?contextExperience():c.presentation==='evidence'?narrativeExperience(c):c.type==='product'?productExperience():systemExperience();
  $('#case-figure-caption').textContent=d.caption;
- const mediaCases={product:['M05','M06'],opensource:[],systems:[]};
+ const mediaCases={product:['M03','M05','M06','M09'],opensource:[],systems:[]};
  const mediaIds=c.presentation==='evidence'?[]:(mediaCases[c.type]||[]);
  $('#case-media-insert').hidden=!mediaIds.length;
- $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">REAL INTERFACE / HISTORICAL CAPTURE</div><h3>Product <i>in use.</i></h3><p>${c.type==='product'?'真实产品界面 · 截于 2026-11-01，仅展示当时的卡片与画布形态；与 11-05 后端重构指标不构成同环境前后对照。':'图为说明性机制可视化，并非产品运行截图。'}</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
- $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const rolePanel=document.getElementById('case-role-panel');if(rolePanel){const showRole=['product','agent-workflow-governance','personal-context-layer'].includes(c.id);rolePanel.hidden=!showRole;if(showRole){document.getElementById('case-role').textContent=d.role||c.editorial?.role||'';document.getElementById('case-tradeoff').textContent=d.tradeoff||'';document.getElementById('case-role-note').textContent=d.ownershipNote||c.editorial?.boundary||'';}}const metricRoot=document.getElementById('case-metrics');const metrics=c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 58–60/60',note:'6 轮结果；11-05 部署快照 59/60，末轮 60/60'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'同一测量口径，约下降 50%'},{label:'能力工具入口',value:'27 → 14',note:'从按卡片类型分散，收敛为按能力组织'}]:c.id==='laya-decision-integrity'?[{label:'本人 Authored PR',value:'47',note:'GitHub 作者查询快照 · 2026-11-09'},{label:'已合并 PR',value:'40 / 47',note:'本人 authored PR 中的已合并数量'},{label:'reviewed-by 查询',value:'85 PRs',note:'reviewed-by:Bruce-Yii 命中；与 authored 统计分开'}]:[];const metricNote=c.id==='product'?'FIXED 60-ITEM API REGRESSION · INTERNAL TEAM RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS':c.id==='laya-decision-integrity'?'GITHUB QUERY SNAPSHOT · REVIEWED-BY MATCHES ARE A SEPARATE QUERY · NOT A PRODUCT KPI':'';if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>`<article class="case-metric"><span class="mono case-metric__label">${esc(m.label)}</span><strong class="case-metric__value">${esc(m.value)}</strong><small class="case-metric__note">${esc(m.note)}</small></article>`).join('')+`<p class="case-metrics-note mono">${esc(metricNote)}</p>`:'';}
+ $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">OFFICIAL WEBSITE / PRODUCT SHOWCASE</div><h3>VIVIC <i>in context.</i></h3><p>以下画面来自 VIVIC 官网公开展示素材（采集于 2026-10-17），用于说明产品形态与场景；它们不是 2026-11-05 后端部署版本的同环境截图，也不作为性能或回归证据。</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
+ $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const rolePanel=document.getElementById('case-role-panel');if(rolePanel){const showRole=['product','agent-workflow-governance','personal-context-layer'].includes(c.id);rolePanel.hidden=!showRole;if(showRole){document.getElementById('case-role').textContent=d.role||c.editorial?.role||'';document.getElementById('case-tradeoff').textContent=d.tradeoff||'';document.getElementById('case-role-note').textContent=d.ownershipNote||c.editorial?.boundary||'';}}const metricRoot=document.getElementById('case-metrics');
+ const metrics=c.id==='personal-context-layer'?[{label:'Android Emulator baseline',value:'80 tests',note:'0 fail · 0 error · 1 skip；x86_64 / API 36 模拟器'}]:c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 59/60',note:'旧稳定版 53/60；2026-11-05 线上部署报告 59/60'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'同一测量口径，约下降 50%'},{label:'能力工具入口',value:'27 → 14',note:'27 是重构中途按卡型的工具面；14 是最终按能力组织的工具'}]:c.id==='laya-decision-integrity'?[{label:'已合并 PR',value:'40',note:'本人提交并被 Laya 上游合并'},{label:'新增行数',value:'10,394',note:'本人全部 PR diff 新增行数，含实现、测试、评测工具与文档'}]:[];
+ const metricNote=c.id==='personal-context-layer'?'ANDROID EMULATOR REGRESSION · NOT FORMAL PRODUCT ACCEPTANCE OR REAL-DEVICE QUALIFICATION':c.id==='product'?'INTERNAL API TEST / DEPLOYMENT RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS · 2,859 UNIT TESTS: 2,848 PASS / 8 FAIL / 3 SKIP':'10,394 ADDED LINES ACROSS ALL AUTHORED PR DIFFS · MERGED PR COUNT IS REPORTED SEPARATELY';
+ if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>'<article class="case-metric"><span class="mono case-metric__label">'+esc(m.label)+'</span><strong class="case-metric__value">'+esc(m.value)+'</strong><small class="case-metric__note">'+esc(m.note)+'</small></article>').join('')+'<p class="case-metrics-note mono">'+esc(metricNote)+'</p>':'';}
  if(c.id==='product')showProductStep(0);if(c.id==='agent-workflow-governance')showWorkflowStep(0);if(c.id==='personal-context-layer')showContextStep(0);if(c.presentation!=='evidence'&&c.type==='systems')showSystemNode(2)
  const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
 }
