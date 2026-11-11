@@ -20,16 +20,17 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Website source commit: `2d071eaf04f666d5f65acb5cf83def12d7e2faa0`.
-- Vercel deployment: `dpl_77idafnMnTNEFumvPeLZuKPeq8aY` (`READY`, target `null`, Preview only).
-- Public no-login URL: https://ai-product-portfolio-1z4adt3b2-yu-ac3a.vercel.app/
-- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated page fetch was verified.
-- Hosted verification: `/` and `/cases/laya/` both return HTTP 200. The current homepage renders Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship section.
-- Navigation correction: the Laya casebook return control now uses the same-origin root path (`/`), not the stale `portfolio.hcfind.com` alias. The current deployed HTML contains no reference to that old host in the return control.
-- Indexing protection: page metadata reports `noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`; `vercel.json` configures the `X-Robots-Tag: noindex, nofollow, noarchive` response header.
+- Current website artifact commit: `3f20556f335ca3118c83fb8da7a93cd4e0ff92d5` (`feat(portfolio): add Laya product and launch context`). Later `main` commits through `41013c9` are documentation/governance-only and do not change the deployed website artifact.
+- Vercel deployment: `dpl_Fe32YRYL68dgKa6uv6da6SYwJDk2` (`READY`, target `null`, Preview only).
+- Current review URL: https://ai-product-portfolio-82mgnds3s-yu-ac3a.vercel.app/
+- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled.
+- Source verification: homepage cards are Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship section. Four Case records and four detail payloads exist; all three homepage Project IDs resolve to Case records.
+- Navigation: Laya casebook return control uses same-origin `/`, not the stale `portfolio.hcfind.com` alias. This change is inherited from parent website commit `2d071eaf`.
+- Laya introduction: project definition and dated popularity context were added in `3f20556`; ranking claims have been checked against the cited dated sources. Star/fork counts remain historical snapshots, not live counters.
+- Indexing protection: current source retains page-level noindex and `robots.txt` crawler blocking; `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`. Parent preview `dpl_77idafnMnTNEFumvPeLZuKPeq8aY` returned HTTP 200 for homepage and Laya route; this newer deployment's direct HTTP/browser verification remains pending.
 - Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks, all project-card interactions, and independent image-render verification. These are not claimed as passed.
-- Previous preview `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` is superseded by this deployment; earlier preview IDs remain historical/superseded.
-- No custom-domain alias, production promotion, DNS or indexing change is authorized. The custom domain `portfolio.hcfind.com` still serves an older historical candidate and is not the review URL.
+- Previous preview `dpl_77idafnMnTNEFumvPeLZuKPeq8aY` is superseded by this deployment. Earlier preview IDs remain historical/superseded.
+- No custom-domain alias, production promotion, DNS or indexing change is authorized. `portfolio.hcfind.com` still serves an older historical candidate and is not the review URL.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
