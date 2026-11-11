@@ -713,3 +713,13 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Browser visual/click E2E, 1440px / 390px / 360px rendered checks and independent image rendering remain pending.
 - This is a public, no-login Preview for review, not a production deployment or search-indexing approval.
 - No custom-domain alias, DNS, production target or indexing change occurred.
+
+
+## 2026-11-11 — Content clarity pass
+
+- Updated homepage card copy to distinguish Android-first implementation from the Windows target for Personal Context Keyboard.
+- Reframed project maturity labels around implemented scope and evidence; retained exact validation boundaries in the relevant case notes.
+- AWRP now distinguishes the executed relay prototype, current Linear × Notion × GitHub workflow, and G0–G2 Agent Project OS design documents.
+- Laya homepage emphasizes merged collaboration and product systems; the 10,394 additions count remains a secondary deep-case metric with explicit scope.
+- Updated static validator to guard PCK platform wording and Laya metric hierarchy.
+- Browser visual/click and responsive QA remain separate checks after deployment.

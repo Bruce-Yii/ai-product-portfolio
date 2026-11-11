@@ -25,6 +25,9 @@ const homeProjects = html.slice(start, end);
 const actualProjectIds = [...homeProjects.matchAll(/caseId:\s*"([^"]+)"/g)].map((match) => match[1]);
 
 assert.deepEqual(actualProjectIds, expectedProjectIds, "Homepage project order or membership changed.");
+assert.ok(homeProjects.includes("ANDROID-FIRST / WINDOWS TARGET"), "PCK platform maturity label must distinguish Android-first from the Windows target.");
+assert.ok(homeProjects.includes("4 product systems"), "Laya summary must foreground product systems rather than code-volume metrics.");
+assert.ok(!homeProjects.includes("10K+ lines added"), "Laya code-volume metric must remain in the deep case, not the homepage project summary.");
 assert.ok(html.includes('id="home-projects"'), "Homepage project mount point is missing.");
 assert.ok(html.includes("renderProjectCards('home-projects')"), "Homepage project renderer is not called.");
 assert.ok(html.includes("function navigate("), "Case navigation handler is missing.");

@@ -143,3 +143,12 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - All existing non-main branches are frozen historical snapshots. Only `main` receives future website changes.
 - Future website iterations use one commit on `main`, one exact-SHA Vercel Preview and one current public URL. Documentation-only commits do not trigger a website deployment.
 - The previous internal preview `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3` and duplicate branch preview `dpl_G1auBCQmXiN4gphb2n9CirZhpL55` are superseded by the mainline deployment.
+
+
+## 2026-11-11 — Content clarity pass
+
+- Website source commit: pending exact mainline commit read-back.
+- Scope: sharpened homepage project descriptions and maturity labels; clarified PCK as Android-first / Windows target; presented AWRP G0–G2 as completed product/design documentation without implying product code exists; shortened delivery-boundary copy so it explains what the evidence proves rather than listing every outstanding gate.
+- Laya homepage proof now leads with 40 personally authored merged PRs, four product systems and eight selected product stories. The 10,394 additions metric remains in the deep casebook with its independent-count explanation; it is no longer a homepage headline.
+- Hero proof cue now distinguishes personal product work, team Agent delivery and upstream collaboration.
+- No new project, page, route, navigation item, custom-domain change, Production promotion or indexing change.

@@ -16,9 +16,9 @@
 - Any future hero wording change requires explicit current-turn owner approval; otherwise retain the approved neutral baseline.
 
 ## Personal Context Keyboard
-**Card:** PERSONAL PROJECT · ANDROID / WINDOWS  
-**Summary:** 以输入作为高频信息入口，将原始事实、事件与长期上下文组织为用户可追溯、可修订、可授权使用的个人 Context，让不同 AI 工具能够在用户控制下复用这些信息。  
-**Stage:** Android 主体实现接近完成；正式产品验收与部分平台 Gate 待完成。
+**Card:** PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET  
+**Summary:** 以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。  
+**Stage:** Android 主体实现接近完成；产品验收与跨端 Gate 独立推进。
 
 - Public implementation and evidence repository: https://github.com/Bruce-Yii/personal-context-keyboard
 
@@ -31,7 +31,7 @@
 ## VIVIC
 **Card:** TEAM PRODUCT · MULTIMODAL AGENT  
 **Summary:** 团队打造的多模态卡片助理，支持语音与文本交互。我在比赛中与团队相识，赛后受邀加入，并接手既有产品的体验与 Agent 决策链路优化。  
-**Stage:** 赛后加入并持续优化；后端部署与专项回归已有记录。苏客松生活办公赛道第四名是团队成绩。
+**Stage:** 赛后受邀加入团队，持续推进 Agent 决策链路优化；后端部署与固定题集回归已有记录。苏客松生活办公赛道第四名是团队成绩。
 
 - Old stable version: 53/60 on the fixed 60-item API set.
 - 2026-11-05 online deployment report: 59/60 on the same fixed API set; do not substitute local 60/60.
@@ -44,8 +44,8 @@
 
 ## AWRP × Linear
 **Card:** AGENT WORKFLOW · PRODUCT DESIGN  
-**Summary:** 从 ChatGPT 手机/网页端与本地 Agent 的协同问题出发，先做 AWRP 接力原型，再把真实工作流落到 Linear × Notion × GitHub，并据此设计 Project-first Agent OS。  
-**Stage:** AWRP 原型已执行；Linear × Notion 工作流在用；Agent Project OS 设计阶段 GO，代码未开始。
+**Summary:** 从 ChatGPT 与本地 Agent 的接力问题出发，先实现 AWRP 原型，再将真实项目治理落到 Linear × Notion × GitHub，并据此形成 Project-first Agent OS 设计。  
+**Stage:** AWRP 原型已执行；Linear × Notion × GitHub 工作流在用；Agent Project OS 完成 G0–G2 产品与工程设计。
 
 - AWRP is a historical task-handoff protocol and code prototype. Public-safe source snapshot: https://github.com/Bruce-Yii/awrp
 - Linear × Notion × GitHub is the current real workflow: execution state, long-term semantics, code/live truth.
@@ -54,8 +54,8 @@
 - The current workflow diagram must not present AWRP as the active production task system.
 
 ## Laya metrics
-- Public headline: 40 personally authored PRs merged upstream.
-- Separate metric: 10,394 additions summed across the full authored PR diff set, including implementation, tests, evaluation tooling and docs. This is not the net additions of the 40 merged PRs.
+- Public headline: 40 personally authored PRs merged upstream, organized into four product systems and eight selected product stories.
+- Keep 10,394 additions as a secondary deep-case metric only; it is summed across the full authored PR diff set, including implementation, tests, evaluation tooling and docs, and is not the net additions of the 40 merged PRs.
 - Do not use 47 authored / 85 reviewed-by query counts as public headline metrics. Do not claim official maintainer or co-author status.
 
 ## Reused improvements / exclusions
