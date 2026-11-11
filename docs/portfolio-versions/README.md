@@ -156,3 +156,11 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Public no-login URL: https://ai-product-portfolio-h38fv57pf-yu-ac3a.vercel.app/.
 - Hosted checks: homepage and Laya casebook HTTP 200; deployment ID matches the homepage response; project SSO/password/trusted-IP protection disabled; both routes noindex; `robots.txt` blocks crawling.
 - Static source checks: one inline script parses; selected project order remains PCK → VIVIC → AWRP × Linear; prohibited copy absent; PCK platform scope and Laya metric hierarchy verified.
+
+
+## 2026-11-11 — AWRP case narrative refinement
+
+- Reworked the AWRP detail page to explain the cross-window project continuity problem before introducing protocol terminology.
+- Kept the interactive object model as the deep-reading layer; the main narrative now foregrounds project continuity, task responsibility, traceable execution and evidence-based review.
+- Preserved the exact maturity boundary between the executed AWRP prototype, current Linear × Notion × GitHub workflow and Agent Project OS G0–G2 design documents.
+- Website source commit: pending deployment.

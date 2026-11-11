@@ -750,3 +750,11 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 ### Remaining QA
 - Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and independent image-render verification remain pending.
 - No custom-domain alias, production target, DNS or indexing change occurred.
+
+
+## 2026-11-11 — AWRP case narrative refinement
+
+- Reframed the AWRP case detail around the user's cross-window workflow problem before introducing protocol objects.
+- Kept the interactive object model, but moved its terminology behind a clear explanation of Project, Task, Run, Event and Artifact responsibilities.
+- Shortened the outcome narrative while preserving the distinction between the executed AWRP prototype, current Linear × Notion × GitHub workflow, Agent Project OS G0–G2 design docs and DeepSeek as a third-party reference.
+- No project, route, visual system, domain or publication state changed.

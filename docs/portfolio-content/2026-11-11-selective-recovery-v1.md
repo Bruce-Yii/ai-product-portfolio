@@ -53,6 +53,12 @@
 - DeepSeek Super-agent is a third-party reference, not personal implementation.
 - The current workflow diagram must not present AWRP as the active production task system.
 
+### Deep-case narrative
+- **Problem:** ChatGPT on mobile/web is used for research and task definition; local Coding Agents execute on the computer. Chat-only handoff scatters project context, repeats explanations across windows, and makes parallel execution and result review hard to coordinate.
+- **Product decision:** separate long-lived project identity, task boundaries, one execution attempt and its evidence. Keep the interactive object model available for deep readers, but explain the user-facing value before naming protocol objects.
+- **Experience framing:** Project retains goals/decisions; Task defines owner, scope, dependencies and acceptance; Run records one Agent attempt; Event / Artifact retain execution changes and verifiable outputs.
+- **Outcome framing:** projects continue across windows; tasks have explicit responsibility and acceptance; execution is traceable; results return to one project history. Linear × Notion × GitHub remain the real current workflow, while Agent Project OS is a separate next-step design.
+
 ## Laya metrics
 - Public headline: 40 personally authored PRs merged upstream, organized into four product systems and eight selected product stories.
 - Keep 10,394 additions as a secondary deep-case metric only; it is summed across the full authored PR diff set, including implementation, tests, evaluation tooling and docs, and is not the net additions of the 40 merged PRs.
