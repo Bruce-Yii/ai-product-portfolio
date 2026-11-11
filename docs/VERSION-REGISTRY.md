@@ -1,7 +1,7 @@
 # Portfolio Version Registry
 
 > **Operational source of truth for version identity and release state.**
-> Last verified: 2026-11-12 (Asia/Taipei). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
+> Last verified: 2026-11-12 (Asia/Shanghai). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
 
 Do not infer the current version from a branch name, a deployment display URL, or a historical README entry alone. A version is identified by **commit SHA + Vercel deployment ID**. Check the actual page response for its deployment ID before treating a URL as current.
 
@@ -20,17 +20,16 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Website source commit: `f63fd225409d124aeb2f2e468a5b24b487d76f50`.
-- Vercel deployment: `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` (`READY`, target `null`, Preview only).
-- Public no-login URL: https://ai-product-portfolio-iqifybh25-yu-ac3a.vercel.app/.
-- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated HTTP access was verified.
-- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P`.
-- Content verification: public copy now focuses on project identity, product decisions, personal contribution and outcomes. Removed the public audit-style scope note, internal QA disclaimers, the unmerged Google ADK proposal, and other-contributor disclaimers. PCK maturity copy is expressed through implemented Android capability; Laya casebook foregrounds product stories and merged outcomes.
-- Binding copy rule: public pages are a recruiter-facing showcase, not an audit log. See `docs/PORTFOLIO-CONTENT-RULES.md` and section 1.6 of `docs/PORTFOLIO-OPERATING-CONTRACT.md`.
-- Indexing protection: both page routes carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`.
-- Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification.
-- Previous preview `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` is superseded by this deployment; earlier preview IDs remain historical/superseded.
-- No custom-domain alias, production promotion, DNS or indexing change is authorized.
+- Website source commit: `2d071eaf04f666d5f65acb5cf83def12d7e2faa0`.
+- Vercel deployment: `dpl_77idafnMnTNEFumvPeLZuKPeq8aY` (`READY`, target `null`, Preview only).
+- Public no-login URL: https://ai-product-portfolio-1z4adt3b2-yu-ac3a.vercel.app/
+- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated page fetch was verified.
+- Hosted verification: `/` and `/cases/laya/` both return HTTP 200. The current homepage renders Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship section.
+- Navigation correction: the Laya casebook return control now uses the same-origin root path (`/`), not the stale `portfolio.hcfind.com` alias. The current deployed HTML contains no reference to that old host in the return control.
+- Indexing protection: page metadata reports `noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`; `vercel.json` configures the `X-Robots-Tag: noindex, nofollow, noarchive` response header.
+- Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks, all project-card interactions, and independent image-render verification. These are not claimed as passed.
+- Previous preview `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` is superseded by this deployment; earlier preview IDs remain historical/superseded.
+- No custom-domain alias, production promotion, DNS or indexing change is authorized. The custom domain `portfolio.hcfind.com` still serves an older historical candidate and is not the review URL.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
