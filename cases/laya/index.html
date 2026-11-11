@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#e9ebe5" name="theme-color"/>
-<meta content="Laya 产品能力与上游协作案例册：从意图保真、决策可信、渐进采用到开发者契约。40 个本人提交的 PR 已合并；累计新增 10,394 行变更，覆盖实现、测试、评测工具与文档。" name="description"/>
-<title>LAYA — From Output to Adoption · Casebook v2.4</title>
+<meta content="Laya 全球开源增长、AI 开发者社区传播、Hugging Face 与 Vercel AI Gateway 生态，以及从意图保真到开发者采用的上游产品协作案例。" name="description"/>
+<title>LAYA — From Output to Adoption · Casebook v2.5</title>
 <style>
 :root{--paper:#e9ebe5;--paper2:#f4f5f0;--ink:#18231e;--ink2:#334139;--muted:#58665d;--line:#b8c0b6;--line2:#d2d8cf;--red:#963f2e;--red2:#9f4938;--forest:#20372d;--forest2:#304b3d;--cream:#f4f1e8;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--serif:Georgia,"Times New Roman","Noto Serif SC",serif;--sans:Inter,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;--max:1240px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}::selection{background:#c7d1c3;color:var(--ink)}
@@ -265,12 +265,43 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset
 .atlas-links a:hover,.atlas-links a:focus-visible{border-color:#d58a71;color:#f0b39d;outline:none}
 @media(max-width:850px){.product-map{grid-template-columns:repeat(2,minmax(0,1fr))}.chapter-outcome{grid-template-columns:1fr;gap:7px}.footprint-head{display:block}.footprint-head p{margin-top:14px}}
 @media(max-width:520px){.product-map{grid-template-columns:1fr}.product-system{min-height:0}.product-rule{display:block}.product-rule p{margin-top:7px}.footprint{padding:54px 0}.footprint-grid{grid-template-columns:1fr}.footprint-stat,.footprint-stat+.footprint-stat{padding:18px 0;border-left:0;border-top:1px solid var(--line)}.footprint-stat:first-child{border-top:0}.atlas-grid{grid-template-columns:1fr}.atlas summary{font-size:12px}}
-<style></style>
+<style>
+.impact{padding:82px 0;background:var(--paper2);border-bottom:1px solid var(--line)}
+.impact-head{display:grid;grid-template-columns:.32fr 1fr;gap:30px;margin-bottom:38px}
+.impact-head .section-index{color:var(--red);padding-top:9px}
+.impact-title{font:clamp(40px,5.1vw,68px)/1 var(--serif);letter-spacing:-.055em;margin:0}
+.impact-title em{font-weight:400;color:var(--red)}
+.impact-lead{max-width:820px;color:var(--muted);font-size:15px;margin:17px 0 0}
+.impact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.impact-card{background:var(--paper);padding:21px;min-height:190px;min-width:0}
+.impact-card small{font:9px/1.5 var(--mono);letter-spacing:.08em;color:var(--red)}
+.impact-card strong{display:block;font:500 clamp(32px,4vw,50px)/1 var(--sans);letter-spacing:-.05em;margin:24px 0 9px}
+.impact-card p{font-size:12px;line-height:1.75;color:var(--muted);margin:0}
+.impact-card a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.impact-signals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px}
+.impact-signal{border-top:1px solid var(--line);padding-top:13px;min-width:0}
+.impact-signal .mono,.impact-current>.mono{color:var(--red)}
+.impact-signal p{font-size:12px;line-height:1.8;color:var(--muted);margin:9px 0 0}
+.impact-signal strong{color:var(--ink);font-weight:600}
+.impact-signal a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+.impact-current{border-top:1px solid var(--line);margin-top:27px;padding-top:15px}
+.impact-current p{font-size:13px;line-height:1.8;margin:8px 0 0;color:var(--ink2)}
+.impact-current p span{color:var(--muted);padding:0 8px}
+.impact-sources{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.impact-sources a{font:9px var(--mono);padding:6px 8px;border:1px solid var(--line);color:var(--ink2)}
+.impact-sources a:hover{border-color:var(--red);color:var(--red)}
+.impact-benchmark{border-top:1px solid var(--line);margin-top:22px;padding-top:14px}
+.impact-benchmark summary{cursor:pointer;font:9px var(--mono);letter-spacing:.08em;color:var(--red)}
+.impact-benchmark p{font-size:11px;line-height:1.9;color:var(--muted);max-width:1050px;margin:12px 0 0}
+.impact-foot{font-size:10px;line-height:1.8;color:var(--muted);margin-top:18px}
+@media(max-width:850px){.impact-head{grid-template-columns:1fr;gap:12px}.impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-signals{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.impact{padding:54px 0}.impact-grid{grid-template-columns:1fr}.impact-card{min-height:0;padding:18px}.impact-card strong{margin:15px 0 6px}.impact-signals{grid-template-columns:1fr;gap:18px}.impact-current p span{display:block;height:0;overflow:hidden}}
+</style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 <style>/* 2026-11-11 owner review: compact editorial scale */
 .hero h1{font-size:clamp(42px,5.3vw,76px)!important;line-height:1.08!important;letter-spacing:-.055em!important}.hero-cn{font-size:clamp(18px,1.7vw,22px)!important;line-height:1.5!important;margin-top:24px!important}.section-title{font-size:clamp(32px,3.5vw,50px)!important;line-height:1.12!important}.manifesto h2{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.18!important}.chapter-main h3{font-size:clamp(23px,2.5vw,34px)!important;line-height:1.2!important}.feature-copy h3{font-size:clamp(25px,2.7vw,36px)!important;line-height:1.18!important}.footprint-head h2{font-size:clamp(28px,3.1vw,44px)!important;line-height:1.15!important}.footprint-stat strong{font-size:clamp(36px,4vw,54px)!important}@media(max-width:850px){.hero h1{font-size:clamp(40px,8vw,60px)!important}.section-title{font-size:clamp(30px,6vw,42px)!important}}@media(max-width:520px){.hero h1{font-size:clamp(34px,8.8vw,46px)!important;line-height:1.14!important}.hero-cn{font-size:18px!important}.section-title{font-size:30px!important}.manifesto h2{font-size:30px!important}.chapter-main h3{font-size:23px!important}.feature-copy h3{font-size:26px!important}.footprint-head h2{font-size:28px!important}.footprint-stat strong{font-size:38px!important}}</style></head>
 <body>
-<header class="topbar"><div class="wrap topbar-inner"><a class="back-portfolio mono" href="/">← BACK TO PORTFOLIO</a><a class="brand" href="#top"><span class="brand-mark">L/</span><span class="brand-name">LAYA<br/>CASEBOOK / 2026</span></a><nav class="nav"><a href="#product">产品能力</a><a href="#collaboration">上游协作</a><a href="#upstream-footprint">贡献规模</a><a href="#evidence">证据索引</a><a class="nav-cta" href="https://github.com/NandhaKishorM/laya" rel="noopener" target="_blank">OPEN SOURCE ↗</a></nav></div></header>
+<header class="topbar"><div class="wrap topbar-inner"><a class="back-portfolio mono" href="/">← BACK TO PORTFOLIO</a><a class="brand" href="#top"><span class="brand-mark">L/</span><span class="brand-name">LAYA<br/>CASEBOOK / 2026</span></a><nav class="nav"><a href="#product">产品能力</a><a href="#global-impact">全球热度</a><a href="#collaboration">上游协作</a><a href="#upstream-footprint">贡献规模</a><a href="#evidence">证据索引</a><a class="nav-cta" href="https://github.com/NandhaKishorM/laya" rel="noopener" target="_blank">OPEN SOURCE ↗</a></nav></div></header>
 <main id="top">
 <section class="wrap hero">
 <div class="hero-copy">
@@ -330,6 +361,23 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset
 </div>
 <div class="hero-caption mono">LAYA / FOUR PRODUCT SYSTEMS / EDITORIAL CASEBOOK</div>
 </section>
+<section class="impact" id="global-impact"><div class="wrap">
+<div class="impact-head"><div class="mono section-index">GLOBAL MOMENTUM / 2026.09—11</div><div><h2 class="impact-title">The open-source <em>breakout.</em></h2><p class="impact-lead">从 2026 年 9 月下旬开始，Laya 在多个独立开源增长榜单中连续进入前列，随后进入模型平台与 AI 应用基础设施。它引发的关注主要集中在全球 AI 开发者社区：System One 决策模型路线讨论、端侧移植、Agent 路由和真实任务实验。</p></div></div>
+<div class="impact-grid">
+<article class="impact-card"><small>01 / GLOBAL WEEKLY GROWTH</small><strong>#1</strong><p><a href="https://gittrend.io/weekly/2026-W39" rel="noopener" target="_blank">GitTrend · Week 39</a><br/>2026-09-21 至 09-27，单周新增约 22.3K Stars。</p></article>
+<article class="impact-card"><small>02 / DAILY TRENDING</small><strong>#1 × 4</strong><p><a href="https://trendshift.io/repositories/244591" rel="noopener" target="_blank">Trendshift 全球与 Python 趋势榜</a><br/>连续四天登顶（09-20 至 09-23）；09-22 单日新增 6,379 Stars。</p></article>
+<article class="impact-card"><small>03 / MONTHLY STAR GROWTH</small><strong>#3</strong><p><a href="https://github.com/OpenGithubs/github-monthly-rank/blob/main/2026/10.md" rel="noopener" target="_blank">OpenGithubs · September</a><br/>月度 Star 增长榜第 3，增加 24,592 Stars；GitTrend 月榜另列第 8。</p></article>
+<article class="impact-card"><small>04 / DEVELOPER DISCUSSION</small><strong>1,363</strong><p><a href="https://news.ycombinator.com/item?id=49765348" rel="noopener" target="_blank">Hacker News launch thread</a><br/>截至 2026-11-12，1,363 Points / 319 Comments。</p></article>
+</div>
+<div class="impact-signals">
+<article class="impact-signal"><div class="mono">MODEL HUB / OCT 02</div><p><strong>Hugging Face Trending Models #1</strong> — Startup Fortune 于 10 月 2 日报道 Laya 登上模型趋势榜首。<a href="https://startupfortune.com/open-source-is-pulling-away-from-jev-laya-mukkunnoth/" rel="noopener" target="_blank">阅读报道 ↗</a></p></article>
+<article class="impact-signal"><div class="mono">INFERENCE DISTRIBUTION / OCT 01</div><p><strong>Vercel AI Gateway</strong> — Vercel 官方于 10 月 1 日宣布提供 Laya 调用，并通过 Boundless 开放一个月免费使用。<a href="https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31" rel="noopener" target="_blank">官方公告 ↗</a></p></article>
+<article class="impact-signal"><div class="mono">COMMUNITY BUILDS / NOV 12</div><p><strong>115 条生态收录记录</strong> — 独立目录收录 71 个 GitHub 项目记录、40 条 X 动态及其他资源。它是人工整理的生态目录，不是安装量统计。<a href="https://www.madewithlaya.com/" rel="noopener" target="_blank">查看目录 ↗</a></p></article>
+</div>
+<div class="impact-current"><span class="mono">MODEL HUB SNAPSHOT / 2026-11-12</span><p><strong>GitHub</strong> · 35.4K Stars / 3.17K Forks <span>—</span> <strong>Hugging Face</strong> · 65.9K Downloads / 5,948 Likes</p><div class="impact-sources"><a href="https://github.com/NandhaKishorM/laya" rel="noopener" target="_blank">GITHUB REPOSITORY ↗</a><a href="https://huggingface.co/convaiinnovations/laya" rel="noopener" target="_blank">HUGGING FACE MODEL ↗</a><a href="https://gittrend.io/monthly/2026-09" rel="noopener" target="_blank">GITTREND SEPTEMBER #8 ↗</a><a href="https://gitnova.dev/en/day/2026-09-21" rel="noopener" target="_blank">GITNOVA DAILY #1 ↗</a></div></div>
+<details class="impact-benchmark"><summary>DECISION-MODEL BENCHMARK CONTEXT / POPULARITY IS NOT MODEL ACCURACY</summary><p>System One 决策模型尚没有一个统一的行业官方总榜。2026-09-30 的 S1MB 社区评测覆盖 23 个模型、137 个 benchmark、14,009 个案例和 26,269 项判断：Laya typed-decisions 排名 19/23，基础 Laya 排名 20/23，multilingual 排名 21/23。另一个 2,000 项 typed-decisions 专项榜中，经过该任务微调的 Laya checkpoint 排名第 2（0.714 → 0.762）；这是任务微调后的专项成绩，不代表基础模型的通用零样本排名。</p><div class="impact-sources"><a href="https://huggingface.co/blog/hotchpotch/system-one-mosaic-benchmark" rel="noopener" target="_blank">S1MB · SEP 30 SNAPSHOT ↗</a><a href="https://metatext.ai/system-one/typed-decisions-benchmark" rel="noopener" target="_blank">TYPED-DECISIONS · 2,000 CASES ↗</a></div></details>
+<div class="impact-foot">榜单来自不同第三方平台，统计窗口与算法并不相同；增长排名、社区热度和模型性能评测是三种不同指标。</div>
+</div></section>
 <section class="manifesto"><div class="wrap">
 <div class="manifesto-grid"><div class="mono section-index">THE PRODUCT THESIS</div><h2>模型给出答案，只是起点。<br/><em>真正的产品价值，是让答案值得被使用。</em></h2></div>
 <div class="manifesto-bottom"><div class="mono">FOUR PRODUCT SYSTEMS</div><div><p>把八个上游产品故事放回同一张产品地图：从意图保真、决策可信，到受控采用与开发者契约，四组产品责任共同支撑开发者采用旅程。</p><div class="product-map"><a class="product-system" href="#chapter-01"><span class="system-kicker">01 / INTENT FIDELITY</span><h3>先理解对</h3><p>让输入、上下文、语言路由与框架集成保持语义连续，从输入开始保持用户意图的完整与准确。</p><div class="system-chapters"><span>CHAPTER 01</span></div></a><a class="product-system" href="#chapter-03"><span class="system-kicker">02 / DECISION CONFIDENCE</span><h3>知道凭什么信</h3><p>把评测证据、训练原语和校准策略组织成可检查、可复用、跨运行时一致的决策基础。</p><div class="system-chapters"><span>CHAPTER 03</span><span>CHAPTER 04</span><span>CHAPTER 05</span></div></a><a class="product-system" href="#chapter-02"><span class="system-kicker">03 / CONTROLLED ADOPTION</span><h3>再决定怎么用</h3><p>给应用团队一条从观察、比较到有限推广的路径；模型提供决策证据，业务策略与最终授权仍由应用掌握。</p><div class="system-chapters"><span>CHAPTER 02</span></div></a><a class="product-system" href="#chapter-06"><span class="system-kicker">04 / DEVELOPER CONTRACT</span><h3>每个入口都兑现</h3><p>让候选选择、Demo、服务、SDK、CI 与部署说明保持可预测，开发者在不同入口获得一致、可预测的产品行为。</p><div class="system-chapters"><span>CHAPTER 06</span><span>CHAPTER 07</span><span>CHAPTER 08</span></div></a></div><div class="product-rule"><strong>贯穿四组系统的权限原则</strong><p>Laya 输出决策、概率、置信度与证据；应用策略掌握阈值、审核、资格判断、动作执行与回退的最终授权。</p></div></div></div>
