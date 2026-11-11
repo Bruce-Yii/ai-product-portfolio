@@ -20,18 +20,19 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Current website artifact commit: `edaf0c593486ff782899e3b171b26e163ea16a6d`.
-- Vercel deployment: `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/
+- Current website artifact commit: `96a2c02ad396a4c95f22030d54259f59a8001d75`.
+- Vercel deployment: `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` (`READY`, target `null`, Preview only).
+- Immutable review URL: https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/
 - Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled.
 - Source verification: homepage cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship section. Four Case records and four detail payloads remain intact.
-- Laya content: expanded global momentum rankings (Trendshift, GitTrend, OpenGithubs), Hacker News discussion, Hugging Face Trending report, Vercel AI Gateway listing, curated community ecosystem records and dated GitHub / Hugging Face counters.
-- Laya casebook: new `#global-impact` section, ranking cards, platform/community signals and collapsed System One benchmark context. No universal model-quality #1 claim is made.
-- Navigation: Laya casebook return control remains same-origin `/`; new global-impact navigation anchor points to the section within the same page.
+- Laya homepage: global growth rankings, CyberQ's dated first-week coverage, Hacker News discussion, Hugging Face Trending reporting, Vercel AI Gateway distribution, community directory records and dated GitHub / Hugging Face counters.
+- Laya casebook v2.6: Global Momentum section, four growth/community cards, four platform/media/community signals, S1MB / JevBench / typed-decisions context in a collapsed disclosure.
+- Benchmark wording separates popularity from model performance; no universal decision-model #1 claim is made.
+- Navigation: Laya casebook return control remains same-origin `/`; global-impact anchor remains within the casebook.
 - Indexing protection: page-level noindex remains on both pages; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
-- Vercel confirms exact source commit `edaf0c593486ff782899e3b171b26e163ea16a6d`, READY state, and Preview-only target. Project SSO/password/trusted-IP protections are disabled.
+- Vercel confirms exact source commit `96a2c02ad396a4c95f22030d54259f59a8001d75`, READY state and Preview-only target. Project SSO/password/trusted-IP protections are disabled.
 - Direct hosted page extraction and browser visual/click QA remain pending; do not claim 1440px / 390px / 360px rendered checks or image rendering as passed.
-- Previous canonical preview `dpl_FmWLvnyJxvAJPb5Nqp4cNN7E4ALm` is superseded. Earlier preview IDs remain historical/superseded.
+- Previous impact preview `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` is superseded. Earlier preview IDs remain historical/superseded.
 - No custom-domain alias, production promotion, DNS or indexing change is authorized. `portfolio.hcfind.com` remains an older historical candidate and is not the review URL.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
