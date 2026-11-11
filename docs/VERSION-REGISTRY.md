@@ -20,18 +20,19 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main`.
-- Current website artifact commit: `5f4a179922f5296699cd64fcbea0d5adaaf080a5`.
-- Vercel deployment: `dpl_F8Gy5ZpsGNuePwVd5bbgWSzEuynW` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-npu1vah0z-yu-ac3a.vercel.app/
+- Current website artifact commit: `00a5aff8cd322f86e20a70e16a2881d91abb4866`.
+- Vercel deployment: `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` (`READY`, target `null`, Preview only).
+- Immutable review URL: https://ai-product-portfolio-132c98vcv-yu-ac3a.vercel.app/
 - Project SSO, password protection and trusted-IP restrictions are disabled.
 - Homepage project cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship feature.
-- Laya homepage introduction is exactly one paragraph and follows **definition → distinction → popularity**. First sentence explicitly calls Laya an open-source multilingual System 1 decision model (决策模型). Second sentence explains non-autoregressive classification, scoring and yes/no judgment, with structured results and probabilities. Final sentence covers Trendshift global trending #1 for multiple days and GitTrend weekly growth #1 / approximately +22.3K Stars.
-- Laya standalone casebook remains at pre-impact-expansion v2.4. No Global Momentum section, ranking wall, ecosystem inventory or benchmark disclosure.
+- Current owner-selected Laya homepage copy is one paragraph. It opens by defining Laya as an open-source multilingual System 1 decision model, then explains its non-autoregressive approach, then communicates launch context and global popularity: Trendshift global trending #1 for multiple days; GitTrend global weekly growth #1 with approximately +22.3K Stars in one week.
+- Trendshift and GitTrend are linked inline. No other ranking wall, metric dashboard or ecosystem inventory appears in the public introduction.
+- Laya standalone casebook remains v2.4; no Global Momentum section or benchmark disclosure.
 - Detailed ranking / media / ecosystem / benchmark findings remain internal research only.
 - Existing Laya contribution framing, 40-PR metrics, four product systems, eight case chapters and navigation remain intact.
 - Homepage and casebook page-level noindex remain; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
 - Static source checks passed. Browser visual / click E2E and responsive screenshot checks have not been claimed as completed.
-- Previous overbuilt previews and earlier copy-order previews are superseded.
+- Earlier overbuilt previews and earlier copy-order previews are superseded.
 - No production promotion, custom-domain change, DNS change or indexing change.
 
 
