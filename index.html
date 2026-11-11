@@ -1881,7 +1881,7 @@ function narrativeExperience(c){
   const evidenceMarkup='<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>PRODUCT DECISIONS / EVIDENCE-LED</span><span>'+String(decisions.length).padStart(2,'0')+' THREADS</span></div><div class="narrative-evidence__decisions">'+decisions.map((d,i)=>'<article><span class="mono">0'+(i+1)+' / DECISION</span><p>'+esc(d)+'</p></article>').join('')+'</div><div class="narrative-evidence__evidence"><div class="mono">PROOF / PUBLIC RECORDS</div>'+sourceContent+'</div><div class="narrative-evidence__boundary"><b>我的产品责任</b><p>'+esc(e.role||'')+'</p><b>关键产品原则</b><p>'+esc(e.boundary||'')+'</p></div></div>';
   return evidenceMarkup;
 }
-// Homepage project copy and stages are governed by docs/portfolio-content/2026-11-11-selective-recovery-v1.md.
+// Public copy follows docs/PORTFOLIO-CONTENT-RULES.md; detailed QA and factual gates stay in the internal content reference.
 const HOME_PROJECTS = [
  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET",summary:"以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。",phase:"Android 核心模块已实现 · Local-first Context Core 已落地"},
  {caseId:"product",name:"VIVIC",label:"TEAM PRODUCT · MULTIMODAL AGENT",summary:"团队打造的多模态卡片助理，支持语音与文本交互。我在比赛中与团队相识，赛后受邀加入，并接手既有产品的体验与 Agent 决策链路优化。",phase:"赛后受邀加入团队 · Agent 决策链路持续优化 · 后端固定题集回归已验证"},
