@@ -19,21 +19,21 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Current website artifact commit: `96a2c02ad396a4c95f22030d54259f59a8001d75`.
-- Vercel deployment: `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/
-- Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled.
-- Source verification: homepage cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship section. Four Case records and four detail payloads remain intact.
-- Laya homepage: global growth rankings, CyberQ's dated first-week coverage, Hacker News discussion, Hugging Face Trending reporting, Vercel AI Gateway distribution, community directory records and dated GitHub / Hugging Face counters.
-- Laya casebook v2.6: Global Momentum section, four growth/community cards, four platform/media/community signals, S1MB / JevBench / typed-decisions context in a collapsed disclosure.
-- Benchmark wording separates popularity from model performance; no universal decision-model #1 claim is made.
-- Navigation: Laya casebook return control remains same-origin `/`; global-impact anchor remains within the casebook.
-- Indexing protection: page-level noindex remains on both pages; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
-- Vercel confirms exact source commit `96a2c02ad396a4c95f22030d54259f59a8001d75`, READY state and Preview-only target. Project SSO/password/trusted-IP protections are disabled.
-- Direct hosted page extraction and browser visual/click QA remain pending; do not claim 1440px / 390px / 360px rendered checks or image rendering as passed.
-- Previous impact preview `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` is superseded. Earlier preview IDs remain historical/superseded.
-- No custom-domain alias, production promotion, DNS or indexing change is authorized. `portfolio.hcfind.com` remains an older historical candidate and is not the review URL.
+- Canonical GitHub branch: `main`.
+- Current website artifact commit: `9b4b9b8f89f36d86022dcdbd45cc392b465aa5d0`.
+- Vercel deployment: `dpl_BrHWx1PddQDNwVFpeaGFpX6oVbvr` (`READY`, target `null`, Preview only).
+- Immutable review URL: https://ai-product-portfolio-aqr3oe3gi-yu-ac3a.vercel.app/
+- Project SSO, password protection and trusted-IP restrictions are disabled.
+- Homepage project cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship feature.
+- Laya homepage introduction: exactly one paragraph, leading with Trendshift global trending #1 for four consecutive days and GitTrend global weekly growth #1 / approximately +22.3K Stars in one week, followed by a concise System 1 decision-model explanation.
+- Laya standalone casebook restored to pre-impact-expansion v2.4 source. No Global Momentum section, ranking wall, ecosystem inventory or benchmark disclosure.
+- Detailed ranking / media / ecosystem / benchmark findings remain internal research only.
+- Existing Laya contribution framing, 40-PR metrics, four product systems, eight case chapters and navigation remain intact.
+- Homepage and casebook page-level noindex remain; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
+- Static source checks passed. Browser visual / click E2E and responsive screenshot checks have not been claimed as completed.
+- The previous overbuilt previews `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` and `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` are superseded.
+- No production promotion, custom-domain change, DNS change or indexing change.
+
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
