@@ -1,6 +1,6 @@
 # Portfolio Selective Recovery Candidate v1
 
- > Status: internal evidence and content reference. Date: 2026-11-11.  
+> Status: internal evidence and content reference. Date: 2026-11-11.  
 > Public-facing copy follows docs/PORTFOLIO-CONTENT-RULES.md and section 1.6 of docs/PORTFOLIO-OPERATING-CONTRACT.md.  
 > This file retains detailed factual, QA, attribution, and release notes for internal review. These notes are not public copy and must not be pasted into recruiter-facing pages.
 

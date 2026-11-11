@@ -1,7 +1,7 @@
 # Portfolio Version Registry
 
 > **Operational source of truth for version identity and release state.**
-> Last verified: 2026-11-11 (Asia/Taipei). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
+> Last verified: 2026-11-12 (Asia/Taipei). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
 
 Do not infer the current version from a branch name, a deployment display URL, or a historical README entry alone. A version is identified by **commit SHA + Vercel deployment ID**. Check the actual page response for its deployment ID before treating a URL as current.
 
@@ -20,15 +20,16 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Website source commit: `0cdaa07789a4b8e3193b972898618b91b4b24dc0`.
-- Vercel deployment: `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` (`READY`, target `null`, Preview only).
-- Public no-login URL: https://ai-product-portfolio-2hsn5r37q-yu-ac3a.vercel.app/.
+- Website source commit: `f63fd225409d124aeb2f2e468a5b24b487d76f50`.
+- Vercel deployment: `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` (`READY`, target `null`, Preview only).
+- Public no-login URL: https://ai-product-portfolio-iqifybh25-yu-ac3a.vercel.app/.
 - Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled; direct unauthenticated HTTP access was verified.
-- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2`; neutral hero and permanent copy prohibition both verified.
-- Content verification: PCK is explicitly Android-first / Windows target; AWRP case detail now explains cross-window project continuity before protocol objects, while preserving the interactive object model and separating AWRP prototype, current workflow, Agent Project OS G0–G2 design and DeepSeek third-party reference; Laya homepage emphasizes 40 merged PRs, four product systems and eight selected stories.
+- Hosted verification: `/` and `/cases/laya/` both return HTTP 200; homepage deployment ID matches `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P`.
+- Content verification: public copy now focuses on project identity, product decisions, personal contribution and outcomes. Removed the public audit-style scope note, internal QA disclaimers, the unmerged Google ADK proposal, and other-contributor disclaimers. PCK maturity copy is expressed through implemented Android capability; Laya casebook foregrounds product stories and merged outcomes.
+- Binding copy rule: public pages are a recruiter-facing showcase, not an audit log. See `docs/PORTFOLIO-CONTENT-RULES.md` and section 1.6 of `docs/PORTFOLIO-OPERATING-CONTRACT.md`.
 - Indexing protection: both page routes carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/robots.txt` returns `Disallow: /`.
-- Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification. The preview is available to open but is not yet a final acceptance claim.
-- Previous preview `dpl_4SnvH4ZJefZXSTPmG9p3NKyGEYfp` is superseded by this deployment; earlier preview IDs remain historical/superseded.
+- Remaining QA: real-browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification.
+- Previous preview `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` is superseded by this deployment; earlier preview IDs remain historical/superseded.
 - No custom-domain alias, production promotion, DNS or indexing change is authorized.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
@@ -129,7 +130,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 | Branch | Snapshot commit | Operational status |
 |---|---:|---|
-| `main` | `HEAD` (docs-only commits may advance; website source `0cdaa07`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
+| `main` | `HEAD` (docs-only commits may advance; website source `f63fd22`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
 | `portfolio/owner-feedback-rewrite-2026-11-11` | `4298428` | Frozen duplicate pointer retained for history; do not continue work here. |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Historical pre-consolidation main snapshot; retained so the former default-branch history remains reachable. |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze. |
@@ -141,7 +142,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `0cdaa07789a4b8e3193b972898618b91b4b24dc0`; the current Vercel Preview is `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2`. No website redeployment is needed for docs-only changes.
+`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `f63fd225409d124aeb2f2e468a5b24b487d76f50`; the current Vercel Preview is `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P`. No website redeployment is needed for docs-only changes.
 ## 4. Operating rules
 
 1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.

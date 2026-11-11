@@ -166,3 +166,15 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Website source commit: `0cdaa07789a4b8e3193b972898618b91b4b24dc0`.
 - Vercel Hobby Preview: `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` · READY · Preview only.
 - Public no-login URL: https://ai-product-portfolio-2hsn5r37q-yu-ac3a.vercel.app/.
+
+
+## 2026-11-12 — Public copy showcase pass
+
+- Website source commit: `f63fd225409d124aeb2f2e468a5b24b487d76f50`.
+- Vercel Hobby Preview: `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-iqifybh25-yu-ac3a.vercel.app/.
+- Removed public-facing audit language: delivery/validation boundary note, internal QA caveats, unmerged Google ADK proposal, non-ownership disclaimers, and unfinished-gate explanations.
+- Rewrote homepage and case details to lead with user task, product decision, personal contribution and outcome. Laya casebook now presents the four product systems and eight selected stories without internal attribution notes.
+- Added binding showcase-copy rules to the content rules and operating contract. Internal QA and evidence records remain in internal project documents.
+- Static checks: homepage and Laya scripts parse; project order preserved; both hosted routes return HTTP 200; public no-login access and noindex remain intact.
+- Browser visual/click E2E and rendered breakpoint checks remain pending.

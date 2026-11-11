@@ -770,3 +770,29 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Project SSO, password and trusted-IP protection remain disabled; direct unauthenticated HTTP access is verified.
 - AWRP copy now leads with the cross-window continuity problem, then explains Project / Task / Run / Event / Artifact responsibilities; maturity and third-party attribution boundaries remain explicit.
 - Browser visual/click E2E and rendered breakpoint/image checks remain pending.
+
+
+## 2026-11-12 — Public copy showcase pass
+
+### Source and deployment
+- Website source commit: `f63fd225409d124aeb2f2e468a5b24b487d76f50` on GitHub `main`.
+- Vercel Hobby Preview: `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-iqifybh25-yu-ac3a.vercel.app/.
+
+### Content changes
+- Homepage: removed the public-facing delivery/validation boundary note; removed the unmerged Google ADK proposal from the contribution list; changed PCK status to describe implemented Android capability; rewrote contribution descriptions and Agent step copy as direct product statements.
+- Case details: removed internal acceptance caveats and defensive scope statements; kept product mechanism, personal contribution, concrete outcomes and supporting evidence.
+- Laya casebook: removed non-official/attribution disclaimers and internal QA caveats; rewrote chapters around developer tasks, product decisions and merged outcomes; removed follow-up work credited to another contributor from the public narrative.
+- Added a binding public-copy rule to `docs/PORTFOLIO-CONTENT-RULES.md` and section 1.6 of `docs/PORTFOLIO-OPERATING-CONTRACT.md`: recruiter-facing pages are a showcase, not an audit log. Detailed QA and factual gates remain internal.
+
+### Static and hosted checks
+- Homepage inline application script parses; Laya inline scripts parse.
+- Homepage selected project order remains Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Google ADK Draft contribution and public case-scope audit note are absent.
+- Homepage and Laya routes return HTTP 200; deployment ID matches the homepage response.
+- Project SSO, password and trusted-IP protection are disabled; direct unauthenticated access is verified.
+- Both routes retain `noindex` headers; `robots.txt` blocks crawlers.
+
+### Remaining QA
+- Real-browser visual/click E2E and rendered 1440px / 390px / 360px checks remain to be completed.
+- No custom-domain alias, production target, DNS or indexing change occurred.
