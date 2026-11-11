@@ -811,3 +811,18 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Vercel project settings report SSO, password protection and trusted-IP restrictions disabled.
 - Direct hosted page extraction was not completed in this pass. Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and image-render verification remain pending.
 - No custom-domain alias, production promotion, DNS or indexing change occurred.
+
+
+## 2026-11-12 — Laya media and benchmark evidence expansion
+
+- Website artifact commit: `96a2c02ad396a4c95f22030d54259f59a8001d75` on GitHub `main`.
+- Vercel Preview: `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/
+- Vercel deployment metadata confirms the exact Git commit and `main` ref; build completed.
+- Homepage project data order remains Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Homepage Laya momentum copy now includes CyberQ's dated first-week report (23,092 Stars / 1,985 Forks) in addition to Trendshift, GitTrend, OpenGithubs and Hacker News evidence.
+- Laya casebook v2.6 contains four impact cards, four platform/media/community signals, CyberQ coverage and JevBench rank context; benchmark scope caveats remain collapsed for deep readers.
+- Static checks: homepage order correct; casebook impact section / nav anchor present; section IDs unique; S1MB / JevBench / typed-decisions references present; page-level noindex retained; prohibited slogan absent.
+- Vercel project settings report SSO, password protection and trusted-IP restrictions disabled.
+- Direct hosted page extraction was not completed in this pass. Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and image-render verification remain pending.
+- No custom-domain alias, production promotion, DNS or indexing change occurred.
