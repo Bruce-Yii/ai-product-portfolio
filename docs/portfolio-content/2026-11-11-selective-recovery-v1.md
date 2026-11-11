@@ -65,11 +65,13 @@ The following details support internal fact-checking, engineering review, and re
 
 ## Laya public introduction
 
-**Public-facing homepage copy (2026-11-12 · owner-approved concise version):**
+**Public-facing homepage copy (2026-11-12 · current owner-approved version):**
 
-> 2026 年 9 月开源后，Laya 曾连续 4 天登上 Trendshift 全球趋势榜第 1，并位列 GitTrend 全球周增长榜第 1，单周新增约 2.23 万 Stars，迅速成为当时备受关注的 AI 开源项目。它是一个支持 100+ 种语言的非自回归 System 1 开源决策模型，可通过单次前向推理完成选择、评分与判断。
+> 2026 年 9 月开源后，Laya 曾在 Trendshift 全球趋势榜连续多日位居第 1，并登上 GitTrend 全球周增长榜第 1，单周新增约 2.23 万 Stars。它探索的是生成式 AI 之外的另一条路径：一个支持 100+ 种语言的开源 System 1 决策引擎，以非自回归方式在一次前向推理中直接完成分类、评分与是/否判断，并返回结构化结果及概率。
 
-**Presentation boundary:** This is the only public Laya popularity introduction. Link Trendshift and GitTrend inline. Do not place the detailed research below into the homepage card or standalone casebook. No Global Momentum section, ranking wall, metrics dashboard, ecosystem inventory or benchmark disclosure belongs in the portfolio presentation.
+The Trendshift and GitTrend references are linked inline. Keep this as one paragraph on the homepage. Do not repeat the popularity research in the Laya casebook.
+
+**Presentation boundary:** No Global Momentum section, ranking wall, metrics dashboard, ecosystem inventory or benchmark disclosure belongs in the portfolio presentation. Detailed rankings, source links, technical benchmark findings and caveats remain internal research only.
 
 **Internal research only — not public copy:**
 - GitTrend Week 39 (2026-09-21 to 09-27): #1 weekly star growth, approximately +22.3K Stars.
