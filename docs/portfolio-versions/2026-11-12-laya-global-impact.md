@@ -1,3 +1,7 @@
+**WITHDRAWN — NOT THE CURRENT PUBLIC PRESENTATION.** This was an overbuilt intermediate iteration. Its Global Momentum casebook section and multi-paragraph homepage copy were removed after owner review. The current presentation is one concise homepage paragraph and the restored Laya Casebook v2.4. See [2026-11-12 Laya copy simplification](./2026-11-12-laya-copy-simplification.md).
+
+---
+
 # Portfolio iteration · 2026-11-12 · Laya global impact
 
 ## Source and deployment
