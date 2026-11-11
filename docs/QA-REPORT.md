@@ -758,3 +758,15 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Kept the interactive object model, but moved its terminology behind a clear explanation of Project, Task, Run, Event and Artifact responsibilities.
 - Shortened the outcome narrative while preserving the distinction between the executed AWRP prototype, current Linear × Notion × GitHub workflow, Agent Project OS G0–G2 design docs and DeepSeek as a third-party reference.
 - No project, route, visual system, domain or publication state changed.
+
+
+## 2026-11-11 — AWRP case narrative deployment verification
+
+- Website source commit: `0cdaa07789a4b8e3193b972898618b91b4b24dc0` on GitHub `main`.
+- Vercel Hobby Preview: `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-2hsn5r37q-yu-ac3a.vercel.app/.
+- Deployment metadata confirms the exact source SHA and `main` ref.
+- Homepage and Laya casebook return HTTP 200; deployment identity matches; noindex headers and robots blocking remain enabled.
+- Project SSO, password and trusted-IP protection remain disabled; direct unauthenticated HTTP access is verified.
+- AWRP copy now leads with the cross-window continuity problem, then explains Project / Task / Run / Event / Artifact responsibilities; maturity and third-party attribution boundaries remain explicit.
+- Browser visual/click E2E and rendered breakpoint/image checks remain pending.

@@ -163,4 +163,6 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Reworked the AWRP detail page to explain the cross-window project continuity problem before introducing protocol terminology.
 - Kept the interactive object model as the deep-reading layer; the main narrative now foregrounds project continuity, task responsibility, traceable execution and evidence-based review.
 - Preserved the exact maturity boundary between the executed AWRP prototype, current Linear × Notion × GitHub workflow and Agent Project OS G0–G2 design documents.
-- Website source commit: pending deployment.
+- Website source commit: `0cdaa07789a4b8e3193b972898618b91b4b24dc0`.
+- Vercel Hobby Preview: `dpl_GcaiXuMKFYTpR3x5CQxUeMyJE2Q2` · READY · Preview only.
+- Public no-login URL: https://ai-product-portfolio-2hsn5r37q-yu-ac3a.vercel.app/.
