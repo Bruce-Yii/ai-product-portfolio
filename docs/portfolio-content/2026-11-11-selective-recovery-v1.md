@@ -67,7 +67,7 @@ The following details support internal fact-checking, engineering review, and re
 
 **Homepage copy (2026-11-12):**
 
-> Laya 是 Convai Innovations 开源的多语言非自回归 System 1 决策引擎，支持 100+ 种语言，可在单次前向传播中对文本或结构化状态完成选择、评分与是/否判断，并返回结构化结果与概率。它于 2026 年 9 月 18 日开源后迅速走红：Trendshift 总榜连续四天第 1，GitTrend 周榜第 1、单周新增约 2.23 万 Stars，OpenGithubs 9 月 Star 增长月榜第 3；截至 11 月 10 日，已有 35,341 Stars、3,170 Forks，Hacker News 讨论在 9 月 27 日快照中达到 1,349 points / 316 comments。
+> Laya 是 Convai Innovations 开源的多语言非自回归 System 1 决策引擎，支持 100+ 种语言，可在单次前向传播中对文本或结构化状态完成选择、评分与是/否判断，并返回结构化结果与概率。仓库创建于 2026 年 9 月 18 日，并在 9 月下旬迅速走红：Trendshift 总榜连续四天第 1，GitTrend 周榜第 1、单周新增约 2.23 万 Stars，OpenGithubs 9 月 Star 增长月榜第 3；截至 11 月 10 日，已有 35,341 Stars、3,170 Forks，Hacker News 讨论在 9 月 27 日快照中达到 1,349 points / 316 comments。
 
 **Compact popularity note:** OpenGithubs 9 月 Star 增长月榜第 3；Hacker News 讨论在 2026-09-27 的历史快照为 1,349 points / 316 comments。
 
