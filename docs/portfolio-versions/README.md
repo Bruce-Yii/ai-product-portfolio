@@ -1,7 +1,18 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
-## 2026-11-12 · Laya definition-first copy (current)
+## 2026-11-12 · Laya owner-selected copy (current)
+
+- Website source: `00a5aff8cd322f86e20a70e16a2881d91abb4866`.
+- Preview: `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` · READY · https://ai-product-portfolio-132c98vcv-yu-ac3a.vercel.app/
+- Applied the exact paragraph selected by the owner.
+- Order: decision-model definition → non-autoregressive distinction → global popularity.
+- Homepage remains one paragraph; casebook remains v2.4 without new sections.
+- Static source checks passed; browser visual / click E2E and responsive screenshot checks are not claimed.
+- Full record: [2026-11-12 Laya owner-selected copy](./2026-11-12-laya-owner-selected-copy.md).
+
+
+## 2026-11-12 · Laya definition-first copy — superseded by owner-selected copy
 
 - Website source: `5f4a179922f5296699cd64fcbea0d5adaaf080a5`.
 - Preview: `dpl_F8Gy5ZpsGNuePwVd5bbgWSzEuynW` · READY · https://ai-product-portfolio-npu1vah0z-yu-ac3a.vercel.app/
