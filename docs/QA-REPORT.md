@@ -796,3 +796,18 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 ### Remaining QA
 - Real-browser visual/click E2E and rendered 1440px / 390px / 360px checks remain to be completed.
 - No custom-domain alias, production target, DNS or indexing change occurred.
+
+
+## 2026-11-12 — Laya global momentum and benchmark context
+
+- Website artifact commit: `edaf0c593486ff782899e3b171b26e163ea16a6d` on GitHub `main`.
+- Vercel Preview: `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/
+- Vercel deployment metadata confirms the exact Git commit and `main` ref; build event reports deployment completed.
+- Homepage selected-project order remains Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Laya homepage now contains product definition, Trendshift / GitTrend / OpenGithubs growth rankings, Hacker News discussion, Hugging Face Trending reporting, Vercel AI Gateway distribution, community-directory records and dated GitHub / Hugging Face snapshots.
+- Laya casebook contains the new Global Momentum section, navigation anchor, source links and collapsed benchmark-context disclosure.
+- Source checks: section IDs unique; new anchor present; benchmark context and evidence links present; page-level noindex retained; prohibited homepage slogan absent.
+- Vercel project settings report SSO, password protection and trusted-IP restrictions disabled.
+- Direct hosted page extraction was not completed in this pass. Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and image-render verification remain pending.
+- No custom-domain alias, production promotion, DNS or indexing change occurred.
