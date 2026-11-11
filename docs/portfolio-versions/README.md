@@ -21,6 +21,16 @@
 - Direct HTTP/browser verification of this newest deployment and responsive/image QA remain pending.
 - Full record: [2026-11-12 Laya product and launch context](./2026-11-12-laya-launch-context.md).
 
+
+## 2026-11-12 · Laya repository-date precision
+
+- Website artifact: `623f55c8938c5409c4cb5b26cb9a4039ab219ee1`.
+- Preview: `dpl_FmWLvnyJxvAJPb5Nqp4cNN7E4ALm` · READY · https://ai-product-portfolio-jg0t9lc7j-yu-ac3a.vercel.app/
+- Clarified that 2026-09-18 is the repository creation date, not an unverified public-release date.
+- Preserved the sourced, dated popularity signals and existing project order / Laya casebook structure.
+- Direct HTTP/browser verification of this newest deployment and responsive/image QA remain pending.
+- Full record: [2026-11-12 Laya date precision](./2026-11-12-laya-date-precision.md).
+
 # Portfolio version history
 
 ## v2.2 — 2026-11-10 · Owner review captured
