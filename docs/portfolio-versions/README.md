@@ -10,6 +10,17 @@
 - Desktop/mobile visual QA, full click E2E and independent image-render verification remain pending.
 - Full record: [2026-11-12 Laya return navigation](./2026-11-12-laya-return-navigation.md).
 
+
+## 2026-11-12 · Laya product and launch context
+
+- Website artifact: `3f20556f335ca3118c83fb8da7a93cd4e0ff92d5`.
+- Preview: `dpl_Fe32YRYL68dgKa6uv6da6SYwJDk2` · READY · https://ai-product-portfolio-82mgnds3s-yu-ac3a.vercel.app/
+- Added a concise product definition and dated popularity context to the Laya flagship section.
+- Verified source evidence for the four-day Trendshift #1 run, GitTrend Week 39 #1 / +22.3K Stars, OpenGithubs September growth rank #3, and the 2026-09-27 Hacker News snapshot.
+- The homepage project order and same-origin Laya return navigation are preserved.
+- Direct HTTP/browser verification of this newest deployment and responsive/image QA remain pending.
+- Full record: [2026-11-12 Laya product and launch context](./2026-11-12-laya-launch-context.md).
+
 # Portfolio version history
 
 ## v2.2 — 2026-11-10 · Owner review captured
