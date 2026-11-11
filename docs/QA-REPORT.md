@@ -826,3 +826,17 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Vercel project settings report SSO, password protection and trusted-IP restrictions disabled.
 - Direct hosted page extraction was not completed in this pass. Real-browser visual/click E2E, 1440px / 390px / 360px rendered checks and image-render verification remain pending.
 - No custom-domain alias, production promotion, DNS or indexing change occurred.
+
+
+## 2026-11-12 — Laya copy simplification and casebook restoration
+
+- Website source commit: `9b4b9b8f89f36d86022dcdbd45cc392b465aa5d0` on GitHub `main`.
+- Vercel Preview: `dpl_BrHWx1PddQDNwVFpeaGFpX6oVbvr` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-aqr3oe3gi-yu-ac3a.vercel.app/
+- Homepage Laya introduction contains exactly one paragraph. It leads with Trendshift's four-day global trending #1 and GitTrend's weekly growth #1 / approximately +22.3K Stars, then briefly identifies Laya as a multilingual non-autoregressive open-source System 1 decision model.
+- Extra homepage momentum and ecosystem paragraphs and their dedicated CSS are absent.
+- Laya casebook restored to the pre-impact-expansion v2.4 source snapshot. Global Momentum section, nav item, ranking cards, ecosystem signals, benchmark disclosure and related CSS are absent.
+- Existing product chapters, contribution narrative, 40-PR metrics, four product systems and page-level noindex remain.
+- Static source checks passed. Vercel reports READY and exact Git commit.
+- Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
+- No production promotion, custom-domain change, DNS change or indexing change.
