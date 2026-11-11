@@ -323,12 +323,6 @@ The portfolio must communicate product judgment, system focus, key mechanisms, a
 - **Permanent owner prohibition:** the historical self-praise / test slogan is prohibited from all portfolio artifacts. It must never appear in homepage copy, case pages, metadata, screenshots, mockups, source comments, preview deployments, release notes, PR descriptions, documentation, or generated assets. Treat every historical occurrence as a withdrawn mistake, never as authorization.
 - The current public project set and homepage order remain frozen: Personal Context Keyboard → VIVIC → AWRP × Linear, followed by the separate Laya flagship casebook and existing contribution index. No additions, deletions, replacements, renames or reorderings without explicit user approval.
 
-## 10. Mandatory pre-deployment source validation
-
-- Before every preview deployment, run `node scripts/validate-portfolio.mjs` against the source checkout. This gate parses the inline application script and checks homepage project membership/order, mount point, renderer, navigation handler and standalone Laya route.
-- Do not use an HTTP 200 response or Vercel `READY` state as a substitute for JavaScript syntax validation. A static page can return 200 while its entire application script fails to parse.
-- Run source validation against the repository file, not HTML returned by a hosted preview that may include Vercel-injected feedback scripts. Hosted checks are a separate deployment-identity / headers / routes gate.
-- If any validation fails, do not share the preview. Record the root cause and fix it on the same active branch before creating the owner-facing deployment.
 
 
 ### 9.3 Permanent owner prohibition and inheritance rule
@@ -339,3 +333,10 @@ The portfolio must communicate product judgment, system focus, key mechanisms, a
 - A historical artifact containing the prohibited wording is not a valid source of truth. Preserve its Git history for auditability, but correct all current source files and mark affected deployments as withdrawn.
 - The static validator must reject the prohibited unique wording token anywhere in public HTML. A failed content gate blocks preview sharing regardless of build state or HTTP status.
 - Do not ask the owner to reconfirm this prohibition. It is already settled.
+
+## 10. Mandatory pre-deployment source validation
+
+- Before every preview deployment, run `node scripts/validate-portfolio.mjs` against the source checkout. This gate parses the inline application script and checks homepage project membership/order, mount point, renderer, navigation handler and standalone Laya route.
+- Do not use an HTTP 200 response or Vercel `READY` state as a substitute for JavaScript syntax validation. A static page can return 200 while its entire application script fails to parse.
+- Run source validation against the repository file, not HTML returned by a hosted preview that may include Vercel-injected feedback scripts. Hosted checks are a separate deployment-identity / headers / routes gate.
+- If any validation fails, do not share the preview. Record the root cause and fix it on the same active branch before creating the owner-facing deployment.

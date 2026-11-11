@@ -117,7 +117,7 @@ Separate root-domain project:
 
 Nine branches were returned at the audit. All returned `protected: false`.
 
-| Branch | Observed code HEAD at review | Operational status |
+| Branch | Website source commit at review | Operational status |
 |---|---:|---|
 | `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
@@ -130,6 +130,8 @@ Nine branches were returned at the audit. All returned `protected: false`.
 | `portfolio/phase3-content-draft-2026-11-10` | `2b23fb2` | Draft-content line |
 
 The branch name stored in a Vercel deployment is the branch name at deployment time. It does not prove the branch still points to that deployment's commit. Always compare the full commit SHA.
+
+The active branch may advance through documentation-only governance commits after a deployment. The current website artifact remains source commit `62a551a3e375e77a9a22c7ddf78df74a973fbc94` / deployment `dpl_GFJyeVg2nEk95KVN738sUxJ4Ueo3`; a documentation-only branch HEAD is not a new website version.
 
 ## 4. Operating rules from this audit
 
