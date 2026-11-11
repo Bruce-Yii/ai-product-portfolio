@@ -1,7 +1,19 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
-## 2026-11-12 · Laya copy refinement (current)
+## 2026-11-12 · Laya explicit decision-model positioning (current)
+
+- Website source: `94055a361162ca59512090060ac296f09332c4c0`.
+- Preview: `dpl_5DutEtCKxs6guVWjRqMd5ARa7ozv` · READY · https://ai-product-portfolio-n1o8l66fy-yu-ac3a.vercel.app/
+- Explicitly names Laya as a multilingual open-source System 1 **decision model (决策模型)**.
+- Explains its non-autoregressive decision outputs in one concise follow-up sentence.
+- Keeps the homepage to one paragraph and preserves “连续多日”.
+- Casebook remains v2.4; no research section or ranking dashboard added.
+- Static source checks passed; browser visual / click E2E and responsive screenshot checks are not claimed.
+- Full record: [2026-11-12 Laya explicit decision-model positioning](./2026-11-12-laya-explicit-decision-model.md).
+
+
+## 2026-11-12 · Laya copy refinement — superseded by explicit decision-model wording
 
 - Website source: `01e2f81635cf5dbc6f74813a3bb610e25bfde455`.
 - Preview: `dpl_97ogePFHpoGMyc6FHyhoD9SkEshf` · READY · https://ai-product-portfolio-g00fxq89p-yu-ac3a.vercel.app/
