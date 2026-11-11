@@ -1444,7 +1444,7 @@ const CASES = [
           "state": "public_record"
         },
         {
-          "label": "DeepSeek Super-agent · 第三方原型",
+          "label": "DeepSeek Super-agent · 架构参考",
           "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
           "supports": "事件触发、授权、分配与恢复机制的架构参考",
           "state": "public_record"
@@ -1549,7 +1549,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "kind": "MERGED",
     "title": "让 Agent 真正按照用户设置和流程预期工作",
     "detail": "6 selected merged PRs · 3 behavior fixes + 3 regression-test additions · #19565 · #20149 · #20207 · #20066 · #20068 · #20072",
-    "story": "用户调整消息分支、知识库解析规则或停用模型后，期待这些设置真实影响后续行为。若配置看似成功、运行时却忽略，用户就无法理解结果为什么变化。",
+    "story": "用户调整消息分支、知识库解析规则或停用模型后，期待后续行为与设置保持一致。配置状态、实际调用与结果反馈应形成清晰闭环。",
     "url": "https://github.com/infiniflow/ragflow/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "AGENT CONFIGURATION & EXECUTION",
     "decision": "让不同流程分支保持原有内容语义，重新解析时真正采用知识库配置，并在模型停用时明确停止调用；同时补齐关键边界测试，避免设置与实际行为脱节。",
