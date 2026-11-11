@@ -868,3 +868,18 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Static source checks passed; Vercel reports READY and exact Git commit.
 - Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
 - No production promotion, custom-domain change, DNS change or indexing change.
+
+
+## 2026-11-12 — Laya definition-first copy order
+
+- Website source commit: `5f4a179922f5296699cd64fcbea0d5adaaf080a5` on GitHub `main`.
+- Vercel Preview: `dpl_F8Gy5ZpsGNuePwVd5bbgWSzEuynW` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-npu1vah0z-yu-ac3a.vercel.app/
+- Homepage Laya intro order is now product definition → technical distinction → global popularity.
+- First sentence begins by explicitly identifying Laya as an open-source System 1 decision model (决策模型).
+- Second sentence explains non-autoregressive inference and its classification, scoring, yes/no judgment, structured outputs and probabilities.
+- Final sentence gives the Trendshift multi-day #1 and GitTrend weekly-growth #1 / approximately +22.3K Stars evidence.
+- Homepage remains one paragraph; casebook remains v2.4; no additional research modules added.
+- Vercel reports READY and confirms the exact Git commit.
+- Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
+- No production promotion, custom-domain change, DNS change or indexing change.
