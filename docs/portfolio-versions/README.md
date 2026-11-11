@@ -1,5 +1,15 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
+
+## 2026-11-12 · Laya return navigation correction (website iteration)
+
+- Website source: `2d071eaf04f666d5f65acb5cf83def12d7e2faa0`.
+- Preview: `dpl_77idafnMnTNEFumvPeLZuKPeq8aY` · READY · https://ai-product-portfolio-1z4adt3b2-yu-ac3a.vercel.app/
+- Changed the Laya casebook return control from the stale `portfolio.hcfind.com` host to same-origin `/`.
+- Verified homepage and Laya route HTTP 200; current project order; same-origin return link; noindex metadata and crawler blocking.
+- Desktop/mobile visual QA, full click E2E and independent image-render verification remain pending.
+- Full record: [2026-11-12 Laya return navigation](./2026-11-12-laya-return-navigation.md).
+
 # Portfolio version history
 
 ## v2.2 — 2026-11-10 · Owner review captured
