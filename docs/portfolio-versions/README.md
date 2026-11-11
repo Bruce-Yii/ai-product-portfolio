@@ -1,6 +1,18 @@
 > **Current operational state:** use [VERSION-REGISTRY.md](../VERSION-REGISTRY.md). This file is a historical version log; the latest entry below is not automatically the current deployment or approved release.
 
 
+## 2026-11-12 · Laya global momentum and benchmark context
+
+- Website artifact: `edaf0c593486ff782899e3b171b26e163ea16a6d`.
+- Preview: `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` · READY · https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/
+- Expanded homepage Laya introduction with multiple independent growth rankings, Hacker News discussion, AI platform distribution and dated GitHub / Hugging Face counters.
+- Added a standalone Global Momentum section to the Laya casebook, including Trendshift, GitTrend, OpenGithubs, Hacker News, Hugging Face, Vercel AI Gateway and community-directory evidence.
+- Added a collapsed benchmark-context disclosure separating community attention from model performance; no universal decision-model rank or blanket technical-superiority claim.
+- Preserved homepage project order, Laya casebook, contribution framing, same-origin return navigation and noindex controls.
+- Source-level checks passed. Direct hosted page extraction and rendered visual/click QA remain pending.
+- Full record: [2026-11-12 Laya global impact](./2026-11-12-laya-global-impact.md).
+
+
 ## 2026-11-12 · Laya return navigation correction (website iteration)
 
 - Website source: `2d071eaf04f666d5f65acb5cf83def12d7e2faa0`.
