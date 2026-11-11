@@ -109,7 +109,7 @@ Portfolio Vercel project:
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
 - Last deployment candidate (withdrawn): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
-- Attached custom domain: `portfolio.hcfind.com`. Direct HTTP verification on 2026-11-11 returned HTTP 200 with deployment ID `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`, neutral `AI Product Manager.` hero, and `X-Robots-Tag: noindex, nofollow, noarchive`. This is still the unapproved `1294634` rewrite, not the current internal QA candidate and not an owner review link. Do not change the alias without explicit approval.
+- Attached custom domain: `portfolio.hcfind.com`. Direct HTTP verification on 2026-11-11 returned HTTP 200 with deployment ID `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`, neutral `AI Product Manager.` hero, and `X-Robots-Tag: noindex, nofollow, noarchive`. This remains the older `1294634` deployment and is not the current public Vercel Preview URL. Do not change the alias without explicit approval.
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
 
@@ -128,7 +128,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 | Branch | Snapshot commit | Operational status |
 |---|---:|---|
-| `main` | `4298428` | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
+| `main` | `04c49f9` (docs-only HEAD; website source `4298428`) | **ONLY ACTIVE LINE.** Repository default branch; all future website changes are committed here sequentially. |
 | `portfolio/owner-feedback-rewrite-2026-11-11` | `4298428` | Frozen duplicate pointer retained for history; do not continue work here. |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Historical pre-consolidation main snapshot; retained so the former default-branch history remains reachable. |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze. |
@@ -140,7 +140,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-The website source commit is `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. Documentation-only commits may advance `main` without changing the website artifact.
+Current `main` HEAD is `04c49f9197c6881a8a73a8a2e9e86924b5580e0b` (documentation-only governance update). The website source commit remains `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. No website redeployment is needed for this docs-only HEAD advance.
 ## 4. Operating rules
 
 1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.
@@ -167,4 +167,4 @@ The historical self-praise / test slogan is permanently prohibited in this portf
 
 ### Version-recording rule
 
-A deployment is always tied to the exact website source commit recorded in its Git metadata. Documentation-only commits may advance the active branch after deployment; they must never be mistaken for a new website artifact or a new deployment. Keep one active work branch, one current website source commit, and one current preview candidate. All other branches and deployments are historical, quarantined or explicitly superseded.
+A deployment is always tied to the exact website source commit recorded in its Git metadata. Documentation-only commits may advance the active branch after deployment; they must never be mistaken for a new website artifact or a new deployment. Keep `main` as the only active branch, one current website source commit, and one current public Preview candidate. All other branches and deployments are historical, quarantined or explicitly superseded.
