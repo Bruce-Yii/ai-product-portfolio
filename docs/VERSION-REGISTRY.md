@@ -20,7 +20,7 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main` (the repository default branch and only active development line).
-- Current website artifact commit: `3f20556f335ca3118c83fb8da7a93cd4e0ff92d5` (`feat(portfolio): add Laya product and launch context`). Later `main` commits through `41013c9` are documentation/governance-only and do not change the deployed website artifact.
+- Current website artifact commit: `3f20556f335ca3118c83fb8da7a93cd4e0ff92d5` (`feat(portfolio): add Laya product and launch context`). Subsequent `main` commits are documentation/governance-only and do not change the deployed website artifact; the website artifact identity is tracked by its exact source commit and Vercel deployment ID.
 - Vercel deployment: `dpl_Fe32YRYL68dgKa6uv6da6SYwJDk2` (`READY`, target `null`, Preview only).
 - Current review URL: https://ai-product-portfolio-82mgnds3s-yu-ac3a.vercel.app/
 - Team plan: Vercel Hobby. Project SSO protection, password protection and trusted-IP restrictions are disabled.
