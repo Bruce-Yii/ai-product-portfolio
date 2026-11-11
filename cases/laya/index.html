@@ -332,7 +332,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset
 </section>
 <section class="manifesto"><div class="wrap">
 <div class="manifesto-grid"><div class="mono section-index">THE PRODUCT THESIS</div><h2>模型给出答案，只是起点。<br/><em>真正的产品价值，是让答案值得被使用。</em></h2></div>
-<div class="manifesto-bottom"><div class="mono">FOUR PRODUCT SYSTEMS</div><div><p>把八个上游产品故事放回同一张产品地图：从意图保真、决策可信，到受控采用与开发者契约，四组产品责任共同支撑开发者采用旅程。</p><div class="product-map"><a class="product-system" href="#chapter-01"><span class="system-kicker">01 / INTENT FIDELITY</span><h3>先理解对</h3><p>让输入、上下文、语言路由与框架集成保持语义连续，从输入开始保持用户意图的完整与准确。</p><div class="system-chapters"><span>CHAPTER 01</span></div></a><a class="product-system" href="#chapter-03"><span class="system-kicker">02 / DECISION CONFIDENCE</span><h3>知道凭什么信</h3><p>把评测证据、训练原语和校准策略组织成可检查、可复用、跨运行时一致的决策基础。</p><div class="system-chapters"><span>CHAPTER 03</span><span>CHAPTER 04</span><span>CHAPTER 05</span></div></a><a class="product-system" href="#chapter-02"><span class="system-kicker">03 / CONTROLLED ADOPTION</span><h3>再决定怎么用</h3><p>给应用团队一条从观察、比较到有限推广的路径；模型提供决策证据，业务策略与最终授权仍由应用掌握。</p><div class="system-chapters"><span>CHAPTER 02</span></div></a><a class="product-system" href="#chapter-06"><span class="system-kicker">04 / DEVELOPER CONTRACT</span><h3>每个入口都兑现</h3><p>让候选选择、Demo、服务、SDK、CI 与部署说明保持可预测，开发者不需要猜测同一个系统在不同入口的行为。</p><div class="system-chapters"><span>CHAPTER 06</span><span>CHAPTER 07</span><span>CHAPTER 08</span></div></a></div><div class="product-rule"><strong>贯穿四组系统的权限原则</strong><p>Laya 输出决策、概率、置信度与证据；应用策略掌握阈值、审核、资格判断、动作执行与回退的最终授权。</p></div></div></div>
+<div class="manifesto-bottom"><div class="mono">FOUR PRODUCT SYSTEMS</div><div><p>把八个上游产品故事放回同一张产品地图：从意图保真、决策可信，到受控采用与开发者契约，四组产品责任共同支撑开发者采用旅程。</p><div class="product-map"><a class="product-system" href="#chapter-01"><span class="system-kicker">01 / INTENT FIDELITY</span><h3>先理解对</h3><p>让输入、上下文、语言路由与框架集成保持语义连续，从输入开始保持用户意图的完整与准确。</p><div class="system-chapters"><span>CHAPTER 01</span></div></a><a class="product-system" href="#chapter-03"><span class="system-kicker">02 / DECISION CONFIDENCE</span><h3>知道凭什么信</h3><p>把评测证据、训练原语和校准策略组织成可检查、可复用、跨运行时一致的决策基础。</p><div class="system-chapters"><span>CHAPTER 03</span><span>CHAPTER 04</span><span>CHAPTER 05</span></div></a><a class="product-system" href="#chapter-02"><span class="system-kicker">03 / CONTROLLED ADOPTION</span><h3>再决定怎么用</h3><p>给应用团队一条从观察、比较到有限推广的路径；模型提供决策证据，业务策略与最终授权仍由应用掌握。</p><div class="system-chapters"><span>CHAPTER 02</span></div></a><a class="product-system" href="#chapter-06"><span class="system-kicker">04 / DEVELOPER CONTRACT</span><h3>每个入口都兑现</h3><p>让候选选择、Demo、服务、SDK、CI 与部署说明保持可预测，开发者在不同入口获得一致、可预测的产品行为。</p><div class="system-chapters"><span>CHAPTER 06</span><span>CHAPTER 07</span><span>CHAPTER 08</span></div></a></div><div class="product-rule"><strong>贯穿四组系统的权限原则</strong><p>Laya 输出决策、概率、置信度与证据；应用策略掌握阈值、审核、资格判断、动作执行与回退的最终授权。</p></div></div></div>
 </div></section>
 <section class="section" id="product"><div class="wrap">
 <div class="section-head"><div class="mono section-index">01 / PRODUCT TRACK</div><div><h2 class="section-title">Building the <em>product contract.</em></h2><p class="section-lead">从下游开发者的真实任务出发，识别 Laya 需要持续兑现的八条产品能力线。每一章呈现产品机会、关键判断与本人承担的工作，并关联对应 PR 与上游记录。</p></div></div>
@@ -483,7 +483,7 @@ function setChoiceLab(){
     out.textContent=choiceSurface==='mcp'?'MCP tool response:\n  code: invalid_questions\n\nValidation:\n  option_order structure check\n\nForward pass:\n  skipped by validation':'Core response:\n  invalid option_order\n\nValidation:\n  structure check\n\nForward pass:\n  skipped by validation';
     cap.textContent=choiceSurface==='mcp'?'MCP regression test 返回 invalid_questions，向调用方提供明确的结构错误。':'结构校验在推理前完成，候选缩减则通过排序状态反馈给调用方。';
   } else if(choiceSurface==='mcp'){
-    exp.textContent='MCP 客户端消费 JSON，无法读取 Python RuntimeWarning。适配层因此在返回值中按 question id 明确报告排序被丢弃。';
+    exp.textContent='MCP 客户端通过 JSON 读取排序状态，适配层按 question id 返回 option_order_dropped。';
     status.textContent='ANSWERED · JSON SIGNAL INCLUDED';title.textContent='结果可用，丢参可见。';
     out.textContent=JSON.stringify({answers:{topic:{choice:'billing'}},option_order_dropped:{topic:{n:5,kept:2}}},null,2);
     cap.textContent='JSON 字段与 billing 结果来自 tests/test_mcp.py 的 5→2 regression fixture。';
@@ -542,7 +542,7 @@ if (calibrationVisual) {
       
     </div>
     <p class="lab-note" data-calibration-note>校准路径包含两个契约：#890 histogram binning 持久化结果，#891 minConfidence bucket map 提供调用时阈值。</p>
-    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/890" target="_blank" rel="noopener">AUTHORED #890 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/891" target="_blank" rel="noopener">AUTHORED #891 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/920" target="_blank" rel="noopener">FOLLOW-UP #920 ↗</a></div>
+    <div class="lab-source"><a href="https://github.com/NandhaKishorM/laya/pull/890" target="_blank" rel="noopener">AUTHORED #890 ↗</a><a href="https://github.com/NandhaKishorM/laya/pull/891" target="_blank" rel="noopener">AUTHORED #891 ↗</a></div>
   </div>`;
 }
 function setCalibrationMode(mode){

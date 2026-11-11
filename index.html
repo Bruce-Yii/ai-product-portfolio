@@ -1877,7 +1877,7 @@ function editorialCover(c){
 function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)(c);}
 function narrativeExperience(c){
   const e=c.editorial||{},decisions=e.decisions||[],sources=(e.evidence||[]).filter(src=>src.state==='public_record'&&/^https:\/\/github\.com\//.test(src.url||''));
-  const sourceContent=sources.length?sources.map(src=>'<a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer"><span>'+esc(src.label)+'<small>PUBLIC GITHUB RECORD</small></span><span>↗</span></a>').join(''):'<p class="narrative-no-evidence">本案例以产品与系统设计为主，暂未附公开代码仓库记录。</p>';
+  const sourceContent=sources.length?sources.map(src=>'<a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer"><span>'+esc(src.label)+'<small>PUBLIC GITHUB RECORD</small></span><span>↗</span></a>').join(''):'<p class="narrative-no-evidence">围绕产品问题、系统设计与关键决策展开。</p>';
   const evidenceMarkup='<div class="narrative-evidence"><div class="narrative-evidence__head mono"><span>PRODUCT DECISIONS / EVIDENCE-LED</span><span>'+String(decisions.length).padStart(2,'0')+' THREADS</span></div><div class="narrative-evidence__decisions">'+decisions.map((d,i)=>'<article><span class="mono">0'+(i+1)+' / DECISION</span><p>'+esc(d)+'</p></article>').join('')+'</div><div class="narrative-evidence__evidence"><div class="mono">PROOF / PUBLIC RECORDS</div>'+sourceContent+'</div><div class="narrative-evidence__boundary"><b>我的产品责任</b><p>'+esc(e.role||'')+'</p><b>关键产品原则</b><p>'+esc(e.boundary||'')+'</p></div></div>';
   return evidenceMarkup;
 }
