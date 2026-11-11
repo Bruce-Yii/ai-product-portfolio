@@ -840,3 +840,17 @@ No production promotion, custom-domain reassignment, DNS change or search-indexi
 - Static source checks passed. Vercel reports READY and exact Git commit.
 - Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
 - No production promotion, custom-domain change, DNS change or indexing change.
+
+
+## 2026-11-12 — Laya copy refinement
+
+- Website source commit: `01e2f81635cf5dbc6f74813a3bb610e25bfde455` on GitHub `main`.
+- Vercel Preview: `dpl_97ogePFHpoGMyc6FHyhoD9SkEshf` · READY · Preview only.
+- Immutable review URL: https://ai-product-portfolio-g00fxq89p-yu-ac3a.vercel.app/
+- Homepage Trendshift description now says “连续多日” rather than “连续 4 天”.
+- The Laya explanation now positions it as an alternative path beyond generative AI: a multilingual open-source System 1 decision engine performing non-autoregressive classification, scoring and yes/no judgment in one forward pass, returning structured outputs and probabilities.
+- Homepage Laya introduction remains exactly one paragraph. No additional public research modules or casebook sections were added.
+- Laya casebook remains v2.4; detailed popularity / benchmark research remains internal-only.
+- Static source checks passed; Vercel reports READY and confirms the exact Git commit.
+- Browser visual / click E2E and responsive screenshot checks are not claimed as completed.
+- No production promotion, custom-domain change, DNS change or indexing change.
