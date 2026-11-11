@@ -140,7 +140,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-Current `main` HEAD is `04c49f9197c6881a8a73a8a2e9e86924b5580e0b` (documentation-only governance update). The website source commit remains `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. No website redeployment is needed for this docs-only HEAD advance.
+`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `4298428bebd9db575d399968c0ad09617ff82185`; the current Vercel Preview is `dpl_73xUxmvPVEtJkeqTmSzUzL5Bv9Gx`. No website redeployment is needed for docs-only changes.
 ## 4. Operating rules
 
 1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.
