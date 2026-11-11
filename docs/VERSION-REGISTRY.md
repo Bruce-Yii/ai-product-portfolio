@@ -20,18 +20,18 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical GitHub branch: `main`.
-- Current website artifact commit: `01e2f81635cf5dbc6f74813a3bb610e25bfde455`.
-- Vercel deployment: `dpl_97ogePFHpoGMyc6FHyhoD9SkEshf` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-g00fxq89p-yu-ac3a.vercel.app/
+- Current website artifact commit: `94055a361162ca59512090060ac296f09332c4c0`.
+- Vercel deployment: `dpl_5DutEtCKxs6guVWjRqMd5ARa7ozv` (`READY`, target `null`, Preview only).
+- Immutable review URL: https://ai-product-portfolio-n1o8l66fy-yu-ac3a.vercel.app/
 - Project SSO, password protection and trusted-IP restrictions are disabled.
 - Homepage project cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship feature.
-- Laya homepage introduction is exactly one paragraph. Popularity: Trendshift global trending #1 for multiple consecutive days; GitTrend global weekly growth #1 / approximately +22.3K Stars. Positioning: an alternative path beyond generative AI — a multilingual, open-source System 1 decision engine for non-autoregressive classification, scoring and yes/no judgment, returning structured outputs and probabilities.
+- Laya homepage introduction is exactly one paragraph and explicitly calls Laya an open-source multilingual **System 1 decision model (决策模型)**. Popularity: Trendshift global trending #1 for multiple days; GitTrend global weekly growth #1 / approximately +22.3K Stars. Product distinction: non-autoregressive inference for classification, scoring and yes/no judgment, returning structured decision results and probabilities.
 - Laya standalone casebook remains at pre-impact-expansion v2.4. No Global Momentum section, ranking wall, ecosystem inventory or benchmark disclosure.
 - Detailed ranking / media / ecosystem / benchmark findings remain internal research only.
 - Existing Laya contribution framing, 40-PR metrics, four product systems, eight case chapters and navigation remain intact.
 - Homepage and casebook page-level noindex remain; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
 - Static source checks passed. Browser visual / click E2E and responsive screenshot checks have not been claimed as completed.
-- Previous overbuilt previews `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` and `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` are superseded. The previous concise-copy preview `dpl_BrHWx1PddQDNwVFpeaGFpX6oVbvr` is also superseded.
+- Previous overbuilt previews `dpl_G6tDnWgSYLA46sxMouBTTynbuKnE` and `dpl_Gks1MsHCVP99CZKon1ceH33QwQGA` are superseded. Earlier concise-copy previews are also superseded.
 - No production promotion, custom-domain change, DNS change or indexing change.
 
 
