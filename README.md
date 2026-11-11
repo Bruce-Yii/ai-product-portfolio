@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `623f55c8938c5409c4cb5b26cb9a4039ab219ee1`; current Vercel Hobby Preview: https://ai-product-portfolio-jg0t9lc7j-yu-ac3a.vercel.app/ (`dpl_FmWLvnyJxvAJPb5Nqp4cNN7E4ALm`, READY, Preview only). The source includes the Personal Context Keyboard → VIVIC → AWRP × Linear homepage order, same-origin Laya return navigation, and corrected repository-creation wording. Page-level noindex and robots blocking remain enabled. Direct HTTP/browser verification of this newest deployment, visual/click E2E and responsive/image QA remain pending. Historical branches are frozen snapshots, not active workstreams.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `edaf0c593486ff782899e3b171b26e163ea16a6d`; current Vercel Hobby Preview: https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/ (`dpl_Gks1MsHCVP99CZKon1ceH33QwQGA`, READY, Preview only).
 
 A static, self-contained portfolio website for Bruce Yii.
 
