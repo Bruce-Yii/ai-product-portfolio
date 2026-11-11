@@ -6,7 +6,7 @@ A static, self-contained portfolio website for Bruce Yii.
 
 ## Pages
 
-- `/` — main portfolio with three selected Project cards (Personal Context Keyboard, VIVIC, AWRP × Linear), four main Case records, a separate Laya flagship casebook, and a unified index of eight selected open-source contribution groups. Dify remains a grouped contribution entry, not a standalone Case page.
+- `/` — main portfolio with three selected Project cards (Personal Context Keyboard, VIVIC, AWRP × Linear), four main Case records, a separate Laya flagship casebook, and a unified index of seven selected public open-source contribution groups. Dify remains a grouped contribution entry, not a standalone Case page.
 - `/cases/laya/` — standalone Laya casebook with eight chapters and interactive evidence explorations.
 
 ## Preview
