@@ -100,7 +100,7 @@ Portfolio Vercel project:
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
 - Last deployment candidate (withdrawn): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
-- Attached custom domain: `portfolio.hcfind.com`. Last recorded HTTP observation mapped it to unapproved `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`; this mapping was not independently reverified in the current pass because the domain-detail endpoint returned 403. Do not use it as a review URL or change the alias.
+- Attached custom domain: `portfolio.hcfind.com`. Direct HTTP verification on 2026-11-11 returned HTTP 200 with deployment ID `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`, neutral `AI Product Manager.` hero, and `X-Robots-Tag: noindex, nofollow, noarchive`. This is still the unapproved `1294634` rewrite, not the current internal QA candidate and not an owner review link. Do not change the alias without explicit approval.
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
 
