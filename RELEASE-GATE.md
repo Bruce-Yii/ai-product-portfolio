@@ -2,7 +2,7 @@
 
 ## Authoritative current state — 2026-11-11
 
-See [VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md) for the only current branch / commit / deployment mapping. The owner-supplied recovery reference is `4f558b5` / `dpl_2UJ7...`; `1294634` / `dpl_DfeCK...` is an unapproved rewrite candidate. `portfolio.hcfind.com` currently serves `dpl_DfeCK...`, not the V2.3 deployment recorded in older sections. `READY` is not owner approval. No domain alias, production target or indexing change is authorized by this record.
+See [VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md) for the only current branch / commit / deployment mapping. The owner-supplied comparison reference is `4f558b5` / `dpl_2UJ7...`. The current review candidate is `f9cb2ce` / `dpl_DkZZ...` at the preview URL recorded in the registry; browser visual / click E2E and owner review remain pending. `portfolio.hcfind.com` still serves the older unapproved `1294634` / `dpl_DfeCK...` and is not the current review link. The first candidate `0c5ef28` / `dpl_2XGv...` is invalid and superseded. `READY` is not owner approval. No domain alias, production target or indexing change is authorized by this record.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

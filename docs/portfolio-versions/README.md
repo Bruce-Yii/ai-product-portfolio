@@ -85,3 +85,12 @@
 ### Validation correction
 
 The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 200 but inherited a JavaScript syntax error in `systemArt()`; it is superseded and must not be shared. The extra closing brace was removed in a follow-up source commit. New deployment and hosted QA remain pending.
+
+
+### Corrected owner-review deployment
+
+- Code commit: `f9cb2ce`; deployment: `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e`; target: preview only.
+- Hosted `/` and `/cases/laya/` return HTTP 200; noindex and robots disallow remain active.
+- Source JavaScript syntax and static portfolio invariants pass. Browser visual / click E2E remains pending.
+- Preview access link is temporary (7-day bypass); token is not stored in GitHub.
+- The earlier `0c5ef28` / `dpl_2XGv...` deployment is invalid and superseded.

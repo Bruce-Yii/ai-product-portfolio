@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). As of 2026-11-11, the owner-supplied recovery reference is commit `4f558b5`; the current `portfolio.hcfind.com` response serves the unapproved `1294634` candidate. Do not infer the current version from the historical V2.3 notes below.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The current owner-review preview is code commit `f9cb2ce` / deployment `dpl_DkZZ...` (temporary access link is delivered in the owner conversation). The custom domain `portfolio.hcfind.com` still serves the older unapproved `1294634` candidate; do not use it for the current review.
 
 A static, self-contained portfolio website for Bruce Yii.
 

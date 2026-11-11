@@ -583,3 +583,35 @@ A pure documentation-only change may skip website deployment only when the websi
 - It does **not** validate the later rewrite commit `1294634512a87c383e5ed3aedf8b85b460103801` or deployment `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4`.
 - The later owner-feedback rewrite record leaves its post-commit route, viewport, image and interaction checks pending. Do not transfer the earlier E2E pass to the later deployment.
 - Current deployment identity and approval state: [VERSION-REGISTRY.md](./VERSION-REGISTRY.md).
+
+## 2026-11-11 — Selective recovery preview validation
+
+### Exact artifact
+- Code commit: `f9cb2ce741258edebec73d136030c53c20f21517`.
+- Vercel deployment: `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e`.
+- Preview: https://ai-product-portfolio-ojkrc4arr-yu-ac3a.vercel.app/
+- Vercel state: `READY`, target `null` (preview only).
+
+### Source-level verification
+- One inline application script found in the repository source; V8 syntax parse: **PASS**.
+- Homepage Project IDs and order: Personal Context Keyboard → VIVIC → AWRP × Linear.
+- Homepage mount, renderer, navigation handler and standalone Laya route: **PASS**.
+- Deployed HTML exactly matches the GitHub source after removing the Vercel-injected feedback script.
+- All five VIVIC image paths exist at immutable upstream commit `9b8665a0b62a17e0eef94c403f2c2c583d484330`. Actual browser `naturalWidth` / image rendering was not verified.
+
+### Hosted response checks
+- `/`: HTTP 200; deployment ID matches `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e`.
+- `/cases/laya/`: HTTP 200.
+- `robots.txt`: HTTP 200; `User-agent: * / Disallow: /`.
+- Both inspected page responses: `X-Robots-Tag: noindex, nofollow, noarchive`.
+
+### Not verified
+- Real Chromium / Playwright visual and click E2E on this exact deployment.
+- 1440px / 390px / 360px rendered layout, horizontal overflow and actual VIVIC image rendering.
+- Owner review and public release approval.
+
+The prior 2026-11-10 local-source interaction smoke test is not transferred to this exact deployed artifact. A connected-browser attempt could not run because the Firecrawl connected account had exhausted its available credits.
+
+### Superseded failed preview
+- `0c5ef28` / `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 200 but failed inline JavaScript parsing due to an extra closing brace in `systemArt()`.
+- The brace was removed in `f9cb2ce`; the corrected preview above is the only current owner-review candidate.

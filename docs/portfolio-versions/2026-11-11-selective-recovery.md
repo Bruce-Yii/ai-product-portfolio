@@ -18,3 +18,16 @@ Static invariants checked in the commit. Hosted route, image-load and browser E2
 The first preview deployment for this candidate (`dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA`, commit `0c5ef28`) is **superseded and must not be shared**. It returned HTTP 200, but its application script inherited an extra closing brace in `systemArt()` from the earlier `1294634` candidate, so the inline JavaScript did not parse.
 
 The extra brace is removed in this follow-up. Source-level inline-script parsing and the repository validator's static invariants (script count, project order, homepage mount/renderer, navigation handler and Laya route) pass. A new preview must be created from the corrected commit and checked independently before owner review.
+
+
+## Corrected review deployment — 2026-11-11
+
+- Corrected code commit: `f9cb2ce741258edebec73d136030c53c20f21517`.
+- Vercel deployment: `dpl_DkZZvbcnN9V1AfjMR2JH4Qv4Jc4e` (`READY`, preview target).
+- Preview URL: https://ai-product-portfolio-ojkrc4arr-yu-ac3a.vercel.app/
+- Source inline JavaScript parse and repository static invariants: PASS.
+- Hosted `/` and `/cases/laya/`: HTTP 200; deployment identity confirmed; noindex header and robots disallow confirmed.
+- The five official VIVIC image paths exist at the pinned source commit. Actual browser image rendering, visual breakpoints and click E2E remain unverified.
+- The previous `0c5ef28` / `dpl_2XGv...` preview is superseded due an inherited extra brace in `systemArt()`; it must not be shared.
+- Temporary Vercel access-bypass link expires after 7 days; token is not stored in the repository.
+- Owner review and public release approval remain pending.
