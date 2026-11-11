@@ -6,14 +6,14 @@ This revision follows the user's confirmed portfolio scope from 2026-11-05 onwar
 
 ### Selected product work
 
+- **Personal Context Keyboard** — personal project; Android-first with Windows as a target. The keyboard is a high-frequency Sensor, while the user-controlled Context Layer is the product core. The current implementation has substantial Android IME and Local-first Context Core capability and is near completion; do not describe it as an early simulator-only project.
 - **VIVIC** — multimodal Agent product; focus on the user intent → model decision → host validation → tool execution → result receipt chain.
 - **AWRP × Linear** — one Agent workflow product-design case, grounded in the historical AWRP protocol and the current Linear × Notion workflow. DeepSeek Super-agent is a third-party architecture comparison object, not a personal project or contribution.
-- **Personal Context Keyboard** — product architecture case; the keyboard is a high-frequency Sensor, while the user-controlled Context Layer is the product core.
 - **Laya** — separate flagship open-source casebook. Keep the existing dedicated visual treatment and route at `/cases/laya/`.
 
 ### Unified open-source contribution index
 
-Show these as repository-level contribution groups, not eight independent flagship projects:
+Show these as repository-level contribution groups, not standalone flagship projects:
 
 1. OpenClaw
 2. Dify
@@ -22,9 +22,8 @@ Show these as repository-level contribution groups, not eight independent flagsh
 5. QwenPaw
 6. FunASR
 7. dsh-market
-8. Google ADK — explicitly marked RFC / tests-only Draft / **not merged**.
 
-Laya remains its own flagship casebook and is also linked from the contribution index.
+Laya remains its own flagship casebook. Google ADK's unmerged RFC / tests-only Draft is retained as internal research evidence and is excluded from the current public showcase.
 
 ### Explicit exclusions and classification
 
@@ -38,17 +37,17 @@ Laya remains its own flagship casebook and is also linked from the contribution 
 ### Home
 
 1. Hero — AI Product Manager positioning and product-to-delivery proposition.
-2. Selected product work — three cards: VIVIC, AWRP × Linear, Personal Context Keyboard.
+2. Selected product work — three cards in the approved order: Personal Context Keyboard, VIVIC, AWRP × Linear.
 3. Laya flagship — existing dedicated casebook treatment retained.
-4. Selected open-source contributions — eight explicitly selected ecosystems; merged work and unmerged research are visibly distinguished.
+4. Selected open-source contributions — seven selected upstream groups; unmerged Google ADK research is excluded from the public showcase.
 5. Capabilities & evidence — four evidence-linked dimensions.
 6. About.
 
 ### Work
 
 - Three selected Project cards.
-- Four main Case records: Laya, VIVIC, AWRP × Linear, Personal Context Keyboard.
-- Unified contribution index for the eight open-source ecosystems.
+- Four main Case records: Laya, Personal Context Keyboard, VIVIC, AWRP × Linear.
+- Unified contribution index for the seven selected public open-source groups.
 - Case is the primary storytelling unit; a Project may contain multiple Cases. A repository is not automatically a Project or Case.
 
 ## Product-manager positioning and interview narrative
@@ -101,7 +100,7 @@ Do not lead with technology names, PR counts, or internal workflow vocabulary. T
 - Story: personal facts, preferences, and task context should not be trapped inside one app or AI conversation.
 - Product definition: keyboard is a Sensor, not the Context Core.
 - Architecture: authorized capture → traceable Raw Facts → rebuildable Derived Context → user confirmation/control → scoped AI Gateway.
-- Boundary: product definition, architecture, and early simulator prototype; not a released cross-platform product.
+- Current maturity: substantial Android IME, input, context-store, recovery, UI and regression implementation is recorded; the owner confirmed the project is near completion on 2026-11-10. Formal product acceptance and some external device / platform / release gates remain separate. Do not revert to the obsolete 'early simulator prototype' description or claim a formal public release.
 
 ### Laya
 
