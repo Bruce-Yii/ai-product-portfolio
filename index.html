@@ -1289,10 +1289,10 @@ body {background:var(--paper);color:var(--ink)}
 <aside class="inspector" id="inspector" aria-label="设计系统检查面板" aria-modal="true" role="dialog" aria-hidden="true">
   <div class="inspect-top"><span class="mono">PRIVATE DESIGN NOTES / SITE</span><button class="inspect-close" aria-label="关闭视觉系统" data-action="close-inspector">×</button></div>
   <h2 class="inspect-header">The visual<br><i>system.</i></h2>
-  <p class="inspect-description">把视觉系统当成一套产品约束：字体是身份，排版建立层级，色彩提供有限的强调，交互降低理解成本。此面板仅用于内部验证，正式版不会向招聘方显示。</p>
+  <p class="inspect-description">通过字体、排版、色彩与交互状态，检查整站视觉系统的一致性与阅读体验。</p>
   <div class="inspect-section"><h3>01 / TYPOGRAPHY</h3><div class="inspect-options"><button data-typography="editorial" aria-pressed="true">Editorial / 刊物式</button><button data-typography="precision" aria-pressed="false">Precision / 理性式</button></div><div class="type-example">Form follows purpose.</div><div class="type-example-sans">Manrope / Functional UI</div><div class="type-example-han">把复杂问题讲清楚。</div><p class="inspector-han-note">中文标题：建议保留宋体的字形骨架，正文使用黑体。可切换验证长标题和手机端可读性。</p><div class="inspect-options"><button data-han="serif" aria-pressed="true">中文宋体 / Editorial</button><button data-han="sans" aria-pressed="false">中文黑体 / Rational</button></div><p class="inspect-foot">Display: Instrument Serif / Manrope<br>中文标题: Noto Serif SC<br>正文: Manrope / Noto Sans SC<br>标签: DM Mono</p></div>
   <div class="inspect-section"><h3>02 / COLOR CONTROL</h3><div class="inspect-options"><button data-accent="oxide" aria-pressed="true">Oxide / 氧化红</button><button data-accent="blue" aria-pressed="false">Ink blue / 墨蓝</button></div><div class="swatches"><span class="swatch" style="background:#F8F9F7"></span><span class="swatch" style="background:#EFF1EE"></span><span class="swatch" style="background:#171B19"></span><span class="swatch" id="accent-swatch" style="background:#A34532"></span><span class="swatch" style="background:#1D302D"></span></div><p class="inspect-foot">冷白主背景 + 深墨色展览区域 + 少量氧化红。深色仅用于关键作品舞台与页脚，图片优先于装饰。</p></div>
-  <div class="inspect-section"><h3>03 / CONTENT & RHYTHM</h3><div class="scale-table"><strong>12 columns</strong><span>桌面弹性网格；案例使用非对称比例。</span><strong>3 templates</strong><span>导航目录 + 可适配的案例详情。</span><strong>1 accent</strong><span>一页只有有限的高对比视觉焦点。</span><strong>3 reading levels</strong><span>扫读 → 概览 → 完整展示。</span><strong>0 vanity stats</strong><span>不使用没有依据的能力百分比或自我评分。</span></div></div>
+  <div class="inspect-section"><h3>03 / CONTENT & RHYTHM</h3><div class="scale-table"><strong>12 columns</strong><span>桌面弹性网格；案例使用非对称比例。</span><strong>3 templates</strong><span>导航目录 + 可适配的案例详情。</span><strong>1 accent</strong><span>一页只有有限的高对比视觉焦点。</span><strong>3 reading levels</strong><span>扫读 → 概览 → 完整展示。</span><strong>Evidence-led</strong><span>以项目成果、公开记录与具体案例呈现能力。</span></div></div>
   <div class="inspect-section"><h3>04 / COMPONENT RULES</h3><p class="inspect-description">默认保持平面排版。V14 仅在导航、可点击的作品说明及筛选器测试轻量玻璃，正文不使用玻璃底板。交互状态必须可见，页面响应优先于动画。</p><button class="text-link" data-action="close-inspector">RETURN TO THE SITE <span class="arrow">↗</span></button></div>
   <div class="inspect-section">
     <h3>05 / LIQUID MATERIAL</h3>
@@ -1451,7 +1451,7 @@ const CASES = [
         }
       ],
       "role": "主导 AWRP 原始接力协议的产品问题定义、对象模型与工作流设计，并推进 CLI / Schema / 事件链 / 执行轮次与并发治理；随后把真实使用反馈带入 Linear × Notion 项目治理，并主导 Agent Project OS 的产品定位和架构取舍。",
-      "boundary": "AWRP 是历史接力协议；Linear × Notion × GitHub 是现行真实协作分工；DeepSeek Super-agent 是第三方架构参照；Agent Project OS 是基于这些实践形成的统一产品设计。"
+      "boundary": "AWRP 接力协议原型、Linear × Notion × GitHub 真实协作工作流与 Agent Project OS 统一产品设计，形成从项目身份、任务编排到 Agent 执行和证据化 Review 的产品演进路径；架构吸收 DeepSeek Super-agent 的事件触发、授权、分配与恢复机制思路。"
     },
     "productQuestion": "如何让研究、执行、多个 Agent 与长期项目保持同一套目标、状态、责任和证据？"
   },
@@ -1472,7 +1472,7 @@ const CASES = [
     ],
     "verified": false,
     "visibility": "internal_draft",
-    "status": "Android 主体实现接近完成 · 产品验收与跨端 Gate 独立推进",
+    "status": "Android 核心模块已实现 · Local-first Context Core 已落地",
     "format": "EVIDENCE-LED CASE STUDY",
     "presentation": "evidence",
     "homeFeatured": false,
@@ -1535,7 +1535,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "kind": "MERGED",
     "title": "让不同来源的知识可靠进入 AI 工作流",
     "detail": "4 selected merged PRs · Notion rich text / CSV literal NA / keyword validation / PDF base path · #42171 · #42212 · #42221 · #42956",
-    "story": "用户把 Notion 内容、CSV 标注数据和 PDF 资料带入知识库时，期待原始内容完整保留，并能正常预览。格式差异或部署方式不应悄悄丢失内容、阻断工作。",
+    "story": "用户将 Notion、CSV 与 PDF 资料导入知识库时，需要保留原始内容并顺畅预览；不同格式与部署路径都应保持一致的内容体验。",
     "url": "https://github.com/langgenius/dify/pulls?q=is%3Apr+author%3ABruce-Yii+is%3Amerged",
     "experience": "KNOWLEDGE WORKFLOW",
     "decision": "以导入后的内容完整性和可用性为标准，保留富文本中的有效信息、避免把合法文本误判为空值、统一关键词校验，并确保 PDF 预览在子路径部署下仍能正常使用。",
@@ -1577,7 +1577,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "kind": "MERGED",
     "title": "多项目切换不打断工作，保留熟练用户的快捷路径",
     "detail": "1 merged PR · direct path input + multi-directory state · #7593",
-    "story": "多目录能力让用户可以在一个会话中关联多个项目，但原本直接粘贴路径并回车切换的高频习惯不能因此消失。",
+    "story": "多目录能力让用户在一个会话中关联多个项目，同时保留直接粘贴路径并回车切换的高频操作。",
     "url": "https://github.com/agentscope-ai/QwenPaw/pull/7593",
     "experience": "MULTI-DIRECTORY WORKSPACE",
     "decision": "同时保留目录选择和路径直输两条路径，共享同一提交行为；新目录可以成为主目录，已绑定目录也能直接提升为主目录而不重复添加。",
@@ -1605,26 +1605,12 @@ const VERIFIED_CONTRIBUTIONS = [
     "kind": "MERGED",
     "title": "插件异常后，把选择权交还给用户",
     "detail": "1 merged PR · dismiss persistent notice without plugin-state mutation · #764",
-    "story": "插件从市场目录移除后，页面仍可能持续显示一条“查找插件”的提醒，但目录里已经找不到它。用户既无法完成原操作，也没有办法关闭无效提醒。",
+    "story": "插件从市场目录移除后，原有“查找插件”提醒仍停留在页面。用户需要清晰的后续选择：重新查找插件，或关闭这条提醒。",
     "url": "https://github.com/dsh-market/dsh-market/pull/764",
     "experience": "USER CONTROL & ERROR RECOVERY",
-    "decision": "把“继续找回插件”和“停止显示这条提醒”设计成两个独立选择；关闭提醒只改变用户看到的通知，不伪装成插件已修复，也不擅自删除磁盘文件。",
+    "decision": "把“继续找回插件”和“停止显示这条提醒”设计成两个独立选择；关闭提醒只管理通知状态，插件恢复与本地文件管理保持独立。",
     "contributionSummary": "插件异常后，让用户自己决定继续找回还是关闭提醒"
   },
-  {
-    "number": "09",
-    "name": "Google ADK",
-    "repoIntro": "用于构建、评估和部署 AI Agent 的开源 Python 工具包。",
-    "stars": 22163,
-    "kind": "DRAFT",
-    "title": "明确流式工具调用何时完成，避免中间状态被误当成动作",
-    "detail": "RFC issue #7455 OPEN + tests-only Draft PR #8005 OPEN · no production change",
-    "story": "开发者处理流式回调时，需要区分字段未提供、显式清空，以及 partial 与 final function-call；否则中间状态可能被误判为最终动作。",
-    "url": "https://github.com/google/adk-python/pull/8005",
-    "experience": "STREAMING TOOL CONTRACT · PROPOSAL",
-    "decision": "先通过 RFC 与 tests-only Draft 验证字段继承和工具调用生命周期契约，不直接改变生产行为。",
-    "contributionSummary": "推动明确流式工具调用的完成边界（未合并提案）"
-  }
 ];
 
 const MEDIA_SPEC = {
@@ -1820,9 +1806,9 @@ const PRODUCT_STEPS = [
   {
     "label": "01 · UNDERSTAND",
     "badge": "START FROM THE USER NEED",
-    "title": "先理解用户要完成什么，而不是先猜工具。",
-    "quote": "格式完全确定 → 规则直出；不进入语义规划。",
-    "hint": "规则只处理确定性格式，不和模型争夺用户意图的解释权。",
+    "title": "从用户目标出发，选择合适的能力。",
+    "quote": "格式确定的任务由规则直接处理，语义任务交给模型规划。",
+    "hint": "规则负责确定性格式，模型负责理解用户意图。",
     "foot": "RULES OWN EXACT FORMATS"
   },
   {
@@ -1830,7 +1816,7 @@ const PRODUCT_STEPS = [
     "badge": "ONE CLEAR ACTION",
     "title": "选对行动，也尊重用户选定的对象。",
     "quote": "模型输出：工具选择 + 目标引用 + 必要参数。",
-    "hint": "宿主可以召回候选、验证目标，但不能按名称猜测或擅自替换模型选中的对象。",
+    "hint": "宿主召回候选并验证目标，最终执行对象由明确选择确认。",
     "foot": "MODEL OWNS SEMANTIC CHOICE"
   },
   {
@@ -1838,15 +1824,15 @@ const PRODUCT_STEPS = [
     "badge": "SAFE TO ACT",
     "title": "涉及权限和关键操作时，先确认再执行。",
     "quote": "Schema ✓　权限 ✓　目标 ✓",
-    "hint": "宿主检查参数结构、权限与目标是否有效；不满足执行条件就拒绝或要求确认。",
+    "hint": "宿主检查参数结构、权限与目标；通过校验后执行，需要确认的操作交由用户确认。",
     "foot": "HOST OWNS VALIDATION & EXECUTION"
   },
   {
     "label": "04 · RECOVER",
     "badge": "STRUCTURED TOOL ISSUE",
-    "title": "失败不是终点，而是可处理的输入。",
+    "title": "把执行反馈转化为下一步可处理的信息。",
     "quote": "<strong>ToolIssue</strong><ul><li><span>01</span>code — 错误类型</li><li><span>02</span>message — 发生了什么</li><li><span>03</span>hint — 可采取的修复方向</li></ul>",
-    "hint": "结构化问题回传模型，让模型基于真实失败原因修复或重试，而不是把所有失败都变成终局澄清。",
+    "hint": "结构化问题回传模型，支持基于真实失败原因修复或重试，减少无效澄清。",
     "foot": "ERROR → MODEL → REPAIR / RETRY"
   },
   {
@@ -1886,7 +1872,7 @@ function systemArt(c){
 const artByType={product:productArt,opensource:sourceArt,systems:systemArt};
 const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function editorialCover(c){
-  return `<div class="editorial-art"><div class="mono editorial-art__top">CASE / EVIDENCE-LED NARRATIVE <span>${esc(c.num)}</span></div><div class="editorial-art__body"><div class="mono">${esc(c.category)} · ${esc(c.status)}</div><strong>${esc(c.name)}</strong><p>${esc(c.desc)}</p></div><div class="mono editorial-art__foot">DESIGNED EXPLANATION / NOT A PRODUCT SCREEN</div></div>`;
+  return `<div class="editorial-art"><div class="mono editorial-art__top">CASE / EVIDENCE-LED NARRATIVE <span>${esc(c.num)}</span></div><div class="editorial-art__body"><div class="mono">${esc(c.category)} · ${esc(c.status)}</div><strong>${esc(c.name)}</strong><p>${esc(c.desc)}</p></div><div class="mono editorial-art__foot">PRODUCT SYSTEM / CASE EXPLANATION</div></div>`;
 }
 function artworkFor(c){return c.presentation==='evidence'?editorialCover(c):(artByType[c.type]||systemArt)(c);}
 function narrativeExperience(c){
@@ -1897,7 +1883,7 @@ function narrativeExperience(c){
 }
 // Homepage project copy and stages are governed by docs/portfolio-content/2026-11-11-selective-recovery-v1.md.
 const HOME_PROJECTS = [
- {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET",summary:"以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。",phase:"Android 主体实现接近完成 · 产品验收与跨端 Gate 独立推进"},
+ {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET",summary:"以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。",phase:"Android 核心模块已实现 · Local-first Context Core 已落地"},
  {caseId:"product",name:"VIVIC",label:"TEAM PRODUCT · MULTIMODAL AGENT",summary:"团队打造的多模态卡片助理，支持语音与文本交互。我在比赛中与团队相识，赛后受邀加入，并接手既有产品的体验与 Agent 决策链路优化。",phase:"赛后受邀加入团队 · Agent 决策链路持续优化 · 后端固定题集回归已验证"},
  {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW · PRODUCT DESIGN",summary:"从 ChatGPT 与本地 Agent 的接力问题出发，先实现 AWRP 原型，再将真实项目治理落到 Linear × Notion × GitHub，并据此形成 Project-first Agent OS 设计。",phase:"AWRP 原型已执行 · Linear × Notion × GitHub 工作流在用 · Agent Project OS 完成 G0–G2 产品设计"}
 ];
