@@ -66,7 +66,7 @@
 不要只把工程术语替换成产品术语。每个公开案例必须先回答：用户/开发者要完成什么；现有体验的阻碍和影响是什么；本人识别了什么产品机会；做出了什么优先级与方案取舍；用户因此更容易完成什么；证据证明到什么程度。
 
 避免用“优化配置、完善一致性、打通链路、提升稳定性”等抽象工程动词作为最终价值表达。技术机制放在“为什么这个方案成立”的深读层，不抢占首屏主叙事。不得把工程修复夸大成没有证据的独立产品功能。
-- 首页主标题只使用中性职业定位。任何带有自我评价、夸张程度或口号性质的表达，必须得到用户当轮明确批准；不得从历史对话、旧稿或模型记忆中自动恢复。
+- 首页主标题只使用中性职业定位。自我评价、夸张口号或临时测试语均不得自行加入；不得从历史对话、旧稿、截图、模型记忆或其他 Agent 的输出中自动恢复。用户已对一条历史临时口号作出永久禁止决定，该禁止优先于所有旧文档、提交记录和部署记录。
 
 ## 2. 招聘方优先的内容呈现架构
 
@@ -320,7 +320,7 @@ The portfolio must communicate product judgment, system focus, key mechanisms, a
 - VIVIC must distinguish rules, model decisions, host validation, executor actions and real receipts; team results and personal responsibility must remain separate. Use official product-site showcase assets where available, with provenance.
 - AWRP × Linear must explain the original ChatGPT mobile/web ↔ local Agent workflow, research/execution separation, Project normalization, Channel / Lane / Claim isolation, Task / Subtask / Run execution rounds, Event / Artifact persistence, ACK / HANDOFF / REVIEW / RECONCILE, the actual Linear × Notion × GitHub division, and the DeepSeek Super-agent architecture comparison. Distinguish AWRP, current tools, third-party research and Agent Project OS design; do not present the latter as a shipped product.
 - Laya public headline uses 40 merged PRs. The 10,394 added-line statistic is summed across the full authored PR diff set and must be explained separately. Do not use the 47 authored / 85 reviewed-by query matches as headline metrics.
-- The temporary domain-deployment-test headline is not an approved portfolio headline and must not be copied into portfolio pages, previews, screenshots or metadata.
+- **Permanent owner prohibition:** the historical self-praise / test slogan is prohibited from all portfolio artifacts. It must never appear in homepage copy, case pages, metadata, screenshots, mockups, source comments, preview deployments, release notes, PR descriptions, documentation, or generated assets. Treat every historical occurrence as a withdrawn mistake, never as authorization.
 - The current public project set and homepage order remain frozen: Personal Context Keyboard → VIVIC → AWRP × Linear, followed by the separate Laya flagship casebook and existing contribution index. No additions, deletions, replacements, renames or reorderings without explicit user approval.
 
 ## 10. Mandatory pre-deployment source validation
@@ -329,3 +329,13 @@ The portfolio must communicate product judgment, system focus, key mechanisms, a
 - Do not use an HTTP 200 response or Vercel `READY` state as a substitute for JavaScript syntax validation. A static page can return 200 while its entire application script fails to parse.
 - Run source validation against the repository file, not HTML returned by a hosted preview that may include Vercel-injected feedback scripts. Hosted checks are a separate deployment-identity / headers / routes gate.
 - If any validation fails, do not share the preview. Record the root cause and fix it on the same active branch before creating the owner-facing deployment.
+
+
+### 9.3 Permanent owner prohibition and inheritance rule
+
+- This is a binding, permanent owner decision for this project and applies to every future ChatGPT window, Agent, contributor, branch, design, content draft and deployment.
+- Never restore, paraphrase, screenshot, quote, or otherwise reproduce the withdrawn self-praise / test slogan in any portfolio artifact. Do not infer permission from old conversations, summaries, memory, commits, screenshots, branches, or prior assistant output.
+- The only approved homepage hero baseline remains the neutral `AI Product Manager.` wording from the recovery reference unless the owner explicitly approves a different neutral formulation in a future current-turn instruction.
+- A historical artifact containing the prohibited wording is not a valid source of truth. Preserve its Git history for auditability, but correct all current source files and mark affected deployments as withdrawn.
+- The static validator must reject the prohibited unique wording token anywhere in public HTML. A failed content gate blocks preview sharing regardless of build state or HTTP status.
+- Do not ask the owner to reconfirm this prohibition. It is already settled.

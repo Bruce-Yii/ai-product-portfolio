@@ -31,3 +31,8 @@ The extra brace is removed in this follow-up. Source-level inline-script parsing
 - The previous `0c5ef28` / `dpl_2XGv...` preview is superseded due an inherited extra brace in `systemArt()`; it must not be shared.
 - Temporary Vercel access-bypass link expires after 7 days; token is not stored in the repository.
 - Owner review and public release approval remain pending.
+
+
+## Owner correction — 2026-11-11
+
+The later `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` deployment is withdrawn. Its homepage hero violated a permanent owner content prohibition. The earlier record calling it the corrected review deployment is superseded by this correction. Preserve the commit/deployment only as immutable audit history; do not share it. The neutral heading from the recovery reference is restored, and the static validator now blocks the prohibited wording from public HTML. No owner review is requested until a new exact preview passes independent QA.

@@ -7,7 +7,16 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ## 1. Current authoritative decision
 
-### Current owner review candidate — `ee6f8bd` (preview only)
+### Current state — governance correction underway
+
+- Active work branch: `portfolio/owner-feedback-rewrite-2026-11-11`.
+- Last branch HEAD before correction: `c718f7e465b94c2b06aa11fcae9b61396485491f` (documentation-only registry update).
+- The last deployed candidate `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` is **withdrawn** because its homepage contained owner-prohibited copy. It must not be shared or treated as a review candidate.
+- No current owner-facing preview is authorized until corrected source passes the content validator, is deployed from the exact recorded commit, and receives independent route / responsive / interaction QA.
+- No domain alias, production promotion, DNS or indexing change is authorized by this correction.
+
+
+### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
 - Code commit: `ee6f8bdd5239b80cf8ea72f563ece351105906af`
 - Active work branch at deployment: `portfolio/owner-feedback-rewrite-2026-11-11`
@@ -16,7 +25,7 @@ Do not infer the current version from a branch name, a deployment display URL, o
 - Deployment state: `READY`; target `null` (preview, not production).
 - Verified: `/` HTTP 200; deployment ID in the live response matches `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`; `/cases/laya/` HTTP 200; `robots.txt` returns `Disallow: /`; both page responses carry `X-Robots-Tag: noindex, nofollow, noarchive`.
 - Source verification: one application script parses; homepage order is Personal Context Keyboard → VIVIC → AWRP × Linear; four Case records have four detail payloads; nine contribution groups are present (Laya casebook plus eight selected upstream groups); homepage renderer, navigation handler and Laya route are present.
-- Content corrections: owner-requested large hero headline restored; PCK and AWRP public repository evidence links added; noisy Laya 47-authored / 85-reviewed query counts removed from the visible contribution line; VIVIC's eight unit-test failures are explicitly identified as pre-existing baseline failures.
+- Content corrections: PCK and AWRP public repository evidence links added; noisy Laya 47-authored / 85-reviewed query counts removed from the visible contribution line; VIVIC's eight unit-test failures are explicitly identified as pre-existing baseline failures. The homepage headline violates a permanent owner prohibition, so this entire deployment is withdrawn regardless of its technical checks.
 - Deployed homepage HTML exactly matches the GitHub source after removing Vercel's injected feedback script. The deployed Laya page exactly matches its GitHub source.
 - All five referenced VIVIC image paths exist at pinned upstream commit `9b8665a0b62a17e0eef94c403f2c2c583d484330`; actual browser image rendering has not been independently verified.
 - A shareable preview URL was verified with HTTP 200; the reused access link expires `2026-11-12 07:04:18` (Vercel-reported time). Its bearer token is not stored in GitHub.
@@ -85,7 +94,7 @@ Portfolio Vercel project:
 
 - Project: `ai-product-portfolio`
 - Project ID: `prj_zhQjAp1wRF6zIgzVfccCpdqdxH39`
-- Current latest deployment (review preview): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
+- Last deployment candidate (withdrawn): `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`
 - Attached custom domain: `portfolio.hcfind.com` (verified; still points to the older unapproved `dpl_DfeCKvr4bdJdYwQbWTN9ApSxVjE4` candidate)
 - SSO protection: enabled for generated deployment URLs except custom domains.
 - Noindex remains enabled on both inspected portfolio page responses.
@@ -107,7 +116,7 @@ Nine branches were returned at the audit. All returned `protected: false`.
 |---|---:|---|
 | `main` | `1294634` | Default branch currently points to unapproved rewrite; do not use as work baseline |
 | `freeze/portfolio-v1-2026-11-09` | `2349e1a` | Historical V1 freeze |
-| `portfolio/owner-feedback-rewrite-2026-11-11` | `ee6f8bd` | Sole active work branch; content-corrected review code deployed as `dpl_6kq...`; documentation-only follow-ups may advance branch HEAD without changing this deployment |
+| `portfolio/owner-feedback-rewrite-2026-11-11` | `c718f7e` | Sole active work branch; last website source `ee6f8bd` is withdrawn; corrective source and validator update are in progress |
 | `portfolio/phase3-content-review-2026-11-10` | `1294634` | Quarantined rewrite candidate |
 | `portfolio/v2.3-real-assets-2026-11-10` | `3e89b20` | Historical V2.3 line |
 | `portfolio/v2-information-architecture` | `aceeaae` | Historical IA line |
@@ -136,3 +145,7 @@ The branch name stored in a Vercel deployment is the branch name at deployment t
 - Add GitHub branch protection for the default branch through an explicitly reviewed administrative change; it is not currently enabled.
 - Do not claim `1294634`, `f9cb2ce` or the current `ee6f8bd` candidate has passed browser visual / click E2E until the exact deployment is independently tested.
 - Do not treat the Phase 3 content package or Phase 4 IA draft as owner-frozen; their Notion status remains Draft / Provisional.
+
+## 5. Permanent owner content prohibition
+
+The historical self-praise / test slogan is permanently prohibited in this portfolio. It must not appear in any current page, preview, screenshot, metadata, source comment, release note or derived asset. Historical commits remain immutable audit records only; they do not authorize reuse. The static source validator enforces the ban. The `ee6f8bd` / `dpl_6kq7...` candidate is withdrawn and must never be shared again.

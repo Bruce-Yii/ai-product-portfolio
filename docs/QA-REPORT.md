@@ -648,3 +648,13 @@ The prior 2026-11-10 local-source interaction smoke test is not transferred to t
 - Owner review and public release approval.
 
 No production promotion, custom-domain reassignment, DNS change or search-indexing change was performed. The earlier 2026-11-09 / 2026-11-10 E2E results are not transferred to this exact deployment.
+
+
+## 2026-11-11 — Owner content gate failure and withdrawal
+
+- Exact source artifact: commit `ee6f8bdd5239b80cf8ea72f563ece351105906af`; Vercel deployment `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`.
+- The deployment reached `READY`, returned HTTP 200 and passed the recorded inline-script syntax check. Those technical checks do not override content acceptance.
+- Its homepage hero contained wording explicitly and permanently prohibited by the owner. The candidate is **WITHDRAWN** and must never be shared as a review link.
+- This is a source-content governance failure, not a runtime failure. Preserve the immutable commit and deployment as audit history; do not rewrite Git history.
+- The corrected source adds a static public-HTML content gate. Any matching prohibited token fails validation before deployment or sharing.
+- Earlier route/header/noindex observations remain factual observations about `ee6f8bd`; they do not establish owner acceptance or make the deployment usable.

@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The current owner-review preview is code commit `ee6f8bd` / deployment `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR`. Use the exact owner-accessible preview link delivered in the owner conversation. `portfolio.hcfind.com` still serves the older unapproved `1294634` candidate; do not use it for the current review.
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The previously listed preview `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` is withdrawn and must not be shared. The only active work branch is `portfolio/owner-feedback-rewrite-2026-11-11`; use its registry before editing or deploying. The GitHub default branch `main` is a quarantined historical rewrite, not the work baseline. No owner-facing preview is current until corrected source and independent QA are recorded.
 
 A static, self-contained portfolio website for Bruce Yii.
 

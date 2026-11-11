@@ -105,3 +105,12 @@ The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 20
 - Homepage and Laya route return HTTP 200, source-to-deployment HTML matches, and noindex remains active.
 - Browser visual / click E2E and owner review remain pending. No production, custom-domain or indexing changes.
 - The `f9cb2ce` preview is superseded for review; `0c5ef28` remains invalid due the JavaScript syntax error recorded above.
+
+
+## 2026-11-11 — Owner content prohibition correction
+
+- The `ee6f8bd` / `dpl_6kq7ggcrRiRCDrsYKmzjpbDK7AnR` preview is withdrawn due to a violation of a permanent owner content prohibition.
+- The immutable commit and deployment remain in history for audit; they are not a valid review baseline and must not be redistributed.
+- The active branch remains `portfolio/owner-feedback-rewrite-2026-11-11`; one source correction and a static content gate are being applied there.
+- The neutral homepage heading from the owner-supplied recovery reference remains the baseline. No new headline or slogan is authorized.
+- A new preview may be recorded only after source validation, exact deployment identity verification and independent hosted QA. No production alias or indexing changes are part of this correction.

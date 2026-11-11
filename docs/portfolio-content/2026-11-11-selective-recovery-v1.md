@@ -11,7 +11,9 @@
 - This file is the content source for the embedded case data in `index.html`; the static site has no generator.
 
 ## Homepage hero
-- Preserve the owner's explicit large hero statement: **我是最强 AI 产品经理**. Keep the explanatory subline about turning AI capability into usable product workflows.
+- Preserve the neutral professional positioning from the recovery reference: `AI Product Manager.`.
+- No slogan, self-evaluation, superlative, temporary test copy or headline inferred from historical chat is authorized.
+- Any future hero wording change requires explicit current-turn owner approval; otherwise retain the approved neutral baseline.
 
 ## Personal Context Keyboard
 **Card:** PERSONAL PROJECT · ANDROID / WINDOWS  

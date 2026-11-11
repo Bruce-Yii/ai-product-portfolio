@@ -6,6 +6,8 @@ const html = readFileSync("index.html", "utf8");
 const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
 
 assert.equal(scripts.length, 1, "Expected one inline application script.");
+
+assert.ok(!html.includes(["最", "强"].join("")), "Owner-prohibited self-praise wording must not appear anywhere in public HTML.");
 for (const [index, match] of scripts.entries()) {
   new Script(match[1], { filename: "index.html:inline-script-" + (index + 1) });
 }
