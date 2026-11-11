@@ -1132,7 +1132,7 @@ body {background:var(--paper);color:var(--ink)}
       <div class="new-overline"><span>BRUCE YII <i></i> AI PRODUCT MANAGER</span><span>AGENT WORKFLOWS / AI APPLICATIONS</span></div>
       <div class="new-hero-grid">
         <div class="new-hero-main">
-          <h1>AI Product<br><em>Manager.</em></h1>
+          <h1>我是最强<br><em>AI 产品经理</em></h1>
           <p class="new-hero-cn">把 AI 能力变成真正可用的产品流程。</p>
         </div>
         <aside class="new-hero-side">
@@ -1432,6 +1432,12 @@ const CASES = [
       ],
       "evidence": [
         {
+          "label": "AWRP · Agent Work Relay Protocol",
+          "url": "https://github.com/Bruce-Yii/awrp",
+          "supports": "Public-safe protocol, CLI, schemas, reference implementation and tests",
+          "state": "public_record"
+        },
+        {
           "label": "Agent Project OS · 设计仓库",
           "url": "https://github.com/Bruce-Yii/agent-project-os",
           "supports": "本人新产品的产品与工程文档，代码尚未开始",
@@ -1485,7 +1491,14 @@ const CASES = [
         "有限补证 Agent 与 Durable Orchestrator 负责受控补证、增量触发、幂等、预算、checkpoint、重试和恢复；Validator 校验来源、时间、冲突、依赖与版本后发布 Derived Context。",
         "用户确认、纠错、合并、拆分、忽略和撤回拥有最高权威；Unified AI Gateway 按任务授权输出 Context Pack，Device Sync 独立处理跨设备同步。"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "label": "Personal Context Keyboard · GitHub repository",
+          "url": "https://github.com/Bruce-Yii/personal-context-keyboard",
+          "supports": "Android IME, Local-first context implementation and current project evidence",
+          "state": "public_record"
+        }
+      ],
       "role": "主导产品定位、目标用户与需求定义、跨端 Sensor 架构、Raw / Derived 数据模型、本地 Context Core、持久编排、用户控制和统一 AI Gateway 设计，并推进 Android 端 IME、Context Store、Recovery、Today / Smartbar、语音和搜索等核心模块。",
       "boundary": "Raw Facts 是权威事实源；Derived Context 是带证据、依赖和版本的可重建视图；用户的确认、纠错和撤回拥有最高权威；模型与 Provider 只消费授权上下文。"
     },
@@ -1500,7 +1513,7 @@ const VERIFIED_CONTRIBUTIONS = [
     "stars": 35287,
     "kind": "CASEBOOK",
     "title": "让决策模型从一次输出走向可验证、可控、可采用",
-    "detail": "独立案例册 · 47 authored · 40 merged · 85 reviewed-by matches",
+    "detail": "独立案例册 · 40 个本人提交的 PR 已合并",
     "story": "下游开发者要把决策模型用进真实产品，模型输出本身并不足够；还需要可评测、可控制、可集成的完整产品契约。",
     "url": "./cases/laya/",
     "experience": "DECISION QUALITY & DEVELOPER ADOPTION",
@@ -2157,7 +2170,7 @@ function renderCase(id){
  $('#case-edition-type').textContent=c.id==='product'?'TEAM PRODUCT / AGENT DECISION REFACTOR':c.id==='agent-workflow-governance'?'AGENT WORKFLOW / PROTOTYPE + PRODUCT DESIGN':c.id==='personal-context-layer'?'PERSONAL PROJECT / ANDROID IMPLEMENTATION':c.id==='laya-decision-integrity'?'UPSTREAM COLLABORATION / PRODUCT SYSTEMS':'PRODUCT & SYSTEM CASE';
  $('#case-edition-disclaimer').textContent=c.id==='product'?'团队产品 · 后端部署与固定题集回归已有记录；前端完整体验与真实用户效果未验证':c.id==='agent-workflow-governance'?'AWRP 原型已执行；Agent Project OS 设计阶段 GO，G0–G2 Draft PR #1 未合并，产品代码未开始':c.id==='personal-context-layer'?'Android 主体实现接近完成；80 项模拟器回归 0 fail / 1 skip；正式验收与部分平台 Gate 待完成':c.id==='laya-decision-integrity'?'40 MERGED PRS · 10,394 ADDED LINES ACROSS AUTHORED PR DIFFS':'PRODUCT PROBLEM / ARCHITECTURE / EVIDENCE';
  $('#case-scope-label').textContent=c.id==='laya-decision-integrity'?'CONTRIBUTION / EVIDENCE BOUNDARY':'DELIVERY / VALIDATION BOUNDARY';
- $('#case-scope-copy').textContent=c.id==='product'?'2026-11-05 后端部署报告记录固定 60 题 API 回归 59/60、p50 1,807ms；本地同题集多轮结果与线上记录分开，不合并成线上 60/60。新版本 2,859 项单测中 2,848 通过、8 失败、3 跳过；48 条浏览器全场景未重跑。没有真实用户成功率或商业 ROI 证据。':c.id==='agent-workflow-governance'?'AWRP 是历史接力协议原型；Linear × Notion × GitHub 是当前真实工作流。Agent Project OS 已作出立项 GO 判断；G0–G2 文档已提交至 Draft PR #1（未合并），G3–G5 未开始，产品代码尚未开始。DeepSeek Super-agent 是第三方参考，不是个人实现。':c.id==='personal-context-layer'?'Android Emulator 全量基线为 80 tests / 0 fail / 0 error / 1 skip（唯一 skip 是 VoiceStoreInstrumentedTest 整类 @Ignore）；键盘整包 47 项回归本轮 NOT_RUN。正式产品验收 0、GQ NOT_RUN；真实设备、真实麦克风整链、arm64 运行时、Windows TSF 与生产签名 / 商店发布仍未完成。':c.id==='laya-decision-integrity'?'40 个本人提交的 PR 已合并；10,394 行新增量按本人全部 PR diff 汇总（包含实现、测试、评测工具与文档），不是 40 个合并 PR 的净新增行数。Review 和团队贡献分别归属，不称官方维护者。':'围绕用户问题、产品机制、系统架构与关键取舍展开。';
+ $('#case-scope-copy').textContent=c.id==='product'?'2026-11-05 后端部署报告记录固定 60 题 API 回归 59/60、p50 1,807ms；本地同题集多轮结果与线上记录分开，不合并成线上 60/60。2,859 项单测中 2,848 通过、8 项为既有基线失败、3 项跳过；48 条浏览器全场景未重跑。没有真实用户成功率或商业 ROI 证据。':c.id==='agent-workflow-governance'?'AWRP 是历史接力协议原型；Linear × Notion × GitHub 是当前真实工作流。Agent Project OS 已作出立项 GO 判断；G0–G2 文档已提交至 Draft PR #1（未合并），G3–G5 未开始，产品代码尚未开始。DeepSeek Super-agent 是第三方参考，不是个人实现。':c.id==='personal-context-layer'?'Android Emulator 全量基线为 80 tests / 0 fail / 0 error / 1 skip（唯一 skip 是 VoiceStoreInstrumentedTest 整类 @Ignore）；键盘整包 47 项回归本轮 NOT_RUN。正式产品验收 0、GQ NOT_RUN；真实设备、真实麦克风整链、arm64 运行时、Windows TSF 与生产签名 / 商店发布仍未完成。':c.id==='laya-decision-integrity'?'40 个本人提交的 PR 已合并；10,394 行新增量按本人全部 PR diff 汇总（包含实现、测试、评测工具与文档），不是 40 个合并 PR 的净新增行数。Review 和团队贡献分别归属，不称官方维护者。':'围绕用户问题、产品机制、系统架构与关键取舍展开。';
  const publicEvidence=(c.editorial?.evidence||[]).filter(e=>e.state==='public_record'&&/^https:\/\/github\.com\//.test(e.url));
  const sourceLinks=c.url?[{label:'GitHub · Primary source',url:c.url,supports:'Upstream record'}]:publicEvidence;
  $('#case-source-link').hidden=!sourceLinks.length;
@@ -2172,7 +2185,7 @@ function renderCase(id){
  $('#case-media-insert').innerHTML=mediaIds.length?`<div class="media-insert__heading"><div class="mono">OFFICIAL WEBSITE / PRODUCT SHOWCASE</div><h3>VIVIC <i>in context.</i></h3><p>以下画面来自 VIVIC 官网公开展示素材（采集于 2026-10-17），用于说明产品形态与场景；它们不是 2026-11-05 后端部署版本的同环境截图，也不作为性能或回归证据。</p></div><div class="media-insert__grid media-insert__grid--${mediaIds.length}">${mediaIds.map(x=>mediaSlot(x,'support')).join('')}</div>`:'';
  $('#case-outcome-title').textContent=d.outcomeTitle;$('#case-outcome-statement').innerHTML=c.presentation==='evidence'?esc(d.outcomeBig):d.outcomeBig;$('#case-outcome-detail').textContent=d.outcome;const rolePanel=document.getElementById('case-role-panel');if(rolePanel){const showRole=['product','agent-workflow-governance','personal-context-layer'].includes(c.id);rolePanel.hidden=!showRole;if(showRole){document.getElementById('case-role').textContent=d.role||c.editorial?.role||'';document.getElementById('case-tradeoff').textContent=d.tradeoff||'';document.getElementById('case-role-note').textContent=d.ownershipNote||c.editorial?.boundary||'';}}const metricRoot=document.getElementById('case-metrics');
  const metrics=c.id==='personal-context-layer'?[{label:'Android Emulator baseline',value:'80 tests',note:'0 fail · 0 error · 1 skip；x86_64 / API 36 模拟器'}]:c.id==='product'?[{label:'固定 60 题 API 回归',value:'53/60 → 59/60',note:'旧稳定版 53/60；2026-11-05 线上部署报告 59/60'},{label:'API 请求至最终结果 p50',value:'3,625ms → 1,807ms',note:'同一测量口径，约下降 50%'},{label:'能力工具入口',value:'27 → 14',note:'27 是重构中途按卡型的工具面；14 是最终按能力组织的工具'}]:c.id==='laya-decision-integrity'?[{label:'已合并 PR',value:'40',note:'本人提交并被 Laya 上游合并'},{label:'新增行数',value:'10,394',note:'本人全部 PR diff 新增行数，含实现、测试、评测工具与文档'}]:[];
- const metricNote=c.id==='personal-context-layer'?'ANDROID EMULATOR REGRESSION · NOT FORMAL PRODUCT ACCEPTANCE OR REAL-DEVICE QUALIFICATION':c.id==='product'?'INTERNAL API TEST / DEPLOYMENT RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS · 2,859 UNIT TESTS: 2,848 PASS / 8 FAIL / 3 SKIP':'10,394 ADDED LINES ACROSS ALL AUTHORED PR DIFFS · MERGED PR COUNT IS REPORTED SEPARATELY';
+ const metricNote=c.id==='personal-context-layer'?'ANDROID EMULATOR REGRESSION · NOT FORMAL PRODUCT ACCEPTANCE OR REAL-DEVICE QUALIFICATION':c.id==='product'?'INTERNAL API TEST / DEPLOYMENT RECORDS · NOT REAL-USER SUCCESS OR COMMERCIAL RESULTS · 2,859 UNIT TESTS: 2,848 PASS / 8 PRE-EXISTING BASELINE FAIL / 3 SKIP':'10,394 ADDED LINES ACROSS ALL AUTHORED PR DIFFS · MERGED PR COUNT IS REPORTED SEPARATELY';
  if(metricRoot){metricRoot.hidden=!metrics.length;metricRoot.innerHTML=metrics.length?metrics.map(m=>'<article class="case-metric"><span class="mono case-metric__label">'+esc(m.label)+'</span><strong class="case-metric__value">'+esc(m.value)+'</strong><small class="case-metric__note">'+esc(m.note)+'</small></article>').join('')+'<p class="case-metrics-note mono">'+esc(metricNote)+'</p>':'';}
  if(c.id==='product')showProductStep(0);if(c.id==='agent-workflow-governance')showWorkflowStep(0);if(c.id==='personal-context-layer')showContextStep(0);if(c.presentation!=='evidence'&&c.type==='systems')showSystemNode(2)
  const idx=CASES.indexOf(c),next=CASES[(idx+1)%CASES.length];$('#case-next-title').innerHTML=`${next.name}<br><i>${next.latin}</i>`;$('#case-next-open').dataset.action='navigate';$('#case-next-open').dataset.page='case';$('#case-next-open').dataset.targetId=next.id;$('#case-next-open').setAttribute('aria-label',`查看下一个案例：${next.name}`);
