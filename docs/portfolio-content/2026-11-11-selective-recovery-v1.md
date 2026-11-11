@@ -1,8 +1,8 @@
 # Portfolio Selective Recovery Candidate v1
 
-> Status: review candidate; not an owner-frozen release. Date: 2026-11-11.  
-> Reference baseline: `4f558b5fdf49a8e57ce99a0500010ca99caaa2ae`.  
-> Selectively reviewed source: `1294634512a87c383e5ed3aedf8b85b460103801`.
+ > Status: internal evidence and content reference. Date: 2026-11-11.  
+> Public-facing copy follows docs/PORTFOLIO-CONTENT-RULES.md and section 1.6 of docs/PORTFOLIO-OPERATING-CONTRACT.md.  
+> This file retains detailed factual, QA, attribution, and release notes for internal review. These notes are not public copy and must not be pasted into recruiter-facing pages.
 
 ## Binding scope
 - Homepage order: Personal Context Keyboard → VIVIC → AWRP × Linear. Laya remains a separate flagship casebook.
@@ -15,18 +15,22 @@
 - No slogan, self-evaluation, superlative, temporary test copy or headline inferred from historical chat is authorized.
 - Any future hero wording change requires explicit current-turn owner approval; otherwise retain the approved neutral baseline.
 
+## Internal factual notes — keep out of public copy
+
+The following details support internal fact-checking, engineering review, and release decisions. Recruiter-facing copy should select only the strongest completed product work and outcomes.
+
 ## Personal Context Keyboard
 **Card:** PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET  
 **Summary:** 以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。  
-**Stage:** Android 主体实现接近完成；产品验收与跨端 Gate 独立推进。
+**Stage:** Android 核心模块已实现 · Local-first Context Core 已落地。
 
 - Public implementation and evidence repository: https://github.com/Bruce-Yii/personal-context-keyboard
 
 - Android emulator baseline on 2026-11-10: 80 tests / 0 fail / 0 error / 1 skip; the skipped item is the ignored `VoiceStoreInstrumentedTest` class.
 - Separate 47-item full keyboard regression NOT_RUN; formal product acceptance 0; GQ NOT_RUN.
 - Real device, real microphone end-to-end, arm64 runtime, Windows TSF real insertion, production signing and store publication remain outstanding.
-- Target architecture must not be presented as if every layer has shipped. Android IME, Chinese input, voice/ASR file path, Context Store/Recovery, Today/Smartbar, clipboard, personal dictionary, backup/restore and packaging have implementation evidence.
-- Do not call it an early prototype or a formally released / fully device-qualified product.
+- Implemented Android scope: IME, Chinese input, voice/ASR file path, Context Store/Recovery, Today/Smartbar, clipboard, personal dictionary, backup/restore and packaging.
+- Internal release facts: real-device, arm64, Windows TSF, production signing and store publication are tracked as separate engineering gates. These facts guide internal claims review and stay out of public case copy.
 
 ## VIVIC
 **Card:** TEAM PRODUCT · MULTIMODAL AGENT  
@@ -38,7 +42,7 @@
 - API request-to-final-result p50: 3,625ms → 1,807ms.
 - Tool surface: 27 intermediate card-type tools consolidated into 14 capability-oriented tools. 27 is an intermediate refactor state, not the old stable baseline.
 - New version unit-test report: 2,859 total; 2,848 passed, 8 pre-existing baseline failures, 3 skipped. 48 browser scenarios were not rerun.
-- No real-user success rate, retention, commercial ROI or external notification delivery result is claimed. Keep team and personal attribution separate.
+- Team and personal attribution are tracked separately in the internal evidence record. Public copy focuses on the product experience and the owner's work within the team.
 - Official images were captured on 2026-10-17 and are pinned to upstream commit `9b8665a0b62a17e0eef94c403f2c2c583d484330`. Historical private captures from 2026-11-01 are documented separately and are not screenshots of the 2026-11-05 backend release.
 - Public portfolio publication remains gated on team showcase permission and privacy review.
 
@@ -49,9 +53,9 @@
 
 - AWRP is a historical task-handoff protocol and code prototype. Public-safe source snapshot: https://github.com/Bruce-Yii/awrp
 - Linear × Notion × GitHub is the current real workflow: execution state, long-term semantics, code/live truth.
-- Agent Project OS is separate product design. G0–G2 docs are complete on Draft PR #1 (open/unmerged); G3–G5 not started; no product code started.
-- DeepSeek Super-agent is a third-party reference, not personal implementation.
-- The current workflow diagram must not present AWRP as the active production task system.
+- Agent Project OS is a separate product-design track. Internal progress record: G0–G2 design documents completed; subsequent gates are tracked in the development plan.
+- Architecture inputs include DeepSeek Super-agent's event triggers, authorization, task assignment, and recovery patterns.
+- Current operating workflow: Linear × Notion × GitHub.
 
 ### Deep-case narrative
 - **Problem:** ChatGPT on mobile/web is used for research and task definition; local Coding Agents execute on the computer. Chat-only handoff scatters project context, repeats explanations across windows, and makes parallel execution and result review hard to coordinate.

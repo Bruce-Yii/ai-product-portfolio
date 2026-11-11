@@ -6,6 +6,18 @@ The first small line beneath a featured project name introduces the project itse
 
 Use product language in the deeper case narrative: user context, problem, product opportunity, product decisions, trade-offs, experience, outcomes, and evidence.
 
+## Public-facing copy: showcase, not an audit log
+
+Recruiter-facing pages are a portfolio showcase, not an internal audit, QA report, or project diary.
+
+- Lead with the user's task, product opportunity, product decision, solution, personal contribution, and outcome.
+- Use direct, positive language. Describe real user pain when it helps explain the product problem; do not turn the case into a list of self-defensive negatives.
+- Do not volunteer internal gates, pending work, unmerged proposals, validation gaps, non-ownership disclaimers, or statements such as “not shipped”, “not implemented”, “not my contribution”, “does not prove”, or “not a production result” in the main public narrative.
+- If a detail is not worth showing, omit it. Do not explain its absence.
+- State personal responsibility positively: describe what the owner defined, designed, built, reviewed, or drove. Do not list work the owner did not do or work attributed to someone else.
+- Keep internal QA, release gates, evidence limitations, and detailed attribution records in internal project documents. Include a short factual qualifier in public copy only when omitting it would materially mislead a recruiter; place it beside the relevant evidence, not in the headline or main narrative.
+- Every public claim must remain accurate and supportable. Positive presentation is not permission to invent scope, results, users, or ownership.
+
 ## Project ownership and collaboration
 
 - Personal project: state that it is personal, explain its concrete concept/scope, platform and maturity. Do not imply a shipped product if it is an architecture exploration or prototype.
