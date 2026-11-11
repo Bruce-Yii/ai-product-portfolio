@@ -1,6 +1,6 @@
 # AI Product Portfolio
 
-> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `edaf0c593486ff782899e3b171b26e163ea16a6d`; current Vercel Hobby Preview: https://ai-product-portfolio-4f4ytzm4r-yu-ac3a.vercel.app/ (`dpl_Gks1MsHCVP99CZKon1ceH33QwQGA`, READY, Preview only).
+> **Current version authority:** [docs/VERSION-REGISTRY.md](./docs/VERSION-REGISTRY.md). The only active development branch is `main`. Current website source: `96a2c02ad396a4c95f22030d54259f59a8001d75`; current Vercel Hobby Preview: https://ai-product-portfolio-b4yggrvzi-yu-ac3a.vercel.app/ (`dpl_G6tDnWgSYLA46sxMouBTTynbuKnE`, READY, Preview only).
 
 A static, self-contained portfolio website for Bruce Yii.
 
