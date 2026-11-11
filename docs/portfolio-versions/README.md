@@ -80,3 +80,8 @@
 - Pins VIVIC official image sources to an immutable upstream commit and preserves historical screenshot provenance.
 - Full scope: [selective recovery version note](./2026-11-11-selective-recovery.md).
 - Deployment ID and hosted QA will be added to the Version Registry after preview verification.
+
+
+### Validation correction
+
+The first preview deployment `dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA` returned HTTP 200 but inherited a JavaScript syntax error in `systemArt()`; it is superseded and must not be shared. The extra closing brace was removed in a follow-up source commit. New deployment and hosted QA remain pending.

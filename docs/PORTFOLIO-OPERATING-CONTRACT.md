@@ -322,3 +322,10 @@ The portfolio must communicate product judgment, system focus, key mechanisms, a
 - Laya public headline uses 40 merged PRs. The 10,394 added-line statistic is summed across the full authored PR diff set and must be explained separately. Do not use the 47 authored / 85 reviewed-by query matches as headline metrics.
 - The temporary domain-deployment-test headline is not an approved portfolio headline and must not be copied into portfolio pages, previews, screenshots or metadata.
 - The current public project set and homepage order remain frozen: Personal Context Keyboard → VIVIC → AWRP × Linear, followed by the separate Laya flagship casebook and existing contribution index. No additions, deletions, replacements, renames or reorderings without explicit user approval.
+
+## 10. Mandatory pre-deployment source validation
+
+- Before every preview deployment, run `node scripts/validate-portfolio.mjs` against the source checkout. This gate parses the inline application script and checks homepage project membership/order, mount point, renderer, navigation handler and standalone Laya route.
+- Do not use an HTTP 200 response or Vercel `READY` state as a substitute for JavaScript syntax validation. A static page can return 200 while its entire application script fails to parse.
+- Run source validation against the repository file, not HTML returned by a hosted preview that may include Vercel-injected feedback scripts. Hosted checks are a separate deployment-identity / headers / routes gate.
+- If any validation fails, do not share the preview. Record the root cause and fix it on the same active branch before creating the owner-facing deployment.

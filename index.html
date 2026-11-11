@@ -1875,7 +1875,7 @@ function systemArt(c){
  const kicker=isContext?'PERSONAL CONTEXT / LOCAL-FIRST':'AGENT WORKFLOW / PROJECT-FIRST';
  const foot=isContext?'USER-OWNED · TRACEABLE · RECOMPUTABLE':'COORDINATE · EXECUTE · REVIEW · RECOVER';
  return '<div class="art-secondary art-systems"><div class="fine-grid"></div><div class="annotation mono">'+kicker+'</div><div class="system-art-flow">'+nodes.map((n,i)=>'<span>'+n+'</span>'+(i<nodes.length-1?'<i>→</i>':'')).join('')+'</div><div class="system-art-foot mono">'+foot+'</div></div>';
-}}
+}
 const artByType={product:productArt,opensource:sourceArt,systems:systemArt};
 const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function editorialCover(c){

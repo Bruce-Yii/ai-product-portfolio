@@ -11,3 +11,10 @@
 No new project, route, navigation or homepage reorder. No full-site redesign, DNS, root-domain, Vercel alias, production promotion or indexing change. noindex remains enabled.
 
 Static invariants checked in the commit. Hosted route, image-load and browser E2E verification pending deployment. Owner review and public release approval pending.
+
+
+## Validation correction — 2026-11-11
+
+The first preview deployment for this candidate (`dpl_2XGv86EWnM5AfLeL3aHtXjQFc5uA`, commit `0c5ef28`) is **superseded and must not be shared**. It returned HTTP 200, but its application script inherited an extra closing brace in `systemArt()` from the earlier `1294634` candidate, so the inline JavaScript did not parse.
+
+The extra brace is removed in this follow-up. Source-level inline-script parsing and the repository validator's static invariants (script count, project order, homepage mount/renderer, navigation handler and Laya route) pass. A new preview must be created from the corrected commit and checked independently before owner review.
