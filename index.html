@@ -1140,19 +1140,77 @@ body {background:var(--paper);color:var(--ink)}
  .footer-evidence-link{margin-left:0;margin-top:10px}
 }
 
-/* AWRP x Linear four-stage product evolution: conceptual diagram, not a shipped UI screenshot. */
-.project-visual--evolution{background:#202d29;min-height:190px}
-.project-visual--evolution:before{opacity:.5}
-.awrp-evolution-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:14px 0;align-items:stretch}
-.awrp-evolution-step{min-width:0;border:1px solid rgba(212,226,218,.28);padding:10px 11px;background:rgba(255,255,255,.045);display:flex;flex-direction:column;gap:4px}
-.awrp-evolution-step:nth-child(1){border-color:#d2ab91;background:rgba(163,69,50,.17)}
-.awrp-evolution-step__index{font-size:9px;color:#c7d4ca}
-.awrp-evolution-step strong{font:500 clamp(11px,1.15vw,17px)/1.25 var(--sans);letter-spacing:-.02em;overflow-wrap:anywhere;color:#f6f3ed}
-.awrp-evolution-step>span:last-child{font:400 10px/1.35 var(--han);color:#c4d1c7}
+/* AWRP × Linear homepage: editorial dual-system diagram, not a product screenshot. */
+.project-visual--awrp-systems{
+  background:#1e2c27;color:#f0eee8;min-height:235px;height:clamp(235px,19vw,260px);
+  padding:14px 15px 13px;gap:9px;position:relative;isolation:isolate
+}
+.project-visual--awrp-systems:before{
+  background:radial-gradient(ellipse 75% 70% at 8% 15%,rgba(185,107,79,.14),transparent),
+    radial-gradient(ellipse 70% 80% at 100% 90%,rgba(93,152,122,.13),transparent),
+    repeating-linear-gradient(90deg,transparent 0 47px,rgba(255,255,255,.018) 48px 49px);
+  opacity:1
+}
+.project-visual--awrp-systems .project-visual__top{flex:0 0 auto;color:#c4cdc5;font-size:8px;letter-spacing:.075em}
+.awrp-systems__core{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 13px minmax(0,1fr);gap:5px;min-height:0;flex:1}
+.awrp-system{min-width:0;border:1px solid rgba(220,231,219,.22);background:rgba(7,18,13,.32);display:flex;flex-direction:column;gap:9px;padding:11px 9px 9px}
+.awrp-system--relay{border-color:rgba(222,166,132,.58);background:linear-gradient(150deg,rgba(157,72,51,.20),rgba(8,23,15,.28) 65%)}
+.awrp-system--workflow{border-color:rgba(154,192,164,.42);background:linear-gradient(140deg,rgba(84,126,107,.17),rgba(8,23,15,.28) 72%)}
+.awrp-system__head{display:flex;align-items:center;gap:5px;min-width:0}
+.awrp-system__id{font:8px/1 var(--mono);color:#a8b8a9}
+.awrp-system__head strong{font:600 clamp(13px,1.35vw,19px)/1.2 var(--sans);letter-spacing:-.03em;color:#f3f1ea;white-space:nowrap}
+.awrp-system__stage{font:7px/1.2 var(--mono);letter-spacing:.07em;color:#d3c2ae;margin-left:auto}
+.awrp-system--workflow .awrp-system__stage{color:#b6d6c1}
+.awrp-system__surface{border:1px solid rgba(231,242,231,.13);background:rgba(228,238,221,.055);display:flex;flex-direction:column;gap:9px;padding:9px 7px;justify-content:center;flex:1}
+.awrp-system__scope{font:8px/1.3 var(--mono);letter-spacing:.06em;color:#d7ded4;text-align:center}
+.awrp-system__sequence{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0}
+.awrp-system__sequence span{min-width:0;flex:1;border:1px solid rgba(229,233,222,.25);padding:7px 2px;text-align:center;color:#f4ede4;font-size:9px;line-height:1.2}
+.awrp-system__sequence b{font:11px/1 var(--sans);color:#d9c0ad;font-weight:400}
+.awrp-system__board{display:flex;gap:3px;min-width:0}
+.awrp-system__board span{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-align:center;border:1px solid rgba(178,217,189,.28);background:rgba(86,145,108,.15);padding:8px 2px;font:7px/1.2 var(--mono);color:#cde1d1}
+.awrp-system__board span:nth-child(2){background:rgba(169,112,74,.19);border-color:rgba(225,177,133,.3);color:#ecd0b8}
+.awrp-system__result{text-align:center;font:7px/1.3 var(--mono);letter-spacing:.065em;color:#b7c6b8}
+.awrp-system__caption{font:500 10px/1.5 var(--han);color:#d5dfd3;letter-spacing:.01em;text-align:center;white-space:nowrap}
+.awrp-systems__transition{color:#dfbda0;font:20px/1 var(--serif);display:flex;align-items:center;justify-content:center}
+.awrp-systems__next{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px solid rgba(234,236,225,.17);padding-top:9px;color:#b5c3b6;font:8px/1.35 var(--mono);white-space:nowrap}
+.awrp-systems__next span{display:flex;gap:5px;align-items:baseline;min-width:0}
+.awrp-systems__next strong{color:#eeeae0;font-weight:500;font-size:9px}
+.awrp-systems__next small{color:#a8b6a6;font:9px/1.3 var(--han)}
+.awrp-systems__next-arrow{font-size:13px!important;color:#c6a88b}
 .project-card__evolution-lead{font-size:16px!important;line-height:1.55!important;font-weight:500;color:var(--ink)!important;min-height:0!important}
-.project-grid--compact .awrp-evolution-step{padding:7px}
-.project-grid--compact .awrp-evolution-step strong{font-size:11px}
-@media(max-width:720px){.awrp-evolution-steps{gap:6px;margin:9px 0}.awrp-evolution-step{padding:8px}.awrp-evolution-step strong{font-size:13px}.project-card__evolution-lead{font-size:15px!important}}
+.project-grid--compact .project-visual--awrp-systems{height:220px;min-height:220px;padding:11px 10px}
+.project-grid--compact .awrp-system{gap:5px;padding:8px 6px}
+.project-grid--compact .awrp-system__surface{gap:6px;padding:7px 4px}
+.project-grid--compact .awrp-system__sequence span{font-size:8px}
+.project-grid--compact .awrp-system__caption{font-size:9px}
+@media(max-width:900px){
+ .project-visual--awrp-systems{height:260px;min-height:260px;padding:12px 10px 10px}
+ .awrp-system{padding:9px 6px;gap:7px}
+ .awrp-system__head strong{font-size:14px}
+ .awrp-system__stage{font-size:6px}
+ .awrp-system__surface{padding:7px 4px;gap:6px}
+ .awrp-system__sequence span{font-size:8px}
+ .awrp-system__caption{font-size:9px}
+ .awrp-systems__next{gap:5px}
+ .awrp-systems__next small{font-size:8px}
+}
+@media(max-width:720px){
+ .project-visual--awrp-systems,.project-grid--compact .project-visual--awrp-systems{height:265px;min-height:265px;padding:13px 11px}
+ .awrp-systems__core{grid-template-columns:minmax(0,1fr) 11px minmax(0,1fr);gap:4px}
+ .awrp-system{padding:9px 7px;gap:7px}
+ .awrp-system__head strong{font-size:15px}
+ .awrp-system__sequence span{font-size:8px}
+ .awrp-system__caption{font-size:10px}
+ .awrp-systems__next{flex-wrap:wrap;row-gap:3px;padding-top:8px}
+ .awrp-systems__next strong{font-size:9px}
+ .project-card__evolution-lead{font-size:15px!important}
+}
+@media(max-width:370px){
+ .awrp-systems__next small{display:none}
+ .awrp-system__stage{display:none}
+ .awrp-system__caption{font-size:8px}
+}
+
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1935,16 +1993,32 @@ const HOME_PROJECTS = [
 ];
 function projectVisual(id){
  if(id==="agent-workflow-governance"){
-   const phases=[
-     ["01","AWRP","设计与实现"],
-     ["02","Linear","工作流改造"],
-     ["03","dsh-superagent","架构对照"],
-     ["04","Agent OS","产品化探索"]
-   ];
-   return '<div class="project-visual project-visual--evolution" aria-label="AWRP 到 Agent OS 的四阶段演进示意">'+
-   '<div class="project-visual__top mono"><span>AWRP × LINEAR</span><span>DESIGN EVOLUTION</span></div>'+
-   '<div class="awrp-evolution-steps">'+phases.map(step=>'<div class="awrp-evolution-step"><span class="mono awrp-evolution-step__index">'+step[0]+'</span><strong>'+step[1]+'</strong><span>'+step[2]+'</span></div>').join('')+'</div>'+
-   '<div class="project-visual__foot mono">BUILT → ADAPTED → COMPARED → EXPLORING</div></div>';
+   // Editorial system diagram; not a screenshot of Linear or a shipped Agent OS.
+   return `<div class="project-visual project-visual--awrp-systems" aria-label="AWRP 可靠执行系统与 Linear 长期项目工作流的演进示意；dsh-superagent 架构对照与 Agent OS 产品化探索为后续阶段">
+     <div class="project-visual__top mono"><span>RELIABLE EXECUTION</span><span>PROJECT CONTINUITY</span></div>
+     <div class="awrp-systems__core">
+       <div class="awrp-system awrp-system--relay">
+         <div class="awrp-system__head"><span class="awrp-system__id">01</span><strong>AWRP</strong><span class="awrp-system__stage">BUILT</span></div>
+         <div class="awrp-system__surface">
+           <div class="awrp-system__scope mono">PROJECT / CHANNEL</div>
+           <div class="awrp-system__sequence mono"><span>Task</span><b>›</b><span>Run</span><b>›</b><span>Event</span></div>
+           <div class="awrp-system__result mono">ARTIFACT · REPLAY</div>
+         </div>
+         <div class="awrp-system__caption">可靠接力 · 状态恢复</div>
+       </div>
+       <span class="awrp-systems__transition" aria-hidden="true">→</span>
+       <div class="awrp-system awrp-system--workflow">
+         <div class="awrp-system__head"><span class="awrp-system__id">02</span><strong>Linear</strong><span class="awrp-system__stage">ADAPTED</span></div>
+         <div class="awrp-system__surface">
+           <div class="awrp-system__scope mono">PROJECT / ISSUES</div>
+           <div class="awrp-system__board mono"><span>READY</span><span>AGENT</span><span>REVIEW</span></div>
+           <div class="awrp-system__result mono">STATE · EVIDENCE</div>
+         </div>
+         <div class="awrp-system__caption">长期项目 · Agent 协作</div>
+       </div>
+     </div>
+     <div class="awrp-systems__next mono"><span>03 <strong>dsh-superagent</strong><small>架构对照</small></span><span class="awrp-systems__next-arrow">→</span><span>04 <strong>Agent OS</strong><small>产品化探索</small></span></div>
+   </div>`;
  }
  if(id==="product")return '<div class="project-visual project-visual--image"><img src="'+MEDIA_FILES["M01"]+'" alt="VIVIC official website product showcase" loading="lazy" decoding="async"><div class="project-visual__top mono"><span>VIVIC / OFFICIAL PRODUCT SHOWCASE</span><span>TEAM PRODUCT</span></div><div class="project-visual__foot mono">INTENT → DECISION → ACTION → RECEIPT</div></div>';
  const data={"agent-workflow-governance":{label:"AWRP PROTOTYPE / PROJECT-FIRST WORK",steps:["PROJECT","CHANNEL","TASK","RUN","REVIEW"],foot:"PROJECT IDENTITY PERSISTS · EXECUTION IS REPLACEABLE"},"personal-context-layer":{label:"PERSONAL CONTEXT / LOCAL-FIRST CORE",steps:["RAW FACTS","EVIDENCE","DERIVED","USER CONTROL","AI GATEWAY"],foot:"SOURCE TRACEABLE · USER CONTROLLED · RECOMPUTABLE"}};
