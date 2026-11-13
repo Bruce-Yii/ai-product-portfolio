@@ -1,7 +1,7 @@
 # Portfolio Version Registry
 
 > **Operational source of truth for version identity and release state.**
-> Last verified: 2026-11-13 (Asia/Shanghai). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
+> Last verified: 2026-11-14 (Asia/Shanghai). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
 
 Do not infer the current version from a branch name, a deployment display URL, or a historical README entry alone. A version is identified by **commit SHA + Vercel deployment ID**. Check the actual page response for its deployment ID before treating a URL as current.
 
@@ -19,19 +19,17 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- Canonical GitHub branch: `main` (only active development line).
-- Current **website artifact** commit: `7fe547814c37e1e217fc4e0a4f63feac1e085d29`.
-- Vercel deployment: `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr` (`READY`, target `null`, **Preview only**).
-- Immutable review URL: https://ai-product-portfolio-284kpx0gi-yu-ac3a.vercel.app/
-- Public route verification: home `/` HTTP 200 and Laya casebook `/cases/laya/` HTTP 200. The deployed page contains deployment identifier `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr`.
-- Project SSO/password/trusted-IP restrictions are disabled; public HTML is not a Vercel login response.
-- Home layout: 1+2 asymmetric Selected Work (Personal Context Keyboard → VIVIC → AWRP × Linear). The prior Laya **project-introduction paragraph is unchanged**; the Laya casebook remains v2.4.
-- Laya personal evidence: **40 personally authored merged PRs**, **94 distinct PRs reviewed** (owner-confirmed count, formal review plus substantive comment-based review), and **10,394 PR Diff added lines** (implementation, testing, tooling, documentation; not net production LOC). Four product systems remain alongside the copy; eight casebook chapters are not presented as contribution KPIs.
-- Seven upstream project groups use product capability narratives and **selected merged PR counts**, not full-account merged totals. GitHub Stars appear as low-weight **2026-11-10 snapshots**. There is **no sitewide PR/Review total**.
-- Four capability groups now have an explicit backing data declaration and an even 2×2 desktop layout, 1-column mobile layout. Footer includes the public GitHub evidence entry.
-- QA verified: deployed JS syntax compiles; source and deployed HTML checks; two HTTP 200 routes; preserved noindex metadata and no forbidden homepage slogan. Actual Chromium click-through, image rendering and 1440px / 390px / 360px visual checks remain **not independently completed**.
-- `robots.txt` and `vercel.json` retain anti-indexing controls. No production promotion, DNS/custom-domain adjustment or indexing change was performed.
-- This Preview supersedes `00a5aff` / `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` and interim `3815385` / `dpl_4fZctmKmRMxhmG85zKBTyT94VtmQ`.
+- Canonical development branch: `main`.
+- Website **artifact commit**: `d99ba1c2879b995292d9331be167b2c48120d03c`.
+- Vercel Preview: `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc` (`READY`, target `null`, **Preview only**).
+- Immutable review URL: https://ai-product-portfolio-p7j00y15v-yu-ac3a.vercel.app/
+- Public routes verified: `/` HTTP 200 and `/cases/laya/` HTTP 200. Home response includes deployment ID `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc`.
+- Homepage change: AWRP × Linear card now states “让 Agent 从一次性执行，走向长期项目协作。” and shows the evolution **AWRP → Linear → dsh-superagent → Agent OS**, with labels `设计与实现 / 工作流改造 / 架构对照 / 产品化探索`.
+- Name verification: DeepSeek Harness team's README calls the public prototype `dsh-superagent`, hosted at `deepseek-ai/dsh-superagent-prototype`; it is explicitly a research prototype and not an official DeepSeek product. Do not imply that AWRP derived from it.
+- Canonical four-stage **draft** and evidence boundaries: [docs/portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md](portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md). This is a portfolio content draft, not a new product PRD.
+- Previously accepted homepage structure remains: 1+2 featured projects in Personal Context Keyboard → VIVIC → AWRP × Linear order; Laya introduction **unchanged**, casebook v2.4; Laya metrics 40 authored merged PRs, 94 owner-confirmed distinct PR reviews and 10,394 PR Diff added lines; seven selected OSS groups, no sitewide PR total; four capability blocks and GitHub footer.
+- QA verified: both HTTP routes, exact deployment ID/source commit, static JavaScript syntax, four-stage data, preserved noindex and absence of prohibited slogan. Browser click-through, rendered screenshots and responsive QA at 1440px / 390px / 360px are **not independently completed**.
+- No production promotion, custom-domain/DNS changes or indexing changes. Earlier Preview `7fe5478` / `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr` remains a historical immutable version.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 

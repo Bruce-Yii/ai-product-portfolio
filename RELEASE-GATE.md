@@ -1,10 +1,10 @@
 # Publication Gate
 
-## Authoritative current state — 2026-11-13
+## Authoritative current state — 2026-11-14
 
-Current website artifact: `7fe547814c37e1e217fc4e0a4f63feac1e085d29` on GitHub `main`. Current Vercel Hobby Preview: https://ai-product-portfolio-284kpx0gi-yu-ac3a.vercel.app/ (`dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr`, READY, target `null`, Preview only). The Laya introduction selected by the owner is unchanged, the casebook remains v2.4, and the selected project order is Personal Context Keyboard → VIVIC → AWRP × Linear with a 1+2 layout. Laya now foregrounds 40 merged authored PRs, 94 reviewed PRs (owner-confirmed distinct PR count including substantial comment-style review), and 10,394 PR Diff additions (including tests, tooling and docs). Seven other OSS groups show concise product collaboration themes and selected merged PR counts, with dated project Stars snapshots; no overall PR total. Four evidence-based capabilities and the GitHub footer link are included.
+Current website artifact: `d99ba1c2879b995292d9331be167b2c48120d03c` on GitHub `main`; current Vercel Hobby Preview: https://ai-product-portfolio-p7j00y15v-yu-ac3a.vercel.app/ (`dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc`, READY, target `null`, Preview only). The AWRP × Linear homepage card now uses the four-stage story AWRP (implemented protocol) → Linear (workflow adaptation) → dsh-superagent (external research prototype comparison) → Agent OS (productization exploration). The four-stage content is a **draft** recorded in `docs/portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md`. Existing Laya introduction/casebook, featured project ordering, other OSS evidence, and noindex remain unchanged.
 
-Verified: deployed home and Laya routes return HTTP 200; live HTML and JavaScript syntax checks pass; noindex remains. Browser interaction, responsive screenshots and image-render checks have not been independently completed. No production promotion, custom-domain change, DNS change or indexing change is authorized.
+Verified: exact deployment source SHA and ID, READY, HTTP 200 on homepage/Laya casebook, static JavaScript syntax and expected markup. Actual browser click-through and responsive rendered screenshots are not independently complete. Do not promote to production, change DNS/domains, or permit indexing without explicit owner approval.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 
