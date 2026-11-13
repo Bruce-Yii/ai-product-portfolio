@@ -2,9 +2,9 @@
 
 ## Authoritative current state — 2026-11-14
 
-Current website artifact `d0e66adb68560687c4ee8a69eecb868af85fcbb5` on `main`, Preview https://ai-product-portfolio-3pbwm0kzs-yu-ac3a.vercel.app/ (`dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC`, READY, target `null`). The AWRP homepage visual now gives priority to the independently implemented AWRP relay model and adapted Linear project workflow, with dsh-superagent and Agent OS as small secondary evolution labels. This replaces only the prior four-equal-stage visual. All other homepage/project content remains unchanged.
+Current website source `f6b9e787e729c87f2a557628a673a3cce7fc3b51` on `main`, Vercel Preview https://ai-product-portfolio-j9o4ydovy-yu-ac3a.vercel.app/ (`dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e`, READY, Preview only). The AWRP homepage visualization explicitly tells **AWRP × Linear (combined prior practice) → Agent OS (new productization direction)**. dsh-superagent is a subordinate external architecture input, not an equivalent fourth existing product. Replaces the previous symmetric AWRP/Linear panels; no unrelated content changed.
 
-Verified: live source/deployment identity, HTTP 200 homepage and Laya casebook, static JavaScript syntax, preserved noindex; AWRP card navigation and basic mobile container overflow checked. Full screenshot-based visual QA and Laya UI-click E2E are not complete (supplemental browser audit timed out). This is a preview for owner review, not production acceptance. No promotion, DNS/domain or indexing changes.
+Verified: HTML and source identity, JS syntax, new mainline rendering nodes, both public routes HTTP 200, preserved noindex and original Laya intro. Automated browser interaction / visual viewport QA timed out and is not accepted. No production, DNS, domain or indexing changes.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

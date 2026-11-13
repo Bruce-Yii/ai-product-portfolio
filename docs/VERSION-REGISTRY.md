@@ -19,18 +19,20 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- Canonical development branch: `main`.
-- Website artifact source: `d0e66adb68560687c4ee8a69eecb868af85fcbb5`.
-- Vercel deployment: `dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC` (`READY`, target `null`, **Preview only**).
-- Immutable review URL: https://ai-product-portfolio-3pbwm0kzs-yu-ac3a.vercel.app/
-- Scope: Replace the four-equal-stage AWRP × Linear homepage schematic with an **editorial AWRP + Linear dual-system visual**. AWRP panel shows Project/Channel → Task/Run/Event → Artifact/Replay; Linear panel shows Project/Issues → Ready/Agent/Review → State/Evidence. Restrained footer: dsh-superagent architecture comparison → Agent OS exploration.
-- The card's already-approved headline, the Project order, PCK/VIVIC visuals, Laya introduction and standalone casebook, seven OSS groups, capability tiles and footer remain unchanged.
-- Diagram uses HTML/CSS (no generated pseudo-product screenshot, no invented product launch status). All elements remain inside the existing project-card button and preserve its case navigation.
-- Verification: deployment READY, expected GitHub SHA, `/` and `/cases/laya/` HTTP 200, homepage live markup containing new dual-system classes and no obsolete `awrp-evolution-steps`, static JS syntax PASS, preserved `noindex` and forbidden-copy exclusion.
-- Browser interaction: AWRP project card navigation to its detail heading observed; at a mobile-style test, diagram/card scroll widths did not exceed client widths. Desktop/mobile screenshots were captured by an external browser service, but not fully visual-reviewed; a supplemental comprehensive click audit timed out. Do **not** claim full responsive visual acceptance or Laya link click E2E.
-- No production promotion, custom-domain/DNS adjustment or indexing change.
-- Previous website Preview `d99ba1c` / `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc` remains historical.
-- Full iteration record: [2026-11-14-awrp-dual-system-card.md](portfolio-versions/2026-11-14-awrp-dual-system-card.md).
+- Canonical branch: `main`.
+- Website artifact source commit: `f6b9e787e729c87f2a557628a673a3cce7fc3b51`.
+- Vercel deployment: `dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e` (`READY`, target `null`, Preview only).
+- Immutable review URL: https://ai-product-portfolio-j9o4ydovy-yu-ac3a.vercel.app/
+- User correction: homepage's AWRP image must **lead from AWRP × Linear as one integrated existing practice toward the independent Agent OS**, not split AWRP and Linear into two equivalent end states.
+- New primary visual: an **Existing Practice / 已有实践** box combining AWRP (agent handoff and recoverability) and Linear (durable project/tasks); a prominent arrow to **Agent OS / NEXT 产品化探索** with Project-first, long-lived Projects, multi-Agent execution, context, collaboration and review.
+- Secondary research input: `dsh-superagent` as a small external architecture-reference strip, **not a third implemented product or a direct source of AWRP**.
+- Native HTML/CSS (not generated simulated product UI); four-stage longform [draft remains](portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md). The homepage case title/copy stays unchanged.
+- Preserved all other content: PCK and VIVIC, featured order, Laya introduction and v2.4 casebook, Laya metrics and OSS proof, capabilities, footer, noindex, and prohibited copy exclusion.
+- Verified: Vercel READY with exactly `f6b9e787e729c87f2a557628a673a3cce7fc3b51`; deployed homepage `/` and Laya casebook `/cases/laya/` both HTTP 200; HTML contains the new Foundation / Destination elements with no old equal-weight dual panel; JS syntax passes; deployment ID matches.
+- Browser rendering/interaction audit: attempted but timed out. Actual rendered card legibility at 390px and route click-through are **not confirmed for this commit**. Do not claim completed visual E2E.
+- Production, DNS, custom-domain mapping and indexing remain untouched.
+- Previous preview `d0e66ad` / `dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC` remains historical. This preview is the one to share.
+- Full iteration note: [2026-11-14-awrp-to-agent-os-visual.md](portfolio-versions/2026-11-14-awrp-to-agent-os-visual.md).
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
