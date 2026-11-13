@@ -1139,6 +1139,20 @@ body {background:var(--paper);color:var(--ink)}
  .product-contribution__story{min-height:0}
  .footer-evidence-link{margin-left:0;margin-top:10px}
 }
+
+/* AWRP x Linear four-stage product evolution: conceptual diagram, not a shipped UI screenshot. */
+.project-visual--evolution{background:#202d29;min-height:190px}
+.project-visual--evolution:before{opacity:.5}
+.awrp-evolution-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:14px 0;align-items:stretch}
+.awrp-evolution-step{min-width:0;border:1px solid rgba(212,226,218,.28);padding:10px 11px;background:rgba(255,255,255,.045);display:flex;flex-direction:column;gap:4px}
+.awrp-evolution-step:nth-child(1){border-color:#d2ab91;background:rgba(163,69,50,.17)}
+.awrp-evolution-step__index{font-size:9px;color:#c7d4ca}
+.awrp-evolution-step strong{font:500 clamp(11px,1.15vw,17px)/1.25 var(--sans);letter-spacing:-.02em;overflow-wrap:anywhere;color:#f6f3ed}
+.awrp-evolution-step>span:last-child{font:400 10px/1.35 var(--han);color:#c4d1c7}
+.project-card__evolution-lead{font-size:16px!important;line-height:1.55!important;font-weight:500;color:var(--ink)!important;min-height:0!important}
+.project-grid--compact .awrp-evolution-step{padding:7px}
+.project-grid--compact .awrp-evolution-step strong{font-size:11px}
+@media(max-width:720px){.awrp-evolution-steps{gap:6px;margin:9px 0}.awrp-evolution-step{padding:8px}.awrp-evolution-step strong{font-size:13px}.project-card__evolution-lead{font-size:15px!important}}
 </style>
 <meta name="robots" content="noindex, nofollow, noarchive">
 </head>
@@ -1917,9 +1931,21 @@ function narrativeExperience(c){
 const HOME_PROJECTS = [
  {caseId:"personal-context-layer",name:"Personal Context Keyboard",label:"PERSONAL PROJECT · ANDROID-FIRST / WINDOWS TARGET",summary:"以输入法为第一个高频入口，把分散输入沉淀为可追溯、可修订、由用户掌控的个人上下文，并按授权提供给不同 AI 工具。",phase:"Android 核心模块已实现 · Local-first Context Core 已落地"},
  {caseId:"product",name:"VIVIC",label:"TEAM PRODUCT · MULTIMODAL AGENT",summary:"团队打造的多模态卡片助理，支持语音与文本交互。我在比赛中与团队相识，赛后受邀加入，并接手既有产品的体验与 Agent 决策链路优化。",phase:"赛后受邀加入团队 · Agent 决策链路持续优化 · 后端固定题集回归已验证"},
- {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW · PRODUCT DESIGN",summary:"从 ChatGPT 与本地 Agent 的接力问题出发，先实现 AWRP 原型，再将真实项目治理落到 Linear × Notion × GitHub，并据此形成 Project-first Agent OS 设计。",phase:"AWRP 原型已执行 · Linear × Notion × GitHub 工作流在用 · Agent Project OS 完成 G0–G2 产品设计"}
+ {caseId:"agent-workflow-governance",name:"AWRP × Linear",label:"AGENT WORKFLOW SYSTEMS · PRODUCT EVOLUTION",summary:"让 Agent 从一次性执行，走向长期项目协作。",phase:"从自主落地的 Agent 接力协议，到 Linear 项目工作流实践，再到 Agent OS 的产品化探索。",evolution:true}
 ];
 function projectVisual(id){
+ if(id==="agent-workflow-governance"){
+   const phases=[
+     ["01","AWRP","设计与实现"],
+     ["02","Linear","工作流改造"],
+     ["03","dsh-superagent","架构对照"],
+     ["04","Agent OS","产品化探索"]
+   ];
+   return '<div class="project-visual project-visual--evolution" aria-label="AWRP 到 Agent OS 的四阶段演进示意">'+
+   '<div class="project-visual__top mono"><span>AWRP × LINEAR</span><span>DESIGN EVOLUTION</span></div>'+
+   '<div class="awrp-evolution-steps">'+phases.map(step=>'<div class="awrp-evolution-step"><span class="mono awrp-evolution-step__index">'+step[0]+'</span><strong>'+step[1]+'</strong><span>'+step[2]+'</span></div>').join('')+'</div>'+
+   '<div class="project-visual__foot mono">BUILT → ADAPTED → COMPARED → EXPLORING</div></div>';
+ }
  if(id==="product")return '<div class="project-visual project-visual--image"><img src="'+MEDIA_FILES["M01"]+'" alt="VIVIC official website product showcase" loading="lazy" decoding="async"><div class="project-visual__top mono"><span>VIVIC / OFFICIAL PRODUCT SHOWCASE</span><span>TEAM PRODUCT</span></div><div class="project-visual__foot mono">INTENT → DECISION → ACTION → RECEIPT</div></div>';
  const data={"agent-workflow-governance":{label:"AWRP PROTOTYPE / PROJECT-FIRST WORK",steps:["PROJECT","CHANNEL","TASK","RUN","REVIEW"],foot:"PROJECT IDENTITY PERSISTS · EXECUTION IS REPLACEABLE"},"personal-context-layer":{label:"PERSONAL CONTEXT / LOCAL-FIRST CORE",steps:["RAW FACTS","EVIDENCE","DERIVED","USER CONTROL","AI GATEWAY"],foot:"SOURCE TRACEABLE · USER CONTROLLED · RECOMPUTABLE"}};
  const d=data[id]||data["personal-context-layer"];
@@ -1930,7 +1956,7 @@ function projectCardMarkup(p,i){
   return '<button class="project-card" data-action="navigate" data-page="case" data-target-id="'+esc(c.id)+'" aria-label="查看项目：'+esc(p.name)+'">'+
     '<div class="project-card__visual">'+projectVisual(c.id)+'</div>'+
     '<div class="project-card__body"><div class="project-card__meta mono"><span>'+esc(p.label)+'</span><span>0'+(i+1)+'</span></div>'+
-    '<h3>'+esc(p.name)+'</h3><p>'+esc(p.summary)+'</p><div class="project-card__phase">'+esc(p.phase)+'</div>'+
+    '<h3>'+esc(p.name)+'</h3><p class="'+(p.evolution?'project-card__evolution-lead':'')+'">'+esc(p.summary)+'</p><div class="project-card__phase">'+esc(p.phase)+'</div>'+
     '<div class="project-card__foot mono"><span>EXPLORE PROJECT / CASE</span><span>↗</span></div></div></button>';
 }
 function renderProjectCards(targetId){
