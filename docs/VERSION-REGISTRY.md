@@ -1,7 +1,7 @@
 # Portfolio Version Registry
 
 > **Operational source of truth for version identity and release state.**
-> Last verified: 2026-11-12 (Asia/Shanghai). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
+> Last verified: 2026-11-13 (Asia/Shanghai). This ledger records observed GitHub and Vercel state; branch names and domain aliases are mutable, commit SHAs and deployment IDs are immutable.
 
 Do not infer the current version from a branch name, a deployment display URL, or a historical README entry alone. A version is identified by **commit SHA + Vercel deployment ID**. Check the actual page response for its deployment ID before treating a URL as current.
 
@@ -19,22 +19,19 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- Canonical GitHub branch: `main`.
-- Current website artifact commit: `00a5aff8cd322f86e20a70e16a2881d91abb4866`.
-- Vercel deployment: `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-132c98vcv-yu-ac3a.vercel.app/
-- Project SSO, password protection and trusted-IP restrictions are disabled.
-- Homepage project cards remain Personal Context Keyboard → VIVIC → AWRP × Linear; Laya remains a separate flagship feature.
-- Current owner-selected Laya homepage copy is one paragraph. It opens by defining Laya as an open-source multilingual System 1 decision model, then explains its non-autoregressive approach, then communicates launch context and global popularity: Trendshift global trending #1 for multiple days; GitTrend global weekly growth #1 with approximately +22.3K Stars in one week.
-- Trendshift and GitTrend are linked inline. No other ranking wall, metric dashboard or ecosystem inventory appears in the public introduction.
-- Laya standalone casebook remains v2.4; no Global Momentum section or benchmark disclosure.
-- Detailed ranking / media / ecosystem / benchmark findings remain internal research only.
-- Existing Laya contribution framing, 40-PR metrics, four product systems, eight case chapters and navigation remain intact.
-- Homepage and casebook page-level noindex remain; `robots.txt` blocks crawlers and `vercel.json` configures `X-Robots-Tag: noindex, nofollow, noarchive`.
-- Static source checks passed. Browser visual / click E2E and responsive screenshot checks have not been claimed as completed.
-- Earlier overbuilt previews and earlier copy-order previews are superseded.
-- No production promotion, custom-domain change, DNS change or indexing change.
-
+- Canonical GitHub branch: `main` (only active development line).
+- Current **website artifact** commit: `7fe547814c37e1e217fc4e0a4f63feac1e085d29`.
+- Vercel deployment: `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr` (`READY`, target `null`, **Preview only**).
+- Immutable review URL: https://ai-product-portfolio-284kpx0gi-yu-ac3a.vercel.app/
+- Public route verification: home `/` HTTP 200 and Laya casebook `/cases/laya/` HTTP 200. The deployed page contains deployment identifier `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr`.
+- Project SSO/password/trusted-IP restrictions are disabled; public HTML is not a Vercel login response.
+- Home layout: 1+2 asymmetric Selected Work (Personal Context Keyboard → VIVIC → AWRP × Linear). The prior Laya **project-introduction paragraph is unchanged**; the Laya casebook remains v2.4.
+- Laya personal evidence: **40 personally authored merged PRs**, **94 distinct PRs reviewed** (owner-confirmed count, formal review plus substantive comment-based review), and **10,394 PR Diff added lines** (implementation, testing, tooling, documentation; not net production LOC). Four product systems remain alongside the copy; eight casebook chapters are not presented as contribution KPIs.
+- Seven upstream project groups use product capability narratives and **selected merged PR counts**, not full-account merged totals. GitHub Stars appear as low-weight **2026-11-10 snapshots**. There is **no sitewide PR/Review total**.
+- Four capability groups now have an explicit backing data declaration and an even 2×2 desktop layout, 1-column mobile layout. Footer includes the public GitHub evidence entry.
+- QA verified: deployed JS syntax compiles; source and deployed HTML checks; two HTTP 200 routes; preserved noindex metadata and no forbidden homepage slogan. Actual Chromium click-through, image rendering and 1440px / 390px / 360px visual checks remain **not independently completed**.
+- `robots.txt` and `vercel.json` retain anti-indexing controls. No production promotion, DNS/custom-domain adjustment or indexing change was performed.
+- This Preview supersedes `00a5aff` / `dpl_D1nFWQZr2KieNb4fgUPuWd712yBb` and interim `3815385` / `dpl_4fZctmKmRMxhmG85zKBTyT94VtmQ`.
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
@@ -146,7 +143,7 @@ Nine GitHub branches were observed before consolidation. The repository now uses
 
 Historical branch refs are intentionally preserved as snapshots; they are not competing workstreams. The GitHub connection available to this workflow supports ref reads and updates but does not expose branch deletion. Do not claim these refs were physically deleted. Operationally, only `main` is active.
 
-`main` may advance through documentation-only governance commits without changing the website artifact. The current website source commit is `f63fd225409d124aeb2f2e468a5b24b487d76f50`; the current Vercel Preview is `dpl_CmwMtYfv8CBMFQscWEuXg7GrG35P`. No website redeployment is needed for docs-only changes.
+`main` may advance through documentation-only governance commits without changing the website artifact. The current website artifact is `7fe547814c37e1e217fc4e0a4f63feac1e085d29` and its Preview is `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr`. Future docs-only commits are not new website artifacts.
 ## 4. Operating rules
 
 1. **Single development line:** `main` is the only active branch. All website changes are committed sequentially to `main`; do not create new long-lived version, review, draft or parallel work branches.
@@ -164,7 +161,7 @@ Historical branch refs are intentionally preserved as snapshots; they are not co
 - The Vercel team is on the Hobby plan. Project SSO, password and trusted-IP protection are disabled; the current Preview URL is publicly accessible without login.
 - A Vercel Ignored Build Step allows Git deployments from `main` only; pushes from other branches are skipped. Website iterations are explicitly deployed from an exact `main` Commit as Preview, never Production.
 - GitHub branch protection is not configured. Do not assume it exists or introduce parallel branch workflows.
-- Browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification remain the next QA work for the current preview.
+- Browser visual/click E2E, rendered 1440px / 390px / 360px checks and independent image-render verification remain outstanding for the current preview; static syntax and HTTP route checks are not substitutes.
 - Phase 3 / Phase 4 drafts remain reference inputs, not a reason to restart research or require repeated owner review. Continue with concrete incremental website improvements.
 
 ## 6. Permanent owner content prohibition
