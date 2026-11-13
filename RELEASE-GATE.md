@@ -2,9 +2,9 @@
 
 ## Authoritative current state — 2026-11-14
 
-Current website artifact: `d99ba1c2879b995292d9331be167b2c48120d03c` on GitHub `main`; current Vercel Hobby Preview: https://ai-product-portfolio-p7j00y15v-yu-ac3a.vercel.app/ (`dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc`, READY, target `null`, Preview only). The AWRP × Linear homepage card now uses the four-stage story AWRP (implemented protocol) → Linear (workflow adaptation) → dsh-superagent (external research prototype comparison) → Agent OS (productization exploration). The four-stage content is a **draft** recorded in `docs/portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md`. Existing Laya introduction/casebook, featured project ordering, other OSS evidence, and noindex remain unchanged.
+Current website artifact `d0e66adb68560687c4ee8a69eecb868af85fcbb5` on `main`, Preview https://ai-product-portfolio-3pbwm0kzs-yu-ac3a.vercel.app/ (`dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC`, READY, target `null`). The AWRP homepage visual now gives priority to the independently implemented AWRP relay model and adapted Linear project workflow, with dsh-superagent and Agent OS as small secondary evolution labels. This replaces only the prior four-equal-stage visual. All other homepage/project content remains unchanged.
 
-Verified: exact deployment source SHA and ID, READY, HTTP 200 on homepage/Laya casebook, static JavaScript syntax and expected markup. Actual browser click-through and responsive rendered screenshots are not independently complete. Do not promote to production, change DNS/domains, or permit indexing without explicit owner approval.
+Verified: live source/deployment identity, HTTP 200 homepage and Laya casebook, static JavaScript syntax, preserved noindex; AWRP card navigation and basic mobile container overflow checked. Full screenshot-based visual QA and Laya UI-click E2E are not complete (supplemental browser audit timed out). This is a preview for owner review, not production acceptance. No promotion, DNS/domain or indexing changes.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

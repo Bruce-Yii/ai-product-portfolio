@@ -20,16 +20,17 @@ Do not infer the current version from a branch name, a deployment display URL, o
 ### Current public Vercel Preview — canonical mainline
 
 - Canonical development branch: `main`.
-- Website **artifact commit**: `d99ba1c2879b995292d9331be167b2c48120d03c`.
-- Vercel Preview: `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc` (`READY`, target `null`, **Preview only**).
-- Immutable review URL: https://ai-product-portfolio-p7j00y15v-yu-ac3a.vercel.app/
-- Public routes verified: `/` HTTP 200 and `/cases/laya/` HTTP 200. Home response includes deployment ID `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc`.
-- Homepage change: AWRP × Linear card now states “让 Agent 从一次性执行，走向长期项目协作。” and shows the evolution **AWRP → Linear → dsh-superagent → Agent OS**, with labels `设计与实现 / 工作流改造 / 架构对照 / 产品化探索`.
-- Name verification: DeepSeek Harness team's README calls the public prototype `dsh-superagent`, hosted at `deepseek-ai/dsh-superagent-prototype`; it is explicitly a research prototype and not an official DeepSeek product. Do not imply that AWRP derived from it.
-- Canonical four-stage **draft** and evidence boundaries: [docs/portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md](portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md). This is a portfolio content draft, not a new product PRD.
-- Previously accepted homepage structure remains: 1+2 featured projects in Personal Context Keyboard → VIVIC → AWRP × Linear order; Laya introduction **unchanged**, casebook v2.4; Laya metrics 40 authored merged PRs, 94 owner-confirmed distinct PR reviews and 10,394 PR Diff added lines; seven selected OSS groups, no sitewide PR total; four capability blocks and GitHub footer.
-- QA verified: both HTTP routes, exact deployment ID/source commit, static JavaScript syntax, four-stage data, preserved noindex and absence of prohibited slogan. Browser click-through, rendered screenshots and responsive QA at 1440px / 390px / 360px are **not independently completed**.
-- No production promotion, custom-domain/DNS changes or indexing changes. Earlier Preview `7fe5478` / `dpl_H8vwxfkasf2RRYGbquESUUzH4Hkr` remains a historical immutable version.
+- Website artifact source: `d0e66adb68560687c4ee8a69eecb868af85fcbb5`.
+- Vercel deployment: `dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC` (`READY`, target `null`, **Preview only**).
+- Immutable review URL: https://ai-product-portfolio-3pbwm0kzs-yu-ac3a.vercel.app/
+- Scope: Replace the four-equal-stage AWRP × Linear homepage schematic with an **editorial AWRP + Linear dual-system visual**. AWRP panel shows Project/Channel → Task/Run/Event → Artifact/Replay; Linear panel shows Project/Issues → Ready/Agent/Review → State/Evidence. Restrained footer: dsh-superagent architecture comparison → Agent OS exploration.
+- The card's already-approved headline, the Project order, PCK/VIVIC visuals, Laya introduction and standalone casebook, seven OSS groups, capability tiles and footer remain unchanged.
+- Diagram uses HTML/CSS (no generated pseudo-product screenshot, no invented product launch status). All elements remain inside the existing project-card button and preserve its case navigation.
+- Verification: deployment READY, expected GitHub SHA, `/` and `/cases/laya/` HTTP 200, homepage live markup containing new dual-system classes and no obsolete `awrp-evolution-steps`, static JS syntax PASS, preserved `noindex` and forbidden-copy exclusion.
+- Browser interaction: AWRP project card navigation to its detail heading observed; at a mobile-style test, diagram/card scroll widths did not exceed client widths. Desktop/mobile screenshots were captured by an external browser service, but not fully visual-reviewed; a supplemental comprehensive click audit timed out. Do **not** claim full responsive visual acceptance or Laya link click E2E.
+- No production promotion, custom-domain/DNS adjustment or indexing change.
+- Previous website Preview `d99ba1c` / `dpl_FHsKLEejF5rj5iP3t9S8Yvbd4cSc` remains historical.
+- Full iteration record: [2026-11-14-awrp-dual-system-card.md](portfolio-versions/2026-11-14-awrp-dual-system-card.md).
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
