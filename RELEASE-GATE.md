@@ -2,9 +2,9 @@
 
 ## Authoritative current state — 2026-11-14
 
-Current website source `f6b9e787e729c87f2a557628a673a3cce7fc3b51` on `main`, Vercel Preview https://ai-product-portfolio-j9o4ydovy-yu-ac3a.vercel.app/ (`dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e`, READY, Preview only). The AWRP homepage visualization explicitly tells **AWRP × Linear (combined prior practice) → Agent OS (new productization direction)**. dsh-superagent is a subordinate external architecture input, not an equivalent fourth existing product. Replaces the previous symmetric AWRP/Linear panels; no unrelated content changed.
+Current website artifact `68798e903bd20ed89093e41b99c0a36185c832e8` on GitHub main, Vercel Preview https://ai-product-portfolio-661cspzgb-yu-ac3a.vercel.app/ (`dpl_F38HnAW6pLrx3noWmJgG5QETdAqE`, READY, target `null`). User rejected the preceding dense AWRP architecture cover. Current revision presents **AWRP × Linear → Agent OS** as a minimal editorial hero graphic with prominent names and one directional connection; dsh-superagent remains a small research note. Other content, casebook and noindex are unchanged.
 
-Verified: HTML and source identity, JS syntax, new mainline rendering nodes, both public routes HTTP 200, preserved noindex and original Laya intro. Automated browser interaction / visual viewport QA timed out and is not accepted. No production, DNS, domain or indexing changes.
+Verified: source SHA / deployment identity, deployed HTML/JS syntax, homepage and Laya HTTP 200. **Not visually accepted:** external screenshot service lacked credits; local Chromium render failed; mobile/desktop screenshots and click-through were not independently verified. The preview requires aesthetic review. No production, DNS/domain or indexing changes.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

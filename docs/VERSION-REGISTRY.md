@@ -19,20 +19,18 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- Canonical branch: `main`.
-- Website artifact source commit: `f6b9e787e729c87f2a557628a673a3cce7fc3b51`.
-- Vercel deployment: `dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e` (`READY`, target `null`, Preview only).
-- Immutable review URL: https://ai-product-portfolio-j9o4ydovy-yu-ac3a.vercel.app/
-- User correction: homepage's AWRP image must **lead from AWRP × Linear as one integrated existing practice toward the independent Agent OS**, not split AWRP and Linear into two equivalent end states.
-- New primary visual: an **Existing Practice / 已有实践** box combining AWRP (agent handoff and recoverability) and Linear (durable project/tasks); a prominent arrow to **Agent OS / NEXT 产品化探索** with Project-first, long-lived Projects, multi-Agent execution, context, collaboration and review.
-- Secondary research input: `dsh-superagent` as a small external architecture-reference strip, **not a third implemented product or a direct source of AWRP**.
-- Native HTML/CSS (not generated simulated product UI); four-stage longform [draft remains](portfolio-decisions/2026-11-14-awrp-linear-evolution-draft.md). The homepage case title/copy stays unchanged.
-- Preserved all other content: PCK and VIVIC, featured order, Laya introduction and v2.4 casebook, Laya metrics and OSS proof, capabilities, footer, noindex, and prohibited copy exclusion.
-- Verified: Vercel READY with exactly `f6b9e787e729c87f2a557628a673a3cce7fc3b51`; deployed homepage `/` and Laya casebook `/cases/laya/` both HTTP 200; HTML contains the new Foundation / Destination elements with no old equal-weight dual panel; JS syntax passes; deployment ID matches.
-- Browser rendering/interaction audit: attempted but timed out. Actual rendered card legibility at 390px and route click-through are **not confirmed for this commit**. Do not claim completed visual E2E.
-- Production, DNS, custom-domain mapping and indexing remain untouched.
-- Previous preview `d0e66ad` / `dpl_6Wj6GsU4cctXZhgA8pX12rmYxHUC` remains historical. This preview is the one to share.
-- Full iteration note: [2026-11-14-awrp-to-agent-os-visual.md](portfolio-versions/2026-11-14-awrp-to-agent-os-visual.md).
+- GitHub branch `main`, **website artifact commit** `68798e903bd20ed89093e41b99c0a36185c832e8`.
+- Vercel deployment `dpl_F38HnAW6pLrx3noWmJgG5QETdAqE`, READY, target `null` (Preview, **not production**).
+- Immutable preview: https://ai-product-portfolio-661cspzgb-yu-ac3a.vercel.app/
+- Owner feedback on the previous visualization: the dense mini architecture diagram was ugly and visually cluttered. **Design correction:** use a clean, editorial cover with large AWRP × Linear typography (real work) leading via one directional link to a prominent Agent OS wordmark (future independent product); dsh-superagent only appears as a discreet research reference.
+- Removed the former multiple nested boxes and tiny feature labels. Current cover uses native HTML/CSS, restrained forest-green and warm cream palette, large type, generous space and subtle concentric-ring motif around the prospective Agent OS.
+- The already approved homepage tagline, AWRP × Linear identity, four-stage draft and link into the full case remain in place. No fake product UI or claim that the full Agent OS has shipped.
+- Preserved other featured projects, homepage order, Laya wording/casebook, open-source contribution evidence, footer and noindex.
+- Verified: deployment READY with exact code SHA, `/` HTTP 200, `/cases/laya/` HTTP 200, HTML includes the new editorial cover and no old dense diagram, JavaScript syntax parsed, noindex retained and prohibited slogan absent.
+- **Visual acceptance pending:** automatic browser screenshots were not available (connected screenshot service exhausted, local Chromium attempt failed to render). Do not claim desktop/mobile visual QA or click E2E for this revision. Ask owner to evaluate the preview's aesthetics.
+- No production promotion, domain/DNS or indexing changes.
+- Previous Preview `f6b9e78` / `dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e` remains historical.
+- Version note: [2026-11-14-awrp-editorial-cover.md](portfolio-versions/2026-11-14-awrp-editorial-cover.md).
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
