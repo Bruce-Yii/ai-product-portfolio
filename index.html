@@ -1140,93 +1140,113 @@ body {background:var(--paper);color:var(--ink)}
  .footer-evidence-link{margin-left:0;margin-top:10px}
 }
 
-/* AWRP × Linear → Agent OS: existing integrated practice to future product.
-   Diagram only; no simulated release UI or unverified feature claims. */
-.project-visual--awrp-journey{
- background:#1d2c26;color:#f5f1e8;position:relative;isolation:isolate;
- min-height:235px;height:clamp(235px,20.5vw,270px);
- padding:13px 13px 11px;gap:9px;display:flex;flex-direction:column
+/* AWRP x Linear: restrained editorial cover, not a miniature architecture diagram. */
+.project-visual--awrp-cover{
+ min-height:245px;height:clamp(245px,20vw,275px);
+ color:#f3efe4;padding:17px 19px 14px;background:#1c302a;
+ position:relative;isolation:isolate;display:flex;flex-direction:column;gap:0
 }
-.project-visual--awrp-journey:before{
- background:radial-gradient(ellipse 75% 75% at 0% 10%,rgba(173,94,72,.16),transparent),
- radial-gradient(ellipse 65% 75% at 100% 100%,rgba(104,157,125,.15),transparent),
- repeating-linear-gradient(90deg,transparent 0 45px,rgba(255,255,255,.018) 46px 47px);
+.project-visual--awrp-cover:before{
+ background:radial-gradient(ellipse 85% 95% at 100% 10%,rgba(86,132,101,.2),transparent),
+ linear-gradient(115deg,rgba(241,238,225,.06),transparent 45%);
  opacity:1
 }
-.project-visual--awrp-journey .project-visual__top{z-index:1;position:relative;flex:none;color:#c9d6c9;font-size:8px;letter-spacing:.055em}
-.awrp-journey__route{
- position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 21px minmax(0,1fr);
- align-items:stretch;gap:5px;min-height:0;flex:1
+.awrp-cover__top,.awrp-cover__footer{
+ display:flex;justify-content:space-between;align-items:center;gap:8px;
+ position:relative;z-index:2;font:500 8px/1.5 var(--mono);
+ letter-spacing:.075em;color:#b9c7ba;white-space:nowrap
 }
-.awrp-journey__foundation,.awrp-journey__destination{
- min-width:0;min-height:0;border:1px solid rgba(227,223,205,.27);padding:10px 9px 9px;
- display:flex;flex-direction:column;gap:6px;background:rgba(4,13,9,.31)
+.awrp-cover__spot{
+ display:inline-block;height:5px;width:5px;border-radius:50%;background:#d79c7a;
+ margin-right:7px;vertical-align:2px
 }
-.awrp-journey__foundation{border-color:rgba(215,166,135,.54)}
-.awrp-journey__destination{
- border-color:rgba(173,218,186,.6);
- background:linear-gradient(145deg,rgba(91,151,112,.3),rgba(11,34,19,.45) 75%);
- justify-content:space-between
+.awrp-cover__main{
+ display:grid;grid-template-columns:minmax(0,.97fr) 39px minmax(0,1fr);
+ align-items:center;gap:0;position:relative;z-index:2;flex:1;min-height:0
 }
-.awrp-journey__eyebrow{font:7px/1.3 var(--mono);letter-spacing:.04em;color:#c6cebc;white-space:nowrap}
-.awrp-journey__foundation-title{
- font:600 clamp(14px,1.55vw,22px)/1.12 var(--sans);letter-spacing:-.042em;
- color:#f9f2e9;white-space:nowrap;margin:1px 0 3px
+.awrp-cover__origin{padding:4px 0;min-width:0}
+.awrp-cover__status{font-size:8px;letter-spacing:.065em;color:#d6bda9;display:block;margin-bottom:12px}
+.awrp-cover__wordmark{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
+.awrp-cover__wordmark strong{
+ font:650 clamp(31px,3.25vw,49px)/1 var(--sans);
+ letter-spacing:-.065em;color:#f7f3e9
 }
-.awrp-journey__foundation-title span{color:#e4b899;font-weight:400}
-.awrp-journey__source{border-left:2px solid #cf9b78;padding:4px 3px 4px 7px;display:flex;flex-direction:column;gap:1px;background:rgba(241,230,213,.052)}
-.awrp-journey__source--linear{border-left-color:#9fcaad;background:rgba(147,204,159,.066)}
-.awrp-journey__source strong{font:600 10px/1.3 var(--sans);letter-spacing:-.01em;color:#f4eee7}
-.awrp-journey__source small{font:400 9px/1.3 var(--han);color:#d4dacb;white-space:nowrap}
-.awrp-journey__connector{display:flex;align-items:center;justify-content:center;position:relative;color:#e3bca0}
-.awrp-journey__connector:before{content:"";position:absolute;width:19px;border-top:1px solid rgba(224,186,158,.6);z-index:-1}
-.awrp-journey__connector span{display:grid;place-items:center;width:20px;height:20px;border:1px solid rgba(224,186,158,.55);border-radius:50%;background:#23332b;font:15px/1 var(--sans)}
-.awrp-journey__destination-title{font:650 clamp(18px,2.1vw,31px)/1 var(--sans);letter-spacing:-.065em;color:#f6f3eb;white-space:nowrap}
-.awrp-journey__destination-core{align-self:flex-start;border:1px solid rgba(175,228,184,.35);background:rgba(138,193,152,.15);padding:5px 6px;font:8px/1.2 var(--mono);letter-spacing:.08em;color:#cee7d4}
-.awrp-journey__destination-value{font:500 10px/1.75 var(--han);color:#e3ece1;letter-spacing:.005em}
-.awrp-journey__research{
- position:relative;z-index:1;flex:none;display:flex;align-items:center;gap:7px;min-width:0;
- border-top:1px solid rgba(233,232,215,.21);padding-top:8px;color:#c3cec0
+.awrp-cover__wordmark em{
+ font:italic 400 clamp(29px,3vw,47px)/1.08 var(--serif);
+ letter-spacing:-.058em;color:#e4c0a5
 }
-.awrp-journey__research-label{font:7px/1.2 var(--mono);letter-spacing:.05em;color:#9eb7a8}
-.awrp-journey__research strong{font:500 10px/1.2 var(--sans);color:#f0ede4;white-space:nowrap}
-.awrp-journey__research>span:nth-last-child(2){font:400 9px/1.3 var(--han);white-space:nowrap}
-.awrp-journey__research-arrow{margin-left:auto;font:14px/1 var(--sans);color:#c6d7c8}
+.awrp-cover__micro{font:500 9px/1.5 var(--sans);letter-spacing:0;color:#b7c8b7;display:block;margin-top:14px}
+.awrp-cover__movement{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.awrp-cover__movement:before{content:"";height:1px;width:100%;background:rgba(231,209,181,.5);position:absolute;top:50%}
+.awrp-cover__movement span{
+ position:relative;z-index:1;display:grid;place-items:center;
+ width:32px;height:32px;border:1px solid rgba(231,209,181,.6);
+ border-radius:50%;background:#273930;color:#ecd0b7;font:24px/1 var(--serif)
+}
+.awrp-cover__destination{
+ position:relative;display:flex;flex-direction:column;justify-content:center;
+ min-width:0;min-height:100%;padding-left:11px
+}
+.awrp-cover__destination:before{
+ content:"";position:absolute;right:-42px;top:50%;width:216px;height:216px;
+ border:1px solid rgba(179,202,174,.25);border-radius:50%;
+ transform:translateY(-50%);
+ box-shadow:0 0 0 24px rgba(161,198,170,.055),0 0 0 50px rgba(165,199,169,.06),0 0 0 51px rgba(168,214,185,.13);
+ z-index:-1
+}
+.awrp-cover__agent{font:600 clamp(21px,2.4vw,33px)/1 var(--sans);letter-spacing:-.05em;white-space:nowrap}
+.awrp-cover__os{font:italic 400 clamp(69px,7.2vw,105px)/.82 var(--serif);letter-spacing:-.08em;color:#e7f0dc;padding:6px 0 11px}
+.awrp-cover__next{color:#c8e2c8;font-size:8px;letter-spacing:.055em;margin-bottom:11px;white-space:nowrap}
+.awrp-cover__tag{color:#c7d8bf;font-size:9px;letter-spacing:.065em}
+.awrp-cover__footer{border-top:1px solid rgba(236,236,221,.24);padding-top:10px;color:#b1c1b5;font-size:8px;letter-spacing:.045em}
+.awrp-cover__footer span:last-child{color:#d0b29d}
 .project-card__evolution-lead{font-size:16px!important;line-height:1.55!important;font-weight:500;color:var(--ink)!important;min-height:0!important}
-.project-grid--compact .project-visual--awrp-journey{height:245px;min-height:245px;padding:11px 10px}
-.project-grid--compact .awrp-journey__foundation,.project-grid--compact .awrp-journey__destination{padding:8px 6px}
-.project-grid--compact .awrp-journey__route{grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr);gap:3px}
-.project-grid--compact .awrp-journey__eyebrow{font-size:6px}
-.project-grid--compact .awrp-journey__destination-title{font-size:19px}
-.project-grid--compact .awrp-journey__source small{font-size:8px}
+.project-grid--compact .project-visual--awrp-cover{height:210px;min-height:210px;padding:12px 11px 10px}
+.project-grid--compact .awrp-cover__main{grid-template-columns:minmax(0,.97fr) 29px minmax(0,1fr)}
+.project-grid--compact .awrp-cover__wordmark strong{font-size:30px}
+.project-grid--compact .awrp-cover__wordmark em{font-size:28px}
+.project-grid--compact .awrp-cover__agent{font-size:23px}
+.project-grid--compact .awrp-cover__os{font-size:68px}
+.project-grid--compact .awrp-cover__micro{font-size:7px}
+.project-grid--compact .awrp-cover__next{font-size:7px}
 @media(max-width:900px){
- .project-visual--awrp-journey{height:250px;min-height:250px;padding:10px 9px}
- .awrp-journey__route{grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr);gap:3px}
- .awrp-journey__foundation,.awrp-journey__destination{padding:8px 6px}
- .awrp-journey__eyebrow{font-size:6px}
- .awrp-journey__foundation-title{font-size:15px}
- .awrp-journey__destination-title{font-size:19px}
- .awrp-journey__source small{font-size:8px}
- .awrp-journey__destination-value{font-size:9px}
- .awrp-journey__research-label{display:none}
+ .project-visual--awrp-cover{height:252px;min-height:252px;padding:14px 12px 12px}
+ .awrp-cover__main{grid-template-columns:minmax(0,1fr) 30px minmax(0,.93fr)}
+ .awrp-cover__wordmark strong{font-size:32px}
+ .awrp-cover__wordmark em{font-size:30px}
+ .awrp-cover__agent{font-size:23px}
+ .awrp-cover__os{font-size:72px}
+ .awrp-cover__status{font-size:7px}
+ .awrp-cover__next{font-size:7px}
+ .awrp-cover__micro{font-size:8px}
+ .awrp-cover__footer{font-size:7px}
 }
 @media(max-width:720px){
- .project-visual--awrp-journey,.project-grid--compact .project-visual--awrp-journey{height:250px;min-height:250px;padding:12px 11px}
- .awrp-journey__foundation,.awrp-journey__destination{padding:10px 8px}
- .awrp-journey__foundation-title{font-size:16px}
- .awrp-journey__destination-title{font-size:22px}
- .awrp-journey__source small{font-size:9px}
- .awrp-journey__destination-value{font-size:10px}
- .awrp-journey__research-label{display:inline}
+ .project-visual--awrp-cover,.project-grid--compact .project-visual--awrp-cover{height:230px;min-height:230px;padding:13px 12px 11px}
+ .awrp-cover__top{font-size:7px}
+ .awrp-cover__main{grid-template-columns:minmax(0,1fr) 28px minmax(0,.92fr)}
+ .awrp-cover__status{font-size:7px;margin-bottom:9px}
+ .awrp-cover__wordmark strong{font-size:29px}
+ .awrp-cover__wordmark em{font-size:28px}
+ .awrp-cover__micro{font-size:8px;margin-top:10px}
+ .awrp-cover__movement span{height:25px;width:25px;font-size:19px}
+ .awrp-cover__destination{padding-left:3px}
+ .awrp-cover__agent{font-size:23px}
+ .awrp-cover__os{font-size:72px}
+ .awrp-cover__destination:before{width:175px;height:175px;right:-44px}
+ .awrp-cover__footer{font-size:7px}
  .project-card__evolution-lead{font-size:15px!important}
 }
 @media(max-width:370px){
- .awrp-journey__foundation,.awrp-journey__destination{padding:8px 5px}
- .awrp-journey__foundation-title{font-size:14px}
- .awrp-journey__destination-title{font-size:19px}
- .awrp-journey__eyebrow{font-size:6px}
- .awrp-journey__source small{font-size:8px}
- .awrp-journey__research-label{display:none}
+ .awrp-cover__main{grid-template-columns:minmax(0,1fr) 23px minmax(0,.9fr)}
+ .awrp-cover__wordmark strong{font-size:26px}
+ .awrp-cover__wordmark em{font-size:25px}
+ .awrp-cover__agent{font-size:20px}
+ .awrp-cover__os{font-size:62px}
+ .awrp-cover__micro{font-size:7px}
+ .awrp-cover__footer span:last-child{font-size:6px}
+ .awrp-cover__next{font-size:6px}
+ .awrp-cover__movement span{height:22px;width:22px;font-size:18px}
 }
 
 </style>
@@ -2011,34 +2031,24 @@ const HOME_PROJECTS = [
 ];
 function projectVisual(id){
  if(id==="agent-workflow-governance"){
-   // One coherent evolution: implemented AWRP + practiced Linear workflow -> proposed Agent OS.
-   // dsh-superagent is an external architecture reference, not an owned implementation.
-   return `<div class="project-visual project-visual--awrp-journey" aria-label="AWRP 与 Linear 的实际实践汇合为新的 Agent OS 产品化方向；dsh-superagent 提供外部架构研究参考">
-     <div class="project-visual__top mono"><span>FROM PRACTICE TO PRODUCT</span><span>AGENT SYSTEMS</span></div>
-     <div class="awrp-journey__route">
-       <div class="awrp-journey__foundation">
-         <div class="awrp-journey__eyebrow mono">EXISTING PRACTICE / 已有实践</div>
-         <div class="awrp-journey__foundation-title">AWRP <span>×</span> Linear</div>
-         <div class="awrp-journey__source awrp-journey__source--awrp">
-           <strong>AWRP</strong><small>执行接力 · 可靠恢复</small>
-         </div>
-         <div class="awrp-journey__source awrp-journey__source--linear">
-           <strong>Linear</strong><small>项目治理 · 任务协作</small>
-         </div>
+   // Editorial project evolution cover: real AWRP × Linear work -> proposed Agent OS.
+   return `<div class="project-visual project-visual--awrp-cover" aria-label="AWRP 与 Linear 项目工作流演进为 Agent OS 的产品化探索；dsh-superagent 为外部架构研究">
+     <div class="awrp-cover__top mono"><span><i class="awrp-cover__spot" aria-hidden="true"></i>AGENT WORKFLOW SYSTEMS</span><span>01 / EVOLUTION</span></div>
+     <div class="awrp-cover__main">
+       <div class="awrp-cover__origin">
+         <span class="awrp-cover__status mono">BUILT & ADAPTED</span>
+         <div class="awrp-cover__wordmark"><strong>AWRP</strong><em>× Linear</em></div>
+         <span class="awrp-cover__micro">Reliable relay · Project continuity</span>
        </div>
-       <span class="awrp-journey__connector" aria-hidden="true"><span>→</span></span>
-       <div class="awrp-journey__destination">
-         <div class="awrp-journey__eyebrow mono">NEXT / 产品化探索</div>
-         <strong class="awrp-journey__destination-title">Agent OS</strong>
-         <div class="awrp-journey__destination-core mono">PROJECT-FIRST</div>
-         <div class="awrp-journey__destination-value">长期项目 · 多 Agent 执行<br>上下文 · 协作 · 验收</div>
+       <div class="awrp-cover__movement" aria-hidden="true"><span>→</span></div>
+       <div class="awrp-cover__destination">
+         <span class="awrp-cover__next mono">NEXT / PRODUCT DIRECTION</span>
+         <span class="awrp-cover__agent">Agent</span>
+         <strong class="awrp-cover__os">OS</strong>
+         <span class="awrp-cover__tag mono">PROJECT-FIRST</span>
        </div>
      </div>
-     <div class="awrp-journey__research">
-       <span class="awrp-journey__research-label mono">ARCHITECTURE INPUT</span>
-       <strong>dsh-superagent</strong><span>架构研究与对照</span>
-       <span class="awrp-journey__research-arrow" aria-hidden="true">↗</span>
-     </div>
+     <div class="awrp-cover__footer mono"><span>FROM PRACTICE TO PRODUCT</span><span>dsh-superagent / RESEARCH</span></div>
    </div>`;
  }
  if(id==="product")return '<div class="project-visual project-visual--image"><img src="'+MEDIA_FILES["M01"]+'" alt="VIVIC official website product showcase" loading="lazy" decoding="async"><div class="project-visual__top mono"><span>VIVIC / OFFICIAL PRODUCT SHOWCASE</span><span>TEAM PRODUCT</span></div><div class="project-visual__foot mono">INTENT → DECISION → ACTION → RECEIPT</div></div>';
