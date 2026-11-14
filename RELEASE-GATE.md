@@ -1,10 +1,10 @@
 # Publication Gate
 
-## Authoritative current state — 2026-11-14
+## Authoritative current state — 2026-11-15
 
-Current website artifact `68798e903bd20ed89093e41b99c0a36185c832e8` on GitHub main, Vercel Preview https://ai-product-portfolio-661cspzgb-yu-ac3a.vercel.app/ (`dpl_F38HnAW6pLrx3noWmJgG5QETdAqE`, READY, target `null`). User rejected the preceding dense AWRP architecture cover. Current revision presents **AWRP × Linear → Agent OS** as a minimal editorial hero graphic with prominent names and one directional connection; dsh-superagent remains a small research note. Other content, casebook and noindex are unchanged.
+Current website artifact `5e4d2f365c4fee59fb0c17d5cf4260e2dc29a81a` on GitHub main, Vercel Preview https://ai-product-portfolio-3floxkzqq-yu-ac3a.vercel.app/ (`dpl_HnhDjR1yn7pvGW4in4FD5HRcSdBB`, READY, target `null`). Replaced the rejected plain wordmark cover with original glass artwork aligned to VIVIC's premium indigo/violet/teal visual language. The cover communicates **AWRP × Linear existing practice → Agent OS productization exploration** with precise HTML labels over a text-free generated visual.
 
-Verified: source SHA / deployment identity, deployed HTML/JS syntax, homepage and Laya HTTP 200. **Not visually accepted:** external screenshot service lacked credits; local Chromium render failed; mobile/desktop screenshots and click-through were not independently verified. The preview requires aesthetic review. No production, DNS/domain or indexing changes.
+Verified: source SHA / deployment identity, homepage and Laya routes HTTP 200, image asset HTTP 200, JS syntax, noindex, desktop 1440px and mobile 390px image loading, no text/page overflow, and preserved card navigation to the existing AWRP case. Final aesthetic acceptance remains with owner. No production promotion, domain/DNS or indexing changes.
 
 > Sections below preserve historical release-gate evidence. Their branch and domain statements must not be used as the current live mapping without checking VERSION-REGISTRY.md.
 

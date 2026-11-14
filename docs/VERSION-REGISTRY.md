@@ -19,18 +19,20 @@ Do not infer the current version from a branch name, a deployment display URL, o
 
 ### Current public Vercel Preview — canonical mainline
 
-- GitHub branch `main`, **website artifact commit** `68798e903bd20ed89093e41b99c0a36185c832e8`.
-- Vercel deployment `dpl_F38HnAW6pLrx3noWmJgG5QETdAqE`, READY, target `null` (Preview, **not production**).
-- Immutable preview: https://ai-product-portfolio-661cspzgb-yu-ac3a.vercel.app/
-- Owner feedback on the previous visualization: the dense mini architecture diagram was ugly and visually cluttered. **Design correction:** use a clean, editorial cover with large AWRP × Linear typography (real work) leading via one directional link to a prominent Agent OS wordmark (future independent product); dsh-superagent only appears as a discreet research reference.
-- Removed the former multiple nested boxes and tiny feature labels. Current cover uses native HTML/CSS, restrained forest-green and warm cream palette, large type, generous space and subtle concentric-ring motif around the prospective Agent OS.
-- The already approved homepage tagline, AWRP × Linear identity, four-stage draft and link into the full case remain in place. No fake product UI or claim that the full Agent OS has shipped.
-- Preserved other featured projects, homepage order, Laya wording/casebook, open-source contribution evidence, footer and noindex.
-- Verified: deployment READY with exact code SHA, `/` HTTP 200, `/cases/laya/` HTTP 200, HTML includes the new editorial cover and no old dense diagram, JavaScript syntax parsed, noindex retained and prohibited slogan absent.
-- **Visual acceptance pending:** automatic browser screenshots were not available (connected screenshot service exhausted, local Chromium attempt failed to render). Do not claim desktop/mobile visual QA or click E2E for this revision. Ask owner to evaluate the preview's aesthetics.
+- GitHub branch `main`, **website artifact commit** `5e4d2f365c4fee59fb0c17d5cf4260e2dc29a81a`.
+- Vercel deployment `dpl_HnhDjR1yn7pvGW4in4FD5HRcSdBB`, READY, target `null` (Preview, **not production**).
+- Immutable preview: https://ai-product-portfolio-3floxkzqq-yu-ac3a.vercel.app/
+- Owner's visual benchmark: the VIVIC homepage cover. The previous AWRP wordmark-only cover lacked the luminous, layered, premium product-art quality of VIVIC.
+- Design correction: reuse VIVIC's light indigo / violet / teal glass language without copying its product UI. New original abstract artwork (glass modules, connected light ribbons, orbital glass hub) is paired with accurate HTML typography overlays; no AI-generated text, fake product screenshot, or fabricated logos.
+- Narrative remains **AWRP × Linear (existing practice) → Agent OS (productization exploration)**. AWRP and Linear are grouped as the prior body of work; Agent OS is the destination. The cover does not promote dsh-superagent to a third implemented product; architecture research remains in the detailed case narrative.
+- New optimized image: `assets/awrp/agent-os-glass.webp` (800×500 WebP, 13,340 bytes). Original generated art contains no text; all labels are HTML and remain readable/correct.
+- Preserved homepage project order, 1+2 layout, case navigation, approved AWRP summary, Laya wording/casebook/metrics and open-source records, PCK/VIVIC content, footer and noindex.
+- Verified: deployment READY with exact code SHA; homepage and `/cases/laya/` HTTP 200; artwork asset HTTP 200 (`image/webp`); JS syntax passes; noindex retained.
+- Browser QA: desktop 1440px and mobile 390px both found the AWRP card; image loaded; no text overflow or horizontal page overflow; existing card navigation still targets `agent-workflow-governance`.
+- Visual screenshot was captured. Responsive and navigation checks passed; final aesthetic acceptance remains with the owner.
 - No production promotion, domain/DNS or indexing changes.
-- Previous Preview `f6b9e78` / `dpl_DDf4tFFwnZN2r2yvfW82h6FaHA7e` remains historical.
-- Version note: [2026-11-14-awrp-editorial-cover.md](portfolio-versions/2026-11-14-awrp-editorial-cover.md).
+- Previous preview `dpl_F38HnAW6pLrx3noWmJgG5QETdAqE` remains historical.
+- Version note: [2026-11-15-awrp-vivic-glass-artwork.md](portfolio-versions/2026-11-15-awrp-vivic-glass-artwork.md).
 
 ### Withdrawn owner-review candidate — `ee6f8bd` (do not share)
 
