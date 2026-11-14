@@ -1140,113 +1140,88 @@ body {background:var(--paper);color:var(--ink)}
  .footer-evidence-link{margin-left:0;margin-top:10px}
 }
 
-/* AWRP x Linear: restrained editorial cover, not a miniature architecture diagram. */
-.project-visual--awrp-cover{
- min-height:245px;height:clamp(245px,20vw,275px);
- color:#f3efe4;padding:17px 19px 14px;background:#1c302a;
- position:relative;isolation:isolate;display:flex;flex-direction:column;gap:0
+/* AWRP × Linear — premium product artwork, matched to VIVIC's glass / light treatment. */
+.project-visual--awrp-art{
+ min-height:178px;height:clamp(178px,19vw,250px);padding:0!important;
+ position:relative;isolation:isolate;overflow:hidden;background:#292b57;color:#f8f5ef
 }
-.project-visual--awrp-cover:before{
- background:radial-gradient(ellipse 85% 95% at 100% 10%,rgba(86,132,101,.2),transparent),
- linear-gradient(115deg,rgba(241,238,225,.06),transparent 45%);
- opacity:1
+.project-visual--awrp-art:before{display:none}
+.project-visual--awrp-art>img{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ object-position:50% 50%;z-index:0
 }
-.awrp-cover__top,.awrp-cover__footer{
- display:flex;justify-content:space-between;align-items:center;gap:8px;
- position:relative;z-index:2;font:500 8px/1.5 var(--mono);
- letter-spacing:.075em;color:#b9c7ba;white-space:nowrap
+.awrp-art__shade{
+ position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(90deg,rgba(26,29,68,.48) 0%,rgba(26,29,68,.22) 43%,rgba(26,29,68,0) 72%),
+ linear-gradient(180deg,rgba(19,23,58,.24),transparent 32%,transparent 68%,rgba(22,25,58,.46))
 }
-.awrp-cover__spot{
- display:inline-block;height:5px;width:5px;border-radius:50%;background:#d79c7a;
- margin-right:7px;vertical-align:2px
+.awrp-art__header{
+ position:absolute;z-index:2;top:14px;left:18px;right:18px;
+ display:flex;justify-content:space-between;align-items:center;gap:10px;
+ color:rgba(255,255,255,.88);font:500 8px/1.4 var(--mono);
+ letter-spacing:.14em;white-space:nowrap
 }
-.awrp-cover__main{
- display:grid;grid-template-columns:minmax(0,.97fr) 39px minmax(0,1fr);
- align-items:center;gap:0;position:relative;z-index:2;flex:1;min-height:0
+.awrp-art__header span:first-child{font-size:10px;letter-spacing:.17em;color:#fff}
+.awrp-art__headline{
+ position:absolute;z-index:2;left:22px;top:56px;width:54%;max-width:340px;
+ color:#fbf8f1;text-shadow:0 2px 18px rgba(22,25,58,.15)
 }
-.awrp-cover__origin{padding:4px 0;min-width:0}
-.awrp-cover__status{font-size:8px;letter-spacing:.065em;color:#d6bda9;display:block;margin-bottom:12px}
-.awrp-cover__wordmark{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
-.awrp-cover__wordmark strong{
- font:650 clamp(31px,3.25vw,49px)/1 var(--sans);
- letter-spacing:-.065em;color:#f7f3e9
+.awrp-art__headline>span{
+ display:block;margin-bottom:9px;color:rgba(255,255,255,.74);
+ font:500 7px/1.4 var(--mono);letter-spacing:.15em
 }
-.awrp-cover__wordmark em{
- font:italic 400 clamp(29px,3vw,47px)/1.08 var(--serif);
- letter-spacing:-.058em;color:#e4c0a5
+.awrp-art__headline strong{
+ display:block;font:500 clamp(19px,2.25vw,30px)/1.12 var(--serif);
+ letter-spacing:-.045em
 }
-.awrp-cover__micro{font:500 9px/1.5 var(--sans);letter-spacing:0;color:#b7c8b7;display:block;margin-top:14px}
-.awrp-cover__movement{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
-.awrp-cover__movement:before{content:"";height:1px;width:100%;background:rgba(231,209,181,.5);position:absolute;top:50%}
-.awrp-cover__movement span{
- position:relative;z-index:1;display:grid;place-items:center;
- width:32px;height:32px;border:1px solid rgba(231,209,181,.6);
- border-radius:50%;background:#273930;color:#ecd0b7;font:24px/1 var(--serif)
+.awrp-art__headline strong em{font-style:italic;color:#d7d5ff}
+.awrp-art__headline p{
+ margin-top:9px;color:rgba(255,255,255,.82);
+ font:400 10px/1.65 var(--han);letter-spacing:.015em
 }
-.awrp-cover__destination{
- position:relative;display:flex;flex-direction:column;justify-content:center;
- min-width:0;min-height:100%;padding-left:11px
+.awrp-art__footer{
+ position:absolute;z-index:2;left:17px;right:17px;bottom:12px;
+ display:flex;align-items:center;gap:clamp(9px,1.4vw,18px);
+ color:rgba(255,255,255,.93);white-space:nowrap
 }
-.awrp-cover__destination:before{
- content:"";position:absolute;right:-42px;top:50%;width:216px;height:216px;
- border:1px solid rgba(179,202,174,.25);border-radius:50%;
- transform:translateY(-50%);
- box-shadow:0 0 0 24px rgba(161,198,170,.055),0 0 0 50px rgba(165,199,169,.06),0 0 0 51px rgba(168,214,185,.13);
- z-index:-1
-}
-.awrp-cover__agent{font:600 clamp(21px,2.4vw,33px)/1 var(--sans);letter-spacing:-.05em;white-space:nowrap}
-.awrp-cover__os{font:italic 400 clamp(69px,7.2vw,105px)/.82 var(--serif);letter-spacing:-.08em;color:#e7f0dc;padding:6px 0 11px}
-.awrp-cover__next{color:#c8e2c8;font-size:8px;letter-spacing:.055em;margin-bottom:11px;white-space:nowrap}
-.awrp-cover__tag{color:#c7d8bf;font-size:9px;letter-spacing:.065em}
-.awrp-cover__footer{border-top:1px solid rgba(236,236,221,.24);padding-top:10px;color:#b1c1b5;font-size:8px;letter-spacing:.045em}
-.awrp-cover__footer span:last-child{color:#d0b29d}
+.awrp-art__footer span{display:flex;align-items:baseline;gap:5px;min-width:0}
+.awrp-art__footer b{font:600 8px/1.3 var(--sans);letter-spacing:.015em}
+.awrp-art__footer i{font:500 6px/1.3 var(--mono);letter-spacing:.055em;color:rgba(255,255,255,.72);font-style:normal}
+.awrp-art__footer span+span:before{content:"/";color:rgba(255,255,255,.5);margin-right:4px}
 .project-card__evolution-lead{font-size:16px!important;line-height:1.55!important;font-weight:500;color:var(--ink)!important;min-height:0!important}
-.project-grid--compact .project-visual--awrp-cover{height:210px;min-height:210px;padding:12px 11px 10px}
-.project-grid--compact .awrp-cover__main{grid-template-columns:minmax(0,.97fr) 29px minmax(0,1fr)}
-.project-grid--compact .awrp-cover__wordmark strong{font-size:30px}
-.project-grid--compact .awrp-cover__wordmark em{font-size:28px}
-.project-grid--compact .awrp-cover__agent{font-size:23px}
-.project-grid--compact .awrp-cover__os{font-size:68px}
-.project-grid--compact .awrp-cover__micro{font-size:7px}
-.project-grid--compact .awrp-cover__next{font-size:7px}
+.project-grid--compact .project-visual--awrp-art{height:210px;min-height:210px}
+.project-grid--compact .awrp-art__headline{top:49px;left:16px;width:58%}
+.project-grid--compact .awrp-art__headline strong{font-size:22px}
+.project-grid--compact .awrp-art__headline p{font-size:9px}
+.project-grid--compact .awrp-art__footer{left:12px;right:12px;gap:7px}
+.project-grid--compact .awrp-art__footer i{font-size:5px}
 @media(max-width:900px){
- .project-visual--awrp-cover{height:252px;min-height:252px;padding:14px 12px 12px}
- .awrp-cover__main{grid-template-columns:minmax(0,1fr) 30px minmax(0,.93fr)}
- .awrp-cover__wordmark strong{font-size:32px}
- .awrp-cover__wordmark em{font-size:30px}
- .awrp-cover__agent{font-size:23px}
- .awrp-cover__os{font-size:72px}
- .awrp-cover__status{font-size:7px}
- .awrp-cover__next{font-size:7px}
- .awrp-cover__micro{font-size:8px}
- .awrp-cover__footer{font-size:7px}
+ .project-visual--awrp-art{height:252px;min-height:252px}
+ .awrp-art__headline{top:57px;left:17px;width:58%}
+ .awrp-art__headline strong{font-size:25px}
+ .awrp-art__footer{left:13px;right:13px;gap:9px}
+ .awrp-art__footer i{font-size:5.5px}
 }
 @media(max-width:720px){
- .project-visual--awrp-cover,.project-grid--compact .project-visual--awrp-cover{height:230px;min-height:230px;padding:13px 12px 11px}
- .awrp-cover__top{font-size:7px}
- .awrp-cover__main{grid-template-columns:minmax(0,1fr) 28px minmax(0,.92fr)}
- .awrp-cover__status{font-size:7px;margin-bottom:9px}
- .awrp-cover__wordmark strong{font-size:29px}
- .awrp-cover__wordmark em{font-size:28px}
- .awrp-cover__micro{font-size:8px;margin-top:10px}
- .awrp-cover__movement span{height:25px;width:25px;font-size:19px}
- .awrp-cover__destination{padding-left:3px}
- .awrp-cover__agent{font-size:23px}
- .awrp-cover__os{font-size:72px}
- .awrp-cover__destination:before{width:175px;height:175px;right:-44px}
- .awrp-cover__footer{font-size:7px}
+ .project-visual--awrp-art{height:230px;min-height:230px}
+ .awrp-art__header{top:12px;left:13px;right:13px;font-size:6px;letter-spacing:.08em}
+ .awrp-art__header span:first-child{font-size:8px}
+ .awrp-art__headline{top:48px;left:15px;width:59%}
+ .awrp-art__headline>span{font-size:6px;margin-bottom:7px}
+ .awrp-art__headline strong{font-size:21px}
+ .awrp-art__headline p{font-size:9px;margin-top:7px}
+ .awrp-art__footer{left:11px;right:11px;bottom:10px;gap:7px}
+ .awrp-art__footer b{font-size:7px}
+ .awrp-art__footer i{font-size:5px;letter-spacing:.025em}
+ .awrp-art__footer span+span:before{margin-right:1px}
  .project-card__evolution-lead{font-size:15px!important}
 }
 @media(max-width:370px){
- .awrp-cover__main{grid-template-columns:minmax(0,1fr) 23px minmax(0,.9fr)}
- .awrp-cover__wordmark strong{font-size:26px}
- .awrp-cover__wordmark em{font-size:25px}
- .awrp-cover__agent{font-size:20px}
- .awrp-cover__os{font-size:62px}
- .awrp-cover__micro{font-size:7px}
- .awrp-cover__footer span:last-child{font-size:6px}
- .awrp-cover__next{font-size:6px}
- .awrp-cover__movement span{height:22px;width:22px;font-size:18px}
+ .awrp-art__header span:last-child{font-size:5px}
+ .awrp-art__headline{width:63%}
+ .awrp-art__headline strong{font-size:19px}
+ .awrp-art__footer{gap:5px}
+ .awrp-art__footer i{font-size:4.5px}
 }
 
 </style>
@@ -2031,24 +2006,21 @@ const HOME_PROJECTS = [
 ];
 function projectVisual(id){
  if(id==="agent-workflow-governance"){
-   // Editorial project evolution cover: real AWRP × Linear work -> proposed Agent OS.
-   return `<div class="project-visual project-visual--awrp-cover" aria-label="AWRP 与 Linear 项目工作流演进为 Agent OS 的产品化探索；dsh-superagent 为外部架构研究">
-     <div class="awrp-cover__top mono"><span><i class="awrp-cover__spot" aria-hidden="true"></i>AGENT WORKFLOW SYSTEMS</span><span>01 / EVOLUTION</span></div>
-     <div class="awrp-cover__main">
-       <div class="awrp-cover__origin">
-         <span class="awrp-cover__status mono">BUILT & ADAPTED</span>
-         <div class="awrp-cover__wordmark"><strong>AWRP</strong><em>× Linear</em></div>
-         <span class="awrp-cover__micro">Reliable relay · Project continuity</span>
-       </div>
-       <div class="awrp-cover__movement" aria-hidden="true"><span>→</span></div>
-       <div class="awrp-cover__destination">
-         <span class="awrp-cover__next mono">NEXT / PRODUCT DIRECTION</span>
-         <span class="awrp-cover__agent">Agent</span>
-         <strong class="awrp-cover__os">OS</strong>
-         <span class="awrp-cover__tag mono">PROJECT-FIRST</span>
-       </div>
+   // Premium editorial artwork: AWRP × Linear as existing practice, Agent OS as next direction.
+   return `<div class="project-visual project-visual--awrp-art" role="img" aria-label="AWRP 与 Linear 的既有实践，汇聚为 Agent OS 的产品化探索">
+     <img src="assets/awrp/agent-os-glass.webp" alt="" loading="lazy" decoding="async">
+     <div class="awrp-art__shade" aria-hidden="true"></div>
+     <div class="awrp-art__header mono"><span>AWRP × LINEAR</span><span>AGENT WORKFLOW SYSTEMS</span></div>
+     <div class="awrp-art__headline">
+       <span>FROM PRACTICE TO PRODUCT</span>
+       <strong>From Agent handoff<br>to <em>Agent OS.</em></strong>
+       <p>让 Agent 从一次性执行，走向长期项目协作。</p>
      </div>
-     <div class="awrp-cover__footer mono"><span>FROM PRACTICE TO PRODUCT</span><span>dsh-superagent / RESEARCH</span></div>
+     <div class="awrp-art__footer mono">
+       <span><b>AWRP</b><i>DESIGNED &amp; BUILT</i></span>
+       <span><b>Linear</b><i>WORKFLOW ADAPTATION</i></span>
+       <span><b>Agent OS</b><i>PRODUCT EXPLORATION</i></span>
+     </div>
    </div>`;
  }
  if(id==="product")return '<div class="project-visual project-visual--image"><img src="'+MEDIA_FILES["M01"]+'" alt="VIVIC official website product showcase" loading="lazy" decoding="async"><div class="project-visual__top mono"><span>VIVIC / OFFICIAL PRODUCT SHOWCASE</span><span>TEAM PRODUCT</span></div><div class="project-visual__foot mono">INTENT → DECISION → ACTION → RECEIPT</div></div>';
